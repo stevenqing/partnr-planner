@@ -1,0 +1,38 @@
+{
+  "total_episodes": 4,
+  "task_type": "spatial_only",
+  "source_dataset": "data/versioned_data/partnr_episodes/v0_0/train_2k.json.gz",
+  "output_file": "task_classification_datasets_first100/spatial_only_first4.json.gz",
+  "episodes": [
+    {
+      "episode_id": "260",
+      "instruction": "Please put the lamp next to the spoon, fork, and knife on the table.",
+      "predicates": [
+        "is_next_to"
+      ]
+    },
+    {
+      "episode_id": "306",
+      "instruction": "Move the hat next to the spectacles.",
+      "predicates": [
+        "is_next_to"
+      ]
+    },
+    {
+      "episode_id": "441",
+      "instruction": "Move the basket and bottle next to the washing machine. I'll turn on the washing machine.",
+      "predicates": [
+        "is_next_to",
+        "is_next_to"
+      ]
+    },
+    {
+      "episode_id": "1441",
+      "instruction": "Move the picture frame and vase next to the office chair.",
+      "predicates": [
+        "is_next_to",
+        "is_next_to"
+      ]
+    }
+  ]
+}

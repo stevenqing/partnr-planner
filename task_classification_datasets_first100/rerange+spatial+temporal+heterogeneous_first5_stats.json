@@ -1,0 +1,76 @@
+{
+  "total_episodes": 5,
+  "task_type": "rerange+spatial+temporal+heterogeneous",
+  "source_dataset": "data/versioned_data/partnr_episodes/v0_0/train_2k.json.gz",
+  "output_file": "task_classification_datasets_first100/rerange+spatial+temporal+heterogeneous_first5.json.gz",
+  "episodes": [
+    {
+      "episode_id": "431",
+      "instruction": "Let's prepare for gardening. Move the plant containers and basket from the living room to the kitchen. Then place the hammers next to the basket. Finally dust the hammers.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_next_to",
+        "is_next_to",
+        "is_clean",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "434",
+      "instruction": "Move the kettle from the living room to the kitchen counter, fill it with water and turn it on. After that, place the cups on the counter next to the kettle.",
+      "predicates": [
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_on_top",
+        "is_on_top",
+        "is_next_to",
+        "is_next_to"
+      ]
+    },
+    {
+      "episode_id": "1693",
+      "instruction": "Move the jug, kettle, and teapot from the dining table in the living room to the kitchen counter fill all with water, and turn on the kettle. Then, place the cups next to the kettle on the counter and clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_on_top",
+        "is_on_top",
+        "is_next_to",
+        "is_next_to",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1771",
+      "instruction": "Move the kettle and cup from the living room table to the kitchen table, fill the kettle with water and turn it on. After that, place the cup next to the kettle and clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_next_to",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1870",
+      "instruction": "Move the plant container and basket from the living room to the porch and place the hammers next to the basket. Then dust the hammers.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_next_to",
+        "is_next_to",
+        "is_clean",
+        "is_clean"
+      ]
+    }
+  ]
+}

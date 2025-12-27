@@ -1,0 +1,1230 @@
+{
+  "total_episodes": 100,
+  "task_type": "rerange+temporal+heterogeneous",
+  "source_dataset": "data/versioned_data/partnr_episodes/v0_0/train_2k.json.gz",
+  "output_file": "task_classification_datasets_first100/rerange+temporal+heterogeneous_first100.json.gz",
+  "episodes": [
+    {
+      "episode_id": "432",
+      "instruction": "Let's clean the shelves. Put the books on the floor. Then, clean each book and clean the shelves. Finally arrange the books back back on the shelves after cleaning.",
+      "predicates": [
+        "is_on_floor",
+        "is_on_floor",
+        "is_on_floor",
+        "is_on_floor",
+        "is_on_floor",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "435",
+      "instruction": "Once I dust the shelves in the living room, let's arrange all of the books on them.",
+      "predicates": [
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "440",
+      "instruction": "Let's organize the closet. Move all the cans to the kitchen counter, while I clean cabinet? Then arrange the cans back on the cabinet once I'm done?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "453",
+      "instruction": "Begin by moving all the books from the living room to the bedroom. Then, dust each book and arrange them on the chest of drawers.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "457",
+      "instruction": "Fill the jug with water and then empty it. Store the jug in the kitchen cabinet when you are done.",
+      "predicates": [
+        "is_filled",
+        "is_empty",
+        "is_inside"
+      ]
+    },
+    {
+      "episode_id": "1624",
+      "instruction": "Move the kettle and the jug from the dining table to the kitchen and fill the kettle with water. Turn on the kettle. Finally, clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1625",
+      "instruction": "Move the jug, kettle, and teapot from the dining table to the kitchen and fill the kettle with water. Turn on the kettle. Then, clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1626",
+      "instruction": "Move the lamp from the living room to the bed and turn it on. Then, arrange a cup on the bed.",
+      "predicates": [
+        "is_on_top",
+        "is_powered_on",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1627",
+      "instruction": "Move the plate from the dining room to the kitchen and clean it. Then, arrange a fork on the counter.",
+      "predicates": [
+        "is_in_room",
+        "is_clean",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1628",
+      "instruction": "Move the candle from the bedroom to the living room and turn it on. Then, arrange a book on the couch.",
+      "predicates": [
+        "is_on_top",
+        "is_powered_on",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1629",
+      "instruction": "Move the kettle, teapot, and cup from the dining table to the kitchen counter, then fill the kettle with water and turn it on. Finally, clean the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1630",
+      "instruction": "Move the jug and bottle from the kitchen counter to the dining table, then fill the jug with water. Finally, clean the kitchen counter.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1631",
+      "instruction": "Move the spoon and fork from the kitchen counter to the dining table, then clean the kitchen counter.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1632",
+      "instruction": "Move the plate and bowl from the dining table to the kitchen counter, then clean the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1633",
+      "instruction": "Move the book and laptop from the living room table to the bedroom cabinet, then clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1634",
+      "instruction": "Move the vase and picture frame from the living room table to the bedroom cabinet, then clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1635",
+      "instruction": "Move the teapot, jug, and cup from the dining table to the kitchen counter, fill all with water, and turn on the lamp. Finally, clean the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1636",
+      "instruction": "Move the kettle, teapot, and cup from the dining table to the kitchen counter, fill all with water and turn on the lamp.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_filled",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1638",
+      "instruction": "Place the lamp on another table in the living room and turn it on. Then, place the cup on the table in the kitchen and clean the table.",
+      "predicates": [
+        "is_on_top",
+        "is_powered_on",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1639",
+      "instruction": "Place the teapot on another table in the living room , fill it with water, and turn it on. Then place the spoon on the counter in the kitchen and clean the counter.",
+      "predicates": [
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1640",
+      "instruction": "Place the vase on another table in the living room. Then, place the book on the bed in the bedroom and clean the bed.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1641",
+      "instruction": "Place the candle on another table in the living room and turn it on. Then, place the bowl on the counter in the kitchen and clean the counter.",
+      "predicates": [
+        "is_on_top",
+        "is_powered_on",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1642",
+      "instruction": "Place the plate on another table in the living room. Then, place the fork on the table in the kitchen and clean the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1643",
+      "instruction": "Place the clock on another table in the living room. Then, place the soap dish on the toilet in the bathroom and clean the toilet.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1644",
+      "instruction": "Place the picture frame on another table in the living room. Then, place the hand towel on the toilet in the bathroom and clean the toilet.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1645",
+      "instruction": "Place the laptop on the table in the living room. Then, place the milk frother cup on the counter in the kitchen and clean the counter.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1647",
+      "instruction": "Move the kettle and the jug from the living room table to the kitchen and fill the kettle with water. Turn on the kettle. Finally clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1648",
+      "instruction": "Move the jug, teapot, and cup from the living table to a table. Then, turn on the lamp and clean the a table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1649",
+      "instruction": "Move the kettle and the jug from the living room table to the kitchen and fill the kettle with water. Then turn on the kettle and clean the living room table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1650",
+      "instruction": "Move the lamp from the living room to the bedroom and turn it on. Then move the book from the bedroom to the living room and put it on the table.",
+      "predicates": [
+        "is_in_room",
+        "is_powered_on",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1651",
+      "instruction": "Move the kettle, jug, and teapot from the dining table to the kitchen counter, then fill the kettle with water and turn it on. After that, move the kettle, jug, and teapot back to the dining table and clean the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1652",
+      "instruction": "Move the cup and the plate from the living room table to the kitchen counter, then clean the living room table. After that, move the cup and the plate back to the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1653",
+      "instruction": "Move the statue and the picture frame from the living room table to the bedroom table, then clean the living room table. After that, move the statue and the picture frame back to the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1654",
+      "instruction": "Move the kettle, jug, and teapot to the kitchen and fill all with water. Turn on the kettle and teapot. Finally clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1657",
+      "instruction": "Move the vase, candle, and book from the table to other living room tables and arrange them neatly. Then, turn on the lamp and clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1658",
+      "instruction": "Move the cup, plate, and spoon from the table to the kitchen counter and arrange them neatly. Then fill the cup with water and clean the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1659",
+      "instruction": "Move the laptop and laptop stand from the table to the bedroom table and arrange them neatly. Then turn on the laptop and clean the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1660",
+      "instruction": "Move the bread, can, and knife from the kitchen counter to the coffee table and arrange them neatly. Then, clean the kitchen counter.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1661",
+      "instruction": "Let's tiy up the chest of drawers. Put the vase, candle holder, and plate on the bed. Clean each object and clean the chest of drawers. Once all are clean, arrange the objects back on the chest of drawers.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1665",
+      "instruction": "Clean the cup, jug, and teapot on the dining table in the dining room. Move them to the kitchen and fill the jug and teapot with water. Then, turn on the lamp in the dining room.",
+      "predicates": [
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_filled",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1666",
+      "instruction": "Clean the kettle, teapot, and cup on the table in the dining room. Move them to the kitchen and fill the kettle and teapot with water. Then, turn on the lamp in the dining room.",
+      "predicates": [
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_filled",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1667",
+      "instruction": "Clean the plate, fork, and spoon on the table in the dining room. Move them to the kitchen and put the plate in the cabinet. Then, turn off the lamp in the dining room.",
+      "predicates": [
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_on_top",
+        "is_powered_off"
+      ]
+    },
+    {
+      "episode_id": "1668",
+      "instruction": "Clean the jug and pitcher on the table in the tv room. Move them to the kitchen and fill the jug with water. Then, turn on the lamp in the tv.",
+      "predicates": [
+        "is_clean",
+        "is_clean",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1669",
+      "instruction": "Clear up the dining table by bringing the jug, teapot, cup, and plate to the kitchen. Fill the jug and teapot with water, then turn on the lamp. Finally, clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1670",
+      "instruction": "Clear up the bedroom table by bringing the book, vase, and candle to the office. Turn off the lamp then clean the bedroom table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_powered_off",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1671",
+      "instruction": "Clear up by bringing the phone stand, clock, and vase to the bedroom. Turn off the lamp, then clean the table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_powered_off",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1672",
+      "instruction": "Move the kettle, jug, and teapot from the dining table to the kitchen, fill the kettle with water and turn it on. Then, clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1675",
+      "instruction": "Fill the jug on the dining table with water and put it in the kitchen cabinet. Then, wipe the dining table and take two cups, two plates, and two forks from the kitchen cabinet and set them on the table. Finally, turn on the lamp on the dining table.",
+      "predicates": [
+        "is_filled",
+        "is_inside",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1676",
+      "instruction": "Move the kettle, teapot, and cup from the dining table to the kitchen and fill all with water. Then turn on the lamp, and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1677",
+      "instruction": "Take the jug, kettle, and cup from the dining table and move them to the kitchen counter. Fill the jug and kettle with water, and then turn on the lamp on the dining table. Finally, clean the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1678",
+      "instruction": "Move the jug, kettle, and cup from the dining table to the kitchen counter. Fill the jug and kettle with water, and then turn off the lamp on the dining table. Finally, clean the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_powered_off",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1679",
+      "instruction": "Take the jug, kettle, and cup from the dining table and move them to the kitchen counter. Fill the jug and kettle with water, and then turn on the lamp on the dining table. Finally, clean the dining table and put two plates, two bowls, and two forks from the kitchen cabinet on the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1680",
+      "instruction": "Move the jug, kettle, and cup from the dining table to the kitchen counter. Fill the jug and kettle with water, and then turn on the lamp on the dining table. Finally, clean the dining table and put two plates, two bowls, and two forks from the kitchen cabinet on the dining table. Also, take a spoon from the kitchen cabinet and put it on the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1681",
+      "instruction": "Take the jug, kettle, and cup from the dining table and move them to the kitchen counter. Fill the jug and kettle with water, and then turn on the lamp on the dining table. Finally, clean the dining table and put two plates, two bowls, two forks, and a spoon from the kitchen cabinet on the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1695",
+      "instruction": "Place the plate on the counter in the kitchen , then clean the counter. Next, move the apple from the table in the bedroom to the counter in the kitchen.",
+      "predicates": [
+        "is_on_top",
+        "is_clean",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1696",
+      "instruction": "Place the spoon on the table in the living room , then clean the table. Next, move the fork from the cabinet in the kitchen to the table in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_clean",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1700",
+      "instruction": "Move the kettle and the jug from the table in the living room to the counter in the kitchen. Fill the kettle with water, then turn on the kettle. Finally, clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1702",
+      "instruction": "Move the teapot and the cup from the table in the living room to the counter in the kitchen. Fill the teapot with water. Finally, clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1705",
+      "instruction": "Move the jug, cup, and plate from the dining table to the kitchen and fill the jug with water. Then turn on the lamp in the living room and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1706",
+      "instruction": "Move the kettle, teapot, and cup from the dining table to the kitchen and fill the kettle with water. Then, turn on the lamp in the living room and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1707",
+      "instruction": "Move the jug, kettle, and cup from the dining table to the kitchen and fill the jug with water. Then, turn on the lamp in the living room and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1708",
+      "instruction": "Move the jug, kettle, teapot, and cup from the dining table to the kitchen and fill all with water. Then, turn on the lamp in the living room and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_filled",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1709",
+      "instruction": "Move the plate, bowl, and cup from the dining table to the kitchen and fill the bowl with water. Then, turn on the lamp in the living room and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1710",
+      "instruction": "Move the jug, kettle, teapot, and cup from the dining table to the kitchen and fill the jug with water. Then, turn on the lamp in the living room and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1711",
+      "instruction": "Move the plate, bowl, and spoon from the dining table to the kitchen and wash them. Then, turn off the lamp in the living room and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_powered_off",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1712",
+      "instruction": "Move the kettle, teapot, cup, and jug from the dining table to the kitchen and fill the kettle with water. Then, turn on the lamp in the living room and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1713",
+      "instruction": "Move the plate, bowl, spoon, and fork from the dining table to the kitchen and wash them. Then, turn off the lamp in the living room and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_powered_off",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1714",
+      "instruction": "Move the vase, book, and laptop from the living room table to the bedroom and arrange them on the bed. Then, turn off the lamp in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_powered_off"
+      ]
+    },
+    {
+      "episode_id": "1715",
+      "instruction": "Move the toy pineapple, toy swing, and stuffed toy from the couch to the office table and dust them because they are dirty. Then, turn on the lamp on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_clean",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1717",
+      "instruction": "Move the kettle, jug, and teapot from the dining table to the kitchen and fill the kettle with water. Then, turn on the kettle.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1721",
+      "instruction": "Move the kettle and the jug from the kitchen counter to the dining room table and fill the kettle with water. Then turn on the kettle.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1722",
+      "instruction": "Move the teapot and the cup from the living room table to the kitchen counter and fill the teapot with water. Then clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1725",
+      "instruction": "Setup for lunch. Fill the jug on the hallway table with water and put it in the kitchen cabinet. Also, take a plate, a spoon, and a bowl from the kitchen cabinet and set them on the dining table. Finally, turn on the lamp in the dining room.",
+      "predicates": [
+        "is_filled",
+        "is_inside",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1726",
+      "instruction": "Prepare for a snack. Fill the kettle on the living room table with water and put it in the kitchen. Also, take a cup, a spoon, and a plate from the kitchen cabinet and set them on the dining table. Finally, turn off the lamp in the hallway.",
+      "predicates": [
+        "is_in_room",
+        "is_filled",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_powered_off"
+      ]
+    },
+    {
+      "episode_id": "1727",
+      "instruction": "Prepare for breakfast. Fill the jug on the hallway table with water and put it in the kitchen cabinet. Also, take two cups, two spoons, and two bowls from the kitchen cabinet and set them on the dining table. Finally, turn off the lamp in the living room.",
+      "predicates": [
+        "is_filled",
+        "is_inside",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_powered_off"
+      ]
+    },
+    {
+      "episode_id": "1728",
+      "instruction": "Move the kettle, jug, and teapot from the dining table to the kitchen, fill the kettle with water then turn on the kettle. Finally, clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1729",
+      "instruction": "Move the kettle, jug, and cup from the dining table to the kitchen and fill the kettle and jug with water. Then turn on the kettle and clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1730",
+      "instruction": "Move the teapot and spoon from the living room table to the kitchen and fill the teapot with water. Then turn on the teapot and clean the living room table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1738",
+      "instruction": "Move the jug, teapot, and cup from the dining table to the kitchen counter, fill all with water and turn on the lamp. Then, clean the kitchen table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1739",
+      "instruction": "Move the kettle and the plate from the bedroom table to the kitchen counter, fill the kettle with water and turn it on. Then, place the plate on the kitchen table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1740",
+      "instruction": "Move the spoon and the fork from the bathroom table to the kitchen counter, clean the bathroom table and then turn off the lamp.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_powered_off"
+      ]
+    },
+    {
+      "episode_id": "1741",
+      "instruction": "Move the bowl and the vase from the hallway bench to the living room table, clean the hallway bench and then turn on the lamp.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1742",
+      "instruction": "Move the plate and the spoon from the kitchen table to the living room table, clean the kitchen table and then turn on the lamp.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1743",
+      "instruction": "Clean the living room. Move the vase, stuffed toy, and cup from the table to the kitchen counter. Fill the vase with water and clean the living room table. Then, turn on the lamp and arrange the vase, stuffed toy, and cup back on the table after cleaning.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_clean",
+        "is_powered_on",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1754",
+      "instruction": "Move the kettle, jug, teapot, and spoon from the dining table to the kitchen and fill the kettle with water. Turn on the kettle, then clean the dining table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1755",
+      "instruction": "Move the cup, bowl, plate, and lamp from the living room table to the kitchen table and fill the bowl with water. Turn off the lamp, then clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_off",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1763",
+      "instruction": "Turn off the lamp on table in the living room. Then, bring a book from the shelves in the living room and a filled cup of water from the kitchen to the bedroom.",
+      "predicates": [
+        "is_powered_off",
+        "is_in_room",
+        "is_filled",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "1765",
+      "instruction": "Move the kettle and the jug from the living room table to the kitchen table and fill the kettle with water. Then turn on the kettle and clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1766",
+      "instruction": "Move the cup and the teapot from the living room table to the kitchen table and fill the cup with water from the teapot. Then clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1767",
+      "instruction": "Move the kettle, jug, and cup from the table to the kitchen and fill the kettle and jug with water. Then, turn on the kettle and clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1768",
+      "instruction": "Put the vase, plant container, and plant saucer to the other living room. Then, clean each object and clean the table. Finally arrange the objects back on the original table after cleaning.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1769",
+      "instruction": "Put the lamp, candle holder, and vase to the other living room. Then, turn on the lamp and clean each object. Finally arrange the objects back to the original the living room table after cleaning.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_powered_on",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1770",
+      "instruction": "Move the cup, bowl, and plate from the table to the kitchen table. Clean each object and clean the table. Finally arrange the objects back on the original table after cleaning.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_clean",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1772",
+      "instruction": "Move the kettle and cup from the living room table to the kitchen table, fill the kettle with water and turn it on. Then, move the jug from the dining table to the kitchen table and fill it with water. After that, place the cup on the kitchen table next to the kettle and clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_on_top",
+        "is_filled",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1775",
+      "instruction": "Move the kettle, jug, and cup to the kitchen counter and fill the kettle with water. Then turn on the kettle, and clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1781",
+      "instruction": "Move the kettle, teapot, and cup from the bedroom table to the kitchen and fill the kettle with water. Then turn on the lamp, and clean the bedroom table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1782",
+      "instruction": "Move the pitcher, plate, and fork from the kitchen to the living table and fill the pitcher with water. Then turn on the lamp, and clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1783",
+      "instruction": "Move the teapot and cup from the table to the kitchen table and fill the teapot with water. Then turn off the lamp and clean the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_off",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1784",
+      "instruction": "Move the bottle and spoon from the kitchen to the dining table and fill the bottle with water. Then turn on the lamp and clean the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    },
+    {
+      "episode_id": "1785",
+      "instruction": "Move the kettle and jug from the living room table to the kitchen table and fill the kettle with water. Then, turn on the lamp and clean the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_filled",
+        "is_powered_on",
+        "is_clean"
+      ]
+    }
+  ]
+}

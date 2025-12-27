@@ -1,0 +1,132 @@
+{
+  "overall_stats": {
+    "total_multi_agent_failures": 2,
+    "total_failures": 90,
+    "overall_percentage": 2.2222222222222223
+  },
+  "ranking_by_count": [
+    [
+      "rerange_spatial",
+      {
+        "total_failures": 10,
+        "multi_agent_failures": 1,
+        "multi_agent_percentage": 10.0,
+        "multi_agent_examples": [
+          {
+            "episode_id": "154",
+            "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac...",
+            "failure_message": "Result: Unexpected failure! - Failed! This object is held by another agent.",
+            "failure_type": "object_held_by_other_agent",
+            "action": {
+              "type": "Pick",
+              "params": "basket_0",
+              "line_num": 93,
+              "success": false
+            }
+          }
+        ],
+        "failure_types": {
+          "object_held_by_other_agent": 1
+        },
+        "episodes": [
+          "25",
+          "154"
+        ]
+      }
+    ],
+    [
+      "heterogeneous_temporal",
+      {
+        "total_failures": 10,
+        "multi_agent_failures": 1,
+        "multi_agent_percentage": 10.0,
+        "multi_agent_examples": [
+          {
+            "episode_id": "1828",
+            "instruction": "Fill the kettle with water and turn it on. Once the kettle is on, clean the dining table and teapot....",
+            "failure_message": "Result: Unexpected failure! - Failed! This object is held by another agent.",
+            "failure_type": "object_held_by_other_agent",
+            "action": {
+              "type": "Navigate",
+              "params": "kettle_0",
+              "line_num": 16,
+              "success": false
+            }
+          }
+        ],
+        "failure_types": {
+          "object_held_by_other_agent": 1
+        },
+        "episodes": [
+          "1694",
+          "1816",
+          "1828"
+        ]
+      }
+    ]
+  ],
+  "ranking_by_percentage": [
+    [
+      "rerange_spatial",
+      {
+        "total_failures": 10,
+        "multi_agent_failures": 1,
+        "multi_agent_percentage": 10.0,
+        "multi_agent_examples": [
+          {
+            "episode_id": "154",
+            "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac...",
+            "failure_message": "Result: Unexpected failure! - Failed! This object is held by another agent.",
+            "failure_type": "object_held_by_other_agent",
+            "action": {
+              "type": "Pick",
+              "params": "basket_0",
+              "line_num": 93,
+              "success": false
+            }
+          }
+        ],
+        "failure_types": {
+          "object_held_by_other_agent": 1
+        },
+        "episodes": [
+          "25",
+          "154"
+        ]
+      }
+    ],
+    [
+      "heterogeneous_temporal",
+      {
+        "total_failures": 10,
+        "multi_agent_failures": 1,
+        "multi_agent_percentage": 10.0,
+        "multi_agent_examples": [
+          {
+            "episode_id": "1828",
+            "instruction": "Fill the kettle with water and turn it on. Once the kettle is on, clean the dining table and teapot....",
+            "failure_message": "Result: Unexpected failure! - Failed! This object is held by another agent.",
+            "failure_type": "object_held_by_other_agent",
+            "action": {
+              "type": "Navigate",
+              "params": "kettle_0",
+              "line_num": 16,
+              "success": false
+            }
+          }
+        ],
+        "failure_types": {
+          "object_held_by_other_agent": 1
+        },
+        "episodes": [
+          "1694",
+          "1816",
+          "1828"
+        ]
+      }
+    ]
+  ],
+  "failure_types_distribution": {
+    "object_held_by_other_agent": 2
+  }
+}

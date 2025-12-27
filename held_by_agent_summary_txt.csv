@@ -1,0 +1,45 @@
+# 按实验统计
+实验名称,失败次数,涉及Episodes数
+2025-06-23_01-02-49-rerange+spatial_first5.json,17,2
+2025-06-23_13-32-25-rerange+spatial_first5.json,17,2
+2025-06-23_10-47-26-rerange+spatial_first5.json,17,2
+2025-06-25_11-00-48-rerange+spatial_first5.json,17,2
+2025-06-23_00-05-14-rerange+spatial.json,8,4
+2025-06-24_16-20-26-heterogeneous+rerange+spatial+temporal_first5.json,5,3
+2025-06-24_17-14-23-heterogeneous+rerange+spatial+temporal_first5.json,4,3
+2025-06-24_23-34-55-heterogeneous+rerange+temporal_first5.json,3,3
+2025-06-23_23-11-47-rerange_only_first5.json,3,2
+2025-06-25_00-40-07-heterogeneous+rerange+temporal_first5.json,3,2
+2025-06-25_09-06-16-heterogeneous+temporal_first5.json,2,2
+2025-06-23_20-32-40-rerange_only_first5.json,2,2
+2025-06-24_08-35-55-heterogeneous+rerange_first5.json,1,1
+2025-06-24_15-22-56-heterogeneous+rerange_first5.json,1,1
+2025-06-23_19-57-15-rerange_only_first5.json,1,1
+2025-06-23_15-02-28-rerange+spatial+temporal_first5.json,1,1
+2025-06-23_14-33-22-rerange+spatial+temporal_first5.json,1,1
+
+# 按动作类型统计
+动作类型,失败次数,占比(%)
+Pick,86,83.5
+Navigate,14,13.6
+Rearrange,3,2.9
+
+# 按物体类型统计
+物体类型,失败次数,占比(%)
+basket,65,63.1
+toy,5,4.9
+jug,4,3.9
+c-clamp,4,3.9
+book,4,3.9
+kettle,4,3.9
+electric,2,1.9
+spoon,2,1.9
+hammer,2,1.9
+plant,2,1.9
+teapot,2,1.9
+plate,2,1.9
+bread,1,1.0
+cup,1,1.0
+ladle,1,1.0
+candle,1,1.0
+spatula,1,1.0

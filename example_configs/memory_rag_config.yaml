@@ -1,0 +1,74 @@
+# Example configuration for using MEMENTO memory with RAG
+# This shows different memory configuration scenarios
+
+# Scenario 1: Memory-enhanced RAG with scene filtering
+memory_enhanced_rag:
+  planner:
+    _target_: habitat_llm.planner.llm_planner.LLMPlanner
+    enable_rag: True
+    rag_top_k: 5
+    example_type: react
+
+    # Memory configuration
+    rag_dataset_dir: ["/path/to/your/data"]
+    rag_data_source_name: ["trajectories"]
+    memory_path: "memory/my_experiment/run_001"  # Built using build_memory()
+    ensure_same_scene: True  # Only use examples from same scene
+    corresponding_memory: False
+
+    llm:
+      model_name: "llama3.1-8b"
+      temperature: 0.0
+
+# Scenario 2: Multi-scene memory without scene filtering
+multi_scene_memory:
+  planner:
+    _target_: habitat_llm.planner.llm_planner.LLMPlanner
+    enable_rag: True
+    rag_top_k: 7
+    example_type: summary
+
+    rag_dataset_dir: ["/path/to/your/data"]
+    rag_data_source_name: ["trajectories"]
+    memory_path: "memory/my_experiment/run_002"
+    ensure_same_scene: False  # Use examples from all scenes
+    corresponding_memory: True  # Enable corresponding memory lookup
+
+    llm:
+      model_name: "llama3.1-8b"
+      temperature: 0.1
+
+# Scenario 3: Skills-based memory
+skills_memory:
+  planner:
+    _target_: habitat_llm.planner.llm_planner.LLMPlanner
+    enable_rag: True
+    rag_top_k: 3
+    example_type: skills
+
+    rag_dataset_dir: ["/path/to/your/data"]
+    rag_data_source_name: ["skill_trajectories"]
+    memory_path: "memory/skills_experiment/run_001"
+    ensure_same_scene: True
+    skills_filter: ["pick and place", "navigation"]
+
+    llm:
+      model_name: "llama3.1-8b"
+      temperature: 0.0
+
+# Scenario 4: Fallback to regular RAG (no memory)
+regular_rag:
+  planner:
+    _target_: habitat_llm.planner.llm_planner.LLMPlanner
+    enable_rag: True
+    rag_top_k: 3
+    example_type: zero_shot
+
+    rag_dataset_dir: ["/path/to/regular/rag/data"]
+    rag_data_source_name: ["dataset.json.gz"]
+    # memory_path: null  # No memory path - uses regular RAG loading
+    ensure_same_scene: False
+
+    llm:
+      model_name: "llama3.1-8b"
+      temperature: 0.0

@@ -1,0 +1,13 @@
+{
+  "total_episodes": 1,
+  "task_type": "empty",
+  "source_dataset": "data/versioned_data/partnr_episodes/v0_0/train_2k.json.gz",
+  "output_file": "task_classification_datasets_first100/empty_first1.json.gz",
+  "episodes": [
+    {
+      "episode_id": "86",
+      "instruction": "Take the electronic cable with you. Leave in in the hallway.",
+      "predicates": []
+    }
+  ]
+}

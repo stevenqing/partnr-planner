@@ -1,0 +1,1652 @@
+{
+  "summary": {
+    "total_failures": 103,
+    "affected_experiments": 17,
+    "affected_episodes": 20,
+    "unique_objects": 24,
+    "action_types_involved": 3
+  },
+  "by_experiment": [
+    [
+      "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      {
+        "count": 17,
+        "episodes": [
+          "138",
+          "154"
+        ],
+        "actions": [
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick"
+        ],
+        "episode_count": 2
+      }
+    ],
+    [
+      "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      {
+        "count": 17,
+        "episodes": [
+          "138",
+          "154"
+        ],
+        "actions": [
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick"
+        ],
+        "episode_count": 2
+      }
+    ],
+    [
+      "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      {
+        "count": 17,
+        "episodes": [
+          "138",
+          "154"
+        ],
+        "actions": [
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick"
+        ],
+        "episode_count": 2
+      }
+    ],
+    [
+      "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      {
+        "count": 17,
+        "episodes": [
+          "138",
+          "154"
+        ],
+        "actions": [
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick"
+        ],
+        "episode_count": 2
+      }
+    ],
+    [
+      "2025-06-23_00-05-14-rerange+spatial.json",
+      {
+        "count": 8,
+        "episodes": [
+          "1125",
+          "1133",
+          "1124",
+          "1123"
+        ],
+        "actions": [
+          "Navigate",
+          "Pick",
+          "Pick",
+          "Navigate",
+          "Pick",
+          "Pick",
+          "Pick",
+          "Pick"
+        ],
+        "episode_count": 4
+      }
+    ],
+    [
+      "2025-06-24_16-20-26-heterogeneous+rerange+spatial+temporal_first5.json",
+      {
+        "count": 5,
+        "episodes": [
+          "434",
+          "431",
+          "1771"
+        ],
+        "actions": [
+          "Navigate",
+          "Navigate",
+          "Pick",
+          "Pick",
+          "Navigate"
+        ],
+        "episode_count": 3
+      }
+    ],
+    [
+      "2025-06-24_17-14-23-heterogeneous+rerange+spatial+temporal_first5.json",
+      {
+        "count": 4,
+        "episodes": [
+          "434",
+          "431",
+          "1771"
+        ],
+        "actions": [
+          "Pick",
+          "Navigate",
+          "Navigate",
+          "Navigate"
+        ],
+        "episode_count": 3
+      }
+    ],
+    [
+      "2025-06-24_23-34-55-heterogeneous+rerange+temporal_first5.json",
+      {
+        "count": 3,
+        "episodes": [
+          "435",
+          "457",
+          "453"
+        ],
+        "actions": [
+          "Rearrange",
+          "Pick",
+          "Pick"
+        ],
+        "episode_count": 3
+      }
+    ],
+    [
+      "2025-06-23_23-11-47-rerange_only_first5.json",
+      {
+        "count": 3,
+        "episodes": [
+          "3",
+          "2"
+        ],
+        "actions": [
+          "Pick",
+          "Pick",
+          "Pick"
+        ],
+        "episode_count": 2
+      }
+    ],
+    [
+      "2025-06-25_00-40-07-heterogeneous+rerange+temporal_first5.json",
+      {
+        "count": 3,
+        "episodes": [
+          "453",
+          "457"
+        ],
+        "actions": [
+          "Navigate",
+          "Pick",
+          "Pick"
+        ],
+        "episode_count": 2
+      }
+    ],
+    [
+      "2025-06-25_09-06-16-heterogeneous+temporal_first5.json",
+      {
+        "count": 2,
+        "episodes": [
+          "1816",
+          "1828"
+        ],
+        "actions": [
+          "Navigate",
+          "Navigate"
+        ],
+        "episode_count": 2
+      }
+    ],
+    [
+      "2025-06-23_20-32-40-rerange_only_first5.json",
+      {
+        "count": 2,
+        "episodes": [
+          "4",
+          "0"
+        ],
+        "actions": [
+          "Pick",
+          "Navigate"
+        ],
+        "episode_count": 2
+      }
+    ],
+    [
+      "2025-06-24_08-35-55-heterogeneous+rerange_first5.json",
+      {
+        "count": 1,
+        "episodes": [
+          "433"
+        ],
+        "actions": [
+          "Navigate"
+        ],
+        "episode_count": 1
+      }
+    ],
+    [
+      "2025-06-24_15-22-56-heterogeneous+rerange_first5.json",
+      {
+        "count": 1,
+        "episodes": [
+          "433"
+        ],
+        "actions": [
+          "Navigate"
+        ],
+        "episode_count": 1
+      }
+    ],
+    [
+      "2025-06-23_19-57-15-rerange_only_first5.json",
+      {
+        "count": 1,
+        "episodes": [
+          "4"
+        ],
+        "actions": [
+          "Pick"
+        ],
+        "episode_count": 1
+      }
+    ],
+    [
+      "2025-06-23_15-02-28-rerange+spatial+temporal_first5.json",
+      {
+        "count": 1,
+        "episodes": [
+          "161"
+        ],
+        "actions": [
+          "Rearrange"
+        ],
+        "episode_count": 1
+      }
+    ],
+    [
+      "2025-06-23_14-33-22-rerange+spatial+temporal_first5.json",
+      {
+        "count": 1,
+        "episodes": [
+          "161"
+        ],
+        "actions": [
+          "Rearrange"
+        ],
+        "episode_count": 1
+      }
+    ]
+  ],
+  "by_object_type": [
+    [
+      "basket",
+      65
+    ],
+    [
+      "toy",
+      5
+    ],
+    [
+      "jug",
+      4
+    ],
+    [
+      "c-clamp",
+      4
+    ],
+    [
+      "book",
+      4
+    ],
+    [
+      "kettle",
+      4
+    ],
+    [
+      "electric",
+      2
+    ],
+    [
+      "spoon",
+      2
+    ],
+    [
+      "hammer",
+      2
+    ],
+    [
+      "plant",
+      2
+    ],
+    [
+      "teapot",
+      2
+    ],
+    [
+      "plate",
+      2
+    ],
+    [
+      "bread",
+      1
+    ],
+    [
+      "cup",
+      1
+    ],
+    [
+      "ladle",
+      1
+    ],
+    [
+      "candle",
+      1
+    ],
+    [
+      "spatula",
+      1
+    ]
+  ],
+  "by_object_name": [
+    [
+      "basket_0",
+      64
+    ],
+    [
+      "c-clamp_1",
+      4
+    ],
+    [
+      "kettle_0",
+      4
+    ],
+    [
+      "jug_0",
+      2
+    ],
+    [
+      "electric_kettle_0",
+      2
+    ],
+    [
+      "toy_vehicle_0, on, floor_living_room_1, None, None",
+      2
+    ],
+    [
+      "jug_3",
+      2
+    ],
+    [
+      "book_1",
+      2
+    ],
+    [
+      "spoon_1",
+      2
+    ],
+    [
+      "hammer_4",
+      2
+    ],
+    [
+      "plant_container_1",
+      2
+    ],
+    [
+      "teapot_0",
+      2
+    ],
+    [
+      "plate_1",
+      2
+    ],
+    [
+      "book_0, on, shelves_26, None, None",
+      1
+    ],
+    [
+      "bread_0",
+      1
+    ],
+    [
+      "cup_1",
+      1
+    ],
+    [
+      "basket_2",
+      1
+    ],
+    [
+      "book_3",
+      1
+    ],
+    [
+      "ladle_2",
+      1
+    ],
+    [
+      "candle_holder_2",
+      1
+    ],
+    [
+      "spatula_0",
+      1
+    ],
+    [
+      "toy_pineapple_1",
+      1
+    ],
+    [
+      "toy_swing_1",
+      1
+    ],
+    [
+      "toy_vehicle_5",
+      1
+    ]
+  ],
+  "by_action_type": [
+    [
+      "Pick",
+      86
+    ],
+    [
+      "Navigate",
+      14
+    ],
+    [
+      "Rearrange",
+      3
+    ]
+  ],
+  "detailed_failures": [
+    {
+      "experiment": "2025-06-24_08-35-55-heterogeneous+rerange_first5.json",
+      "episode_id": "433",
+      "action_index": 3,
+      "action_type": "Navigate",
+      "action_line": "Navigate[jug_0]",
+      "object_type": "jug",
+      "object_name": "jug_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Let's make smoothies. Move the jug and toy fruits to the kitchen, and wash them. Place 2 glasses on ..."
+    },
+    {
+      "experiment": "2025-06-24_15-22-56-heterogeneous+rerange_first5.json",
+      "episode_id": "433",
+      "action_index": 1,
+      "action_type": "Navigate",
+      "action_line": "Navigate[jug_0]",
+      "object_type": "jug",
+      "object_name": "jug_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Let's make smoothies. Move the jug and toy fruits to the kitchen, and wash them. Place 2 glasses on ..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 10,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 20,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 22,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 24,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 26,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 28,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 30,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 32,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 34,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 36,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 38,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 40,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 42,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 44,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 46,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 48,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_01-02-49-rerange+spatial_first5.json",
+      "episode_id": "138",
+      "action_index": 6,
+      "action_type": "Pick",
+      "action_line": "Pick[c-clamp_1]",
+      "object_type": "c-clamp",
+      "object_name": "c-clamp_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me prepare a romantic dinner in bedroom. Place a spatula, c-clamp, candle, and hand towel on th..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 10,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 20,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 22,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 24,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 26,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 28,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 30,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 32,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 34,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 36,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 38,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 40,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 42,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 44,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 46,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 48,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_13-32-25-rerange+spatial_first5.json",
+      "episode_id": "138",
+      "action_index": 6,
+      "action_type": "Pick",
+      "action_line": "Pick[c-clamp_1]",
+      "object_type": "c-clamp",
+      "object_name": "c-clamp_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me prepare a romantic dinner in bedroom. Place a spatula, c-clamp, candle, and hand towel on th..."
+    },
+    {
+      "experiment": "2025-06-23_19-57-15-rerange_only_first5.json",
+      "episode_id": "4",
+      "action_index": 10,
+      "action_type": "Pick",
+      "action_line": "Pick[electric_kettle_0]",
+      "object_type": "electric",
+      "object_name": "electric_kettle_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me move the electric kettle, kettle, candle, and sponge from the kitchen to the living room? Pl..."
+    },
+    {
+      "experiment": "2025-06-23_15-02-28-rerange+spatial+temporal_first5.json",
+      "episode_id": "161",
+      "action_index": 12,
+      "action_type": "Rearrange",
+      "action_line": "Rearrange[toy_vehicle_0, on, floor_living_room_1, None, None]",
+      "object_type": "toy",
+      "object_name": "toy_vehicle_0, on, floor_living_room_1, None, None",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "First, move the toy vehicle and then the cushion from the kitchen to the living room and place them ..."
+    },
+    {
+      "experiment": "2025-06-23_14-33-22-rerange+spatial+temporal_first5.json",
+      "episode_id": "161",
+      "action_index": 12,
+      "action_type": "Rearrange",
+      "action_line": "Rearrange[toy_vehicle_0, on, floor_living_room_1, None, None]",
+      "object_type": "toy",
+      "object_name": "toy_vehicle_0, on, floor_living_room_1, None, None",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "First, move the toy vehicle and then the cushion from the kitchen to the living room and place them ..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 10,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 20,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 22,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 24,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 26,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 28,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 30,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 32,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 34,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 36,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 38,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 40,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 42,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 44,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 46,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 48,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-23_10-47-26-rerange+spatial_first5.json",
+      "episode_id": "138",
+      "action_index": 6,
+      "action_type": "Pick",
+      "action_line": "Pick[c-clamp_1]",
+      "object_type": "c-clamp",
+      "object_name": "c-clamp_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me prepare a romantic dinner in bedroom. Place a spatula, c-clamp, candle, and hand towel on th..."
+    },
+    {
+      "experiment": "2025-06-24_23-34-55-heterogeneous+rerange+temporal_first5.json",
+      "episode_id": "435",
+      "action_index": 5,
+      "action_type": "Rearrange",
+      "action_line": "Rearrange[book_0, on, shelves_26, None, None]",
+      "object_type": "book",
+      "object_name": "book_0, on, shelves_26, None, None",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Once I dust the shelves in the living room, let's arrange all of the books on them."
+    },
+    {
+      "experiment": "2025-06-24_23-34-55-heterogeneous+rerange+temporal_first5.json",
+      "episode_id": "457",
+      "action_index": 6,
+      "action_type": "Pick",
+      "action_line": "Pick[jug_3]",
+      "object_type": "jug",
+      "object_name": "jug_3",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Fill the jug with water and then empty it. Store the jug in the kitchen cabinet when you are done."
+    },
+    {
+      "experiment": "2025-06-24_23-34-55-heterogeneous+rerange+temporal_first5.json",
+      "episode_id": "453",
+      "action_index": 10,
+      "action_type": "Pick",
+      "action_line": "Pick[book_1]",
+      "object_type": "book",
+      "object_name": "book_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Begin by moving all the books from the living room to the bedroom. Then, dust each book and arrange ..."
+    },
+    {
+      "experiment": "2025-06-23_23-11-47-rerange_only_first5.json",
+      "episode_id": "2",
+      "action_index": 8,
+      "action_type": "Pick",
+      "action_line": "Pick[spoon_1]",
+      "object_type": "spoon",
+      "object_name": "spoon_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me move the laptop and spoon from the bedroom to the living room."
+    },
+    {
+      "experiment": "2025-06-23_23-11-47-rerange_only_first5.json",
+      "episode_id": "2",
+      "action_index": 10,
+      "action_type": "Pick",
+      "action_line": "Pick[spoon_1]",
+      "object_type": "spoon",
+      "object_name": "spoon_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me move the laptop and spoon from the bedroom to the living room."
+    },
+    {
+      "experiment": "2025-06-23_23-11-47-rerange_only_first5.json",
+      "episode_id": "3",
+      "action_index": 2,
+      "action_type": "Pick",
+      "action_line": "Pick[bread_0]",
+      "object_type": "bread",
+      "object_name": "bread_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Bring bread to the dining table. Move toy vehicle to the dining table. Move candle to the dining tab..."
+    },
+    {
+      "experiment": "2025-06-24_16-20-26-heterogeneous+rerange+spatial+temporal_first5.json",
+      "episode_id": "431",
+      "action_index": 16,
+      "action_type": "Navigate",
+      "action_line": "Navigate[hammer_4]",
+      "object_type": "hammer",
+      "object_name": "hammer_4",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Let's prepare for gardening. Move the plant containers and basket from the living room to the kitche..."
+    },
+    {
+      "experiment": "2025-06-24_16-20-26-heterogeneous+rerange+spatial+temporal_first5.json",
+      "episode_id": "434",
+      "action_index": 10,
+      "action_type": "Navigate",
+      "action_line": "Navigate[cup_1]",
+      "object_type": "cup",
+      "object_name": "cup_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the kettle from the living room to the kitchen counter, fill it with water and turn it on. Afte..."
+    },
+    {
+      "experiment": "2025-06-24_16-20-26-heterogeneous+rerange+spatial+temporal_first5.json",
+      "episode_id": "431",
+      "action_index": 1,
+      "action_type": "Pick",
+      "action_line": "Pick[plant_container_1]",
+      "object_type": "plant",
+      "object_name": "plant_container_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Let's prepare for gardening. Move the plant containers and basket from the living room to the kitche..."
+    },
+    {
+      "experiment": "2025-06-24_16-20-26-heterogeneous+rerange+spatial+temporal_first5.json",
+      "episode_id": "431",
+      "action_index": 4,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_2]",
+      "object_type": "basket",
+      "object_name": "basket_2",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Let's prepare for gardening. Move the plant containers and basket from the living room to the kitche..."
+    },
+    {
+      "experiment": "2025-06-24_16-20-26-heterogeneous+rerange+spatial+temporal_first5.json",
+      "episode_id": "1771",
+      "action_index": 2,
+      "action_type": "Navigate",
+      "action_line": "Navigate[kettle_0]",
+      "object_type": "kettle",
+      "object_name": "kettle_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the kettle and cup from the living room table to the kitchen table, fill the kettle with water ..."
+    },
+    {
+      "experiment": "2025-06-25_00-40-07-heterogeneous+rerange+temporal_first5.json",
+      "episode_id": "453",
+      "action_index": 9,
+      "action_type": "Navigate",
+      "action_line": "Navigate[book_3]",
+      "object_type": "book",
+      "object_name": "book_3",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Begin by moving all the books from the living room to the bedroom. Then, dust each book and arrange ..."
+    },
+    {
+      "experiment": "2025-06-25_00-40-07-heterogeneous+rerange+temporal_first5.json",
+      "episode_id": "457",
+      "action_index": 6,
+      "action_type": "Pick",
+      "action_line": "Pick[jug_3]",
+      "object_type": "jug",
+      "object_name": "jug_3",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Fill the jug with water and then empty it. Store the jug in the kitchen cabinet when you are done."
+    },
+    {
+      "experiment": "2025-06-25_00-40-07-heterogeneous+rerange+temporal_first5.json",
+      "episode_id": "453",
+      "action_index": 8,
+      "action_type": "Pick",
+      "action_line": "Pick[book_1]",
+      "object_type": "book",
+      "object_name": "book_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Begin by moving all the books from the living room to the bedroom. Then, dust each book and arrange ..."
+    },
+    {
+      "experiment": "2025-06-24_17-14-23-heterogeneous+rerange+spatial+temporal_first5.json",
+      "episode_id": "434",
+      "action_index": 1,
+      "action_type": "Pick",
+      "action_line": "Pick[kettle_0]",
+      "object_type": "kettle",
+      "object_name": "kettle_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the kettle from the living room to the kitchen counter, fill it with water and turn it on. Afte..."
+    },
+    {
+      "experiment": "2025-06-24_17-14-23-heterogeneous+rerange+spatial+temporal_first5.json",
+      "episode_id": "431",
+      "action_index": 2,
+      "action_type": "Navigate",
+      "action_line": "Navigate[plant_container_1]",
+      "object_type": "plant",
+      "object_name": "plant_container_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Let's prepare for gardening. Move the plant containers and basket from the living room to the kitche..."
+    },
+    {
+      "experiment": "2025-06-24_17-14-23-heterogeneous+rerange+spatial+temporal_first5.json",
+      "episode_id": "431",
+      "action_index": 4,
+      "action_type": "Navigate",
+      "action_line": "Navigate[hammer_4]",
+      "object_type": "hammer",
+      "object_name": "hammer_4",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Let's prepare for gardening. Move the plant containers and basket from the living room to the kitche..."
+    },
+    {
+      "experiment": "2025-06-24_17-14-23-heterogeneous+rerange+spatial+temporal_first5.json",
+      "episode_id": "1771",
+      "action_index": 2,
+      "action_type": "Navigate",
+      "action_line": "Navigate[kettle_0]",
+      "object_type": "kettle",
+      "object_name": "kettle_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the kettle and cup from the living room table to the kitchen table, fill the kettle with water ..."
+    },
+    {
+      "experiment": "2025-06-25_09-06-16-heterogeneous+temporal_first5.json",
+      "episode_id": "1828",
+      "action_index": 1,
+      "action_type": "Navigate",
+      "action_line": "Navigate[kettle_0]",
+      "object_type": "kettle",
+      "object_name": "kettle_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Fill the kettle with water and turn it on. Once the kettle is on, clean the dining table and teapot."
+    },
+    {
+      "experiment": "2025-06-25_09-06-16-heterogeneous+temporal_first5.json",
+      "episode_id": "1816",
+      "action_index": 1,
+      "action_type": "Navigate",
+      "action_line": "Navigate[teapot_0]",
+      "object_type": "teapot",
+      "object_name": "teapot_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Fill the teapot with water. Then, turn on the electric kettle."
+    },
+    {
+      "experiment": "2025-06-23_00-05-14-rerange+spatial.json",
+      "episode_id": "1125",
+      "action_index": 16,
+      "action_type": "Navigate",
+      "action_line": "Navigate[ladle_2]",
+      "object_type": "ladle",
+      "object_name": "ladle_2",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me move my teapot, cup, and ladle from the kitchen to my bedroom. Place them next to each other..."
+    },
+    {
+      "experiment": "2025-06-23_00-05-14-rerange+spatial.json",
+      "episode_id": "1124",
+      "action_index": 10,
+      "action_type": "Pick",
+      "action_line": "Pick[candle_holder_2]",
+      "object_type": "candle",
+      "object_name": "candle_holder_2",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Bring the action figure, toy swing, and candle holder from the living room to the entryway? Place th..."
+    },
+    {
+      "experiment": "2025-06-23_00-05-14-rerange+spatial.json",
+      "episode_id": "1133",
+      "action_index": 1,
+      "action_type": "Pick",
+      "action_line": "Pick[spatula_0]",
+      "object_type": "spatula",
+      "object_name": "spatula_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the spatula and plates to living room. Place them next to each other. Leave the doll and candle..."
+    },
+    {
+      "experiment": "2025-06-23_00-05-14-rerange+spatial.json",
+      "episode_id": "1133",
+      "action_index": 4,
+      "action_type": "Navigate",
+      "action_line": "Navigate[plate_1]",
+      "object_type": "plate",
+      "object_name": "plate_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the spatula and plates to living room. Place them next to each other. Leave the doll and candle..."
+    },
+    {
+      "experiment": "2025-06-23_00-05-14-rerange+spatial.json",
+      "episode_id": "1133",
+      "action_index": 10,
+      "action_type": "Pick",
+      "action_line": "Pick[plate_1]",
+      "object_type": "plate",
+      "object_name": "plate_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the spatula and plates to living room. Place them next to each other. Leave the doll and candle..."
+    },
+    {
+      "experiment": "2025-06-23_00-05-14-rerange+spatial.json",
+      "episode_id": "1123",
+      "action_index": 1,
+      "action_type": "Pick",
+      "action_line": "Pick[toy_pineapple_1]",
+      "object_type": "toy",
+      "object_name": "toy_pineapple_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me move some objects and a toy from the laundryroom to the familyroom. Can we take the can toy ..."
+    },
+    {
+      "experiment": "2025-06-23_00-05-14-rerange+spatial.json",
+      "episode_id": "1125",
+      "action_index": 1,
+      "action_type": "Pick",
+      "action_line": "Pick[teapot_0]",
+      "object_type": "teapot",
+      "object_name": "teapot_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me move my teapot, cup, and ladle from the kitchen to my bedroom. Place them next to each other..."
+    },
+    {
+      "experiment": "2025-06-23_00-05-14-rerange+spatial.json",
+      "episode_id": "1124",
+      "action_index": 8,
+      "action_type": "Pick",
+      "action_line": "Pick[toy_swing_1]",
+      "object_type": "toy",
+      "object_name": "toy_swing_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Bring the action figure, toy swing, and candle holder from the living room to the entryway? Place th..."
+    },
+    {
+      "experiment": "2025-06-23_20-32-40-rerange_only_first5.json",
+      "episode_id": "4",
+      "action_index": 13,
+      "action_type": "Pick",
+      "action_line": "Pick[electric_kettle_0]",
+      "object_type": "electric",
+      "object_name": "electric_kettle_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me move the electric kettle, kettle, candle, and sponge from the kitchen to the living room? Pl..."
+    },
+    {
+      "experiment": "2025-06-23_20-32-40-rerange_only_first5.json",
+      "episode_id": "0",
+      "action_index": 4,
+      "action_type": "Navigate",
+      "action_line": "Navigate[toy_vehicle_5]",
+      "object_type": "toy",
+      "object_name": "toy_vehicle_5",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me clean up the toys in bedroom. Place all the toy food, pencil case, file sorter, and toy vehi..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 10,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 20,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 22,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 24,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 26,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 28,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 30,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 32,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 34,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 36,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 38,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 40,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 42,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 44,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 46,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "154",
+      "action_index": 48,
+      "action_type": "Pick",
+      "action_line": "Pick[basket_0]",
+      "object_type": "basket",
+      "object_name": "basket_0",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Move the basket, toy food, ladle, and board game from the shelves to the shelves in the closet. Plac..."
+    },
+    {
+      "experiment": "2025-06-25_11-00-48-rerange+spatial_first5.json",
+      "episode_id": "138",
+      "action_index": 6,
+      "action_type": "Pick",
+      "action_line": "Pick[c-clamp_1]",
+      "object_type": "c-clamp",
+      "object_name": "c-clamp_1",
+      "failure_message": "Unexpected failure! - Failed! This object is held by another agent.",
+      "instruction": "Help me prepare a romantic dinner in bedroom. Place a spatula, c-clamp, candle, and hand towel on th..."
+    }
+  ]
+}

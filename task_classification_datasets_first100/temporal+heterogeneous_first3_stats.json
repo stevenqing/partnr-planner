@@ -1,0 +1,36 @@
+{
+  "total_episodes": 3,
+  "task_type": "temporal+heterogeneous",
+  "source_dataset": "data/versioned_data/partnr_episodes/v0_0/train_2k.json.gz",
+  "output_file": "task_classification_datasets_first100/temporal+heterogeneous_first3.json.gz",
+  "episodes": [
+    {
+      "episode_id": "1694",
+      "instruction": "Clean the kettle and teapot. Then, Fill the kettle with water, turn on the kettle, and clean each kettle and teapot.",
+      "predicates": [
+        "is_clean",
+        "is_clean",
+        "is_filled",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1816",
+      "instruction": "Fill the teapot with water. Then, turn on the electric kettle.",
+      "predicates": [
+        "is_filled",
+        "is_powered_on"
+      ]
+    },
+    {
+      "episode_id": "1828",
+      "instruction": "Fill the kettle with water and turn it on. Once the kettle is on, clean the dining table and teapot.",
+      "predicates": [
+        "is_filled",
+        "is_powered_on",
+        "is_clean",
+        "is_clean"
+      ]
+    }
+  ]
+}

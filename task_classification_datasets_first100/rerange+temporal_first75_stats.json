@@ -1,0 +1,769 @@
+{
+  "total_episodes": 75,
+  "task_type": "rerange+temporal",
+  "source_dataset": "data/versioned_data/partnr_episodes/v0_0/train_2k.json.gz",
+  "output_file": "task_classification_datasets_first100/rerange+temporal_first75.json.gz",
+  "episodes": [
+    {
+      "episode_id": "146",
+      "instruction": "Put the spatula on the other counter. Then, move the toy vehicle to the other table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "150",
+      "instruction": "Help me clean up the living room. Move the lamp, vase, and ramekin to a new table. After that, put the laptop on another chair.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "156",
+      "instruction": "First, move the electronic cable, then the android figure, and finally the lamp from the kitchen table to the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "272",
+      "instruction": "First, move the electronic cable from the bedroom to the dining room and place it on the table. Finally, move the lamp from the dining room to the bedroom table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "281",
+      "instruction": "First, place the toy food on the table in the bedroom and then put the stuffed toy on the bed.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "297",
+      "instruction": "First, move the toy fire truck from the living room table to the closet shelves. After that, put the credit card on the couch in the living room. Finally, move the watch to the table in the kitchen.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "309",
+      "instruction": "First, help me move my laptop and lamp from the living room to the bedroom. Then, place the laptop on the chest of drawers and the lamp on the bed.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "320",
+      "instruction": "First, move the vase from the table in the living room to the table in the kitchen. Then, place it on the counter.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "333",
+      "instruction": "First, place the spatula next and the c-clamp on a stool in the kitchen. Then, move them to the table in the dining room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "337",
+      "instruction": "First, help me move the candle and hand towel to the kitchen and place them on the counter? Then move them to the bedroom and place them next to each other on the bedside table. After that, place the spatula and c-clamp on the bedside table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "360",
+      "instruction": "First, help me create a cozy reading nook in the bedroom. Place a cushion on another chair, a lamp and a candle on the table next to each other, and a toy bee on another chest of drawers? Then move the cushion, lamp, candle, and toy bee to the living room and place them on the couch?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "363",
+      "instruction": "Help me rearrange the living room. First, move the lamp, vase, and ramekin from the tables to different tables in the living room. Then, move them to the bedroom table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "369",
+      "instruction": "First, help me create a play area in the living room by placing a toy vehicle next to a toy food and a stuffed toy on the coffee table. Move these toys to the bed in bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "371",
+      "instruction": "First, place the spatula on the counter in the entryway. Then, move the toy vehicle to a new table in the living room. Finally, relocate both cushions to the chest of drawers in bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "389",
+      "instruction": "First, help me bring the plants from bedroom to the living room. Then, place them on the table in the dining room.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "425",
+      "instruction": "First, bring the toy airplane and toy pineapple from the bedroom to the living room. Then, move them to the dining room and place the toy airplane on the table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "430",
+      "instruction": "Let's organize the living room. Arrange all the books to the living room tables, while I clean the couch. After all this, let's arrange the folders next to the books.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "648",
+      "instruction": "Put the toy airplane and plant saucer on the office table. Then, put the phone stand and kettle on the office.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "839",
+      "instruction": "First, move the toy airplane, then the toy animal, and finally the toy food from the kitchen counter to the bedroom chest of drawers.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "874",
+      "instruction": "Help me move these objects from the office to the closet. First, take the laptop stand from the table and place it on the shelves. Next, bring the folder from the chair and place it on the stool.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "943",
+      "instruction": "First, move the keychain, then the watch, and finally the credit card from the bedroom chest of drawers to the office table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1075",
+      "instruction": "First, move the jug, then the cup, and finally the bowl from the kitchen cabinet to the dining booth table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1173",
+      "instruction": "Help me move these objects from the living room to the bedroom. First, take the vase from the table and place it on the bedside table. Next, bring the picture frame from the couch and place it on the bed.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1185",
+      "instruction": "First, move the vase, then the candle, and finally the candle holder from the living room shelves to the dining table?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1197",
+      "instruction": "Help me move these objects from the kitchen to the dining room. First, take the teapot from the counter and place it on the table. Next, bring the cup from the stool and place it on the chair.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1223",
+      "instruction": "Help me exchange these objects. First, place the butter dish on kitchen counter. Then, move the butter dish to the table in the bedroom. After that, place the egg on the dining room table. Finally, move the egg to the chair in the kitchen.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1236",
+      "instruction": "Help me prepare a snack in the bedroom. First, place a tray and ladle on the bed. Then, move them to the chest of drawers in the bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1257",
+      "instruction": "First, move the apple from the kitchen to the office and place it on the table. Then, move the bread from the office to the kitchen and place it on the counter. Next, move all these objects to the dining room and place them on the chair.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1270",
+      "instruction": "First, move the phone stand and the vase to the table in the dining room. Finally, place the candle on another shelf in the bedroom?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1275",
+      "instruction": "First, move the clock, folder, and toy vehicle from the bedroom to the laundryroom/mudroom. Place the clock on the washer dryer and the folder and toy vehicle on the washer dryer placing them next to each other. Then, move all these items to the dining room and place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1278",
+      "instruction": "First, help me rearrange the closet by placing the shoe in the lounge. Then, move all of them to another closet.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "1296",
+      "instruction": "First, place the plate next to the bowl on the dining table. Then, move both to the shelves in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1302",
+      "instruction": "First, help me move my basket and apple from the entryway to the kitchen. Then, place the basket on the counter and the apple on the counter.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1324",
+      "instruction": "Move the statue and candle from the living room to the dining room? Then, place the statue on the table and the candle on the shelves?",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1330",
+      "instruction": "Move the tomato, plant container, and file sorter from the kitchen to the bedroom. Place the tomato on the table and the plant container and file sorter on the bedside tables placing them next to each other. Then, move all these items to the other room and place them on the chair.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1334",
+      "instruction": "First, help me rearrange the hallway by placing the toy vehicle next to the helmet, and the folder on the bench. Then, move all of them to the cabinet in the kitchen.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1337",
+      "instruction": "First, move the vase from the living room table to the bedroom table. After that, put the helmet on the other couch in the living room. Finally, move the laptop to the other counter in the kitchen.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1338",
+      "instruction": "First, place the laptop cover next to the hand towel on the other table in the bedroom. Then, move both to the couch in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1349",
+      "instruction": "Help me rearrange the living room. First, move the spoon, plate, and bowl from the tables to hallway table. Then, move them to the bedroom chest of drawers.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1362",
+      "instruction": "Help me prepare a candlelit dinner in the bedroom? First, place a tray and spoon on the dining table. Then, move them to the chair in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1375",
+      "instruction": "First, move the vase, ladle, and toy vehicle from the kitchen to the bedroom. Place the vase on the table and the ladle and toy vehicle on the bedroom tables placing them next to each other. Then move all these items to the kitchen and place them on the chair.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1379",
+      "instruction": "Help me tidy up the kitchen. First, place the spatula to the chair in the same room. Next, put the ladle on the chair where the spatula is.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1386",
+      "instruction": "Place a laptop next to the laptop stand and the mouse pad on the living room table. Then, move the laptop, laptop stand, and mouse pad to the bedroom and place them on the bed.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1406",
+      "instruction": "First, help me move my bread and milk frother cup from the kitchen to the living room. Then, place the bread on the table and the milk frother cup on the chair.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1420",
+      "instruction": "First, bring all lamps to the table in the kitchen. Then move them to the bathroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "1429",
+      "instruction": "First, move the doll, book, and vase from the bedroom to the bathroom. Place the doll on the table and the book and vase on the shelves placing them next to each other. Then, move all these items to the dining booth and place them on the table.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1432",
+      "instruction": "Help me tidy up the office. First, place the helmet on the table in the dining booth. Then, move the helmet to the shelves. Next, put the candle holder and book on the table in the dining booth?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1438",
+      "instruction": "First, put the toy food on the kitchen counter. Next, move the toy food and the vase to the table in the dining room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1445",
+      "instruction": "First, make sure that the tomato is on top of the stool in the kitchen. Then, move the helmet to the stool in the kitchen and place it there.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1452",
+      "instruction": "Help me prepare a candlelit dinner? First, place a vase and credit card on the dining room table. Then, move them to the table in the kitchen.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1455",
+      "instruction": "Help me tidy up the tv room. First, place the gaming console on the office cabinet. Next, put the laptop on the shelf in the tv room where the gaming console was. Leave the picture frame on the stand.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1476",
+      "instruction": "Place a vase next to the stuffed toy and the book on another chest of drawers in the bedroom. Then move the vase, stuffed toy, and book to the living room and place them on the couch.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1483",
+      "instruction": "First, bring the book, doll, and toy swing from the living room to the bedroom. Then move them to the closet.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "1486",
+      "instruction": "First, place the bread next to the tomato on another counter in the kitchen. Then, move both to the chest of drawers in the bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1487",
+      "instruction": "Move the watch, cellphone, and credit card from the bedroom table to different tables in the living room. Then, move them to the office shelves.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1490",
+      "instruction": "Move the laptop and lamp from the living room to the bedroom. Then, place the laptop on the chest of drawers and the lamp on the bed.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1500",
+      "instruction": "Move the vase from the office shelves to the dining room table. After that, put the toy fire truck on the counter in the living room. Finally, put the kettle inside the fridge.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_inside"
+      ]
+    },
+    {
+      "episode_id": "1503",
+      "instruction": "Place a toy airplane next to the other living room table. Then, move the toy airplane, toy fire truck, and vase to the bedroom and place them on the bed.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1514",
+      "instruction": "First, move the basketball from the living room table to the bedroom chest of drawers. After that put the helmet on the stool in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1521",
+      "instruction": "First, move the basketball from the living room stool to the bedroom chest of drawers. After that put the helmet on the couch in the living room. Finally, move the plate to the living room table.",
+      "predicates": [
+        "is_in_room",
+        "is_on_top",
+        "is_in_room",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1533",
+      "instruction": "First, move the toy construction set from the bedroom shelves to the kitchen cabinet. After that put the laptop cover on the couch in the living room. Finally, move the basketball to the table in the family room.",
+      "predicates": [
+        "is_in_room",
+        "is_on_top",
+        "is_in_room",
+        "is_on_top",
+        "is_in_room",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1538",
+      "instruction": "First, move the vase from the living room table to the bedroom chest of drawers. After that, put the spoon on the table in the living room. Finally, move the laptop to another table in the office.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1544",
+      "instruction": "First, place the toy bee on the table in the other bedroom. Then, move the toy vehicle to a lounge table. Finally, relocate both baskets to the cabinet in kitchen.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1548",
+      "instruction": "Move the book, clock, and picture frame from the bedroom bed to different tables in the bedroom. Then, move them to the lounge table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1560",
+      "instruction": "Move the plate, bowl, and cup from the dining table to different chairs in the dining room. Then move them to the dining room counter.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1575",
+      "instruction": "First, move the candle, helmet, and toy vehicle from the living room to the bedroom? Place the candle on the table and the helmet and toy vehicle on the bedside tables placing them next to each other? Then, move all these items to the living room and place them on the chair.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1579",
+      "instruction": "First, move the kettle from the kitchen to the bathroom and place it on the toilet. Then, move the milk frother cup from the bathroom to the kitchen and place it on the counter. Next, move the kettle to the hallway and place them on the cabinet. Leave the milk frother cup on the counter in the kitchen.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1584",
+      "instruction": "First, move the toy airplane from the living room shelves to the hallway cabinet. After that, put the bowl on the kitchen counter. Finally, move the action figure to the office cabinet.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1588",
+      "instruction": "Help me move these objects from their current locations to the specified locations. First, place a statue and vase on the living room table. After that, move the statue and the vase from the living room to the cabinet in the hallway.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1605",
+      "instruction": "First, place the toy airplane next and the toy vehicle on another shelf in the bedroom. Then, move them to the table in the dining room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1610",
+      "instruction": "Move the laptop, candle, book, and vase from the table in the living room to the chest of drawers in the bedroom? Then, place them next to each other on the bed.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1611",
+      "instruction": "First, place the phone stand next to the laptop stand on the table in the bedroom. Then, move both to the bed in a bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1793",
+      "instruction": "Move the vase from the entryway to the living room. Then, place the stuffed toy on the bedroom couch.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1801",
+      "instruction": "Take the vase from the entryway table and put it on the living room table. Then, take the candle from the living room table and put it on the kitchen table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1802",
+      "instruction": "Take the book from the bedroom table and put it on the living room table. Then, take the laptop from the bedroom table and put it on the kitchen table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+# Configuration for LLM Planner with MEMENTO Memory Support
+# This configuration enables memory-based RAG using the MEMENTO technique
+
+_target_: habitat_llm.planner.llm_planner.LLMPlanner
+
+# Core planner settings
+enable_rag: True
+rag_top_k: 3
+
+# Example type for RAG (react, summary, zero_shot, skills)
+example_type: react
+
+# RAG dataset configuration
+rag_dataset_dir:
+  - data/rag_datasets/  # Base directory containing memory or regular datasets
+
+rag_data_source_name:
+  - react_trajectories  # Source dataset name
+
+# Memory-specific configuration (MEMENTO integration)
+memory_path: memory/experiment/run_001  # Path to memory structure (relative to rag_dataset_dir)
+ensure_same_scene: True  # Only retrieve examples from the same scene
+corresponding_memory: False  # Enable corresponding memory lookup for related episodes
+
+# Skills filter (optional) - only used for skills example_type
+# skills_filter:
+#   - "pick and place"
+#   - "navigation"
+
+# LLM configuration
+llm:
+  _target_: habitat_llm.llm.llm.LLM
+  model_name: "llama3.1-8b"
+
+  # LLM generation parameters
+  temperature: 0.0
+  max_new_tokens: 1000
+
+  # System tags for formatting
+  system_tag: "<|start_header_id|>system<|end_header_id|>\n"
+  user_tag: "<|start_header_id|>user<|end_header_id|>\n"
+  assistant_tag: "<|start_header_id|>assistant<|end_header_id|>\n"
+  eot_tag: "<|eot_id|>\n"
+
+# Planning settings
+replan_at_failure: True
+replan_at_success: False
+max_replanning_attempts: 3
+use_progress_check: True
+
+# Memory building settings (for building new memories)
+build_memory_from_results: False  # Set to True to build memory from experiment results
+memory_base_dir: memory/  # Base directory for storing memories
+filter_successful_only: True  # Only include successful episodes in memory

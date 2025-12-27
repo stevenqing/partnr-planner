@@ -1,0 +1,900 @@
+{
+  "total_episodes": 100,
+  "task_type": "rerange_only",
+  "source_dataset": "data/versioned_data/partnr_episodes/v0_0/train_2k.json.gz",
+  "output_file": "task_classification_datasets_first100/rerange_only_first100.json.gz",
+  "episodes": [
+    {
+      "episode_id": "0",
+      "instruction": "Help me clean up the toys in bedroom. Place all the toy food, pencil case, file sorter, and toy vehicle on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "1",
+      "instruction": "Please move the vase and plant from the living room table to the other living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "2",
+      "instruction": "Help me move the laptop and spoon from the bedroom to the living room.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "3",
+      "instruction": "Bring bread to the dining table. Move toy vehicle to the dining table. Move candle to the dining table? Move plant container to the bedroom stand. Move credit card to the bedroom stand.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "4",
+      "instruction": "Help me move the electric kettle, kettle, candle, and sponge from the kitchen to the living room? Place them on the side table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "5",
+      "instruction": "Help me tidy up the toys in bedroom. Place the toy airplane, toy pineapple, and toy cactus on the chair in another bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "6",
+      "instruction": "Move the electric kettle and kettle from the kitchen to the living room and place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "7",
+      "instruction": "Help me move the candle and lamp from the table to the living room chair?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "8",
+      "instruction": "Help me set up a cozy living room. Place an electric kettle, a kettle, a candle, and a plant container on a new table?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "9",
+      "instruction": "Help me make tea in the living room. Place the electric kettle and kettle on the table. Also bring spoons from the chest of drawers in the bedroom to the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "10",
+      "instruction": "Move the laptop, lamp, phone, and clock from the table in the bedroom to the table in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "11",
+      "instruction": "Please move the plant and plant container from the bedroom to the kitchen and place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "12",
+      "instruction": "Help me set up a snack in the dining room. Place the tomato, bread, and can on the table?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "13",
+      "instruction": "Help me set up a play area in the living room. Place toy vehicles, toy swing, and carrying case on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "14",
+      "instruction": "Help me bring the plants from bedroom to the living room and place it on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "15",
+      "instruction": "Please bring the toy vehicles and toy food from the bedroom to the living room and place them on the tables. Also, bring the pencil case from the bedroom to the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "16",
+      "instruction": "Place the plant containers on the other chest of drawers in the original bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "17",
+      "instruction": "Help me move the toy vehicles, toy food items, and stuffed toy from the bedroom to the living room.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "18",
+      "instruction": "Help me make tea in the living room. Place the electric kettle and kettle on the table. Also bring a cushion and spoon from the bedroom to the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "19",
+      "instruction": "Help me create a cozy atmosphere in the living room. Place a candle, a toy vehicle, a squeezer, and an egg on the tables?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "20",
+      "instruction": "Talke the stuffed toy, toy food, and toy vehicle and place them on the coffee table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "21",
+      "instruction": "Bring the tomato, sushi mat, stuffed toy, and toy fire truck from the bedroom to the table in the dining room. Place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "22",
+      "instruction": "Bring the candle, toy vehicle, squeezer, egg, stuffed toy, and bath towel from the bedroom to the living room and place them on the table?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "23",
+      "instruction": "Bring the candle, toy vehicle, squeezer, egg, and stuffed toy from the bedroom to the living room and place them on the table?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "24",
+      "instruction": "Help me create a cozy reading nook in the bedroom. Place the candle on another chest of drawers, the lamp on another bed, and the book on another chest of drawers? The toy vehicle can stay on the chair?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "26",
+      "instruction": "Help me prepare the bedroom for a guest. Place a stuffed toy, a lamp, a plant container, and a bowl on the bed.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "27",
+      "instruction": "Bring the toy vehicles and toy food from the bedroom to the table in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "28",
+      "instruction": "Move the plant and plant container from the bedroom to the living room and place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "29",
+      "instruction": "Put the baseball bat on another chair and the sushi mat on another table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "30",
+      "instruction": "Bring the plant container, stuffed toy, and cushion from the bedroom to the living room and place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "31",
+      "instruction": "Put the toy vehicle and toy food on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "32",
+      "instruction": "Take the apple, sushi mat, toy food, and pitcher from the kitchen to bedroom and place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "33",
+      "instruction": "Move the tomato and sushi mat from the counter in the kitchen to the table in the dining room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "34",
+      "instruction": "Move the candle, book, lamp, and sponge from the chest of drawers in bedroom to the table in bedroom ?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "35",
+      "instruction": "Move the sushi mat, spatula, bowl, and tomato from the kitchen to the table in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "36",
+      "instruction": "Move the bowl, plant, and spoon from the living room to the dining room and place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "37",
+      "instruction": "Help me create a fun activity area in the living room. Place a baseball bat, a toy pineapple, and a tennis racquet on the coffee table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "38",
+      "instruction": "Move the plant, plant saucer, and tomato from the chest of drawers to the table in the bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "39",
+      "instruction": "Move the plant and its container to the bedroom table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "40",
+      "instruction": "Help me move the bowl, spoon, and apple from the living room to the bedroom.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "41",
+      "instruction": "Move the bowl and spoon from the table to the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "42",
+      "instruction": "Bring the plant, plant saucer, and clock from the bedroom to the living room and place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "43",
+      "instruction": "Bring the candle, toy vehicle, squeezer, and egg from the bedroom and kitchen to the living room and place them on the tables?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "44",
+      "instruction": "Arrange the plant, stuffed toy, and cushion on another chest of drawers in the bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "45",
+      "instruction": "Move the candle and lamp from the bedroom to the living room and put them on the table ?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "46",
+      "instruction": "Place the candle, candle holder, toy vehicle, squeezer, and egg on the living room table?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "47",
+      "instruction": "Bring the candle, plant container, and toy vehicle to the table in the bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "48",
+      "instruction": "Help me prepare the bedroom for a cozy evening. Place a plant container, a stuffed toy, a cushion and a sushi mat on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "49",
+      "instruction": "Move the candle, book, and lamp to another bed? Put the apple on another chest of drawers.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "50",
+      "instruction": "Bring the toy airplane and toy pineapple from the bedroom to the living room and place them on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "51",
+      "instruction": "Move the stuffed toy, cushion, tennis racquet, and sponge from the chest of drawers to the bed in the bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "52",
+      "instruction": "Bring the plant and plant container from the chest of drawers to the table in the living room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "53",
+      "instruction": "Move the lamp, scissors, and sponge from the living room to the bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "54",
+      "instruction": "Move the toy bee and toy construction set from the living room table to the shelves in the laundary room.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "55",
+      "instruction": "Move the basket, ladle, and both toy foods from the shelves to the closet.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "57",
+      "instruction": "Move the toy fire truck to a different table in the living room, and put the credit card on the kitchen counter. Also, move the watch to another living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "58",
+      "instruction": "Move an electronic cable, android figure, and lamp from the kitchen table to the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "59",
+      "instruction": "Oops, the toy food got put on the shelf in the laundary room. Can we move all of them to the kitchen cabinet?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "60",
+      "instruction": "Move the toy fire truck from the living room to the bedroom.",
+      "predicates": [
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "61",
+      "instruction": "Move the lamp and plant container to be on top of a chest of drawers in the bedroom. Also, put the phone and vase inside that drawer.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "62",
+      "instruction": "Help me move the two toy animals from the chest of drawers to stools in the kitchen.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "63",
+      "instruction": "Move the cushions from the living room couch to the bedroom bed, and move the cellphone and pencil case to the kitchen table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "64",
+      "instruction": "Let's get the toys out to play with. Put the toy animals and toy food on the bed.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "65",
+      "instruction": "Return two cups from the dining table to the kitchen cabinets. They weren't used.",
+      "predicates": [
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "66",
+      "instruction": "Bring two cups to the table where the teapot is.",
+      "predicates": [
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "67",
+      "instruction": "Move the apple, candle holder, spatula, and sushi mat from the living room table to the kitchen table?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "68",
+      "instruction": "Put some spectacles in the fridge. I want to learn if wearing cold spectacles is a good way to cool down. Oh, let's put a hat in there too!",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "69",
+      "instruction": "Help me prepare a snack. Bring the apple and spatula to a living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "70",
+      "instruction": "Help me move the cup and the laptop to the counter, please.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "71",
+      "instruction": "Help me move my laptop and lamp from the living room to the bedroom. Both in my wardrobe for now.",
+      "predicates": [
+        "is_inside",
+        "is_inside"
+      ]
+    },
+    {
+      "episode_id": "72",
+      "instruction": "Set the lamp and hard drive on toilets so I can clean the floors.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "73",
+      "instruction": "Move the lamp and plant from the table in the living room to the another living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "74",
+      "instruction": "Move the toy car to the closet. Anywhere is fine, I just want it put away.",
+      "predicates": [
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "75",
+      "instruction": "Put the toy fire truck and toy airplane inside kitchen cabinets.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "76",
+      "instruction": "Place the hat on the counter and the bottle in the kitchen fridge.",
+      "predicates": [
+        "is_on_top",
+        "is_inside"
+      ]
+    },
+    {
+      "episode_id": "77",
+      "instruction": "Move the cushion and plant from the living room couch to the other living room couch.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "78",
+      "instruction": "Move the plate and bowl from the kitchen to the living room.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "79",
+      "instruction": "Move the plant to a different chest of drawers in the bedroom.",
+      "predicates": [
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "80",
+      "instruction": "Move the toy animal and toy vehicle to the couch in the living room that has the cushions.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "81",
+      "instruction": "Help me tidy up the living room. Put the picture and cusion on the table that has the laptop.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "82",
+      "instruction": "Make sure the plant saucer and both toy foods are on the same table. Leave the toy fire truck and toy bee as they are.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "83",
+      "instruction": "Move the vase from the table in the living room to inside the laundry room cabinet.",
+      "predicates": [
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "84",
+      "instruction": "There are vases on two different tables. Bring the vases from the table with the most vases to the garage.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room"
+      ]
+    },
+    {
+      "episode_id": "85",
+      "instruction": "Move the laptop, lamp, and candle from the kitchen table to a living room table?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "87",
+      "instruction": "Help me organize the living room. Place the lamp on another table, the cushion on another chair, the toy bee on another chair, and the file sorter to a new table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "88",
+      "instruction": "Move the electronic cable, sushi mat, and toy pineapple from the living room to the bedroom. Place the electronic cable on the table and the sushi mat and toy pineapple on the tables.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "89",
+      "instruction": "Help me rearrange the living room. Place the lamp, ramekin, and laptop stand on the coffee table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "90",
+      "instruction": "Move the lamp and vase from the coffee table to the dining table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "91",
+      "instruction": "Help me move the kettle and electric kettle from the counter in the kitchen to the counter in the entryway/foyer/lobby.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "92",
+      "instruction": "Help me move my shoes to the bedroom. Place them on the stool in bedroom. Leave the phone stand on the table in bedroom.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "93",
+      "instruction": "Help me move the apple, phone, and spatula from the kitchen counter to the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "94",
+      "instruction": "Help me organize the living room. Place a phone stand another living room table, an electronic cable on another living room table, a book on another living room table, and a squeezer on another the living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "95",
+      "instruction": "Move the spoon and kettle from the kitchen to the living room. Place the toy food in the kitchen cabinet.",
+      "predicates": [
+        "is_in_room",
+        "is_in_room",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "96",
+      "instruction": "Help me prepare a romantic dinner in the living room. Place a spatula, a c-clamp, and a candle on another table?",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "97",
+      "instruction": "Help me move the spray bottle and toy food from the living room table to a new living room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "98",
+      "instruction": "Move the lamp and vase from the living room table to the dining room table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "99",
+      "instruction": "Help me tidy up the bedroom. Move the lamp and phone from the table to the chest of drawers. Leave the toy vehicle on the chest of drawers.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "100",
+      "instruction": "Place the spatula and c-clamp inside the kitchen cabinet.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "101",
+      "instruction": "Move the phone stand from the bedroom to the living room and place it on the table. Move the file sorter from the living room to the bedroom and place it on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top"
+      ]
+    },
+    {
+      "episode_id": "102",
+      "instruction": "Help me set up a play area for a -year-old child in the living room. Place a toy vehicle, toy food stuffed toy, and toy construction set on the table.",
+      "predicates": [
+        "is_on_top",
+        "is_on_top",
+        "is_on_top",
+        "is_on_top"
+      ]
+    }
+  ]
+}

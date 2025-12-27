@@ -1,0 +1,88 @@
+# @package _global_
+
+# 简化版配置，专注于成功轨迹保存到RAG功能
+
+defaults:
+  - override /hydra/output : output
+  - _self_
+
+# 基础配置
+device: cuda
+instruction: ''
+mode: "dataset"  # cli / dataset
+env: habitat
+num_runs_per_episode: 1
+num_proc: 1
+dry_run: False
+robot_agent_uid: 0
+
+# 智能体配置
+agents:
+  agent_0:
+    uid: 0
+
+# 路径配置
+paths:
+  results_dir: ${hydra:runtime.output_dir}/results
+  epi_result_file_path: "${paths.results_dir}/episode_result_log.csv"
+  run_result_file_path: "${paths.results_dir}/run_result_log.csv"
+  end_result_file_path: "${paths.results_dir}/end_result_log.csv"
+
+# 评估配置
+evaluation:
+  do_print: True
+  save_video: False
+  log_data: True
+  save_rgb: False
+  log_detailed_traces: True
+
+  # 成功轨迹保存到RAG配置
+  save_to_rag: True                    # 启用成功轨迹保存到RAG
+  rag_base_dir: "data/rag_datasets/"   # RAG数据集基础目录
+  example_type: "summary"              # RAG示例类型: "react", "summary", "zero_shot"
+  enable_dynamic_rag: True             # 启用动态RAG更新
+
+  # RAG质量控制
+  min_success_threshold: 0.8           # 最小成功阈值，只有高质量成功才添加到RAG
+  max_trajectory_length: 50            # 最大轨迹长度限制
+  enable_trajectory_filtering: True     # 启用轨迹过滤
+
+# Habitat基础配置
+habitat:
+  dataset:
+    data_path: ""  # 需要在运行时指定
+  task:
+    pddl_domain_def: fp
+  simulator:
+    agents:
+      agent_0:
+        radius: 0.3
+
+# Hydra配置
+hydra:
+  job:
+    name: 'habitat_llm_enhanced'
+    chdir: False
+  run:
+    dir: outputs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
+
+# RAG特定配置
+rag_config:
+  # 增量学习配置
+  incremental_update: True
+  batch_size: 32
+  update_frequency: 10  # 每10个成功episode更新一次RAG索引
+
+  # 轨迹质量评估
+  quality_metrics:
+    - efficiency_score    # 效率评分
+    - action_diversity   # 动作多样性
+    - success_rate       # 成功率
+
+  # 存储配置
+  max_rag_entries: 1000   # RAG数据集最大条目数
+  cleanup_threshold: 1200 # 超过此数量时进行清理
+
+  # 嵌入模型配置
+  embedding_model: "all-mpnet-base-v2"
+  embedding_device: "cuda"
