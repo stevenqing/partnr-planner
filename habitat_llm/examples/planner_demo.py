@@ -14,6 +14,7 @@ import json
 import shutil
 import pickle
 from omegaconf import OmegaConf
+from tqdm import tqdm
 
 
 # append the path of the
@@ -518,13 +519,16 @@ def run_planner(config, dataset: CollaborationDatasetV0 = None, conn=None):
 
         num_episodes = len(env_interface.env.episodes)
         for run_id in range(config.num_runs_per_episode):
-            for _ in range(num_episodes):
+            # Create progress bar for episodes
+            pbar = tqdm(range(num_episodes), desc=f"Run {run_id+1}/{config.num_runs_per_episode}", unit="episode")
+            for episode_idx in pbar:
                 # Get episode id
                 episode_id = env_interface.env.env.env._env.current_episode.episode_id
 
                 # Get instruction
                 instruction = env_interface.env.env.env._env.current_episode.instruction
-                print("\n\nEpisode", episode_id)
+                pbar.set_description(f"Run {run_id+1}/{config.num_runs_per_episode} | Episode {episode_id} [{episode_idx+1}/{num_episodes}]")
+                print(f"\n\nEpisode {episode_id}")
 
                 try:
                     info = eval_runner.run_instruction(
@@ -561,7 +565,14 @@ def run_planner(config, dataset: CollaborationDatasetV0 = None, conn=None):
                     cprint(f"Metrics For Run {run_id} Episode {episode_id}:", "blue")
                     for k, v in stats_episodes[str(run_id)][episode_id].items():
                         cprint(f"{k}: {v:.3f}", "blue")
-                    cprint("\n---------------------------------", "blue")
+                    cprint("---------------------------------", "blue")
+                    # Show progress
+                    pbar.set_postfix({
+                        "success": f"{stats_episode.get('task_state_success', 0):.0%}",
+                        "complete": f"{stats_episode.get('task_percent_complete', 0):.1%}"
+                    })
+                    cprint(f"Progress: [{episode_idx+1}/{num_episodes}] episodes completed", "green")
+                    cprint("---------------------------------\n", "blue")
                     # Log results onto a CSV
                     epi_metrics = stats_episodes[str(run_id)][episode_id] | info_episode
                     if config.evaluation.log_data:

@@ -1,0 +1,233 @@
+# Decentralized Skill-Structured Hierarchical Memory for Multi-Agent Coordination
+
+## Overview
+
+This framework enables decentralized multi-agent coordination through a two-stage approach:
+1. **Memory Building Stage**: Distill successful trajectories into a hierarchical memory system
+2. **Memory Utilization Stage**: Coordinate execution through hierarchical retrieval and sequential observation
+
+The key insight is separating *what* to do (abstract skills) from *where* and *on what* to do it (contextualized instances), enabling generalization to novel objects, locations, and partner behaviors.
+
+---
+
+## 1. Skill-Structured Hierarchical Memory
+
+### 1.1 Memory Architecture
+
+The skill library is partitioned into:
+```
+L = L_ind ∪ L_coop
+```
+- `L_ind`: Individual skills (single-agent competencies)
+- `L_coop`: Cooperation skills (partner-aware conditional policies)
+
+### 1.2 Skill Definition
+
+A **skill** is a tuple:
+```
+s = (name, type, I)
+```
+| Component | Description |
+|-----------|-------------|
+| `name` | Natural language identifier (e.g., "navigate", "pickup") |
+| `type` | Either "individual" or "cooperation" |
+| `I` | Set of grounded instances {i₁, i₂, ..., iₖ} |
+
+### 1.3 Skill Instance Definition
+
+An **instance** is a tuple:
+```
+i = (context, demo, e_src)
+```
+| Component | Description |
+|-----------|-------------|
+| `context` | Scenario-specific parameters (location, object, etc.) |
+| `demo` | Natural language demonstration |
+| `e_src` | Pointer to source episodic memory |
+
+---
+
+## 2. Individual Skills
+
+Individual skills capture single-agent competencies that depend only on the agent's own state and environment.
+
+### Cross-Instance Generalization
+
+When encountering a novel (location, object) pair:
+1. Retrieve instances sharing the **same location** with different objects
+2. Retrieve instances with **similar objects** in different locations
+3. Synthesize across partially matching instances to construct execution guidance
+
+**Example**: Agent encountering `pickup(bottle)` for the first time retrieves:
+- `pickup(glass)` → similar fragility constraints
+- `pickup(plate)` in same kitchen → similar spatial context
+
+### Episodic Grounding
+
+When condensed demonstrations are insufficient, the episodic pointer `e_src` provides:
+- Complete state-action sequences
+- Intermediate observations
+- Associated failure cases
+
+---
+
+## 3. Cooperation Skills
+
+Cooperation skills encode conditional policies triggered by observed partner behavior.
+
+### Structure
+
+```
+s_coop = (name, cooperation, precond_joint, I)
+```
+
+Joint precondition defined over:
+```
+precond_joint: W_self × W_partner × A_partner → {true, false}
+```
+
+### Partner-Centric Instance Context
+
+Cooperation instances use partner behavioral patterns:
+```
+context_partner = (a_partner, w_partner, traj_partner)
+```
+- `a_partner`: Observed partner action
+- `w_partner`: Partner state
+- `traj_partner`: Recent movement trajectory
+
+### Theory of Mind (ToM) Enhancement
+
+The framework implicitly cultivates ToM capabilities:
+1. Agent observes partner action `a_partner`
+2. Queries library for skills whose precondition matches observation
+3. Infers partner intentions from behavioral cues
+4. Selects complementary response
+
+**Example Intention Mappings**:
+| Observed Behavior | Inferred Intention |
+|-------------------|-------------------|
+| Partner navigating toward heavy object | May need assistance moving it |
+| Partner waiting near closed door | May need door opened |
+
+### Generalization through ToM
+
+- Skills indexed by **abstract behavioral patterns**, not specific identities
+- `assist_carry` learned in kitchen applies to bedroom with similar cues
+- Two-level retrieval: abstract intention matching → context-grounded instantiation
+
+---
+
+## 4. Sequential Execution and Hierarchical Retrieval
+
+### 4.1 Effect-Based Observation
+
+Agents execute sequentially, not simultaneously. Each agent observes environmental effects rather than partner actions directly:
+
+```
+Δw_t = w_{t+1} - w_t
+```
+
+This captures:
+- Object displacements
+- Resource consumption
+- Goal state progression
+
+**Key Insight**: Coordination becomes a grounding problem rather than a prediction problem.
+
+### 4.2 Hierarchical Retrieval Pipeline
+
+#### Stage 1: Query Generation
+```
+q_t = f_query(w_t^self, w_t^env, Δw_{t-1}, g)
+```
+| Input | Description |
+|-------|-------------|
+| `w_t^self` | Agent's internal state (held objects, position) |
+| `w_t^env` | Observable environment state |
+| `Δw_{t-1}` | Observed effects of partner's action |
+| `g` | Current goal |
+
+#### Stage 2: Abstract Skill Matching
+```
+S_candidate = {s ∈ L : sim(q_t, name(s)) > θ_abstract}
+```
+- Match query against skill names/descriptions
+- Prune search space before instance retrieval
+
+#### Stage 3: Instance Retrieval
+```
+I_retrieved = ⋃_{s ∈ S_candidate} top-k{sim(context(i), w_t)}
+```
+- For each candidate skill, retrieve top-k instances by contextual similarity
+
+#### Stage 4: Executability Filtering
+
+**For individual skills**:
+```
+S_executable = {s ∈ S_candidate : precond_s(w_t^self) = true}
+```
+
+**For cooperation skills**:
+```
+S_executable^coop = {s ∈ S_candidate ∩ L_coop : trigger_s(Δw_{t-1}) ∧ precond_s(w_t^self)}
+```
+- Trigger mechanism recognizes coordination opportunities from environmental cues
+
+### 4.3 Grounded Action Selection
+
+The agent synthesizes:
+1. Filtered executable skills
+2. Retrieved instances (historical context)
+3. Current world state (immediate applicability)
+
+Selection is grounded in **actual task progress** (observed outcomes) rather than **predicted behavior**.
+
+---
+
+## Summary: Two-Stage Framework
+
+### Stage 1: Memory Building
+1. Agents perform elementary tasks
+2. Collect successful trajectories as episodic memory
+3. Distill into hierarchical skill library:
+   - Abstract skills (semantic indexing)
+   - Contextualized instances (fine-grained retrieval)
+   - Individual vs cooperation partitioning
+
+### Stage 2: Memory Utilization (Perception-Decision-Action Loop)
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  PERCEPTION                                             │
+│  • Observe environmental change Δw from partner action  │
+│  • Update internal world model                          │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│  DECISION (Hierarchical Retrieval)                      │
+│  1. Generate query from current state + observed effects│
+│  2. Match against abstract skill categories             │
+│  3. Retrieve relevant instances                         │
+│  4. Filter for executability                            │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│  ACTION                                                 │
+│  • Synthesize retrieved memories + current state        │
+│  • Select complementary action grounded in task progress│
+│  • Execute action                                       │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+                    (loop continues)
+```
+
+---
+
+## Key Contributions
+
+1. **Hierarchical Memory System**: Separates abstract skills from contextualized instances; partitions into individual and cooperation skills
+
+2. **Effect-Based Coordination**: Agents coordinate through inferred partner intentions from observable environmental effects, not explicit communication
+
+3. **Cross-Instance Generalization**: Novel situations handled by synthesizing across partially matching instances from the skill library

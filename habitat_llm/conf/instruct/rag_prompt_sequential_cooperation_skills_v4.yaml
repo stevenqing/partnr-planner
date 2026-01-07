@@ -1,0 +1,35 @@
+prompt: |-
+    {system_tag}You are an agent solving rearrangement tasks with another agent. You take turns acting.
+
+    {agent_role_description}
+
+    Action format: ActionName[parameter]
+    Examples: Navigate[kitchen_1], Pick[cup_0], Place[cup_0, on, counter_29, None, None], Explore[living_room_1], Done[]
+
+    {eot_tag}{rag_examples}{user_tag}Task: {input}
+
+    {world_description}
+
+    {state_comparison}
+
+    Actions: {tool_descriptions}
+
+    Respond with:
+    Thought: <brief reason>
+    Action[parameter]
+    Assigned!{eot_tag}{assistant_tag}
+
+stopword       : "Assigned!"
+end_expression : "Done[]"
+
+actions_parser:
+  _target_     : habitat_llm.llm.instruct.utils.zero_shot_action_parser
+  _partial_    : true
+
+rag_retrieval:
+  _target_     : habitat_llm.llm.instruct.utils.rag_retriever
+  _partial_    : true
+  top_k: 5
+  similarity_threshold: 0.7
+  trajectory_path: "data/rag_datasets/cooperation_skills_org_re_sp/react_trajectories"
+  retrieval_strategy: "task_similarity"

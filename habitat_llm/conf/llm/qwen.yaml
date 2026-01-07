@@ -8,8 +8,13 @@ port          : 4449
 serverdir     : ""
 
 # The default of inference mode of qwen is hf (hugging face)
-# You can choose between "hf" and "rlm" (remote language model)
+# You can choose between "hf", "rlm" (remote language model), or "vllm"
 inference_mode          : hf
+
+# vLLM server configuration (used when inference_mode: vllm)
+# vLLM provides faster inference with tensor parallelism support
+vllm_host     : "localhost"
+vllm_port     : 8000
 
 # System, User, Assistant and end of turn tags for Qwen2.5 chat format
 system_tag : "<|im_start|>system\n"

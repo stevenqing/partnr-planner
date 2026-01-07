@@ -95,6 +95,16 @@ class LLMPlanner(Planner):
                     env_interface.env.env.env._env.current_episode, "scene_id", None
                 )
 
+            # Build ablation config for hierarchical retrieval experiments
+            ablation_config = None
+            if getattr(plan_config, "ablation_config", None):
+                ablation_config = {
+                    'include_coop_skills': getattr(plan_config.ablation_config, "include_coop_skills", True),
+                    'include_ind_skills': getattr(plan_config.ablation_config, "include_ind_skills", True),
+                    'use_hierarchical_structure': getattr(plan_config.ablation_config, "use_hierarchical_structure", True),
+                    'random_retrieval': getattr(plan_config.ablation_config, "random_retrieval", False),
+                }
+
             # Initialize RAG with memory support
             self.rag = RAG(
                 plan_config.example_type,
@@ -105,6 +115,7 @@ class LLMPlanner(Planner):
                 scene_id=scene_id,
                 memory_path=getattr(plan_config, "memory_path", None),
                 ensure_same_scene=getattr(plan_config, "ensure_same_scene", True),
+                ablation_config=ablation_config,
             )
 
     def reset(self):
@@ -129,6 +140,12 @@ class LLMPlanner(Planner):
         self.previous_objects_state: Dict[
             str, Dict
         ] = {}  # Direct state dict from world_graph
+
+        # Track seen object locations across steps for hierarchical retrieval
+        # Accumulates all objects the agent has observed with their locations
+        self.seen_object_locations: Dict[str, Dict[str, str]] = {}
+        # Track known rooms the agent has visited or seen
+        self.known_rooms: set = set()
 
         # Reset agents
         for agent in self._agents:
@@ -271,22 +288,33 @@ class LLMPlanner(Planner):
                     if len(self._agents) == 1
                     else self._agents[0].uid
                 )
-                _, index = self.rag.retrieve_top_k_given_query(
-                    input_instruction, top_k=1, agent_id=current_agent_id
-                )
-                index = index[0]
 
-                # Get the retrieved trace and ensure agent_id matches current agent
-                retrieved_trace = self.rag.data_dict[index]["trace"]
-                # Replace the generic {id} with current agent's ID
-                retrieved_trace = retrieved_trace.replace(
-                    "Agent_{id}_", f"Agent_{current_agent_id}_"
+                # Build agent_state from world_graph for hierarchical retrieval
+                agent_state = self._extract_agent_state(world_graph, current_agent_id)
+
+                # Build environment_state from world_graph
+                environment_state = self._extract_environment_state(world_graph)
+
+                # Build partner_effects from state comparison (for cooperation skills)
+                partner_effects = self._extract_partner_effects()
+
+                # Retrieve multiple skills (top_k=3) with full context
+                # This enables proper hierarchical retrieval with both individual and cooperation skills
+                rag_top_k = getattr(self.planner_config, "rag_top_k", 3)
+                scores, indices = self.rag.retrieve_top_k_given_query(
+                    input_instruction,
+                    top_k=rag_top_k,
+                    agent_id=current_agent_id,
+                    agent_state=agent_state,
+                    environment_state=environment_state,
+                    partner_effects=partner_effects,
                 )
 
-                example_str = (
-                    f"{self.planner_config.llm.user_tag}Below are some example solutions from different settings:\nExample 1:\n"
-                    + retrieved_trace
-                    + "\n"
+                # Format all retrieved skills together with current state context
+                example_str = self._format_rag_examples(
+                    indices, scores, current_agent_id,
+                    agent_state=agent_state,
+                    environment_state=environment_state
                 )
                 params["rag_examples"] = example_str
             else:
@@ -926,3 +954,311 @@ class LLMPlanner(Planner):
         :return: True if the agent is done, False otherwise.
         """
         return self.end_expression in llm_response
+
+    def _extract_agent_state(
+        self, world_graph: "WorldGraph", agent_id: int
+    ) -> Dict[str, Any]:
+        """
+        Extract agent state from world graph for hierarchical retrieval.
+
+        Args:
+            world_graph: The world graph
+            agent_id: The agent ID
+
+        Returns:
+            Dict with agent state (holding, position, room)
+        """
+        agent_state = {"holding": None, "position": None, "room": None}
+
+        try:
+            # Find objects held by this agent by checking all objects
+            objects = world_graph.get_all_objects()
+            agent_type = "robot" if agent_id == 0 else "human"
+            for obj in objects:
+                if world_graph.is_object_with_agent(obj, agent_type=agent_type):
+                    agent_state["holding"] = obj.name
+                    break  # Assume agent can hold one object at a time
+
+            # Get agent's current room from the graph structure
+            agents = world_graph.get_agents()
+            for agent in agents:
+                if str(agent_id) in agent.name:
+                    # Find room by checking neighbors in the graph
+                    if hasattr(world_graph, 'graph') and agent in world_graph.graph:
+                        from habitat_llm.world_model.world_graph import Room
+                        for neighbor in world_graph.graph[agent]:
+                            if isinstance(neighbor, Room):
+                                agent_state["room"] = neighbor.name
+                                agent_state["position"] = neighbor.name
+                                break
+                    break
+
+            # Fallback: use first available room
+            if not agent_state["room"]:
+                rooms = world_graph.get_all_rooms()
+                if rooms:
+                    agent_state["position"] = rooms[0].name
+                    agent_state["room"] = rooms[0].name
+
+        except Exception as e:
+            print(f"Warning: Could not extract agent state: {e}")
+
+        return agent_state
+
+    def _extract_environment_state(self, world_graph: "WorldGraph") -> Dict[str, Any]:
+        """
+        Extract environment state from world graph for hierarchical retrieval.
+
+        This method accumulates seen object locations across steps, enabling
+        the agent to build a memory of where objects are located.
+
+        Args:
+            world_graph: The world graph
+
+        Returns:
+            Dict with environment state including:
+            - objects: Current visible objects
+            - furniture: Current visible furniture
+            - seen_objects: Accumulated object locations (for retrieval)
+            - known_rooms: Accumulated known rooms (for retrieval)
+        """
+        from habitat_llm.world_model.world_graph import Room, Furniture
+
+        environment_state = {"objects": {}, "furniture": {}}
+
+        try:
+            # Build furniture-to-room mapping using group_furniture_by_room
+            furniture_to_room = {}
+            furniture_by_room = world_graph.group_furniture_by_room()
+            for room_name, furnitures in furniture_by_room.items():
+                for furn in furnitures:
+                    furniture_to_room[furn.name] = room_name
+                self.known_rooms.add(room_name)
+
+            # Get objects and accumulate their locations
+            objects = world_graph.get_all_objects()
+            for obj in objects:
+                obj_info = {"name": obj.name}
+                location = None
+                room = None
+
+                # Check if object is held by an agent
+                if world_graph.is_object_with_agent(obj, agent_type="robot"):
+                    location = "held_by_robot"
+                elif world_graph.is_object_with_agent(obj, agent_type="human"):
+                    location = "held_by_human"
+                else:
+                    # Try to get location using find_furniture_for_object
+                    furniture = world_graph.find_furniture_for_object(obj)
+                    if furniture:
+                        location = furniture.name
+                        obj_info["location"] = location
+
+                        # Get room from furniture-to-room mapping
+                        room = furniture_to_room.get(furniture.name)
+                        if room:
+                            obj_info["room"] = room
+
+                environment_state["objects"][obj.name] = obj_info
+
+                # Accumulate in seen_object_locations (persistent across steps)
+                if location and not location.startswith("held_by"):
+                    self.seen_object_locations[obj.name] = {
+                        "location": location,
+                        "room": room if room else "unknown",
+                    }
+                    if room:
+                        self.known_rooms.add(room)
+
+            # Get furniture and track rooms
+            all_furniture = world_graph.get_all_furnitures()
+            for furn in all_furniture:
+                furn_info = {"name": furn.name}
+                # Get room from mapping or by checking graph neighbors
+                room_name = furniture_to_room.get(furn.name)
+                if room_name:
+                    furn_info["room"] = room_name
+                    self.known_rooms.add(room_name)
+                else:
+                    # Fallback: check graph neighbors directly
+                    if hasattr(world_graph, 'graph') and furn in world_graph.graph:
+                        for neighbor in world_graph.graph[furn]:
+                            if isinstance(neighbor, Room):
+                                furn_info["room"] = neighbor.name
+                                self.known_rooms.add(neighbor.name)
+                                break
+                environment_state["furniture"][furn.name] = furn_info
+
+            # Get rooms directly
+            rooms = world_graph.get_all_rooms()
+            for room in rooms:
+                self.known_rooms.add(room.name)
+
+        except Exception as e:
+            print(f"Warning: Could not extract environment state: {e}")
+            import traceback
+            traceback.print_exc()
+
+        # Add accumulated seen locations for hierarchical retrieval
+        environment_state["seen_objects"] = self.seen_object_locations.copy()
+        environment_state["known_rooms"] = list(self.known_rooms)
+
+        return environment_state
+
+    def _extract_partner_effects(self) -> Dict[str, Any]:
+        """
+        Extract partner effects from state comparison for cooperation skill retrieval.
+
+        This enables the Theory of Mind component by detecting what the partner agent did.
+
+        Returns:
+            Dict with partner effects (action, moved_objects, completed_subtasks)
+        """
+        partner_effects = {
+            "action": None,
+            "moved_objects": [],
+            "completed_subtasks": [],
+        }
+
+        try:
+            # Check if we have previous state to compare
+            if not self.previous_objects_state:
+                return partner_effects
+
+            # Get current state
+            if len(self._agents) == 1:
+                current_agent_uid = self._agents[0].uid
+                current_world_graph = self.env_interface.world_graph.get(current_agent_uid)
+                if current_world_graph:
+                    current_state = extract_object_states_from_world_graph(
+                        current_world_graph,
+                        agent_uid=current_agent_uid,
+                        include_room_name=True,
+                        centralized=self.planner_config.centralized,
+                    )
+
+                    # Detect moved objects (partner effects)
+                    for obj_name, curr_info in current_state.items():
+                        if obj_name in self.previous_objects_state:
+                            prev_info = self.previous_objects_state[obj_name]
+                            if prev_info.get("location") != curr_info.get("location"):
+                                partner_effects["moved_objects"].append(obj_name)
+                                partner_effects["action"] = "Rearrange"
+
+                    # If objects were moved, mark as cooperation trigger
+                    if partner_effects["moved_objects"]:
+                        partner_effects["completed_subtasks"].append(
+                            f"Moved {len(partner_effects['moved_objects'])} objects"
+                        )
+        except Exception as e:
+            print(f"Warning: Could not extract partner effects: {e}")
+
+        return partner_effects
+
+    def _format_rag_examples(
+        self, indices: List[int], scores: List[float], current_agent_id: int,
+        agent_state: Optional[Dict[str, Any]] = None,
+        environment_state: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Format all retrieved RAG examples for the prompt.
+
+        Args:
+            indices: List of indices into data_dict
+            scores: List of relevance scores
+            current_agent_id: The current agent ID
+            agent_state: Current agent state (holding, position, room)
+            environment_state: Current environment state (objects, furniture, seen_objects, known_rooms)
+
+        Returns:
+            Formatted string with all examples
+        """
+        if len(indices) == 0:
+            return ""
+
+        parts = [f"{self.planner_config.llm.user_tag}## Retrieved Cooperation and Skill Examples\n"]
+
+        # Add current state context section
+        if agent_state or environment_state:
+            parts.append("### Current State Context\n")
+
+            # Agent's current state
+            if agent_state:
+                if agent_state.get("room"):
+                    parts.append(f"**Your Current Room**: {agent_state['room']}")
+                if agent_state.get("holding"):
+                    parts.append(f"**Currently Holding**: {agent_state['holding']}")
+                else:
+                    parts.append("**Currently Holding**: Nothing (hands empty)")
+
+            # Current object locations
+            if environment_state:
+                seen_objects = environment_state.get("seen_objects", {})
+                if seen_objects:
+                    parts.append("\n**Known Object Locations**:")
+                    obj_loc_strs = []
+                    for obj_name, obj_info in list(seen_objects.items())[:10]:
+                        if isinstance(obj_info, dict):
+                            loc = obj_info.get("location", "unknown")
+                            room = obj_info.get("room", "")
+                            if room and room != "unknown":
+                                obj_loc_strs.append(f"  - {obj_name}: at {loc} in {room}")
+                            else:
+                                obj_loc_strs.append(f"  - {obj_name}: at {loc}")
+                        else:
+                            obj_loc_strs.append(f"  - {obj_name}: at {obj_info}")
+                    parts.extend(obj_loc_strs)
+
+                known_rooms = environment_state.get("known_rooms", [])
+                if known_rooms:
+                    parts.append(f"\n**Known Rooms**: {', '.join(known_rooms[:10])}")
+
+            parts.append("\n")
+
+        # Track if we have cooperation skills
+        has_coop_skills = False
+
+        for i, (idx, score) in enumerate(zip(indices, scores)):
+            if idx not in self.rag.data_dict:
+                continue
+
+            entry = self.rag.data_dict[idx]
+            skill_type = entry.get("skill_type", "unknown")
+            skill_name = entry.get("skill_name", f"Example {i+1}")
+
+            # Check if this is a cooperation skill
+            if skill_type == "cooperation":
+                has_coop_skills = True
+                parts.append(f"\n### Cooperation Pattern {i+1}: {skill_name}")
+                parts.append(f"**Type**: Cooperation Skill (requires coordination with partner)")
+                parts.append(f"**Relevance Score**: {score:.2f}")
+            else:
+                parts.append(f"\n### Skill {i+1}: {skill_name}")
+                parts.append(f"**Type**: {skill_type.capitalize()}")
+                parts.append(f"**Relevance Score**: {score:.2f}")
+
+            # Get and format the trace/demo
+            retrieved_trace = entry.get("trace", "")
+            if retrieved_trace:
+                # Replace generic {id} with current agent's ID
+                retrieved_trace = retrieved_trace.replace(
+                    "Agent_{id}_", f"Agent_{current_agent_id}_"
+                )
+                parts.append(f"\n{retrieved_trace}")
+
+            # Add context info if available
+            context = entry.get("context", {})
+            if context.get("objects"):
+                parts.append(f"\n**Relevant Objects**: {', '.join(context['objects'])}")
+            if context.get("action_sequence"):
+                parts.append(f"**Action Pattern**: {' -> '.join(context['action_sequence'])}")
+
+            parts.append("")
+
+        # Add cooperation guidance if we have cooperation skills
+        if has_coop_skills:
+            parts.append("\n**IMPORTANT**: The above cooperation patterns show successful multi-agent coordination.")
+            parts.append("Use Theory of Mind reasoning to infer partner's actions and coordinate effectively.")
+
+        parts.append("\n")
+        return "\n".join(parts)

@@ -1,0 +1,460 @@
+# Memory Methods for Personalized Embodied Agents: A Comprehensive Analysis of MEMENTO
+
+## Overview
+
+This document provides a detailed analysis of memory utilization methods for LLM-powered embodied agents in personalized assistance tasks, based on the MEMENTO framework (Kwon et al., 2025). The framework addresses a critical gap in current embodied AI: while agents can follow explicit instructions, they struggle to leverage user-specific knowledge from past interactions to provide truly personalized assistance.
+
+---
+
+## 1. Problem Definition
+
+### 1.1 The Personalization Challenge
+
+Traditional embodied agent tasks focus on single-turn interactions with static, simplified instructions. However, **personalized assistance** requires agents to:
+
+- Understand personalized knowledge that users assign unique semantics to the physical world
+- Interpret dynamic instructions using retained knowledge from previous interactions
+- Ground task planning in episodic memory (specific events in time and space)
+
+### 1.2 Task Formulation
+
+The personalized object rearrangement task is formulated as a **Partially Observable Markov Decision Process (POMDP)**:
+
+$$(\mathcal{S}, \mathcal{A}, T, R, \Omega, O, \gamma)$$
+
+Where:
+- $\mathcal{S}$: Set of environment states
+- $\mathcal{A}$: Set of actions
+- $T$: Transition function
+- $R$: Reward function
+- $\Omega$: Observation space
+- $O$: Observation function
+- $\gamma$: Discount factor
+
+**Goal Derivation Function:**
+$$\phi(I, M) \rightarrow g = (o_i, l_i)_{i=1}^k$$
+
+Where:
+- $I$: Natural language instruction (may contain personalized references)
+- $M = \{h_1, h_2, \ldots, h_n\}$: Set of episodic memories from previous interactions
+- $g$: Goal representation (object-location pairs)
+
+**Policy Function:**
+$$\pi(I, M, \tau_t) \rightarrow a_t$$
+
+Where $\tau_t = (w_1, a_1, w_2, a_2, \ldots, w_{t-1}, a_{t-1}, w_t)$ is the observation-action trajectory.
+
+---
+
+## 2. Dimensions of Personalized Knowledge
+
+### 2.1 Object Semantics
+
+**Definition:** The ability to identify target objects $o_i$ based on personal meaning assigned by users.
+
+| Subcategory | Description | Example |
+|-------------|-------------|---------|
+| **Ownership** | Possessive reference to user's belongings | "my cup", "my laptop" |
+| **Preference** | Objects aligned with user's individual taste | "bread from my favorite bakery" |
+| **History** | Objects linked to personal memory or past experience | "graduation gift from my grandma" |
+| **Groups** | Conceptual/functional grouping of multiple related objects | "my home office setup", "my travel essentials" |
+
+### 2.2 User Patterns
+
+**Definition:** The capacity to reconstruct complete goals $g$ by leveraging consistent behavioral patterns.
+
+| Subcategory | Description | Example |
+|-------------|-------------|---------|
+| **Routine** | Sequence or setup followed as habit or regular activity | "meal time setting", "cooking routine" |
+| **Preference** | Specific way user prefers to arrange environment for particular situations | "my coffee break setup", "cozy decoration spot" |
+
+### 2.3 Key Distinction
+
+- **Object Semantics**: Focuses on resolving *individual object references*
+- **User Patterns**: Addresses *holistic goal reconstruction* from behavioral context
+
+---
+
+## 3. Memory Architecture Types
+
+### 3.1 Episodic Memory
+
+**Purpose:** Captures specific past interactions and experiences with users.
+
+**Structure:** ReAct-style formatting storing:
+- User instructions
+- Complete sequence of `<Thought, Action, Observation>` triplets
+
+**Key Finding:** Episodic memory provides **dual benefits**:
+1. **Personalized knowledge** extraction
+2. **In-context learning** benefits for LLMs
+
+> "Episodic memory is an essential memory module for embodied agents" - Summarized memory shows minimal impact on large models but causes performance degradation in smaller models.
+
+### 3.2 Semantic Memory
+
+**Purpose:** Store and provide state information about the current environment.
+
+**Implementation:** Scene-graph style hierarchical representation:
+- **Level 1 (Top):** Single root node (house environment)
+- **Level 2:** Room nodes
+- **Level 3:** Furniture, objects, and agents
+
+**Data Stored:**
+- 3D location of entities
+- Relevant state information
+
+### 3.3 Procedural Memory
+
+**Purpose:** Store action primitives for task execution efficiency.
+
+**Components:**
+| Skill Type | Examples |
+|------------|----------|
+| Motor Skills | `Navigate`, `Pick`, `Place`, `Open`, `Close`, `Explore`, `Wait` |
+| Perception Skills | `FindObjectTool`, `FindReceptacleTool`, `FindRoomTool`, `DescribeObjectTool` |
+
+---
+
+## 4. Memory Utilization Bottlenecks
+
+### 4.1 Information Overload
+
+**Problem:** Increasing the number of retrieved memories (top-$k$) introduces noise that degrades performance.
+
+**Evidence:**
+- Performance consistently degrades across all models as $k$ increases
+- Agents increasingly rely on commonsense knowledge rather than personalized memories
+- Effect is especially pronounced on user pattern tasks
+
+**Implication:** Memory systems must retrieve appropriate numbers of memories.
+
+### 4.2 Coordination Failures
+
+**Problem:** Agents cannot effectively coordinate multiple memories for joint tasks.
+
+**Evidence:**
+- GPT-4o shows -30.5% success rate drop in joint-memory tasks
+- Even combining two simple object semantic memories causes significant failure
+- Performance drops of -57% to -83.4% observed across models
+
+**Root Cause:** The in-context learning nature of LLMs makes it difficult to simultaneously reference multiple distinct memories.
+
+### 4.3 Commonsense vs. Personalized Knowledge Conflict
+
+**Problem:** When agents struggle to reference personalized knowledge, they default to parametric commonsense knowledge.
+
+**Example Failure Case:**
+- Task: "Can you arrange the toys for playtime?"
+- Agent's Thought: "The table in the tv room seems like a good spot to place the toys for easy access during playtime"
+- Actual user preference: Toys should be on the bench (from personalized memory)
+
+---
+
+## 5. User Profile Memory: Hierarchical Knowledge Graph Architecture
+
+### 5.1 Design Motivation
+
+Based on findings that:
+1. Episodic memory provides both personalized knowledge and in-context learning benefits
+2. Simply summarizing memory causes degradation in smaller models
+3. Clearly providing personalized knowledge information enhances memory utilization
+
+**Solution:** A hierarchical knowledge graph-based user profile memory module that manages personalized knowledge independently.
+
+### 5.2 Three-Level Structure
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                         USER LEVEL                          │
+│                    (user_0, user_1, ...)                   │
+└─────────────────────────┬───────────────────────────────────┘
+                          │ refers_to
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      KNOWLEDGE LEVEL                        │
+│     Object Semantics          │        User Patterns        │
+│   ("my coffee set")           │   ("my morning routine")    │
+└──────────┬────────────────────┴──────────────┬──────────────┘
+           │ composed_of                        │ entails
+           ▼                                    ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      ELEMENTS LEVEL                         │
+│   Objects    │    Patterns    │    Locations                │
+│ (red mug)    │   (place on)   │ (kitchen counter)          │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 5.3 Node Schema
+
+| Node Type | Attributes | Example |
+|-----------|------------|---------|
+| **User** | id, type, name | `{u1, "user", "james"}` |
+| **Knowledge** | id, type, subtype, alias, description | `{k_obj1, "knowledge", "object_semantics", "my favorite cup", "a yellow cup with wooden handle"}` |
+| **Pattern** | id, type, name, args | `{p1, "pattern", "place", [cup, on, livingroom_table]}` |
+| **Object** | id, type, name, granularity | `{o2, "object", "red dog image cup", "instance"}` |
+| **Location** | id, type, name, expression | `{l1, "location", "livingroom_table", "on the table"}` |
+
+### 5.4 Edge Types
+
+#### Hierarchical Edges (Structural Relationships)
+
+| Source | Relation | Target |
+|--------|----------|--------|
+| User | refers_to | Knowledge |
+| Knowledge | entails | Pattern |
+| Pattern | target | Object |
+| Pattern | target | Location |
+| Knowledge | composed_of | Object |
+| Knowledge | alias_of / target_object | Object |
+| Knowledge | target_location | Location |
+
+#### Temporal Edges (Sequential Ordering)
+
+| Source | Relation | Target |
+|--------|----------|--------|
+| Pattern_n | before | Pattern_{n+1} |
+
+**Purpose:** Encode sequential structure of user patterns (e.g., first pick cup, then place on table)
+
+---
+
+## 6. Algorithms
+
+### 6.1 Knowledge Graph Update Algorithm
+
+```
+Algorithm: UpdateKnowledgeGraph
+
+Input: User instruction I, Knowledge graph G
+Output: Updated knowledge graph G'
+
+1. EXTRACT CANDIDATE KNOWLEDGE
+   K ← ExtractKnowledge(I)    // K = {(k₁, t₁), (k₂, t₂), ...}
+   C ← ∅
+
+2. FOR EACH KNOWLEDGE (k, tₖ) ∈ K:
+   
+   a. EXTRACT ELEMENTS
+      E ← ExtractElements(I, k, tₖ)
+   
+   b. SELECT SUBGRAPH BY TYPE
+      G_tₖ ← Subgraph(G, type = tₖ)
+   
+   c. RETRIEVE CANDIDATES
+      C ← C ∪ SimilaritySearch(G_tₖ, k, tₖ)
+      FOR EACH (e, tₑ) ∈ E:
+         C ← C ∪ SimilaritySearch(G_tₖ, e, tₑ)
+
+3. LLM RESOLUTION
+   op ← LLMResolve(I, C)
+   
+   IF op = update THEN
+      RETURN G' ← UpdateKnowledgeNode(G, Expand(C), I)
+   ELSE IF op = add THEN
+      RETURN G' ← AddKnowledgeNode(G, Expand(C), I)
+```
+
+**Key Operations:**
+- `ExtractKnowledge`: Parse instruction to identify personalized knowledge
+- `ExtractElements`: Extract associated objects, patterns, locations
+- `SimilaritySearch`: Embedding-based retrieval of matching nodes
+- `Expand`: Collect all connected edges and descendant nodes
+- `LLMResolve`: Determine whether to add new or update existing knowledge
+
+### 6.2 Retrieval Procedure
+
+```
+Algorithm: RetrievalProcedure
+
+Input: User instruction I, User profile memory graph G
+Output: Retrieved natural language descriptions R
+
+1. PARSE INSTRUCTION
+   K ← ExtractKnowledge(I)
+   C, R ← ∅
+
+2. FILTER AND SEARCH
+   FOR EACH (k, tₖ) ∈ K:
+      G_t ← Subgraph(G, type = t)
+      C ← C ∪ SimilaritySearch(G_tₖ, k, tₖ)
+   
+   C ← RemoveDuplicates(C)
+
+3. REFORMULATE RESULTS
+   FOR EACH (c, tᶜ) ∈ C:
+      R ← R ∪ Reformulate(Expand(c))
+
+RETURN R
+```
+
+**Key Insight:** Combines embedding-based search with LLM reasoning to ensure retrieved knowledge is both semantically aligned and interpretable.
+
+---
+
+## 7. Memory Retrieval Configuration
+
+### 7.1 Baseline Setup
+
+- **Embedding Model:** `all-mpnet-base-v2` (Sentence Transformer)
+- **Query:** Current instruction
+- **Keys:** Episodic memory instructions
+- **Default k:** 5 (achieves 96.5% gold memory recall vs. 86.1% at k=3)
+
+### 7.2 Retrieval Strategies Comparison
+
+| Strategy | Description | Effect |
+|----------|-------------|--------|
+| **Baseline** | Similarity-based top-k | Reference approach |
+| **Reranker** | LLM-based pointwise reranking of 10 candidates | Reduces missing rate but doesn't improve task performance |
+| **Query Expansion** | Reformulate queries before retrieval | Effectiveness depends on query quality |
+
+**Critical Finding:** Improved retrieval does not ensure improved outcomes—semantically similar but task-irrelevant memories can harm performance.
+
+---
+
+## 8. Experimental Results
+
+### 8.1 Single-Memory Task Performance (ΔSR from Acquisition Stage)
+
+| Model | Object Semantics | User Patterns |
+|-------|------------------|---------------|
+| GPT-4o | -3.4% | -15.1% |
+| Claude-3.5-Sonnet | -54.5% | 0% |
+| Qwen-2.5-72b | -38.4% | -3.4% |
+| Llama-3.1-70b | -42.9% | +1.1% |
+
+**Observation:** All models show minimal degradation for object semantics but substantial drops for user patterns.
+
+### 8.2 Joint-Memory Task Performance (ΔSR)
+
+| Model | Overall | OS + OS | OS + UP | UP + UP |
+|-------|---------|---------|---------|---------|
+| GPT-4o | -30.5% | -20.8% | -29.2% | -57.0% |
+| Claude-3.5-Sonnet | -70.2% | -58.3% | -58.3% | -70.7% |
+| Qwen-2.5-72b | -54.2/-78.2% | -20.8% | -41.7% | -66.7% |
+| Llama-3.1-70b | -83.3/-91.7% | — | — | — |
+
+### 8.3 User Profile Memory Improvements
+
+**Single-Memory Tasks (ΔSR improvement):**
+| Model | Overall | Object Semantics | User Pattern |
+|-------|---------|------------------|--------------|
+| GPT-4o | +3.4% | +5.5% | +6.2% |
+| Qwen-2.5-72b | +19.4% | +6.1% | +31.3% |
+| Llama-3.1-8b | +8.3% | 0.0% | +20.5% |
+| Qwen-2.5-7b | +4.5% | +11.1% | — |
+
+**Joint-Memory Tasks (ΔSR improvement):**
+- Significant improvements especially on user pattern combinations
+- GPT-4o: +11.1% to +50.0% across different combinations
+- Smaller models show even larger relative improvements
+
+---
+
+## 9. Design Principles & Best Practices
+
+### 9.1 Memory Architecture Design
+
+1. **Preserve Episodic Memory:** Don't simply summarize—trajectory information provides crucial in-context learning benefits
+2. **Separate Personalized Knowledge:** Use dedicated modules (like user profile memory) to manage personalized information
+3. **Hierarchical Organization:** Structure knowledge in levels to prevent redundancy and enable scalability
+4. **Temporal Encoding:** Use temporal edges to capture sequential patterns
+
+### 9.2 Retrieval Optimization
+
+1. **Balance k Selection:** Too few memories miss gold references; too many cause information overload
+2. **Type-Aware Filtering:** Filter subgraphs by knowledge type before similarity search
+3. **LLM-Assisted Reformulation:** Convert graph structures to natural language for agent consumption
+
+### 9.3 Handling Complex Scenarios
+
+| Scenario | Challenge | Solution |
+|----------|-----------|----------|
+| Ambiguous instructions | Indirect references to personalized knowledge | Contextual cue recognition |
+| Multi-episode tasks | 3+ memories needed | Hierarchical synthesis |
+| Knowledge generalization | Transfer preferences across contexts | Template abstraction |
+
+---
+
+## 10. Example: User Profile Memory Instance
+
+### Object Semantics Example
+
+```json
+{
+  "nodes": [
+    {"id": "u1", "type": "User", "name": "James"},
+    {"id": "k1", "type": "Knowledge", "subtype": "object_semantics", 
+     "alias": "my dinnerware set"},
+    {"id": "o1", "type": "Object", "name": "plate", "granularity": "instance", 
+     "attributes": ["square", "white", "black geometric pattern"]},
+    {"id": "o2", "type": "Object", "name": "bowl", "granularity": "instance", 
+     "attributes": ["white", "brown lid"]}
+  ],
+  "edges": [
+    {"source": "u1", "target": "k1", "type": "Hierarchical", "relation": "refers_to"},
+    {"source": "k1", "target": "o1", "type": "Hierarchical", "relation": "target"},
+    {"source": "k1", "target": "o2", "type": "Hierarchical", "relation": "target"}
+  ]
+}
+```
+
+### User Pattern Example
+
+```json
+{
+  "nodes": [
+    {"id": "u1", "type": "User", "name": "James"},
+    {"id": "k1", "type": "Knowledge", "subtype": "user_pattern", 
+     "alias": "living room play setup",
+     "description": "keep toy vehicle on the living room couch so it's easy to find when playing"},
+    {"id": "p1", "type": "Pattern", "name": "move", 
+     "args": ["toy vehicle", "from bedroom", "to living room"]},
+    {"id": "p2", "type": "Pattern", "name": "place", 
+     "args": ["toy vehicle", "on couch", "in living room"]},
+    {"id": "o1", "type": "Object", "name": "toy vehicle"},
+    {"id": "l1", "type": "Location", "name": "bedroom", "expression": "in the bedroom"},
+    {"id": "l2", "type": "Location", "name": "livingroom", "expression": "in the living room"},
+    {"id": "l3", "type": "Location", "name": "couch", "expression": "on the couch in the living room"}
+  ],
+  "edges": [
+    {"source": "u1", "target": "k1", "type": "Hierarchical", "relation": "refers_to"},
+    {"source": "k1", "target": "p1", "type": "Hierarchical", "relation": "entails"},
+    {"source": "k1", "target": "p2", "type": "Hierarchical", "relation": "entails"},
+    {"source": "p1", "target": "o1", "type": "Hierarchical", "relation": "target"},
+    {"source": "p1", "target": "l1", "type": "Hierarchical", "relation": "target"},
+    {"source": "p1", "target": "l2", "type": "Hierarchical", "relation": "target"},
+    {"source": "p2", "target": "o1", "type": "Hierarchical", "relation": "target"},
+    {"source": "p2", "target": "l3", "type": "Hierarchical", "relation": "target"},
+    {"source": "p1", "target": "p2", "type": "Temporal", "relation": "before"}
+  ]
+}
+```
+
+---
+
+## 11. Key Takeaways
+
+1. **Memory is Essential:** Personalized embodied agents require sophisticated memory systems—not just instruction following
+
+2. **Dual Nature of Episodic Memory:** Provides both personalized knowledge AND in-context learning benefits; cannot be simply summarized
+
+3. **User Patterns are Hard:** Sequential information from behavioral contexts poses the greatest challenge for current agents
+
+4. **Information Overload is Real:** More retrieved memories ≠ better performance; quality matters over quantity
+
+5. **Hierarchical Structure Works:** Knowledge graph-based user profile memory significantly improves both single and joint-memory task performance
+
+6. **Retrieval ≠ Utilization:** Better retrieval metrics don't guarantee better task outcomes
+
+---
+
+## References
+
+- Kwon, T., et al. (2025). "Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization." arXiv:2505.16348v2
+- Project Website: https://connoriginal.github.io/MEMENTO
+
+---
+
+*Document generated for research reference on memory methods in personalized embodied AI systems.*

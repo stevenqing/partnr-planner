@@ -4,6 +4,7 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
+import os
 from typing import Any, Dict, Optional
 
 import torch
@@ -16,6 +17,11 @@ from transformers_cfg.generation.logits_process import GrammarConstrainedLogitsP
 from transformers_cfg.grammar_utils import IncrementalGrammarConstraint
 
 from habitat_llm.llm.hf_model import HFModel
+
+try:
+    from openai import OpenAI
+except ImportError:
+    OpenAI = None
 
 
 class StopOnTokenSequence(StoppingCriteria):
@@ -40,10 +46,88 @@ class StopOnTokenSequence(StoppingCriteria):
 
 
 class Qwen(HFModel):
-    """Load Qwen using Hugging Face (HF) - simplified version based on Llama implementation"""
+    """Load Qwen using Hugging Face (HF) or vLLM - simplified version based on Llama implementation"""
 
     def __init__(self, conf):
-        super().__init__(conf)
+        # Check if using vLLM mode - handle separately before parent init
+        self.llm_conf = conf
+        self.generation_params = conf.generation_params
+        self.max_tokens = self.generation_params.max_tokens
+        self.inference_mode = conf.inference_mode
+
+        if self.inference_mode == "vllm":
+            self.init_vllm_client()
+        else:
+            super().__init__(conf)
+
+    def init_vllm_client(self):
+        """Initialize vLLM client using OpenAI-compatible API"""
+        if OpenAI is None:
+            raise ImportError("openai package is required for vLLM mode. Install with: pip install openai")
+
+        # vLLM server endpoint - defaults to localhost:8000
+        vllm_host = getattr(self.llm_conf, 'vllm_host', os.getenv('VLLM_HOST', 'localhost'))
+        vllm_port = getattr(self.llm_conf, 'vllm_port', os.getenv('VLLM_PORT', '8000'))
+        vllm_base_url = f"http://{vllm_host}:{vllm_port}/v1"
+
+        self.vllm_client = OpenAI(
+            api_key="EMPTY",  # vLLM doesn't require an API key
+            base_url=vllm_base_url,
+        )
+        # Model name for vLLM (same as engine)
+        self.vllm_model = self.generation_params.engine
+
+    def generate(
+        self,
+        prompt,
+        stop=None,
+        max_length=None,
+        generation_args=None,
+        **kwargs,
+    ):
+        """Generate response using appropriate backend"""
+        if self.inference_mode == "vllm":
+            return self.generate_vllm(prompt, stop, max_length, generation_args)
+        else:
+            return super().generate(prompt, stop, max_length, generation_args, **kwargs)
+
+    def generate_vllm(
+        self,
+        prompt: str,
+        stop: Optional[str] = None,
+        max_length: Optional[int] = None,
+        generation_args: Optional[Dict[str, Any]] = None,
+    ):
+        """Generate using vLLM's OpenAI-compatible API"""
+        if stop is None:
+            stop = self.generation_params.stop
+        if max_length is None:
+            max_length = self.generation_params.max_tokens
+
+        # Convert stop to list format for OpenAI API
+        stop_sequences = [stop] if isinstance(stop, str) else stop if stop else None
+
+        try:
+            response = self.vllm_client.completions.create(
+                model=self.vllm_model,
+                prompt=prompt,
+                max_tokens=max_length,
+                temperature=self.generation_params.temperature,
+                top_p=self.generation_params.top_p,
+                stop=stop_sequences,
+                n=self.generation_params.n,
+            )
+
+            if self.generation_params.batch_response:
+                self.batch_response = [choice.text.rstrip() for choice in response.choices]
+                return self.batch_response
+            else:
+                self.response = response.choices[0].text.rstrip()
+                return self.response
+
+        except Exception as e:
+            print(f"vLLM generation error: {e}")
+            raise
 
     def generate_hf_llm(
         self,

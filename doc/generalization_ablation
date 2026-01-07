@@ -1,0 +1,35 @@
+\begin{table*}[t]
+\centering
+\caption{Compositional generalization comparison. We report task success rate (Succ.$\uparrow$), completion percentage (Comp.$\uparrow$), and simulation steps (Steps$\downarrow$). Best results per model are \textbf{bolded}, second best are \underline{underlined}.}
+\label{tab:generalization_expanded}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llr|ccc|ccc|ccc|ccc@{}}
+\toprule
+& & & \multicolumn{3}{c|}{\textbf{Heuristic}} & \multicolumn{3}{c|}{\textbf{Traj-based}} & \multicolumn{3}{c|}{\textbf{MEMENTO}} & \multicolumn{3}{c}{\textbf{Ours}} \\
+\cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12} \cmidrule(lr){13-15}
+\textbf{Transfer} & \textbf{Memory} & \textbf{\#Skills} & Succ$\uparrow$ & Comp$\uparrow$ & Steps$\downarrow$ & Succ$\uparrow$ & Comp$\uparrow$ & Steps$\downarrow$ & Succ$\uparrow$ & Comp$\uparrow$ & Steps$\downarrow$ & Succ$\uparrow$ & Comp$\uparrow$ & Steps$\downarrow$ \\
+\midrule
+\multirow{3}{*}{R + S}
+  & R only & 450 & 67.6 & 77.8 & 3999 & -- & -- & -- & \textbf{75.7} & \textbf{79.2} & 4766 & \underline{70.8} & \underline{77.1} & \textbf{4267} \\
+  & S only & 20 & -- & -- & -- & -- & -- & -- & \textbf{77.0} & \textbf{85.4} & 4754 & \underline{66.7} & \underline{73.0} & \textbf{5136} \\
+  & R + S & 470 & -- & -- & -- & -- & -- & -- & \textbf{76.3} & \textbf{81.4} & 4856 & \underline{69.4} & \underline{78.6} & \textbf{4153} \\
+\midrule
+\multirow{4}{*}{R + H + T}
+  & R only & 450 & 0.0 & 28.5 & 5233 & -- & -- & -- & \textbf{9.1} & \textbf{49.3} & 6228 & \underline{0.0} & \underline{24.9} & \textbf{4883} \\
+  & H only & 455 & 0.0 & 23.9 & 4940 & -- & -- & -- & \textbf{0.0} & \textbf{40.3} & 5526 & \textbf{0.0} & \underline{32.1} & \textbf{5305} \\
+  & T only & 12 & 0.0 & 26.5 & 4117 & -- & -- & -- & \underline{0.0} & \textbf{41.9} & 9663 & \textbf{11.1} & \underline{29.6} & \textbf{4041} \\
+  & R + H + T & 917 & 0.0 & 31.1 & 3247 & -- & -- & -- & \textbf{9.1} & \textbf{41.4} & 6169 & \underline{0.0} & \underline{31.8} & \textbf{3931} \\
+\midrule
+\multirow{5}{*}{R + H + S + T}
+  & R only & 450 & 0.0 & 61.9 & 2810 & -- & -- & -- & \textbf{25.0} & \textbf{60.7} & 5187 & \underline{20.0} & \underline{43.1} & 6315 \\
+  & H only & 455 & 0.0 & 5.6 & 5582 & -- & -- & -- & \textbf{25.0} & \textbf{49.4} & 3187 & 0.0 & \underline{16.7} & \textbf{2411} \\
+  & S only & 20 & 0.0 & 25.9 & 4563 & -- & -- & -- & \textbf{25.0} & \textbf{47.6} & 5904 & 0.0 & \underline{46.0} & \textbf{3736} \\
+  & H + T & 467 & 0.0 & 23.5 & 4309 & -- & -- & -- & \textbf{25.0} & \textbf{64.9} & 4046 & 0.0 & \underline{28.8} & \textbf{3043} \\
+  & R + H + S + T & 854 & 0.0 & 33.7 & 3857 & -- & -- & -- & \underline{25.0} & \underline{61.0} & 4978 & \textbf{25.0} & \textbf{50.0} & \textbf{3437} \\
+\bottomrule
+\end{tabular}%
+}
+\vspace{1mm}
+
+\small{R=Rearrange, H=Hetero, S=Spatial, T=Temporal.}
+\end{table*}

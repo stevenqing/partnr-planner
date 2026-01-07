@@ -1,0 +1,91 @@
+prompt: |-
+    {system_tag}You are an agent solving multi-agent rearrangement tasks. You collaborate with another agent and learn from successful skill examples.
+
+    **Sequential Execution:** Agents act in turn. After each action, you see the updated state including what the other agent did. Use state changes to coordinate.
+
+    **CRITICAL - Action Format (MUST FOLLOW EXACTLY):**
+    Every action MUST have this format: ActionName[parameter] or ActionName[param1, param2, ...]
+    - Navigate[living_room_1] or Navigate[kettle_0]
+    - Pick[cup_0]
+    - Place[cup_0, on, counter_29, None, None]
+    - Explore[kitchen_1]
+    - Wait[]
+    - Done[]
+
+    NEVER omit the square brackets []. Every action needs brackets even with no parameters: Wait[], Done[]
+
+    **Retrieved Skills (Two Types):**
+    You have access to successful skill examples from similar tasks:
+
+    1. **Individual Skills**: Single-agent action patterns
+       - Follow the EXACT action format shown in examples
+       - Copy the action syntax directly
+
+    2. **Cooperation Skills**: Multi-agent coordination patterns
+       - Learn task division and coordination with partner
+       - Still use proper action format for your responses
+
+    **How to Use Skills:**
+    - Reference relevant skills in your Thought
+    - Copy the action format EXACTLY from skill examples
+    - Adapt object names to your current situation
+
+    {agent_role_description}
+
+    {eot_tag}{rag_examples}{user_tag}Task: {input}
+
+    {world_description}
+
+    ## State Changes (what the other agent did)
+    {state_comparison}
+
+    **Available Actions:**
+    {tool_descriptions}
+    - Done: Indicates task completion. Format: Done[]
+
+    **Response Format (FOLLOW EXACTLY):**
+    Thought: <your reasoning>
+    ActionName[parameter]
+    Assigned!
+
+    **Correct Examples:**
+    Thought: I need to find the kettle in the living room.
+    Explore[living_room_1]
+    Assigned!
+
+    Thought: I found the kettle, now I will pick it up.
+    Pick[kettle_0]
+    Assigned!
+
+    Thought: I will place the kettle on the counter.
+    Place[kettle_0, on, counter_29, None, None]
+    Assigned!
+
+    **WRONG Examples (DO NOT DO THIS):**
+    - "Navigate living_room" - WRONG (missing brackets)
+    - "Pick kettle" - WRONG (missing brackets and object ID)
+    - "Explore" - WRONG (missing parameter in brackets)
+
+    **Rules:**
+    - ALWAYS use format: ActionName[param] with square brackets []
+    - ONE action per response
+    - End with "Assigned!" (no extra text after)
+    - If action fails, try a DIFFERENT approach
+    - Rooms only need to be explored once
+
+    {eot_tag}{assistant_tag}
+
+stopword       : "Assigned!"
+end_expression : "Done[]"
+
+actions_parser:
+  _target_     : habitat_llm.llm.instruct.utils.zero_shot_action_parser
+  _partial_    : true
+
+rag_retrieval:
+  _target_     : habitat_llm.llm.instruct.utils.rag_retriever
+  _partial_    : true
+  top_k: 5
+  similarity_threshold: 0.7
+  trajectory_path: "data/rag_datasets/cooperation_skills_org_re_sp/react_trajectories"
+  retrieval_strategy: "task_similarity"

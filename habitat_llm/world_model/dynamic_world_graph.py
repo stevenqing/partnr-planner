@@ -871,12 +871,14 @@ class DynamicWorldGraph(WorldGraph):
                 f"{agent_uid=}: {high_level_action=}, {action_response=}"
             )
             agent_node = self.get_node_from_name(f"agent_{agent_uid}")
+            # Check if high_level_action[0] is not None before calling .lower()
+            action_name = high_level_action[0] if high_level_action and high_level_action[0] else ""
             if (
-                "place" in high_level_action[0].lower()
-                or "rearrange" in high_level_action[0].lower()
+                "place" in action_name.lower()
+                or "rearrange" in action_name.lower()
             ):
                 # update object's new place to be the furniture
-                if "place" in high_level_action[0].lower():
+                if "place" in action_name.lower():
                     high_level_actions = high_level_action[1].split(",")
                     # remove the proposition
                     # <spatial_relation>, <furniture/floor to be placed>, <spatial_constraint>, <reference_object>]
@@ -885,7 +887,7 @@ class DynamicWorldGraph(WorldGraph):
                     placement_node = self.get_node_from_name(
                         high_level_actions[2].strip()
                     )
-                elif "rearrange" in high_level_action[0].lower():
+                elif "rearrange" in action_name.lower():
                     # Split the comma separated pair into object name and receptacle name
                     try:
                         # Handle the case for rearrange proposition usage for place skills
@@ -924,8 +926,8 @@ class DynamicWorldGraph(WorldGraph):
                             f"{self.update_by_action.__name__} Could not move object from agent to placement-node: {high_level_action}"
                         )
             elif (
-                "pour" in high_level_action[0].lower()
-                or "fill" in high_level_action[0].lower()
+                "pour" in action_name.lower()
+                or "fill" in action_name.lower()
             ):
                 entity_name = high_level_action[1]
                 entity_node = self.get_node_from_name(entity_name)
@@ -934,16 +936,16 @@ class DynamicWorldGraph(WorldGraph):
                     self._logger.info(
                         f"{entity_node.name} is now filled, {entity_node.properties}"
                     )
-            elif "power" in high_level_action[0].lower():
+            elif "power" in action_name.lower():
                 entity_name = high_level_action[1]
                 entity_node = self.get_node_from_name(entity_name)
-                if "on" in high_level_action[0].lower():
+                if "on" in action_name.lower():
                     entity_node.set_state({"is_powered_on": True})
                     if verbose:
                         self._logger.info(
                             f"{entity_node.name} is now powered on, {entity_node.properties}"
                         )
-                elif "off" in high_level_action[0].lower():
+                elif "off" in action_name.lower():
                     entity_node.set_state({"is_powered_on": False})
                     if verbose:
                         self._logger.info(
@@ -954,7 +956,7 @@ class DynamicWorldGraph(WorldGraph):
                         "Expected 'on' or 'off' in power action, got: ",
                         high_level_action[0],
                     )
-            elif "clean" in high_level_action[0].lower():
+            elif "clean" in action_name.lower():
                 entity_name = high_level_action[1]
                 entity_node = self.get_node_from_name(entity_name)
                 entity_node.set_state({"is_clean": True})
@@ -997,9 +999,11 @@ class DynamicWorldGraph(WorldGraph):
                 f"{agent_uid=}: {high_level_action=}, {action_response=}"
             )
             agent_node = self.get_node_from_name(f"agent_{agent_uid}")
+            # Safety check for None action name
+            action_name = high_level_action[0] if high_level_action and high_level_action[0] else ""
             if (
-                "place" in high_level_action[0].lower()
-                or "rearrange" in high_level_action[0].lower()
+                "place" in action_name.lower()
+                or "rearrange" in action_name.lower()
             ):
                 placement_node = None
                 object_node = None
@@ -1040,7 +1044,7 @@ class DynamicWorldGraph(WorldGraph):
                         self._logger.info(
                             f"Could not move object from agent to placement-node: {high_level_action}"
                         )
-            elif "pick" in high_level_action[0].lower():
+            elif "pick" in action_name.lower():
                 object_name = high_level_action[1]
                 try:
                     obj_node = self.get_node_from_name(object_name)

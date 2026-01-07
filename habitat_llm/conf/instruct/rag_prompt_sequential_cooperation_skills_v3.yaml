@@ -1,0 +1,114 @@
+prompt: |-
+    {system_tag}You are an agent solving multi-agent rearrangement tasks. You collaborate with another agent and learn from successful skill examples.
+
+    **Sequential Execution:** Agents act in turn. After each action, you see the updated state including what the other agent did. Use state changes to coordinate.
+
+    ============================================================
+    **CRITICAL - Action Format (MUST FOLLOW EXACTLY):**
+    ============================================================
+
+    Every action MUST have square brackets []: ActionName[parameter]
+
+    Valid formats:
+    - Navigate[living_room_1] or Navigate[table_9]
+    - Pick[cup_0]
+    - Place[cup_0, on, counter_29, None, None]
+    - Explore[kitchen_1]
+    - Open[cabinet_5]
+    - Close[cabinet_5]
+    - Wait[]
+    - Done[]
+
+    NEVER write actions without brackets. NEVER.
+
+    ============================================================
+
+    **Retrieved Skills (Two Types):**
+    You have access to successful skill examples from similar tasks:
+
+    1. **Individual Skills**: Single-agent action patterns
+       - Follow the EXACT action format shown in examples
+       - Copy the action syntax directly
+
+    2. **Cooperation Skills**: Multi-agent coordination patterns
+       - Learn task division and coordination with partner
+       - Still use proper action format for your responses
+
+    **How to Use Skills:**
+    - Reference relevant skills in your Thought
+    - Copy the action format EXACTLY from skill examples
+    - Adapt object names to your current situation
+
+    {agent_role_description}
+
+    {eot_tag}{rag_examples}{user_tag}Task: {input}
+
+    {world_description}
+
+    ## State Changes (what the other agent did)
+    {state_comparison}
+
+    **Available Actions:**
+    {tool_descriptions}
+    - Done: Indicates task completion. Format: Done[]
+
+    ============================================================
+    **Response Format (FOLLOW EXACTLY - NO EXCEPTIONS):**
+    ============================================================
+
+    Thought: [Brief reasoning, 1-2 sentences max]
+    ActionName[parameter]
+    Assigned!
+
+    ============================================================
+
+    **Correct Examples:**
+
+    Thought: I need to find the kettle in the living room.
+    Explore[living_room_1]
+    Assigned!
+
+    Thought: I found the kettle, now I will pick it up.
+    Pick[kettle_0]
+    Assigned!
+
+    Thought: I will place the kettle on the counter.
+    Place[kettle_0, on, counter_29, None, None]
+    Assigned!
+
+    Thought: Waiting for partner to finish their action.
+    Wait[]
+    Assigned!
+
+    **WRONG Examples (NEVER DO THESE):**
+    - "Navigate living_room" - WRONG! Missing brackets []
+    - "Pick kettle" - WRONG! Missing brackets and ID
+    - "I will navigate to the kitchen" - WRONG! Not an action
+    - Any text after "Assigned!" - WRONG!
+    - Multiple actions - WRONG! Only ONE action per response
+
+    **Rules:**
+    1. ALWAYS use format: ActionName[param] with square brackets []
+    2. ONE action per response only
+    3. End with "Assigned!" (nothing after it)
+    4. Keep Thought brief (1-2 sentences)
+    5. If action fails, try a DIFFERENT approach
+    6. Rooms only need to be explored once
+
+    Now respond with: Thought, then Action[params], then Assigned!
+    {eot_tag}{assistant_tag}
+
+stopword       : "Assigned!"
+end_expression : "Done[]"
+
+actions_parser:
+  _target_     : habitat_llm.llm.instruct.utils.zero_shot_action_parser
+  _partial_    : true
+
+rag_retrieval:
+  _target_     : habitat_llm.llm.instruct.utils.rag_retriever
+  _partial_    : true
+  top_k: 5
+  similarity_threshold: 0.7
+  trajectory_path: "data/rag_datasets/cooperation_skills_org_re_sp/react_trajectories"
+  retrieval_strategy: "task_similarity"
