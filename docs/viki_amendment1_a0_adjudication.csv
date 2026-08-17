@@ -1,0 +1,51 @@
+split,index,branch,conditions
+train,3231,some_absent,apple|cabinet|present_elsewhere;knife|cabinet|present_elsewhere
+train,6693,some_absent,pumpkin|cabinet|present_elsewhere;scissors|cabinet|present_elsewhere
+train,5153,some_absent,apple|wooden cutting board|present_elsewhere
+train,5903,some_absent,pear|wooden cutting board|present_elsewhere
+train,378,some_absent,peach|wooden cutting board|present_elsewhere;banana|wooden cutting board|present_elsewhere
+train,6891,some_absent,peach|wooden cutting board|present_elsewhere;bread|wooden cutting board|present_elsewhere
+train,4317,not_applicable,
+train,5611,not_applicable,
+train,6087,some_absent,apple|sink|present_elsewhere
+train,6509,some_absent,pear|sink|present_elsewhere
+train,772,some_absent,apple|table|present_at_target;tomato|table|present_elsewhere
+train,6995,some_absent,apple|table|present_elsewhere;tomato|table|present_elsewhere
+train,3623,some_absent,meat|bowl|present_elsewhere;pizza|bowl|present_elsewhere
+train,6394,some_absent,bread|bowl|present_elsewhere;pizza|bowl|present_elsewhere
+train,1054,some_absent,apple|bowl|present_elsewhere;bread|bowl|present_elsewhere
+train,4758,some_absent,meat|plate|present_elsewhere;green peas|plate|present_elsewhere
+train,1536,some_absent,banana|bowl|present_elsewhere
+train,2115,some_absent,bread|plate|present_elsewhere
+train,501,some_absent,bread|bowl|present_elsewhere
+train,3306,some_absent,apple|bowl|present_elsewhere
+train,1233,some_absent,plate|kitchen work area|present_elsewhere;apple|plate|present_elsewhere
+train,1804,some_absent,plate|kitchen island area|present_elsewhere;bread|plate|present_elsewhere
+train,110,some_absent,bread|rack|present_elsewhere
+train,6107,some_absent,apple|rack|present_elsewhere
+train,1498,some_absent,bread|toaster|present_elsewhere;plate|kitchen island area|present_elsewhere
+train,2009,some_absent,bread|toaster|present_elsewhere;bowl|kitchen work area|present_elsewhere
+train,2220,some_absent,banana|plate|present_elsewhere
+train,6169,some_absent,tomato|bowl|present_elsewhere
+val,76,some_absent,bowl|table|present_elsewhere;plate|table|present_elsewhere
+val,78,some_absent,bowl|table|present_at_target;plate|table|present_elsewhere
+val,90,some_absent,bowl|table|present_elsewhere;plate|table|present_elsewhere
+val,109,some_absent,bowl|table|present_elsewhere;plate|table|present_at_target
+val,145,some_absent,bowl|table|present_elsewhere;plate|table|present_elsewhere
+val,176,some_absent,bowl|table|present_elsewhere;plate|table|present_elsewhere
+val,190,some_absent,bowl|table|present_elsewhere;plate|table|present_elsewhere
+val,226,some_absent,bowl|table|present_elsewhere;plate|table|present_at_target
+val,416,some_absent,bowl|table|present_elsewhere;plate|table|present_at_target
+val,541,some_absent,bowl|table|present_elsewhere;plate|table|present_at_target
+val,560,some_absent,bowl|table|present_elsewhere;plate|table|present_at_target
+val,563,some_absent,bowl|table|present_at_target;plate|table|present_elsewhere
+val,604,some_absent,bowl|table|present_elsewhere;plate|table|present_elsewhere
+val,677,some_absent,bowl|table|present_at_target;plate|table|present_elsewhere
+val,696,some_absent,bowl|table|present_elsewhere;plate|table|present_elsewhere
+val,760,some_absent,bowl|table|present_elsewhere;plate|table|present_at_target
+val,781,some_absent,bowl|table|present_at_target;plate|table|present_elsewhere
+val,907,some_absent,bowl|table|present_elsewhere;plate|table|present_at_target
+val,909,some_absent,bowl|table|present_at_target;plate|table|present_elsewhere
+val,914,some_absent,bowl|table|present_at_target;plate|table|present_elsewhere
+val,1040,some_absent,bowl|table|present_at_target;plate|table|present_elsewhere
+val,1166,some_absent,bowl|table|present_elsewhere;plate|table|present_at_target

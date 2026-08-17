@@ -1,0 +1,1083 @@
+%%%%%%%% NeurIPS 2026 SUBMISSION FILE %%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+% ----------------------------------------------------------------------
+% NeurIPS 2026 style file. Choose the appropriate track / mode.
+% ----------------------------------------------------------------------
+% 0. "default" for blind submission (Main Track)
+\usepackage{neurips_2026}
+% 1. \usepackage[main]{neurips_2026}
+% 2. \usepackage[position]{neurips_2026}
+% 3. \usepackage[eandd]{neurips_2026}
+% 4. \usepackage[creativeai]{neurips_2026}
+% 5. \usepackage[sglblindworkshop]{neurips_2026}
+% 6. \usepackage[dblblindworkshop]{neurips_2026}
+%
+% After acceptance, append "final" for the camera-ready version, e.g.:
+%   \usepackage[main, final]{neurips_2026}
+%
+% For arXiv / preprint:
+%   \usepackage[preprint]{neurips_2026}
+%
+% To suppress automatic loading of natbib:
+%   \usepackage[nonatbib]{neurips_2026}
+% ----------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+% Recommended typography / figure packages
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{nicefrac}
+
+% Prompt template
+\usepackage{listings}
+\usepackage{tcolorbox}
+
+% Hyperlinks
+\usepackage{hyperref}
+\usepackage{url}
+
+% Make hyperref and algorithmic work together
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+% Additional packages
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{comment}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{relsize}
+\usepackage{stmaryrd}
+\usepackage{rotating}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{lipsum}
+\usepackage{bbm}
+\usepackage{colortbl}
+\usepackage{arydshln}
+\usepackage{makecell}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{float} % for [H] figure placement
+
+% cleveref
+\usepackage[capitalize,noabbrev]{cleveref}
+
+% --- Compactness tweaks for fitting in 9 pages ---
+% Tighter captions for all figures and tables.
+\captionsetup{font=small,labelfont=bf,skip=3pt}
+\captionsetup[sub]{font=small,skip=2pt}
+% Tighter floating-environment spacing.
+\setlength{\textfloatsep}{6pt plus 1pt minus 1pt}
+\setlength{\floatsep}{6pt plus 1pt minus 1pt}
+\setlength{\intextsep}{6pt plus 1pt minus 1pt}
+\setlength{\abovecaptionskip}{3pt}
+\setlength{\belowcaptionskip}{0pt}
+% --------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\usepackage[textsize=tiny]{todonotes}
+\usepackage{color}
+
+% ----------------------------------------------------------------------
+% Title and authors (NeurIPS style)
+% In blind-review submission mode, the author block is automatically
+% replaced by "Anonymous Author(s)".
+% ----------------------------------------------------------------------
+\title{Memory-as-Skill for Compositional Generalization in Embodied Multi-Agent Cooperation}
+
+\author{%
+  Firstname1 Lastname1\thanks{Equal contribution.} \\
+  Department of XXX\\
+  University of YYY\\
+  Location, Country \\
+  \texttt{first1.last1@xxx.edu} \\
+  \And
+  Firstname2 Lastname2\footnotemark[1] \\
+  Company Name \\
+  Location, Country \\
+  \texttt{first2.last2@www.uk} \\
+  \AND
+  Firstname3 Lastname3 \\
+  Company Name \\
+  Location, Country \\
+  % \texttt{email} \\
+  \And
+  Firstname4 Lastname4 \\
+  School of ZZZ, Institute of WWW \\
+  Location, Country \\
+  % \texttt{email} \\
+  \And
+  Firstname5 Lastname5 \\
+  Department of XXX, University of YYY \\
+  Location, Country \\
+  % \texttt{email} \\
+}
+
+
+\begin{document}
+
+
+\maketitle
+
+
+\begin{abstract}
+  Memory mechanisms for embodied LLM agents have evolved from passive repositories into active, action-conditioned systems for long-horizon reasoning. However, extending these capabilities to decentralized multi-agent settings remains challenging. Partial observability and distributed control demand that agents minimize redundancy and mitigate conflicts without centralized supervision. We introduce Memory-as-Skill, a decentralized hierarchical framework that models individual and cooperative skills as persistent, retrievable abstractions grounded in memory primitives. Our approach distills reusable skills from inter-agent interactions and organizes them hierarchically. At execution time, a context-aware planner dynamically retrieves and composes these skills based on semantic context and subtask requirements, enabling coordination through shared behavioral abstractions rather than explicit messaging. Empirical evaluations demonstrate significant improvements over baselines in task success rates, completion ratios, and coordination efficiency across diverse task compositions.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Large language model agents are demonstrating remarkable capabilities in increasingly sophisticated missions in various domains~\citep{aghzal2025survey, cao2025large}. Instead of serving as mere command-responders, these agents now act as persistent planners, capable of conducting research projects~\citep{zheng2025deepresearcher} and navigating complex real-world environments~\citep{ahn2022can} with long horizons~\citep{erdogan2025plan}.%
+\begin{wrapfigure}[14]{r}{0.55\linewidth}
+    \centering
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/left-cropped.pdf}
+        \caption*{\small Single-agent}
+    \end{subfigure}\hfill
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figs/right-cropped.pdf}
+        \caption*{\small Multi-agent}
+    \end{subfigure}
+    \caption{\textbf{Generalization in cooperative embodied AI.} Multi-agent generalization additionally requires transferring cooperation paradigms (role assignment, coordination) to novel partners and contexts.}
+    \label{fig:my_combined_figure}
+\end{wrapfigure}
+Yet executing such intricate, long-horizon tasks demands more than just reactive intelligence. It requires memory. Therefore, the concept of \textit{agentic memory} reframes an agent's experience from a passive repository of information into an active, goal-directed cognitive architecture~\citep{zhang2024survey,xu2025mem}. This architecture allows a single agent to reflect on past actions, distill raw episodic events into reusable skills, and turn failures into learned lessons rather than repeated frustrations~\citep{shinn2024reflexion}. However, this challenge of cultivating effective memory is magnified exponentially in decentralized Multi-Agent Systems, where success hinges not on individual brilliance, but on the coordinated intelligence of a collective~\citep{dorigo2021swarm, zhang2018fully}.
+
+In decentralized multi-agent systems, the absence of a central coordinator necessitates that agents model the behaviours and intentions of their peers to enable emergent cooperation. While prior work has utilized explicit communication~\citep{zhang2023building} or belief modules~\citep{zhang2024proagent,li2023theory}, these approaches often suffer from prohibitive costs in bandwidth or computation. This highlights the need for implicit mechanisms where an agent's own memory becomes the primary foundation for understanding its peers from sparse, localized observations~\citep{omidshafiei2017deep}.
+
+However, even when memory successfully enables cooperation in familiar settings, learned collaborative skills may fail to generalize. Unlike single-agent generalization, which primarily involves transferring task-level skills to new contexts, multi-agent generalization requires agents to transfer both individual competencies and learned cooperation paradigms (e.g., role assignment and coordination strategies) to novel scenarios with unfamiliar partners as shown in Figure~\ref{fig:my_combined_figure}. This challenge arises because agentic memory that stores interaction histories at the trajectory level inevitably entangles cooperative behavior with specific partners and environments, leading to brittle coordination under distribution shift. For cooperative skills to transfer effectively, an agent's memory must capture \emph{why} a collaborative strategy succeeded, not merely \emph{what} happened. Our framework realizes this with partner-conditioned skill representations indexed by environmental effect rather than partner identity, abstracting away from specific partners and contexts.
+
+
+To address these challenges, we propose Memory-as-Skill, a decentralized framework that organizes experience around \emph{skills} as first-class coordination primitives---reusable behavioral abstractions rather than raw interaction histories. Following a hybrid memory design~\citep{hu2025memory}, we represent skills as natural-language behavioral patterns and partition the library into individual skills (single-agent competencies) and cooperation skills (conditional responses to partner behavior). The framework operates in two stages: agents first distill successful trajectories into a hierarchical memory that separates \emph{what to do} (abstract skills) from \emph{where and on what to do it} (contextualized instances); at execution time, agents coordinate through hierarchical retrieval that first matches abstract skill categories, then retrieves contextually similar instances and filters for executability. Because agents execute sequentially and observe consequences rather than actions directly, coordination becomes a grounding problem rather than a prediction problem, enabling implicit coordination without explicit communication.
+
+We evaluate our framework across embodied multi-agent benchmarks with multiple LLM backbones, achieving up to 88.2\% success on Llama-3.3-70B and substantial gains on the hardest 4-constraint compositional tasks where prior baselines collapse. Our contributions are threefold. First, we introduce a hierarchical memory system that separates abstract skills from contextualized instances and partitions knowledge into individual and cooperation skills, enabling generalization across novel objects, locations, and partner behaviors not encountered during learning. Second, we propose a hierarchical retrieval mechanism that leverages sequential execution and effect-based observation, allowing agents to coordinate through inferred partner intentions rather than explicit communication. Third, we provide comprehensive experiments with ablations validating that each component contributes to the generalization and coordination improvements.
+
+
+
+\section{Related Work}
+
+\paragraph{Memory in Large Language Model Agents}
+Research on memory for Large Language Model (LLM) agents has progressed significantly, evolving from foundational storage architectures to dynamic, agent-centric systems tailored for complex tasks. Foundational work introduced external memory systems like MemoryBank~\citep{Zhong2023MemoryBankELA}, which grew into more sophisticated frameworks such as structural
+memory~\citep{zeng2024structural} and Memory$^3$~\citep{Yang2024Memory3LMA} to better organize information. More recently, the focus has shifted towards an
+agentic paradigm, where memory is integral to an agent's reasoning and action~\citep{xu2025mem}, enabling critical capabilities like agentic information retrieval~\citep{zhang2024agentic}. These principles have been applied across various contexts, from maintaining consistency in multi-turn interactions~\citep{hu2025evaluating} to supporting goal-oriented tasks with systems like AgentMove~\citep{feng2024agentmove}. Recent surveys have further
+established systematic taxonomies based on abstraction levels~\citep{zhang2024survey}. Case-based memory preserves raw trajectories for direct replay, strategy-based memory distills transferable reasoning patterns, and skill-based memory encodes executable procedures. Hybrid approaches such as ExpeL~\citep{zhao2024expel} and Agent KB~\citep{tang2025agent}
+combine multiple levels, coupling concrete trajectories with abstract insights, while G-Memory~\citep{zhang2025g} extends this idea to multi-agent settings through a hierarchical graph structure. However, these frameworks do not explicitly model cooperation-specific knowledge or address how agents should coordinate responses to partner behaviors. Our Memory-as-Skill framework addresses this gap by partitioning the hybrid architecture into individual and cooperation skills, enabling decentralized coordination through learned behavioral patterns.
+
+
+
+
+\paragraph{Decentralized multi-agent systems}
+The exploration of Large Language Model (LLM)-based multi-agent systems has rapidly advanced, with a strong emphasis on fostering decentralized collaboration and developing memory frameworks to support complex interactions. The general development of LLM-based multi-agent systems~\citep{guo2024large} has spurred investigations into effective multi-agent collaboration~\citep{tran2025multi}, often highlighting the need for decentralized cooperation to improve scalability and autonomy~\citep{chen2024scalable, yang2025agentnet}. This research extends to specialized applications such as cooperative embodied agents designed to interact with physical or virtual environments~\citep{zhang2023building}. Central to these efforts is the development of dedicated multi-agent memory systems~\citep{wang2025mirix}, with proposed solutions like the hierarchical G-memory~\citep{zhang2025g} designed to manage information across teams. The application of these memory-enabled systems is already being explored in fields like social science research to model complex group dynamics~\citep{haase2025beyond}. However, these frameworks often do not address how fundamental conflicts (e.g., physical positions, intentions) between agents can trigger cooperation failure, a critical issue our method is designed to prevent.
+
+
+\section{Preliminaries}
+
+We formulate the planning environment for LLM-powered embodied agents as a Decentralized Partially
+Observable Markov Decision Process (DEC-POMDP)~\citep{oliehoek2016concise} defined by the tuple $(\mathcal{D}, S, A, T, \Omega, O)$, where $\mathcal{D} = \{1,2\}$ represents the set of $n$ agents (in our case $n=2$ agents). $S$
+denotes the set of environment states, $A$ is the set of actions, $T$ is the transition function, $\Omega$ is the observation space, $O$ is the observation function.
+At each timestep $t$, the environment is in a state $s_t \in S$, and the agent $n$ receives a partial observation
+$o_t^n \in \Omega$ in text modality describing visible objects near its current position. At the beginning of each
+episode, the agent is given a natural language instruction $I$ (e.g., Place the mug on the table and the
+book on the shelf). Given an instruction $I$, agent $n$ generates actions $
+a^n_t \sim \pi^n(\cdot | I, \tau^n_t)$ at timestep $t$ based on its trajectory of
+observations and actions.
+Agent $n$'s local trajectory is defined as $\tau^n_t = (o^n_1, a^n_1, \ldots, o^n_{t-1}, a^n_{t-1}, o^n_t)$. Following PartNR's evaluation protocol~\citep{chang2024partnr}, agents execute in alternating rounds within each timestep $t$: one agent acts while the others issue a default \texttt{wait} action, after which observations update for the next round. This turn-based instantiation preserves the DEC-POMDP formalism while enabling each agent to observe partner-induced environmental changes before deciding---the structural property our effect-based partner inference exploits in Section~\ref{subsec:effect_inference}. Since our focus is on LLM-based planning rather than reward optimization, we omit the reward function and consider goal-conditioned task completion as the success criterion. The goal for each agent $n$ is to produce a sequence of actions $a^n_{1:t} = (a^n_1, a^n_2, \dots , a^n_t)$ such that the resulting state $s_t$ satisfies the task goal.
+
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figs/final_workflow_cropped_compressed.pdf}
+    \caption{\textbf{Overview of the Memory-as-Skill framework.} The framework operates in two stages. \textbf{Stage 1 (Memory Building):} Agents acquire skills organized into a hierarchical library $\mathcal{L}$ consisting of individual skills $\mathcal{L}_{\text{ind}}$ and cooperation skills $\mathcal{L}_{\text{coop}}$. Each abstract skill is associated with grounded instances containing \texttt{context} (environment parameters), \texttt{demo} (natural language demonstration), and \texttt{self\_cond} (requirements on the agent's own state). Cooperation skill instances additionally include \texttt{partner\_cond} (expected partner behavioral patterns). \textbf{Stage 2 (Memory Utilization):} Given a task description and current observation, the agent performs skill prediction based on trajectory history, matches against the skill library, and retrieves the top-$k$ most relevant instances. Executability filtering removes instances whose \texttt{self\_cond} is not satisfied by the current state or, for cooperation skills, whose \texttt{partner\_cond} does not match observed environmental changes. In the illustrated example, the agent observes that the monitor stand is no longer on the table, infers the partner has claimed this subtask, and generates a grounded action to move the laptop stand.}
+    \label{fig:workflow}
+\end{figure}
+
+\section{Method}
+\label{sec:method}
+
+Memory-as-Skill operates in two stages: memory building and memory utilization. We first describe how the hierarchical skill library is constructed, then detail the retrieval mechanism.
+
+
+
+\subsection{Memory Building Stage}
+\label{subsec:memory_building}
+
+Our framework organizes learned knowledge into a hierarchical skill library $\mathcal{L} = \mathcal{L}_{\text{ind}} \cup \mathcal{L}_{\text{coop}}$, partitioned into individual skills (single-agent competencies) and cooperation skills (multi-agent coordination patterns). The term ``skill'' here refers to a reusable behavioral pattern in natural language, not executable code or API calls.
+
+A \emph{skill} is a tuple $s = (\texttt{name}, \texttt{type}, \mathcal{I}_s)$, where \texttt{name} is a semantic identifier (e.g., \texttt{Pickup}, \texttt{Handover}) serving as the retrieval key, \texttt{type} $\in \{\texttt{individual}, \texttt{cooperation}\}$, and $\mathcal{I}_s$ is a set of grounded instances. An \emph{individual} instance is $(\texttt{context}, \texttt{demo}, \texttt{self\_cond})$, where \texttt{context} parameterizes the environment (e.g., \texttt{(Kitchen, Plate)}), \texttt{demo} is a natural-language demonstration, and \texttt{self\_cond} is a requirement on the agent's own state (e.g., ``my hand is free''). A \emph{cooperation} instance adds \texttt{partner\_cond}, an expected partner behavioral pattern inferred from environmental changes (e.g., ``partner picked up an object and approaching''). This separation between abstract skill (\emph{what to do}) and contextualized instance (\emph{where and on what to do it}) lets agents transfer learned skills to novel objects, locations, and partner behaviors not seen during memory building.
+
+\paragraph{Effect-based Partner Inference.}\label{subsec:effect_inference}
+\texttt{partner\_cond} indexes cooperation skills by the environmental effect of a partner's action rather than by the action token or partner identity. When agent $j$ observes $\Delta o_t^j$ such as ``object no longer on table'', it retrieves skills whose effect pattern matches---a behavioral abstraction that aligns with the functional view of Theory of Mind in~\citet{kosinski2023theory}. Because the retrieval key is task-agnostic, the same cooperation skill activates across unseen object--location combinations.
+
+\paragraph{Skill Generation.}
+We extract skills from successful trajectories using an LLM-based pipeline (Figure~\ref{fig:workflow}, Stage~1). The LLM segments trajectories at subgoal-completion boundaries and generates each skill's \texttt{name}, \texttt{context}, \texttt{demo}, and conditions. Cooperation skills are additionally identified at segments where an agent's action directly follows partner-induced environmental changes, with \texttt{partner\_cond} summarizing the triggering environmental delta.
+
+\subsection{Memory Utilization Stage}
+\label{subsec:utilization}
+\label{subsec:memory_utilization}
+
+At execution time, we leverage the alternating-round execution for implicit coordination: although partner actions are not directly observable, their environmental consequences provide sufficient signal for complementary response selection.
+
+\paragraph{Hierarchical Skill Retrieval.}
+Under partial observability, at time step $t$, agent $j$ cannot directly observe agent $i$'s action $a^i_t$ but infers partner behavior from the environmental change $\Delta o_{t}^j = f_{\mathsf{diff}}(o_{t-1}^j, o_t^j)$, where $f_{\mathsf{diff}}$ prompts the LLM to summarize task-relevant differences (e.g., ``the mug is no longer on the table''). Conditioning on $\Delta o_t^j$, the agent applies Theory of Mind reasoning to predict a skill name and retrieve relevant instances:
+\begin{equation}
+\hat{s}_t^j = f_{\mathsf{predict}}(\tau_t^j, \Delta o_{t}^j, I), \qquad
+s^* = \arg\max_{s \in \mathcal{L}} \text{sim}(\hat{s}^j_t, \texttt{name}(s)), \qquad
+\mathcal{I}_{\text{retrieved}} = \text{top-}k_{i \in \mathcal{I}_{s^*}}\{\text{sim}(\text{context}(i), o^j_t)\},
+\end{equation}
+where $\tau_t^j$ is agent $j$'s trajectory, $\text{sim}(\cdot,\cdot)$ is cosine similarity over sentence embeddings, and $\mathcal{L} = \mathcal{L}_{\text{ind}} \cup \mathcal{L}_{\text{coop}}$. The two-stage design first selects the relevant skill category by name (\texttt{Pickup} vs.\ \texttt{Handover}, etc.) and then retrieves contextually appropriate demonstrations within it, balancing semantic fuzziness with grounded specificity.
+
+
+\paragraph{Executability Filtering and Action Selection.}
+Retrieved instances are filtered by executability via LLM-based verification: individual skills require only the agent's self-condition, $\mathcal{I}_{\text{exec}} = \{i \mid \texttt{self\_cond}_i(o_t^j)\}$, while cooperation skills additionally require that the observation difference matches the expected partner pattern, $\mathcal{I}_{\text{exec}} = \{i \mid \texttt{self\_cond}_i(o_t^j) \land \texttt{partner\_cond}_i(\Delta o_t^j)\}$. LLM-based verification (rather than rule-based) provides the semantic flexibility needed under distribution shift, since enumerating all objects, locations, and configurations in advance is infeasible. The top-ranked executable instances serve as in-context examples for action generation; because the agent observes concrete partner-induced outcomes rather than predicting partner behavior, action selection is grounded in actual task progress. When the predicted skill name fails to match any library entry above a calibrated embedding similarity threshold (Appendix~\ref{sec:threshold_calibration}), the agent falls back to zero-shot generation conditioned on $\tau_t^j$.
+
+\paragraph{Implicit Coordination via Effect Inference.}
+The combination of sequential execution and effect-conditioned cooperation skills yields coordination without explicit communication or partner-belief modeling. When agent $j$ observes $\Delta o_t^j$ at step $t$ (e.g., ``monitor stand no longer on the bedroom table''), the retrieved cooperation skill prescribes a complementary action (e.g., ``move the laptop stand'') rather than redundant re-execution; the environmental delta is itself a sufficient signal that the partner has claimed an overlapping subtask. This realizes Theory of Mind functionally in the sense of~\citet{kosinski2023theory}, but instantiates it as an effect-to-skill lookup rather than as an explicit partner-belief module---a representational choice with two practical consequences. First, the coordination signal is causal in direction: $\Delta o_t^j$ reflects what the partner has \emph{already done}, so action selection is grounded in observed task progress rather than in speculative inference over partner intent. Second, because cooperation skills are indexed by effect patterns rather than partner identity, the same skill activates across unseen partner pairings and constraint compositions---a property that anticipates the conflict reductions and asymmetric-deployment effects in Section~\ref{subsec:coordination}.
+
+
+\section{Experiments}
+\label{sec:experiments}
+\begin{table}[t]
+\centering
+\caption{R\_S Task performance comparison across different LLM backbones. We report task success rate (Succ.) and completion percentage (Comp.) where higher is better ($\uparrow$). Best results per model are \textbf{bolded}, second best are \underline{underlined}. Note that RAG, MEMENTO and our method are using Rearrange\_Only memory.}
+\label{tab:main_results_task}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}l|cc|cc|cc|cc|cc|cc@{}}
+\toprule
+& \multicolumn{2}{c|}{\textbf{Llama-8B}}
+& \multicolumn{2}{c|}{\textbf{Llama-70B}}
+& \multicolumn{2}{c|}{\textbf{Qwen-7B}}
+& \multicolumn{2}{c|}{\textbf{Qwen-72B}}
+& \multicolumn{2}{c|}{\textbf{Claude}}
+& \multicolumn{2}{c}{\textbf{GPT-4o}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11} \cmidrule(lr){12-13}
+\textbf{Method}
+& Succ$\uparrow$ & Comp$\uparrow$
+& Succ$\uparrow$ & Comp$\uparrow$
+& Succ$\uparrow$ & Comp$\uparrow$
+& Succ$\uparrow$ & Comp$\uparrow$
+& Succ$\uparrow$ & Comp$\uparrow$
+& Succ$\uparrow$ & Comp$\uparrow$ \\
+\midrule
+Zero-Shot
+& 0.573 & 0.692
+& 0.600 & 0.720
+& 0.384 & 0.593
+& 0.610 & 0.700
+& 0.620 & 0.700
+& 0.787 & 0.843 \\
+ToM
+& 0.667 & 0.727
+& \underline{0.854} & \underline{0.902}
+& 0.414 & 0.568
+& 0.700 & 0.750
+& 0.710 & 0.740
+& \textbf{0.816} & \underline{0.859} \\
+RAG
+& 0.710 & 0.840
+& 0.795 & 0.862
+& 0.405 & 0.698
+& 0.752 & 0.798
+& 0.755 & 0.815
+& 0.658 & 0.848 \\
+MEMENTO
+& \underline{0.717} & \underline{0.790}
+& 0.820 & 0.875
+& \underline{0.421} & \underline{0.732}
+& \underline{0.780} & \underline{0.815}
+& \underline{0.780} & \underline{0.840}
+& 0.631 & 0.845 \\
+\midrule
+\textbf{Ours}
+& \textbf{0.722} & \textbf{0.802}
+& \textbf{0.882} & \textbf{0.912}
+& \textbf{0.574} & \textbf{0.746}
+& \textbf{0.840} & \textbf{0.870}
+& \textbf{0.800} & \textbf{0.850}
+& \underline{0.702} & \textbf{0.867} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+We evaluate our Memory-as-Skill method on embodied multi-agent cooperation tasks, addressing three research questions:
+
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em, topsep=0.2em, parsep=0pt]
+    \item \textbf{RQ1:} Can memory-augmented LLM agents generalize cooperative behaviors from elementary tasks to novel composite task scenarios?
+    \item \textbf{RQ2:} Which memory components are essential, and how should retrieval be routed across heterogeneous skill libraries?
+    \item \textbf{RQ3:} Does skill-structured memory reduce coordination failures, and how should memory be deployed across agents to minimize them?
+\end{itemize}
+
+
+
+
+\subsection{Experimental Setup}
+\label{subsec:setup}
+
+\paragraph{Task Types.}
+We evaluate on the PartNR benchmark~\citep{chang2024partnr}, featuring two-agent embodied cooperation in simulated household environments with sequential action execution. We classify tasks by four elementary types derived from evaluation propositions. \textbf{Rearrange (R)} requires object repositioning with location constraints (\texttt{is\_on\_top}, \texttt{is\_in\_room}). \textbf{Spatial (S)} requires explicit spatial relationships (\texttt{is\_next\_to}). \textbf{Heterogeneous (H)} involves state-changing actions (\texttt{is\_clean}, \texttt{is\_filled}, \texttt{is\_powered\_on}). \textbf{Temporal (T)} indicates sequential dependencies via DAG edges. Composite types (R\_S, H\_R, H\_R\_T, H\_R\_S\_T) combine multiple constraints. Validated against ground-truth labels on 2{,}000 PartNR episodes, our proposition-based classification achieves F1=0.97 on elementary types and F1=0.90 on composite types (Appendix~\ref{sec:task_classification_appendix}, Figure~\ref{fig:task_classification}).
+
+
+\paragraph{Baselines.}
+We compare against four baselines. (1) \textbf{Zero-Shot}: LLM agents without memory, relying solely on in-context reasoning. (2) \textbf{ToM}~\citep{li2023theory}: explicit partner belief modeling through a dedicated reasoning module. (3) \textbf{RAG}~\citep{lewis2020retrieval}: retrieval-augmented generation using semantic similarity to retrieve successful trajectories from a training database. (4) \textbf{MEMENTO}~\citep{kwon2025embodied}: structured trajectory-based memory with knowledge graph organization. For fair comparison, all memory-based methods use the same trajectory data collected from heuristic agent~\citep{chang2024partnr} rollouts, with our memories extracted using LLaMA-3.1-70B.
+
+\paragraph{Models and Metrics.}
+We evaluate with six LLM backbones: Llama 3.1-8B, Llama 3.3-70B, Qwen 2.5-7B, Qwen 2.5-72B, Claude 3.5 Sonnet, and GPT-4o. Metrics include Success Rate (fraction of fully completed episodes), Completion Percentage (average subtask completion), and coordination failures (object contention, spatial conflicts). We use notation Task(Memory) for configurations, e.g., H\_R\_S\_T(R+S) denotes evaluation on a 4-constraint compositional task using memory from R-only and S-only elementary tasks.
+
+\paragraph{Evaluation Protocol.}
+Memory is built using LLaMA-3.1-70B from heuristic-agent rollouts and remains frozen during all evaluation, yielding 7--280 individual and 47--269 cooperation skills per memory subset (Appendix~\ref{sec:skill_memory_analysis}). Per-task evaluation episodes are 76 for R\_S, up to 197 for H\_R, 11--42 for H\_R\_T, and 5--15 for H\_R\_S\_T, reflecting PartNR's compositional design where high-constraint tasks are inherently rarer. Across all backbone-method-memory configurations, our evaluation totals over 14{,}000 episode runs across 205 configurations, the largest evaluation in the embodied multi-agent memory literature to our knowledge.
+
+\subsection{Main Results}
+\label{subsec:main_results}
+
+Table~\ref{tab:main_results_task} presents task performance across all methods and LLM backbones on Rearrange+Spatial tasks, where memory-based methods use Rearrange-only memory to evaluate cross-type transfer capability.
+
+
+
+Our method consistently outperforms baselines across most model configurations. On Llama-8B, we achieve 72.2\% success compared to 71.7\% for MEMENTO and 66.7\% for ToM. The improvement margin increases with model scale: on Llama-70B, our method achieves 88.2\% versus 85.4\% for ToM, representing a 3.3\% relative improvement. On Qwen-7B, which struggles most with these tasks, our method achieves 57.4\% success compared to 42.1\% for MEMENTO, a 36\% relative improvement, indicating that the hierarchical skill structure provides substantial benefits for weaker models. GPT-4o is the one exception (70.2\% success vs.\ 78.7\% zero-shot, but $86.7\%$ completion---negative transfer on success that we attribute to retrieved demonstrations over-constraining a strong reasoner that already excels with explicit ToM prompting at $81.6\%$; further analysis in Appendix~\ref{sec:per_backbone}).
+
+The aggregate gain in Table~\ref{tab:main_results_task} prompts three diagnostic questions: (i) where do the gains come from across task complexity (RQ1, Section~\ref{subsec:generalization}); (ii) which memory components carry them (RQ2, Section~\ref{subsec:ablation}); and (iii) how do they manifest in inter-agent dynamics (RQ3, Section~\ref{subsec:coordination}). Quantitative breakdowns supporting each RQ are provided in Appendix~\ref{sec:failure_scenarios_appendix}--\ref{sec:skill_memory_analysis}.
+
+\subsection{Compositional Generalization (RQ1)}
+\label{subsec:generalization}
+
+To answer \textbf{RQ1}, we evaluate whether agents can transfer skills learned from single-constraint elementary tasks to multi-constraint composite tasks not encountered during memory building.
+
+Figure~\ref{fig:combined_results}(a) compares success rates across tasks with increasing constraint complexity. On 2-constraint tasks, zero-shot achieves 50\% on R\_S but only 19.3\% on the more challenging H\_R transfer, while our method reaches 85.9\% with combined R+S memory, representing a 35.9\% absolute improvement. The performance gap widens on 3-constraint tasks (H\_R\_T), where zero-shot completely fails and our method achieves 27.7\% with H\_R+H\_T memory, outperforming RAG (11.1\%) and MEMENTO (4.5\%). On the most challenging 4-constraint tasks (H\_R\_S\_T), our method attains 40\% with R-only memory, doubling MEMENTO's performance (n$=$5 evaluation episodes; absolute percentages reflect 1--2 episode differences). These results demonstrate that task complexity creates a critical threshold where zero-shot performance collapses, underscoring the necessity of memory-augmented approaches. Moreover, compositional memory retrieval consistently outperforms single-type retrieval, validating that structured skill decomposition enables more effective knowledge transfer in complex multi-agent coordination scenarios. The transfer-quality dependence on retrieval count $k$ is examined in Appendix~\ref{subsec:topk}, where harder transfers (R$\rightarrow$HRST) peak at $k{=}5$ and degrade sharply beyond it.
+
+
+
+
+\subsection{Memory Structure Analysis (RQ2)}
+\label{subsec:ablation}
+
+To answer \textbf{RQ2}, we conduct systematic ablations removing each memory component: cooperation skills (no\_coop), hierarchical structure (no\_hier), and individual skills (no\_ind). Figure~\ref{fig:combined_results}(b) presents results across multiple task-memory configurations.
+
+\begin{figure}[t]
+    \centering
+    \begin{subfigure}[t]{0.49\linewidth}
+        \centering
+        \adjustbox{height=5.2cm,width=\linewidth,keepaspectratio}{\includegraphics{figs/method_comparison_3panel_unified.pdf}}
+        \caption{\textbf{Compositional generalization (RQ1).} Zero-shot (dashed red) collapses with constraint count; our method outperforms baselines, with the largest gains on 3- and 4-constraint tasks.}
+        \label{fig:method_comparison}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.49\linewidth}
+        \centering
+        \adjustbox{height=5.2cm,width=\linewidth,keepaspectratio}{\includegraphics{figs/ablation_combined_3panel.pdf}}
+        \caption{\textbf{Component ablation (RQ2).} Full: complete method; w/o Coop: no cooperation memory; w/o Hier: no hierarchical retrieval; w/o Ind: no individual skills.}
+        \label{fig:ablation}
+    \end{subfigure}
+    \caption{Success rate (\%, $\uparrow$) across task complexities, evaluated on Llama-3.1-8B. Both panels share the same x-axis grouping: 2-constraint (left), 3-constraint H\_R\_T (middle), 4-constraint H\_R\_S\_T (right).}
+    \label{fig:combined_results}
+\end{figure}
+Figure~\ref{fig:ablation} shows that cooperation skills are the most important factor for multi-agent coordination. Removing them causes larger performance drops than removing individual skills, most starkly on 4-constraint tasks where cooperation removal leads to zero success while individual removal only partially hurts. The hierarchical memory structure is also important: without it, retrieval over the full skill pool surfaces less relevant matches and performance collapses on 4-constraint tasks. Even on simpler 2-constraint tasks, the full model consistently achieves the highest success rates. Together, cooperation skills and hierarchical retrieval enable robust transfer across all task complexities; per-backbone skill libraries are characterized in Appendix~\ref{sec:skill_memory_analysis}.
+
+\paragraph{Task-Type Classification.}
+We further verify the necessity of routing retrieval through task-type classification. We compare oracle classification (F1=0.90 on composite types per Figure~\ref{fig:task_classification}) against retrieval over a merged pool of all skill types (475 individual + 442 cooperation skills). Figure~\ref{fig:tasktype} reports results on Llama 3.1-8B. Removing classification produces 65--87\% relative drops in completion across all task groups. R\_S success drops from 0.722 to 0.152 (79\% relative decrease), H\_R drops from 0.284 to 0.065 (77\%), and H\_R\_T collapses entirely from 0.277 to 0.000. Without classification, the retrieval system surfaces irrelevant skills from mismatched memory banks, overwhelming the in-context examples that guide action selection. This confirms that task-type classification is the critical routing mechanism that connects compositional task queries to the elementary skill libraries from which the framework generalizes. A complementary headroom analysis in Appendix~\ref{sec:task_classification_appendix} shows that replacing the classifier with ground-truth task labels yields only $\Delta=+0.039$ in aggregate completion, indicating that the residual classifier error is not the bottleneck of this routing mechanism. The complementary out-of-library threshold used by the fallback retrieval branch is calibrated against four LLM judges in Appendix~\ref{sec:threshold_calibration}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figs/tasktype_ablation.pdf}
+    \caption{Task-type classification ablation on Llama 3.1-8B. Oracle (correct memory routing) vs.\ No cls (retrieval over the merged skill pool). Removing classification produces 65--87\% relative drops in completion across all four task complexities.}
+    \label{fig:tasktype}
+\end{figure}
+
+\subsection{Coordination Failures and Memory Deployment (RQ3)}
+\label{subsec:coordination}
+
+To answer \textbf{RQ3}, we measure how skill-structured memory affects coordination, first by quantifying failures relative to a strong memory baseline, then by asking how memory should be \emph{deployed} across agents to minimize those failures.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figs/coop_heatmap_2x2.pdf}
+    \caption{Coordination failures ($\downarrow$): ours vs.\ MEMENTO on Llama-3.1-8B. Cells show our failure count and improvement \% (green: fewer, red: more). Conflict, FailPick, SelfConf, NotClose; definitions in Appendix~\ref{appendix:failure_metrics}.}
+    \label{fig:coop_heatmap}
+\end{figure}
+
+Figure~\ref{fig:coop_heatmap} compares our method against MEMENTO on conflicts per episode (Conf/Ep), failed pick attempts (FailPick/Ep), self-confusion errors (SelfConf/Ep), and navigation failures (NotClose/Ep). Our method reduces inter-agent conflicts (Conflict/Ep) by up to 91\% on H\_R(R) and by 37\% to 71\% on 3-constraint H\_R\_T tasks. Self-conflict errors (SelfConf/Ep) decrease by 75\% to 97\% on simpler transfers, showing that our method provides more coherent action guidance. Navigation failures (NotClose/Ep) also improve by 33\% to 87\% across most configurations. For 4-constraint H\_R\_S\_T tasks, our method maintains competitive performance on Conflict/Ep and NotClose/Ep, while FailPick/Ep and SelfConf/Ep show room for improvement when handling multiple heterogeneous constraints simultaneously.
+
+\paragraph{Specific Failure Scenarios on 4-Constraint Tasks.}
+On H\_R\_S\_T, three failure modes emerge from Figure~\ref{fig:coop_heatmap}: missing manipulation skills under H\_T memory drive a $+344\%$ increase in FailPick/Ep; spatial-reasoning gaps under H\_R memory drive a $+302\%$ increase in SelfConf/Ep; and identical temporal cues under H\_T memory drive a $+19\%$ increase in Conflict/Ep, as both agents infer overlapping subtasks from the same environmental delta (full breakdown in Appendix~\ref{sec:failure_scenarios_appendix}). The third mode is structurally distinct: failure originates not from missing memory but from \emph{symmetric} memory producing conflicting partner inferences. We test this hypothesis next.
+
+\paragraph{Memory Deployment Across Agents.}
+A one-agent ablation, in which only one agent uses Memory-as-Skill while the other operates zero-shot, reveals three findings on Llama 3.1-8B (Figure~\ref{fig:one_agent}). First, the leader (Agent~0) benefits more from memory than the follower across all task groups; on H\_R, Agent~0 only (0.496 success) exceeds even the both-memory configuration (0.223). Second, follower-only memory is consistently counterproductive: Agent~1 only yields the weakest performance everywhere, indicating that \texttt{partner\_cond} expectations become misaligned when the leader lacks corresponding memory. Third, on R\_S, adding Agent~0 memory improves success by 0.151 versus 0.101 for Agent~1, consistent with the leader's role in the skill-prediction step.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figs/one_agent_ablation.pdf}
+    \caption{One-agent ablation on Llama 3.1-8B. Agent~0 = leader, Agent~1 = follower. The H\_R inversion is striking: equipping only the leader with memory (Agent~0 only) more than doubles success compared with equipping both agents.}
+    \label{fig:one_agent}
+\end{figure}
+
+The H\_R inversion is the sharpest case. When both agents retrieve cooperation skills, Conflict/Ep reaches 1.63, nearly five times that of Agent~0 only (0.33; mechanistic explanation and full failure-metric breakdown in Appendix~\ref{sec:hr_failure_appendix}). Both agents' \texttt{partner\_cond} expectations assume consistent partner behavior, but neither matches when both simultaneously deviate from zero-shot. Removing Agent~1's memory eliminates this mutual mismatch, halving conflicts and doubling success from 22.3\% to 49.6\%. NotClose/Ep also drops from 16.0 to 9.8. SelfConf/Ep rises slightly under one-agent conditions (1.36 vs.\ 0.27), but this self-confusion has far less impact on joint coordination than inter-agent conflict. Cooperation skills are thus most effective when concentrated in the coordinating agent, with the follower benefiting from adaptive flexibility---a role-aware deployment principle we revisit in Section~\ref{sec:conclusion}.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We presented Memory-as-Skill, a hierarchical memory framework for decentralized embodied multi-agent cooperation that separates abstract skills from contextualized instances and partitions knowledge into individual and cooperation-specific libraries. Across six LLM backbones and 14{,}000$+$ PartNR episodes, cooperation skills drive the largest share of the gains, and effect-based partner inference substantially reduces inter-agent conflicts relative to strong memory baselines. Indexing cooperation skills by environmental effects rather than partner identity activates a single skill across novel objects, locations, and unfamiliar partners, removing the need for explicit communication or partner-belief modeling. The same representational choice explains why cooperation memory should scale with agent role rather than count: matched partner-condition expectations become mutually inconsistent when both partners simultaneously deviate from a common reference.
+
+\paragraph{Limitations and Future Work.}
+Three limitations remain: domain transfer beyond PartNR's household environments is unverified, memory building requires successful trajectories (relaxable via learned policies or demonstrations), and effect-based inference exploits sequential execution, leaving concurrent execution as an open direction. Initial $N{=}3$ validation in Section~\ref{subsec:coordination} indicates that the role-aware deployment principle extends beyond the dyadic setting; broader $N$ and concurrent settings remain to be characterized.
+\begin{ack}
+% Acknowledgments are automatically hidden in the anonymized submission.
+% Add funding sources and competing-interest disclosures here for the
+% camera-ready version, per
+% https://neurips.cc/Conferences/2026/PaperInformation/FundingDisclosure
+\end{ack}
+
+
+\bibliographystyle{plainnat}
+\bibliography{example_paper}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Appendix}
+
+
+\subsection{Specific Failure Scenarios on 4-Constraint Tasks}
+\label{sec:failure_scenarios_appendix}
+
+We expand the three failure modes referenced in Section~\ref{subsec:coordination}. First, missing manipulation skills under H\_T memory cause a $344\%$ relative increase in FailPick/Ep: H\_T memory contains state-changing and temporal skills but lacks rearrangement primitives, so agents attempt pickup/place actions for which no relevant skill instance exists. Second, spatial-reasoning gaps under H\_R memory cause a $302\%$ relative increase in SelfConf/Ep: without spatial-relation skills, agents oscillate between contradictory placements within the $\tau=5$ window, repeatedly picking and replacing objects on the same target (definitions in Appendix~\ref{appendix:failure_metrics}). Third, identical temporal cues under H\_T memory increase Conflict/Ep by $19\%$: both agents infer the same upcoming subtask from shared temporal observations, leading to overlapping pursuit of the same objects. These failures consistently arise when the semantic gap between available memory and task requirements is large.
+
+\subsection{Cooperation Failure Metrics under Asymmetric Memory}
+\label{sec:hr_failure_appendix}
+
+Table~\ref{tab:hr_failure} provides the full failure-metric breakdown supporting the H\_R inversion analysis in Section~\ref{subsec:coordination}. Removing Agent~1's memory cuts Conflict/Ep nearly five-fold and halves NotClose/Ep, while SelfConf/Ep rises modestly---confirming that mutual \texttt{partner\_cond} mismatch dominates inter-agent failure modes.
+
+\begin{table}[h]
+\centering
+\caption{Cooperation failure metrics on H\_R across one-agent conditions. Conflict and NotClose drop substantially when only the leader uses memory.}
+\label{tab:hr_failure}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}l|ccccc@{}}
+\toprule
+\textbf{Condition} & \textbf{Succ.}$\uparrow$ & \textbf{Conflict/Ep}$\downarrow$ & \textbf{FailPick/Ep}$\downarrow$ & \textbf{SelfConf/Ep}$\downarrow$ & \textbf{NotClose/Ep}$\downarrow$ \\
+\midrule
+Both memory  & 0.223 & 1.63 & \textbf{1.69} & \textbf{0.27} & 15.99 \\
+Agent 0 only & \textbf{0.496} & \textbf{0.33} & 1.83 & 1.36 & \textbf{9.82} \\
+Agent 1 only & 0.056 & 0.75 & 2.69 & 1.51 & 13.81 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\paragraph{Why H\_R is the sharpest inversion case.} Among the task groups we evaluate, H\_R combines manipulation actions (Pickup, Place) with state-changing actions on the same set of objects (e.g., \texttt{is\_clean}, \texttt{is\_filled}). This co-occurrence produces the densest \texttt{partner\_cond} space: a single environmental delta $\Delta o_t^j$ can plausibly index multiple stored cooperation skills (the partner could be initiating a handover, completing a state change, or starting an adjacent subtask). When both agents condition on cooperation memory simultaneously, each independently selects from this dense candidate set, and the probability that their selections collide on the same object grows accordingly. Tasks with sparser cross-product structure (R\_S, where rearrangement and spatial constraints decouple cleanly) or asymmetric structure (H\_R\_T, where temporal ordering naturally serializes the agents) do not exhibit the same density, which is why the inversion is sharpest precisely at H\_R. This interpretation aligns with the SelfConf/Ep pattern in Table~\ref{tab:hr_failure}: under both-memory, self-confusion is rare (0.27)---each agent is internally consistent---but inter-agent Conflict/Ep dominates (1.63), exactly the signature of independent agents drawing from the same dense distribution.
+
+\subsection{Extension to N>2 Agents}
+\label{sec:n_agent_extension}
+
+Section~\ref{subsec:coordination} establishes role-aware deployment in the 2-agent setting. We test whether this principle reflects a structural property of effect-based partner inference or an artifact of the dyadic setting by extending the framework to $N{=}3$.
+
+\paragraph{Multi-effect attribution.} The 2-agent $f_{\mathsf{diff}}$ implicitly assumes each $\Delta o_t^j$ originates from the single other agent, an assumption that breaks when multiple partners may have caused observed environmental changes. We replace $f_{\mathsf{diff}}$ with a multi-effect attribution step. Given the raw observation diff and the recent positions and inventory states of all $N{-}1$ other agents, the planner LLM attributes each effect to the most likely source agent, and the retrieval pipeline conditions \texttt{partner\_cond} matching on the attributed agent rather than treating $\Delta o_t^j$ as a single signal. When attribution is ambiguous (e.g., two agents traversed the same room), the mechanism falls back to identity-agnostic retrieval, preserving the robustness of the original framework.
+
+\paragraph{Evaluation setup.} We instantiate three agents on PartNR H\_R tasks with Llama-3.1-8B as the planner backbone, drawing from the same H\_R subset as the 2-agent ablation in Table~\ref{tab:hr_failure} with subgoal allocation distributed across three agents. Three deployment conditions are compared: (i) \textbf{All-mem}, all three agents use Memory-as-Skill; (ii) \textbf{Leader-only}, Agent~0 uses memory while Agents~1 and~2 operate zero-shot; (iii) \textbf{Followers-only}, Agents~1 and~2 use memory while Agent~0 operates zero-shot. Following the statistical-caveat framing of Appendix~\ref{subsec:threshold_setup}, absolute percentages serve as directional indicators while relative orderings between conditions are the more reliable claim.
+
+\paragraph{Results.} Table~\ref{tab:n3_failure} reports per-condition success, completion, and the four coordination-failure metrics. Three patterns emerge.
+
+\textit{The H\_R inversion sharpens at $N{=}3$.} Leader-only achieves $41.8\%$ success and $0.61$ Conflict/Ep, more than triple the All-mem success rate ($11.5\%$). All-mem Conflict/Ep rises from $1.63$ at $N{=}2$ (Table~\ref{tab:hr_failure}) to $2.58$ at $N{=}3$, consistent with the combinatorial growth in pairwise \texttt{partner\_cond} relationships from $\binom{2}{2}{=}1$ to $\binom{3}{2}{=}3$. The mechanism predicted in Appendix~\ref{sec:hr_failure_appendix}, where independent agents draw from the same dense \texttt{partner\_cond} distribution, operates at higher intensity when the symmetric-memory pool grows.
+
+\textit{Followers-only outperforms All-mem but lags Leader-only.} The Followers-only success rate ($0.193$) sits between the two extremes. The two followers can leverage cooperation memory to coordinate with each other, but absent a memory-equipped leader the system loses the centralized skill-prediction step that drives effective task allocation in the 2-agent Leader-only condition. Step-count efficiency illustrates the cost: Followers-only requires roughly $3.7\times$ the simulator steps per episode compared with Leader-only, indicating that residual coordination among followers cannot compensate for the missing leader-level memory.
+
+\textit{Symmetric memory induces planner instability.} A non-trivial fraction of All-mem episodes terminate with malformed planner output and are counted as failures in Table~\ref{tab:n3_failure}. The instability is consistent with the \texttt{partner\_cond} mismatch interpretation in Appendix~\ref{sec:hr_failure_appendix}: as $N$ increases, the conditional distributions over partner behavior that each agent must reconcile grow combinatorially, and the planner LLM's reasoning over conflicting partner expectations can degrade to invalid structured output, providing a behavioral signature of the structural failure mode.
+
+\begin{table}[h]
+\centering
+\caption{$N{=}3$ deployment ablation on H\_R with Llama-3.1-8B. The 2-agent inversion in Table~\ref{tab:hr_failure} sharpens: All-mem Conflict/Ep rises from $1.63$ to $2.58$, and Leader-only success more than triples All-mem.}
+\label{tab:n3_failure}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}l|cccccc@{}}
+\toprule
+\textbf{Condition} & \textbf{Succ.}$\uparrow$ & \textbf{Comp.}$\uparrow$ & \textbf{Conflict/Ep}$\downarrow$ & \textbf{FailPick/Ep}$\downarrow$ & \textbf{SelfConf/Ep}$\downarrow$ & \textbf{NotClose/Ep}$\downarrow$ \\
+\midrule
+All-mem        & 0.115 & 0.378 & 2.58 & 2.04 & \textbf{0.41} & 18.34 \\
+Leader-only    & \textbf{0.418} & \textbf{0.612} & \textbf{0.61} & \textbf{1.91} & 1.18 & \textbf{11.47} \\
+Followers-only & 0.193 & 0.467 & 1.14 & 2.42 & 1.39 & 14.06 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+These results indicate that role-aware deployment is a structural property of effect-indexed cooperation memory rather than a 2-agent artifact. Cooperation memory should remain concentrated in a coordinating role regardless of total agent count, and the cost of symmetric deployment grows in $N$.
+
+
+\subsection{Task Type Classification Validation}
+\label{sec:task_classification_appendix}
+
+To validate the proposition-based task type classification used throughout the experiments, we compare predicted labels against ground truth on 2{,}000 episodes from the validated PartNR training set~\citep{chang2024partnr}. Figure~\ref{fig:task_classification} reports per-type F1 scores. Elementary types (R, S, H, T) achieve near-perfect classification (average F1 = 0.97), and composite types (R\_S, H\_R, H\_R\_T, H\_R\_S\_T) maintain strong performance (average F1 = 0.90), with H\_R\_S\_T scoring lower due to data scarcity (only 5 episodes). The overall exact-match accuracy of 90.9\% confirms that proposition-based classification reliably captures task structure, enabling effective routing of compositional task queries to the appropriate elementary skill libraries.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figs/classification_validation_summary.pdf}
+    \caption{Task type classification validation on the PartNR dataset. (a) Elementary types achieve near-perfect classification. (b) Composite types maintain strong performance, with H\_R\_S\_T showing lower scores due to data scarcity.}
+    \label{fig:task_classification}
+\end{figure}
+
+\paragraph{Classifier headroom analysis.}
+The F1=0.90 score on composite types implies that roughly $10\%$ of episodes are potentially routed to mismatched memory. We test whether closing this gap would meaningfully improve task performance by replacing the classifier with ground-truth task labels and re-running evaluation on Llama 3.1-8B. Table~\ref{tab:gt_vs_oracle} reports completion rates across $22$ matched episodes. The classifier-versus-GT difference is negligible in aggregate ($\Delta=+0.039$), with per-task differences ($+0.000$ on R\_S, $+0.095$ on H\_R, $+0.133$ on H\_R\_T, $-0.111$ on H\_R\_S\_T) reflecting noise rather than systematic bias. Two factors explain this. First, on the $\sim$$90\%$ of episodes where the classifier is correct, retrieval is by construction identical to GT routing. Second, on misclassified episodes the downstream executability filter (Section~\ref{subsec:utilization}) discards instances whose \texttt{self\_cond} or \texttt{partner\_cond} fail to match the current state, partially salvaging episodes routed to the wrong memory bank. Headroom from a stronger classifier is upper-bounded by approximately $0.10 \times \Delta(\text{classifier}, \text{random})$, which is small relative to the cooperation-skill and hierarchical-retrieval contributions in Figure~\ref{fig:ablation}. We note that ground-truth routing is not a deployable alternative since task type must be inferred from the natural-language instruction at runtime; the comparison here characterizes residual room for improvement in the classifier itself, not an alternative deployment configuration.
+
+\begin{table}[h]
+\centering
+\caption{Classifier vs.\ ground-truth (GT) task-type routing on Llama 3.1-8B. Aggregate completion differs by only $+0.039$, indicating the F1=0.90 classifier is not the framework's bottleneck.}
+\label{tab:gt_vs_oracle}
+\begin{tabular}{@{}l|ccc@{}}
+\toprule
+\textbf{Task} & \textbf{Classifier Comp.} & \textbf{GT Comp.} & $\boldsymbol{\Delta}$ \\
+\midrule
+R\_S         & 0.875 & 0.875 & $+0.000$ \\
+H\_R         & 0.786 & 0.881 & $+0.095$ \\
+H\_R\_T      & 0.267 & 0.400 & $+0.133$ \\
+H\_R\_S\_T   & 0.437 & 0.325 & $-0.111$ \\
+\midrule
+All          & 0.676 & 0.716 & $+0.039$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsection{Coordination Failure Metrics}
+\label{appendix:failure_metrics}
+
+We define four coordination failure metrics to quantify the quality of multi-agent interaction during cooperative task execution. All metrics are computed per episode and averaged across evaluation episodes. Lower values indicate better coordination.
+
+\subsubsection{Inter-Agent Conflict (Conflict/Ep)}
+
+Inter-agent conflicts occur when multiple agents target the same object within the same coordination round under PartNR's sequential execution scheme, resulting in action failures due to resource contention (e.g., one agent attempts to pick an object that another agent has just claimed in the same round). Formally, let $a_t^i$ denote the action of agent $i$ at round $t$, and let $\text{target}(a_t^i)$ denote the target object of action $a_t^i$. A conflict event is detected when:
+\begin{equation}
+    \mathbf{1}_{\text{conflict}}(t) = \mathbf{1}\left[ \exists\, i \neq j : \text{target}(a_t^i) = \text{target}(a_t^j) \land a_t^i, a_t^j \in \mathcal{A}_{\text{manip}} \right]
+\end{equation}
+where $\mathcal{A}_{\text{manip}} = \{\texttt{pick}, \texttt{place}, \texttt{open}, \texttt{close}\}$ denotes the set of manipulation actions. The conflict rate per episode is:
+\begin{equation}
+    \text{Conflict/Ep} = \frac{1}{|\mathcal{E}|} \sum_{e \in \mathcal{E}} \sum_{t=1}^{T_e} \mathbf{1}_{\text{conflict}}(t)
+\end{equation}
+where $\mathcal{E}$ is the set of evaluation episodes and $T_e$ is the episode length.
+
+\subsubsection{Failed Pick Attempts (FailPick/Ep)}
+
+Failed pick attempts measure unsuccessful object grasping due to incorrect positioning, unexpected object state changes, or interference from other agents. A failed pick is recorded when an agent executes a \texttt{pick} action but the object is not successfully added to the agent's inventory:
+\begin{equation}
+    \mathbf{1}_{\text{failpick}}^i(t) = \mathbf{1}\left[ a_t^i = \texttt{pick}(o) \land o \notin \text{inventory}^i(t+1) \right]
+\end{equation}
+The metric aggregates across all agents:
+\begin{equation}
+    \text{FailPick/Ep} = \frac{1}{|\mathcal{E}|} \sum_{e \in \mathcal{E}} \sum_{t=1}^{T_e} \sum_{i=1}^{N} \mathbf{1}_{\text{failpick}}^i(t)
+\end{equation}
+where $N$ is the number of agents.
+
+\subsubsection{Self-Confusion Errors (SelfConf/Ep)}
+
+Self-confusion errors capture inconsistent decision-making where a single agent issues contradictory actions on the \emph{same target object} within a short time window $\tau$. This is distinct from normal task progression: in successful transport, the pick and the subsequent place act on different effective targets within the world model (the object is picked from a source location and placed at a destination), whereas a self-confusion event flags repeated reversals on the same object-location pair (e.g., picking an object and placing it back at its original source within $\tau$ steps), indicating conflicting skill guidance rather than productive manipulation. We define contradictory action pairs as:
+\begin{equation}
+    \mathcal{C} = \{(\texttt{pick}(o), \texttt{place}(o)), (\texttt{open}(o), \texttt{close}(o))\}
+\end{equation}
+A self-confusion event is detected when:
+\begin{equation}
+    \mathbf{1}_{\text{selfconf}}^i(t) = \mathbf{1}\left[ \exists\, t' \in [t-\tau, t) : (a_{t'}^i, a_t^i) \in \mathcal{C} \lor (a_t^i, a_{t'}^i) \in \mathcal{C} \right]
+\end{equation}
+where $\tau = 5$ timesteps in our experiments. The metric is computed as:
+\begin{equation}
+    \text{SelfConf/Ep} = \frac{1}{|\mathcal{E}|} \sum_{e \in \mathcal{E}} \sum_{t=1}^{T_e} \sum_{i=1}^{N} \mathbf{1}_{\text{selfconf}}^i(t)
+\end{equation}
+
+\subsubsection{Navigation Failures (NotClose/Ep)}
+
+Navigation failures occur when an agent attempts a manipulation action without being sufficiently close to the target object, reflecting poor spatial awareness or coordination timing. Let $\text{pos}^i(t)$ denote the position of agent $i$ at timestep $t$, and $\text{pos}(o)$ denote the position of object $o$. A navigation failure is recorded when:
+\begin{equation}
+    \mathbf{1}_{\text{notclose}}^i(t) = \mathbf{1}\left[ a_t^i \in \mathcal{A}_{\text{manip}} \land \|\text{pos}^i(t) - \text{pos}(\text{target}(a_t^i))\|_2 > d_{\text{thresh}} \right]
+\end{equation}
+where $d_{\text{thresh}} = 1.5$ meters is the interaction distance threshold. The metric is:
+\begin{equation}
+    \text{NotClose/Ep} = \frac{1}{|\mathcal{E}|} \sum_{e \in \mathcal{E}} \sum_{t=1}^{T_e} \sum_{i=1}^{N} \mathbf{1}_{\text{notclose}}^i(t)
+\end{equation}
+
+\subsubsection{Summary}
+
+Table~\ref{tab:failure_metrics_summary} summarizes the four coordination failure metrics and their interpretations.
+
+\begin{table}[h]
+\centering
+\caption{Summary of coordination failure metrics.}
+\label{tab:failure_metrics_summary}
+\begin{tabular}{lll}
+\toprule
+\textbf{Metric} & \textbf{Failure Type} & \textbf{Indicates} \\
+\midrule
+Conflict/Ep & Object contention & Poor task allocation \\
+FailPick/Ep & Grasping failure & State estimation errors \\
+SelfConf/Ep & Action contradiction & Inconsistent guidance \\
+NotClose/Ep & Distance violation & Spatial unawareness \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection{LLM-based Threshold Calibration}
+\label{sec:threshold_calibration}
+
+We calibrate the embedding similarity threshold for skill memory retrieval using LLMs as judges. Rather than relying on heuristic thresholds, we employ four LLMs (Llama-3.1-8B, Llama-3.1-70B, Qwen-2.5-7B, Qwen-2.5-72B) to independently judge which candidate skills are relevant, then measure the embedding similarity scores of their selections to determine task-adaptive thresholds. \textbf{Note on calibration scope.} The threshold and retrieval-count analyses in this appendix and Appendix~\ref{subsec:topk} use the same evaluation episodes as the main experiments; we report them as sensitivity analyses to characterize the operating regime of the framework rather than as held-out hyperparameter tuning. The single global setting used throughout the main results (unified threshold $\theta=0.3$ and $k=5$) is fixed across all backbones and memory configurations, so the same hyperparameters apply uniformly to in-distribution and compositional out-of-distribution evaluation; future work should validate this regime on a separate held-out split.
+
+\subsubsection{Experimental Setup}
+\label{subsec:threshold_setup}
+
+For each (evaluation task, memory bank) pair, we embed all task instructions and skill descriptions using \texttt{all-mpnet-base-v2}, retrieve the top-20 candidate skills by cosine similarity for each test episode, and present these candidates to each LLM via a structured prompt asking it to select the top-5 most relevant skills. We then sweep similarity thresholds (0.2--0.6) and compute Precision, Recall, and F1, treating LLM selections as ground truth. All four models achieve 100\% parse success rate across all configurations, ensuring reliable ground truth labels.
+
+The evaluation spans four task types: Rearrange+Spatial (RS, 76 episodes), Heterogeneous+Rearrange (HR, 197 episodes), Heterogeneous+Rearrange+Temporal (HRT, 11 episodes), and the full combination (HRST, 5 episodes). Skills are retrieved from five memory banks: R (450 skills), S (20 skills), HR (455 skills), HT (12 skills), and HRST (32 skills).
+
+\paragraph{Hardware and inference setup.} Open-weight LLM evaluation (Llama-3.1-8B/70B, Llama-3.3-70B, Qwen-2.5-7B/72B) is performed on compute nodes equipped with $4\times$ NVIDIA GH200 Grace Hopper Superchips, each providing an H100 Tensor Core GPU with 96~GB of HBM memory, a 72-core Grace CPU with 120~GB of LPDDR memory, and NVIDIA NVLink-C2C interconnect between CPU and GPU. The 70B-class models are loaded in BF16 and sharded across multiple GPUs within a node. GPT-4o is accessed through the OpenAI API. All wall-clock latency measurements reported in Appendix~\ref{subsec:empirical_latency} were collected on this hardware.
+
+\paragraph{Computational Complexity.}
+Per-agent per-step cost is $\mathcal{O}\big(C_{\text{LLM}} + (|\mathcal{L}| + K) \cdot d + k \cdot C_{\text{LLM}}\big)$, where $|\mathcal{L}|$ is the abstract-skill library size, $K$ is the number of grounded instances within the matched skill, $d$ is the embedding dimension, and $k$ is the retrieval count. The three terms correspond to skill prediction, embedding-based matching and retrieval, and executability filtering on $k$ candidates. No term depends on agent count $N$, and per-round wall-clock time scales as $\mathcal{O}(N \cdot C_{\text{LLM}})$ under sequential execution, in contrast to the $\mathcal{O}(N^2 \cdot C_{\text{LLM}})$ overhead of communication-based approaches.
+
+
+
+\paragraph{Statistical caveat for high-constraint task groups.} The smaller episode counts on H\_R\_T (11) and H\_R\_S\_T (5) reflect PartNR's compositional design: the benchmark's task generator constructs tasks by combining elementary constraint types, and the joint distribution of $\geq$3 simultaneous constraints is inherently sparse in natural household instructions. Single-episode differences therefore translate to large percentage shifts on these subsets (e.g., on H\_R\_S\_T, $1/5$ episodes equals $20\%$ and $2/5$ equals $40\%$). Reported absolute percentages on 4-constraint tasks should be interpreted as directional indicators of the framework's compositional generalization capacity rather than as precise effect sizes; relative orderings between methods, which are robust under bootstrapping (the methods differ by $\geq 2$ episodes on H\_R\_S\_T), are the more reliable claim.
+
+\subsubsection{Threshold Calibration Results}
+\label{subsec:threshold_results}
+
+We analyze F1 scores as a function of embedding similarity threshold to identify task-adaptive retrieval thresholds. Figure~\ref{fig:per_task_f1} presents the per-task F1 curves across all four LLMs, showing strong cross-model consensus on optimal thresholds.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figs_append/fig1_per_task_threshold_f1.pdf}
+    \caption{Per-task F1 curves across embedding similarity thresholds. Dashed red lines indicate the consensus threshold. Simple tasks (RS, HR) achieve optimal F1 at threshold 0.2, while complex tasks (HRT, HRST) peak at 0.4--0.45, demonstrating the need for task-adaptive thresholds.}
+    \label{fig:per_task_f1}
+\end{figure}
+
+Three key observations emerge from this analysis. First, \textit{simple tasks benefit from lower thresholds}. RS and HR tasks achieve optimal F1 unanimously at threshold 0.2 across all four models. These tasks have rich matching candidates in the memory banks, allowing a lower threshold to capture relevant skills without excessive noise.
+
+Second, \textit{complex tasks require higher thresholds}. HRT and HRST tasks achieve optimal F1 at thresholds 0.4--0.45, with 3--4 models in agreement. The additional temporal and spatial constraints necessitate more stringent matching criteria to filter out marginally related skills.
+
+Third, \textit{cross-model consensus validates recommendations}. Despite differences in model family (Llama vs.\ Qwen) and scale (7B--72B), the threshold recommendations show strong agreement, particularly among the three larger models (8B, 70B, 72B).
+
+\paragraph{Precision-Recall Trade-off.}
+Figure~\ref{fig:prf1_detailed} provides a detailed breakdown of Precision, Recall, and F1 for each model-task combination. The curves reveal the underlying trade-off: lower thresholds maximize recall at the cost of precision, while higher thresholds improve precision but sacrifice recall. For simple tasks (RS, HR), the curves indicate that even at low thresholds, precision remains acceptable due to the abundance of relevant skills. For complex tasks (HRT, HRST), the steeper precision curves justify higher thresholds to filter noise effectively.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs_append/fig2_prf1_per_model_per_task.pdf}
+    \caption{Precision, Recall, and F1 curves for each model (rows) and task type (columns). Red dashed lines mark the optimal threshold. Simple tasks show gradual precision decline with lower thresholds, while complex tasks exhibit sharper trade-offs requiring higher thresholds for acceptable precision.}
+    \label{fig:prf1_detailed}
+\end{figure}
+
+\paragraph{Recommended Thresholds.}
+Figure~\ref{fig:threshold_bar} summarizes the recommended thresholds across models. The strong cross-model agreement is evident: all four models unanimously recommend 0.2 for RS and HR tasks, while 3--4 models converge on 0.4--0.45 for HRT and HRST tasks. The F1 scores at optimal thresholds range from 0.39--0.45, reflecting the inherent difficulty of threshold-based binary classification on continuous similarity scores.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figs_append/fig12_threshold_recommendation.pdf}
+    \caption{Recommended embedding similarity thresholds by task type across all models. Simple rearrangement tasks (RS, HR) consistently recommend 0.2, while multi-constraint tasks (HRT, HRST) recommend 0.4--0.45. The gray dashed line indicates the commonly used default threshold of 0.3.}
+    \label{fig:threshold_bar}
+\end{figure}
+
+\subsubsection{Discrimination Analysis}
+\label{subsec:discrimination_analysis}
+
+To understand how effectively LLMs distinguish relevant from irrelevant skills, we analyze the \emph{discrimination gap}---the difference in mean embedding similarity between LLM-selected and not-selected skills. Figure~\ref{fig:discrimination_gap} presents this analysis across all (evaluation task, memory bank) pairs.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs_append/fig7_discrimination_gap_heatmap.pdf}
+    \caption{Discrimination gap (selected $-$ not-selected mean similarity) across evaluation tasks and memory banks. Positive values (red) indicate LLMs successfully identify more similar skills as relevant. Temporal skills (HT) show the highest gaps (0.07--0.18), while large rearrangement banks (R, HR) show lower gaps due to dense embedding spaces.}
+    \label{fig:discrimination_gap}
+\end{figure}
+
+\paragraph{Memory Bank Effects.}
+Discrimination ability varies substantially across memory banks. Temporal skills (HT memory) exhibit the highest discrimination gaps (0.07--0.18), indicating that LLMs strongly distinguish temporal skill relevance. Combined skills (HRST memory) also show high gaps (0.06--0.22). In contrast, large rearrangement banks (R with 450 skills, HR with 455 skills) show lower gaps (0.01--0.04), reflecting densely packed embeddings where many skills have similar relevance scores.
+
+\paragraph{Model Scale Effects.}
+Larger models consistently demonstrate stronger discrimination ability. Llama-3.1-70B achieves the highest discrimination gap (up to 0.216 on HRST$\times$HRST), with Qwen-2.5-72B close behind (up to 0.207), while Qwen-7B shows the weakest discrimination with occasional negative gaps on cross-type pairs. This pattern suggests that model capacity directly influences the quality of skill relevance judgments.
+
+\paragraph{Score Distribution Analysis.}
+Figure~\ref{fig:score_distribution} provides the complete embedding similarity distributions for LLM-selected versus not-selected skills. The boxplots reveal several important patterns. (1) Selected skills consistently occupy higher similarity ranges across all configurations. (2) The distribution overlap varies by memory bank---temporal skills (HT) show clear separation while rearrangement skills (R, HR) exhibit substantial overlap. (3) Larger models produce tighter, more consistent distributions for selected skills, indicating more confident and coherent relevance judgments.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs_append/fig5_score_distribution_boxplots.pdf}
+    \caption{Embedding similarity distributions for LLM-selected skills (colored) vs.\ not-selected skills (gray) across models (rows) and task types (columns). Horizontal dashed lines at 0.3 and 0.5 indicate common threshold references. Selected skills consistently occupy higher similarity ranges, with clearer separation for temporal and combined skill banks.}
+    \label{fig:score_distribution}
+\end{figure}
+
+\subsubsection{Summary}
+\label{subsec:threshold_summary}
+
+Based on cross-model consensus, the calibration recommends task-adaptive thresholds: 0.2 for simple tasks (RS, HR) to maximize recall, and 0.4 for complex multi-constraint tasks (HRT, HRST) to improve precision. The strong agreement across four diverse LLMs validates that a principled threshold should adapt to task complexity. In our deployed system, however, we use a unified $\theta=0.3$ that falls within both calibrated regions for simplicity; because observed retrieval scores cluster well above $0.4$ across all task types (Section~\ref{subsec:fallback_rate}), this single-threshold simplification produces empirically equivalent fallback behavior to the task-adaptive setting (the per-task fallback rates would change by at most a few tenths of a percent under the recommended adaptive values).
+
+\subsubsection{Fallback Activation Rate}
+\label{subsec:fallback_rate}
+
+To quantify how often the fallback path activates during evaluation, we instrument the retrieval pipeline and log every retrieval call in our main experiments. Across $8{,}855$ retrieval calls under the matched-memory configurations used for the main results, the fallback to retrieval-free generation triggered in $0$ cases ($0.00\%$ fallback rate; equivalently, $100\%$ memory utilization). Composite similarity scores remained well above the deployment threshold $\theta=0.3$ across all task types, with median post-boost scores of $0.836$ on R\_S, $0.813$ on H\_R, $1.162$ on H\_R\_T, and $1.226$ on H\_R\_S\_T (and minima of $0.488$, $0.343$, $0.845$, $0.580$ respectively---all above $\theta=0.3$). On a broader evaluation set spanning more diverse memory configurations ($13{,}795$ retrieval calls), the overall fallback rate remained at $0.55\%$, concentrating on the most challenging 4-constraint H\_R\_S\_T tasks ($2.65\%$, $27/1{,}020$) where library coverage is most stretched, while staying at $0\%$ on the H\_R and H\_R\_T groups.
+
+To verify that the threshold mechanism activates correctly when the library genuinely lacks relevant skills, we ran a controlled stress test using S-only memory on H\_R\_S\_T tasks, deliberately misaligning memory content with task requirements. Fallback triggered in $90.0\%$ of retrieval calls ($27/30$), and similarly elevated on R\_S tasks evaluated against S-only memory ($3.8\%$, $49/1{,}283$), confirming that the safety mechanism functions as designed. The near-zero fallback rate observed in main experiments therefore reflects the strong alignment between the constructed skill library and PartNR's task distribution, not a degenerate threshold setting---memory is utilized in essentially every planning step under the configurations we report.
+
+\subsubsection{Empirical Latency}
+\label{subsec:empirical_latency}
+
+To complement the asymptotic complexity analysis in Section~\ref{subsec:utilization}, we instrument the retrieval and generation pipeline on Llama-3.1-8B (H\_R tasks; $1{,}270$ steps for our method, $845$ for MEMENTO) and report wall-clock measurements collected via \texttt{time.perf\_counter()}.
+
+\textbf{Retrieval is computationally negligible.} Per retrieval call, the pipeline averages approximately $54$~ms total: query-side embedding generation ($0.11$~ms), abstract skill matching over the library ($28.4$~ms), instance retrieval within the matched skill ($24.8$~ms), and executability filtering ($0.43$~ms). Amortized across all planning steps---retrieval is invoked only on skill transitions rather than every step---the per-step retrieval contribution is approximately $1.3$~ms ($\sim$$0.01\%$ of step latency).
+
+\textbf{End-to-end step latency is longer than MEMENTO due to richer prompts.} Total per-step latency averages $9.4 \pm 9.0$~s for our method versus $3.7 \pm 1.8$~s for MEMENTO. Action generation accounts for over $99\%$ of step time in both methods. The roughly $2.6\times$ increase relative to MEMENTO is therefore not attributable to the retrieval mechanism but to longer in-context prompts: the $k=5$ retrieved skill demonstrations expand the LLM input, lengthening both prompt-encoding and (when chain-of-thought reasoning is triggered) completion time. The elevated variance for our method ($\sigma/\mu \approx 0.96$ vs.\ $0.50$ for MEMENTO) reflects occasional long reasoning traces on harder subtasks.
+
+\textbf{Trade-off discussion.} Our framework targets compositional, long-horizon cooperation tasks where success rate, not latency, is the dominant deployment constraint. The per-step latency increase buys $1.5$--$2\times$ success-rate improvements on $3$- and $4$-constraint tasks (Section~\ref{subsec:generalization}), which we view as a favorable trade-off in this regime. For latency-sensitive deployments, the retrieval count $k$ can be reduced (Appendix~\ref{subsec:topk} shows $k{=}3$ retains most performance on simpler transfers at lower prompt cost), or executability filtering can be replaced with rule-based verification on closed object sets, both at the cost of some success rate.
+
+
+\subsection{Sensitivity Analysis}
+\label{subsec:topk}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{figs/topk_ablation_2x2.pdf}
+\caption{Effect of retrieval count $k$ on transfer performance, evaluated on Llama-3.1-8B. \textbf{(a)(b)} R-only memory transfer to four target task complexities: success and completion rates as functions of $k$. \textbf{(c)} Aligned memory: retrieved memory types match task requirements. \textbf{(d)} Misaligned memory: R-only memory used for all task types. Across panels, $k{=}5$ is the most consistent operating point; $k{=}20$ degrades complex transfers as excess retrieval introduces conflicting guidance.}
+\label{fig:topk_ablation_append}
+\end{figure}
+
+Figure~\ref{fig:topk_ablation_append} reports retrieval-count sensitivity across two views: line plots over $k \in \{3, 5, 10, 20\}$ for R-only transfer (panels a, b), and grouped bars comparing aligned and misaligned memory at the same $k$ values (panels c, d). For aligned R\_S tasks (panel c), success rates remain stable between 73.6\% and 85.9\% across all $k$, suggesting that when memory content matches task requirements the retrieval system consistently surfaces relevant skills regardless of the retrieved count.
+
+Sensitivity to $k$ increases substantially under harder transfers and memory misalignment. On 3-constraint H\_R\_T (panel a), $k{=}5$ achieves optimal performance in most configurations, with H\_R\_T(H\_R+H\_T) reaching 27.7\% success at $k{=}5$ but dropping to 6.9\% at $k{=}20$. The 4-constraint H\_R\_S\_T transfer exhibits the sharpest sensitivity: H\_R\_S\_T(R) attains 40.0\% success at $k{=}5$ but only 15.4\% at $k{=}10$ (panel d). These results reveal a fundamental trade-off: insufficient $k$ misses relevant experiences, while excessive $k$ dilutes useful guidance with irrelevant or contradictory skills, particularly when retrieved instances span constraint types that suggest incompatible actions.
+
+Completion rates (panel b) exhibit less sensitivity to $k$ than success rates, indicating that retrieval count primarily affects whether agents satisfy all task constraints simultaneously rather than their ability to make partial progress. Based on these findings, we set $k=5$ throughout our main experiments as the best balance between retrieval coverage and guidance coherence.
+
+
+\subsection{Skill Memory Analysis}
+\label{sec:skill_memory_analysis}
+
+We analyze the hierarchical skill memory extracted by four LLM backbones (Llama-70B, Llama-8B, Qwen-7B, Qwen-72B) across five task categories: Rearrange-only (R), Spatial-only (S), Heterogeneous+Rearrange (HR), Heterogeneous+Temporal (HT), and the full combination (HRST). The skill memory comprises two levels: \textbf{individual skills} ($\mathcal{L}_{\text{ind}}$) representing single-agent primitives, and \textbf{cooperative skills} ($\mathcal{L}_{\text{coop}}$) capturing multi-agent coordination patterns.
+
+\subsubsection{Skill Library Composition}
+\label{subsec:skill_composition}
+
+We first examine the overall scale and composition of extracted skill libraries across models. Figure~\ref{fig:skill_composition} presents the stacked distribution of individual and cooperative skills generated by each model across task types.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs_append/fig12_stacked_skills.pdf}
+    \caption{Skill library composition across models and task types. Stacked bars show individual skills (solid) and cooperative skills (hatched). Larger models (Llama-70B, Qwen-72B) generate richer libraries, while smaller models produce more compact representations with varying individual-to-cooperative ratios.}
+    \label{fig:skill_composition}
+\end{figure}
+
+Three key observations emerge from this analysis. First, \textit{larger models generate richer skill libraries}. Llama-70B produces the largest combined library, with 223 individual and 227 cooperative skills for the R task alone. In contrast, Qwen-7B generates the most compact library (72 individual, 48 cooperative for R), suggesting higher-level abstraction with fewer distinct skill types.
+
+Second, \textit{the individual-to-cooperative skill ratio varies across model architectures}. Llama-70B maintains a balanced ratio ($\approx$1:1 for the R task), whereas Llama-8B exhibits a cooperative-heavy distribution (139 individual vs.\ 294 cooperative for R), indicating that the smaller model may group multi-step sequences into cooperative abstractions rather than decomposing them into primitives.
+
+Third, \textit{task complexity inversely correlates with skill library size}. Simpler tasks (R, S) with more training episodes yield larger skill libraries, while complex heterogeneous tasks (HT, HRST) produce fewer but potentially more specialized skills. This pattern reflects the underlying data distribution rather than inherent task difficulty.
+
+\subsubsection{Skill Taxonomy}
+\label{subsec:skill_taxonomy}
+
+To understand the semantic nature of extracted skills, we categorize the generated skills into functional groups. Figure~\ref{fig:skill_categories} presents the distribution of skill categories for both individual and cooperative skills across all four models.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figs_append/fig5_skill_categories.pdf}
+    \caption{Skill category distributions for individual skills (top row) and cooperative skills (bottom row) across models. Individual skills converge to common manipulation primitives (Navigation, Pick, Place), while cooperative skills exhibit greater divergence in abstraction patterns.}
+    \label{fig:skill_categories}
+\end{figure}
+
+\paragraph{Individual Skill Categories.}
+All models converge on similar primitive action categories, suggesting a shared understanding of fundamental manipulation operations. Navigation skills dominate across all models (43--116 skills), followed by manipulation primitives including Pick/Retrieve and Place/Put. Llama-70B exhibits the most diverse distribution with substantial Move/Transport skills (98), while Qwen-7B produces a more focused library emphasizing Navigation (43) and State Change (25). This convergence indicates that individual skill extraction is relatively robust to model architecture and capacity.
+
+\paragraph{Cooperative Skill Categories.}
+In contrast, greater divergence emerges in how models abstract multi-agent coordination patterns. Joint Transport dominates for larger models (Llama-70B: 138, Qwen-72B: 145), reflecting collaborative object movement as the most frequently occurring coordination pattern in the dataset. Task-Specific Cooperation is prominent in Llama models (127 for 70B, 107 for 8B), while smaller models such as Qwen-7B show more uniform distributions across categories. This divergence suggests that cooperative skill abstraction is more sensitive to model capacity and architectural choices than individual skill extraction.
+
+\subsubsection{Skill Reusability}
+\label{subsec:skill_reusability}
+
+We measure skill reusability by computing the average number of instantiations per skill type across episodes, which indicates the generalizability of learned abstractions. Figure~\ref{fig:skill_reusability} presents this analysis for both individual and cooperative skills.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs_append/fig3_avg_instances_per_skill.pdf}
+    \caption{Average instances per skill type for individual skills (left) and cooperative skills (right). Individual skills exhibit significantly higher reuse rates (20--45$\times$), while cooperative skills span a full range from 1.0 to 24.5 instances per skill, with most skills clustered between 3 and 10 on R and H\_R tasks.}
+    \label{fig:skill_reusability}
+\end{figure}
+
+Individual skills demonstrate high reusability (up to 44.8 instances per skill for Qwen-7B on Rearrange-only), with smaller models tending to extract fewer but more abstract primitives that transfer broadly. In contrast, cooperative skills exhibit substantially lower reuse rates. The full range spans from 1.0 (for HT and HRST, where data scarcity limits each skill to a single instance) to 24.5 (Qwen-7B on Rearrange-only), with most skills clustered between 3 and 10 instances on R and H\_R tasks. This reflects the inherently context-specific nature of multi-agent coordination that must adapt to varying agent configurations and spatial arrangements. The reusability gap validates our hierarchical memory design: individual skills serve as composable building blocks with broad transferability, while cooperative skills capture emergent coordination patterns requiring task-specific adaptation.
+
+\subsubsection{Skill Quality Metrics}
+\label{subsec:skill_quality}
+
+Finally, we assess the semantic richness of extracted skills through two quality metrics: description length and precondition complexity. Figure~\ref{fig:skill_quality} presents these metrics across models and task types.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figs_append/fig8_quality_metrics.pdf}
+    \caption{Skill quality metrics: description length (top row) and precondition count (bottom row) for individual and cooperative skills. Cooperative skills consistently exhibit longer descriptions reflecting coordination complexity, while precondition density varies by model architecture.}
+    \label{fig:skill_quality}
+\end{figure}
+
+\paragraph{Description Length.}
+Cooperative skills consistently produce longer natural language descriptions (60--120 characters) compared to individual skills (30--50 characters). This difference reflects the inherent complexity of multi-agent coordination, which requires richer specification of agent roles, synchronization requirements, and interaction patterns. Llama-70B generates the most detailed cooperative descriptions (119.3 characters for HR tasks), suggesting that larger model capacity enables more comprehensive skill documentation.
+
+\paragraph{Precondition Complexity.}
+The number of preconditions per skill varies systematically across model families. Qwen models tend to generate more explicit preconditions (Qwen-72B: 2.13 for R individual skills), while Llama-70B produces sparser precondition sets (1.03 for R individual skills). This pattern suggests different extraction strategies. Qwen models favor explicit state requirements for applicability checking, while Llama models may encode more context implicitly within skill descriptions.
+
+These quality metrics reveal a trade-off in skill representation. Richer descriptions provide better semantic grounding for retrieval-based skill selection, while explicit preconditions enable more precise applicability verification during planning. The optimal balance likely depends on the downstream planning architecture and task requirements.
+
+\subsubsection{Qualitative Retrieval Examples}
+\label{subsec:retrieval_examples}
+
+To complement the aggregate statistics, we extract concrete retrieval cases from evaluation logs that illustrate how the hierarchical retrieval mechanism operates in practice. \textbf{(1) Task-aware boosting.} For the instruction ``move kettle from living room to kitchen, fill and turn on,'' the retrieval system returns \texttt{kettle\_operation} with combined score 1.117 (cosine similarity 0.967 plus object-type boost 0.150 from matching the ``kettle'' token). Lexical and contextual signals supplement raw embedding distance, providing discriminative power when multiple skills have similar descriptions but apply to different object classes. \textbf{(2) Decomposition into complementary skills.} For multi-object instructions such as ``move jug, kettle, and teapot to kitchen,'' top-$k$ retrieval ($k{=}5$) surfaces three complementary individual skills covering each object class plus cooperation skills capturing the handover patterns required for joint transport, rather than returning redundant variants of a single skill. \textbf{(3) Effect-based cooperation skill activation.} When the observation difference $\Delta o_t^j$ matches a stored \texttt{partner\_cond} pattern (e.g., ``object no longer on table, partner approaching kitchen''), the retrieval mechanism elevates handover-related cooperation skills above individual skills with comparable embedding similarity. Cooperation skill retrieval is thus gated by partner-induced environmental changes rather than instruction-level lexical similarity alone, realizing the effect-based partner inference mechanism described in Section~\ref{subsec:effect_inference}.
+
+\subsection{Per-Backbone Behavior Analysis}
+\label{sec:per_backbone}
+
+The aggregate results in Section~\ref{subsec:main_results} hide a structural pattern in how memory augmentation interacts with backbone reasoning capacity. We discuss two regimes here.
+
+\paragraph{Weak-reasoner regime: large gains, low ceiling.} On Qwen-7B, our method achieves $57.4\%$ success versus $42.1\%$ for MEMENTO ($+36\%$ relative improvement), the largest margin in our backbone comparison. Qwen-7B's baseline zero-shot success on these tasks is markedly lower than other models, indicating that intrinsic reasoning capacity is the bottleneck. In this regime, retrieved skill demonstrations supply both explicit step decomposition and partner-conditioned action templates that the backbone cannot reliably generate from instruction alone, and the hierarchical structure prevents irrelevant retrievals from overwhelming the limited in-context budget. The improvement on Qwen-7B suggests that hierarchical skill memory may be especially valuable for resource-constrained deployments where running a large model is impractical.
+
+\paragraph{Strong-reasoner regime: success-completion divergence on GPT-4o.} GPT-4o presents the most interesting backbone behavior in our study. Our method achieves the highest \emph{completion} rate ($86.7\%$, vs.\ $84.4\%$ for ToM and $79.6\%$ for zero-shot), yet underperforms zero-shot on \emph{success rate} ($70.2\%$ vs.\ $78.7\%$). This divergence is a known PartNR pattern: completion measures the fraction of subtasks completed, while success requires \emph{all} subtasks to be completed without violating any task constraints. A method can therefore complete more subtasks while failing more often on the strict success criterion if it occasionally violates constraints (e.g., places an object on a wrong but plausible-looking surface).
+
+We interpret the GPT-4o divergence as follows. GPT-4o has the strongest inherent zero-shot reasoning of any backbone tested ($78.7\%$ success, the highest zero-shot number), and its native ToM-prompting baseline already achieves the top success rate at $81.6\%$ (Table~\ref{tab:main_results_task}). Retrieved skill demonstrations bias the model toward the actions seen in memory, expanding subtask coverage (hence the higher completion percentage) but occasionally over-constraining the model toward an action that was successful in a similar but not identical context, breaking strict task-constraint satisfaction. This phenomenon---in-context demonstrations dominating prior reasoning when the prior is already strong---is consistent with prior observations on RAG-style augmentation of large models and suggests that our framework should be deployed selectively on backbones whose intrinsic reasoning is the limiting factor. We discuss this trade-off as a limitation in Section~\ref{sec:conclusion}.
+
+
+\subsection{Prompt Template}
+\label{sec:prompts}
+
+\begin{lstlisting}[language=html, caption={Zero-Shot Prompt}, label={lst:zero-shot}, frame=single, basicstyle=\small\ttfamily]
+prompt: |-
+        {system_tag}You are an agent that solves multi-agent planning problems.
+        The task assigned to you will be situated in a house
+        and will generally involve navigating to objects,
+        picking and placing them on different receptacles to achieve rearrangement.
+        You strictly follow any format specifications
+        and pay attention to the previous actions taken
+        in order to avoid repeating mistakes.
+
+        There will be another agent
+        trying to solve the same task that you are at the same time.
+        You may find that that agent has picked up relevant objects
+        or is in the process of completing parts of the task.
+        If that is the case you may want to
+        move on to a different part of the task.
+
+        Rooms do not need to be explored more than once.
+        This means if you have explored the living room and have not found the object,
+        then you should explore the kitchen,
+        if a relevant object is still not found,
+        you should explore the hallway etc...
+
+        {agent_role_description}
+
+        Many calls to the same action in a row are a sign
+        that something has gone wrong and
+        you should try a different action.{eot_tag}{rag_examples}{user_tag}Task: {input}
+
+        {world_description}
+
+        Possible Actions:
+        {tool_descriptions}
+        - Done: Used to indicate that the agent has finished the task. Example (Done[])
+
+        What is the next action to make progress towards completing the task?
+        Return your response in the following format
+
+        Thought: <reasoning for why you are taking the next action>
+        <next action call>
+        Assigned!
+
+        Here is an example:
+        Thought: Since there are no objects found
+        I should explore a room I have not explored yet
+        Explore[<room name>]
+        Assigned!
+        {eot_tag}{assistant_tag}
+
+stopword       : "Assigned!"
+end_expression : "Done[]"
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=html, caption={ToM Prompt}, label={lst:tom}, frame=single, basicstyle=\small\ttfamily]
+prompt: |-
+    {system_tag}You are an agent that solves multi-agent planning problems.
+        The task assigned to you will be situated in a house
+        and will generally involve navigating to objects,
+        picking and placing them on different receptacles to achieve rearrangement.
+        You strictly follow any format specifications
+        and pay attention to the previous actions taken
+        in order to avoid repeating mistakes.
+        Rooms do not need to be explored more than once.
+
+    **Collaboration with Another Agent:**
+    There will be another agent trying to solve the same task as you.
+    Your success depends on effective collaboration.
+    You must observe their actions to infer their intentions, plans,
+    and knowledge to avoid redundant work and efficiently divide the task.
+
+    **Theory of Mind (ToM) for Collaboration:**
+    To collaborate effectively, use the following structured reasoning process
+    in your "Thought" block before deciding on an action.
+    This mimics a dual-process reasoning system,
+    combining long-term strategic thinking with immediate observation.
+
+    * **Step 1: Belief Formation (What do they know and what are their habits?)**
+        * Summarize the other agent's recent significant actions and their location.
+        * Based on their location and path,
+        what have they likely observed? What do they probably know or not know?
+        * Are there any recurring patterns or tendencies in their behavior?
+
+    * **Step 2: Hypothesis Generation (What is their current plan?)**
+        * Based on your belief,
+        form a primary hypothesis about
+        the other agent's immediate subgoal or overall strategy.
+
+    * **Step 3: Prediction & Planning (What will they do, and what should I do?)**
+        * Based on your best hypothesis,
+        predict the other agent's most likely next action(s).
+        * Given your prediction, formulate your own plan.
+        Your plan should complement their work, not conflict with it.
+        Decide whether to tackle a different sub-task,
+        prepare the next step for them, or explore a new area.
+
+    **General Guidelines:**
+    * Avoid repeating mistakes. If an action fails,
+    analyze why and try a different approach.
+    * Rooms do not need to be explored more than once.
+    If you have explored the living room and have not found an object,
+    move on to another unexplored room.
+    * Many calls to the same action in a row
+    are a sign that something has gone wrong and
+    you should try a different action.
+
+    {agent_role_description}
+
+    {eot_tag}{user_tag}Task: {input}
+
+    {world_description}
+
+    Possible Actions:
+    {tool_descriptions}
+    - Done: Used to indicate that the agent has finished the task. Example (Done[])
+
+    What is the next action to make progress towards completing the task?
+    Return your response in the following format.
+    Use the structured ToM reasoning in your thought process.
+
+    Thought: <MUST follow the 3-step ToM reasoning process described above>
+    <next action call>
+    Assigned!
+
+    Here is an example of the desired format:
+    Thought:
+    1.  **Belief Formation:** The other agent was last seen moving into the kitchen.
+    They have already explored the living room.
+    They likely know what objects are (or are not) in the living room.
+    2.  **Hypothesis:** My primary hypothesis is that
+    they are now searching for the apple in the kitchen.
+    3.  **Prediction & Planning:** They will likely pick up the apple if they find it.
+    To collaborate efficiently and not duplicate effort,
+    I will not go to the kitchen. Instead,
+    I will search for the other required object,
+    the television remote, in a room that neither of us has explored yet,
+    which is the bedroom.
+    Explore[bedroom]
+    Assigned!
+    {eot_tag}{assistant_tag}
+
+stopword       : "Assigned!"
+end_expression : "Done[]"
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=html, caption={Ours Prompt}, label={lst:ours}, frame=single, basicstyle=\small\ttfamily]
+prompt: |-
+    {system_tag}You are an agent solving household tasks with another agent.
+    Agents act sequentially:
+    you observe the updated environment after your partner's action,
+    then decide yours.
+
+    {agent_role_description}
+
+    ## Decision Process
+
+    Before each action, follow these steps:
+
+    **1. Observation Diff**  What changed since last step?
+    Identify object displacements,
+    partner state changes, and property modifications.
+
+    **2. Skill Prediction**  What type of skill do I need?
+    - **Individual skill**: act alone (navigate, pick, place, clean, fill, power on/off)
+    - **Cooperation skill**: coordinate with partner
+    (division of labor, handoff, complementary work, conflict avoidance)
+
+    **3. Skill Matching**  Which retrieved example applies?
+    Match your situation to a retrieved skill below.
+    Apply its strategy, adapting to your environment.
+
+    **4. Action Selection**  Choose an action complementary to partner's progress.
+
+    ## Rules
+    - Do NOT re-explore rooms. Move to unexplored rooms.
+    - Repeating same action = something wrong. Try different action.
+    - Temporal tasks ("then","after"): complete prerequisites first.
+    - Done[] only when ALL requirements verified complete.
+
+    ===== RETRIEVED SKILL EXAMPLES (Individual + Cooperation) =====
+    {eot_tag}{rag_examples}{user_tag}
+    ===== END =====
+
+    Task: {input}
+
+    {world_description}
+
+    {state_comparison}
+
+    Actions: {tool_descriptions}
+    - Done[]
+
+    Thought:
+    [Diff] <what changed; what partner did>
+    [Skill] <individual/cooperation>: <type>
+    [Ref] <matched skill name and why>
+    [Plan] <action rationale>
+    <action>
+    Assigned!
+    {eot_tag}{assistant_tag}
+
+stopword       : "Assigned!"
+end_expression : "Done[]"
+
+
+\end{lstlisting}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NeurIPS Paper Checklist (required for submission)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\input{checklist.tex}
+
+
+\end{document}
