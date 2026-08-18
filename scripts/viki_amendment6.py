@@ -608,6 +608,17 @@ def run_arm(split: str, arm: str, base_url: str, workers: int) -> Dict[str, Any]
     )
     if set(preflight_records) != set(indices):
         raise GateFailure(f"Incomplete {split} preflight row coverage")
+    usage_surcharges = {
+        index: int(source_records[index]["arms"]["zero_shot"]["prompt_tokens"])
+        - int(preflight_records[index]["token_counts"]["zero_shot"])
+        for index in indices
+    }
+    if any(value < 0 for value in usage_surcharges.values()):
+        raise GateFailure(f"Invalid certified multimodal token surcharge for {split}")
+    surcharge_distribution = {
+        str(value): sum(observed == value for observed in usage_surcharges.values())
+        for value in sorted(set(usage_surcharges.values()))
+    }
     metadata = {
         "task": "Amendment6_deployment_baseline",
         "backbone": "qwen2_5_vl_72b",
@@ -626,6 +637,15 @@ def run_arm(split: str, arm: str, base_url: str, workers: int) -> Dict[str, Any]
         "preflight_summary_sha256": file_sha256(preflight_summary_path),
         "source_run_fingerprint": source_run_hash,
         "source_results_sha256": file_sha256(source_path),
+        "prompt_token_accounting": {
+            "budget_and_preflight": "vLLM /tokenize",
+            "generation_usage": "chat completion usage.prompt_tokens",
+            "provider_usage_rule": (
+                "tokenizer input tokens plus the certified per-row multimodal "
+                "surcharge from the reused zero-shot arm"
+            ),
+            "certified_surcharge_distribution": surcharge_distribution,
+        },
         "h0_sha256": file_sha256(H0_PATH),
         "preregistration_sha256": file_sha256(PREREGISTRATION_PATH),
     }
@@ -657,11 +677,11 @@ def run_arm(split: str, arm: str, base_url: str, workers: int) -> Dict[str, Any]
             messages = add_memory_to_messages(
                 bench.get_messages(sample), row["trajectory_rag"]["prompt"]
             )
-            expected_tokens = int(row["trajectory_rag"]["input_tokens"])
+            expected_tokenizer_tokens = int(row["trajectory_rag"]["input_tokens"])
             injected_tokens = int(row["trajectory_rag"]["injected_tokens"])
         else:
             messages = add_tom_to_messages(bench.get_messages(sample))
-            expected_tokens = int(row["tom"]["input_tokens"])
+            expected_tokenizer_tokens = int(row["tom"]["input_tokens"])
             injected_tokens = int(row["tom"]["injected_tokens"])
         if messages_sha256(messages) != row["prompt_sha256"][arm]:
             raise GateFailure(f"Prompt hash changed at {split}:{arm}:{index}")
@@ -674,10 +694,14 @@ def run_arm(split: str, arm: str, base_url: str, workers: int) -> Dict[str, Any]
         usage = completion.usage
         prompt_tokens = None if usage is None else usage.prompt_tokens
         completion_tokens = None if usage is None else usage.completion_tokens
-        if prompt_tokens != expected_tokens:
+        expected_provider_prompt_tokens = (
+            expected_tokenizer_tokens + usage_surcharges[index]
+        )
+        if prompt_tokens != expected_provider_prompt_tokens:
             raise GateFailure(
                 f"Prompt token count changed at {split}:{arm}:{index}: "
-                f"expected={expected_tokens}, observed={prompt_tokens}"
+                f"expected_provider={expected_provider_prompt_tokens}, "
+                f"observed={prompt_tokens}"
             )
         response = completion.choices[0].message.content or ""
         metrics = bench.score_response(
@@ -699,6 +723,8 @@ def run_arm(split: str, arm: str, base_url: str, workers: int) -> Dict[str, Any]
             "family": row["family"],
             "response": response,
             "prompt_tokens": prompt_tokens,
+            "tokenizer_input_tokens": expected_tokenizer_tokens,
+            "multimodal_usage_surcharge": usage_surcharges[index],
             "injected_tokens": injected_tokens,
             "completion_tokens": completion_tokens,
             **metrics,

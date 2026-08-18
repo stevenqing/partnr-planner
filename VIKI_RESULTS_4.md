@@ -207,13 +207,51 @@ Amendment 5.1 is complete with backbone gate failures, including the optional GP
 
 ## Amendment 6: Deployment Baselines
 
-Amendment 6 is preregistered and supersedes generation closure once for its complete fixed scope. It adds trajectory-level RAG and a VIKI-native explicit counterpart/state-reasoning ToM port on Qwen2.5-VL-72B, first on all 1,218 OOD rows and then on the frozen 300-row ID slice. Zero-shot and segment outputs are reused with prompt, response, source-artifact, and run-fingerprint verification. Required new generation is 3,036 calls. GPT-4o is an optional 3,036-call tier only after all required 72B arms complete; Gemini remains excluded because it is not deployed on the available CloudGPT endpoint.
+Amendment 6 is complete. It executed the preregistered trajectory-level RAG and VIKI-native explicit counterpart/state-reasoning ToM port on Qwen2.5-VL-72B, then the authorized optional GPT-4o tier. Zero-shot and segment outputs were reused only after prompt, response, source-artifact, and run-fingerprint verification. Gemini remained excluded because no deployment was available on the accessible CloudGPT endpoint.
 
-Trajectory RAG retrieves from all 6,699 valid M0 source rows using instruction-only MPNet cosine. Each retrieval unit is a complete source row rendered as the exact source-order concatenation of its headerless segment blocks. Ranked rows are extended and prefix-trimmed to the frozen segment arm's per-row input-token budget within 5%; bare fallback remains fixed at cosine below 0.3. The offline retrieval cache is complete and certified at 6,699 rows, 19,499 segments, and embedding shape 6,699 by 768. Full token-band, zero-symmetric-drop, and 20-row rendering gates await the certified 72B service.
+Trajectory RAG retrieves from all 6,699 valid M0 source rows using instruction-only MPNet cosine. Each retrieval unit is a complete source row rendered as the exact source-order concatenation of its headerless segment blocks. Ranked rows are extended and prefix-trimmed to the backbone's frozen segment-arm input budget within 5%; fallback remains fixed below cosine 0.3. The cache contains 6,699 rows, 19,499 segments, and 6,699 by 768 embeddings. The 72B preflights had zero fallback and zero symmetric drops. OOD checked 79/79 row renderings byte-identically and had maximum token mismatch 0.0237%; ID checked 59/59 and had maximum mismatch 0.0291%. GPT-4o used `o200k_base`; its text-token delta reproduced the previously recorded provider `segment - zero-shot` usage exactly on all 1,218 OOD and 300 ID rows, and its maximum trajectory mismatch was 0.0217% OOD and 0.0248% ID.
 
-The repository contains the paper-level PartNR ToM definition and reported comparator numbers, but no runnable ToM module, exact prompt, config, or result artifact. The frozen VIKI port therefore does not claim exact implementation reproduction. Its filed template explicitly reasons over active robots, capabilities, shared visual scene state, and complementary assignments before emitting the unchanged VIKI-L2 executable-plan format; single-robot rows reduce to explicit capability/state reasoning. OOD contains 1,218 single-robot rows. The frozen ID slice contains 144 one-robot, 147 two-robot, and 9 three-robot rows, so the ToM claim is carried by the ID robot-count breakdown.
+The 72B service used GPUs 1, 2, 6, and 7, tensor parallelism 4, bf16, a 16,384-token context, greedy decoding, and the frozen model revision. The only serving deviation was resource-only: `gpu_memory_utilization` was raised from 0.70 to 0.72 before generation and recorded in `service_resource_deviation.json`. The service was stopped after the required local arms.
 
-Status is `WAITING_FOR_72B_CAPACITY`, with zero Amendment 6 generation calls made. The certified endpoint on port 8050 is stopped, and all eight A100 GPUs are currently occupied by an active multi-GPU training job; the service was not co-located and no user process was interrupted. Once four unshared GPUs are available, execution order is trajectory RAG OOD, ToM OOD, trajectory RAG ID, ToM ID, then the optional GPT-4o tier. The four-arm analysis is already fail-closed and will produce zero-shot / trajectory-RAG / ToM / segment tables, all six exact McNemar comparisons with paired bootstrap intervals, OOD family breakdowns, ID robot-count breakdowns, and per-arm input, injected, and generated token counts.
+### Qwen2.5-VL-72B results
+
+| split | arm | task success | format | mean input | mean generated |
+|---|---|---:|---:|---:|---:|
+| OOD | zero-shot | 10/1,218 (0.82%) | 1,218/1,218 (100.00%) | 982.1 | 285.6 |
+| OOD | trajectory RAG | 84/1,218 (6.90%) | 1,203/1,218 (98.77%) | 4,493.8 | 322.0 |
+| OOD | ToM port | 1/1,218 (0.08%) | 1,215/1,218 (99.75%) | 1,128.1 | 358.5 |
+| OOD | segment | 83/1,218 (6.81%) | 1,189/1,218 (97.62%) | 4,493.7 | 386.6 |
+| ID | zero-shot | 22/300 (7.33%) | 300/300 (100.00%) | 1,011.5 | 343.8 |
+| ID | trajectory RAG | 83/300 (27.67%) | 232/300 (77.33%) | 4,252.7 | 360.6 |
+| ID | ToM port | 16/300 (5.33%) | 300/300 (100.00%) | 1,157.5 | 437.4 |
+| ID | segment | 69/300 (23.00%) | 245/300 (81.67%) | 4,252.7 | 378.6 |
+
+On OOD, trajectory RAG improved over zero-shot by 6.08 points, paired-bootstrap 95% interval `[+4.60,+7.64]`, exact McNemar `p=3.92e-16`. Segment and trajectory RAG were indistinguishable: segment minus RAG was -0.08 points, interval `[-2.05,+1.97]`, `p=1.0`. Segment beat the ToM port by 6.73 points, `p=8.79e-24`. The preregistered ending is therefore `baseline_matches_segment_OOD`: the granularity claim narrows to the strict productivity channel.
+
+On ID, trajectory RAG improved over zero-shot by 20.33 points, interval `[+15.33,+25.33]`, `p=1.19e-14`. It also exceeded segment by 4.67 points; expressed as segment minus RAG, the interval was `[-9.00,-0.33]`, `p=0.0436`. This task gain is not deployment-valid under the frozen per-arm format gate because trajectory RAG and segment both fell below 90%. The ToM port did not improve over zero-shot: -2.00 points, interval `[-4.67,+0.67]`, `p=0.238`.
+
+The ID robot-count breakdown does not support the preregistered ToM improvement hypothesis. For 72B, ToM successes were 5/144 on one-robot rows, 11/147 on two-robot rows, and 0/9 on three-robot rows, compared with zero-shot at 10/144, 12/147, and 0/9. Trajectory RAG's ID gain was concentrated in one-robot rows: 66/144 versus segment 53/144; on two-robot rows it was 17/147 versus segment 16/147.
+
+### Optional GPT-4o results
+
+| split | arm | task success | format | mean input | mean generated |
+|---|---|---:|---:|---:|---:|
+| OOD | zero-shot | 137/1,218 (11.25%) | 1,217/1,218 (99.92%) | 1,072.8 | 331.0 |
+| OOD | trajectory RAG | 13/1,218 (1.07%) | 1,218/1,218 (100.00%) | 4,621.2 | 369.5 |
+| OOD | ToM port | 114/1,218 (9.36%) | 1,218/1,218 (100.00%) | 1,218.8 | 379.6 |
+| OOD | segment | 19/1,218 (1.56%) | 1,217/1,218 (99.92%) | 4,621.2 | 412.1 |
+| ID | zero-shot | 54/300 (18.00%) | 296/300 (98.67%) | 1,102.1 | 391.4 |
+| ID | trajectory RAG | 102/300 (34.00%) | 220/300 (73.33%) | 4,360.6 | 373.7 |
+| ID | ToM port | 43/300 (14.33%) | 298/300 (99.33%) | 1,248.1 | 438.7 |
+| ID | segment | 70/300 (23.33%) | 216/300 (72.00%) | 4,360.6 | 393.3 |
+
+On GPT-4o OOD, trajectory RAG and segment again matched: segment minus RAG was +0.49 points, interval `[-0.41,+1.40]`, `p=0.362`. Both were substantially worse than zero-shot. The ToM port beat segment by 7.80 points, interval `[+6.08,+9.61]`, `p=4.92e-19`, but remained 1.89 points below zero-shot, interval `[-3.53,-0.25]`, `p=0.0346`.
+
+On GPT-4o ID, trajectory RAG improved over zero-shot by 16.00 points, interval `[+10.33,+21.67]`, `p=5.87e-8`, and exceeded segment by 10.67 points; segment minus RAG was `[-15.33,-6.00]`, `p=1.40e-5`. As on 72B, the trajectory and segment arms failed the 90% format gate, so these are preserved raw task results rather than deployment-passing gains. ToM was 3.67 points below zero-shot, interval `[-6.67,-0.67]`, `p=0.0266`. GPT-4o ToM successes by robot count were 28/144, 15/147, and 0/9, versus zero-shot at 33/144, 21/147, and 0/9.
+
+The local ToM comparator remains a prompt-level VIKI port, not an exact PartNR ToM reproduction: this repository contains no runnable original ToM module, exact prompt, config, memory banks, or generation logs. It reasons over active robots, capabilities, shared visible state, and complementary assignments while preserving the official output contract. The results reject a broad claim that this explicit reasoning prompt improves multi-robot deployment.
+
+The campaign accepted 6,072 Amendment 6 generation calls: 3,036 required 72B calls and 3,036 optional GPT-4o CloudGPT calls. An initial 8-call 72B attempt failed closed because vLLM completion usage includes a certified 251-token multimodal surcharge absent from `/tokenize`; zero rows were accepted, the attempt is audit-only, and all 1,218 reused OOD rows certified the surcharge. The corrected runner stores tokenizer and provider counts separately. Independent closure certification verified all eight generated artifacts, run fingerprints, source hashes, summary counts, prompt-token gates, and four analyses. Final status is `COMPLETE_WITH_FORMAT_GATE_FAILURES`; generation closure is permanently reinstated and no further VIKI generation is authorized.
 
 ## Artifacts
 
@@ -261,4 +299,10 @@ Status is `WAITING_FOR_72B_CAPACITY`, with zero Amendment 6 generation calls mad
 - `results/viki_memory_experiments/amendment6/preregistration.json`
 - `results/viki_memory_experiments/amendment6/closure_supersession.json`
 - `results/viki_memory_experiments/amendment6/trajectory_row_embeddings.summary.json`
+- `results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.ood.analysis.json`
+- `results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.id.analysis.json`
+- `results/viki_memory_experiments/amendment6/gpt_4o_optional.ood.analysis.json`
+- `results/viki_memory_experiments/amendment6/gpt_4o_optional.id.analysis.json`
+- `results/viki_memory_experiments/amendment6/AMENDMENT6_GENERATION_CLOSED.json`
 - `scripts/viki_amendment6.py`
+- `scripts/viki_amendment6_gpt4o.py`

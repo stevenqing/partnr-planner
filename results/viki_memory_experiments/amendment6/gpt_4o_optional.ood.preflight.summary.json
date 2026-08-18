@@ -1,0 +1,24 @@
+{
+  "task": "Amendment6_GPT4o_preflight",
+  "status": "PASS",
+  "split": "ood",
+  "rows": 1218,
+  "model_generation_calls": 0,
+  "model_id": "gpt-4o-2024-08-06",
+  "request_model": "gpt-4o-20240806",
+  "tokenizer": "o200k_base",
+  "calibration": {
+    "source": "certified GPT-4o segment-minus-zero provider usage",
+    "rows": 1218,
+    "maximum_absolute_error": 0
+  },
+  "fallback_rows": 0,
+  "maximum_trajectory_token_difference": 0.00021659085986571366,
+  "source_run_fingerprint": "6e3ba0d1e4820c07e8b1163d2ce78e73ae89d9c5f7d525acc2dbb3bad20c4cba",
+  "source_results_sha256": "c875df64c0ad5720cfd383c6f2d7cb167fcbeb2776673592d257d9e1f461586e",
+  "source_summary_sha256": "3e5cae2deb2c7c7a5a66d4483d1e4b101efa51da8eb95ad18fa84ca78a523fa2",
+  "source_status": "PASS",
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/gpt_4o_optional.ood.preflight.jsonl",
+  "results_sha256": "a50b0a3e7e6cdb0e3f753b672c6c196a113314fdc079ac27e90e7893eed74dee",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090"
+}

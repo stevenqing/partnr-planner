@@ -1,0 +1,36 @@
+{
+  "task": "Amendment6_deployment_baseline",
+  "status": "FAIL",
+  "backbone": "qwen2_5_vl_72b",
+  "split": "id",
+  "arm": "trajectory_rag",
+  "samples": 300,
+  "successes": 83,
+  "accuracy": 0.27666666666666667,
+  "format_successes": 232,
+  "format_compliance": 0.7733333333333333,
+  "format_gate": {
+    "status": "FAIL",
+    "minimum": 0.9,
+    "exempt": false
+  },
+  "model_generation_calls": 300,
+  "run_fingerprint": "f907a7dafd14979f30441ecc578fc110c0e9aaf2ad0b2ad04b2ce8d139d59581",
+  "source_run_fingerprint": "93bb60945921f8b879b0d870a7e1b3b1497d58d58eb4fa1546870a158e310427",
+  "runtime": {
+    "base_url": "http://127.0.0.1:8050/v1",
+    "version": {
+      "version": "0.11.2"
+    },
+    "models": [
+      {
+        "id": "qwen2.5-vl-72b-amendment3-f2",
+        "root": "Qwen/Qwen2.5-VL-72B-Instruct",
+        "parent": null,
+        "max_model_len": 16384
+      }
+    ]
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.id.trajectory_rag.jsonl",
+  "results_sha256": "046a6335a79dc9d267133b8f76d7174c32ed51b693bd12c6c2ad536e50d337e1"
+}

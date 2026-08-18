@@ -1,0 +1,99 @@
+{
+  "task": "Amendment6_preflight",
+  "status": "PASS",
+  "split": "ood",
+  "rows": 1218,
+  "model_generation_calls": 0,
+  "runtime": {
+    "base_url": "http://127.0.0.1:8050/v1",
+    "version": {
+      "version": "0.11.2"
+    },
+    "models": [
+      {
+        "id": "qwen2.5-vl-72b-amendment3-f2",
+        "root": "Qwen/Qwen2.5-VL-72B-Instruct",
+        "parent": null,
+        "max_model_len": 16384
+      }
+    ]
+  },
+  "source_pool_rows": 6699,
+  "source_pool_segments": 19499,
+  "fallback_rows": 0,
+  "symmetric_drops": 0,
+  "maximum_trajectory_token_difference": 0.00023674242424242425,
+  "maximum_input_tokens": {
+    "zero_shot": 737,
+    "trajectory_rag": 4275,
+    "tom": 883,
+    "segment": 4275
+  },
+  "robot_count_distribution": {
+    "1": 1218
+  },
+  "rendering_gate": {
+    "sampled_rows": [
+      141,
+      204,
+      227,
+      251,
+      274,
+      315,
+      341,
+      406,
+      595,
+      636,
+      669,
+      742,
+      762,
+      921,
+      947,
+      991,
+      1003,
+      1115,
+      1188,
+      1189
+    ],
+    "row_exemplars_checked": 79,
+    "byte_identical": 79,
+    "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.ood.render_gate.parquet",
+    "results_sha256": "567328de14aea9032971c3ef6dc65f439d50234d44189564da927c1069d53696"
+  },
+  "reuse_gate": {
+    "status": "PASS",
+    "arms": [
+      "zero_shot",
+      "segment"
+    ],
+    "rows": 1218,
+    "response_hashes_verified": 2436,
+    "source_run_fingerprint": "723e57892c0ce7b3f8fe5ebda6bde5e09ef9c6adc55573ebb3eea49c8987f80b",
+    "source_results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5/qwen2_5_vl_72b.jsonl",
+    "source_results_sha256": "a53c330afb85bdb26dd3ee112a2e7db937cfd70576d3c108d3bab6d4cc70861c",
+    "source_summary_sha256": "99eb34f425a6a8a98fe330a4a9949afbe4707a4c8686e75d6367fb3c7c660895",
+    "source_status": "PASS"
+  },
+  "tom_prompt_structure": {
+    "name": "VIKI-native explicit counterpart/state-reasoning port",
+    "retrieved_memory": false,
+    "reasoning_template": "Before producing the executable plan, reason explicitly about coordination.\n1. Identify every active robot, its available operations, and the task-relevant scene state visible in the image.\n2. For each other active robot, infer what part of the task it can execute, what it is likely to know from the shared scene, and which actions should be assigned to it.\n3. Choose complementary assignments that avoid duplicated work and respect operation availability.\n4. If only one robot is active, perform the same explicit capability and scene-state reasoning for that robot.\nThen return the plan in the original required <think>...</think><answer>...</answer> format. Do not mention this instruction in the answer and do not invent entities or operations.",
+    "insertion": "append to the official VIKI-L2 system message",
+    "output_contract": "unchanged official VIKI-L2 tagged executable plan",
+    "token_matching": false,
+    "format_exemption": false,
+    "mapping": {
+      "PartNR_definition": "explicit partner belief modeling through a dedicated reasoning module",
+      "available_local_implementation": false,
+      "available_exact_PartNR_prompt": false,
+      "VIKI_multi_robot": "reason over other active robots, shared visual scene state, capabilities, and complementary assignments",
+      "VIKI_single_robot": "explicit capability and scene-state reasoning",
+      "limitation": "prompt-level port, not a reproduction of the absent PartNR ToM module"
+    }
+  },
+  "tom_template_sha256": "b0071f82fe8020a7e5e26ef6c7b542727585ae8ef8684223a3193e5caf04fb95",
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.ood.preflight.jsonl",
+  "results_sha256": "531bbd840162acdca878d0817114aa8ff46b7ee903b6e6d8bdb0d9cf49291744",
+  "segment_manifest_sha256": "c4baf88a872ae2aae735d453298026fcd97e20be53208eb615b485c470930a00",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090"
+}

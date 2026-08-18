@@ -1,0 +1,152 @@
+{
+  "task": "Amendment6_generation_closure",
+  "status": "COMPLETE_WITH_FORMAT_GATE_FAILURES",
+  "generation_closed": true,
+  "permanent_closure_reinstated": true,
+  "completed_results_modified": false,
+  "per_backbone_tuning": false,
+  "required_qwen2_5_vl_72b_complete": true,
+  "optional_gpt_4o_complete": true,
+  "gemini_excluded": true,
+  "accepted_generation_calls": 6072,
+  "accepted_calls_by_backbone": {
+    "qwen2_5_vl_72b": 3036,
+    "gpt_4o_optional": 3036
+  },
+  "discarded_fail_closed_calls": 8,
+  "failed_call_audit": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.ood.trajectory_rag.failed_token_accounting.json",
+  "failed_call_audit_sha256": "ddfe136c06fba12eb4f899664ac7986698b50827bbd14c45aecf305703a0e399",
+  "generated_artifacts_certified": 8,
+  "generated_artifacts": [
+    {
+      "backbone": "qwen2_5_vl_72b",
+      "split": "ood",
+      "arm": "trajectory_rag",
+      "rows": 1218,
+      "successes": 84,
+      "format_successes": 1203,
+      "run_fingerprint": "e0eb083cd3a456b672cae8c1545ed66a2fe99e5f2759a5f9170bda9d153f142f",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.ood.trajectory_rag.jsonl",
+      "results_sha256": "e92c6ee2634de91ece49f388fddec5d8a8f6c99ee6a78be96d4f36ff62dcde03",
+      "summary_sha256": "12e70b7c9ee79b655c9791c30ec35bc0dcdf926073bee353709dc8968eea3cff"
+    },
+    {
+      "backbone": "qwen2_5_vl_72b",
+      "split": "ood",
+      "arm": "tom",
+      "rows": 1218,
+      "successes": 1,
+      "format_successes": 1215,
+      "run_fingerprint": "1b04b5574b731fc2874201e66e90cc4d864bde36da689fd54ab43cdd818034d1",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.ood.tom.jsonl",
+      "results_sha256": "40627a2d37c3b8a89d2aeb808694eac6be8b743a5006ef716f9a139fdad232e3",
+      "summary_sha256": "0e68406b16440d9b510783db123a1c9b603ba5fb9701884dc3449b8aca229845"
+    },
+    {
+      "backbone": "qwen2_5_vl_72b",
+      "split": "id",
+      "arm": "trajectory_rag",
+      "rows": 300,
+      "successes": 83,
+      "format_successes": 232,
+      "run_fingerprint": "f907a7dafd14979f30441ecc578fc110c0e9aaf2ad0b2ad04b2ce8d139d59581",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.id.trajectory_rag.jsonl",
+      "results_sha256": "046a6335a79dc9d267133b8f76d7174c32ed51b693bd12c6c2ad536e50d337e1",
+      "summary_sha256": "f0e20d3fc55c9a4760b12b327f629a6649d2824a5db2fff99cf194076d16bf00"
+    },
+    {
+      "backbone": "qwen2_5_vl_72b",
+      "split": "id",
+      "arm": "tom",
+      "rows": 300,
+      "successes": 16,
+      "format_successes": 300,
+      "run_fingerprint": "06112ba007ec8195aa0980475f58df5c21cb11f44e34dc369fc040eb46d70a23",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.id.tom.jsonl",
+      "results_sha256": "9ea7e1f6a46ef551e77f3b1104d9e25955411fddc7f5db0b6af743e17cc4e436",
+      "summary_sha256": "1a9265313f7eb6b3954e517efee2937c8959fe653e4654197ec655ba54f0da76"
+    },
+    {
+      "backbone": "gpt_4o_optional",
+      "split": "ood",
+      "arm": "trajectory_rag",
+      "rows": 1218,
+      "successes": 13,
+      "format_successes": 1218,
+      "run_fingerprint": "0ed43af8b024509df6dedb352d793e481bd4eac2ac8ad098ce045e72e5ba648c",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/gpt_4o_optional.ood.trajectory_rag.jsonl",
+      "results_sha256": "9cdf2123292f1916e968eb044f081c6689d226699992fd78496cee9324f2be24",
+      "summary_sha256": "3abd8d55fadf616b217aaade3e236f11d222909b32128798afb83ff1d655217e"
+    },
+    {
+      "backbone": "gpt_4o_optional",
+      "split": "ood",
+      "arm": "tom",
+      "rows": 1218,
+      "successes": 114,
+      "format_successes": 1218,
+      "run_fingerprint": "21905f3d8e0e5e114c9a37db366fbfd8c20568cf1c1398993210b15cee023fb5",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/gpt_4o_optional.ood.tom.jsonl",
+      "results_sha256": "a0ef4c74a8c851404063eb604bbec8044713f117b91e91a59c110c6e04538795",
+      "summary_sha256": "9745f0b00b9f149204848e0a61e79472f9ec89cf091c53bf1b790924157e0ce9"
+    },
+    {
+      "backbone": "gpt_4o_optional",
+      "split": "id",
+      "arm": "trajectory_rag",
+      "rows": 300,
+      "successes": 102,
+      "format_successes": 220,
+      "run_fingerprint": "6fa7c980214c5e7efcf1668d1942f81bca46ea02a5e286808fb2a0d83567863b",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/gpt_4o_optional.id.trajectory_rag.jsonl",
+      "results_sha256": "be8df3ec98ae0c3b1825934e34ca489db7a37e49d38a01bfcbd528a4dbc823b3",
+      "summary_sha256": "47096499605abc9e1658f9413a20af85fbdb5f157c1aa38b43388f419de2c4a8"
+    },
+    {
+      "backbone": "gpt_4o_optional",
+      "split": "id",
+      "arm": "tom",
+      "rows": 300,
+      "successes": 43,
+      "format_successes": 298,
+      "run_fingerprint": "a4d30ab80a44da3ee36feaef5de0ae27f43e67fbf766bbb8a62cf4151af52c2e",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/gpt_4o_optional.id.tom.jsonl",
+      "results_sha256": "0657429baa2e2209db522213b99c1f6360e54ba09523a6eb895e09a1eecd5cfe",
+      "summary_sha256": "399df137e01a451a683b7732dd359ebb5836fb04710f552dd332cd06b0df82ab"
+    }
+  ],
+  "analysis_artifacts": {
+    "qwen2_5_vl_72b.ood": {
+      "path": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.ood.analysis.json",
+      "sha256": "dc540a5911f8bafe1aced0bf8c1d4ea2521820a4e894ee829b5779ba8128cd89"
+    },
+    "qwen2_5_vl_72b.id": {
+      "path": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.id.analysis.json",
+      "sha256": "e70d8a5941c331f5b890448faf5e42b282d6d07c424f52670fcfe634213b1ded"
+    },
+    "gpt_4o_optional.ood": {
+      "path": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/gpt_4o_optional.ood.analysis.json",
+      "sha256": "e5d9fa1a44161e717ed5ceacf326e12deb3e84e123c08685af2aa2e0885967f5"
+    },
+    "gpt_4o_optional.id": {
+      "path": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/gpt_4o_optional.id.analysis.json",
+      "sha256": "a91edf59103f8a74b39e9455696d6a9ecd8cf5af95fe88ffdfd6afd5fb4a8243"
+    }
+  },
+  "format_gate_failure_analyses": [
+    "qwen2_5_vl_72b.id",
+    "gpt_4o_optional.id"
+  ],
+  "selected_ending": {
+    "selected": "baseline_matches_segment_OOD",
+    "text": "granularity claim narrows to the strict productivity channel",
+    "baseline_beats_segment": []
+  },
+  "preregistration": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/preregistration.json",
+  "preregistration_sha256": "1deeaf35fa7aeae7415ac11258d322451e81f11e8c2b38c9406062319544abe1",
+  "supersession_sha256": "8eff04271d4d1f4e136579d6bffadd020111d83855fde74dc91dc71c4234f526",
+  "qwen_ood_analysis_sha256": "dc540a5911f8bafe1aced0bf8c1d4ea2521820a4e894ee829b5779ba8128cd89",
+  "runner_sha256": "92ca60922753d550fd0cd8dc4bfbff5d4038b4fc9ffdc7a82790a92913028466",
+  "gpt4o_runner_sha256": "106fa4f9f633d0cc9972cfd221f54b21717e17350162297c206798df455dcc5d",
+  "after_scope": "No further VIKI generation is authorized."
+}

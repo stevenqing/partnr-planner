@@ -1,0 +1,35 @@
+{
+  "task": "Amendment6_GPT4o_deployment_baseline",
+  "status": "PASS",
+  "backbone": "gpt_4o_optional",
+  "split": "ood",
+  "arm": "trajectory_rag",
+  "samples": 1218,
+  "successes": 13,
+  "accuracy": 0.010673234811165846,
+  "format_successes": 1218,
+  "format_compliance": 1.0,
+  "format_gate": {
+    "status": "PASS",
+    "minimum": 0.9,
+    "exempt": false
+  },
+  "model_generation_calls": 1218,
+  "run_fingerprint": "0ed43af8b024509df6dedb352d793e481bd4eac2ac8ad098ce045e72e5ba648c",
+  "source_run_fingerprint": "6e3ba0d1e4820c07e8b1163d2ce78e73ae89d9c5f7d525acc2dbb3bad20c4cba",
+  "runtime": {
+    "base_url": "https://cloudgpt-openai.azure-api.net/",
+    "provider": "CloudGPT AzureOpenAI",
+    "authentication": "Azure CLI cached token",
+    "api_version": "2024-06-01",
+    "models": [
+      {
+        "id": "gpt-4o-20240806",
+        "root": "gpt-4o-2024-08-06",
+        "max_model_len": 128000
+      }
+    ]
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/gpt_4o_optional.ood.trajectory_rag.jsonl",
+  "results_sha256": "9cdf2123292f1916e968eb044f081c6689d226699992fd78496cee9324f2be24"
+}

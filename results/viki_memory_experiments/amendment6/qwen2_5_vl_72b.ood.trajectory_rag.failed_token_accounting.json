@@ -1,0 +1,19 @@
+{
+  "task": "Amendment6_token_accounting_failure",
+  "status": "FAIL_CLOSED",
+  "backbone": "qwen2_5_vl_72b",
+  "split": "ood",
+  "arm": "trajectory_rag",
+  "accepted_rows": 0,
+  "discarded_generation_calls": 8,
+  "failed_gate_row": 3,
+  "tokenizer_input_tokens": 4260,
+  "provider_prompt_tokens": 4511,
+  "certified_multimodal_surcharge": 251,
+  "surcharge_validation": "1,218/1,218 certified OOD zero-shot rows have provider usage minus /tokenize equal to 251",
+  "cause": "The initial runner compared chat completion usage directly with /tokenize output and did not account for vLLM multimodal image-token usage.",
+  "action": "No response was accepted. Preserve the failed metadata, bind provider usage to the certified per-row surcharge, and restart the arm from zero accepted rows.",
+  "primary_inference_eligible": false,
+  "failed_run_metadata": "results/viki_memory_experiments/amendment6/qwen2_5_vl_72b.ood.trajectory_rag.failed_token_accounting.run.json",
+  "failed_run_metadata_sha256": "8fd8d7f625db2621a31d9a5287cbb258318739eec0e3fcd8ec07c8e06f7e1bdb"
+}
