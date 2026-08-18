@@ -1,0 +1,62 @@
+{
+  "task": "Amendment5.1_Qwen3_ID_offline_format_repair",
+  "backbone": "qwen3_vl_30b_a3b",
+  "samples": 300,
+  "arms": {
+    "zero_shot": {
+      "successes": 13,
+      "accuracy": 0.043333333333333335,
+      "format_successes": 300,
+      "format_compliance": 1.0
+    },
+    "segment": {
+      "successes": 71,
+      "accuracy": 0.23666666666666666,
+      "format_successes": 300,
+      "format_compliance": 1.0
+    }
+  },
+  "comparisons": {
+    "zero_shot_to_segment": {
+      "samples": 300,
+      "zero_shot_successes": 13,
+      "segment_successes": 71,
+      "zero_shot_accuracy": 0.043333333333333335,
+      "segment_accuracy": 0.23666666666666666,
+      "segment_minus_zero_shot": 0.19333333333333333,
+      "paired_delta_interval": [
+        0.14666666666666667,
+        0.24
+      ],
+      "left_only": 3,
+      "right_only": 61,
+      "discordant_pairs": 64,
+      "mcnemar_exact_p": 4.742842403537839e-15
+    }
+  },
+  "status": "PASS",
+  "artifact_integrity_status": "PASS",
+  "post_hoc": true,
+  "primary_inference_eligible": false,
+  "policy": "canonical-null",
+  "model_generation_calls": 0,
+  "run_fingerprint": "06ccd9ade51603fa0f2419866b3c40a1a7dac7eb9597956f55f4bddea4133931",
+  "source_run_fingerprint": "c29bdfaf87145829fb4cd68b3ab7e4a4d53e0d5f027e904b7192ebc305cb9c0f",
+  "source_results_sha256": "897dc938432f11fd1199ded49ade66501f5e2f60b382447c73713ded1129cc51",
+  "repair_counts": {
+    "zero_shot": {
+      "preserved_answer": 281,
+      "null_unrecoverable_answer": 19
+    },
+    "segment": {
+      "preserved_answer": 283,
+      "null_unrecoverable_answer": 17
+    }
+  },
+  "task_score_mismatches": {
+    "zero_shot": 0,
+    "segment": 0
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/qwen3_vl_30b_a3b.offline_format_repair.jsonl",
+  "results_sha256": "d7b6d1063d4952984719e5b288d42be2b0ba11fb7867e52ad459381e63a6e511"
+}

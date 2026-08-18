@@ -1,0 +1,57 @@
+{
+  "task": "C1",
+  "seed": 20260814,
+  "channel_cap": 400,
+  "pair_min_rows": 30,
+  "channels": {
+    "episode_heldout": {
+      "test_rows": 400,
+      "memory_rows_min": 172,
+      "memory_rows_max": 1232,
+      "full_signature_overlap_rows": 400
+    },
+    "task_heldout_productivity": {
+      "test_rows": 400,
+      "memory_rows_min": 172,
+      "memory_rows_max": 172,
+      "full_signature_overlap_rows": 0
+    },
+    "task_heldout_systematicity": {
+      "test_rows": 400,
+      "memory_rows_min": 172,
+      "memory_rows_max": 172,
+      "full_signature_overlap_rows": 0
+    }
+  },
+  "productivity": {
+    "single_unit_train_rows": 172,
+    "single_unit_train_tasks": {
+      "dog_check_environment": 172
+    },
+    "multi_unit_id_rows": 1750,
+    "degenerate": true
+  },
+  "systematicity": {
+    "heldout_pairs": {
+      "check_then_act+fetch": 160,
+      "check_then_act+relocate": 160,
+      "check_then_act+state_change": 160,
+      "fetch+multi_object_sequence": 787,
+      "fetch+open_container_then_retrieve": 248,
+      "fetch+relocate": 1750,
+      "fetch+state_change": 1079,
+      "multi_object_sequence+open_container_then_retrieve": 167,
+      "multi_object_sequence+relocate": 787,
+      "multi_object_sequence+state_change": 603,
+      "open_container_then_retrieve+relocate": 248,
+      "open_container_then_retrieve+state_change": 248,
+      "relocate+state_change": 1079
+    },
+    "candidate_id_rows": 1750,
+    "allowed_train_rows": 172,
+    "allowed_train_tasks": {
+      "dog_check_environment": 172
+    },
+    "degenerate": true
+  }
+}

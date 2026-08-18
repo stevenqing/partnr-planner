@@ -1,0 +1,14 @@
+{
+  "level": 3,
+  "split": "test",
+  "provider": "endpoint",
+  "samples": 1,
+  "mean_score": 0.8428985329959442,
+  "mean_format_score": 1.0,
+  "mean_task_score": 0.8254428144399379,
+  "errors": 0,
+  "results": "results/viki_official_3b_l3_smoke.jsonl",
+  "mean_rmse": 60.95091420103788,
+  "mean_hausdorff": 75.38138011733218,
+  "mean_discrete_frechet": 77.82397281829064
+}

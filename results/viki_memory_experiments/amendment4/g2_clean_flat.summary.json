@@ -1,0 +1,86 @@
+{
+  "task": "Amendment4_G2_clean_flat",
+  "status": "PASS",
+  "samples": 400,
+  "model_generation_calls": 400,
+  "pool": {
+    "rule": "C0 full signature has exactly one ordered unit",
+    "allowed_instance_count": 319,
+    "allowed_source_count": 171,
+    "c0_single_unit_sources_absent_from_m0": [
+      6075
+    ],
+    "single_unit_source_fraction": 1.0,
+    "covering_sources": 0
+  },
+  "token_match": {
+    "criterion": "per-row",
+    "tolerance": 0.05,
+    "maximum_relative_difference": 0.0007541478129713424,
+    "violations": 0
+  },
+  "reuse": {
+    "original_run_fingerprint": "678c308a3bbf289b04a357a7436de5d4f462397ffb9ea3e8a860a69a416b0c5e",
+    "new_run_fingerprint": "fa79d284dde4bc8f449ef8d2eedc46bae267fe046bfb79235d5e0230e3db34b7",
+    "zero_shot_outputs_reused": 400,
+    "skill_memory_outputs_reused": 400,
+    "original_flat_outputs_discarded": 400
+  },
+  "arms": {
+    "zero_shot": {
+      "successes": 5,
+      "accuracy": 0.0125,
+      "format_compliance": 1.0
+    },
+    "skill_memory": {
+      "successes": 36,
+      "accuracy": 0.09,
+      "format_compliance": 0.995
+    },
+    "clean_flat": {
+      "successes": 4,
+      "accuracy": 0.01,
+      "format_compliance": 0.9875
+    }
+  },
+  "comparisons": {
+    "clean_flat_to_skill": {
+      "samples": 400,
+      "clean_flat_successes": 4,
+      "skill_memory_successes": 36,
+      "clean_flat_accuracy": 0.01,
+      "skill_memory_accuracy": 0.09,
+      "skill_memory_minus_clean_flat": 0.08,
+      "left_only": 3,
+      "right_only": 35,
+      "discordant_pairs": 38,
+      "mcnemar_exact_p": 6.677873898297548e-08
+    },
+    "zero_shot_to_clean_flat": {
+      "samples": 400,
+      "zero_shot_successes": 5,
+      "clean_flat_successes": 4,
+      "zero_shot_accuracy": 0.0125,
+      "clean_flat_accuracy": 0.01,
+      "clean_flat_minus_zero_shot": -0.0025000000000000005,
+      "left_only": 4,
+      "right_only": 3,
+      "discordant_pairs": 7,
+      "mcnemar_exact_p": 1.0
+    },
+    "zero_shot_to_skill": {
+      "samples": 400,
+      "zero_shot_successes": 5,
+      "skill_memory_successes": 36,
+      "zero_shot_accuracy": 0.0125,
+      "skill_memory_accuracy": 0.09,
+      "skill_memory_minus_zero_shot": 0.0775,
+      "left_only": 4,
+      "right_only": 35,
+      "discordant_pairs": 39,
+      "mcnemar_exact_p": 3.353161446284503e-07
+    }
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g2_clean_flat.jsonl",
+  "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g2_clean_flat.parquet"
+}

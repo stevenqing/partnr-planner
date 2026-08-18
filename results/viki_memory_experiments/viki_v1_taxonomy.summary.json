@@ -1,0 +1,106 @@
+{
+  "task": "V1",
+  "gate": {
+    "status": "PASS",
+    "baseline_successes_checked": 50,
+    "grounding_false_positives": 0,
+    "additional_baseline_successes_checked": 353,
+    "additional_grounding_false_positives": 0,
+    "scorer_reproduction_rows_per_arm": 1218,
+    "scorer_reproduction_mismatches": 0
+  },
+  "regressions": {
+    "samples": 85,
+    "primary_categories": {
+      "legal_but_wrong": 73,
+      "absent_object_reference": 12
+    },
+    "official_failure_reasons": {
+      "goal_miss": 73,
+      "ungrounded_entity": 12
+    },
+    "by_subset": {
+      "plate_missing": 78,
+      "bowl_missing": 4,
+      "both_missing": 3
+    },
+    "plan_len_delta_by_subset": {
+      "bowl_missing": {
+        "samples": 4,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "plate_missing": {
+        "samples": 78,
+        "mean": 0.34615384615384615,
+        "median": 0.0,
+        "min": 0,
+        "max": 3
+      },
+      "both_missing": {
+        "samples": 3,
+        "mean": -3.0,
+        "median": -3.0,
+        "min": -3,
+        "max": -3
+      }
+    }
+  },
+  "fixes": {
+    "samples": 55,
+    "n_static_fix": 1,
+    "baseline_official_failure_reasons": {
+      "goal_miss": 54,
+      "ungrounded_entity": 1
+    },
+    "by_subset": {
+      "bowl_missing": 38,
+      "plate_missing": 17
+    }
+  },
+  "demo_anchoring": {
+    "definition": "fraction of injected demos manipulating at least one exact asset type absent from the current official scorer scene",
+    "all_rows": {
+      "samples": 1218,
+      "pearson_point_biserial": -0.05122113209043437,
+      "spearman": -0.05638787594317952,
+      "mean_fraction_failure": 0.7891124260355029,
+      "mean_fraction_success": 0.832171581769437
+    },
+    "baseline_success_stratum": {
+      "samples": 403,
+      "pearson_point_biserial": -0.06137968042461182,
+      "spearman": -0.07035796375845425,
+      "mean_fraction_failure": 0.7647058823529411,
+      "mean_fraction_success": 0.8226415094339623
+    },
+    "mean_fraction_regressions": 0.7647058823529411,
+    "mean_fraction_fixes": 0.8872727272727272
+  },
+  "all_pair_plan_len_delta_by_subset": {
+    "bowl_missing": {
+      "samples": 409,
+      "mean": 0.03667481662591687,
+      "median": 0.0,
+      "min": 0,
+      "max": 3
+    },
+    "plate_missing": {
+      "samples": 418,
+      "mean": 0.0645933014354067,
+      "median": 0.0,
+      "min": 0,
+      "max": 3
+    },
+    "both_missing": {
+      "samples": 391,
+      "mean": 0.030690537084398978,
+      "median": 0.0,
+      "min": -3,
+      "max": 3
+    }
+  },
+  "grounding_convention": "Exact model targets are checked without stripping numeric suffixes. Asset-requiring action arguments are matched against the official scorer's type-level assets; Move/Place position literals follow the official action signatures and are not treated as assets."
+}

@@ -1,0 +1,45 @@
+{
+  "task": "F2_C-prime_manifest",
+  "seed": 20260814,
+  "channels": [
+    "instance",
+    "productivity"
+  ],
+  "systematicity": "permanently excluded as grammar-impossible",
+  "channel_rows": 400,
+  "unit_min_instances": 30,
+  "coverage": {
+    "single_unit_instances_by_kind": {
+      "fetch": 3887,
+      "relocate": 4612,
+      "state_change": 1860
+    },
+    "covered_unit_kinds": [
+      "fetch",
+      "relocate",
+      "state_change"
+    ],
+    "productivity_candidates_before_cap": 722
+  },
+  "by_channel": {
+    "instance": {
+      "samples": 400,
+      "allowed_instances_min": 319,
+      "allowed_instances_max": 3135
+    },
+    "productivity": {
+      "samples": 400,
+      "allowed_instances_min": 10359,
+      "allowed_instances_max": 10359
+    }
+  },
+  "leakage_gate": {
+    "status": "PASS",
+    "productivity_full_signature_cover_rows": 0,
+    "productivity_exact_plan_match_rows": 0,
+    "productivity_min_plan_edit_distance": 2,
+    "productivity_max_plan_trigram_jaccard": 0.3333333333333333
+  },
+  "manifest": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_manifest.parquet",
+  "audit": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_leakage_audit.parquet"
+}

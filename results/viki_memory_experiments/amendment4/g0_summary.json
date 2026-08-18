@@ -1,0 +1,98 @@
+{
+  "task": "Amendment4_G0",
+  "status": "PASS",
+  "audit_scope": "whole source_train_index rows whose complete formatted segment blocks remain present after Amendment 3.1 token-level prefix trimming",
+  "coverage_definition": "C2 contiguous ordered-unit coverage of the test full signature",
+  "pool_fact_basis": [
+    "allowed_instance_ids",
+    "allowed_instance_count",
+    "allowed_source_indices",
+    "allowed_source_count"
+  ],
+  "m0_source_train_rows": 6699,
+  "by_channel": {
+    "instance": {
+      "rows": 400,
+      "manifest_fields": {
+        "allowed_instance_count_unique": [
+          319,
+          566,
+          646,
+          789,
+          800,
+          811,
+          1206,
+          1218,
+          1564,
+          1648,
+          1914,
+          2265,
+          2618,
+          3135
+        ],
+        "allowed_source_count_unique": [
+          170,
+          171,
+          235,
+          263,
+          283,
+          391,
+          400,
+          402,
+          406,
+          627,
+          631,
+          755,
+          824,
+          1141
+        ]
+      },
+      "selected_source_rows_unique": 186,
+      "rows_with_covering_exemplar": 89,
+      "fraction_with_covering_exemplar": 0.2225,
+      "flat_success_skill_failure_rows": 23,
+      "flat_success_skill_failure_with_cover": 18,
+      "flat_success_skill_failure_cover_fraction": 0.782608695652174,
+      "multi_unit_exemplars": 198,
+      "maximum_grounded_plan_trigram_jaccard": 1.0
+    },
+    "productivity": {
+      "rows": 400,
+      "manifest_fields": {
+        "allowed_instance_count_unique": [
+          10359
+        ],
+        "allowed_source_count_unique": [
+          4993
+        ]
+      },
+      "selected_source_rows_unique": 128,
+      "rows_with_covering_exemplar": 143,
+      "fraction_with_covering_exemplar": 0.3575,
+      "flat_success_skill_failure_rows": 49,
+      "flat_success_skill_failure_with_cover": 38,
+      "flat_success_skill_failure_cover_fraction": 0.7755102040816326,
+      "multi_unit_exemplars": 245,
+      "maximum_grounded_plan_trigram_jaccard": 1.0
+    }
+  },
+  "branch": {
+    "productivity_covering_exemplar_present": true,
+    "g2_required": true,
+    "instance_rerun_required": false
+  },
+  "artifacts": {
+    "rows": {
+      "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g0_flat_prompt_rows.parquet",
+      "csv": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g0_flat_prompt_rows.csv"
+    },
+    "exemplars": {
+      "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g0_flat_prompt_exemplars.parquet",
+      "csv": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g0_flat_prompt_exemplars.csv"
+    },
+    "pools": {
+      "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g0_manifest_pools.parquet",
+      "csv": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g0_manifest_pools.csv"
+    }
+  }
+}

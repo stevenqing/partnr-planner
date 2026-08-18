@@ -1,0 +1,19 @@
+{
+  "task": "F2_C-prime_preflight",
+  "channel": "productivity",
+  "clarification": "Amendment 3.1",
+  "flat_builder": "next-nearest-whole-train-rows-then-token-trim",
+  "token_match_criterion": "per-row",
+  "token_tolerance": 0.05,
+  "planned_rows": 400,
+  "retained_rows": 400,
+  "symmetric_drop_count": 0,
+  "symmetric_drop_indices": [],
+  "in_band_rows": 400,
+  "violations": 0,
+  "maximum_relative_difference": 0.00078064012490242,
+  "legacy_routes_reused": 0,
+  "arm_generations": 0,
+  "status": "PASS",
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_productivity.preflight.jsonl"
+}

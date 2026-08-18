@@ -1,0 +1,16 @@
+{
+  "level": 2,
+  "split": "test",
+  "provider": "endpoint",
+  "benchmark_root": "/home/aiscuser/VIKI-R",
+  "seed": 0,
+  "base_url": "http://127.0.0.1:8016/v1",
+  "model": "viki-r-7b-l2",
+  "max_tokens": 2000,
+  "temperature": 0.0,
+  "llm_name": null,
+  "engine": null,
+  "predictions": null,
+  "planner_max_steps": null,
+  "score_attempts": 1
+}

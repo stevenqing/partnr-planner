@@ -1,0 +1,30 @@
+{
+  "base_urls": [
+    "http://127.0.0.1:8040/v1",
+    "http://127.0.0.1:8041/v1",
+    "http://127.0.0.1:8042/v1",
+    "http://127.0.0.1:8043/v1"
+  ],
+  "max_tokens": 768,
+  "model": "qwen2.5-vl-7b-instruct-amendment2",
+  "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "scope": "individual skills only; no cooperation skills",
+  "serving": {
+    "dtype": "bfloat16",
+    "generation_config": "vllm",
+    "gpu_memory_utilization": 0.6,
+    "max_model_len": 4096,
+    "max_num_seqs_per_server": 16,
+    "seed": 0,
+    "transformers_version": "4.51.3",
+    "vllm_version": "0.8.4"
+  },
+  "system_prompt": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels.",
+  "system_prompt_sha256": "cb13dab125ed4aca56e89c686a513546e2413696c6ec6b5b9b713a1cb6b9317d",
+  "task": "M0_extraction",
+  "temperature": 0,
+  "train_path": "/home/aiscuser/VIKI-R/data/VIKI-R/viki/VIKI-L2/train.parquet",
+  "train_prompt_reward_sha256": "f042f6bd2e63c1e15c43b0043f7685f11c4da96c44bcbadca7e5a0a13494c435",
+  "train_rows": 7196,
+  "workers": 32
+}

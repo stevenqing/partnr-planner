@@ -1,0 +1,164 @@
+{
+  "task": "Amendment5_qwen3_offline_format_repair",
+  "backbone": "qwen3_vl_30b_a3b",
+  "samples": 1218,
+  "arms": {
+    "zero_shot": {
+      "successes": 2,
+      "accuracy": 0.0016420361247947454,
+      "format_compliance": 1.0
+    },
+    "segment": {
+      "successes": 6,
+      "accuracy": 0.0049261083743842365,
+      "format_compliance": 1.0
+    }
+  },
+  "comparisons": {
+    "zero_shot_to_segment": {
+      "samples": 1218,
+      "zero_shot_successes": 2,
+      "segment_successes": 6,
+      "zero_shot_accuracy": 0.0016420361247947454,
+      "segment_accuracy": 0.0049261083743842365,
+      "segment_minus_zero_shot": 0.003284072249589491,
+      "paired_delta_interval": [
+        -0.0008210180623973727,
+        0.008210180623973728
+      ],
+      "left_only": 2,
+      "right_only": 6,
+      "discordant_pairs": 8,
+      "mcnemar_exact_p": 0.2890625
+    }
+  },
+  "by_family": {
+    "bring_bowl_to_table_plate_already_there": {
+      "samples": 409,
+      "arms": {
+        "zero_shot": {
+          "successes": 0,
+          "format_compliance": 1.0
+        },
+        "segment": {
+          "successes": 3,
+          "format_compliance": 1.0
+        }
+      },
+      "segment_vs_zero": {
+        "samples": 409,
+        "zero_shot_successes": 0,
+        "segment_successes": 3,
+        "zero_shot_accuracy": 0.0,
+        "segment_accuracy": 0.007334963325183374,
+        "segment_minus_zero_shot": 0.007334963325183374,
+        "paired_delta_interval": [
+          0.0,
+          0.017114914425427872
+        ],
+        "left_only": 0,
+        "right_only": 3,
+        "discordant_pairs": 3,
+        "mcnemar_exact_p": 0.25
+      }
+    },
+    "bring_plate_and_bowl_to_table": {
+      "samples": 391,
+      "arms": {
+        "zero_shot": {
+          "successes": 0,
+          "format_compliance": 1.0
+        },
+        "segment": {
+          "successes": 2,
+          "format_compliance": 1.0
+        }
+      },
+      "segment_vs_zero": {
+        "samples": 391,
+        "zero_shot_successes": 0,
+        "segment_successes": 2,
+        "zero_shot_accuracy": 0.0,
+        "segment_accuracy": 0.005115089514066497,
+        "segment_minus_zero_shot": 0.005115089514066497,
+        "paired_delta_interval": [
+          0.0,
+          0.01278772378516624
+        ],
+        "left_only": 0,
+        "right_only": 2,
+        "discordant_pairs": 2,
+        "mcnemar_exact_p": 0.5
+      }
+    },
+    "bring_plate_to_table_bowl_already_there": {
+      "samples": 418,
+      "arms": {
+        "zero_shot": {
+          "successes": 2,
+          "format_compliance": 1.0
+        },
+        "segment": {
+          "successes": 1,
+          "format_compliance": 1.0
+        }
+      },
+      "segment_vs_zero": {
+        "samples": 418,
+        "zero_shot_successes": 2,
+        "segment_successes": 1,
+        "zero_shot_accuracy": 0.004784688995215311,
+        "segment_accuracy": 0.0023923444976076554,
+        "segment_minus_zero_shot": -0.0023923444976076554,
+        "paired_delta_interval": [
+          -0.011961722488038277,
+          0.004784688995215311
+        ],
+        "left_only": 2,
+        "right_only": 1,
+        "discordant_pairs": 3,
+        "mcnemar_exact_p": 1.0
+      }
+    }
+  },
+  "status": "PASS",
+  "artifact_integrity_status": "PASS",
+  "post_hoc": true,
+  "primary_inference_eligible": false,
+  "policy": "canonical-null",
+  "model_generation_calls": 0,
+  "run_fingerprint": "2b7719530a7466e1d00f178cf5486ca2ed006202062f30a7f60897571b8c5af5",
+  "source_run_fingerprint": "a98b4b14021c1dfea01d8c1e4e8b2784f5f533675e07b819014b73ed22b5e68f",
+  "source_results_sha256": "b1afc0741fcb8fc77b33c4e8474c3ea02d9419b3199ca260bef6b4cf48562863",
+  "repair_counts": {
+    "zero_shot": {
+      "preserved_answer": 1029,
+      "null_unrecoverable_answer": 189
+    },
+    "segment": {
+      "preserved_answer": 1164,
+      "null_unrecoverable_answer": 54
+    }
+  },
+  "task_score_mismatches": {
+    "zero_shot": 0,
+    "segment": 0
+  },
+  "gate": {
+    "status": "PASS",
+    "probe_successes": 0,
+    "probe_samples": 200,
+    "probe_clopper_pearson_95": [
+      0.0,
+      0.018275340355136237
+    ],
+    "full_zero_shot_successes": 2,
+    "full_zero_shot_accuracy": 0.0016420361247947454,
+    "full_zero_shot_format_compliance": 1.0,
+    "minimum_format_compliance": 0.9,
+    "consistent_with_probe": true,
+    "format_pass": true
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5/qwen3_vl_30b_a3b.offline_format_repair.jsonl",
+  "results_sha256": "8beb282049f3d27e58df0e7ca0cac6501b515d7ca46fa2233ef5133af731e884"
+}

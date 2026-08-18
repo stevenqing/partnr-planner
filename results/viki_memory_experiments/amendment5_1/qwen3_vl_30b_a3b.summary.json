@@ -1,0 +1,65 @@
+{
+  "task": "Amendment5.1_ID_deployment",
+  "backbone": "qwen3_vl_30b_a3b",
+  "samples": 300,
+  "arms": {
+    "zero_shot": {
+      "successes": 13,
+      "accuracy": 0.043333333333333335,
+      "format_successes": 0,
+      "format_compliance": 0.0
+    },
+    "segment": {
+      "successes": 71,
+      "accuracy": 0.23666666666666666,
+      "format_successes": 0,
+      "format_compliance": 0.0
+    }
+  },
+  "comparisons": {
+    "zero_shot_to_segment": {
+      "samples": 300,
+      "zero_shot_successes": 13,
+      "segment_successes": 71,
+      "zero_shot_accuracy": 0.043333333333333335,
+      "segment_accuracy": 0.23666666666666666,
+      "segment_minus_zero_shot": 0.19333333333333333,
+      "paired_delta_interval": [
+        0.14666666666666667,
+        0.24
+      ],
+      "left_only": 3,
+      "right_only": 61,
+      "discordant_pairs": 64,
+      "mcnemar_exact_p": 4.742842403537839e-15
+    }
+  },
+  "status": "PASS",
+  "format_gate": {
+    "status": "PASS",
+    "minimum_per_arm": 0.9,
+    "raw_threshold_pass": false,
+    "exempt": true,
+    "policy": "raw official scores are primary; canonical-null is post-hoc appendix only"
+  },
+  "model_generation_calls": 600,
+  "run_fingerprint": "c29bdfaf87145829fb4cd68b3ab7e4a4d53e0d5f027e904b7192ebc305cb9c0f",
+  "source_run_fingerprint": "",
+  "source_results_sha256": "",
+  "runtime": {
+    "base_url": "http://127.0.0.1:8060/v1",
+    "version": {
+      "version": "0.11.2"
+    },
+    "models": [
+      {
+        "id": "qwen3-vl-30b-a3b-amendment5",
+        "root": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+        "parent": null,
+        "max_model_len": 16384
+      }
+    ]
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/qwen3_vl_30b_a3b.jsonl",
+  "results_sha256": "897dc938432f11fd1199ded49ade66501f5e2f60b382447c73713ded1129cc51"
+}

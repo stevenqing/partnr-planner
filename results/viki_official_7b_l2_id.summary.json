@@ -1,0 +1,11 @@
+{
+  "level": 2,
+  "split": "test",
+  "provider": "endpoint",
+  "samples": 1800,
+  "mean_score": 0.947499999999998,
+  "mean_format_score": 1.0,
+  "mean_task_score": 0.9416666666666667,
+  "errors": 0,
+  "results": "results/viki_official_7b_l2_id.jsonl"
+}

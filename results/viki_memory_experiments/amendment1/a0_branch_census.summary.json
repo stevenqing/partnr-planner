@@ -1,0 +1,162 @@
+{
+  "task": "A0",
+  "gate": {
+    "status": "PASS",
+    "seed": 20260814,
+    "rows": 50,
+    "agreements": 50,
+    "disagreements": 0,
+    "labels": "docs/viki_amendment1_a0_adjudication.csv"
+  },
+  "predicate_inputs": "Per-row instruction and init_pos only. Asset, portable-asset, and region lexicons are frozen from train before applying one code path to train, ID test, and OOD val.",
+  "vocabulary": {
+    "asset_vocabulary": [
+      "apple",
+      "banana",
+      "bottle",
+      "bowl",
+      "bread",
+      "cabinet",
+      "cardboardbox",
+      "cooling fan",
+      "cup",
+      "drawer",
+      "fork",
+      "fridge",
+      "green peas",
+      "kettle",
+      "knife",
+      "meat",
+      "oven",
+      "peach",
+      "pear",
+      "pizza",
+      "plate",
+      "pumpkin",
+      "scissors",
+      "sink",
+      "spoon",
+      "toaster",
+      "tomato",
+      "wine",
+      "wooden cutting board"
+    ],
+    "portable_asset_vocabulary": [
+      "apple",
+      "banana",
+      "bottle",
+      "bowl",
+      "bread",
+      "cabinet",
+      "cardboardbox",
+      "cooling fan",
+      "cup",
+      "fork",
+      "green peas",
+      "kettle",
+      "knife",
+      "meat",
+      "peach",
+      "pear",
+      "pizza",
+      "plate",
+      "pumpkin",
+      "scissors",
+      "spoon",
+      "tomato",
+      "wine",
+      "wooden cutting board"
+    ],
+    "initial_location_vocabulary": [
+      "R1",
+      "R2",
+      "R3",
+      "cabinet",
+      "groundA",
+      "kitchen island area",
+      "kitchen work area",
+      "mask1",
+      "room",
+      "room_cabinet",
+      "room_toaster",
+      "table"
+    ],
+    "instruction_discovered_regions": [
+      "rack"
+    ]
+  },
+  "branch_counts_by_split": {
+    "train": {
+      "some_absent": 7024,
+      "not_applicable": 172
+    },
+    "test": {
+      "some_absent": 1750,
+      "not_applicable": 50
+    },
+    "val": {
+      "some_absent": 1218
+    }
+  },
+  "train_branch_counts_by_skill": {
+    "clear_table_with_two_robots_and_put_in_cabinet": {
+      "some_absent": 801
+    },
+    "cut_fruit_on_board": {
+      "some_absent": 755
+    },
+    "cut_two_fruits_on_board": {
+      "some_absent": 391
+    },
+    "dog_check_environment": {
+      "not_applicable": 172
+    },
+    "dog_push_box_for_two_panda_transport": {
+      "some_absent": 184
+    },
+    "ensure_all_fruits_on_table": {
+      "some_absent": 1232
+    },
+    "parallel_human_dual_asset_to_plate_or_bowl": {
+      "some_absent": 400
+    },
+    "sequential_pick_two_and_place": {
+      "some_absent": 402
+    },
+    "serve_bread_after_checking_cabinet": {
+      "some_absent": 304
+    },
+    "serve_bread_from_counter": {
+      "some_absent": 283
+    },
+    "set_plate_and_fork_on_table": {
+      "some_absent": 415
+    },
+    "single_move_asset_to_target": {
+      "some_absent": 824
+    },
+    "toast_bread_and_set_plate": {
+      "some_absent": 406
+    },
+    "wash_fruit_and_serve": {
+      "some_absent": 627
+    }
+  },
+  "ood_route_counts": {
+    "ensure_all_fruits_on_table": 612,
+    "single_move_asset_to_target": 258,
+    "sequential_pick_two_and_place": 227,
+    "serve_bread_after_checking_cabinet": 96,
+    "dog_check_environment": 25
+  },
+  "usable_absent_train_instances_for_ood_routes": {
+    "dog_check_environment": 0,
+    "ensure_all_fruits_on_table": 1232,
+    "sequential_pick_two_and_place": 402,
+    "serve_bread_after_checking_cabinet": 304,
+    "single_move_asset_to_target": 824
+  },
+  "ood_some_absent_rate": 1.0,
+  "ood_exceptions": [],
+  "diagnosis_result": "CONTRADICTED: all 7,024 train rows with an asset-placement condition are some-absent; only 172 observation-only dog_check rows are not-applicable. No all-present train branch was found."
+}

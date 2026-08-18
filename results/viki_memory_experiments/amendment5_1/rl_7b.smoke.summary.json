@@ -1,0 +1,58 @@
+{
+  "task": "Amendment5.1_RL_raised_context_smoke",
+  "backbone": "rl_7b",
+  "status": "FAIL",
+  "selection_rule": "sorted random.Random(20260814).sample(frozen_indices, 20)",
+  "planned_indices": [
+    46,
+    93,
+    97,
+    159,
+    262,
+    283,
+    334,
+    411,
+    464,
+    538,
+    649,
+    743,
+    1048,
+    1107,
+    1281,
+    1516,
+    1535,
+    1592,
+    1770,
+    1798
+  ],
+  "tested_indices": [
+    46
+  ],
+  "samples_planned": 20,
+  "samples_tested": 1,
+  "byte_identical": 0,
+  "first_mismatch_index": 46,
+  "source_response_sha256": "e59708e9499a5a14f8ba186c48fa20d4b97032c6a3c6277ace5a727125b25d3a",
+  "observed_response_sha256": "943497f61f4f26175e096cba010b309681d6816c59b5bd5f8d4a530334573878",
+  "model_generation_calls": 1,
+  "sanctioned_deviation": "max_model_len raised to 16384",
+  "failure_action": "halt rl_7b segment arm; no segment calls authorized",
+  "runtime": {
+    "base_url": "http://127.0.0.1:8060/v1",
+    "version": {
+      "version": "0.8.4"
+    },
+    "models": [
+      {
+        "id": "viki-r-7b-l2-amendment1",
+        "root": "/home/aiscuser/VIKI-R/models/Qwen2.5VL-7B-Instruct-VIKI-R-2",
+        "parent": null,
+        "max_model_len": 16384
+      }
+    ]
+  },
+  "source_run_fingerprint": "6a06b31d363362e675d15fd3042b600f631924991c5c128711f4f35aeffb0871",
+  "source_results_sha256": "4689f914baad6dcd792dafcd4cf7f95e7c44cf4856b4ee315758b9a1eedb7feb",
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/rl_7b.smoke.jsonl",
+  "results_sha256": "274945e683ede8f5ddbf9730154ccfd215ca9d5faab9fdf897fbce56385c34c3"
+}

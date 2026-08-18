@@ -1,0 +1,72 @@
+{
+  "task": "C0",
+  "gate": {
+    "status": "PASS",
+    "seed": 20260814,
+    "rows": 50,
+    "agreements": 50,
+    "disagreements": 0,
+    "labels": "docs/viki_amendment1_c0_adjudication.tsv"
+  },
+  "rows_by_split": {
+    "train": 7196,
+    "test": 1800
+  },
+  "unique_full_signatures": {
+    "train": 341,
+    "test": 304
+  },
+  "unique_signatures_by_task": {
+    "train": {
+      "clear_table_with_two_robots_and_put_in_cabinet": 40,
+      "cut_fruit_on_board": 6,
+      "cut_two_fruits_on_board": 18,
+      "dog_check_environment": 3,
+      "dog_push_box_for_two_panda_transport": 42,
+      "ensure_all_fruits_on_table": 17,
+      "parallel_human_dual_asset_to_plate_or_bowl": 64,
+      "sequential_pick_two_and_place": 32,
+      "serve_bread_after_checking_cabinet": 6,
+      "serve_bread_from_counter": 6,
+      "set_plate_and_fork_on_table": 32,
+      "single_move_asset_to_target": 57,
+      "toast_bread_and_set_plate": 8,
+      "wash_fruit_and_serve": 10
+    },
+    "test": {
+      "clear_table_with_two_robots_and_put_in_cabinet": 40,
+      "cut_fruit_on_board": 6,
+      "cut_two_fruits_on_board": 18,
+      "dog_check_environment": 3,
+      "dog_push_box_for_two_panda_transport": 28,
+      "ensure_all_fruits_on_table": 17,
+      "parallel_human_dual_asset_to_plate_or_bowl": 43,
+      "sequential_pick_two_and_place": 31,
+      "serve_bread_after_checking_cabinet": 6,
+      "serve_bread_from_counter": 6,
+      "set_plate_and_fork_on_table": 31,
+      "single_move_asset_to_target": 57,
+      "toast_bread_and_set_plate": 8,
+      "wash_fruit_and_serve": 10
+    }
+  },
+  "unit_kind_counts": {
+    "train": {
+      "fetch": 12209,
+      "relocate": 11063,
+      "multi_object_sequence": 3228,
+      "state_change": 4652,
+      "open_container_then_retrieve": 1132,
+      "check_then_act": 627
+    },
+    "test": {
+      "fetch": 3040,
+      "relocate": 2743,
+      "state_change": 1175,
+      "check_then_act": 160,
+      "open_container_then_retrieve": 248,
+      "multi_object_sequence": 787
+    }
+  },
+  "definition": "Ordered deterministic units from reference actions: fetch, relocate, open_container_then_retrieve, check_then_act, state_change, and multi_object_sequence; full signature also includes reference plan length and relocated payload object count. These labels define splits only and never enter prompts or memory."
+}

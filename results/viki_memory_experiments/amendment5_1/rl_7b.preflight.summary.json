@@ -1,0 +1,38 @@
+{
+  "task": "Amendment5.1_local_preflight",
+  "backbone": "rl_7b",
+  "status": "PASS",
+  "rows": 300,
+  "model_generation_calls": 0,
+  "runtime": {
+    "base_url": "http://127.0.0.1:8060/v1",
+    "version": {
+      "version": "0.8.4"
+    },
+    "models": [
+      {
+        "id": "viki-r-7b-l2-amendment1",
+        "root": "/home/aiscuser/VIKI-R/models/Qwen2.5VL-7B-Instruct-VIKI-R-2",
+        "parent": null,
+        "max_model_len": 16384
+      }
+    ]
+  },
+  "maximum_zero_shot_input_tokens": 809,
+  "maximum_segment_input_tokens": 4328,
+  "context_limit": 16384,
+  "minimum_headroom": 10056,
+  "source_run_fingerprint": "6a06b31d363362e675d15fd3042b600f631924991c5c128711f4f35aeffb0871",
+  "source_results_sha256": "4689f914baad6dcd792dafcd4cf7f95e7c44cf4856b4ee315758b9a1eedb7feb",
+  "source_prompt_hash_rule": "official test prompt reconstructed from the certified source split and bound to the frozen source artifact",
+  "source_prompt_provenance": {
+    "official_bench_sha256": "0c949bc13d34b8e9cb704a1f3886f747d13a13ed55556e1f5e8920a74cb348a9",
+    "test_parquet_sha256": "6e98833a5233b884b2f0278335669d0cfa2f5c5c4f7d9969d7a5cf43f1f740cd",
+    "source_runner_sha256": "0c949bc13d34b8e9cb704a1f3886f747d13a13ed55556e1f5e8920a74cb348a9",
+    "legacy_token_accounting_match_required": false
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/rl_7b.preflight.parquet",
+  "results_sha256": "d439a78f08c26be1d872d900d575392c2a763ac50fcb898f26bfcc35d9d5ab72",
+  "manifest_sha256": "d2ed9765f050309879287de13b33f371df4ae71e932b6974f4cd06e2d59d1808",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090"
+}

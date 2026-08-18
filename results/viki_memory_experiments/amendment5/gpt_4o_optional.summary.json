@@ -1,0 +1,141 @@
+{
+  "task": "Amendment5_deployment",
+  "backbone": "gpt_4o_optional",
+  "samples": 1218,
+  "arms": {
+    "zero_shot": {
+      "successes": 137,
+      "accuracy": 0.11247947454844007,
+      "format_compliance": 0.9991789819376026
+    },
+    "segment": {
+      "successes": 19,
+      "accuracy": 0.015599343185550082,
+      "format_compliance": 0.9991789819376026
+    }
+  },
+  "comparisons": {
+    "zero_shot_to_segment": {
+      "samples": 1218,
+      "zero_shot_successes": 137,
+      "segment_successes": 19,
+      "zero_shot_accuracy": 0.11247947454844007,
+      "segment_accuracy": 0.015599343185550082,
+      "segment_minus_zero_shot": -0.09688013136288999,
+      "paired_delta_interval": [
+        -0.11576354679802955,
+        -0.07881773399014778
+      ],
+      "left_only": 132,
+      "right_only": 14,
+      "discordant_pairs": 146,
+      "mcnemar_exact_p": 3.017065441233176e-25
+    }
+  },
+  "by_family": {
+    "bring_bowl_to_table_plate_already_there": {
+      "samples": 409,
+      "arms": {
+        "zero_shot": {
+          "successes": 74,
+          "format_compliance": 1.0
+        },
+        "segment": {
+          "successes": 4,
+          "format_compliance": 1.0
+        }
+      },
+      "segment_vs_zero": {
+        "samples": 409,
+        "zero_shot_successes": 74,
+        "segment_successes": 4,
+        "zero_shot_accuracy": 0.18092909535452323,
+        "segment_accuracy": 0.009779951100244499,
+        "segment_minus_zero_shot": -0.17114914425427874,
+        "paired_delta_interval": [
+          -0.21026894865525672,
+          -0.13447432762836187
+        ],
+        "left_only": 71,
+        "right_only": 1,
+        "discordant_pairs": 72,
+        "mcnemar_exact_p": 3.091670257478196e-20
+      }
+    },
+    "bring_plate_and_bowl_to_table": {
+      "samples": 391,
+      "arms": {
+        "zero_shot": {
+          "successes": 0,
+          "format_compliance": 0.9974424552429667
+        },
+        "segment": {
+          "successes": 0,
+          "format_compliance": 0.9974424552429667
+        }
+      },
+      "segment_vs_zero": {
+        "samples": 391,
+        "zero_shot_successes": 0,
+        "segment_successes": 0,
+        "zero_shot_accuracy": 0.0,
+        "segment_accuracy": 0.0,
+        "segment_minus_zero_shot": 0.0,
+        "paired_delta_interval": [
+          0.0,
+          0.0
+        ],
+        "left_only": 0,
+        "right_only": 0,
+        "discordant_pairs": 0,
+        "mcnemar_exact_p": 1.0
+      }
+    },
+    "bring_plate_to_table_bowl_already_there": {
+      "samples": 418,
+      "arms": {
+        "zero_shot": {
+          "successes": 63,
+          "format_compliance": 1.0
+        },
+        "segment": {
+          "successes": 15,
+          "format_compliance": 1.0
+        }
+      },
+      "segment_vs_zero": {
+        "samples": 418,
+        "zero_shot_successes": 63,
+        "segment_successes": 15,
+        "zero_shot_accuracy": 0.1507177033492823,
+        "segment_accuracy": 0.03588516746411483,
+        "segment_minus_zero_shot": -0.11483253588516747,
+        "paired_delta_interval": [
+          -0.15311004784688995,
+          -0.07655502392344497
+        ],
+        "left_only": 61,
+        "right_only": 13,
+        "discordant_pairs": 74,
+        "mcnemar_exact_p": 1.3936467518320874e-08
+      }
+    }
+  },
+  "status": "PASS",
+  "model_generation_calls": 2436,
+  "new_run_fingerprint": "6e3ba0d1e4820c07e8b1163d2ce78e73ae89d9c5f7d525acc2dbb3bad20c4cba",
+  "gate": {
+    "status": "PASS",
+    "published_accuracy": 0.1002,
+    "acceptance_successes": [
+      102,
+      143
+    ],
+    "observed_successes": 137,
+    "observed_accuracy": 0.11247947454844007,
+    "format_compliance": 0.9991789819376026,
+    "method": "central 95% Binomial(n=1218,p=0.1002) acceptance interval"
+  },
+  "serving_stack": "CloudGPT AzureOpenAI with Azure CLI cached authentication",
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5/gpt_4o_optional.jsonl"
+}

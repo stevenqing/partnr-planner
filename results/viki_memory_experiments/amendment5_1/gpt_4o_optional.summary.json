@@ -1,0 +1,64 @@
+{
+  "task": "Amendment5.1_ID_deployment",
+  "backbone": "gpt_4o_optional",
+  "samples": 300,
+  "arms": {
+    "zero_shot": {
+      "successes": 54,
+      "accuracy": 0.18,
+      "format_successes": 296,
+      "format_compliance": 0.9866666666666667
+    },
+    "segment": {
+      "successes": 70,
+      "accuracy": 0.23333333333333334,
+      "format_successes": 216,
+      "format_compliance": 0.72
+    }
+  },
+  "comparisons": {
+    "zero_shot_to_segment": {
+      "samples": 300,
+      "zero_shot_successes": 54,
+      "segment_successes": 70,
+      "zero_shot_accuracy": 0.18,
+      "segment_accuracy": 0.23333333333333334,
+      "segment_minus_zero_shot": 0.05333333333333334,
+      "paired_delta_interval": [
+        0.0033333333333333335,
+        0.10333333333333333
+      ],
+      "left_only": 23,
+      "right_only": 39,
+      "discordant_pairs": 62,
+      "mcnemar_exact_p": 0.05589722669971113
+    }
+  },
+  "status": "FAIL",
+  "format_gate": {
+    "status": "FAIL",
+    "minimum_per_arm": 0.9,
+    "raw_threshold_pass": false,
+    "exempt": false,
+    "policy": "official format must be at least 90 percent per arm"
+  },
+  "model_generation_calls": 600,
+  "run_fingerprint": "4a8ed1a54b17501c0a8542e18c117b2b919a3200329f0d5abe6e27d1e6487701",
+  "source_run_fingerprint": "",
+  "source_results_sha256": "",
+  "runtime": {
+    "base_url": "https://cloudgpt-openai.azure-api.net/",
+    "provider": "CloudGPT AzureOpenAI",
+    "authentication": "Azure CLI cached token",
+    "api_version": "2024-06-01",
+    "models": [
+      {
+        "id": "gpt-4o-20240806",
+        "root": "gpt-4o-2024-08-06",
+        "max_model_len": 128000
+      }
+    ]
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/gpt_4o_optional.jsonl",
+  "results_sha256": "9bab80a30fdbdbafd1304a0db7fb335a00a91fcd5c21a7bd1f77c6ae98146598"
+}

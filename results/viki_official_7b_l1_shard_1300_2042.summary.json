@@ -1,0 +1,11 @@
+{
+  "level": 1,
+  "split": "test",
+  "provider": "endpoint",
+  "samples": 743,
+  "mean_score": 0.9103633916554521,
+  "mean_format_score": 1.0,
+  "mean_task_score": 0.9004037685060565,
+  "errors": 0,
+  "results": "results/viki_official_7b_l1_shard_1300_2042.jsonl"
+}

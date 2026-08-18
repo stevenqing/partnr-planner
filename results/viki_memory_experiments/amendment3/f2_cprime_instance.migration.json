@@ -1,0 +1,9 @@
+{
+  "clarification": "Amendment 3.1",
+  "legacy_run_fingerprint": "21329e0301f5de28fbf6de888d2f9156aae7d275c7ae619071cf8d2f241eebab",
+  "legacy_records": 18,
+  "rows_reusing_zero_shot_and_skill": 18,
+  "flat_outputs_discarded": 18,
+  "new_run_fingerprint": "0a86b74477e0e31d351b36c9d483472b6edb7f8b13c5b7cf8759180f48033f9d",
+  "status": "PASS"
+}

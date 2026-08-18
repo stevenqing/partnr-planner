@@ -1,0 +1,11 @@
+{
+  "level": 2,
+  "split": "val",
+  "provider": "endpoint",
+  "samples": 37,
+  "mean_score": 0.3675675675675675,
+  "mean_format_score": 1.0,
+  "mean_task_score": 0.2972972972972973,
+  "errors": 0,
+  "results": "results/viki_official_7b_l2_ood_gap_459_495.jsonl"
+}

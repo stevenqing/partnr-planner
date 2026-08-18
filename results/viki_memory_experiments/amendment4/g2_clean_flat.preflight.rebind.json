@@ -1,0 +1,8 @@
+{
+  "reason": "corrected G0 post-trim whole-row audit",
+  "prior_run_fingerprint": "052c182448da8a13ea9ec0b93f19b8db3a0f27db5964ff5bf080d4fbb107c446",
+  "new_run_fingerprint": "8be3d2c6892c426ebca9b654ba8098d22181d9decb9f2f05d389b82ec5f3a678",
+  "rows_reused": 400,
+  "token_calls_repeated": 0,
+  "status": "PASS"
+}

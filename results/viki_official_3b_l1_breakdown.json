@@ -1,0 +1,58 @@
+{
+  "by_required_agent_count": {
+    "1": {
+      "samples": 1103,
+      "correct": 887,
+      "accuracy": 0.8041704442429737
+    },
+    "2": {
+      "samples": 940,
+      "correct": 713,
+      "accuracy": 0.7585106382978724
+    }
+  },
+  "by_robot": {
+    "anymal_c": {
+      "ground_truth": 44,
+      "predicted": 39,
+      "true_positive": 20,
+      "precision": 0.5128205128205128,
+      "recall": 0.45454545454545453
+    },
+    "fetch": {
+      "ground_truth": 1025,
+      "predicted": 1069,
+      "true_positive": 931,
+      "precision": 0.8709073900841908,
+      "recall": 0.9082926829268293
+    },
+    "panda": {
+      "ground_truth": 40,
+      "predicted": 4,
+      "true_positive": 0,
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    "stompy": {
+      "ground_truth": 896,
+      "predicted": 847,
+      "true_positive": 826,
+      "precision": 0.9752066115702479,
+      "recall": 0.921875
+    },
+    "unitree_go2": {
+      "ground_truth": 37,
+      "predicted": 6,
+      "true_positive": 3,
+      "precision": 0.5,
+      "recall": 0.08108108108108109
+    },
+    "unitree_h1": {
+      "ground_truth": 941,
+      "predicted": 980,
+      "true_positive": 854,
+      "precision": 0.8714285714285714,
+      "recall": 0.9075451647183846
+    }
+  }
+}

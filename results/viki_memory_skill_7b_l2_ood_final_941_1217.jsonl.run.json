@@ -1,0 +1,22 @@
+{
+  "level": 2,
+  "split": "val",
+  "provider": "memory-endpoint",
+  "benchmark_root": "/home/aiscuser/VIKI-R",
+  "seed": 0,
+  "base_url": "http://127.0.0.1:8029/v1",
+  "model": "viki-r-7b-l2-memory",
+  "max_tokens": 2000,
+  "temperature": 0.0,
+  "llm_name": null,
+  "engine": null,
+  "predictions": null,
+  "planner_max_steps": null,
+  "score_attempts": 1,
+  "memory_top_k": 5,
+  "memory_similarity_threshold": 0.3,
+  "memory_prediction_max_tokens": 768,
+  "memory_embedding_model": "all-mpnet-base-v2",
+  "memory_device": "cpu",
+  "memory_cache": "/home/aiscuser/partnr-planner/results/viki_l2_memory_skill_all_mpnet_base_v2.npz"
+}

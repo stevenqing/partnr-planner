@@ -1,0 +1,53 @@
+{
+  "task": "Amendment4_1_G2b_zero_call_gates",
+  "status": "PASS",
+  "model_generation_calls": 0,
+  "pool": {
+    "rows": 400,
+    "allowed_instance_count": 10359,
+    "unique_manifest_pool_hashes": 1,
+    "byte_identical_rows": 400,
+    "single_unit_fraction": 1.0,
+    "non_single_unit_segments": 0,
+    "covering_segments": 0
+  },
+  "render": {
+    "sample_seed": 20260814,
+    "sampled_rows": [
+      220,
+      338,
+      354,
+      376,
+      430,
+      487,
+      541,
+      637,
+      919,
+      980,
+      1006,
+      1115,
+      1133,
+      1358,
+      1404,
+      1437,
+      1462,
+      1602,
+      1717,
+      1741
+    ],
+    "segments_checked_per_row": 6,
+    "segments_checked": 120,
+    "byte_identical_segments": 120,
+    "full_pool_template_mismatches": 0
+  },
+  "artifacts": {
+    "pool": {
+      "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g2b_pool_gate.parquet",
+      "csv": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g2b_pool_gate.csv"
+    },
+    "render": {
+      "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g2b_render_gate.parquet",
+      "csv": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g2b_render_gate.csv"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "task": "Amendment5.1_CloudGPT_preflight",
+  "backbone": "gpt_4o_optional",
+  "status": "PASS",
+  "rows": 300,
+  "model_generation_calls": 0,
+  "runtime": {
+    "base_url": "https://cloudgpt-openai.azure-api.net/",
+    "provider": "CloudGPT AzureOpenAI",
+    "authentication": "Azure CLI cached token",
+    "api_version": "2024-06-01",
+    "models": [
+      {
+        "id": "gpt-4o-20240806",
+        "root": "gpt-4o-2024-08-06",
+        "max_model_len": 128000
+      }
+    ]
+  },
+  "maximum_zero_shot_input_tokens": 71510,
+  "maximum_segment_input_tokens": 82436,
+  "context_limit": 128000,
+  "minimum_headroom": 43564,
+  "input_token_accounting": "conservative upper bound: serialized UTF-8 bytes plus 1,024 tokens for provider framing",
+  "source_run_fingerprint": "",
+  "source_results_sha256": "",
+  "source_prompt_hash_rule": "both arms reconstructed from the frozen ID deployment manifest",
+  "source_prompt_provenance": {
+    "official_bench_sha256": "0c949bc13d34b8e9cb704a1f3886f747d13a13ed55556e1f5e8920a74cb348a9",
+    "test_parquet_sha256": "6e98833a5233b884b2f0278335669d0cfa2f5c5c4f7d9969d7a5cf43f1f740cd",
+    "source_runner_sha256": "efda2699e48eb141c87ba0a27fa3d6e3ca9dcfaf759f7afbb1181a6a05202677",
+    "legacy_token_accounting_match_required": false
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/gpt_4o_optional.preflight.parquet",
+  "results_sha256": "b8fa0ae6fa50fd6ea431b62f20863f2273091f1f510979e87c16c14cf26d9a1b",
+  "manifest_sha256": "d2ed9765f050309879287de13b33f371df4ae71e932b6974f4cd06e2d59d1808",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090"
+}

@@ -1,0 +1,22 @@
+{
+  "task": "Amendment5_closure_supersession",
+  "status": "ACTIVE_ONCE",
+  "supersedes": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/VIKI_GENERATION_CLOSED.json",
+  "superseded_sha256": "108182814d850d824d97683901a54f44bac3b9e94182f11e76c7f5ebd7b4f10b",
+  "authorized_backbones": [
+    "qwen2_5_vl_72b",
+    "qwen2_5_vl_7b_stock",
+    "gemini_2_5_flash",
+    "qwen3_vl_30b_a3b",
+    "gpt_4o_optional"
+  ],
+  "authorized_calls": {
+    "qwen2_5_vl_72b": 1218,
+    "qwen2_5_vl_7b_stock": 1218,
+    "gemini_2_5_flash": 2436,
+    "qwen3_vl_30b_a3b": 2436,
+    "gpt_4o_optional": 2436
+  },
+  "configuration_sha256": "bdc0536f7a31ef183c3d4b86d38c4733a57f1b27978d2579aec5966386907a0a",
+  "after_h4": "permanent closure; chapter draft"
+}

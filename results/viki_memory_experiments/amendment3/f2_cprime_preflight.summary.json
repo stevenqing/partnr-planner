@@ -1,0 +1,62 @@
+{
+  "task": "F2_C-prime_preflight",
+  "clarification": "Amendment 3.1",
+  "flat_builder": "next-nearest-whole-train-rows-then-token-trim",
+  "token_match_criterion": "per-row",
+  "token_tolerance": 0.05,
+  "channels": {
+    "instance": {
+      "task": "F2_C-prime_preflight",
+      "channel": "instance",
+      "clarification": "Amendment 3.1",
+      "flat_builder": "next-nearest-whole-train-rows-then-token-trim",
+      "token_match_criterion": "per-row",
+      "token_tolerance": 0.05,
+      "planned_rows": 400,
+      "retained_rows": 400,
+      "symmetric_drop_count": 0,
+      "symmetric_drop_indices": [],
+      "in_band_rows": 400,
+      "violations": 0,
+      "maximum_relative_difference": 0.0007479431563201197,
+      "legacy_routes_reused": 18,
+      "arm_generations": 0,
+      "status": "PASS",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_instance.preflight.jsonl"
+    },
+    "productivity": {
+      "task": "F2_C-prime_preflight",
+      "channel": "productivity",
+      "clarification": "Amendment 3.1",
+      "flat_builder": "next-nearest-whole-train-rows-then-token-trim",
+      "token_match_criterion": "per-row",
+      "token_tolerance": 0.05,
+      "planned_rows": 400,
+      "retained_rows": 400,
+      "symmetric_drop_count": 0,
+      "symmetric_drop_indices": [],
+      "in_band_rows": 400,
+      "violations": 0,
+      "maximum_relative_difference": 0.00078064012490242,
+      "legacy_routes_reused": 0,
+      "arm_generations": 0,
+      "status": "PASS",
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_productivity.preflight.jsonl"
+    }
+  },
+  "artifacts": {
+    "instance": {
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_instance.preflight.jsonl",
+      "results_sha256": "e177f4d837273cd370d02e2e0ef419db41cfbdb4ee1b8aad4eb36ebc766b7a4a",
+      "summary": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_instance.preflight.summary.json",
+      "summary_sha256": "f5a13d197dd97368647c766fd46c71fb74880fba146448cc02176f14aaac0fa2"
+    },
+    "productivity": {
+      "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_productivity.preflight.jsonl",
+      "results_sha256": "5c1c900138e04799c10dd99b65fb7ab99a451815eec9235eb7adecbec1f216c0",
+      "summary": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_productivity.preflight.summary.json",
+      "summary_sha256": "c36305af42f35746c7b6b059e043a79f3a6f557695e25672d34ab9e8d468b040"
+    }
+  },
+  "status": "PASS"
+}

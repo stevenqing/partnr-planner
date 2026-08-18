@@ -1,0 +1,28 @@
+{
+  "task": "Amendment4_1_G2b_preflight",
+  "status": "PASS",
+  "rows": 400,
+  "model_generation_calls": 0,
+  "in_band_rows": 400,
+  "maximum_relative_difference": 0.0007496251874062968,
+  "symmetric_drops": 0,
+  "pool": {
+    "manifest_pool_rows_verified": 400,
+    "allowed_instance_count": 10359,
+    "single_unit_fraction": 1.0,
+    "covering_segments": 0
+  },
+  "render": {
+    "sampled_rows": 20,
+    "injected_segments_checked": 46,
+    "byte_identical_segments": 46
+  },
+  "reuse": {
+    "zero_shot_prompts_verified": 400,
+    "skill_memory_prompts_verified": 400,
+    "clean_flat_prompts_verified": 400,
+    "original_g2_run_fingerprint": "fa79d284dde4bc8f449ef8d2eedc46bae267fe046bfb79235d5e0230e3db34b7"
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g2b_segment_flat.preflight.jsonl",
+  "results_sha256": "1ef8246bf54f39caddbf8cc86eaffed461e0683a25130f5b12275e052dd42408"
+}

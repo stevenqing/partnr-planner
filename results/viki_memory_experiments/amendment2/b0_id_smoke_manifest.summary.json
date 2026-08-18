@@ -1,0 +1,8 @@
+{
+  "task": "B0_manifest",
+  "seed": 20260814,
+  "source": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment1/a5_id_safety_manifest.parquet",
+  "eligible_rows": 300,
+  "samples": 100,
+  "indices_sha256": "135c5348321be64585f64ce11af395d13e69b588bedab46d563bc30235337db6"
+}

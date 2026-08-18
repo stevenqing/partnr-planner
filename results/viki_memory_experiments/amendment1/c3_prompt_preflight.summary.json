@@ -1,0 +1,46 @@
+{
+  "task": "C3_preflight",
+  "status": "PASS",
+  "samples": 1200,
+  "token_tolerance": 0.05,
+  "max_relative_difference": 0.05,
+  "flat_truncated_rows": 156,
+  "channels": {
+    "episode_heldout": {
+      "samples": 400,
+      "skill_tiers": {
+        "grounded": 397,
+        "abstract": 3
+      },
+      "flat_k": {
+        "5": 397,
+        "1": 3
+      },
+      "max_token_relative_difference": 0.019153225806451613
+    },
+    "task_heldout_productivity": {
+      "samples": 400,
+      "skill_tiers": {
+        "none": 211,
+        "abstract": 189
+      },
+      "flat_k": {
+        "0": 211,
+        "1": 189
+      },
+      "max_token_relative_difference": 0.049738219895287955
+    },
+    "task_heldout_systematicity": {
+      "samples": 400,
+      "skill_tiers": {
+        "none": 211,
+        "abstract": 189
+      },
+      "flat_k": {
+        "0": 211,
+        "1": 189
+      },
+      "max_token_relative_difference": 0.05
+    }
+  }
+}

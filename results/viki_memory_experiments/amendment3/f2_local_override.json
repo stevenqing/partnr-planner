@@ -1,0 +1,40 @@
+{
+  "task": "F2_local_override",
+  "status": "COMMITTED",
+  "authorized_date": "2026-08-15",
+  "authorization": "User directed the committed round to use a local model after reviewing the F1 outcome.",
+  "methodological_status": "Post-F1 protocol amendment; this does not replace or alter the preregistered F1 pick.",
+  "original_pick": {
+    "artifact": "results/viki_memory_experiments/amendment3/f1_pick.json",
+    "route": "closed_fallback",
+    "candidate": "Gemini-2.5-Flash"
+  },
+  "local_selection": {
+    "candidate": "qwen2_5_vl_72b",
+    "model_id": "Qwen/Qwen2.5-VL-72B-Instruct",
+    "model_revision": "89c86200743eec961a297729e7990e8f2ddbc4c5",
+    "served_model": "qwen2.5-vl-72b-amendment3-f2"
+  },
+  "selection_basis": {
+    "reason": "Best viable local F1 candidate and the only local candidate with compliant output format.",
+    "id_successes": 17,
+    "id_samples": 200,
+    "ood_successes": 3,
+    "ood_samples": 200,
+    "id_format_compliance": 1.0,
+    "ood_format_compliance": 1.0
+  },
+  "frozen_serving": {
+    "temperature": 0,
+    "max_model_len": 16384,
+    "max_output_tokens": 2000,
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 4,
+    "seed": 0,
+    "image_processor": {
+      "requested_use_fast": false,
+      "effective": "Transformers 4.57.6 stack default fast processor",
+      "note": "vLLM 0.11.2 reports that the request-level use_fast override is ignored; this matches the passing F1 anchor stack."
+    }
+  }
+}

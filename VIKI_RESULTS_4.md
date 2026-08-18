@@ -11,9 +11,9 @@ The primary OOD prediction held. Zero-shot was 10/1218 and segment memory was 23
 | Regime | N | Zero-shot | Memory | Delta [paired bootstrap 95%] | F->S | S->F | Exact p |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | **ID** | | | | | | | |
-| Stock 7B segment memory | 300 | 1/300 (0.33%) | 5/300 (1.67%) | +1.33 pp [+0.00, +3.00] | 5 | 1 | 0.21875 |
-| Local 72B segment memory | 300 | 22/300 (7.33%) | 31/300 (10.33%) | +3.00 pp [-0.67, +6.67] | 21 | 12 | 0.162756 |
-| RL 7B graded memory | 300 | 278/300 (92.67%) | 261/300 (87.00%) | -5.67 pp [-8.67, -2.67] | 3 | 20 | 0.000488281 |
+| Stock 7B full-bank segment | 300 | 1/300 (0.33%) | 10/300 (3.33%) | +3.00 pp [+1.00, +5.33] | 10 | 1 | 0.0117188 |
+| Local 72B full-bank segment | 300 | 22/300 (7.33%) | 69/300 (23.00%) | +15.67 pp [+11.00, +20.33] | 54 | 7 | 4.32211e-10 |
+| RL 7B full-bank segment | 300 | 278/300 (92.67%) | not estimated: raised-context smoke failed | - | - | - | - |
 | **OOD** | | | | | | | |
 | Stock 7B segment memory | 1218 | 0/1218 (0.00%) | 0/1218 (0.00%) | +0.00 pp [+0.00, +0.00] | 0 | 0 | 1 |
 | Local 72B segment memory | 1218 | 10/1218 (0.82%) | 23/1218 (1.89%) | +1.07 pp [+0.16, +1.97] | 23 | 10 | 0.035082 |
@@ -139,6 +139,82 @@ Organization here means the skill arm's routing, grouping, and ordering jointly,
 
 The three-regime curve remains descriptive rather than treatment-controlled: memory variants and context-budget policies differ across regimes. VIKI generation is now closed under Amendment 4.1; no further VIKI arm is authorized. C4 remains blocked on the original PartNR memory banks and generation logs, and that user-side handoff is unchanged. The next VIKI deliverable is the chapter draft.
 
+## Amendment 5: Cross-Backbone Deployment
+
+Amendment 5 superseded the Amendment 4.1 generation closure once, solely for frozen-H0 deployment and cross-model replication. H0 uses the full 19,499-segment M0 bank, instruction-only MPNet cosine retrieval, top 6 segments with bare fallback below 0.3, headerless singleton rendering, greedy decoding, 2,000 output tokens, and at least 16,384 tokens of context. No per-backbone tuning is allowed.
+
+| Backbone | Zero-shot | Composed skill | Segment | Segment minus zero-shot [95%] | Exact p | Status |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Qwen2.5-VL-72B | 10/1218 (0.82%) | 23/1218 (1.89%) | 83/1218 (6.81%) | +5.99 pp [+4.52, +7.47] | 7.08891e-16 | PASS |
+| Qwen2.5-VL-7B stock | 0/1218 (0.00%) | - | 0/1218 (0.00%) | +0.00 pp [+0.00, +0.00] | 1.0 | PASS |
+| Qwen3-VL-30B-A3B | 2/1218 (0.16%) | - | 6/1218 (0.49%) | +0.33 pp [-0.08, +0.82] | 0.2890625 | **FORMAT GATE FAIL** |
+| GPT-4o-2024-08-06, optional | 137/1218 (11.25%) | - | 19/1218 (1.56%) | -9.69 pp [-11.58, -7.88] | 3.01707e-25 | PASS |
+
+For Qwen2.5-VL-72B, zero-shot and composed outputs were reused unchanged from the certified source run; only the segment arm required 1,218 new calls. Segment also exceeded composed skill by 4.93 points (paired exact p=2.71882e-11). The run completed with zero endpoint errors and fingerprint `723e57892c0ce7b3f8fe5ebda6bde5e09ef9c6adc55573ebb3eea49c8987f80b`.
+
+For stock Qwen2.5-VL-7B, zero-shot was reused unchanged and only segment was generated. Both arms scored zero; format compliance was 99.26% for zero-shot and 99.43% for segment. The run completed with zero endpoint errors and fingerprint `ea7a3f655454e302ed90094a2f0a484cda7bbb885ee80c6bd731cbe4323f0bd3`.
+
+Qwen3 generated both arms, making exactly 2,436 calls. All 1,218 rows are present exactly once, both arms are present on every row, endpoint errors are zero, and the single run fingerprint is `a98b4b14021c1dfea01d8c1e4e8b2784f5f533675e07b819014b73ed22b5e68f`. The live runtime identity matched the frozen preflight: vLLM 0.11.2, `Qwen/Qwen3-VL-30B-A3B-Instruct`, and 16,384-token context.
+
+The Qwen3 completion gate failed for a specific protocol reason rather than artifact corruption. Every response began with `<reasoning>` instead of the scorer-required `<think>` tag; `<think>` occurred in 0/1,218 responses in both arms, so official format compliance was 0% in both arms. Zero-shot accuracy remained consistent with the preregistered 0/200 probe interval [0.00%, 1.83%], but the frozen 90% format threshold failed. No settings were changed and no calls were repeated.
+
+Independent certification re-scored all 2,436 saved Qwen3 responses with the official VIKI-L2 scorer and original-row-index seeds. Stored and recomputed `score`, `format_score`, and `task_score` had zero mismatches; all family summaries, the paired interval, and exact McNemar result matched. The JSONL SHA256 is `b1afc0741fcb8fc77b33c4e8474c3ea02d9419b3199ca260bef6b4cf48562863`, and all H0, manifest, preflight, runtime, and run-fingerprint bindings passed.
+
+### Qwen3 Offline Format Repair
+
+The saved responses were re-evaluated offline under two deterministic post-hoc adapters. Neither adapter made model or API calls, and neither changed a task outcome. The raw artifacts remain unchanged and remain the primary preregistered result.
+
+| Offline policy | Zero-shot format | Segment format | Zero-shot task | Segment task | Task-score changes | Format gate |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| tag-only | 878/1218 (72.09%) | 1079/1218 (88.59%) | 2/1218 | 6/1218 | 0 | FAIL |
+| canonical-null | 1218/1218 (100.00%) | 1218/1218 (100.00%) | 2/1218 | 6/1218 | 0 | PASS |
+
+Tag-only replaces the first `<reasoning>` / `</reasoning>` pair with `<think>` / `</think>` and leaves every other byte, including the answer, unchanged. It does not clear the gate because incomplete or truncated envelopes remain. Canonical-null preserves each complete, parseable generated answer exactly and wraps it in the required envelope; when no complete parseable answer exists, it emits the semantically empty plan `[]`. It preserved 1,029 zero-shot answers and 1,164 segment answers, with null fallback on 189 and 54 responses respectively.
+
+Under canonical-null, the completion gate passes with 100% format compliance and unchanged zero-shot probe consistency. Accuracy, paired delta (+0.33 points), paired interval [-0.08, +0.82], and exact McNemar p=0.2890625 are unchanged. This establishes that deployment-format compatibility can be repaired entirely offline, but the repaired run is explicitly `post_hoc=true` and `primary_inference_eligible=false`; it does not convert the nonsignificant Qwen3 task result into positive evidence.
+
+Optional GPT-4o was run through CloudGPT deployment `gpt-4o-20240806` with Azure CLI cached authentication and no static token. All 1,218 pairs completed in 2,436 calls with zero endpoint errors. Its zero-shot score, 137/1,218, passed the preregistered replication interval of 102-143 successes; both arms had 99.92% format compliance. Segment memory caused a large, significant OOD loss of 9.69 points rather than a gain. The run fingerprint is `6e3ba0d1e4820c07e8b1163d2ce78e73ae89d9c5f7d525acc2dbb3bad20c4cba`.
+
+CloudGPT authentication is operational, but Gemini-2.5-Flash is unavailable on the endpoint. The direct deployment name and four bounded official version aliases all returned `DeploymentNotFound`; the models-list route is unsupported with HTTP 404. Gemini OOD+ID was therefore not started. Amendment 5 is not yet the permanent VIKI closure.
+
+## Amendment 5.1: ID Deployment Column
+
+Amendment 5.1 replaces the main table's prior ID memory variants with the recommended full-bank segment variant on the exact frozen 300-row A5 slice. The ID manifest uses seed 20260814 and has SHA256 `d9ebe66966003bbd5776cac4defc947718a6b136bf11210e526e6a9dba58f580`. The generated deployment manifest contains the same 300 unique indices, the full 19,499-segment bank, zero fallback rows, H0 SHA256 `69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090`, and manifest SHA256 `d2ed9765f050309879287de13b33f371df4ae71e932b6974f4cd06e2d59d1808`.
+
+| Backbone | Zero-shot | Segment | Delta [paired bootstrap 95%] | F->S | S->F | Exact p | Backbone gate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| Qwen2.5-VL-72B | 22/300 (7.33%) | 69/300 (23.00%) | +15.67 pp [+11.00, +20.33] | 54 | 7 | 4.32211e-10 | **FAIL: segment format 81.67%** |
+| Qwen2.5-VL-7B stock | 1/300 (0.33%) | 10/300 (3.33%) | +3.00 pp [+1.00, +5.33] | 10 | 1 | 0.0117188 | PASS |
+| VIKI-R RL 7B | 278/300 (92.67%) | not run | not estimated | - | - | - | **FAIL: byte smoke** |
+| Qwen3-VL-30B-A3B, optional | 13/300 (4.33%) | 71/300 (23.67%) | +19.33 pp [+14.67, +24.00] | 61 | 3 | 4.74284e-15 | PASS under preregistered format exemption |
+| GPT-4o-2024-08-06, optional | 54/300 (18.00%) | 70/300 (23.33%) | +5.33 pp [+0.33, +10.33] | 39 | 23 | 0.0558972 | **FAIL: segment format 72.00%** |
+
+The 72B zero-shot arm was reused byte-for-byte from certified `f2_id`; all source token counts and current official prompt hashes matched. The 300-call segment arm produced a much larger task gain than the preregistered directional threshold of +3 points, but only 245/300 responses passed the official format scorer. The backbone therefore fails its preregistered 90% format gate. Its task result is reported as landed but is not promoted to a gate-passing deployment result, and no repair or rerun was made.
+
+The stock 7B zero-shot arm was reused byte-for-byte from certified B1. B1 used the same official `bench.get_messages(sample)` path, but its older serving stack reported different usage-token counts; prompt provenance is therefore bound by the B1 runner, official bench, test parquet, source-result SHA, and current prompt hashes, while legacy token accounting is diagnostic. Contrary to the preregistered floor prediction, segment improved by 3.00 points and passed both the exact test and format gate.
+
+The RL checkpoint ran on its original vLLM 0.8.4 graph-mode stack with bfloat16, 0.65 GPU utilization, four maximum sequences, and the certified model name. The only sanctioned change was `max_model_len=16384`. The deterministic 20-row smoke halted on its first index, 46: source response SHA256 `e59708e9499a5a14f8ba186c48fa20d4b97032c6a3c6277ace5a727125b25d3a` differed from observed SHA256 `943497f61f4f26175e096cba010b309681d6816c59b5bd5f8d4a530334573878`. Exactly one smoke call and zero segment calls were made. The predicted specialization harm is therefore not measured under the recommended segment variant.
+
+Optional Qwen3 generated both raw arms in exactly 600 calls. Raw official format compliance was 0% in both arms because the model used its incompatible reasoning envelope, so the preregistered Qwen3 exemption is displayed rather than hidden. The raw official task result strongly falsified the predicted floor: segment gained 19.33 points with exact p=4.74284e-15. The post-hoc canonical-null appendix preserved 281 zero-shot and 283 segment answers, used empty-plan fallback for 19 and 17 unrecoverable responses, reached 100% format in both arms, and changed zero task scores. It made zero model calls and remains `primary_inference_eligible=false`.
+
+Optional GPT-4o generated both ID arms in exactly 600 CloudGPT calls. The raw task result rose by 5.33 points, with paired-bootstrap interval [+0.33, +10.33], but exact McNemar p=0.0558972 did not cross 0.05. Zero-shot format was 296/300 (98.67%); segment format was only 216/300 (72.00%), so the preregistered per-arm 90% gate failed. The result is preserved raw with no repair or rerun.
+
+Predictions were recorded before the local runs. The 72B directional task prediction was confirmed but its backbone gate failed; the stock-floor and Qwen3-floor predictions were falsified; the RL sign prediction was not tested because its mandatory smoke failed. Across 5.1, 1,201 local and 600 CloudGPT generation calls were made, for 1,801 total.
+
+ID-with-memory measures deployment effect, not compositional ability, since the bank contains near-duplicate in-distribution episodes, and attribution remains with the C-prime controls.
+
+Amendment 5.1 is complete with backbone gate failures, including the optional GPT-4o fold-in. Gemini's OOD+ID pair is blocked on a confirmed CloudGPT deployment alias or access. Permanent closure is not reinstated and the chapter draft is not yet authorized.
+
+## Amendment 6: Deployment Baselines
+
+Amendment 6 is preregistered and supersedes generation closure once for its complete fixed scope. It adds trajectory-level RAG and a VIKI-native explicit counterpart/state-reasoning ToM port on Qwen2.5-VL-72B, first on all 1,218 OOD rows and then on the frozen 300-row ID slice. Zero-shot and segment outputs are reused with prompt, response, source-artifact, and run-fingerprint verification. Required new generation is 3,036 calls. GPT-4o is an optional 3,036-call tier only after all required 72B arms complete; Gemini remains excluded because it is not deployed on the available CloudGPT endpoint.
+
+Trajectory RAG retrieves from all 6,699 valid M0 source rows using instruction-only MPNet cosine. Each retrieval unit is a complete source row rendered as the exact source-order concatenation of its headerless segment blocks. Ranked rows are extended and prefix-trimmed to the frozen segment arm's per-row input-token budget within 5%; bare fallback remains fixed at cosine below 0.3. The offline retrieval cache is complete and certified at 6,699 rows, 19,499 segments, and embedding shape 6,699 by 768. Full token-band, zero-symmetric-drop, and 20-row rendering gates await the certified 72B service.
+
+The repository contains the paper-level PartNR ToM definition and reported comparator numbers, but no runnable ToM module, exact prompt, config, or result artifact. The frozen VIKI port therefore does not claim exact implementation reproduction. Its filed template explicitly reasons over active robots, capabilities, shared visual scene state, and complementary assignments before emitting the unchanged VIKI-L2 executable-plan format; single-robot rows reduce to explicit capability/state reasoning. OOD contains 1,218 single-robot rows. The frozen ID slice contains 144 one-robot, 147 two-robot, and 9 three-robot rows, so the ToM claim is carried by the ID robot-count breakdown.
+
+Status is `WAITING_FOR_72B_CAPACITY`, with zero Amendment 6 generation calls made. The certified endpoint on port 8050 is stopped, and all eight A100 GPUs are currently occupied by an active multi-GPU training job; the service was not co-located and no user process was interrupted. Once four unshared GPUs are available, execution order is trajectory RAG OOD, ToM OOD, trajectory RAG ID, ToM ID, then the optional GPT-4o tier. The four-arm analysis is already fail-closed and will produce zero-shot / trajectory-RAG / ToM / segment tables, all six exact McNemar comparisons with paired bootstrap intervals, OOD family breakdowns, ID robot-count breakdowns, and per-arm input, injected, and generated token counts.
+
 ## Artifacts
 
 - `results/viki_memory_experiments/amendment3/f2_local_override.json`
@@ -159,3 +235,30 @@ The three-regime curve remains descriptive rather than treatment-controlled: mem
 - `results/viki_memory_experiments/amendment4/g2b_segment_flat.summary.json`
 - `results/viki_memory_experiments/amendment4/g2b_segment_flat.parquet`
 - `results/viki_memory_experiments/amendment4/VIKI_GENERATION_CLOSED.json`
+- `results/viki_memory_experiments/amendment5/h0_frozen.json`
+- `results/viki_memory_experiments/amendment5/deployment_manifest.summary.json`
+- `results/viki_memory_experiments/amendment5/qwen2_5_vl_72b.summary.json`
+- `results/viki_memory_experiments/amendment5/qwen2_5_vl_7b_stock.summary.json`
+- `results/viki_memory_experiments/amendment5/qwen3_vl_30b_a3b.summary.json`
+- `results/viki_memory_experiments/amendment5/qwen3_vl_30b_a3b.jsonl`
+- `results/viki_memory_experiments/amendment5/qwen3_vl_30b_a3b.offline_tag_only.summary.json`
+- `results/viki_memory_experiments/amendment5/qwen3_vl_30b_a3b.offline_tag_only.jsonl`
+- `results/viki_memory_experiments/amendment5/qwen3_vl_30b_a3b.offline_format_repair.summary.json`
+- `results/viki_memory_experiments/amendment5/qwen3_vl_30b_a3b.offline_format_repair.jsonl`
+- `results/viki_memory_experiments/amendment5/gpt_4o_optional.summary.json`
+- `results/viki_memory_experiments/amendment5/gpt_4o_optional.jsonl`
+- `results/viki_memory_experiments/amendment5/cloudgpt_route_probe.json`
+- `results/viki_memory_experiments/amendment5_1/preregistration.json`
+- `results/viki_memory_experiments/amendment5_1/id_deployment_manifest.summary.json`
+- `results/viki_memory_experiments/amendment5_1/qwen2_5_vl_72b.summary.json`
+- `results/viki_memory_experiments/amendment5_1/qwen2_5_vl_7b_stock.summary.json`
+- `results/viki_memory_experiments/amendment5_1/rl_7b.smoke.summary.json`
+- `results/viki_memory_experiments/amendment5_1/qwen3_vl_30b_a3b.summary.json`
+- `results/viki_memory_experiments/amendment5_1/qwen3_vl_30b_a3b.offline_format_repair.summary.json`
+- `results/viki_memory_experiments/amendment5_1/gpt_4o_optional.summary.json`
+- `results/viki_memory_experiments/amendment5_1/gpt_4o_optional.jsonl`
+- `results/viki_memory_experiments/amendment5_1/final_summary.json`
+- `results/viki_memory_experiments/amendment6/preregistration.json`
+- `results/viki_memory_experiments/amendment6/closure_supersession.json`
+- `results/viki_memory_experiments/amendment6/trajectory_row_embeddings.summary.json`
+- `scripts/viki_amendment6.py`

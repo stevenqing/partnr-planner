@@ -1,0 +1,16 @@
+{
+  "task": "C3",
+  "preflight": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment1/c3_prompt_preflight.parquet",
+  "preflight_sha256": "231fe1784f346ceab5fc66ea77f6a4f6bd87682fe46b20ebf5ad9b0299db207b",
+  "base_urls": [
+    "http://127.0.0.1:8030/v1",
+    "http://127.0.0.1:8031/v1",
+    "http://127.0.0.1:8032/v1",
+    "http://127.0.0.1:8033/v1"
+  ],
+  "model": "viki-r-7b-l2-amendment1",
+  "max_tokens": 2000,
+  "temperature": 0,
+  "workers": 16,
+  "scorer_seed_rule": "0 + original test index"
+}

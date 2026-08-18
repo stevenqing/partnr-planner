@@ -1,0 +1,69 @@
+{
+  "task": "C-prime-0",
+  "seed": 20260814,
+  "channel_cap": 400,
+  "pair_min_rows": 30,
+  "unit_min_instances": 30,
+  "gate": {
+    "status": "FAIL",
+    "reason": "covered signatures cannot form 400 rows per channel",
+    "short_channels": {
+      "systematicity": 0
+    },
+    "generation_halted": true
+  },
+  "heldout_pairs": {
+    "check_then_act+fetch": 160,
+    "check_then_act+relocate": 160,
+    "check_then_act+state_change": 160,
+    "fetch+multi_object_sequence": 787,
+    "fetch+open_container_then_retrieve": 248,
+    "fetch+relocate": 1750,
+    "fetch+state_change": 1079,
+    "multi_object_sequence+open_container_then_retrieve": 167,
+    "multi_object_sequence+relocate": 787,
+    "multi_object_sequence+state_change": 603,
+    "open_container_then_retrieve+relocate": 248,
+    "open_container_then_retrieve+state_change": 248,
+    "relocate+state_change": 1079
+  },
+  "coverage": {
+    "productivity": {
+      "single_unit_instances_by_kind": {
+        "fetch": 3887,
+        "relocate": 4612,
+        "state_change": 1860
+      },
+      "covered_unit_kinds": [
+        "fetch",
+        "relocate",
+        "state_change"
+      ]
+    },
+    "systematicity": {
+      "single_unit_instances_by_kind": {
+        "state_change": 171
+      },
+      "covered_unit_kinds": [
+        "state_change"
+      ]
+    }
+  },
+  "narrowing": {
+    "productivity": {
+      "before": 1750,
+      "after": 722,
+      "selected": 400
+    },
+    "systematicity": {
+      "before": 1750,
+      "after": 0,
+      "selected": 0
+    }
+  },
+  "channel_samples": {
+    "instance": 400,
+    "productivity": 400,
+    "systematicity": 0
+  }
+}

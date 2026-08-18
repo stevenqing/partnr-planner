@@ -1,0 +1,11 @@
+{
+  "level": 2,
+  "split": "val",
+  "provider": "memory-endpoint",
+  "samples": 33,
+  "mean_score": 0.37272727272727263,
+  "mean_format_score": 1.0,
+  "mean_task_score": 0.30303030303030304,
+  "errors": 0,
+  "results": "results/viki_memory_skill_7b_l2_ood_heldout_44_76.jsonl"
+}

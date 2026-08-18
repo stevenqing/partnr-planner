@@ -1,0 +1,57 @@
+{
+  "runs": [
+    {
+      "seed_offset": 0,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    },
+    {
+      "seed_offset": 1,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    },
+    {
+      "seed_offset": 2,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    },
+    {
+      "seed_offset": 3,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    },
+    {
+      "seed_offset": 4,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    },
+    {
+      "seed_offset": 5,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    },
+    {
+      "seed_offset": 6,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    },
+    {
+      "seed_offset": 7,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    },
+    {
+      "seed_offset": 8,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    },
+    {
+      "seed_offset": 9,
+      "successes": 1721,
+      "accuracy": 0.9561111111111111
+    }
+  ],
+  "min_accuracy": 0.9561111111111111,
+  "max_accuracy": 0.9561111111111111,
+  "mean_accuracy": 0.9561111111111111
+}

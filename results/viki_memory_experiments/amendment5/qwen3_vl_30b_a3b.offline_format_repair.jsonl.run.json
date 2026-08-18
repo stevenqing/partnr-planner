@@ -1,0 +1,17 @@
+{
+  "task": "Amendment5_qwen3_offline_format_repair",
+  "backbone": "qwen3_vl_30b_a3b",
+  "policy": "canonical-null",
+  "post_hoc": true,
+  "primary_inference_eligible": false,
+  "model_generation_calls": 0,
+  "source_results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5/qwen3_vl_30b_a3b.jsonl",
+  "source_results_sha256": "b1afc0741fcb8fc77b33c4e8474c3ea02d9419b3199ca260bef6b4cf48562863",
+  "source_summary_sha256": "47847f0a5548b4e88d2a5fd28bcbc0e124c3fdebb3e13c930483b09ec5d46e49",
+  "source_run_metadata_sha256": "175a89ae8b747889aae5a178e7230f88f73936f77f9c029bc09f16903a600113",
+  "source_run_fingerprint": "a98b4b14021c1dfea01d8c1e4e8b2784f5f533675e07b819014b73ed22b5e68f",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090",
+  "scorer": "official VIKI-L2",
+  "scorer_seed_rule": "original row index",
+  "repair_contract": "preserve each parseable generated answer exactly; use [] only when no parseable complete answer exists"
+}

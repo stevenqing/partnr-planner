@@ -1,0 +1,13 @@
+{
+  "task": "Amendment4_1_G2b_posttrim_render_gate",
+  "status": "PASS",
+  "model_generation_calls": 0,
+  "sampled_rows": 20,
+  "final_prompt_prefix_rows": 20,
+  "fully_injected_segments": 35,
+  "byte_identical_complete_segments": 35,
+  "rows_with_one_partial_token_trim_suffix": 11,
+  "maximum_partial_suffixes_per_row": 1,
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g2b_posttrim_render_gate.parquet",
+  "results_sha256": "8da52b60c7723eefb2b542e3bcca80bb78031f2989e6c7f65c467aa20866399a"
+}

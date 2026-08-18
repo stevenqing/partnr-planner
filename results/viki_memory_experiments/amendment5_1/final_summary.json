@@ -1,0 +1,186 @@
+{
+  "task": "Amendment5.1_ID_deployment_column",
+  "status": "COMPLETE_WITH_BACKBONE_GATE_FAILURES",
+  "campaign_closure_status": "BLOCKED_GEMINI_CLOUDGPT_DEPLOYMENT_UNAVAILABLE",
+  "permanent_closure_reinstated": false,
+  "chapter_draft_authorized": false,
+  "required_backbone_status": {
+    "qwen2_5_vl_72b": "FAIL",
+    "qwen2_5_vl_7b_stock": "PASS",
+    "rl_7b": "FAIL"
+  },
+  "optional_backbone_status": {
+    "qwen3_vl_30b_a3b": "PASS",
+    "gpt_4o_optional": "FAIL"
+  },
+  "pending_fold_in": [
+    "gemini_2_5_flash_OOD_and_ID_pair"
+  ],
+  "blocked_fold_in": {
+    "gemini_2_5_flash": "CloudGPT DeploymentNotFound for all bounded aliases"
+  },
+  "calls": {
+    "qwen2_5_vl_72b": 300,
+    "qwen2_5_vl_7b_stock": 300,
+    "rl_7b_smoke": 1,
+    "rl_7b_segment": 0,
+    "qwen3_vl_30b_a3b": 600,
+    "qwen3_offline_appendix": 0,
+    "gpt_4o_optional": 600
+  },
+  "total_local_generation_calls": 1201,
+  "total_cloudgpt_id_generation_calls": 600,
+  "total_id_generation_calls": 1801,
+  "closed_model_fold_in": {
+    "authorization": "post-preregistration user-directed optional fold-in",
+    "gpt_4o_ood_status": "PASS",
+    "gpt_4o_ood_calls": 2436,
+    "gpt_4o_ood_comparison": {
+      "samples": 1218,
+      "zero_shot_successes": 137,
+      "segment_successes": 19,
+      "zero_shot_accuracy": 0.11247947454844007,
+      "segment_accuracy": 0.015599343185550082,
+      "segment_minus_zero_shot": -0.09688013136288999,
+      "paired_delta_interval": [
+        -0.11576354679802955,
+        -0.07881773399014778
+      ],
+      "left_only": 132,
+      "right_only": 14,
+      "discordant_pairs": 146,
+      "mcnemar_exact_p": 3.017065441233176e-25
+    },
+    "gpt_4o_id_status": "FAIL",
+    "gpt_4o_id_calls": 600,
+    "gpt_4o_id_comparison": {
+      "samples": 300,
+      "zero_shot_successes": 54,
+      "segment_successes": 70,
+      "zero_shot_accuracy": 0.18,
+      "segment_accuracy": 0.23333333333333334,
+      "segment_minus_zero_shot": 0.05333333333333334,
+      "paired_delta_interval": [
+        0.0033333333333333335,
+        0.10333333333333333
+      ],
+      "left_only": 23,
+      "right_only": 39,
+      "discordant_pairs": 62,
+      "mcnemar_exact_p": 0.05589722669971113
+    },
+    "gpt_4o_ood_summary": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5/gpt_4o_optional.summary.json",
+    "gpt_4o_ood_summary_sha256": "3e5cae2deb2c7c7a5a66d4483d1e4b101efa51da8eb95ad18fa84ca78a523fa2",
+    "cloudgpt_route_probe": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5/cloudgpt_route_probe.json",
+    "cloudgpt_route_probe_sha256": "e470195e7fc2545fd8cf6f7d73ad14ebf3a85fa1b72f7d52692f958319488ff7"
+  },
+  "comparisons": {
+    "qwen2_5_vl_72b": {
+      "samples": 300,
+      "zero_shot_successes": 22,
+      "segment_successes": 69,
+      "zero_shot_accuracy": 0.07333333333333333,
+      "segment_accuracy": 0.23,
+      "segment_minus_zero_shot": 0.15666666666666668,
+      "paired_delta_interval": [
+        0.11,
+        0.20333333333333334
+      ],
+      "left_only": 7,
+      "right_only": 54,
+      "discordant_pairs": 61,
+      "mcnemar_exact_p": 4.32210722073334e-10
+    },
+    "qwen2_5_vl_7b_stock": {
+      "samples": 300,
+      "zero_shot_successes": 1,
+      "segment_successes": 10,
+      "zero_shot_accuracy": 0.0033333333333333335,
+      "segment_accuracy": 0.03333333333333333,
+      "segment_minus_zero_shot": 0.03,
+      "paired_delta_interval": [
+        0.01,
+        0.05333333333333334
+      ],
+      "left_only": 1,
+      "right_only": 10,
+      "discordant_pairs": 11,
+      "mcnemar_exact_p": 0.01171875
+    },
+    "qwen3_vl_30b_a3b": {
+      "samples": 300,
+      "zero_shot_successes": 13,
+      "segment_successes": 71,
+      "zero_shot_accuracy": 0.043333333333333335,
+      "segment_accuracy": 0.23666666666666666,
+      "segment_minus_zero_shot": 0.19333333333333333,
+      "paired_delta_interval": [
+        0.14666666666666667,
+        0.24
+      ],
+      "left_only": 3,
+      "right_only": 61,
+      "discordant_pairs": 64,
+      "mcnemar_exact_p": 4.742842403537839e-15
+    },
+    "gpt_4o_optional": {
+      "samples": 300,
+      "zero_shot_successes": 54,
+      "segment_successes": 70,
+      "zero_shot_accuracy": 0.18,
+      "segment_accuracy": 0.23333333333333334,
+      "segment_minus_zero_shot": 0.05333333333333334,
+      "paired_delta_interval": [
+        0.0033333333333333335,
+        0.10333333333333333
+      ],
+      "left_only": 23,
+      "right_only": 39,
+      "discordant_pairs": 62,
+      "mcnemar_exact_p": 0.05589722669971113
+    }
+  },
+  "prediction_outcomes": {
+    "qwen2_5_vl_72b": {
+      "prediction": "segment positive; directional bet exceeds composed +3.00pp",
+      "task_direction": "confirmed",
+      "exceeds_composed_plus_3pp": true,
+      "gate_outcome": "FAIL_official_format"
+    },
+    "qwen2_5_vl_7b_stock": {
+      "prediction": "floor; no meaningful delta",
+      "outcome": "falsified_positive_significant_gain",
+      "gate_outcome": "PASS"
+    },
+    "rl_7b": {
+      "prediction": "segment negative; magnitude not bet",
+      "outcome": "not_measured_smoke_halt",
+      "gate_outcome": "FAIL_byte_identical_smoke"
+    },
+    "qwen3_vl_30b_a3b": {
+      "prediction": "floor and not significant",
+      "outcome": "falsified_large_significant_gain",
+      "gate_outcome": "PASS_with_preregistered_format_exemption"
+    }
+  },
+  "table_footnote": "ID-with-memory measures deployment effect, not compositional ability, since the bank contains near-duplicate in-distribution episodes, and attribution remains with the C-prime controls.",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090",
+  "manifest_sha256": "d2ed9765f050309879287de13b33f371df4ae71e932b6974f4cd06e2d59d1808",
+  "summaries": {
+    "qwen2_5_vl_72b": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/qwen2_5_vl_72b.summary.json",
+    "qwen2_5_vl_7b_stock": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/qwen2_5_vl_7b_stock.summary.json",
+    "rl_7b": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/rl_7b.smoke.summary.json",
+    "qwen3_vl_30b_a3b": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/qwen3_vl_30b_a3b.summary.json",
+    "qwen3_offline_appendix": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/qwen3_vl_30b_a3b.offline_format_repair.summary.json",
+    "gpt_4o_optional": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/gpt_4o_optional.summary.json"
+  },
+  "summary_sha256": {
+    "qwen2_5_vl_72b": "c1b8a7f28af743a273eb06ce5183a5dad406bfbea9e094db4c5ca37977166b51",
+    "qwen2_5_vl_7b_stock": "f3c8c4ec423630a939012fe22c50dccc4acd3498864c66532a8547971b168453",
+    "rl_7b": "fc0da41babe1ff17cb5bf700269b50455fa0ddc961eaaac878294e8217879658",
+    "qwen3_vl_30b_a3b": "033553957088b4c97191cdee3d4f180f0297bf54a5e1a1e29e0ba8c63bb69c1b",
+    "qwen3_offline_appendix": "92c74edf36ece95efe2d68b465c761042ac7d430b9b489b3a1560ffd88290b27",
+    "gpt_4o_optional": "bb415f20743898a4f9a48d151f0f1f55517e898f4e8f1a153f88738930f8a6f1"
+  },
+  "next_action": "obtain a confirmed CloudGPT Gemini 2.5 Flash deployment alias or access; then complete its frozen OOD+ID batches"
+}

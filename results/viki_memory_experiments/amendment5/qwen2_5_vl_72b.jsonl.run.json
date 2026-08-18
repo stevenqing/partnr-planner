@@ -1,0 +1,29 @@
+{
+  "task": "Amendment5_deployment",
+  "backbone": "qwen2_5_vl_72b",
+  "config": {
+    "label": "Qwen2.5-VL-72B",
+    "model_id": "Qwen/Qwen2.5-VL-72B-Instruct",
+    "model_revision": "89c86200743eec961a297729e7990e8f2ddbc4c5",
+    "served_model": "qwen2.5-vl-72b-amendment3-f2",
+    "provider": "local_openai_compatible",
+    "serving_stack": "vLLM 0.11.2 (frozen F2 service)",
+    "arms": [
+      "segment"
+    ],
+    "reuse": [
+      "zero_shot",
+      "composed"
+    ],
+    "expected_new_calls": 1218
+  },
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090",
+  "manifest_sha256": "c4baf88a872ae2aae735d453298026fcd97e20be53208eb615b485c470930a00",
+  "preflight_sha256": "45460a4a9c03597bdcb0841013e2b545ad6f05117784ce66770c19b7e7c3bbfa",
+  "source_run_fingerprint": "122fc7fbb6008c499c032308118fd8ef42dd67d683b6d1e813d54d3e9bd0066d",
+  "source_results_sha256": "ce0fb90d07401dbb323bdea9250c2c561d20e02ee02997bec6806c4f5ce3ec4c",
+  "base_url": "http://127.0.0.1:8050/v1",
+  "temperature": 0,
+  "max_tokens": 2000,
+  "scorer_seed_rule": "original row index"
+}

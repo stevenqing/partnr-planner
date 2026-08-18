@@ -1,0 +1,110 @@
+{
+  "task": "C2",
+  "gate": {
+    "status": "PASS",
+    "task_heldout_full_signature_overlap_rows": 0
+  },
+  "channels": {
+    "episode_heldout": {
+      "samples": 400,
+      "memory_rows_min": 172,
+      "memory_rows_max": 1232,
+      "instruction_similarity": {
+        "mean": 0.9944868797063827,
+        "median": 0.9999998807907104,
+        "p90": 1.0,
+        "max": 1.000000238418579
+      },
+      "plan_edit_distance": {
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "exact_plan_rows": 400
+      },
+      "trigram_jaccard": {
+        "mean": 1.0,
+        "median": 1.0,
+        "max": 1.0,
+        "exact_rows": 400
+      },
+      "full_signature_overlap_rows": 400
+    },
+    "published_ood_unconditional": {
+      "samples": 1218,
+      "memory_rows_min": 5,
+      "memory_rows_max": 5,
+      "instruction_similarity": {
+        "mean": 0.6029384683799274,
+        "median": 0.5903846025466919,
+        "p90": 0.7524831891059875,
+        "max": 0.7544512748718262
+      },
+      "plan_edit_distance": {
+        "mean": 5.088669950738916,
+        "median": 5.0,
+        "min": 2,
+        "exact_plan_rows": 0
+      },
+      "trigram_jaccard": {
+        "mean": 0.021736453201970443,
+        "median": 0.0,
+        "max": 0.2,
+        "exact_rows": 0
+      },
+      "full_signature_overlap_rows": 0
+    },
+    "task_heldout_productivity": {
+      "samples": 400,
+      "memory_rows_min": 172,
+      "memory_rows_max": 172,
+      "instruction_similarity": {
+        "mean": 0.34743578284978865,
+        "median": 0.35549336671829224,
+        "p90": 0.47358714044094086,
+        "max": 0.5309168100357056
+      },
+      "plan_edit_distance": {
+        "mean": 9.37,
+        "median": 11.0,
+        "min": 5,
+        "exact_plan_rows": 0
+      },
+      "trigram_jaccard": {
+        "mean": 0.0,
+        "median": 0.0,
+        "max": 0.0,
+        "exact_rows": 0
+      },
+      "full_signature_overlap_rows": 0
+    },
+    "task_heldout_systematicity": {
+      "samples": 400,
+      "memory_rows_min": 172,
+      "memory_rows_max": 172,
+      "instruction_similarity": {
+        "mean": 0.3508426950126886,
+        "median": 0.36402627825737,
+        "p90": 0.4727055042982102,
+        "max": 0.5738000869750977
+      },
+      "plan_edit_distance": {
+        "mean": 9.255,
+        "median": 11.0,
+        "min": 5,
+        "exact_plan_rows": 0
+      },
+      "trigram_jaccard": {
+        "mean": 0.0,
+        "median": 0.0,
+        "max": 0.0,
+        "exact_rows": 0
+      },
+      "full_signature_overlap_rows": 0
+    }
+  },
+  "metrics": {
+    "instruction": "maximum all-mpnet-base-v2 cosine similarity",
+    "plan_edit": "minimum Levenshtein distance over grounded action tokens",
+    "plan_ngram": "maximum trigram Jaccard over grounded action tokens"
+  }
+}

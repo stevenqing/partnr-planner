@@ -1,0 +1,282 @@
+{
+  "task": "F2_C-prime",
+  "channel": "productivity",
+  "clarification": "Amendment 3.1",
+  "flat_builder": "next-nearest-whole-train-rows-then-token-trim",
+  "token_match_criterion": "per-row",
+  "planned_samples": 400,
+  "samples": 400,
+  "symmetric_drops": {
+    "count": 0,
+    "indices": []
+  },
+  "checkpoint_reuse": {
+    "clarification": "Amendment 3.1",
+    "legacy_records": 0,
+    "rows_reusing_zero_shot_and_skill": 0,
+    "flat_outputs_discarded": 0,
+    "new_run_fingerprint": "678c308a3bbf289b04a357a7436de5d4f462397ffb9ea3e8a860a69a416b0c5e",
+    "status": "PASS"
+  },
+  "arms": {
+    "zero_shot": {
+      "samples": 400,
+      "successes": 5,
+      "mean_task_score": 0.0125,
+      "format_successes": 400,
+      "format_compliance": 1.0
+    },
+    "skill_memory": {
+      "samples": 400,
+      "successes": 36,
+      "mean_task_score": 0.09,
+      "format_successes": 398,
+      "format_compliance": 0.995
+    },
+    "flat_memory": {
+      "samples": 400,
+      "successes": 57,
+      "mean_task_score": 0.1425,
+      "format_successes": 395,
+      "format_compliance": 0.9875
+    }
+  },
+  "comparisons": {
+    "zero_shot_to_skill": {
+      "samples": 400,
+      "zero_shot_successes": 5,
+      "skill_memory_successes": 36,
+      "zero_shot_mean_task_score": 0.0125,
+      "skill_memory_mean_task_score": 0.09,
+      "absolute_delta": 0.0775,
+      "zero_shot_format_compliance": 1.0,
+      "skill_memory_format_compliance": 0.995,
+      "fail_to_success": 35,
+      "success_to_fail": 4,
+      "discordant_pairs": 39,
+      "mcnemar_exact_p": 3.353161446284503e-07
+    },
+    "zero_shot_to_flat": {
+      "samples": 400,
+      "zero_shot_successes": 5,
+      "flat_memory_successes": 57,
+      "zero_shot_mean_task_score": 0.0125,
+      "flat_memory_mean_task_score": 0.1425,
+      "absolute_delta": 0.12999999999999998,
+      "zero_shot_format_compliance": 1.0,
+      "flat_memory_format_compliance": 0.9875,
+      "fail_to_success": 55,
+      "success_to_fail": 3,
+      "discordant_pairs": 58,
+      "mcnemar_exact_p": 2.2598589666245061e-13
+    },
+    "flat_to_skill": {
+      "samples": 400,
+      "flat_memory_successes": 57,
+      "skill_memory_successes": 36,
+      "flat_memory_mean_task_score": 0.1425,
+      "skill_memory_mean_task_score": 0.09,
+      "absolute_delta": -0.05249999999999999,
+      "flat_memory_format_compliance": 0.9875,
+      "skill_memory_format_compliance": 0.995,
+      "fail_to_success": 28,
+      "success_to_fail": 49,
+      "discordant_pairs": 77,
+      "mcnemar_exact_p": 0.02203345876482212
+    }
+  },
+  "by_task": {
+    "cut_fruit_on_board": {
+      "zero_shot_to_skill": {
+        "samples": 100,
+        "zero_shot_successes": 0,
+        "skill_memory_successes": 0,
+        "zero_shot_mean_task_score": 0.0,
+        "skill_memory_mean_task_score": 0.0,
+        "absolute_delta": 0.0,
+        "zero_shot_format_compliance": 1.0,
+        "skill_memory_format_compliance": 0.99,
+        "fail_to_success": 0,
+        "success_to_fail": 0,
+        "discordant_pairs": 0,
+        "mcnemar_exact_p": 1.0
+      },
+      "flat_to_skill": {
+        "samples": 100,
+        "flat_memory_successes": 4,
+        "skill_memory_successes": 0,
+        "flat_memory_mean_task_score": 0.04,
+        "skill_memory_mean_task_score": 0.0,
+        "absolute_delta": -0.04,
+        "flat_memory_format_compliance": 0.96,
+        "skill_memory_format_compliance": 0.99,
+        "fail_to_success": 0,
+        "success_to_fail": 4,
+        "discordant_pairs": 4,
+        "mcnemar_exact_p": 0.125
+      }
+    },
+    "dog_push_box_for_two_panda_transport": {
+      "zero_shot_to_skill": {
+        "samples": 26,
+        "zero_shot_successes": 0,
+        "skill_memory_successes": 0,
+        "zero_shot_mean_task_score": 0.0,
+        "skill_memory_mean_task_score": 0.0,
+        "absolute_delta": 0.0,
+        "zero_shot_format_compliance": 1.0,
+        "skill_memory_format_compliance": 0.9615384615384616,
+        "fail_to_success": 0,
+        "success_to_fail": 0,
+        "discordant_pairs": 0,
+        "mcnemar_exact_p": 1.0
+      },
+      "flat_to_skill": {
+        "samples": 26,
+        "flat_memory_successes": 0,
+        "skill_memory_successes": 0,
+        "flat_memory_mean_task_score": 0.0,
+        "skill_memory_mean_task_score": 0.0,
+        "absolute_delta": 0.0,
+        "flat_memory_format_compliance": 1.0,
+        "skill_memory_format_compliance": 0.9615384615384616,
+        "fail_to_success": 0,
+        "success_to_fail": 0,
+        "discordant_pairs": 0,
+        "mcnemar_exact_p": 1.0
+      }
+    },
+    "ensure_all_fruits_on_table": {
+      "zero_shot_to_skill": {
+        "samples": 108,
+        "zero_shot_successes": 0,
+        "skill_memory_successes": 5,
+        "zero_shot_mean_task_score": 0.0,
+        "skill_memory_mean_task_score": 0.046296296296296294,
+        "absolute_delta": 0.046296296296296294,
+        "zero_shot_format_compliance": 1.0,
+        "skill_memory_format_compliance": 1.0,
+        "fail_to_success": 5,
+        "success_to_fail": 0,
+        "discordant_pairs": 5,
+        "mcnemar_exact_p": 0.0625
+      },
+      "flat_to_skill": {
+        "samples": 108,
+        "flat_memory_successes": 16,
+        "skill_memory_successes": 5,
+        "flat_memory_mean_task_score": 0.14814814814814814,
+        "skill_memory_mean_task_score": 0.046296296296296294,
+        "absolute_delta": -0.10185185185185185,
+        "flat_memory_format_compliance": 1.0,
+        "skill_memory_format_compliance": 1.0,
+        "fail_to_success": 3,
+        "success_to_fail": 14,
+        "discordant_pairs": 17,
+        "mcnemar_exact_p": 0.012725830078125
+      }
+    },
+    "serve_bread_from_counter": {
+      "zero_shot_to_skill": {
+        "samples": 40,
+        "zero_shot_successes": 1,
+        "skill_memory_successes": 5,
+        "zero_shot_mean_task_score": 0.025,
+        "skill_memory_mean_task_score": 0.125,
+        "absolute_delta": 0.1,
+        "zero_shot_format_compliance": 1.0,
+        "skill_memory_format_compliance": 1.0,
+        "fail_to_success": 5,
+        "success_to_fail": 1,
+        "discordant_pairs": 6,
+        "mcnemar_exact_p": 0.21875
+      },
+      "flat_to_skill": {
+        "samples": 40,
+        "flat_memory_successes": 5,
+        "skill_memory_successes": 5,
+        "flat_memory_mean_task_score": 0.125,
+        "skill_memory_mean_task_score": 0.125,
+        "absolute_delta": 0.0,
+        "flat_memory_format_compliance": 1.0,
+        "skill_memory_format_compliance": 1.0,
+        "fail_to_success": 4,
+        "success_to_fail": 4,
+        "discordant_pairs": 8,
+        "mcnemar_exact_p": 1.0
+      }
+    },
+    "single_move_asset_to_target": {
+      "zero_shot_to_skill": {
+        "samples": 126,
+        "zero_shot_successes": 4,
+        "skill_memory_successes": 26,
+        "zero_shot_mean_task_score": 0.031746031746031744,
+        "skill_memory_mean_task_score": 0.20634920634920634,
+        "absolute_delta": 0.1746031746031746,
+        "zero_shot_format_compliance": 1.0,
+        "skill_memory_format_compliance": 1.0,
+        "fail_to_success": 25,
+        "success_to_fail": 3,
+        "discordant_pairs": 28,
+        "mcnemar_exact_p": 2.744048833847046e-05
+      },
+      "flat_to_skill": {
+        "samples": 126,
+        "flat_memory_successes": 32,
+        "skill_memory_successes": 26,
+        "flat_memory_mean_task_score": 0.25396825396825395,
+        "skill_memory_mean_task_score": 0.20634920634920634,
+        "absolute_delta": -0.047619047619047616,
+        "flat_memory_format_compliance": 0.9920634920634921,
+        "skill_memory_format_compliance": 1.0,
+        "fail_to_success": 21,
+        "success_to_fail": 27,
+        "discordant_pairs": 48,
+        "mcnemar_exact_p": 0.4708790136217118
+      }
+    }
+  },
+  "retained_instances": {
+    "mean": 1.8625,
+    "median": 2.0,
+    "minimum": 0,
+    "maximum": 6,
+    "zero_instance_rows": 45,
+    "distribution": {
+      "0": 45,
+      "1": 130,
+      "2": 134,
+      "3": 52,
+      "4": 17,
+      "5": 9,
+      "6": 13
+    },
+    "route_parse_errors": 2,
+    "skill_below_threshold_groups": 2,
+    "context_below_threshold_groups": 1172,
+    "total_limit_groups": 14
+  },
+  "flat_token_match": {
+    "criterion": "per-row",
+    "tolerance": 0.05,
+    "maximum_relative_difference": 0.00078064012490242,
+    "mean_relative_difference": 0.00011914700448125798,
+    "truncated_prompts": 355,
+    "violations": 0
+  },
+  "token_budget": {
+    "max_model_len": 16384,
+    "max_output_tokens": 2000,
+    "maximum_zero_shot_input_tokens": 803,
+    "maximum_skill_input_tokens": 4089,
+    "maximum_flat_input_tokens": 4089,
+    "minimum_skill_headroom": 10295,
+    "truncated_skill_rows": 0,
+    "removed_instances": 0
+  },
+  "endpoint_errors": 0,
+  "status": "PASS",
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_productivity.jsonl",
+  "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_cprime_productivity.parquet"
+}

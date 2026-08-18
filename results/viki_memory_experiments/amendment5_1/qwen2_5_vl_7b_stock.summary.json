@@ -1,0 +1,62 @@
+{
+  "task": "Amendment5.1_ID_deployment",
+  "backbone": "qwen2_5_vl_7b_stock",
+  "samples": 300,
+  "arms": {
+    "zero_shot": {
+      "successes": 1,
+      "accuracy": 0.0033333333333333335,
+      "format_successes": 299,
+      "format_compliance": 0.9966666666666667
+    },
+    "segment": {
+      "successes": 10,
+      "accuracy": 0.03333333333333333,
+      "format_successes": 300,
+      "format_compliance": 1.0
+    }
+  },
+  "comparisons": {
+    "zero_shot_to_segment": {
+      "samples": 300,
+      "zero_shot_successes": 1,
+      "segment_successes": 10,
+      "zero_shot_accuracy": 0.0033333333333333335,
+      "segment_accuracy": 0.03333333333333333,
+      "segment_minus_zero_shot": 0.03,
+      "paired_delta_interval": [
+        0.01,
+        0.05333333333333334
+      ],
+      "left_only": 1,
+      "right_only": 10,
+      "discordant_pairs": 11,
+      "mcnemar_exact_p": 0.01171875
+    }
+  },
+  "status": "PASS",
+  "format_gate": {
+    "status": "PASS",
+    "minimum_per_arm": 0.9
+  },
+  "model_generation_calls": 300,
+  "run_fingerprint": "8a02761930eb22c137dc35c836efd1051fa4f9aa4330b38c65140997726f9417",
+  "source_run_fingerprint": "8b6dc4324f8cffc0d4acf7de3aceb38de93cb73f7b8191dc1050bff8c1bdedde",
+  "source_results_sha256": "9593683718f723b30522e1db393bc9dc5e19ebd48cf424b43127ef606578297c",
+  "runtime": {
+    "base_url": "http://127.0.0.1:8060/v1",
+    "version": {
+      "version": "0.11.2"
+    },
+    "models": [
+      {
+        "id": "qwen2.5-vl-7b-amendment5",
+        "root": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "parent": null,
+        "max_model_len": 16384
+      }
+    ]
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/qwen2_5_vl_7b_stock.jsonl",
+  "results_sha256": "f5eb678c5e889306abed9bfef1eabd5e13870ef0a9f27003b3dbaf0b3498db4d"
+}

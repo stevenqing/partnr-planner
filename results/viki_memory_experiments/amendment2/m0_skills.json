@@ -1,0 +1,883 @@
+{
+  "skills": [
+    {
+      "description": "Interact with a device to activate it.",
+      "instance_count": 52,
+      "name": "activate_device",
+      "raw_names": [
+        "activate_device"
+      ]
+    },
+    {
+      "description": "Use a tool on an object to perform an action.",
+      "instance_count": 83,
+      "name": "apply_tool",
+      "raw_names": [
+        "apply_tool"
+      ]
+    },
+    {
+      "description": "Cardboardbox the object and move it to a new location.",
+      "instance_count": 8,
+      "name": "cardboardbox",
+      "raw_names": [
+        "cardboardbox"
+      ]
+    },
+    {
+      "description": "Cardboardbox an object and move it to a new location.",
+      "instance_count": 5,
+      "name": "cardboardbox_object",
+      "raw_names": [
+        "cardboardbox_object"
+      ]
+    },
+    {
+      "description": "Cardboardbox the spoon and move the cardboardbox.",
+      "instance_count": 4,
+      "name": "cardboardbox_spoon",
+      "raw_names": [
+        "cardboardbox_spoon"
+      ]
+    },
+    {
+      "description": "Navigate to and open a cabinet to check for an object.",
+      "instance_count": 41,
+      "name": "check_cabinet",
+      "raw_names": [
+        "check_cabinet"
+      ]
+    },
+    {
+      "description": "Check the specified location for the required fruit.",
+      "instance_count": 6,
+      "name": "check_fruit_location",
+      "raw_names": [
+        "check_fruit_location"
+      ]
+    },
+    {
+      "description": "Use sensors to check the table for missing objects.",
+      "instance_count": 59,
+      "name": "check_table",
+      "raw_names": [
+        "check_table"
+      ]
+    },
+    {
+      "description": "Check the table for the presence of the pear and banana.",
+      "instance_count": 1,
+      "name": "check_table_fruits",
+      "raw_names": [
+        "check_table_fruits"
+      ]
+    },
+    {
+      "description": "Finalize the task by ensuring all objects are in place.",
+      "instance_count": 4,
+      "name": "complete_task",
+      "raw_names": [
+        "complete_task"
+      ]
+    },
+    {
+      "description": "Use a knife to cut an object.",
+      "instance_count": 2,
+      "name": "cut_with_knife",
+      "raw_names": [
+        "cut_with_knife"
+      ]
+    },
+    {
+      "description": "Interact with the environment at the specified location.",
+      "instance_count": 3,
+      "name": "examine_environment",
+      "raw_names": [
+        "examine_environment",
+        "inspect_environment"
+      ]
+    },
+    {
+      "description": "Retrieve an object from a location and place it elsewhere.",
+      "instance_count": 3,
+      "name": "extract_object",
+      "raw_names": [
+        "extract_object"
+      ]
+    },
+    {
+      "description": "Fetch and place the missing fruit on the table if not present.",
+      "instance_count": 16,
+      "name": "fetch_and_place_fruit",
+      "raw_names": [
+        "fetch_and_place_fruit"
+      ]
+    },
+    {
+      "description": "Navigate to, reach, and grasp the apple.",
+      "instance_count": 3,
+      "name": "fetch_apple",
+      "raw_names": [
+        "fetch_apple"
+      ]
+    },
+    {
+      "description": "Navigate to the cabinet, open it, and grasp the apple.",
+      "instance_count": 1,
+      "name": "fetch_apple_from_cabinet",
+      "raw_names": [
+        "fetch_apple_from_cabinet"
+      ]
+    },
+    {
+      "description": "Navigate to, reach, and grasp the banana.",
+      "instance_count": 10,
+      "name": "fetch_banana",
+      "raw_names": [
+        "fetch_banana"
+      ]
+    },
+    {
+      "description": "Navigate to and grasp a bowl.",
+      "instance_count": 3,
+      "name": "fetch_bowl",
+      "raw_names": [
+        "fetch_bowl"
+      ]
+    },
+    {
+      "description": "Navigate to, reach, and grasp the bread from the cabinet.",
+      "instance_count": 10,
+      "name": "fetch_bread",
+      "raw_names": [
+        "fetch_bread"
+      ]
+    },
+    {
+      "description": "Reach for and grasp the bread from the cabinet.",
+      "instance_count": 1,
+      "name": "fetch_bread_from_cabinet",
+      "raw_names": [
+        "fetch_bread_from_cabinet"
+      ]
+    },
+    {
+      "description": "Retrieve a fruit from the cabinet and place it on the table.",
+      "instance_count": 1,
+      "name": "fetch_fruit_from_cabinet",
+      "raw_names": [
+        "fetch_fruit_from_cabinet"
+      ]
+    },
+    {
+      "description": "Retrieve the missing fruit from the cabinet.",
+      "instance_count": 2,
+      "name": "fetch_missing_fruit",
+      "raw_names": [
+        "fetch_missing_fruit"
+      ]
+    },
+    {
+      "description": "Navigate to, reach, and grasp a required object.",
+      "instance_count": 8192,
+      "name": "fetch_object",
+      "raw_names": [
+        "fetch_object"
+      ]
+    },
+    {
+      "description": "Navigate to, reach, and grasp the peach.",
+      "instance_count": 31,
+      "name": "fetch_peach",
+      "raw_names": [
+        "fetch_peach"
+      ]
+    },
+    {
+      "description": "Navigate to the cabinet, reach for the peach, and grasp it.",
+      "instance_count": 3,
+      "name": "fetch_peach_from_cabinet",
+      "raw_names": [
+        "fetch_peach_from_cabinet"
+      ]
+    },
+    {
+      "description": "Navigate to and grasp the pear from the cabinet.",
+      "instance_count": 12,
+      "name": "fetch_pear",
+      "raw_names": [
+        "fetch_pear"
+      ]
+    },
+    {
+      "description": "Navigate to the cabinet, reach, and grasp the pear.",
+      "instance_count": 1,
+      "name": "fetch_pear_from_cabinet",
+      "raw_names": [
+        "fetch_pear_from_cabinet"
+      ]
+    },
+    {
+      "description": "Navigate to the cabinet and grasp the tomato.",
+      "instance_count": 6,
+      "name": "fetch_tomato",
+      "raw_names": [
+        "fetch_tomato"
+      ]
+    },
+    {
+      "description": "Navigate to the cabinet, reach for the tomato, and place it on the kitchen island area.",
+      "instance_count": 1,
+      "name": "fetch_tomato_from_cabinet",
+      "raw_names": [
+        "fetch_tomato_from_cabinet"
+      ]
+    },
+    {
+      "description": "Reach, grasp, and move an object to a new location.",
+      "instance_count": 16,
+      "name": "grasp_and_move_object",
+      "raw_names": [
+        "grasp_and_move_object"
+      ]
+    },
+    {
+      "description": "Retrieve and place an object in a specified location.",
+      "instance_count": 4,
+      "name": "grasp_and_place_object",
+      "raw_names": [
+        "grasp_and_place_object"
+      ]
+    },
+    {
+      "description": "Reach and grasp an object.",
+      "instance_count": 21,
+      "name": "grasp_object",
+      "raw_names": [
+        "grasp_object"
+      ]
+    },
+    {
+      "description": "Place an object in a designated location.",
+      "instance_count": 17,
+      "name": "house_object",
+      "raw_names": [
+        "house_object"
+      ]
+    },
+    {
+      "description": "Move to a location, inspect, and grasp an object.",
+      "instance_count": 1,
+      "name": "inspect_and_grasp",
+      "raw_names": [
+        "inspect_and_grasp"
+      ]
+    },
+    {
+      "description": "Open and inspect a cabinet for an object.",
+      "instance_count": 23,
+      "name": "inspect_cabinet",
+      "raw_names": [
+        "inspect_cabinet"
+      ]
+    },
+    {
+      "description": "Inspect a container to check its contents and surroundings.",
+      "instance_count": 1,
+      "name": "inspect_container",
+      "raw_names": [
+        "inspect_container"
+      ]
+    },
+    {
+      "description": "Examine the contents of a drawer.",
+      "instance_count": 28,
+      "name": "inspect_drawer",
+      "raw_names": [
+        "inspect_drawer"
+      ]
+    },
+    {
+      "description": "Check the presence of the pear and tomato on the table.",
+      "instance_count": 36,
+      "name": "inspect_fruits",
+      "raw_names": [
+        "inspect_fruits"
+      ]
+    },
+    {
+      "description": "Inspect the location for objects.",
+      "instance_count": 3,
+      "name": "inspect_location",
+      "raw_names": [
+        "inspect_location"
+      ]
+    },
+    {
+      "description": "Interact with the object to assess its state or surroundings.",
+      "instance_count": 10,
+      "name": "inspect_object",
+      "raw_names": [
+        "inspect_object"
+      ]
+    },
+    {
+      "description": "Interact with the oven to inspect its environment.",
+      "instance_count": 11,
+      "name": "inspect_oven",
+      "raw_names": [
+        "inspect_oven"
+      ]
+    },
+    {
+      "description": "Examine the table and surrounding areas for missing items.",
+      "instance_count": 99,
+      "name": "inspect_table",
+      "raw_names": [
+        "examine_table",
+        "inspect_table"
+      ]
+    },
+    {
+      "description": "Interact with an object at the specified location.",
+      "instance_count": 17,
+      "name": "interact_with",
+      "raw_names": [
+        "interact_with"
+      ]
+    },
+    {
+      "description": "Perform an interaction with a device to change its state.",
+      "instance_count": 354,
+      "name": "interact_with_device",
+      "raw_names": [
+        "interact_with_device"
+      ]
+    },
+    {
+      "description": "Interact with the drawer.",
+      "instance_count": 22,
+      "name": "interact_with_drawer",
+      "raw_names": [
+        "interact_with_drawer"
+      ]
+    },
+    {
+      "description": "Interact with an object at a target location.",
+      "instance_count": 1050,
+      "name": "interact_with_object",
+      "raw_names": [
+        "interact_with_object"
+      ]
+    },
+    {
+      "description": "Use a tool to perform an action on an object.",
+      "instance_count": 286,
+      "name": "interact_with_tool",
+      "raw_names": [
+        "interact_with_tool"
+      ]
+    },
+    {
+      "description": "Move the banana to the plate and place it there.",
+      "instance_count": 1,
+      "name": "load_banana",
+      "raw_names": [
+        "load_banana"
+      ]
+    },
+    {
+      "description": "Transfer an object from one location to another.",
+      "instance_count": 29,
+      "name": "load_object",
+      "raw_names": [
+        "load_object"
+      ]
+    },
+    {
+      "description": "Move the tomato to the plate and place it.",
+      "instance_count": 3,
+      "name": "load_tomato",
+      "raw_names": [
+        "load_tomato"
+      ]
+    },
+    {
+      "description": "Grasp the tomato and place it into the plate.",
+      "instance_count": 1,
+      "name": "load_tomato_into_plate",
+      "raw_names": [
+        "load_tomato_into_plate"
+      ]
+    },
+    {
+      "description": "Push a cardboardbox to a new location.",
+      "instance_count": 5,
+      "name": "move_cardboardbox",
+      "raw_names": [
+        "move_cardboardbox"
+      ]
+    },
+    {
+      "description": "Push a container to a new location.",
+      "instance_count": 1,
+      "name": "move_container",
+      "raw_names": [
+        "move_container"
+      ]
+    },
+    {
+      "description": "Move an object to a new location.",
+      "instance_count": 56,
+      "name": "move_object",
+      "raw_names": [
+        "move_object"
+      ]
+    },
+    {
+      "description": "Move to a specified location.",
+      "instance_count": 13,
+      "name": "move_to",
+      "raw_names": [
+        "move_to"
+      ]
+    },
+    {
+      "description": "Move to the cabinet location.",
+      "instance_count": 286,
+      "name": "move_to_cabinet",
+      "raw_names": [
+        "move_to_cabinet"
+      ]
+    },
+    {
+      "description": "Move to a specified destination.",
+      "instance_count": 39,
+      "name": "move_to_destination",
+      "raw_names": [
+        "move_to_destination"
+      ]
+    },
+    {
+      "description": "Move to the drawer.",
+      "instance_count": 24,
+      "name": "move_to_drawer",
+      "raw_names": [
+        "move_to_drawer"
+      ]
+    },
+    {
+      "description": "Move to a specified location.",
+      "instance_count": 311,
+      "name": "move_to_location",
+      "raw_names": [
+        "move_to_location"
+      ]
+    },
+    {
+      "description": "Navigate to a specified object.",
+      "instance_count": 42,
+      "name": "move_to_object",
+      "raw_names": [
+        "move_to_object"
+      ]
+    },
+    {
+      "description": "Navigate to the pear.",
+      "instance_count": 1,
+      "name": "move_to_pear",
+      "raw_names": [
+        "move_to_pear"
+      ]
+    },
+    {
+      "description": "Navigate to the table to place the found fruit.",
+      "instance_count": 3,
+      "name": "move_to_table",
+      "raw_names": [
+        "move_to_table"
+      ]
+    },
+    {
+      "description": "Move to a target location.",
+      "instance_count": 1084,
+      "name": "move_to_target",
+      "raw_names": [
+        "move_to_target"
+      ]
+    },
+    {
+      "description": "Move to a location and reach for an object.",
+      "instance_count": 42,
+      "name": "navigate_and_reach",
+      "raw_names": [
+        "navigate_and_reach"
+      ]
+    },
+    {
+      "description": "Move to a location and reach for an object.",
+      "instance_count": 2,
+      "name": "navigate_and_reach_object",
+      "raw_names": [
+        "navigate_and_reach_object"
+      ]
+    },
+    {
+      "description": "Move to a specified location.",
+      "instance_count": 10,
+      "name": "navigate_to",
+      "raw_names": [
+        "navigate_to"
+      ]
+    },
+    {
+      "description": "Move to the cabinet location.",
+      "instance_count": 133,
+      "name": "navigate_to_cabinet",
+      "raw_names": [
+        "navigate_to_cabinet"
+      ]
+    },
+    {
+      "description": "Move to the drawer.",
+      "instance_count": 7,
+      "name": "navigate_to_drawer",
+      "raw_names": [
+        "navigate_to_drawer"
+      ]
+    },
+    {
+      "description": "Move to the kitchen island area.",
+      "instance_count": 1,
+      "name": "navigate_to_kitchen_island",
+      "raw_names": [
+        "navigate_to_kitchen_island"
+      ]
+    },
+    {
+      "description": "Move to a specified location.",
+      "instance_count": 1,
+      "name": "navigate_to_location",
+      "raw_names": [
+        "navigate_to_location"
+      ]
+    },
+    {
+      "description": "Move to a specified location to reach an object.",
+      "instance_count": 48,
+      "name": "navigate_to_object",
+      "raw_names": [
+        "navigate_to_object"
+      ]
+    },
+    {
+      "description": "Move to the oven.",
+      "instance_count": 5,
+      "name": "navigate_to_oven",
+      "raw_names": [
+        "navigate_to_oven"
+      ]
+    },
+    {
+      "description": "Move to a target location.",
+      "instance_count": 1,
+      "name": "navigate_to_target",
+      "raw_names": [
+        "navigate_to_target"
+      ]
+    },
+    {
+      "description": "Open the cabinet door.",
+      "instance_count": 611,
+      "name": "open_cabinet",
+      "raw_names": [
+        "open_cabinet"
+      ]
+    },
+    {
+      "description": "Open a container to access its contents.",
+      "instance_count": 217,
+      "name": "open_container",
+      "raw_names": [
+        "open_container"
+      ]
+    },
+    {
+      "description": "Put the bread into the plate for organizing utensils.",
+      "instance_count": 1,
+      "name": "organize_utensils",
+      "raw_names": [
+        "organize_utensils"
+      ]
+    },
+    {
+      "description": "Pack the object into a container.",
+      "instance_count": 20,
+      "name": "pack_object",
+      "raw_names": [
+        "pack_object"
+      ]
+    },
+    {
+      "description": "Move to the table and place the apple there.",
+      "instance_count": 3,
+      "name": "place_apple_on_table",
+      "raw_names": [
+        "place_apple_on_table"
+      ]
+    },
+    {
+      "description": "Move the banana to the plate and place it there.",
+      "instance_count": 1,
+      "name": "place_banana",
+      "raw_names": [
+        "place_banana"
+      ]
+    },
+    {
+      "description": "Move to a location and place a bowl there.",
+      "instance_count": 34,
+      "name": "place_bowl",
+      "raw_names": [
+        "place_bowl"
+      ]
+    },
+    {
+      "description": "Move the bread to the plate and place it there.",
+      "instance_count": 2,
+      "name": "place_bread",
+      "raw_names": [
+        "place_bread"
+      ]
+    },
+    {
+      "description": "Place the bread on the bowl.",
+      "instance_count": 4,
+      "name": "place_bread_on_bowl",
+      "raw_names": [
+        "place_bread_on_bowl"
+      ]
+    },
+    {
+      "description": "Place the found fruit on the table.",
+      "instance_count": 5,
+      "name": "place_fruit_on_table",
+      "raw_names": [
+        "place_fruit_on_table"
+      ]
+    },
+    {
+      "description": "Move to a location and place an object there.",
+      "instance_count": 5235,
+      "name": "place_object",
+      "raw_names": [
+        "place_object"
+      ]
+    },
+    {
+      "description": "Place the object inside the cabinet.",
+      "instance_count": 13,
+      "name": "place_objects_in_cabinet",
+      "raw_names": [
+        "place_in_cabinet",
+        "place_object_in_cabinet",
+        "place_objects_in_cabinet"
+      ]
+    },
+    {
+      "description": "Place the banana on the plate.",
+      "instance_count": 1,
+      "name": "place_on_plate",
+      "raw_names": [
+        "place_on_plate"
+      ]
+    },
+    {
+      "description": "Position an object on a surface.",
+      "instance_count": 1,
+      "name": "place_on_surface",
+      "raw_names": [
+        "place_on_surface"
+      ]
+    },
+    {
+      "description": "Place an object on the table.",
+      "instance_count": 6,
+      "name": "place_on_table",
+      "raw_names": [
+        "place_on_table"
+      ]
+    },
+    {
+      "description": "Place the peach on the table.",
+      "instance_count": 26,
+      "name": "place_peach",
+      "raw_names": [
+        "place_peach"
+      ]
+    },
+    {
+      "description": "Move to the table and place the peach on it.",
+      "instance_count": 3,
+      "name": "place_peach_on_table",
+      "raw_names": [
+        "place_peach_on_table"
+      ]
+    },
+    {
+      "description": "Move to the table and place the pear there.",
+      "instance_count": 13,
+      "name": "place_pear",
+      "raw_names": [
+        "place_pear"
+      ]
+    },
+    {
+      "description": "Move to the table and place the pear there.",
+      "instance_count": 1,
+      "name": "place_pear_on_table",
+      "raw_names": [
+        "place_pear_on_table"
+      ]
+    },
+    {
+      "description": "Place the plate on the kitchen island area.",
+      "instance_count": 6,
+      "name": "place_plate",
+      "raw_names": [
+        "place_plate"
+      ]
+    },
+    {
+      "description": "Move the plate to the kitchen island area.",
+      "instance_count": 2,
+      "name": "place_plate_on_kitchen_island",
+      "raw_names": [
+        "place_plate_on_kitchen_island"
+      ]
+    },
+    {
+      "description": "Place the spoon in a specific location.",
+      "instance_count": 3,
+      "name": "place_spoon",
+      "raw_names": [
+        "place_spoon"
+      ]
+    },
+    {
+      "description": "Move the tomato to the plate and place it there.",
+      "instance_count": 3,
+      "name": "place_tomato",
+      "raw_names": [
+        "place_tomato"
+      ]
+    },
+    {
+      "description": "Reach towards a target object.",
+      "instance_count": 6,
+      "name": "reach_object",
+      "raw_names": [
+        "reach_object"
+      ]
+    },
+    {
+      "description": "Release the object at the destination.",
+      "instance_count": 3,
+      "name": "release_object",
+      "raw_names": [
+        "release_object"
+      ]
+    },
+    {
+      "description": "Locate missing fruits in the table.",
+      "instance_count": 7,
+      "name": "scan_table",
+      "raw_names": [
+        "scan_table"
+      ]
+    },
+    {
+      "description": "Locate and inspect the table for any missing fruits.",
+      "instance_count": 10,
+      "name": "scan_table_for_fruits",
+      "raw_names": [
+        "scan_table_for_fruit",
+        "scan_table_for_fruits",
+        "scan_table_for_missing_fruits"
+      ]
+    },
+    {
+      "description": "Secure an object inside a container.",
+      "instance_count": 18,
+      "name": "secure_object",
+      "raw_names": [
+        "secure_object"
+      ]
+    },
+    {
+      "description": "Move to the kitchen work area and place the plate there.",
+      "instance_count": 9,
+      "name": "set_plate",
+      "raw_names": [
+        "set_plate"
+      ]
+    },
+    {
+      "description": "Use a knife to slice an object neatly.",
+      "instance_count": 15,
+      "name": "slice_object",
+      "raw_names": [
+        "slice_object"
+      ]
+    },
+    {
+      "description": "Survey the table and identify the missing fruit.",
+      "instance_count": 29,
+      "name": "survey_table",
+      "raw_names": [
+        "survey_table"
+      ]
+    },
+    {
+      "description": "Push a cardboardbox to a new location.",
+      "instance_count": 7,
+      "name": "transfer_object",
+      "raw_names": [
+        "transfer_object"
+      ]
+    },
+    {
+      "description": "Move an object to a specified location.",
+      "instance_count": 55,
+      "name": "transport_object",
+      "raw_names": [
+        "transport_object"
+      ]
+    },
+    {
+      "description": "Interact with a tool to perform a task.",
+      "instance_count": 413,
+      "name": "use_tool",
+      "raw_names": [
+        "use_tool"
+      ]
+    },
+    {
+      "description": "Check if the robot is holding the required object.",
+      "instance_count": 1,
+      "name": "verify_holding",
+      "raw_names": [
+        "verify_holding"
+      ]
+    },
+    {
+      "description": "Inspect the table for the presence of both required objects.",
+      "instance_count": 3,
+      "name": "verify_objects",
+      "raw_names": [
+        "verify_object",
+        "verify_objects"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "by_agent_count": {
+    "1": {
+      "samples": 876,
+      "successes": 834,
+      "accuracy": 0.952054794520548
+    },
+    "2": {
+      "samples": 878,
+      "successes": 867,
+      "accuracy": 0.9874715261958997
+    },
+    "3": {
+      "samples": 46,
+      "successes": 20,
+      "accuracy": 0.43478260869565216
+    }
+  },
+  "by_ground_truth_steps": {
+    "2": {
+      "samples": 50,
+      "successes": 50,
+      "accuracy": 1.0
+    },
+    "5": {
+      "samples": 573,
+      "successes": 546,
+      "accuracy": 0.9528795811518325
+    },
+    "6": {
+      "samples": 297,
+      "successes": 297,
+      "accuracy": 1.0
+    },
+    "7": {
+      "samples": 266,
+      "successes": 240,
+      "accuracy": 0.9022556390977443
+    },
+    "8": {
+      "samples": 346,
+      "successes": 331,
+      "accuracy": 0.9566473988439307
+    },
+    "9": {
+      "samples": 108,
+      "successes": 97,
+      "accuracy": 0.8981481481481481
+    },
+    "11": {
+      "samples": 160,
+      "successes": 160,
+      "accuracy": 1.0
+    }
+  },
+  "by_task_name": {
+    "clear_table_with_two_robots_and_put_in_cabinet": {
+      "samples": 220,
+      "successes": 220,
+      "accuracy": 1.0
+    },
+    "cut_fruit_on_board": {
+      "samples": 189,
+      "successes": 189,
+      "accuracy": 1.0
+    },
+    "cut_two_fruits_on_board": {
+      "samples": 108,
+      "successes": 97,
+      "accuracy": 0.8981481481481481
+    },
+    "dog_check_environment": {
+      "samples": 50,
+      "successes": 50,
+      "accuracy": 1.0
+    },
+    "dog_push_box_for_two_panda_transport": {
+      "samples": 46,
+      "successes": 20,
+      "accuracy": 0.43478260869565216
+    },
+    "ensure_all_fruits_on_table": {
+      "samples": 280,
+      "successes": 254,
+      "accuracy": 0.9071428571428571
+    },
+    "parallel_human_dual_asset_to_plate_or_bowl": {
+      "samples": 86,
+      "successes": 86,
+      "accuracy": 1.0
+    },
+    "sequential_pick_two_and_place": {
+      "samples": 98,
+      "successes": 97,
+      "accuracy": 0.9897959183673469
+    },
+    "serve_bread_after_checking_cabinet": {
+      "samples": 81,
+      "successes": 67,
+      "accuracy": 0.8271604938271605
+    },
+    "serve_bread_from_counter": {
+      "samples": 82,
+      "successes": 81,
+      "accuracy": 0.9878048780487805
+    },
+    "set_plate_and_fork_on_table": {
+      "samples": 85,
+      "successes": 85,
+      "accuracy": 1.0
+    },
+    "single_move_asset_to_target": {
+      "samples": 207,
+      "successes": 207,
+      "accuracy": 1.0
+    },
+    "toast_bread_and_set_plate": {
+      "samples": 108,
+      "successes": 108,
+      "accuracy": 1.0
+    },
+    "wash_fruit_and_serve": {
+      "samples": 160,
+      "successes": 160,
+      "accuracy": 1.0
+    }
+  },
+  "mean_predicted_steps": 6.7027777777777775,
+  "unparseable_plans": 0
+}

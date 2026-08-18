@@ -1,0 +1,50 @@
+{
+  "task": "Amendment5.1_ID_deployment_column",
+  "status": "PREREGISTERED",
+  "seed": 20260814,
+  "rows": 300,
+  "slice": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment1/a5_id_safety_manifest.parquet",
+  "h0_path": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5/h0_frozen.json",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090",
+  "h0_configuration_sha256": "bdc0536f7a31ef183c3d4b86d38c4733a57f1b27978d2579aec5966386907a0a",
+  "required_order": [
+    "qwen2_5_vl_72b",
+    "qwen2_5_vl_7b_stock",
+    "rl_7b_smoke_then_segment"
+  ],
+  "optional_order": [
+    "qwen3_vl_30b_a3b"
+  ],
+  "required_new_calls": 900,
+  "optional_new_calls": 600,
+  "configuration": {
+    "pool": "all 19,499 contiguous M0 segment instances",
+    "retrieval_query": "test instruction only",
+    "candidate_text": "segment context",
+    "embedding_model": "all-mpnet-base-v2",
+    "metric": "normalized cosine",
+    "top_k": 6,
+    "threshold_rule": "if best cosine < 0.3 use bare prompt; otherwise inject top six segments in descending cosine order",
+    "similarity_threshold": 0.3,
+    "injection": "headerless singleton skill segment rendering in similarity order",
+    "max_output_tokens": 2000,
+    "minimum_context_length": 16384,
+    "temperature": 0,
+    "decoding": "greedy",
+    "prompt": "official VIKI-L2",
+    "scorer_seed": "original row index",
+    "per_backbone_tuning": false
+  },
+  "predictions": {
+    "qwen2_5_vl_72b": "segment positive; directional bet exceeds composed +3.00pp",
+    "qwen2_5_vl_7b_stock": "floor; no meaningful delta",
+    "rl_7b": "segment negative; magnitude not bet",
+    "qwen3_vl_30b_a3b": "floor and not significant"
+  },
+  "table_footnote": "ID-with-memory measures deployment effect, not compositional ability, since the bank contains near-duplicate in-distribution episodes, and attribution remains with the C-prime controls.",
+  "sources": {
+    "qwen2_5_vl_72b": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f2_id.jsonl",
+    "qwen2_5_vl_7b_stock": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment2/b1_id.jsonl",
+    "rl_7b": "/home/aiscuser/partnr-planner/results/viki_official_7b_l2_id.jsonl"
+  }
+}

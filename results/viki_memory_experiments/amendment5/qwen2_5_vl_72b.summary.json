@@ -1,0 +1,192 @@
+{
+  "task": "Amendment5_deployment",
+  "backbone": "qwen2_5_vl_72b",
+  "samples": 1218,
+  "arms": {
+    "zero_shot": {
+      "successes": 10,
+      "accuracy": 0.008210180623973728,
+      "format_compliance": 1.0
+    },
+    "composed": {
+      "successes": 23,
+      "accuracy": 0.018883415435139574,
+      "format_compliance": 0.9942528735632183
+    },
+    "segment": {
+      "successes": 83,
+      "accuracy": 0.06814449917898194,
+      "format_compliance": 0.9761904761904762
+    }
+  },
+  "comparisons": {
+    "zero_shot_to_composed": {
+      "samples": 1218,
+      "zero_shot_successes": 10,
+      "composed_successes": 23,
+      "zero_shot_accuracy": 0.008210180623973728,
+      "composed_accuracy": 0.018883415435139574,
+      "composed_minus_zero_shot": 0.010673234811165846,
+      "paired_delta_interval": [
+        0.0016420361247947454,
+        0.019704433497536946
+      ],
+      "left_only": 10,
+      "right_only": 23,
+      "discordant_pairs": 33,
+      "mcnemar_exact_p": 0.03508203336969018
+    },
+    "zero_shot_to_segment": {
+      "samples": 1218,
+      "zero_shot_successes": 10,
+      "segment_successes": 83,
+      "zero_shot_accuracy": 0.008210180623973728,
+      "segment_accuracy": 0.06814449917898194,
+      "segment_minus_zero_shot": 0.05993431855500821,
+      "paired_delta_interval": [
+        0.0451559934318555,
+        0.07473316912971609
+      ],
+      "left_only": 9,
+      "right_only": 82,
+      "discordant_pairs": 91,
+      "mcnemar_exact_p": 7.088912032076995e-16
+    },
+    "composed_to_segment": {
+      "samples": 1218,
+      "composed_successes": 23,
+      "segment_successes": 83,
+      "composed_accuracy": 0.018883415435139574,
+      "segment_accuracy": 0.06814449917898194,
+      "segment_minus_composed": 0.04926108374384237,
+      "paired_delta_interval": [
+        0.034482758620689655,
+        0.06403940886699508
+      ],
+      "left_only": 13,
+      "right_only": 73,
+      "discordant_pairs": 86,
+      "mcnemar_exact_p": 2.718821367078067e-11
+    }
+  },
+  "by_family": {
+    "bring_bowl_to_table_plate_already_there": {
+      "samples": 409,
+      "arms": {
+        "zero_shot": {
+          "successes": 0,
+          "format_compliance": 1.0
+        },
+        "composed": {
+          "successes": 10,
+          "format_compliance": 0.9975550122249389
+        },
+        "segment": {
+          "successes": 15,
+          "format_compliance": 0.9828850855745721
+        }
+      },
+      "segment_vs_zero": {
+        "samples": 409,
+        "zero_shot_successes": 0,
+        "segment_successes": 15,
+        "zero_shot_accuracy": 0.0,
+        "segment_accuracy": 0.03667481662591687,
+        "segment_minus_zero_shot": 0.03667481662591687,
+        "paired_delta_interval": [
+          0.019559902200488997,
+          0.05623471882640587
+        ],
+        "left_only": 0,
+        "right_only": 15,
+        "discordant_pairs": 15,
+        "mcnemar_exact_p": 6.103515625e-05
+      }
+    },
+    "bring_plate_and_bowl_to_table": {
+      "samples": 391,
+      "arms": {
+        "zero_shot": {
+          "successes": 0,
+          "format_compliance": 1.0
+        },
+        "composed": {
+          "successes": 0,
+          "format_compliance": 0.9923273657289002
+        },
+        "segment": {
+          "successes": 0,
+          "format_compliance": 0.9744245524296675
+        }
+      },
+      "segment_vs_zero": {
+        "samples": 391,
+        "zero_shot_successes": 0,
+        "segment_successes": 0,
+        "zero_shot_accuracy": 0.0,
+        "segment_accuracy": 0.0,
+        "segment_minus_zero_shot": 0.0,
+        "paired_delta_interval": [
+          0.0,
+          0.0
+        ],
+        "left_only": 0,
+        "right_only": 0,
+        "discordant_pairs": 0,
+        "mcnemar_exact_p": 1.0
+      }
+    },
+    "bring_plate_to_table_bowl_already_there": {
+      "samples": 418,
+      "arms": {
+        "zero_shot": {
+          "successes": 10,
+          "format_compliance": 1.0
+        },
+        "composed": {
+          "successes": 13,
+          "format_compliance": 0.992822966507177
+        },
+        "segment": {
+          "successes": 68,
+          "format_compliance": 0.9712918660287081
+        }
+      },
+      "segment_vs_zero": {
+        "samples": 418,
+        "zero_shot_successes": 10,
+        "segment_successes": 68,
+        "zero_shot_accuracy": 0.023923444976076555,
+        "segment_accuracy": 0.16267942583732056,
+        "segment_minus_zero_shot": 0.13875598086124402,
+        "paired_delta_interval": [
+          0.10047846889952153,
+          0.17703349282296652
+        ],
+        "left_only": 9,
+        "right_only": 67,
+        "discordant_pairs": 76,
+        "mcnemar_exact_p": 4.334352264140022e-12
+      }
+    }
+  },
+  "status": "PASS",
+  "model_generation_calls": 1218,
+  "new_run_fingerprint": "723e57892c0ce7b3f8fe5ebda6bde5e09ef9c6adc55573ebb3eea49c8987f80b",
+  "source_run_fingerprint": "122fc7fbb6008c499c032308118fd8ef42dd67d683b6d1e813d54d3e9bd0066d",
+  "runtime": {
+    "base_url": "http://127.0.0.1:8050/v1",
+    "version": {
+      "version": "0.11.2"
+    },
+    "models": [
+      {
+        "id": "qwen2.5-vl-72b-amendment3-f2",
+        "root": "Qwen/Qwen2.5-VL-72B-Instruct",
+        "parent": null,
+        "max_model_len": 16384
+      }
+    ]
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5/qwen2_5_vl_72b.jsonl"
+}

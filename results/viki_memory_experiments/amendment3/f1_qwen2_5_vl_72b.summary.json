@@ -1,0 +1,215 @@
+{
+  "task": "F1_probe",
+  "candidate": "qwen2_5_vl_72b",
+  "model_id": "Qwen/Qwen2.5-VL-72B-Instruct",
+  "model_revision": "89c86200743eec961a297729e7990e8f2ddbc4c5",
+  "samples": 400,
+  "by_split": {
+    "id": {
+      "samples": 200,
+      "successes": 17,
+      "mean_task_score": 0.085,
+      "format_successes": 200,
+      "format_compliance": 1.0,
+      "mean_score": 0.17650000000000005,
+      "endpoint_errors": 0
+    },
+    "ood": {
+      "samples": 200,
+      "successes": 3,
+      "mean_task_score": 0.015,
+      "format_successes": 200,
+      "format_compliance": 1.0,
+      "mean_score": 0.11350000000000002,
+      "endpoint_errors": 0
+    }
+  },
+  "by_task": {
+    "id": {
+      "clear_table_with_two_robots_and_put_in_cabinet": {
+        "samples": 24,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 24,
+        "format_compliance": 1.0,
+        "mean_score": 0.10000000000000002,
+        "endpoint_errors": 0
+      },
+      "cut_fruit_on_board": {
+        "samples": 20,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 20,
+        "format_compliance": 1.0,
+        "mean_score": 0.10000000000000002,
+        "endpoint_errors": 0
+      },
+      "cut_two_fruits_on_board": {
+        "samples": 11,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 11,
+        "format_compliance": 1.0,
+        "mean_score": 0.1,
+        "endpoint_errors": 0
+      },
+      "dog_check_environment": {
+        "samples": 10,
+        "successes": 7,
+        "mean_task_score": 0.7,
+        "format_successes": 10,
+        "format_compliance": 1.0,
+        "mean_score": 0.73,
+        "endpoint_errors": 0
+      },
+      "dog_push_box_for_two_panda_transport": {
+        "samples": 8,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 8,
+        "format_compliance": 1.0,
+        "mean_score": 0.1,
+        "endpoint_errors": 0
+      },
+      "ensure_all_fruits_on_table": {
+        "samples": 20,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 20,
+        "format_compliance": 1.0,
+        "mean_score": 0.10000000000000002,
+        "endpoint_errors": 0
+      },
+      "parallel_human_dual_asset_to_plate_or_bowl": {
+        "samples": 6,
+        "successes": 3,
+        "mean_task_score": 0.5,
+        "format_successes": 6,
+        "format_compliance": 1.0,
+        "mean_score": 0.5499999999999999,
+        "endpoint_errors": 0
+      },
+      "sequential_pick_two_and_place": {
+        "samples": 8,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 8,
+        "format_compliance": 1.0,
+        "mean_score": 0.1,
+        "endpoint_errors": 0
+      },
+      "serve_bread_after_checking_cabinet": {
+        "samples": 9,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 9,
+        "format_compliance": 1.0,
+        "mean_score": 0.1,
+        "endpoint_errors": 0
+      },
+      "serve_bread_from_counter": {
+        "samples": 12,
+        "successes": 1,
+        "mean_task_score": 0.08333333333333333,
+        "format_successes": 12,
+        "format_compliance": 1.0,
+        "mean_score": 0.17500000000000004,
+        "endpoint_errors": 0
+      },
+      "set_plate_and_fork_on_table": {
+        "samples": 14,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 14,
+        "format_compliance": 1.0,
+        "mean_score": 0.10000000000000002,
+        "endpoint_errors": 0
+      },
+      "single_move_asset_to_target": {
+        "samples": 23,
+        "successes": 1,
+        "mean_task_score": 0.043478260869565216,
+        "format_successes": 23,
+        "format_compliance": 1.0,
+        "mean_score": 0.13913043478260873,
+        "endpoint_errors": 0
+      },
+      "toast_bread_and_set_plate": {
+        "samples": 14,
+        "successes": 5,
+        "mean_task_score": 0.35714285714285715,
+        "format_successes": 14,
+        "format_compliance": 1.0,
+        "mean_score": 0.4214285714285714,
+        "endpoint_errors": 0
+      },
+      "wash_fruit_and_serve": {
+        "samples": 21,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 21,
+        "format_compliance": 1.0,
+        "mean_score": 0.10000000000000002,
+        "endpoint_errors": 0
+      }
+    },
+    "ood": {
+      "bring_bowl_to_table_plate_already_there": {
+        "samples": 56,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 56,
+        "format_compliance": 1.0,
+        "mean_score": 0.09999999999999999,
+        "endpoint_errors": 0
+      },
+      "bring_plate_and_bowl_to_table": {
+        "samples": 68,
+        "successes": 0,
+        "mean_task_score": 0.0,
+        "format_successes": 68,
+        "format_compliance": 1.0,
+        "mean_score": 0.09999999999999998,
+        "endpoint_errors": 0
+      },
+      "bring_plate_to_table_bowl_already_there": {
+        "samples": 76,
+        "successes": 3,
+        "mean_task_score": 0.039473684210526314,
+        "format_successes": 76,
+        "format_compliance": 1.0,
+        "mean_score": 0.13552631578947366,
+        "endpoint_errors": 0
+      }
+    }
+  },
+  "endpoint_errors": 0,
+  "token_budget": {
+    "max_model_len": 16384,
+    "max_output_tokens": 2000,
+    "maximum_prompt_tokens": 1058,
+    "minimum_token_headroom": 13326,
+    "truncated_rows": 0
+  },
+  "status": "PASS",
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f1_qwen2_5_vl_72b.jsonl",
+  "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f1_qwen2_5_vl_72b.parquet",
+  "anchor_gate": {
+    "status": "PASS",
+    "failures": {},
+    "intervals": {
+      "id": {
+        "published_rate": 0.084,
+        "samples": 200,
+        "minimum_successes": 10,
+        "maximum_successes": 25
+      },
+      "ood": {
+        "published_rate": 0.012,
+        "samples": 200,
+        "minimum_successes": 0,
+        "maximum_successes": 6
+      }
+    }
+  }
+}

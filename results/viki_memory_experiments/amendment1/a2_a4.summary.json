@@ -1,0 +1,40 @@
+{
+  "tasks": [
+    "A2",
+    "A3",
+    "A4"
+  ],
+  "a2": {
+    "status": "NOT_TRIGGERED",
+    "trigger_rule": "Any OOD-routed placement skill has fewer than five some-absent train instances.",
+    "placement_skill_absent_counts": {
+      "ensure_all_fruits_on_table": 1232,
+      "sequential_pick_two_and_place": 402,
+      "serve_bread_after_checking_cabinet": 304,
+      "single_move_asset_to_target": 824
+    },
+    "triggered_skills": {},
+    "all_present_train_source_rows": 0,
+    "note": "dog_check_environment has zero placement conditions and is an OOD misroute, not a placement skill eligible for counterfactual synthesis."
+  },
+  "a3": {
+    "gate": {
+      "status": "PASS",
+      "disabled_replay_rows": 50,
+      "exact_demo_id_rows": 50
+    },
+    "grounded_tier_counts": {
+      "grounded": 1193,
+      "abstract": 25
+    },
+    "rows_changed_from_v0": 25
+  },
+  "a4": {
+    "calibration": "10th percentile of each train row's nearest different-context neighbor within the same skill and branch.",
+    "train_similarity_bar": 0.9034629464149475,
+    "graded_tier_counts": {
+      "abstract": 1218
+    },
+    "abstract_descriptions_object_free": true
+  }
+}

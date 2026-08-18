@@ -1,0 +1,97 @@
+{
+  "task": "A1",
+  "gate": {
+    "status": "PASS",
+    "legal_goal_misses": 73,
+    "branch_decisions": 62,
+    "branch_decision_rate": 0.8493150684931506,
+    "required_count": 37
+  },
+  "regression_classification": {
+    "uses_present_asset_where_baseline_fetches_absent": 62,
+    "copies_injected_demo_structure": 8,
+    "swaps_manipulated_object": 3
+  },
+  "regression_flags": {
+    "uses_present_where_baseline_fetches": 62,
+    "swaps_manipulated_object": 65,
+    "omits_required_fetch": 62,
+    "copies_injected_demo_structure": 17
+  },
+  "legal_fixes": {
+    "samples": 54,
+    "memory_selects_required_absent_asset": 54,
+    "classification": {
+      "swaps_manipulated_object": 54
+    }
+  },
+  "plate_missing_contrast": {
+    "all_78_regressions": {
+      "samples": 78,
+      "route_counts": {
+        "sequential_pick_two_and_place": 44,
+        "single_move_asset_to_target": 22,
+        "serve_bread_after_checking_cabinet": 10,
+        "ensure_all_fruits_on_table": 2
+      },
+      "retrieval_sim_max_mean": 0.6123838474353155,
+      "retrieval_sim_max_median": 0.5971207618713379,
+      "retrieval_sim_mean_mean": 0.5951635013024013,
+      "mean_injected_branch_composition": {
+        "all_present": 0.0,
+        "some_absent": 5.0,
+        "not_applicable": 0.0
+      }
+    },
+    "all_17_fixes": {
+      "samples": 17,
+      "route_counts": {
+        "ensure_all_fruits_on_table": 13,
+        "single_move_asset_to_target": 2,
+        "serve_bread_after_checking_cabinet": 2
+      },
+      "retrieval_sim_max_mean": 0.6138448206817403,
+      "retrieval_sim_max_median": 0.6202490329742432,
+      "retrieval_sim_mean_mean": 0.60427447031526,
+      "mean_injected_branch_composition": {
+        "all_present": 0.0,
+        "some_absent": 5.0,
+        "not_applicable": 0.0
+      }
+    },
+    "legal_66_regressions": {
+      "samples": 66,
+      "route_counts": {
+        "sequential_pick_two_and_place": 42,
+        "single_move_asset_to_target": 22,
+        "ensure_all_fruits_on_table": 1,
+        "serve_bread_after_checking_cabinet": 1
+      },
+      "retrieval_sim_max_mean": 0.6125599087187739,
+      "retrieval_sim_max_median": 0.5971207618713379,
+      "retrieval_sim_mean_mean": 0.5943591675072005,
+      "mean_injected_branch_composition": {
+        "all_present": 0.0,
+        "some_absent": 5.0,
+        "not_applicable": 0.0
+      }
+    },
+    "legal_16_fixes": {
+      "samples": 16,
+      "route_counts": {
+        "ensure_all_fruits_on_table": 12,
+        "single_move_asset_to_target": 2,
+        "serve_bread_after_checking_cabinet": 2
+      },
+      "retrieval_sim_max_mean": 0.6178150195628405,
+      "retrieval_sim_max_median": 0.6202490329742432,
+      "retrieval_sim_mean_mean": 0.6079963047057391,
+      "mean_injected_branch_composition": {
+        "all_present": 0.0,
+        "some_absent": 5.0,
+        "not_applicable": 0.0
+      }
+    }
+  },
+  "diagnosis_result": "CONFIRMED for OOD output flips: at least half of legal regressions are wrong branch decisions. A0 nevertheless contradicted the claimed train branch census: retrieved train demos are not all-present under the preregistered predicate."
+}

@@ -1,0 +1,79 @@
+{
+  "task": "B1",
+  "channel": "ood",
+  "samples": 1218,
+  "gate": {
+    "status": "NOT_APPLICABLE"
+  },
+  "oracle": null,
+  "overall": {
+    "samples": 1218,
+    "base_mean_task_score": 0.0,
+    "memory_mean_task_score": 0.0,
+    "absolute_delta": 0.0,
+    "base_format_compliance": 0.9926108374384236,
+    "memory_format_compliance": 0.9794745484400657,
+    "fail_to_success": 0,
+    "success_to_fail": 0,
+    "discordant_pairs": 0,
+    "mcnemar_exact_p": 1.0
+  },
+  "by_task": {
+    "bring_bowl_to_table_plate_already_there": {
+      "samples": 409,
+      "base_mean_task_score": 0.0,
+      "memory_mean_task_score": 0.0,
+      "absolute_delta": 0.0,
+      "base_format_compliance": 1.0,
+      "memory_format_compliance": 0.9706601466992665,
+      "fail_to_success": 0,
+      "success_to_fail": 0,
+      "discordant_pairs": 0,
+      "mcnemar_exact_p": 1.0
+    },
+    "bring_plate_and_bowl_to_table": {
+      "samples": 391,
+      "base_mean_task_score": 0.0,
+      "memory_mean_task_score": 0.0,
+      "absolute_delta": 0.0,
+      "base_format_compliance": 0.979539641943734,
+      "memory_format_compliance": 0.9846547314578005,
+      "fail_to_success": 0,
+      "success_to_fail": 0,
+      "discordant_pairs": 0,
+      "mcnemar_exact_p": 1.0
+    },
+    "bring_plate_to_table_bowl_already_there": {
+      "samples": 418,
+      "base_mean_task_score": 0.0,
+      "memory_mean_task_score": 0.0,
+      "absolute_delta": 0.0,
+      "base_format_compliance": 0.9976076555023924,
+      "memory_format_compliance": 0.9832535885167464,
+      "fail_to_success": 0,
+      "success_to_fail": 0,
+      "discordant_pairs": 0,
+      "mcnemar_exact_p": 1.0
+    }
+  },
+  "by_robot_count": {
+    "1": {
+      "samples": 1218,
+      "base_mean_task_score": 0.0,
+      "memory_mean_task_score": 0.0,
+      "absolute_delta": 0.0,
+      "base_format_compliance": 0.9926108374384236,
+      "memory_format_compliance": 0.9794745484400657,
+      "fail_to_success": 0,
+      "success_to_fail": 0,
+      "discordant_pairs": 0,
+      "mcnemar_exact_p": 1.0
+    }
+  },
+  "route_parse_errors": 0,
+  "mean_retrieved_instances": 2.0,
+  "budget_removed_instances": 4653,
+  "endpoint_errors": 0,
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment2/b1_ood.jsonl",
+  "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment2/b1_ood.parquet"
+}

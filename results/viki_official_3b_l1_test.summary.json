@@ -1,0 +1,11 @@
+{
+  "level": 1,
+  "split": "test",
+  "provider": "endpoint",
+  "samples": 2043,
+  "mean_score": 0.8048458149779684,
+  "mean_format_score": 1.0,
+  "mean_task_score": 0.7831620166421929,
+  "errors": 0,
+  "results": "results/viki_official_3b_l1_test.jsonl"
+}

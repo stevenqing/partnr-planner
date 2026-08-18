@@ -1,0 +1,114 @@
+{
+  "task": "Amendment6_deployment_baselines",
+  "status": "PREREGISTERED",
+  "seed": 20260814,
+  "supersedes_closure_once": true,
+  "completed_results_modified": false,
+  "per_backbone_tuning": false,
+  "h0_path": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5/h0_frozen.json",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090",
+  "backbones": {
+    "required": [
+      "qwen2_5_vl_72b"
+    ],
+    "optional_after_required_completion": [
+      "gpt_4o_optional"
+    ],
+    "excluded": {
+      "gemini_2_5_flash": "not deployed on the available CloudGPT endpoint"
+    }
+  },
+  "order": [
+    "R2_OOD_qwen2_5_vl_72b",
+    "T2_OOD_qwen2_5_vl_72b",
+    "R2_ID_qwen2_5_vl_72b",
+    "T2_ID_qwen2_5_vl_72b",
+    "optional_GPT4o_R_and_T"
+  ],
+  "calls": {
+    "R2_OOD_qwen2_5_vl_72b": 1218,
+    "R2_ID_qwen2_5_vl_72b": 300,
+    "T2_OOD_qwen2_5_vl_72b": 1218,
+    "T2_ID_qwen2_5_vl_72b": 300,
+    "required_total": 3036,
+    "optional_GPT4o_R_and_T": 3036
+  },
+  "trajectory_rag": {
+    "retrieval_unit": "whole valid M0 train source row",
+    "pool": "all 6,699 valid M0 source rows",
+    "leakage_restriction": "none for deployment",
+    "query": "test instruction only",
+    "embedding_model": "all-mpnet-base-v2",
+    "metric": "normalized cosine",
+    "ranking": "descending row-instruction cosine, then source index",
+    "threshold": 0.3,
+    "fallback": "bare prompt when best row cosine is below 0.3",
+    "rendering": "each row exemplar is the exact concatenation of that source row's headerless segment renderings in segment_index order",
+    "budget": "append complete ranked rows until injected total tokens first reach or exceed the frozen segment arm total input tokens; apply the Amendment 3.1 extend-then-truncate prefix rule",
+    "per_row_token_tolerance": 0.05,
+    "expected_symmetric_drops": 0,
+    "rendering_gate_sample_rows": 20
+  },
+  "tom": {
+    "name": "VIKI-native explicit counterpart/state-reasoning port",
+    "retrieved_memory": false,
+    "reasoning_template": "Before producing the executable plan, reason explicitly about coordination.\n1. Identify every active robot, its available operations, and the task-relevant scene state visible in the image.\n2. For each other active robot, infer what part of the task it can execute, what it is likely to know from the shared scene, and which actions should be assigned to it.\n3. Choose complementary assignments that avoid duplicated work and respect operation availability.\n4. If only one robot is active, perform the same explicit capability and scene-state reasoning for that robot.\nThen return the plan in the original required <think>...</think><answer>...</answer> format. Do not mention this instruction in the answer and do not invent entities or operations.",
+    "insertion": "append to the official VIKI-L2 system message",
+    "output_contract": "unchanged official VIKI-L2 tagged executable plan",
+    "token_matching": false,
+    "format_exemption": false,
+    "mapping": {
+      "PartNR_definition": "explicit partner belief modeling through a dedicated reasoning module",
+      "available_local_implementation": false,
+      "available_exact_PartNR_prompt": false,
+      "VIKI_multi_robot": "reason over other active robots, shared visual scene state, capabilities, and complementary assignments",
+      "VIKI_single_robot": "explicit capability and scene-state reasoning",
+      "limitation": "prompt-level port, not a reproduction of the absent PartNR ToM module"
+    }
+  },
+  "generation": {
+    "temperature": 0,
+    "decoding": "greedy",
+    "max_output_tokens": 2000,
+    "prompt": "official VIKI-L2 plus the frozen arm-specific addition",
+    "scorer": "official VIKI-L2",
+    "scorer_seed": "original row index"
+  },
+  "predictions": {
+    "R_OOD": [
+      "segment beats trajectory RAG",
+      "trajectory RAG does not beat zero-shot"
+    ],
+    "R_ID": "no directional prediction",
+    "T_ID": "ToM improves over zero-shot on multi-robot rows if anywhere",
+    "T_OOD": "no directional prediction",
+    "segment_vs_T_OOD": "segment beats ToM"
+  },
+  "analysis": {
+    "arms": [
+      "zero_shot",
+      "trajectory_rag",
+      "tom",
+      "segment"
+    ],
+    "statistics": [
+      "exact McNemar",
+      "paired bootstrap 95% interval"
+    ],
+    "OOD_breakdown": "task family",
+    "ID_breakdown": "active robot count derived from the visible prompt",
+    "report_per_arm": [
+      "task success",
+      "format compliance",
+      "input tokens",
+      "injected tokens",
+      "generated tokens"
+    ]
+  },
+  "endings": {
+    "segment_beats_both_OOD": "deployment claim complete: segment beats trajectory RAG and ToM",
+    "baseline_matches_segment_OOD": "granularity claim narrows to the strict productivity channel",
+    "baseline_beats_segment_OOD": "baseline superiority is the headline for the deployment column"
+  },
+  "C4": "blocked on original PartNR memory banks and generation logs"
+}

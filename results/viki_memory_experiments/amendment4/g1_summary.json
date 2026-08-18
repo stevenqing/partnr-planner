@@ -1,0 +1,115 @@
+{
+  "task": "Amendment4_G1",
+  "status": "PASS",
+  "route_definition": {
+    "c0_projection": [
+      "fetch",
+      "relocate",
+      "state_change"
+    ],
+    "navigation_subgoals": "unscored",
+    "derived_c0_composites": "excluded to avoid double-counting primitives",
+    "route_correct": "exact primitive-kind multiset, exact primitive-kind order, and every scorable predicted subgoal retrieves at least one instance containing its predicted primitive kind"
+  },
+  "by_channel": {
+    "instance": {
+      "rows": 400,
+      "route_correct_rows": 1,
+      "route_correct_fraction": 0.0025,
+      "unit_multiset_agreement_fraction": 0.2275,
+      "order_agreement_fraction": 0.1125,
+      "mean_unit_multiset_f1": 0.7107572011322012,
+      "mean_order_lcs_ratio": 0.6741666666666666,
+      "mean_retrieval_hit_rate": 0.11964583333333334,
+      "strata": {
+        "route_incorrect": {
+          "samples": 399,
+          "flat_successes": 46,
+          "skill_successes": 27,
+          "flat_accuracy": 0.11528822055137844,
+          "skill_accuracy": 0.06766917293233082,
+          "right_minus_left": -0.047619047619047616,
+          "left_only": 23,
+          "right_only": 4,
+          "unit_multiset_agreement_rate": 0.22556390977443608,
+          "order_agreement_rate": 0.11027568922305764,
+          "mean_retrieval_hit_rate": 0.11743943191311612
+        },
+        "route_correct": {
+          "samples": 1,
+          "flat_successes": 1,
+          "skill_successes": 1,
+          "flat_accuracy": 1.0,
+          "skill_accuracy": 1.0,
+          "right_minus_left": 0.0,
+          "left_only": 0,
+          "right_only": 0,
+          "unit_multiset_agreement_rate": 1.0,
+          "order_agreement_rate": 1.0,
+          "mean_retrieval_hit_rate": 1.0
+        }
+      }
+    },
+    "productivity": {
+      "rows": 400,
+      "route_correct_rows": 0,
+      "route_correct_fraction": 0.0,
+      "unit_multiset_agreement_fraction": 0.2925,
+      "order_agreement_fraction": 0.225,
+      "mean_unit_multiset_f1": 0.7181672077922078,
+      "mean_order_lcs_ratio": 0.7772916666666666,
+      "mean_retrieval_hit_rate": 0.19895604395604394,
+      "strata": {
+        "route_incorrect": {
+          "samples": 400,
+          "flat_successes": 57,
+          "skill_successes": 36,
+          "flat_accuracy": 0.1425,
+          "skill_accuracy": 0.09,
+          "right_minus_left": -0.05249999999999999,
+          "left_only": 49,
+          "right_only": 28,
+          "unit_multiset_agreement_rate": 0.2925,
+          "order_agreement_rate": 0.225,
+          "mean_retrieval_hit_rate": 0.19895604395604394
+        }
+      }
+    }
+  },
+  "ood_transitions": {
+    "fix": {
+      "rows": 23,
+      "route_correct_rows": 0,
+      "route_correct_fraction": 0.0,
+      "unit_multiset_agreement_fraction": 0.0,
+      "order_agreement_fraction": 0.0,
+      "mean_retrieval_hit_rate": 0.8956521739130435
+    },
+    "regression": {
+      "rows": 10,
+      "route_correct_rows": 0,
+      "route_correct_fraction": 0.0,
+      "unit_multiset_agreement_fraction": 0.0,
+      "order_agreement_fraction": 0.0,
+      "mean_retrieval_hit_rate": 0.75
+    }
+  },
+  "artifacts": {
+    "cprime_rows": {
+      "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g1_cprime_route_rows.parquet",
+      "csv": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g1_cprime_route_rows.csv"
+    },
+    "cprime_subgoals": {
+      "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g1_cprime_route_subgoals.parquet",
+      "csv": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g1_cprime_route_subgoals.csv"
+    },
+    "ood_rows": {
+      "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g1_ood_route_rows.parquet",
+      "csv": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g1_ood_route_rows.csv"
+    },
+    "ood_subgoals": {
+      "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g1_ood_route_subgoals.parquet",
+      "csv": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g1_ood_route_subgoals.csv"
+    }
+  }
+}

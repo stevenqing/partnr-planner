@@ -1,0 +1,62 @@
+{
+  "indices": "10-109",
+  "samples": 100,
+  "baseline_successes": 36,
+  "baseline_accuracy": 0.36,
+  "memory_successes": 41,
+  "memory_accuracy": 0.41,
+  "absolute_delta": 0.05,
+  "fail_to_success": 9,
+  "success_to_fail": 4,
+  "mcnemar_exact_p": 0.266845703125,
+  "format_failures": 0,
+  "errors": 0,
+  "closed_skill_answers": 99,
+  "centroid_fallbacks": 23,
+  "by_task": {
+    "bring_bowl_to_table_plate_already_there": {
+      "n": 31,
+      "base": 3,
+      "memory": 7,
+      "up": 5,
+      "down": 1
+    },
+    "bring_plate_to_table_bowl_already_there": {
+      "n": 36,
+      "base": 32,
+      "memory": 34,
+      "up": 4,
+      "down": 2
+    },
+    "bring_plate_and_bowl_to_table": {
+      "n": 33,
+      "base": 1,
+      "memory": 0,
+      "up": 0,
+      "down": 1
+    }
+  },
+  "routes": {
+    "single_move_asset_to_target": 14,
+    "ensure_all_fruits_on_table": 58,
+    "sequential_pick_two_and_place": 21,
+    "serve_bread_after_checking_cabinet": 7
+  },
+  "up_indices": [
+    12,
+    26,
+    29,
+    31,
+    48,
+    58,
+    99,
+    100,
+    104
+  ],
+  "down_indices": [
+    44,
+    64,
+    66,
+    105
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "level": 2,
+  "split": "test",
+  "provider": "partnr-planner-oracle-state",
+  "samples": 1,
+  "mean_score": 0.1,
+  "mean_format_score": 1.0,
+  "mean_task_score": 0.0,
+  "errors": 0,
+  "results": "results/viki_l2_test_partnr_oracle_state_sample0_guided.jsonl"
+}

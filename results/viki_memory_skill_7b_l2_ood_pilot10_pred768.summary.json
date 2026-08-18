@@ -1,0 +1,11 @@
+{
+  "level": 2,
+  "split": "val",
+  "provider": "memory-endpoint",
+  "samples": 10,
+  "mean_score": 0.37000000000000005,
+  "mean_format_score": 1.0,
+  "mean_task_score": 0.3,
+  "errors": 0,
+  "results": "results/viki_memory_skill_7b_l2_ood_pilot10_pred768.jsonl"
+}

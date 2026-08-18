@@ -1,0 +1,10 @@
+{
+  "status": "CLOSED",
+  "closed_by": "Amendment 4.1 G2b",
+  "completed_generation_calls": 400,
+  "final_run_fingerprint": "f2459601d1aaa4ee713f1f45756d8c46224b1aa02ed6725e8018585e741c49ba",
+  "summary": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/g2b_segment_flat.summary.json",
+  "summary_sha256": "c41866d9b2eac3799d8bc1de30c8cf79b6b87bb11afd3dfe96edc27d6a83dc55",
+  "further_viki_generation_authorized": false,
+  "next_deliverable": "chapter draft"
+}

@@ -1,0 +1,29 @@
+{
+  "task": "Amendment5_CloudGPT_route_probe",
+  "status": "GEMINI_UNAVAILABLE_GPT4O_AVAILABLE",
+  "endpoint": "https://cloudgpt-openai.azure-api.net/",
+  "api_version": "2024-06-01",
+  "authentication": "Azure CLI cached token",
+  "credentials_in_artifact": false,
+  "api_requests": 6,
+  "successful_generation_calls": 1,
+  "failed_route_requests": 5,
+  "gpt_4o": {
+    "deployment": "gpt-4o-20240806",
+    "status": "PASS",
+    "response": "OK"
+  },
+  "gemini_2_5_flash": {
+    "status": "UNAVAILABLE",
+    "error_code": "DeploymentNotFound",
+    "probed_aliases": [
+      "gemini-2.5-flash",
+      "gemini-2.5-flash-preview-05-20",
+      "gemini-2.5-flash-preview-04-17",
+      "gemini-2.5-flash-001",
+      "gemini-2.5-flash-preview"
+    ]
+  },
+  "models_list_status": "UNSUPPORTED_404",
+  "action": "Do not start Gemini OOD or ID batches without a confirmed deployment alias"
+}

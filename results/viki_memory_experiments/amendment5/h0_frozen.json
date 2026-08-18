@@ -1,0 +1,124 @@
+{
+  "task": "Amendment5_H0",
+  "status": "FROZEN",
+  "scope": [
+    "H1",
+    "H2",
+    "H3.1",
+    "H3.2",
+    "H3.3 optional",
+    "H4"
+  ],
+  "configuration": {
+    "pool": "all 19,499 contiguous M0 segment instances",
+    "retrieval_query": "test instruction only",
+    "candidate_text": "segment context",
+    "embedding_model": "all-mpnet-base-v2",
+    "metric": "normalized cosine",
+    "top_k": 6,
+    "threshold_rule": "if best cosine < 0.3 use bare prompt; otherwise inject top six segments in descending cosine order",
+    "similarity_threshold": 0.3,
+    "injection": "headerless singleton skill segment rendering in similarity order",
+    "max_output_tokens": 2000,
+    "minimum_context_length": 16384,
+    "temperature": 0,
+    "decoding": "greedy",
+    "prompt": "official VIKI-L2",
+    "scorer_seed": "original row index",
+    "per_backbone_tuning": false
+  },
+  "backbones": {
+    "qwen2_5_vl_72b": {
+      "label": "Qwen2.5-VL-72B",
+      "model_id": "Qwen/Qwen2.5-VL-72B-Instruct",
+      "model_revision": "89c86200743eec961a297729e7990e8f2ddbc4c5",
+      "served_model": "qwen2.5-vl-72b-amendment3-f2",
+      "provider": "local_openai_compatible",
+      "serving_stack": "vLLM 0.11.2 (frozen F2 service)",
+      "arms": [
+        "segment"
+      ],
+      "reuse": [
+        "zero_shot",
+        "composed"
+      ],
+      "expected_new_calls": 1218
+    },
+    "qwen2_5_vl_7b_stock": {
+      "label": "Qwen2.5-VL-7B stock",
+      "model_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "served_model": "qwen2.5-vl-7b-amendment5",
+      "provider": "local_openai_compatible",
+      "serving_stack": "vLLM 0.11.2 deployment service",
+      "arms": [
+        "segment"
+      ],
+      "reuse": [
+        "zero_shot"
+      ],
+      "expected_new_calls": 1218
+    },
+    "gemini_2_5_flash": {
+      "label": "Gemini-2.5-Flash",
+      "model_id": "gemini-2.5-flash",
+      "model_revision": "provider-managed",
+      "served_model": "gemini-2.5-flash",
+      "provider": "Gemini REST API",
+      "serving_stack": "closed Gemini API",
+      "arms": [
+        "zero_shot",
+        "segment"
+      ],
+      "reuse": [],
+      "expected_new_calls": 2436
+    },
+    "qwen3_vl_30b_a3b": {
+      "label": "Qwen3-VL-30B-A3B",
+      "model_id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "model_revision": "9c4b90e1e4ba969fd3b5378b57d966d725f1b86c",
+      "served_model": "qwen3-vl-30b-a3b-amendment5",
+      "provider": "local_openai_compatible",
+      "serving_stack": "upgraded vLLM 0.11.2 from F1",
+      "arms": [
+        "zero_shot",
+        "segment"
+      ],
+      "reuse": [],
+      "expected_new_calls": 2436,
+      "probe_candidate": "qwen3_vl_30b_a3b",
+      "probe_ood_successes": 0,
+      "probe_ood_samples": 200
+    },
+    "gpt_4o_optional": {
+      "label": "GPT-4o (optional)",
+      "model_id": "gpt-4o-2024-08-06",
+      "model_revision": "gpt-4o-2024-08-06",
+      "served_model": "gpt-4o-2024-08-06",
+      "provider": "OpenAI API",
+      "serving_stack": "closed OpenAI API",
+      "arms": [
+        "zero_shot",
+        "segment"
+      ],
+      "reuse": [],
+      "expected_new_calls": 2436,
+      "optional": true
+    }
+  },
+  "order": [
+    "H1 qwen2_5_vl_72b",
+    "H2 qwen2_5_vl_7b_stock (parallel local)",
+    "H3.1 gemini_2_5_flash",
+    "H3.2 qwen3_vl_30b_a3b",
+    "H3.3 gpt_4o_optional",
+    "H4"
+  ],
+  "artifacts": {
+    "m0_instances_sha256": "4d1bd7f4ae720655fd428a9d31055dc7181ef53f50b541046884831a3d0e2b2d",
+    "m0_skills_sha256": "63afad3e8ab0842a215e28d0c4e760119eb49948aeb6163a91e75d318a1afbac",
+    "m1_cache_sha256": "3234713e61229db6a5f586dcf10bc7de0629d70922437e8f74ec5bf29fd60187",
+    "f1_pick_sha256": "2ed3827a111d0220d62a339a1b3ba61c5a36f19a835e51d17b87ddb4a5166a3a",
+    "amendment4_closure_sha256": "108182814d850d824d97683901a54f44bac3b9e94182f11e76c7f5ebd7b4f10b"
+  }
+}

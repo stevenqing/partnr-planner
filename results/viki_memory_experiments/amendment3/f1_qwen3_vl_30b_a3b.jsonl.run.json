@@ -1,0 +1,35 @@
+{
+  "task": "F1_probe",
+  "candidate": "qwen3_vl_30b_a3b",
+  "model_id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+  "served_model": "qwen3-vl-30b-a3b-amendment3-f1",
+  "model_revision": "9c4b90e1e4ba969fd3b5378b57d966d725f1b86c",
+  "base_urls": [
+    "http://127.0.0.1:8050/v1"
+  ],
+  "server_metadata": [
+    {
+      "base_url": "http://127.0.0.1:8050/v1",
+      "version": {
+        "version": "0.11.2"
+      },
+      "models": [
+        {
+          "id": "qwen3-vl-30b-a3b-amendment3-f1",
+          "root": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+          "parent": null,
+          "max_model_len": 16384
+        }
+      ]
+    }
+  ],
+  "temperature": 0,
+  "max_tokens": 2000,
+  "max_model_len": 16384,
+  "image_processor": {
+    "use_fast": false
+  },
+  "workers": 8,
+  "manifest_sha256": "a2e459b381deb3fc73154f89f87e50035c90ba15670d2d4349df54f43b007f03",
+  "scorer_seed_rule": "dataset index"
+}

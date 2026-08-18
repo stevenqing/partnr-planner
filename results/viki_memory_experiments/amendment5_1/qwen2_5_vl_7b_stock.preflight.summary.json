@@ -1,0 +1,38 @@
+{
+  "task": "Amendment5.1_local_preflight",
+  "backbone": "qwen2_5_vl_7b_stock",
+  "status": "PASS",
+  "rows": 300,
+  "model_generation_calls": 0,
+  "runtime": {
+    "base_url": "http://127.0.0.1:8060/v1",
+    "version": {
+      "version": "0.11.2"
+    },
+    "models": [
+      {
+        "id": "qwen2.5-vl-7b-amendment5",
+        "root": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "parent": null,
+        "max_model_len": 16384
+      }
+    ]
+  },
+  "maximum_zero_shot_input_tokens": 809,
+  "maximum_segment_input_tokens": 4328,
+  "context_limit": 16384,
+  "minimum_headroom": 10056,
+  "source_run_fingerprint": "8b6dc4324f8cffc0d4acf7de3aceb38de93cb73f7b8191dc1050bff8c1bdedde",
+  "source_results_sha256": "9593683718f723b30522e1db393bc9dc5e19ebd48cf424b43127ef606578297c",
+  "source_prompt_hash_rule": "official test prompt reconstructed from the certified source split and bound to the frozen source artifact",
+  "source_prompt_provenance": {
+    "official_bench_sha256": "0c949bc13d34b8e9cb704a1f3886f747d13a13ed55556e1f5e8920a74cb348a9",
+    "test_parquet_sha256": "6e98833a5233b884b2f0278335669d0cfa2f5c5c4f7d9969d7a5cf43f1f740cd",
+    "source_runner_sha256": "461e807fc2bb7f0222b96a20e6e176c3ee347774b629cd727ced09136703a8a8",
+    "legacy_token_accounting_match_required": false
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/qwen2_5_vl_7b_stock.preflight.parquet",
+  "results_sha256": "18d8d250a3ea77b4df49a8e44473a5e0aff48ac7616b9305bde6bc72c015ffa8",
+  "manifest_sha256": "d2ed9765f050309879287de13b33f371df4ae71e932b6974f4cd06e2d59d1808",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090"
+}

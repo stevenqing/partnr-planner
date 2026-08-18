@@ -1,0 +1,25 @@
+{
+  "task": "Amendment6_closure_supersession",
+  "status": "ACTIVE_ONCE",
+  "scope_complete": true,
+  "completed_results_modified": false,
+  "supersedes": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment4/VIKI_GENERATION_CLOSED.json",
+  "superseded_sha256": "108182814d850d824d97683901a54f44bac3b9e94182f11e76c7f5ebd7b4f10b",
+  "prior_campaign_summary": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment5_1/final_summary.json",
+  "prior_campaign_summary_sha256": "fc3fdc6803e9473d43a02b0ace61574e19666284962fc6c8eb11677b1b2011e6",
+  "preregistration": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/preregistration.json",
+  "preregistration_sha256": "1deeaf35fa7aeae7415ac11258d322451e81f11e8c2b38c9406062319544abe1",
+  "authorized_required_calls": 3036,
+  "authorized_optional_calls": 3036,
+  "optional_condition": "only after all required Qwen2.5-VL-72B arms complete",
+  "authorized_arms": [
+    "Qwen2.5-VL-72B trajectory RAG OOD and ID",
+    "Qwen2.5-VL-72B ToM OOD and ID",
+    "optional GPT-4o trajectory RAG OOD and ID",
+    "optional GPT-4o ToM OOD and ID"
+  ],
+  "excluded": [
+    "Gemini-2.5-Flash"
+  ],
+  "after_scope": "select preregistered ending and close VIKI generation"
+}

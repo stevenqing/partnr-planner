@@ -1,0 +1,146 @@
+{
+  "task": "C3",
+  "samples": 1200,
+  "errors": 0,
+  "channels": {
+    "episode_heldout": {
+      "samples": 400,
+      "accuracies": {
+        "baseline": 0.945,
+        "skill": 0.895,
+        "flat": 0.89
+      },
+      "baseline_vs_skill": {
+        "left": "baseline",
+        "right": "skill",
+        "left_accuracy": 0.945,
+        "right_accuracy": 0.895,
+        "right_minus_left": -0.04999999999999993,
+        "left_only": 23,
+        "right_only": 3,
+        "mcnemar_exact_p": 8.797645568847656e-05
+      },
+      "baseline_vs_flat": {
+        "left": "baseline",
+        "right": "flat",
+        "left_accuracy": 0.945,
+        "right_accuracy": 0.89,
+        "right_minus_left": -0.05499999999999994,
+        "left_only": 24,
+        "right_only": 2,
+        "mcnemar_exact_p": 1.049041748046875e-05
+      },
+      "flat_vs_skill": {
+        "left": "flat",
+        "right": "skill",
+        "left_accuracy": 0.89,
+        "right_accuracy": 0.895,
+        "right_minus_left": 0.0050000000000000044,
+        "left_only": 3,
+        "right_only": 5,
+        "mcnemar_exact_p": 0.7265625
+      },
+      "mean_format": {
+        "skill": 1.0,
+        "flat": 1.0
+      }
+    },
+    "task_heldout_productivity": {
+      "samples": 400,
+      "accuracies": {
+        "baseline": 0.935,
+        "skill": 0.935,
+        "flat": 0.935
+      },
+      "baseline_vs_skill": {
+        "left": "baseline",
+        "right": "skill",
+        "left_accuracy": 0.935,
+        "right_accuracy": 0.935,
+        "right_minus_left": 0.0,
+        "left_only": 0,
+        "right_only": 0,
+        "mcnemar_exact_p": 1.0
+      },
+      "baseline_vs_flat": {
+        "left": "baseline",
+        "right": "flat",
+        "left_accuracy": 0.935,
+        "right_accuracy": 0.935,
+        "right_minus_left": 0.0,
+        "left_only": 0,
+        "right_only": 0,
+        "mcnemar_exact_p": 1.0
+      },
+      "flat_vs_skill": {
+        "left": "flat",
+        "right": "skill",
+        "left_accuracy": 0.935,
+        "right_accuracy": 0.935,
+        "right_minus_left": 0.0,
+        "left_only": 0,
+        "right_only": 0,
+        "mcnemar_exact_p": 1.0
+      },
+      "mean_format": {
+        "skill": 1.0,
+        "flat": 1.0
+      }
+    },
+    "task_heldout_systematicity": {
+      "samples": 400,
+      "accuracies": {
+        "baseline": 0.9325,
+        "skill": 0.9325,
+        "flat": 0.9325
+      },
+      "baseline_vs_skill": {
+        "left": "baseline",
+        "right": "skill",
+        "left_accuracy": 0.9325,
+        "right_accuracy": 0.9325,
+        "right_minus_left": 0.0,
+        "left_only": 0,
+        "right_only": 0,
+        "mcnemar_exact_p": 1.0
+      },
+      "baseline_vs_flat": {
+        "left": "baseline",
+        "right": "flat",
+        "left_accuracy": 0.9325,
+        "right_accuracy": 0.9325,
+        "right_minus_left": 0.0,
+        "left_only": 0,
+        "right_only": 0,
+        "mcnemar_exact_p": 1.0
+      },
+      "flat_vs_skill": {
+        "left": "flat",
+        "right": "skill",
+        "left_accuracy": 0.9325,
+        "right_accuracy": 0.9325,
+        "right_minus_left": 0.0,
+        "left_only": 0,
+        "right_only": 0,
+        "mcnemar_exact_p": 1.0
+      },
+      "mean_format": {
+        "skill": 1.0,
+        "flat": 1.0
+      }
+    }
+  },
+  "predictions": {
+    "all_methods_drop_episode_to_strict": {
+      "baseline": true,
+      "skill": false,
+      "flat": false
+    },
+    "skill_advantage_larger_in_strict": {
+      "task_heldout_productivity": false,
+      "task_heldout_systematicity": false
+    }
+  },
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment1/c3_results.jsonl",
+  "parquet": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment1/c3_results.parquet"
+}

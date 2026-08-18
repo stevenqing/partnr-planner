@@ -1,0 +1,11 @@
+{
+  "level": 2,
+  "split": "val",
+  "provider": "endpoint",
+  "samples": 1218,
+  "mean_score": 0.400738916256164,
+  "mean_format_score": 1.0,
+  "mean_task_score": 0.3341543513957307,
+  "errors": 0,
+  "results": "results/viki_official_3b_l2_ood.jsonl"
+}

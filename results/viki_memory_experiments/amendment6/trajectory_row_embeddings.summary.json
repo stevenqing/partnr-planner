@@ -1,0 +1,18 @@
+{
+  "task": "Amendment6_trajectory_row_embedding_cache",
+  "status": "PASS",
+  "model_generation_calls": 0,
+  "source_rows": 6699,
+  "source_segments": 19499,
+  "source_index_minimum": 0,
+  "source_index_maximum": 7195,
+  "embedding_model": "all-mpnet-base-v2",
+  "embedding_shape": [
+    6699,
+    768
+  ],
+  "cache_key": "eb30541aed30319d28b9776965eaa895dcf565eaf987cde5f6551b4cee30f2f9",
+  "results": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment6/trajectory_row_embeddings.npz",
+  "results_sha256": "968473851ac2ad8d48d8c69487da3b1f980c8442668a393b8204f9e4dd2bbddb",
+  "h0_sha256": "69912ff9d85a7c2690018fbd3792787fbff43c774c15ec3a7288cabd63713090"
+}

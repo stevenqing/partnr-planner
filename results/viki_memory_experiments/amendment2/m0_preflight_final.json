@@ -1,0 +1,523 @@
+{
+  "model": "qwen2.5-vl-7b-instruct-amendment2",
+  "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "temperature": 0,
+  "max_tokens": 768,
+  "serving_seed": 0,
+  "generation_config": "vllm",
+  "records": [
+    {
+      "train_index": 0,
+      "task_name": "sequential_pick_two_and_place",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nPlease tidy up by getting the apple and pumpkin into the plate.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":[\"kitchen work area\",\"kitchen island area\"],\"apple_1\":null,\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":[\"kitchen work area\",\"kitchen island area\"],\"pumpkin_0\":null,\"pumpkin_1\":[\"kitchen work area\",\"kitchen island area\"],\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"apple\"],\"R2\":null,\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"apple\"],\"R2\":null,\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"apple\"],\"R2\":null,\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"pumpkin\"],\"R2\":null,\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Reach\",\"pumpkin\"],\"R2\":null,\"R3\":null},\"step\":5},{\"actions\":{\"R1\":[\"Grasp\",\"pumpkin\"],\"R2\":null,\"R3\":null},\"step\":6},{\"actions\":{\"R1\":[\"Move\",\"plate\"],\"R2\":null,\"R3\":null},\"step\":7},{\"actions\":{\"R1\":[\"Place\",\"plate\"],\"R2\":null,\"R3\":null},\"step\":8}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":6,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":7,\"end_step\":8,\"name\":\"place_object\",\"description\":\"Move an object to a specific location and place it there.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 6,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 7,
+          "end_step": 8,
+          "name": "place_object",
+          "description": "Move an object to a specific location and place it there."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 883,
+      "completion_tokens": 95
+    },
+    {
+      "train_index": 1,
+      "task_name": "cut_two_fruits_on_board",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nMove the apple together with the bread onto the wooden cutting board, then cut them using the knife.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":[\"kitchen work area\",\"kitchen island area\"],\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":[\"kitchen work area\",\"kitchen island area\"],\"cabinet_1\":null,\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":[\"kitchen work area\",\"kitchen island area\"],\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":[\"kitchen island area\"]}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"apple\"],\"R2\":[\"Move\",\"knife\"],\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"apple\"],\"R2\":[\"Reach\",\"knife\"],\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"apple\"],\"R2\":[\"Grasp\",\"knife\"],\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"bread\"],\"R2\":null,\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Reach\",\"bread\"],\"R2\":null,\"R3\":null},\"step\":5},{\"actions\":{\"R1\":[\"Grasp\",\"bread\"],\"R2\":null,\"R3\":null},\"step\":6},{\"actions\":{\"R1\":[\"Move\",\"wooden cutting board\"],\"R2\":[\"Move\",\"wooden cutting board\"],\"R3\":null},\"step\":7},{\"actions\":{\"R1\":[\"Place\",\"wooden cutting board\"],\"R2\":null,\"R3\":null},\"step\":8},{\"actions\":{\"R1\":null,\"R2\":[\"Interact\",\"knife\"],\"R3\":null},\"step\":9}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":6,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":7,\"end_step\":8,\"name\":\"place_object\",\"description\":\"Move an object to a specific location and place it.\"},\n    {\"start_step\":9,\"end_step\":9,\"name\":\"use_tool\",\"description\":\"Interact with a tool to perform a task.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 6,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 7,
+          "end_step": 8,
+          "name": "place_object",
+          "description": "Move an object to a specific location and place it."
+        },
+        {
+          "start_step": 9,
+          "end_step": 9,
+          "name": "use_tool",
+          "description": "Interact with a tool to perform a task."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 930,
+      "completion_tokens": 123
+    },
+    {
+      "train_index": 2,
+      "task_name": "serve_bread_from_counter",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nPlace the apple onto the bowl. Should it be missing, have a quick look inside the cabinet.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":[\"kitchen work area\",\"kitchen island area\"],\"apple_1\":null,\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":[\"kitchen island area\",\"kitchen work area\"],\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":[\"room_cabinet\"],\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"apple\"],\"R2\":null,\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"apple\"],\"R2\":null,\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"apple\"],\"R2\":null,\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"bowl\"],\"R2\":null,\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Place\",\"bowl\"],\"R2\":null,\"R3\":null},\"step\":5}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":5,\"name\":\"place_object\",\"description\":\"Move an object to a target location and place it there.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 5,
+          "name": "place_object",
+          "description": "Move an object to a target location and place it there."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 810,
+      "completion_tokens": 65
+    },
+    {
+      "train_index": 4,
+      "task_name": "dog_push_box_for_two_panda_transport",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nShift the meat to the sink location. If carrying it directly isn't feasible, first house the meat in a cardboardbox, move the cardboardbox, and extract the meat at the sink.\n\nINITIAL_STATE:\n{\"R1\":[\"pandaA\"],\"R2\":null,\"R3\":[\"pandaB\"],\"apple_0\":null,\"apple_1\":null,\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":[\"groundA\"],\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":[\"R3\"],\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":[\"R1\"],\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":null,\"R2\":[\"Move\",\"cardboardbox\"],\"R3\":[\"Reach\",\"meat\"]},\"step\":1},{\"actions\":{\"R1\":null,\"R2\":[\"Push\",\"cardboardbox\",\"R3\"],\"R3\":[\"Grasp\",\"meat\"]},\"step\":2},{\"actions\":{\"R1\":null,\"R2\":null,\"R3\":[\"Place\",\"cardboardbox\"]},\"step\":3},{\"actions\":{\"R1\":null,\"R2\":[\"Push\",\"cardboardbox\",\"R1\"],\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Reach\",\"meat\"],\"R2\":null,\"R3\":null},\"step\":5},{\"actions\":{\"R1\":[\"Grasp\",\"meat\"],\"R2\":null,\"R3\":null},\"step\":6},{\"actions\":{\"R1\":[\"Place\",\"sink\"],\"R2\":null,\"R3\":null},\"step\":7}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":5,\"name\":\"house_object\",\"description\":\"Place an object in a designated location.\"},\n    {\"start_step\":6,\"end_step\":7,\"name\":\"extract_object\",\"description\":\"Retrieve an object from a container and place it elsewhere.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 5,
+          "name": "house_object",
+          "description": "Place an object in a designated location."
+        },
+        {
+          "start_step": 6,
+          "end_step": 7,
+          "name": "extract_object",
+          "description": "Retrieve an object from a container and place it elsewhere."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 887,
+      "completion_tokens": 91
+    },
+    {
+      "train_index": 6,
+      "task_name": "single_move_asset_to_target",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nTake the pear and move it to the kitchen work area in an orderly manner.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":null,\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":[\"kitchen island area\"],\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"pear\"],\"R2\":null,\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"pear\"],\"R2\":null,\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"pear\"],\"R2\":null,\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"kitchen work area\"],\"R2\":null,\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Place\",\"kitchen work area\"],\"R2\":null,\"R3\":null},\"step\":5}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":5,\"name\":\"move_to_location\",\"description\":\"Move to a specified location.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 5,
+          "name": "move_to_location",
+          "description": "Move to a specified location."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 795,
+      "completion_tokens": 60
+    },
+    {
+      "train_index": 7,
+      "task_name": "cut_fruit_on_board",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nSet the apple on the wooden cutting board, then apply the knife to slice it.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":[\"kitchen work area\",\"kitchen island area\"],\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":[\"kitchen work area\",\"kitchen island area\"],\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":[\"kitchen island area\"],\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"knife\"],\"R2\":[\"Move\",\"apple\"],\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"knife\"],\"R2\":[\"Reach\",\"apple\"],\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"knife\"],\"R2\":[\"Grasp\",\"apple\"],\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"wooden cutting board\"],\"R2\":[\"Move\",\"wooden cutting board\"],\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Reach\",\"wooden cutting board\"],\"R2\":[\"Place\",\"wooden cutting board\"],\"R3\":null},\"step\":5},{\"actions\":{\"R1\":[\"Interact\",\"knife\"],\"R2\":null,\"R3\":null},\"step\":6}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":5,\"name\":\"place_object\",\"description\":\"Move to a location, reach, and place an object there.\"},\n    {\"start_step\":6,\"end_step\":6,\"name\":\"use_tool\",\"description\":\"Interact with a tool to perform a task.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 5,
+          "name": "place_object",
+          "description": "Move to a location, reach, and place an object there."
+        },
+        {
+          "start_step": 6,
+          "end_step": 6,
+          "name": "use_tool",
+          "description": "Interact with a tool to perform a task."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 853,
+      "completion_tokens": 95
+    },
+    {
+      "train_index": 8,
+      "task_name": "toast_bread_and_set_plate",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nBegin by inserting the bread into the toaster, switch it on, and at the same time place the bowl on the kitchen work area to organize the workspace.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":null,\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":[\"kitchen island area\"],\"bread_0\":[\"kitchen work area\",\"kitchen island area\"],\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":[\"room_toaster\"],\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"bread\"],\"R2\":[\"Move\",\"bowl\"],\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"bread\"],\"R2\":[\"Reach\",\"bowl\"],\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"bread\"],\"R2\":[\"Grasp\",\"bowl\"],\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"toaster\"],\"R2\":[\"Move\",\"kitchen work area\"],\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Place\",\"toaster\"],\"R2\":[\"Place\",\"kitchen work area\"],\"R3\":null},\"step\":5},{\"actions\":{\"R1\":[\"Interact\",\"toaster\"],\"R2\":null,\"R3\":null},\"step\":6}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":5,\"name\":\"place_object\",\"description\":\"Move to a location and place an object there.\"},\n    {\"start_step\":6,\"end_step\":6,\"name\":\"interact_with_device\",\"description\":\"Perform an interaction with a device to change its state.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 5,
+          "name": "place_object",
+          "description": "Move to a location and place an object there."
+        },
+        {
+          "start_step": 6,
+          "end_step": 6,
+          "name": "interact_with_device",
+          "description": "Perform an interaction with a device to change its state."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 861,
+      "completion_tokens": 95
+    },
+    {
+      "train_index": 14,
+      "task_name": "serve_bread_after_checking_cabinet",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nServe the banana on the plate. If you don't see it nearby, it might be inside the cabinet\u2014have a look.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":null,\"banana_0\":[\"cabinet\"],\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":[\"room_cabinet\"],\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":[\"kitchen island area\",\"kitchen work area\"],\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"cabinet\"],\"R2\":null,\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"cabinet\"],\"R2\":null,\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Open\",\"cabinet\"],\"R2\":null,\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"banana\"],\"R2\":null,\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Reach\",\"banana\"],\"R2\":null,\"R3\":null},\"step\":5},{\"actions\":{\"R1\":[\"Grasp\",\"banana\"],\"R2\":null,\"R3\":null},\"step\":6},{\"actions\":{\"R1\":[\"Move\",\"plate\"],\"R2\":null,\"R3\":null},\"step\":7},{\"actions\":{\"R1\":[\"Place\",\"plate\"],\"R2\":null,\"R3\":null},\"step\":8}]"
+        }
+      ],
+      "response": "[\n    {\n        \"start_step\": 1,\n        \"end_step\": 3,\n        \"name\": \"open_cabinet\",\n        \"description\": \"Open a cabinet to search for an object.\"\n    },\n    {\n        \"start_step\": 4,\n        \"end_step\": 6,\n        \"name\": \"fetch_object\",\n        \"description\": \"Navigate to, reach, and grasp a required object.\"\n    },\n    {\n        \"start_step\": 7,\n        \"end_step\": 8,\n        \"name\": \"place_object\",\n        \"description\": \"Place an object on a specified location.\"\n    }\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "open_cabinet",
+          "description": "Open a cabinet to search for an object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 6,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 7,
+          "end_step": 8,
+          "name": "place_object",
+          "description": "Place an object on a specified location."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 879,
+      "completion_tokens": 131
+    },
+    {
+      "train_index": 15,
+      "task_name": "ensure_all_fruits_on_table",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nScan the table for any missing fruits\u2014the peach or the banana. Place them on the table, checking cabinet if necessary.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":null,\"banana_0\":null,\"banana_1\":[\"kitchen work area\"],\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":[\"room_cabinet\"],\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":[\"cabinet\"],\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"cabinet\"],\"R2\":[\"Move\",\"banana\"],\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"cabinet\"],\"R2\":[\"Reach\",\"banana\"],\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Open\",\"cabinet\"],\"R2\":[\"Grasp\",\"banana\"],\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"peach\"],\"R2\":[\"Move\",\"table\"],\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Reach\",\"peach\"],\"R2\":[\"Place\",\"table\"],\"R3\":null},\"step\":5},{\"actions\":{\"R1\":[\"Grasp\",\"peach\"],\"R2\":null,\"R3\":null},\"step\":6},{\"actions\":{\"R1\":[\"Move\",\"table\"],\"R2\":null,\"R3\":null},\"step\":7},{\"actions\":{\"R1\":[\"Place\",\"table\"],\"R2\":null,\"R3\":null},\"step\":8}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"navigate_to_object\",\"description\":\"Move to a location to interact with an object.\"},\n    {\"start_step\":3,\"end_step\":4,\"name\":\"open_container\",\"description\":\"Open a container to access its contents.\"},\n    {\"start_step\":4,\"end_step\":5,\"name\":\"move_to_table\",\"description\":\"Move to the table to place an object.\"},\n    {\"start_step\":5,\"end_step\":6,\"name\":\"grasp_object\",\"description\":\"Reach and grasp an object.\"},\n    {\"start_step\":6,\"end_step\":7,\"name\":\"move_to_table\",\"description\":\"Move to the table to place an object.\"},\n    {\"start_step\":7,\"end_step\":8,\"name\":\"place_object\",\"description\":\"Place an object on the table.\"}\n]",
+      "segments": null,
+      "parse_error": "Stage1ExtractionError('Segment 1 range 3:4 breaks partition at 4')",
+      "prompt_tokens": 886,
+      "completion_tokens": 171
+    },
+    {
+      "train_index": 17,
+      "task_name": "set_plate_and_fork_on_table",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nPlace the plate onto the kitchen work area to create space for serving, then gather the banana from the cabinet and deposit it into the plate.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":null,\"banana_0\":null,\"banana_1\":[\"cabinet\"],\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":[\"room_cabinet\"],\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":[\"kitchen island area\"],\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"plate\"],\"R2\":[\"Move\",\"cabinet\"],\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"plate\"],\"R2\":[\"Reach\",\"cabinet\"],\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"plate\"],\"R2\":[\"Open\",\"cabinet\"],\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"kitchen work area\"],\"R2\":[\"Move\",\"banana\"],\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Place\",\"kitchen work area\"],\"R2\":[\"Reach\",\"banana\"],\"R3\":null},\"step\":5},{\"actions\":{\"R1\":null,\"R2\":[\"Grasp\",\"banana\"],\"R3\":null},\"step\":6},{\"actions\":{\"R1\":null,\"R2\":[\"Move\",\"plate\"],\"R3\":null},\"step\":7},{\"actions\":{\"R1\":null,\"R2\":[\"Place\",\"plate\"],\"R3\":null},\"step\":8}]"
+        }
+      ],
+      "response": "[\n    {\n        \"start_step\": 1,\n        \"end_step\": 3,\n        \"name\": \"fetch_object\",\n        \"description\": \"Navigate to, reach, and grasp a required object.\"\n    },\n    {\n        \"start_step\": 4,\n        \"end_step\": 5,\n        \"name\": \"place_object\",\n        \"description\": \"Move an object to a specified location.\"\n    },\n    {\n        \"start_step\": 6,\n        \"end_step\": 7,\n        \"name\": \"fetch_object\",\n        \"description\": \"Navigate to, reach, and grasp a required object.\"\n    },\n    {\n        \"start_step\": 8,\n        \"end_step\": 8,\n        \"name\": \"place_object\",\n        \"description\": \"Move an object to a specified location.\"\n    }\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 5,
+          "name": "place_object",
+          "description": "Move an object to a specified location."
+        },
+        {
+          "start_step": 6,
+          "end_step": 7,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 8,
+          "end_step": 8,
+          "name": "place_object",
+          "description": "Move an object to a specified location."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 893,
+      "completion_tokens": 173
+    },
+    {
+      "train_index": 18,
+      "task_name": "wash_fruit_and_serve",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nRinse off the tomato at the sink and leave it in the bowl when finished.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":null,\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":[\"room\"],\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":[\"kitchen work area\"],\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"tomato\"],\"R2\":null,\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"tomato\"],\"R2\":null,\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"tomato\"],\"R2\":null,\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"sink\"],\"R2\":null,\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Place\",\"sink\"],\"R2\":null,\"R3\":null},\"step\":5},{\"actions\":{\"R1\":[\"Interact\",\"sink\"],\"R2\":null,\"R3\":null},\"step\":6},{\"actions\":{\"R1\":[\"Move\",\"tomato\"],\"R2\":null,\"R3\":null},\"step\":7},{\"actions\":{\"R1\":[\"Reach\",\"tomato\"],\"R2\":null,\"R3\":null},\"step\":8},{\"actions\":{\"R1\":[\"Grasp\",\"tomato\"],\"R2\":null,\"R3\":null},\"step\":9},{\"actions\":{\"R1\":[\"Move\",\"bowl\"],\"R2\":null,\"R3\":null},\"step\":10},{\"actions\":{\"R1\":[\"Place\",\"bowl\"],\"R2\":null,\"R3\":null},\"step\":11}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":5,\"name\":\"move_to_target\",\"description\":\"Move to a target location.\"},\n    {\"start_step\":6,\"end_step\":6,\"name\":\"interact_with_object\",\"description\":\"Interact with an object at a target location.\"},\n    {\"start_step\":7,\"end_step\":9,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":10,\"end_step\":11,\"name\":\"move_to_target\",\"description\":\"Move to a target location.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 5,
+          "name": "move_to_target",
+          "description": "Move to a target location."
+        },
+        {
+          "start_step": 6,
+          "end_step": 6,
+          "name": "interact_with_object",
+          "description": "Interact with an object at a target location."
+        },
+        {
+          "start_step": 7,
+          "end_step": 9,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 10,
+          "end_step": 11,
+          "name": "move_to_target",
+          "description": "Move to a target location."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 941,
+      "completion_tokens": 149
+    },
+    {
+      "train_index": 27,
+      "task_name": "parallel_human_dual_asset_to_plate_or_bowl",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nTransport the pumpkin and the tomato into the plate together.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":null,\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":[\"kitchen work area\",\"kitchen island area\"],\"pumpkin_0\":[\"kitchen work area\",\"kitchen island area\"],\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":[\"kitchen work area\",\"kitchen island area\"],\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"pumpkin\"],\"R2\":[\"Move\",\"tomato\"],\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"pumpkin\"],\"R2\":[\"Reach\",\"tomato\"],\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"pumpkin\"],\"R2\":[\"Grasp\",\"tomato\"],\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"plate\"],\"R2\":[\"Move\",\"plate\"],\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Place\",\"plate\"],\"R2\":[\"Place\",\"plate\"],\"R3\":null},\"step\":5}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":5,\"name\":\"place_object\",\"description\":\"Move an object to a target location and place it there.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 5,
+          "name": "place_object",
+          "description": "Move an object to a target location and place it there."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 825,
+      "completion_tokens": 65
+    },
+    {
+      "train_index": 45,
+      "task_name": "clear_table_with_two_robots_and_put_in_cabinet",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nCollect the apple and spoon, and place them neatly into the cabinet to finish cleaning.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":[\"kitchen work area\",\"kitchen island area\"],\"apple_1\":null,\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":[\"room_cabinet\"],\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":null,\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":[\"kitchen work area\",\"kitchen island area\"],\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"spoon\"],\"R2\":[\"Move\",\"apple\"],\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Reach\",\"spoon\"],\"R2\":[\"Reach\",\"apple\"],\"R3\":null},\"step\":2},{\"actions\":{\"R1\":[\"Grasp\",\"spoon\"],\"R2\":[\"Grasp\",\"apple\"],\"R3\":null},\"step\":3},{\"actions\":{\"R1\":[\"Move\",\"cabinet\"],\"R2\":[\"Move\",\"cabinet\"],\"R3\":null},\"step\":4},{\"actions\":{\"R1\":[\"Reach\",\"cabinet\"],\"R2\":null,\"R3\":null},\"step\":5},{\"actions\":{\"R1\":[\"Open\",\"cabinet\"],\"R2\":null,\"R3\":null},\"step\":6},{\"actions\":{\"R1\":[\"Place\",\"cabinet\"],\"R2\":[\"Place\",\"cabinet\"],\"R3\":null},\"step\":7}]"
+        }
+      ],
+      "response": "[\n    {\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"},\n    {\"start_step\":4,\"end_step\":5,\"name\":\"move_to_cabinet\",\"description\":\"Move to the cabinet location.\"},\n    {\"start_step\":6,\"end_step\":7,\"name\":\"open_cabinet\",\"description\":\"Open the cabinet door.\"}\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 3,
+          "name": "fetch_object",
+          "description": "Navigate to, reach, and grasp a required object."
+        },
+        {
+          "start_step": 4,
+          "end_step": 5,
+          "name": "move_to_cabinet",
+          "description": "Move to the cabinet location."
+        },
+        {
+          "start_step": 6,
+          "end_step": 7,
+          "name": "open_cabinet",
+          "description": "Open the cabinet door."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 871,
+      "completion_tokens": 86
+    },
+    {
+      "train_index": 51,
+      "task_name": "dog_check_environment",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You build an individual-skill memory from one successful robot plan.\nSegment the complete plan at subgoal-completion boundaries. A segment must be a non-empty contiguous range of whole timesteps. Together, the segments must partition every timestep exactly once and in original order.\n\nUse fine-grained reusable skills. End a segment when a concrete subgoal becomes true, for example after finding or grasping an object, after placing or relocating it, after opening or closing a container, after inspecting or changing state, or after completing another distinct manipulation. Do not merge independent object subgoals merely because they belong to one task. Do not split an atomic parallel timestep.\n\nFor every segment generate:\n- name: a short reusable snake_case behavioral skill name, abstracting away object instance ids;\n- description: one concise sentence describing the reusable procedure, without claiming cooperation.\n\nThis dataset is single-robot at evaluation scope. Output only individual skills. Never fabricate cooperation skills, partner conditions, actions, or timesteps. Do not copy the plan into the description.\n\nReturn JSON only with this schema:\n{\"segments\":[{\"start_step\":1,\"end_step\":3,\"name\":\"fetch_object\",\"description\":\"Navigate to, reach, and grasp a required object.\"}]}\n\nstart_step and end_step are inclusive 1-based positions in the supplied TIMESTEPS array, not the plan's printed step labels."
+        },
+        {
+          "role": "user",
+          "content": "INSTRUCTION:\nObserve the space around oven.\n\nINITIAL_STATE:\n{\"R1\":null,\"R2\":null,\"R3\":null,\"apple_0\":null,\"apple_1\":null,\"banana_0\":null,\"banana_1\":null,\"banana_2\":null,\"bottle_0\":null,\"bowl_0\":null,\"bowl_2\":null,\"bread_0\":null,\"bread_1\":null,\"bread_2\":null,\"cabinet_1\":null,\"cabinet_2\":null,\"cardboardbox_0\":null,\"cardboardbox_1\":null,\"cooling fan_0\":null,\"cup_0\":null,\"drawer_0\":null,\"fork_0\":null,\"fork_1\":null,\"fridge_0\":null,\"green peas_1\":null,\"kettle_0\":null,\"knife_0\":null,\"knife_1\":null,\"meat_0\":null,\"oven_0\":[\"mask1\"],\"peach_0\":null,\"peach_1\":null,\"pear_0\":null,\"pear_1\":null,\"pizza_0\":null,\"pizza_1\":null,\"plate_0\":null,\"plate_2\":null,\"pumpkin_0\":null,\"pumpkin_1\":null,\"scissors_0\":null,\"scissors_1\":null,\"sink_1\":null,\"sink_2\":null,\"spoon_0\":null,\"spoon_1\":null,\"toaster_1\":null,\"tomato_0\":null,\"tomato_1\":null,\"tomato_2\":null,\"wine_0\":null,\"wooden cutting board_2\":null,\"wooden cutting board_3\":null}\n\nTIMESTEPS:\n[{\"actions\":{\"R1\":[\"Move\",\"oven\"],\"R2\":null,\"R3\":null},\"step\":1},{\"actions\":{\"R1\":[\"Interact\",\"oven\"],\"R2\":null,\"R3\":null},\"step\":2}]"
+        }
+      ],
+      "response": "[\n    {\n        \"start_step\": 1,\n        \"end_step\": 1,\n        \"name\": \"move_to\",\n        \"description\": \"Move to a specified location.\"\n    },\n    {\n        \"start_step\": 2,\n        \"end_step\": 2,\n        \"name\": \"interact_with\",\n        \"description\": \"Interact with an object at a specific location.\"\n    }\n]",
+      "segments": [
+        {
+          "start_step": 1,
+          "end_step": 1,
+          "name": "move_to",
+          "description": "Move to a specified location."
+        },
+        {
+          "start_step": 2,
+          "end_step": 2,
+          "name": "interact_with",
+          "description": "Interact with an object at a specific location."
+        }
+      ],
+      "parse_error": null,
+      "prompt_tokens": 709,
+      "completion_tokens": 86
+    }
+  ]
+}

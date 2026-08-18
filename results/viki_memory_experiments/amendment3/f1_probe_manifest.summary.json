@@ -1,0 +1,47 @@
+{
+  "task": "F1_manifest",
+  "seed": 20260814,
+  "sampling": "uniform without replacement, independently by split",
+  "samples_per_split": 200,
+  "indices_sha256": "a2e459b381deb3fc73154f89f87e50035c90ba15670d2d4349df54f43b007f03",
+  "anchor_gate": {
+    "method": "two-sided 95% exact binomial predictive interval",
+    "alpha": 0.05,
+    "intervals": {
+      "id": {
+        "published_rate": 0.084,
+        "samples": 200,
+        "minimum_successes": 10,
+        "maximum_successes": 25
+      },
+      "ood": {
+        "published_rate": 0.012,
+        "samples": 200,
+        "minimum_successes": 0,
+        "maximum_successes": 6
+      }
+    }
+  },
+  "pick_rule": {
+    "primary": "highest OOD mean_task_score",
+    "minimum_ood": 0.02,
+    "minimum_id": 0.05,
+    "minimum_format_each_split": 0.9,
+    "tie_break": "higher ID, then candidate order",
+    "fallback_order": [
+      "Gemini-2.5-Flash",
+      "GPT-4o"
+    ]
+  },
+  "candidate_plan": {
+    "included": [
+      "qwen2_5_vl_72b",
+      "qwen3_vl_32b",
+      "qwen3_vl_30b_a3b"
+    ],
+    "excluded": {
+      "qwen3_vl_235b_a22b": "requires all 8x80GB GPUs; only GPU 0,1,3,5 are available while the retained Amendment 2 servers occupy GPU 2,4,6,7"
+    }
+  },
+  "manifest": "/home/aiscuser/partnr-planner/results/viki_memory_experiments/amendment3/f1_probe_manifest.parquet"
+}

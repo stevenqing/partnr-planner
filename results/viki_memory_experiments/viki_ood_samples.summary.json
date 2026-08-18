@@ -1,0 +1,289 @@
+{
+  "task": "V0",
+  "gate": {
+    "status": "PASS",
+    "overall": {
+      "samples": 1218,
+      "baseline_successes": 403,
+      "memory_successes": 373,
+      "baseline_accuracy": 0.3308702791461412,
+      "memory_accuracy": 0.30623973727422005,
+      "fail_to_success": 55,
+      "success_to_fail": 85
+    },
+    "by_subset": {
+      "bowl_missing": {
+        "samples": 409,
+        "baseline_successes": 13,
+        "memory_successes": 47,
+        "baseline_accuracy": 0.03178484107579462,
+        "memory_accuracy": 0.11491442542787286,
+        "fail_to_success": 38,
+        "success_to_fail": 4
+      },
+      "plate_missing": {
+        "samples": 418,
+        "baseline_successes": 387,
+        "memory_successes": 326,
+        "baseline_accuracy": 0.9258373205741627,
+        "memory_accuracy": 0.7799043062200957,
+        "fail_to_success": 17,
+        "success_to_fail": 78
+      },
+      "both_missing": {
+        "samples": 391,
+        "baseline_successes": 3,
+        "memory_successes": 0,
+        "baseline_accuracy": 0.0076726342710997444,
+        "memory_accuracy": 0.0,
+        "fail_to_success": 0,
+        "success_to_fail": 3
+      }
+    },
+    "mcnemar_exact_p": 0.013957334124842395
+  },
+  "fallback": {
+    "prediction": 0.0,
+    "count": 0,
+    "rate": 0.0
+  },
+  "retrieval_similarity_max": {
+    "overall": {
+      "median": 0.5903847217559814,
+      "p10": 0.550321638584137,
+      "min": 0.38205617666244507
+    },
+    "by_subset": {
+      "bowl_missing": {
+        "median": 0.5971207618713379,
+        "p10": 0.550321638584137,
+        "min": 0.38205617666244507
+      },
+      "plate_missing": {
+        "median": 0.5903847217559814,
+        "p10": 0.550321638584137,
+        "min": 0.38205617666244507
+      },
+      "both_missing": {
+        "median": 0.5903847217559814,
+        "p10": 0.550321638584137,
+        "min": 0.38205617666244507
+      }
+    }
+  },
+  "context_headroom": {
+    "model_context": 4096,
+    "generation_reservation": 2000,
+    "input_budget": 2096,
+    "max_input_tokens_total": 1775,
+    "min_headroom": 321,
+    "truncation_count": 0
+  },
+  "scorer_seed": {
+    "rule": "run_seed + index",
+    "baseline_run_seed": 0,
+    "memory_run_seed": 0,
+    "identical_per_index": true
+  },
+  "token_counting": {
+    "processor": "/home/aiscuser/VIKI-R/models/Qwen2.5VL-7B-Instruct-VIKI-R-2",
+    "transformers_version": "4.51.3",
+    "vllm_equivalence": "vLLM 0.8.4 Qwen2_5_VLMultiModalProcessor calls the same Qwen2_5_VLProcessor and expands image tokens from image_grid_thw"
+  },
+  "frozen_provenance": {
+    "baseline_run_metadata": {
+      "level": 2,
+      "split": "val",
+      "provider": "endpoint",
+      "benchmark_root": "/home/aiscuser/VIKI-R",
+      "seed": 0,
+      "base_url": "http://127.0.0.1:8016/v1",
+      "model": "viki-r-7b-l2",
+      "max_tokens": 2000,
+      "temperature": 0.0,
+      "llm_name": null,
+      "engine": null,
+      "predictions": null,
+      "planner_max_steps": null,
+      "score_attempts": 1
+    },
+    "memory_source_run_metadata": [
+      {
+        "level": 2,
+        "split": "val",
+        "provider": "memory-endpoint",
+        "benchmark_root": "/home/aiscuser/VIKI-R",
+        "seed": 0,
+        "base_url": "http://127.0.0.1:8022/v1",
+        "model": "viki-r-7b-l2-memory",
+        "max_tokens": 2000,
+        "temperature": 0.0,
+        "llm_name": null,
+        "engine": null,
+        "predictions": null,
+        "planner_max_steps": null,
+        "score_attempts": 1,
+        "memory_top_k": 5,
+        "memory_similarity_threshold": 0.3,
+        "memory_prediction_max_tokens": 768,
+        "memory_embedding_model": "all-mpnet-base-v2",
+        "memory_device": "cpu",
+        "memory_cache": "/home/aiscuser/partnr-planner/results/viki_l2_memory_skill_all_mpnet_base_v2.npz"
+      },
+      {
+        "level": 2,
+        "split": "val",
+        "provider": "memory-endpoint",
+        "benchmark_root": "/home/aiscuser/VIKI-R",
+        "seed": 0,
+        "base_url": "http://127.0.0.1:8022/v1",
+        "model": "viki-r-7b-l2-memory",
+        "max_tokens": 2000,
+        "temperature": 0.0,
+        "llm_name": null,
+        "engine": null,
+        "predictions": null,
+        "planner_max_steps": null,
+        "score_attempts": 1,
+        "memory_top_k": 5,
+        "memory_similarity_threshold": 0.3,
+        "memory_prediction_max_tokens": 768,
+        "memory_embedding_model": "all-mpnet-base-v2",
+        "memory_device": "cpu",
+        "memory_cache": "/home/aiscuser/partnr-planner/results/viki_l2_memory_skill_all_mpnet_base_v2.npz"
+      },
+      {
+        "level": 2,
+        "split": "val",
+        "provider": "memory-endpoint",
+        "benchmark_root": "/home/aiscuser/VIKI-R",
+        "seed": 0,
+        "base_url": "http://127.0.0.1:8024/v1",
+        "model": "viki-r-7b-l2-memory",
+        "max_tokens": 2000,
+        "temperature": 0.0,
+        "llm_name": null,
+        "engine": null,
+        "predictions": null,
+        "planner_max_steps": null,
+        "score_attempts": 1,
+        "memory_top_k": 5,
+        "memory_similarity_threshold": 0.3,
+        "memory_prediction_max_tokens": 768,
+        "memory_embedding_model": "all-mpnet-base-v2",
+        "memory_device": "cpu",
+        "memory_cache": "/home/aiscuser/partnr-planner/results/viki_l2_memory_skill_all_mpnet_base_v2.npz"
+      },
+      {
+        "level": 2,
+        "split": "val",
+        "provider": "memory-endpoint",
+        "benchmark_root": "/home/aiscuser/VIKI-R",
+        "seed": 0,
+        "base_url": "http://127.0.0.1:8025/v1",
+        "model": "viki-r-7b-l2-memory",
+        "max_tokens": 2000,
+        "temperature": 0.0,
+        "llm_name": null,
+        "engine": null,
+        "predictions": null,
+        "planner_max_steps": null,
+        "score_attempts": 1,
+        "memory_top_k": 5,
+        "memory_similarity_threshold": 0.3,
+        "memory_prediction_max_tokens": 768,
+        "memory_embedding_model": "all-mpnet-base-v2",
+        "memory_device": "cpu",
+        "memory_cache": "/home/aiscuser/partnr-planner/results/viki_l2_memory_skill_all_mpnet_base_v2.npz"
+      },
+      {
+        "level": 2,
+        "split": "val",
+        "provider": "memory-endpoint",
+        "benchmark_root": "/home/aiscuser/VIKI-R",
+        "seed": 0,
+        "base_url": "http://127.0.0.1:8022/v1",
+        "model": "viki-r-7b-l2-memory",
+        "max_tokens": 2000,
+        "temperature": 0.0,
+        "llm_name": null,
+        "engine": null,
+        "predictions": null,
+        "planner_max_steps": null,
+        "score_attempts": 1,
+        "memory_top_k": 5,
+        "memory_similarity_threshold": 0.3,
+        "memory_prediction_max_tokens": 768,
+        "memory_embedding_model": "all-mpnet-base-v2",
+        "memory_device": "cpu",
+        "memory_cache": "/home/aiscuser/partnr-planner/results/viki_l2_memory_skill_all_mpnet_base_v2.npz"
+      },
+      {
+        "level": 2,
+        "split": "val",
+        "provider": "memory-endpoint",
+        "benchmark_root": "/home/aiscuser/VIKI-R",
+        "seed": 0,
+        "base_url": "http://127.0.0.1:8024/v1",
+        "model": "viki-r-7b-l2-memory",
+        "max_tokens": 2000,
+        "temperature": 0.0,
+        "llm_name": null,
+        "engine": null,
+        "predictions": null,
+        "planner_max_steps": null,
+        "score_attempts": 1,
+        "memory_top_k": 5,
+        "memory_similarity_threshold": 0.3,
+        "memory_prediction_max_tokens": 768,
+        "memory_embedding_model": "all-mpnet-base-v2",
+        "memory_device": "cpu",
+        "memory_cache": "/home/aiscuser/partnr-planner/results/viki_l2_memory_skill_all_mpnet_base_v2.npz"
+      },
+      {
+        "level": 2,
+        "split": "val",
+        "provider": "memory-endpoint",
+        "benchmark_root": "/home/aiscuser/VIKI-R",
+        "seed": 0,
+        "base_url": "http://127.0.0.1:8025/v1",
+        "model": "viki-r-7b-l2-memory",
+        "max_tokens": 2000,
+        "temperature": 0.0,
+        "llm_name": null,
+        "engine": null,
+        "predictions": null,
+        "planner_max_steps": null,
+        "score_attempts": 1,
+        "memory_top_k": 5,
+        "memory_similarity_threshold": 0.3,
+        "memory_prediction_max_tokens": 768,
+        "memory_embedding_model": "all-mpnet-base-v2",
+        "memory_device": "cpu",
+        "memory_cache": "/home/aiscuser/partnr-planner/results/viki_l2_memory_skill_all_mpnet_base_v2.npz"
+      },
+      {
+        "level": 2,
+        "split": "val",
+        "provider": "memory-endpoint",
+        "benchmark_root": "/home/aiscuser/VIKI-R",
+        "seed": 0,
+        "base_url": "http://127.0.0.1:8029/v1",
+        "model": "viki-r-7b-l2-memory",
+        "max_tokens": 2000,
+        "temperature": 0.0,
+        "llm_name": null,
+        "engine": null,
+        "predictions": null,
+        "planner_max_steps": null,
+        "score_attempts": 1,
+        "memory_top_k": 5,
+        "memory_similarity_threshold": 0.3,
+        "memory_prediction_max_tokens": 768,
+        "memory_embedding_model": "all-mpnet-base-v2",
+        "memory_device": "cpu",
+        "memory_cache": "/home/aiscuser/partnr-planner/results/viki_l2_memory_skill_all_mpnet_base_v2.npz"
+      }
+    ]
+  }
+}
