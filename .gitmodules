@@ -7,3 +7,6 @@
 [submodule "third_party/transformers-CFG"]
 	path = third_party/transformers-CFG
 	url = https://github.com/MatthewChang/transformers-CFG
+[submodule "third_party/GMemory"]
+	path = third_party/GMemory
+	url = https://github.com/bingreeky/GMemory

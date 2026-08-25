@@ -259,6 +259,12 @@ def validate_reused_source(
     run_hash = fingerprint(metadata)
     if (
         set(records) != set(indices)
+        or summary.get("samples") != len(indices)
+        or summary.get("results_sha256") != file_sha256(source_path)
+        or (
+            summary.get("run_fingerprint") is not None
+            and summary.get("run_fingerprint") != run_hash
+        )
         or any(record.get("run_fingerprint") != run_hash for record in records.values())
         or any(
             set(record.get("arms", {})) < {"zero_shot", "segment"}
