@@ -1,0 +1,18 @@
+# @package _global_
+# The method, with the model actually reading the instruction: it is asked only what must
+# become true, and the memory decides which body, which container, and who goes. Same
+# world, same model and same split as baselines/react_vllm.yaml, so the difference between
+# them is what the memory is asked for rather than what the agents can see.
+
+defaults:
+  - /examples/planner_multi_agent_demo_config
+  - override /evaluation: decentralized_evaluation_runner_skill_memory_v2
+  - override /planner@evaluation.agents.agent_0.planner: skill_memory_v2_intent_planner
+  - override /planner@evaluation.agents.agent_1.planner: skill_memory_v2_intent_planner
+  - override /llm@evaluation.agents.agent_0.planner.plan_config.llm: vllm
+  - override /llm@evaluation.agents.agent_1.planner.plan_config.llm: vllm
+  - override /agent@evaluation.agents.agent_1.config: oracle_rearrange_object_states_agent
+
+agent_asymmetry: True
+world_model:
+  partial_obs: True

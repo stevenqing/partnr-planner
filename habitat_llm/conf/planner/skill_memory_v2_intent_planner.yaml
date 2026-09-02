@@ -1,0 +1,20 @@
+# The method: the model is asked what must become true and nothing else, and the memory
+# decides which body, which container and who goes. Same memory and same composer as
+# skill_memory_v2_planner -- the only difference is where the requirements come from,
+# which is what makes the pair a clean measurement of the language step.
+
+defaults:
+  - /llm@plan_config.llm: llama
+
+_target_: 'our_method.skill_memory_v2.partnr_planner.SkillMemoryV2Planner'
+_recursive_: False
+_partial_: True
+
+plan_config:
+    operators: "results/partnr_operators.json"
+    goal_source: "llm"
+    retry_limit: 2
+    patience: 3
+    allow_spatial_composition: True
+    use_episode_order: False         # no episode is read in this arm; see Layer 2
+    planning_mode: "cot"

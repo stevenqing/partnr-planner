@@ -1,0 +1,17 @@
+# The decentralized skill-memory-v2 planner with privileged goals: the episode's own
+# evaluation propositions are handed straight to the composer. This is the upper bound
+# arm -- it says how much of the gap is the memory, with reading the instruction taken
+# out of the question -- and it is the only configuration here that touches ground truth.
+
+_target_: 'our_method.skill_memory_v2.partnr_planner.SkillMemoryV2Planner'
+_recursive_: False
+_partial_: True
+
+plan_config:
+    operators: "results/partnr_operators.json"
+    goal_source: "oracle"            # oracle | llm
+    retry_limit: 2                   # grounding or execution attempts before moving on
+    patience: 3                      # idle rounds before taking over a partner's share
+    allow_spatial_composition: True  # fold `is_next_to` into the placement carrying it
+    use_episode_order: True          # read the episode's temporal DAG (privileged)
+    planning_mode: "cot"             # read by the runner; this planner does not use it

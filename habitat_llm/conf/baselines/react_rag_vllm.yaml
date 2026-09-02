@@ -1,0 +1,30 @@
+# @package _global_
+# The same ReAct baseline with PARTNR's own trajectory retrieval switched on: the closest
+# successful rollout is pasted into the prompt as an example. This is the prompt-shaped
+# memory that skill memory v2 is an argument against, built with the benchmark's own RAG
+# code so the comparison is not about our implementation of somebody else's idea.
+#
+# The retrieval pool is built by scripts/partnr_make_rag_source.py from the *privileged*
+# planner's successful train_mini rollouts, which makes it a stronger pool than the
+# intended one -- these are optimal demonstrations, not a model's lucky episodes. If this
+# arm still loses, it does not lose for want of good examples.
+
+defaults:
+  - /baselines/react_vllm
+
+evaluation:
+  agents:
+    agent_0:
+      planner:
+        plan_config:
+          enable_rag: True
+          example_type: "react"
+          rag_dataset_dir: ["results/rag_source_train_mini/"]
+          rag_data_source_name: ["train_mini.json.gz"]
+    agent_1:
+      planner:
+        plan_config:
+          enable_rag: True
+          example_type: "react"
+          rag_dataset_dir: ["results/rag_source_train_mini/"]
+          rag_data_source_name: ["train_mini.json.gz"]

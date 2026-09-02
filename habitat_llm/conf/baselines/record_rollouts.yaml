@@ -1,0 +1,8 @@
+# @package _global_
+# The privileged planner, unchanged, with a trace written for every episode it solves.
+# Used only to collect the induction source for skill memory v2; it plans identically to
+# baselines/heuristic_full_obs.yaml.
+
+defaults:
+  - /examples/centralized_full_obs
+  - override /planner@evaluation.planner: recording_dag_planner

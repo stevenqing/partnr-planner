@@ -1,0 +1,17 @@
+# @package _global_
+# The method. Decentralized, partially observed, agent-asymmetric -- the same world the
+# ReAct baselines run in, so the comparison is about what the memory is asked for and not
+# about what the agents can see. Each agent runs its own planner over its own graph; the
+# only shared thing is the operator library, which is a file.
+
+defaults:
+  - /examples/planner_multi_agent_demo_config
+  - override /evaluation: decentralized_evaluation_runner_skill_memory_v2
+  - override /planner@evaluation.agents.agent_0.planner: skill_memory_v2_intent_planner
+  - override /planner@evaluation.agents.agent_1.planner: skill_memory_v2_intent_planner
+  - override /llm@evaluation.agents.agent_0.planner.plan_config.llm: llama
+  - override /llm@evaluation.agents.agent_1.planner.plan_config.llm: llama
+
+agent_asymmetry: True
+world_model:
+  partial_obs: True

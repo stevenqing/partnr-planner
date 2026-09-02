@@ -1,0 +1,25 @@
+# @package _global_
+# Skill memory v2, decentralized and partially observed, with the episode's propositions
+# handed to it. Read against baselines/heuristic_full_obs.yaml, which is the same
+# composition problem solved centrally, with full observability, from the same ground
+# truth: the gap between them is what decentralization and partial observation cost, not
+# what the memory costs.
+
+defaults:
+  - /examples/planner_multi_agent_demo_config
+  - override /evaluation: decentralized_evaluation_runner_skill_memory_v2
+
+agent_asymmetry: True
+world_model:
+  partial_obs: True
+
+evaluation:
+  agents:
+    agent_0:
+      planner:
+        plan_config:
+          goal_source: "oracle"
+    agent_1:
+      planner:
+        plan_config:
+          goal_source: "oracle"

@@ -1,0 +1,33 @@
+# Any OpenAI-compatible server, which is how the local vLLM instances are reached.
+# Override `base_url` and `generation_params.model` per run, or set VLLM_BASE_URL in the
+# environment. Greedy by default so two arms decode the same way.
+
+llm:
+  _target_    : habitat_llm.llm.VLLMChat
+  _partial_   : True
+
+verbose       : False
+
+base_url      : "http://127.0.0.1:8062/v1"
+api_key       : "EMPTY"
+max_retries   : 3
+request_timeout : 180
+
+system_message : 'You are an expert at task planning.'
+
+# System, User, Assistant and end of turn tags. Empty: a chat endpoint applies its own
+# template, so adding Llama's header tokens here would put them in the message text.
+system_tag : ""
+user_tag : ""
+assistant_tag : ""
+eot_tag : ""
+
+keep_message_history : False
+
+generation_params:
+  model         : "qwen3-vl-30b"
+  max_tokens    : 400
+  temperature   : 0
+  top_p         : 1
+  stream        : False
+  stop          : "Assigned!"

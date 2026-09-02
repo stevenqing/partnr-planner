@@ -1,0 +1,41 @@
+# @package _global_
+# PARTNR's own decentralized ReAct baseline, unchanged except for the LLM transport:
+# an OpenAI-compatible endpoint instead of a locally loaded Llama, so that forty
+# evaluation processes can share one served model. This is the floor the memory arms have
+# to beat, and it is the benchmark's code, not ours.
+
+defaults:
+  - /examples/planner_multi_agent_demo_config
+  - override /evaluation: decentralized_evaluation_runner_multi_agent
+  - override /llm@evaluation.agents.agent_0.planner.plan_config.llm: vllm
+  - override /llm@evaluation.agents.agent_1.planner.plan_config.llm: vllm
+  - override /agent@evaluation.agents.agent_1.config: oracle_rearrange_object_states_agent
+  - override /instruct@evaluation.agents.agent_0.planner.plan_config.instruct: few_shot_decentralized_partial_robot_spatialobjstates_instruct
+  - override /instruct@evaluation.agents.agent_1.planner.plan_config.instruct: few_shot_decentralized_partial_human_spatialobjstates_instruct
+
+agent_asymmetry: True
+world_model:
+  partial_obs: True
+
+evaluation:
+  agents:
+    agent_0:
+      planner:
+        plan_config:
+          # Grammar-constrained decoding is not available through a chat endpoint, and
+          # the backend refuses it rather than dropping the grammar silently.
+          constrained_generation: False
+          replanning_threshold: 50
+          # `llm_planner.yaml` never defines these two and `LLMPlanner.get_next_action`
+          # reads them unconditionally, so the shipped decentralized ReAct config raises
+          # before its first LLM call. Set here to match the instruct this arm uses, which
+          # is the object-states one.
+          objects_response: True
+          objects_response_include_states: True
+    agent_1:
+      planner:
+        plan_config:
+          constrained_generation: False
+          replanning_threshold: 50
+          objects_response: True
+          objects_response_include_states: True
