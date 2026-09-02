@@ -260,7 +260,12 @@ def validate_reused_source(
     if (
         set(records) != set(indices)
         or summary.get("samples") != len(indices)
-        or summary.get("results_sha256") != file_sha256(source_path)
+        or (
+            # Amendment 5 summaries predate this field; validate it only when the
+            # certificate carries it, matching how run_fingerprint is handled.
+            summary.get("results_sha256") is not None
+            and summary.get("results_sha256") != file_sha256(source_path)
+        )
         or (
             summary.get("run_fingerprint") is not None
             and summary.get("run_fingerprint") != run_hash

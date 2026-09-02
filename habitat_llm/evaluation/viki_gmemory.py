@@ -224,7 +224,16 @@ class GMemoryState:
         cls, value: Mapping[str, Any], embeddings: Sequence[np.ndarray]
     ) -> "GMemoryState":
         records = [dict(record) for record in value["records"]]
-        vectors = [np.asarray(vector, dtype=np.float32) for vector in embeddings]
+        # add_record stores unit vectors, so canonical_state hashes normalized
+        # embeddings. Restore from the same representation, otherwise the cached
+        # raw MiniLM rows hash differently wherever the norm is not exactly 1.
+        vectors = []
+        for vector in embeddings:
+            candidate = np.asarray(vector, dtype=np.float32)
+            norm = float(np.linalg.norm(candidate))
+            if norm == 0:
+                raise ValueError("G-Memory embedding cannot be zero")
+            vectors.append(candidate / norm)
         if len(records) != len(vectors):
             raise ValueError("Canonical G-Memory records and embeddings differ")
         observed_hashes = [
