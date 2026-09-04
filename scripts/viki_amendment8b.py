@@ -23,9 +23,12 @@ import numpy as np
 import pandas as pd
 from openai import OpenAI
 
+import viki_fork_guard
+
 from habitat_llm.evaluation import viki_bench as bench
 from habitat_llm.evaluation.viki_memory_skill import add_memory_to_messages
 from viki_amendment5 import (
+    BACKBONES,
     BENCHMARK_ROOT,
     DATA_ROOT,
     atomic_json,
@@ -53,7 +56,13 @@ SELF_ROBOT = "R1"
 ARMS = ("zero_shot", "skill_memory", "gmemory", "trajectory_rag")
 SEED = 20260829
 
-SERVED_MODEL = "qwen2.5-vl-72b-amendment3-f2"
+# Which backbone this process talks to. One switch drives both the gate key and the
+# served name, because the two disagreeing is exactly how a cell gets written with the
+# wrong model in its metadata: the run would pass the gate against one model and label
+# itself with another. Default is the 72B every archived cell was produced on.
+from viki_amendment5 import BACKBONE, SERVED_MODEL_FOR_BACKBONE  # noqa: E402
+
+SERVED_MODEL = SERVED_MODEL_FOR_BACKBONE
 MODEL_ID = "Qwen/Qwen2.5-VL-72B-Instruct"
 MODEL_REVISION = "89c86200743eec961a297729e7990e8f2ddbc4c5"
 PLAN_MAX_TOKENS = 2000
@@ -329,6 +338,43 @@ def load_manifest() -> Dict[int, Dict[str, Any]]:
     return records
 
 
+# The benchmark's own system prompt carries two numbered output rules: give the reasoning
+# inside <think>, then the answer inside <answer>. Qwen3-VL-30B ignores the first and
+# writes <reasoning> instead, so the official `format_reward` -- which full-matches
+# `<think>.*</think>.*<answer>.*</answer>` -- scores 0 on every one of its cells while 92%
+# of its answers parse cleanly. That is a real instruction-following failure and is
+# reported as such, but it leaves an open question the archive cannot answer: is the model
+# worse here because it reasons badly, or because it is being asked for a wrapper it will
+# not produce?
+#
+# `VIKI_NO_THINK=1` drops the thinking rule and keeps the answer rule, renumbering what is
+# left so the prompt still reads as written. Nothing else changes: the answer format, the
+# examples, the partner prefix and the scoring are untouched, so the arm differs from its
+# think counterpart in exactly one instruction.
+#
+# This is a NEW CONDITION, not a fix. Cells produced under it are not comparable with the
+# 72B batch and must never be merged into the main table.
+THINK_RULE = ("2. You need to first provide your reasoning process within <think> "
+              "and </think> tags.\n")
+ANSWER_RULE_FROM = "3. Your final answer must be within <answer> and </answer> tags"
+ANSWER_RULE_TO = "2. Your final answer must be within <answer> and </answer> tags"
+
+
+def drop_think_rule(messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Remove the thinking instruction from the system message, if asked to."""
+    if os.environ.get("VIKI_NO_THINK", "") != "1":
+        return messages
+    for message in messages:
+        if message.get("role") != "system":
+            continue
+        content = message.get("content")
+        if not isinstance(content, str) or THINK_RULE not in content:
+            continue
+        content = content.replace(THINK_RULE, "", 1)
+        message["content"] = content.replace(ANSWER_RULE_FROM, ANSWER_RULE_TO, 1)
+    return messages
+
+
 def interactive_messages(
     sample: Dict[str, Any], partner_text: str, memory_prompt: str
 ) -> List[Dict[str, Any]]:
@@ -345,7 +391,7 @@ def interactive_messages(
         text_item["text"] = f"{text_item['text']}\n\n{partner_text}"
     else:
         user_message["content"] = f"{content}\n\n{partner_text}"
-    return add_memory_to_messages(messages, memory_prompt)
+    return add_memory_to_messages(drop_think_rule(messages), memory_prompt)
 
 
 MEMORY_ARMS = tuple(arm for arm in ARMS if arm != "zero_shot")
@@ -460,7 +506,7 @@ def run_arm(
         raise GateFailure("A variant runs at the natural stage only")
     freeze()
     manifest = load_manifest()
-    runtime = validate_local_service("qwen2_5_vl_72b", base_url)
+    runtime = validate_local_service(BACKBONE, base_url)
     if runtime["models"][0]["id"] != SERVED_MODEL:
         raise GateFailure("Unexpected served model for Amendment 8")
 
@@ -519,6 +565,10 @@ def run_arm(
 
     done = load_jsonl(paths["results"]) if paths["results"].is_file() else {}
     pending = [index for index in sorted(manifest) if index not in done]
+    # Before the pool starts, and before the first request: the client forks a `file`
+    # subprocess per request to fill a header, and a fork from a worker thread in this
+    # process has wedged the whole run three times. See viki_fork_guard.
+    viki_fork_guard.install()
     client = OpenAI(api_key="EMPTY", base_url=base_url, max_retries=5, timeout=3600)
     if fold:
         import viki_amendment9_fold_memory as foldmem

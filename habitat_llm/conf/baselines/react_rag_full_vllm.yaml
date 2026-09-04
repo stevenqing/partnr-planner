@@ -1,0 +1,16 @@
+# @package _global_
+# PARTNR's own trajectory retrieval over every task type, with the slot actually wired.
+#
+# The first `react_rag` run never retrieved anything -- the few-shot instruct carries no
+# `{rag_examples}` slot -- so the claim it was cited for ("prompt-shaped memory saturates
+# on PARTNR too") was withdrawn, and that run is now used only as a same-configuration
+# replicate that calibrates noise. This arm makes the claim testable: the unrestricted
+# pool of 356 privileged demonstrations, retrieved and shown.
+#
+# Read it against `react_rag_R`, not against us: unrestricted vs rearrange-only is how
+# much the extra task types in the pool were worth.
+
+defaults:
+  - /baselines/react_rag_vllm
+  - override /instruct@evaluation.agents.agent_0.planner.plan_config.instruct: few_shot_decentralized_partial_robot_spatialobjstates_memory_instruct
+  - override /instruct@evaluation.agents.agent_1.planner.plan_config.instruct: few_shot_decentralized_partial_human_spatialobjstates_memory_instruct

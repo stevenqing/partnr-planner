@@ -76,14 +76,24 @@ class LLMPlanner(Planner):
 
         # Build RAG dataset if we want to use RAG
         if self.enable_rag:
-            from habitat_llm.planner.rag import RAG
+            # A memory that is not trajectory retrieval fills the same `{rag_examples}`
+            # slot through the same duck type, so those arms differ from this one in the
+            # memory and not in how the planner consumes it. Named explicitly rather than
+            # probed, so that a broken import fails loudly instead of quietly falling
+            # back to trajectory retrieval and being reported as a memory result.
+            if str(getattr(plan_config, "example_type", "")) in ("gmemory", "memento", "v2_prompt"):
+                from our_method.partnr_baselines.prompt_memory import build_prompt_memory
 
-            self.rag = RAG(
-                plan_config.example_type,
-                plan_config.rag_dataset_dir,
-                plan_config.rag_data_source_name,
-                plan_config.llm,
-            )
+                self.rag = build_prompt_memory(plan_config)
+            else:
+                from habitat_llm.planner.rag import RAG
+
+                self.rag = RAG(
+                    plan_config.example_type,
+                    plan_config.rag_dataset_dir,
+                    plan_config.rag_data_source_name,
+                    plan_config.llm,
+                )
 
     def reset(self):
         """

@@ -31,6 +31,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import os
 import re
 import sys
 import threading
@@ -60,7 +61,13 @@ from viki_amendment11_composer import (
     score,
 )
 
-SERVED_MODEL = "qwen2.5-vl-72b-amendment3-f2"
+# Which backbone this process talks to. One switch drives both the gate key and the
+# served name, because the two disagreeing is exactly how a cell gets written with the
+# wrong model in its metadata: the run would pass the gate against one model and label
+# itself with another. Default is the 72B every archived cell was produced on.
+from viki_amendment5 import BACKBONE, SERVED_MODEL_FOR_BACKBONE  # noqa: E402
+
+SERVED_MODEL = SERVED_MODEL_FOR_BACKBONE
 BASE_URL = "http://192.168.32.40:8050/v1"
 MAX_TOKENS = 900
 TEMPERATURE = 0

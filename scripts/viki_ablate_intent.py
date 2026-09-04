@@ -33,13 +33,15 @@ from viki_amendment11_goalparse import extract_json
 from our_method.skill_memory_v2 import SEED, SkillMemoryV2, Simulator, planner
 from viki_eval_skill_memory_v2 import visits_of
 from viki_eval_v2_intent_choice import to_requirement
+from viki_intent_crew import CREW_CHOICES, casting_of
 
 OUT = ROOT / "results/viki_memory_experiments/amendment11"
 ARMS = {"full": (True, True), "no order": (False, True),
         "no grounding": (True, False), "no order+grounding": (False, False)}
 
 
-def score_one(truth, record, memory, sim, use_order: bool, ground: bool) -> float:
+def score_one(truth, record, memory, sim, use_order: bool, ground: bool,
+              use_crew: bool = False) -> float:
     blind = {k: v for k, v in truth.items() if k != "time_steps"}
     metadata = sim.metadata(blind, SEED)
     env = sim.world(metadata)
@@ -48,7 +50,7 @@ def score_one(truth, record, memory, sim, use_order: bool, ground: bool) -> floa
     if not isinstance(work, list):
         return 0.0
     scene = sorted(metadata["assets"])
-    requirements = []
+    requirements, crew = [], []
     for item in work:
         if not isinstance(item, dict):
             continue
@@ -70,15 +72,24 @@ def score_one(truth, record, memory, sim, use_order: bool, ground: bool) -> floa
                 requirement = None
         if requirement:
             requirements.append(requirement)
+            crew.append([n for n in (item.get("robots") or []) if n in metadata["agents"]])
     if not requirements:
         return 0.0
+    casting = casting_of(requirements, crew, use_crew)
     blind["goal_constraints"] = [[requirement] for requirement in requirements]
     blind["temporal_constraints"] = (
         memory.order_for(requirements, visits_of(env, requirements, memory)) if use_order else []
     )
-    plan, _ = planner.plan(blind, memory, sim, SEED)
+    plan, _ = planner.plan(blind, memory, sim, SEED, crew=casting)
     if plan is None and use_order:
         blind["temporal_constraints"] = []
+        plan, _ = planner.plan(blind, memory, sim, SEED, crew=casting)
+    if plan is None and casting:
+        # A casting the world cannot honour falls back to a free search, as in the run
+        # script; without this the ablation would punish the arm for the scheduler.
+        blind["temporal_constraints"] = (
+            memory.order_for(requirements, visits_of(env, requirements, memory)) if use_order else []
+        )
         plan, _ = planner.plan(blind, memory, sim, SEED)
     return sim.score(plan, truth, SEED) if plan else 0.0
 
@@ -87,6 +98,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--responses", required=True)
     parser.add_argument("--memory", type=Path, default=OUT / "skill_memory_v2.json")
+    parser.add_argument("--crew", choices=CREW_CHOICES, default="memory",
+                        help="who assigns the robots: the memory's search, or the model")
     parser.add_argument("--tag", default=None)
     arguments = parser.parse_args()
 
@@ -100,13 +113,15 @@ def main() -> None:
         truth = bench.get_ground_truth(bench.to_native(frame.iloc[record["index"]].to_dict()))
         row = {"index": record["index"], "task_name": record["task_name"]}
         for arm, (use_order, ground) in ARMS.items():
-            row[arm] = score_one(truth, record, memory, sim, use_order, ground)
+            row[arm] = score_one(truth, record, memory, sim, use_order, ground,
+                                 arguments.crew == "model")
         rows.append(row)
 
     table = pd.DataFrame(rows)
-    tag = arguments.tag or f"{arguments.responses}_ablation"
+    tag = arguments.tag or f"{arguments.responses}_ablation_crew-{arguments.crew}"
     table.to_csv(OUT / f"{tag}.csv", index=False)
     print(f"=== {tag}: layer ablation on {len(table)} rows, same answers throughout ===")
+    print(f"  crew: {arguments.crew}")
     for arm in ARMS:
         hit = int(table[arm].sum())
         print(f"  {arm:<20} {hit:>4}/{len(table)} = {hit / len(table) * 100:6.2f}%")

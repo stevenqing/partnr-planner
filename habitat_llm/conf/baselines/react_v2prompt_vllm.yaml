@@ -1,0 +1,32 @@
+# @package _global_
+# Our own memory, handed to the model as text instead of executed.
+#
+# This is the cell that separates two claims a win for skill memory v2 would otherwise
+# confound: that operators are a better representation than trajectories or knowledge
+# graphs, and that executing a memory beats reading one. Same operator library, same 161
+# rearrange-only rollouts, same `{rag_examples}` slot, same ReAct planner as the three
+# prompt-shaped baselines. Whatever separates this arm from them is representation;
+# whatever separates it from `v2_intent` is executability.
+#
+# The whole library goes in rather than a retrieved subset -- six operators fit, and this
+# way the arm does not lose for want of the right one being retrieved.
+
+defaults:
+  - /baselines/react_vllm
+  - override /instruct@evaluation.agents.agent_0.planner.plan_config.instruct: few_shot_decentralized_partial_robot_spatialobjstates_memory_instruct
+  - override /instruct@evaluation.agents.agent_1.planner.plan_config.instruct: few_shot_decentralized_partial_human_spatialobjstates_memory_instruct
+
+evaluation:
+  agents:
+    agent_0:
+      planner:
+        plan_config:
+          enable_rag: True
+          example_type: "v2_prompt"
+          memory_store: "results/partnr_operators.json"
+    agent_1:
+      planner:
+        plan_config:
+          enable_rag: True
+          example_type: "v2_prompt"
+          memory_store: "results/partnr_operators.json"

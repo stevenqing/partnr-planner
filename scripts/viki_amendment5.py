@@ -69,6 +69,31 @@ BACKBONES: Dict[str, Dict[str, Any]] = {
         "reuse": ["zero_shot", "composed"],
         "expected_new_calls": 1218,
     },
+    "qwen3_vl_30b": {
+        "label": "Qwen3-VL-30B-A3B",
+        "model_id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+        "model_revision": "9c4b90e1e4ba969fd3b5378b57d966d725f1b86c",
+        "served_model": "qwen3-vl-30b",
+        "provider": "local_openai_compatible",
+        "serving_stack": "vLLM, tensor-parallel 4, max_model_len 16384",
+        "arms": ["zero_shot", "trajectory_rag", "skill_memory", "gmemory"],
+        "reuse": [],
+        "expected_new_calls": 1518,
+    },
+    "qwen2_5_vl_7b": {
+        "label": "Qwen2.5-VL-7B",
+        "model_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+        # The name the endpoint on 8061 answers to, which is not the one
+        # `qwen2_5_vl_7b_stock` was filed under -- that entry is left alone so the
+        # cells written against it keep meaning what they meant.
+        "served_model": "qwen2.5-vl-7b",
+        "provider": "local_openai_compatible",
+        "serving_stack": "vLLM, tensor-parallel 1, max_model_len 16384",
+        "arms": ["zero_shot", "trajectory_rag", "skill_memory", "gmemory"],
+        "reuse": [],
+        "expected_new_calls": 1518,
+    },
     "qwen2_5_vl_7b_stock": {
         "label": "Qwen2.5-VL-7B stock",
         "model_id": "Qwen/Qwen2.5-VL-7B-Instruct",
@@ -118,6 +143,21 @@ BACKBONES: Dict[str, Dict[str, Any]] = {
         "optional": True,
     },
 }
+
+# One switch, checked once. `VIKI_BACKBONE` picks the entry every gate and every piece of
+# run metadata is taken from; `VIKI_SERVED_MODEL` is what the upstream module already read
+# before this registry was importable. They are allowed to be set together and are not
+# allowed to disagree -- a run gated against one model and labelled with another is the
+# failure this exists to make impossible.
+BACKBONE = os.environ.get("VIKI_BACKBONE", "qwen2_5_vl_72b")
+if BACKBONE not in BACKBONES:
+    raise KeyError(f"VIKI_BACKBONE={BACKBONE!r} is not in the registry: {sorted(BACKBONES)}")
+_declared = os.environ.get("VIKI_SERVED_MODEL")
+if _declared and _declared != BACKBONES[BACKBONE]["served_model"]:
+    raise RuntimeError(
+        f"VIKI_SERVED_MODEL={_declared!r} contradicts VIKI_BACKBONE={BACKBONE!r}, "
+        f"which serves {BACKBONES[BACKBONE]['served_model']!r}")
+SERVED_MODEL_FOR_BACKBONE = BACKBONES[BACKBONE]["served_model"]
 
 
 class GateFailure(RuntimeError):

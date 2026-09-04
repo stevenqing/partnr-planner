@@ -53,6 +53,13 @@ class FakeWorld:
         self.shut: Dict[str, bool] = {}
         self.beside: Dict[str, str] = {}
         self.at: Dict[int, Optional[str]] = {}
+        # What a pick out of a shut container says. The real skills phrase this in a way
+        # `_repair` recognises; a scenario can replace it with something the ladder has
+        # never seen, which is the case the closed loop exists for.
+        self.shut_pick_message = (
+            "Failed to pick! Object is in a closed furniture, "
+            "you need to open the furniture first."
+        )
 
     # ---- construction
     def room(self, name):
@@ -138,7 +145,7 @@ class FakeWorld:
         if verb == "Pick":
             holder = self.container.get(target)
             if holder and self.shut.get(holder):
-                return "Failed to pick! Object is in a closed furniture, you need to open the furniture first."
+                return self.shut_pick_message
             if any(held == uid for held in self.held.values()):
                 return "Failed to pick! Your hands are full."
             self.held[target] = uid
@@ -340,7 +347,30 @@ def scenario_capability(world: FakeWorld):
     ]
 
 
+def scenario_unrecognised_refusal(world: FakeWorld):
+    """The cupboard case again, but the refusal is phrased in words the ladder cannot read.
+
+    `_repair` is keyed on the phrases the shipped skills use. A refusal outside that
+    vocabulary is not repairable, and the open-loop composer answers it by counting the
+    requirement down to `retry_limit` and abandoning it -- with the body that would have
+    worked sitting unused in the memory the whole time. Closed-loop, the refusal costs the
+    *body* rather than the requirement: it is burned, the next one opens the cupboard, and
+    the work gets done. Both arms are handed the same memory and the same world, so the
+    difference between them is only what a refusal is taken to mean.
+    """
+    (world.room("kitchen_1").room("living_room_1")
+        .furniture("counter_1", "kitchen_1").furniture("cabinet_1", "kitchen_1", shut=True)
+        .furniture("table_1", "living_room_1").floor("floor_kitchen_1", "kitchen_1")
+        .obj("cup_1", "cabinet_1"))
+    world.shut_pick_message = "Failed to pick! Something is in the way."
+    return [
+        {"key": "is_on_top", "subject": "cup_1", "target": "table_1",
+         "alternatives": ["table_1"], "next_to": None, "proposition": 0},
+    ]
+
+
 SCENARIOS = {
+    "unrecognised_refusal": scenario_unrecognised_refusal,
     "shut_cupboard": scenario_shut_cupboard,
     "spatial": scenario_spatial,
     "partner_beat_me": scenario_partner_beat_me,
@@ -353,7 +383,8 @@ NEEDS_FULL_MEMORY = {"capability"}
 INTERRUPTS = {"partner_beat_me": interrupt_partner_beat_me}
 
 
-def run(name: str, operators: str, steps: int, verbose: bool) -> Dict[str, Any]:
+def run(name: str, operators: str, steps: int, verbose: bool,
+        closed_loop: bool = False) -> Dict[str, Any]:
     world = FakeWorld()
     requirements = SCENARIOS[name](world)
     install_stubs(world)
@@ -364,7 +395,9 @@ def run(name: str, operators: str, steps: int, verbose: bool) -> Dict[str, Any]:
     environment = FakeEnvInterface(uids)
     planners = []
     for uid in uids:
-        planner = SkillMemoryV2Planner({"operators": operators, "goal_source": "given"}, environment)
+        planner = SkillMemoryV2Planner(
+            {"operators": operators, "goal_source": "given", "closed_loop": closed_loop},
+            environment)
         planner.agents = [FakeAgent(uid)]
         planner.episode_id = "selftest"
         planner._build_from(requirements, GraphView(world, uid))
@@ -392,6 +425,8 @@ def run(name: str, operators: str, steps: int, verbose: bool) -> Dict[str, Any]:
         "split": {planner.uid: sorted(planner.mine) for planner in planners},
         "folded_spatial": planners[0].folded_spatial,
         "abandoned": {planner.uid: sorted(planner.abandoned) for planner in planners},
+        "closed_loop": closed_loop,
+        "replans": {planner.uid: sum(planner.replans.values()) for planner in planners},
         "notes": {planner.uid: planner.notes for planner in planners},
     }
     if verbose:
@@ -405,6 +440,8 @@ def main() -> None:
     parser.add_argument("--full-operators", default="results/partnr_operators_train_mini_all.json",
                         help="library used for scenarios that need a state-change operator")
     parser.add_argument("--scenario", default=None, choices=sorted(SCENARIOS))
+    parser.add_argument("--closed-loop", action="store_true",
+                        help="run with the composer replanning instead of abandoning")
     parser.add_argument("--steps", type=int, default=60)
     parser.add_argument("--verbose", action="store_true")
     arguments = parser.parse_args()
@@ -415,7 +452,8 @@ def main() -> None:
         library = (
             arguments.full_operators if name in NEEDS_FULL_MEMORY else arguments.operators
         )
-        outcome = run(name, library, arguments.steps, arguments.verbose)
+        outcome = run(name, library, arguments.steps, arguments.verbose,
+                      closed_loop=arguments.closed_loop)
         ok = outcome["satisfied"] == outcome["requirements"]
         failures += 0 if ok else 1
         print(f"{'PASS' if ok else 'FAIL'}  {name}")

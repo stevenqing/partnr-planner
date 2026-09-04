@@ -51,7 +51,13 @@ M1_CACHE_PATH = AMENDMENT2_DIR / "m1_embeddings_all_mpnet_base_v2.npz"
 
 MODEL_ID = "Qwen/Qwen2.5-VL-72B-Instruct"
 MODEL_REVISION = "89c86200743eec961a297729e7990e8f2ddbc4c5"
-SERVED_MODEL = "qwen2.5-vl-72b-amendment3-f2"
+# Which backbone this process talks to. One switch drives both the gate key and the
+# served name, because the two disagreeing is exactly how a cell gets written with the
+# wrong model in its metadata: the run would pass the gate against one model and label
+# itself with another. Default is the 72B every archived cell was produced on.
+# `viki_amendment5` owns the backbone registry and imports from this module, so the
+# name is taken from the environment here and checked against the registry there.
+SERVED_MODEL = os.environ.get("VIKI_SERVED_MODEL") or "qwen2.5-vl-72b-amendment3-f2"
 SEED = 20260814
 CONTEXT_LENGTH = 16384
 MAX_OUTPUT_TOKENS = 2000

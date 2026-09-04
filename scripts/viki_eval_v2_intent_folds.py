@@ -28,11 +28,12 @@ from our_method.skill_memory_v2 import SEED, SkillMemoryV2, Simulator, planner
 from our_method.skill_memory_v2.build import build, load_episodes
 from viki_eval_skill_memory_v2 import visits_of
 from viki_eval_v2_intent_choice import to_requirement
+from viki_intent_crew import CREW_CHOICES, collect, solve as solve_with_crew
 
 OUT = ROOT / "results/viki_memory_experiments/amendment11"
 
 
-def solve(truth, record, memory, sim):
+def solve(truth, record, memory, sim, use_crew: bool = False):
     blind = {k: v for k, v in truth.items() if k != "time_steps"}
     metadata = sim.metadata(blind, SEED)
     env = sim.world(metadata)
@@ -41,16 +42,13 @@ def solve(truth, record, memory, sim):
     if not isinstance(work, list):
         return 0.0, "UNPARSEABLE"
     scene = sorted(metadata["assets"])
-    requirements = [r for r in (to_requirement(memory, item, scene)
-                                for item in work if isinstance(item, dict)) if r]
+    requirements, crew = collect(work, to_requirement, memory, scene, metadata)
     if not requirements:
         return 0.0, "NO_USABLE_WORK"
-    blind["goal_constraints"] = [[requirement] for requirement in requirements]
-    blind["temporal_constraints"] = memory.order_for(requirements, visits_of(env, requirements, memory))
-    plan, reason = planner.plan(blind, memory, sim, SEED)
-    if plan is None:
-        blind["temporal_constraints"] = []
-        plan, reason = planner.plan(blind, memory, sim, SEED)
+    temporal = memory.order_for(requirements, visits_of(env, requirements, memory))
+    plan, reason, _ = solve_with_crew(
+        blind, memory, sim, SEED, requirements, crew, temporal, use_crew
+    )
     accuracy = sim.score(plan, truth, SEED) if plan else 0.0
     if plan and accuracy == 0.0:
         reason = "OVER_BUDGET" if len(plan) > len(truth["time_steps"]) else "GOAL_UNMET"
@@ -60,6 +58,8 @@ def solve(truth, record, memory, sim):
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--responses", required=True, help="tag of an intent run's jsonl")
+    parser.add_argument("--crew", choices=CREW_CHOICES, default="memory",
+                        help="who assigns the robots: the memory's search, or the model")
     parser.add_argument("--tag", default=None)
     arguments = parser.parse_args()
 
@@ -81,7 +81,8 @@ def main() -> None:
         for record in by_family[family]:
             truth = bench.get_ground_truth(bench.to_native(frame.iloc[record["index"]].to_dict()))
             for arm, memory in (("fold", fold), ("full", full)):
-                accuracy, reason = solve(truth, record, memory, sim)
+                accuracy, reason = solve(truth, record, memory, sim,
+                                         arguments.crew == "model")
                 totals[(arm, family)][0] += int(accuracy == 1.0)
                 totals[(arm, family)][1] += 1
                 rows.append({"index": record["index"], "task_name": family, "arm": arm,
@@ -89,9 +90,9 @@ def main() -> None:
         print(f"{family:<48} fold={totals[('fold', family)][0]}/{totals[('fold', family)][1]}"
               f"  full={totals[('full', family)][0]}/{totals[('full', family)][1]}", flush=True)
 
-    tag = arguments.tag or f"{arguments.responses}_folds"
+    tag = arguments.tag or f"{arguments.responses}_folds_crew-{arguments.crew}"
     pd.DataFrame(rows).to_csv(OUT / f"{tag}.csv", index=False)
-    print(f"\n=== {tag}: held-out family, intent interface ===")
+    print(f"\n=== {tag}: held-out family, intent interface, crew={arguments.crew} ===")
     print(f"{'family':<48}{'fold memory':>22}{'full memory':>22}")
     for family in sorted(by_family):
         line = f"{family:<48}"

@@ -54,9 +54,11 @@ AMENDMENT5_DIR = ROOT / "results/viki_memory_experiments/amendment5"
 AMENDMENT5_1_DIR = ROOT / "results/viki_memory_experiments/amendment5_1"
 AMENDMENT1_DIR = ROOT / "results/viki_memory_experiments/amendment1"
 ID_SLICE_PATH = AMENDMENT1_DIR / "a5_id_safety_manifest.parquet"
-SERVED_MODEL = BACKBONES["qwen2_5_vl_72b"]["served_model"]
-MODEL_ID = BACKBONES["qwen2_5_vl_72b"]["model_id"]
-MODEL_REVISION = BACKBONES["qwen2_5_vl_72b"]["model_revision"]
+from viki_amendment5 import BACKBONE, SERVED_MODEL_FOR_BACKBONE  # noqa: E402
+
+SERVED_MODEL = SERVED_MODEL_FOR_BACKBONE
+MODEL_ID = BACKBONES[BACKBONE]["model_id"]
+MODEL_REVISION = BACKBONES[BACKBONE]["model_revision"]
 SEED = 20260814
 TOKEN_TOLERANCE = 0.05
 OOD_ROWS = 1218
@@ -293,7 +295,7 @@ def validate_reused_source(
 
 def preflight(split: str, base_url: str) -> Dict[str, Any]:
     prereg = require_preregistration()
-    runtime = validate_local_service("qwen2_5_vl_72b", base_url)
+    runtime = validate_local_service(BACKBONE, base_url)
     if int(runtime["models"][0]["max_model_len"]) < MIN_CONTEXT_LENGTH:
         raise GateFailure("Amendment 6 requires at least 16,384 context tokens")
     (
@@ -599,7 +601,7 @@ def run_arm(split: str, arm: str, base_url: str, workers: int) -> Dict[str, Any]
         raise GateFailure(
             "Required Amendment 6 order is incomplete: " + ", ".join(missing_prior)
         )
-    runtime = validate_local_service("qwen2_5_vl_72b", base_url)
+    runtime = validate_local_service(BACKBONE, base_url)
     preflight_path = OUTPUT_DIR / f"qwen2_5_vl_72b.{split}.preflight.jsonl"
     preflight_summary_path = preflight_path.with_suffix(".summary.json")
     if not preflight_path.is_file() or not preflight_summary_path.is_file():

@@ -88,7 +88,14 @@ class RAG:
                     first_enter = False
 
         if self._example_type == "react" or self._example_type == "summary":
-            consider_agent_id_list = [0]
+            # Both agents, not just agent 0. `retrieve_top_k_given_query` is called with
+            # the asking planner's own uid and then filters `data_dict` by it, so loading
+            # agent 0 alone leaves agent 1 with an empty tensor list and the decentralized
+            # two-agent baseline cannot take a single step. Nothing upstream noticed
+            # because the few-shot decentralized instructs carry no `{rag_examples}` slot,
+            # so this retrieval path had never been reached. The per-agent trace directory
+            # this loop reads from is already laid out per agent.
+            consider_agent_id_list = [0, 1]
         if self._example_type == "zero_shot":
             agent_id = 0
             for epid in select_epid_list:

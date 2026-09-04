@@ -18,6 +18,7 @@ import pandas as pd
 from openai import OpenAI
 from viki_amendment3_f2 import exact_mcnemar_p
 from viki_amendment5 import (
+    BACKBONES,
     BENCHMARK_ROOT,
     DATA_ROOT,
     H0_PATH,
@@ -134,7 +135,13 @@ MODE_B_SHADOW_RERANK_CALLS = MODE_A_RERANK_CALLS
 MODE_B_LIVE_RERANK_CALLS = MODE_A_RERANK_CALLS
 MODEL_ID = "Qwen/Qwen2.5-VL-72B-Instruct"
 MODEL_REVISION = "89c86200743eec961a297729e7990e8f2ddbc4c5"
-SERVED_MODEL = "qwen2.5-vl-72b-amendment3-f2"
+# Which backbone this process talks to. One switch drives both the gate key and the
+# served name, because the two disagreeing is exactly how a cell gets written with the
+# wrong model in its metadata: the run would pass the gate against one model and label
+# itself with another. Default is the 72B every archived cell was produced on.
+from viki_amendment5 import BACKBONE, SERVED_MODEL_FOR_BACKBONE  # noqa: E402
+
+SERVED_MODEL = SERVED_MODEL_FOR_BACKBONE
 MEMORY_CONTROL_TEMPERATURE = 0.1
 MEMORY_CONTROL_MAX_TOKENS = 512
 PLAN_MAX_TOKENS = 2000
@@ -616,7 +623,7 @@ def validate_train_preparation() -> Dict[int, Dict[str, Any]]:
 def condense_train(base_url: str, workers: int) -> Dict[str, Any]:
     require_frozen()
     interactions = validate_train_preparation()
-    runtime = validate_local_service("qwen2_5_vl_72b", base_url)
+    runtime = validate_local_service(BACKBONE, base_url)
     if runtime["models"][0]["id"] != SERVED_MODEL:
         raise GateFailure("Unexpected 72B served model for Amendment 7")
     indices = sorted(interactions)
@@ -825,7 +832,7 @@ def build_train_hierarchy(base_url: str) -> Dict[str, Any]:
     condensations = load_jsonl(TRAIN_CONDENSATIONS_PATH)
     if set(condensations) != set(interactions):
         raise GateFailure("Train condensation coverage is incomplete")
-    runtime = validate_local_service("qwen2_5_vl_72b", base_url)
+    runtime = validate_local_service(BACKBONE, base_url)
     if runtime["models"][0]["id"] != SERVED_MODEL:
         raise GateFailure("Unexpected 72B served model for Amendment 7")
     embedding_cache = np.load(TRAIN_EMBEDDINGS_PATH, allow_pickle=False)
@@ -1434,7 +1441,7 @@ def frozen_preflight(
             else OUTPUT_DIR / "mode_B.ood.summary.json"
         )
         require_completed_run(required_prior, ID_ROWS if split == "ood" else OOD_ROWS)
-    runtime = validate_local_service("qwen2_5_vl_72b", base_url)
+    runtime = validate_local_service(BACKBONE, base_url)
     if runtime["models"][0]["id"] != SERVED_MODEL:
         raise GateFailure("Unexpected 72B served model for Amendment 7")
     state = load_frozen_hierarchy()
@@ -1747,7 +1754,7 @@ def require_completed_run(summary_path: Path, expected_rows: int) -> Dict[str, A
 
 def run_mode_a(split: str, base_url: str, workers: int) -> Dict[str, Any]:
     require_frozen()
-    runtime = validate_local_service("qwen2_5_vl_72b", base_url)
+    runtime = validate_local_service(BACKBONE, base_url)
     state = load_frozen_hierarchy()
     hierarchy_sha256 = state.hierarchy_sha256()
     if split == "id":
@@ -1937,7 +1944,7 @@ def run_mode_b(split: str, base_url: str) -> Dict[str, Any]:
         else OUTPUT_DIR / "mode_B.ood.summary.json"
     )
     require_completed_run(required_prior, ID_ROWS if split == "ood" else OOD_ROWS)
-    runtime = validate_local_service("qwen2_5_vl_72b", base_url)
+    runtime = validate_local_service(BACKBONE, base_url)
     if runtime["models"][0]["id"] != SERVED_MODEL:
         raise GateFailure("Unexpected 72B served model for Amendment 7")
     state = load_frozen_hierarchy()

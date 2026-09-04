@@ -31,6 +31,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "our_method"))
 import pandas as pd
 from openai import OpenAI
 
+import viki_fork_guard
+
 from habitat_llm.evaluation import viki_bench as bench
 from viki_amendment5 import BENCHMARK_ROOT, atomic_json, file_sha256, messages_sha256
 from viki_amendment6 import GateFailure
@@ -115,6 +117,10 @@ def run(variant: str, arm: str, base_url: str, workers: int, tag: str) -> Dict[s
     if not manifest:
         raise GateFailure(f"No usable rows in the {variant} split")
     scorer = bench.load_official_scorer(2, BENCHMARK_ROOT)
+    # See viki_fork_guard: one fork per request, from a pool worker, in a process with
+    # torch resident -- the hang that has twice stopped this runner with an idle
+    # endpoint and a zero-byte output.
+    viki_fork_guard.install()
     client = OpenAI(base_url=base_url, api_key="EMPTY")
 
     name = f"{arm}.{tag}" if tag else arm

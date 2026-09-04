@@ -38,7 +38,26 @@ def main() -> None:
     parser.add_argument("--split", default="train_mini")
     parser.add_argument("--out", default="results/rag_source_train_mini")
     parser.add_argument("--link", action="store_true", help="symlink the traces instead of copying")
+    parser.add_argument(
+        "--types", nargs="*", default=None,
+        help="keep only episodes of these task types (e.g. R). Omit for every type.")
+    parser.add_argument("--task-types", default="results/partnr_task_types.json",
+                        help="the classification written by scripts/partnr_task_types.py")
     arguments = parser.parse_args()
+
+    # A pool restricted by task type is what puts a prompt-shaped baseline on the same
+    # compositional axis as skill memory v2. The operators were induced from the
+    # rearrange-only half of this split, so a retrieval pool holding every type is a
+    # baseline that has seen spatial and temporal work the operators never did -- the
+    # unrestricted arm answers "is retrieval enough", the restricted one answers "does
+    # this memory compose", and only the second is the paper's question.
+    keep = None
+    if arguments.types:
+        classification = json.loads(Path(arguments.task_types).read_text())[arguments.split]
+        keep = {str(episode) for kind in arguments.types
+                for episode in classification.get(kind, [])}
+        if not keep:
+            raise SystemExit(f"no {arguments.split} episodes of type {arguments.types}")
 
     source = Path(arguments.results) / f"{arguments.split}.json.gz"
     out = Path(arguments.out)
@@ -48,6 +67,8 @@ def main() -> None:
     rows, successes, read, unusable = [], 0, 0, 0
     for path in sorted((source / "stats").glob("*.json")):
         read += 1
+        if keep is not None and path.stem not in keep:
+            continue
         try:
             record = json.loads(path.read_text())
             if not record.get("success"):
@@ -98,7 +119,8 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(rows)
 
-    print(f"read {read} stats, wrote {len(rows)} rows, {unusable} unusable")
+    kept = "every type" if keep is None else f"types {arguments.types} ({len(keep)} episodes)"
+    print(f"read {read} stats, kept {kept}, wrote {len(rows)} rows, {unusable} unusable")
     print(f"retrievable examples (state_success == 1): {successes}")
     print(f"pool at {out}  (rag_dataset_dir=['{out}/'], rag_data_source_name=['{arguments.split}.json.gz'])")
 

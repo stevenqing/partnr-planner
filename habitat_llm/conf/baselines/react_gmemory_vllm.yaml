@@ -1,0 +1,36 @@
+# @package _global_
+# G-Memory as the memory, the ReAct planner as the consumer.
+#
+# The hierarchical trajectory graph and its distilled insights are built from the same 161
+# rearrange-only train_mini rollouts skill memory v2 induces its operators from, by
+# scripts/partnr_build_baseline_memories.py, using the authors' own prompts out of
+# third_party/GMemory and the hyperparameters the VIKI-L2 arm used. It is rendered into
+# the same `{rag_examples}` slot as trajectory retrieval, behind the same wrapper
+# sentence, so this arm differs from react_rag_R in the memory and in nothing else.
+#
+# The instruct override is not cosmetic: `LLMPlanner` only consults the memory when the
+# prompt contains `{rag_examples}`, and the stock few-shot decentralized instructs do not.
+# Without it this arm builds a retriever and never shows the model a single retrieved
+# thing -- which is exactly what the first `react_rag` run did.
+
+defaults:
+  - /baselines/react_vllm
+  - override /instruct@evaluation.agents.agent_0.planner.plan_config.instruct: few_shot_decentralized_partial_robot_spatialobjstates_memory_instruct
+  - override /instruct@evaluation.agents.agent_1.planner.plan_config.instruct: few_shot_decentralized_partial_human_spatialobjstates_memory_instruct
+
+evaluation:
+  agents:
+    agent_0:
+      planner:
+        plan_config:
+          enable_rag: True
+          example_type: "gmemory"
+          memory_store: "results/partnr_gmemory_train_mini_R.json"
+          memory_device: "cpu"
+    agent_1:
+      planner:
+        plan_config:
+          enable_rag: True
+          example_type: "gmemory"
+          memory_store: "results/partnr_gmemory_train_mini_R.json"
+          memory_device: "cpu"
