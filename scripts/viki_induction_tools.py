@@ -266,6 +266,69 @@ class Workbench:
                 "predicate_name": target["predicate_name"], "runner": runner,
                 "runners_tried": attempts}
 
+    # ------------------------------------------------- the ordering oracle
+    def _ordering_probe(self, probe: int):
+        """Episodes that are *known* to have an ordering, with their world built once.
+
+        The episode's own `temporal_constraints` are training-set ground truth, so asking
+        whether a memory recovers them needs no model and no reference library. Cached
+        because the acceptance test calls this on every submission.
+        """
+        key = ("ordering_probe", probe)
+        if key in self._traces:
+            return self._traces[key]
+        from our_method.skill_memory_v2 import planner as planner_module
+
+        rows = []
+        for index in range(min(probe, len(self.episodes))):
+            episode = self.episodes[index]
+            if not isinstance(episode, dict) or not episode.get("time_steps"):
+                continue
+            if not (episode.get("temporal_constraints") or []):
+                continue
+            blind = {k: v for k, v in episode.items() if k != "time_steps"}
+            metadata = self.sim.metadata(blind, self.seed)
+            env = self.sim.world(metadata)
+            requirements = [r["predicate"] for r in planner_module.collect_requirements(metadata)]
+            rows.append((index, env, requirements))
+        self._traces[key] = rows
+        return rows
+
+    def ordering_score(self, operators: List[Dict[str, Any]], probe: int = 200):
+        """How often this library emits an ordering on episodes known to have one.
+
+        This is the one property that separates a carrying operator from a short one, and
+        no other test in this workbench can see it. `run_operator` cannot: both achieve the
+        effect. The marginal-coverage test cannot either -- on the induction half the
+        episode's own goals carry their own temporal constraints, so `order_for` is never
+        consulted and the deficiency never shows. Measured: the 7-operator agent library
+        scores 40/71, the same library plus one carrying `is_activated` operator scores
+        71/71, and so does the reference.
+
+        What it does NOT check is whether the emitted ordering is *correct*; it checks that
+        one is emitted at all. That is the difference the visit sets create, and sharpening
+        it further would need the episode's constraint graph compared edge by edge.
+        """
+        from viki_eval_skill_memory_v2 import visits_of
+
+        memory = SkillMemoryV2({
+            "format": FORMAT, "built_from": "ordering_probe", "excluded_family": None,
+            "seed": self.seed, "per_family": 0, "layer1": {"operators": operators},
+            "layer2": self.reference_layers.get("layer2", {"rules": []}),
+            "layer3": self.reference_layers.get("layer3", {})})
+        rows = self._ordering_probe(probe)
+        emitted, seen = 0, 0
+        for index, env, requirements in rows:
+            try:
+                order = memory.order_for(requirements, visits_of(env, requirements, memory))
+            except Exception:
+                continue
+            seen += 1
+            if order and any(len(group) > 1 for group in order):
+                emitted += 1
+        return {"episodes_with_a_known_ordering": seen, "memory_emits_one": emitted,
+                "rate": round(emitted / seen, 4) if seen else None}
+
     def plan_with(self, operators: List[Dict[str, Any]], index: int):
         record = {"format": FORMAT, "built_from": "workbench", "excluded_family": None,
                   "seed": self.seed, "per_family": 0, "layer1": {"operators": operators},

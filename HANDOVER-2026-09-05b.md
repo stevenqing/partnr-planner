@@ -120,3 +120,74 @@ agent 算子库的完整测量链条。轮次多、工具调用密集。(精确 
 - **`sed` 全局替换会误伤**:改 driver 时把"产出的库"也一起换成了"输入的库",查 grep 才发现。
 
 (更早的坑见 `HANDOVER-2026-09-05.md` 及更前,仍然有效。)
+
+---
+
+## 六、09-05 20:40 复核（另一个会话追加）
+
+对上面「二、现场」的复核。**这一节里有一条是我自己先搞错又更正的，连过程一起留着。**
+
+### 1. 三次重复与 no-think 已经打过分了（我一度以为没有）
+
+我先查了 09-04 交接点名的 `outputs/p0_30b_report.json`，发现它只覆盖 `m30`
+（`m30r2`/`m30r3`/`m30nt*` 各 0 次），就下了「48 格生成了从没打过分」的结论。**错的。**
+`outputs/p0_30b_repeats.json`（**09-05 00:19**，`scripts/viki_p0_repeats.py`）
+早就把五个 tag 全打完了，think 和 nothink 两块都在。
+
+**我犯的正是这个仓库记了三次的那个错**：在一个地方没找到信号，就当成到处都没有。
+正确动作是先 `ls outputs/` 找同类产物，再说「缺」。
+
+两条路径独立算出的数**逐格一致**，算是一次意外的交叉验证。清点之后：
+
+    scripts/viki_p0_repeats.py   outputs/p0_30b_repeats.json      ← 00:19，正本汇总表
+    outputs/p0_30b_report.<tag>.json  ×5                          ← 20:28，**保留**
+    scripts/viki_p0_repeats_table.py + outputs/p0_repeats_table.* ← 20:32，**已删**
+
+**保留那五份不是冗余**：正本只有汇总（`cells`/`think`/`nothink`），而它们带
+`per_index` 逐行 0/1 明细（12 格 × 924/297 行），**跨重复做配对检验必须用这个**。
+真正重复的只有汇总表那一份，已删掉。
+
+`scripts/viki_p0_report.py` 新增了 opt-in `--tag`（默认 `m30`，
+**已自证默认路径与打补丁前逐字节相同**）：主报表脚本原先把 `m30` 写死，
+现在能直接指向任一 tag，不必再另写脚本。
+
+### 2. 60 格的完整性是干净的（这一条是新验的）
+
+行数 924/297 全对，**索引唯一性 0 格不合格** —— 没有 09-03 那种 594 行覆盖 297 索引的事故。
+
+### 3. no-think 的结论（与另一会话独立得出、数值一致）
+
+    method (ID)       think          no-think        parseable
+    G-Memory          15.55 ± 0.50   30.34 ± 0.49    99.78 -> 100.00
+    skill memory v1   14.61 ± 0.29   20.71 ± 0.49    95.20 ->  99.93
+    trajectory RAG     7.58 ± 0.57    3.75 ± 0.23    96.39 -> 100.00
+    zero-shot          0.76 ± 0.29    0.87 ± 0.11    90.66 ->  99.60
+
+方向不齐（G-Memory 翻倍、trajectory RAG 砍半），所以不是"去掉思考块之后格式变干净"。
+**「G-Memory 掉 36 点」必须限定为 think 条件**，memory 已收窄。详见
+`viki-l2-crossmodel-baselines`。
+
+### 4. 「二、现场」有三处已过期
+
+- **git 不再是 `dee67ea` / 45 处未提交**，现在是 `4c689f0`（"Docs: the induction protocol,
+  two handovers, and the freeze broken four times"），**10 处未提交**。「下一步」第 1 条已完成。
+- **8050 端点已经掉了**（这份写"三个端点都在线"）。现在只有 8061（7B）、8062（30B）。
+- `viki_ordering_overnight` **20:13:34 已自行跑完**，PARTNR 侧现在没有作业在跑。
+- GPU 仍是「只剩 0 空着」，这条没变。
+
+### 5. `pgrep -f` 自匹配第 6 次，两个看守空转了 1 天 4 小时
+
+    until ! pgrep -f "viki_agentic_inducer.py" > /dev/null 2>&1; do sleep 20; done
+
+`pgrep -af` 实测把这两个看守**自己的 `bash -c` 命令行**列为匹配，而真正的
+`viki_agentic_inducer.py` 进程一个都没有 → 循环永不退出。PID 935054 等了 **1-04:48**，
+971528 等了 **1-04:34**。所幸它们后面只挂了两条打印状态的 `grep`，没排作业，损失为零。
+**两个都已按 PID kill 掉**（没用任何 `pgrep` 模式），已复核退出。
+
+第 6 次，而且就写在这份交接自己的坑清单里。**写进文档挡不住它 ——
+等进程只用 `while kill -0 <pid>`，别写模式。**
+
+### 6. 两个会话在并发改同一条 memory
+
+`viki-l2-crossmodel-baselines` 今晚被两个会话各写了一遍，出现了讲同一件事的重复小节
+（已合并去重）。**同一时间只让一个会话写 memory**，否则合并成本比写还高。

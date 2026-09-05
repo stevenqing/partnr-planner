@@ -152,6 +152,16 @@ def main():
     # actually short of. Unset, the run is byte-identical to the frozen cell.
     parser.add_argument("--library", type=Path, default=None,
                         help="admit only operators that add coverage to this library")
+    # Coverage is not the only thing a library can be short of. An operator whose body
+    # visits more of the scene lets Layer 2 infer an ordering the short one cannot, and
+    # NO other test here can see that difference: `run_operator` cannot, because both
+    # achieve the effect; the coverage test cannot, because on the induction half the
+    # episodes' own goals carry their temporal constraints and `order_for` is never
+    # consulted. Measured, the gap is 40/71 against 71/71. With this flag an operator is
+    # admitted for a coverage gain OR an ordering gain -- it must still add something
+    # measured, and it is still the simulator and the training episodes that decide.
+    parser.add_argument("--accept-ordering", action="store_true",
+                        help="also admit an operator that raises the ordering score")
     args = parser.parse_args()
 
     viki_fork_guard.install()
@@ -197,6 +207,10 @@ def main():
                 solved_before[j] = False
 
     task = (TASK % (TOOLS, args.moves)) + "\n\nStart from episode index %d." % args.seed_episode
+    ordering_before = None
+    if library_operators and args.accept_ordering:
+        ordering_before = bench.ordering_score(library_operators)
+
     if library_operators:
         unsolved = [j for j, ok in solved_before.items() if not ok]
         task += ("\n\nA memory of %d operators already exists and it CANNOT solve episodes %s."
@@ -204,6 +218,15 @@ def main():
                  " only if adding it to that memory makes at least one of those episodes"
                  " solvable. An operator that repeats what the memory already does will be"
                  " refused, however well it works." % (len(library_operators), unsolved))
+    if ordering_before is not None:
+        task += ("\n\nThere is a second way to be accepted. Some training episodes are known"
+                 " to require one thing to happen before another. The memory infers that"
+                 " ordering from which entities an operator's body touches, so a body that"
+                 " touches more of the scene can recover an ordering a shorter body cannot."
+                 " Right now the memory recovers %d of %d such orderings. An operator that"
+                 " raises that count is accepted even if it solves no new episode."
+                 % (ordering_before["memory_emits_one"],
+                    ordering_before["episodes_with_a_known_ordering"]))
     if args.target_key:
         task += ("\n\nThe operator you submit must have effect key %r. Episodes that "
                  "demonstrate it are the ones you were given; a submission with any other "
@@ -266,6 +289,15 @@ def main():
                         if after["official_score"] >= 1.0:
                             gained.append(j)
                     result["episodes_newly_solved"] = gained
+                    ordering_after = None
+                    if ordering_before is not None:
+                        ordering_after = bench.ordering_score(library_operators + [operator])
+                        result["ordering_before"] = ordering_before["memory_emits_one"]
+                        result["ordering_after"] = ordering_after["memory_emits_one"]
+                        if ordering_after["memory_emits_one"] > ordering_before["memory_emits_one"]:
+                            gained = gained or ["ordering:+%d" % (
+                                ordering_after["memory_emits_one"]
+                                - ordering_before["memory_emits_one"])]
                     if not gained:
                         # Naming what the memory already holds, and naming a repeat as a
                         # repeat. Without this the refusal said only "adds no coverage",
@@ -282,12 +314,16 @@ def main():
                                 "another actor in the episode -- `contrast_actors` shows every "
                                 "robot's sequence -- or at an episode where this body fails.")
                         else:
-                            result["note"] = (
-                                "this achieves its effect but adds no coverage: the memory "
-                                "already contains %s. A different body is needed, not a better "
-                                "argument for this one. `contrast_actors` shows what each robot "
-                                "in the episode did; they are often not the same."
-                                % (held or "an equivalent operator"))
+                            note = ("this achieves its effect but adds no coverage: the memory "
+                                    "already contains %s. A different body is needed, not a "
+                                    "better argument for this one. `contrast_actors` shows what "
+                                    "each robot in the episode did; they are often not the same."
+                                    % (held or "an equivalent operator"))
+                            if ordering_after is not None:
+                                note += (" It also recovers no new ordering (%d, unchanged): a "
+                                         "body that touches more of the scene would."
+                                         % ordering_after["memory_emits_one"])
+                            result["note"] = note
                         record["result"] = result
                         transcript.append(record)
                         verdict["moves_used"] = move

@@ -54,16 +54,23 @@ METHODS = [
 SPLITS = ["id", "imaged", "text"]
 
 
+# The 30B cell tag. "m30" is repeat 1 of the think condition and is what the archived
+# report was built from; "m30r2"/"m30r3" are its repeats. The "m30nt*" family is the
+# no-think condition -- a NEW CONDITION, never pooled with the think cells. Opt-in:
+# with the default, every resolved path is byte-identical to before this argument existed.
+TAG = "m30"
+
+
 def cell_path(model: str, method: Tuple[str, str, str], split: str) -> Optional[Path]:
     _, id_stem, recomb_stem = method
     if model == "72B":
         return (A8B / f"{id_stem}.jsonl" if split == "id"
                 else A10 / split / f"{recomb_stem}.jsonl")
     if split == "id":
-        stem = f"{id_stem}_m30" if id_stem.endswith("k8") else f"{id_stem}.m30"
+        stem = f"{id_stem}_{TAG}" if id_stem.endswith("k8") else f"{id_stem}.{TAG}"
         return A8B / f"{stem}.jsonl"
     stem = "skill_memory" if recomb_stem.startswith("skill_memory") else recomb_stem
-    return A10 / split / f"{stem}.m30.jsonl"
+    return A10 / split / f"{stem}.{TAG}.jsonl"
 
 
 def mcnemar(a: Dict[int, int], b: Dict[int, int]) -> Tuple[int, int, float]:
@@ -82,7 +89,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--models", nargs="+", default=["72B", "30B"])
     parser.add_argument("--json", type=Path, default=None)
+    parser.add_argument("--tag", default="m30",
+                        help="30B cell tag: m30 (default), m30r2, m30r3, "
+                             "m30nt, m30ntr2, m30ntr3. The no-think tags are a "
+                             "separate condition and are never pooled with think.")
     arguments = parser.parse_args()
+    global TAG
+    TAG = arguments.tag
 
     sim = Simulator(BENCHMARK_ROOT)
     frames = {

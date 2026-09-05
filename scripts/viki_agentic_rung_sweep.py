@@ -27,6 +27,7 @@ parser.add_argument("--target-key", default=None)
 # episode the library cannot solve become solvable. Unset, commands are byte-identical to
 # the frozen sweep's.
 parser.add_argument("--library", default=None)
+parser.add_argument("--accept-ordering", action="store_true")
 args = parser.parse_args()
 
 root = Path("outputs/agentic_rung_sweep") / args.label
@@ -51,6 +52,8 @@ def run(job):
         command += ["--target-key", args.target_key]
     if args.library:
         command += ["--library", args.library]
+    if args.accept_ordering:
+        command += ["--accept-ordering"]
     started = time.time()
     proc = subprocess.run(command, capture_output=True, text=True, timeout=5400)
     verdict_path = Path("outputs/agentic_rung") / tag / "verdict.json"
