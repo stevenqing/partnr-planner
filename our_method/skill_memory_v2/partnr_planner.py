@@ -738,6 +738,25 @@ class SkillMemoryV2Planner(Planner):
             self.current, self.chain = index, actions
             self.idle_rounds = 0
             return
+        # Nothing claimable from what this agent can currently see. Under partial
+        # observation that is ignorance far more often than idleness, and the explore
+        # branch above only answers it for requirements this planner had to bind itself:
+        # privileged requirements arrive already bound, so `_bind` returns early and that
+        # branch never fires for them. An agent whose objects are all still unseen then
+        # finds nothing to do on its very first call and reports done -- and when the
+        # partner does the same, the runner ends the episode at step 0 with nothing
+        # attempted. 70 of 366 `val_mini` episodes died exactly that way, every one of
+        # them scoring zero. So while work remains, go and look. `idle_rounds` keeps
+        # rising rather than resetting, because exploring is not claiming: the agent
+        # should still become willing to take over the partner's share on schedule while
+        # it searches.
+        if self.unexplored and any(
+            index not in self.done_indices and index not in self.abandoned
+            for index in range(len(self.requirements))
+        ):
+            self.current, self.chain = None, [["Explore", self.unexplored.pop(0)]]
+            self.idle_rounds += 1
+            return
         self.current, self.chain = None, []
         self.idle_rounds += 1
 
@@ -891,13 +910,18 @@ class SkillMemoryV2Planner(Planner):
             verb, argument = self.chain[0]
             self.last_high_level_actions = {self.uid: (verb, argument, "")}
             return
-        # Nothing claimable. Report done and issue no action at all, rather than idling
-        # in the simulator: `Wait` is a skill that costs 600 simulation steps every time
-        # it succeeds, and an agent whose partner is doing the remaining work would spend
-        # the episode's whole budget standing still. Being done is re-decided from the
-        # world on every call -- `_advance` clears it at the top -- so this agent picks
-        # work straight back up if the partner fails or an ordering guard clears, and the
-        # runner only ends the episode when *every* planner says done at the same moment.
+        # Nothing claimable and nowhere left to look. Report done and issue no action at
+        # all, rather than idling in the simulator: `Wait` is a skill that costs 600
+        # simulation steps every time it succeeds, and an agent whose partner is doing the
+        # remaining work would spend the episode's whole budget standing still.
+        #
+        # Being done is re-decided from the world on every call -- `_advance` clears it at
+        # the top -- so this agent picks work straight back up if the partner fails or an
+        # ordering guard clears. That re-decision is *not* a safety net for reporting done
+        # too eagerly, though, and reading it as one is what let the step-0 death above go
+        # unnoticed: the runner ends the episode the moment every planner says done at
+        # once, so a premature done that both agents reach together is never revisited.
+        # By the time control arrives here the agent has searched every room it knows of.
         self.is_done = True
         self.last_high_level_actions = {self.uid: ("Done", None, None)}
 

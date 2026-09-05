@@ -22,6 +22,8 @@ ROOT=/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner
 PY=/root/venvs/partnr/bin/python
 SPLIT=val_mini
 PROCS=${PROCS:-20}
+# Pass GPU= explicitly: 1 was free when this was written and is not any more. Check
+# `nvidia-smi` before launching -- a busy card here means an OOM an hour in.
 GPU=${GPU:-1}
 OUT=outputs/sweep_remeasured/$SPLIT
 
@@ -57,5 +59,16 @@ run v2_memory_R    baselines/skill_memory_v2_oracle_goals.yaml $(both operators 
 run v2_memory_all  baselines/skill_memory_v2_oracle_goals.yaml $(both operators $ALL)
 run v2_R_nofold    baselines/skill_memory_v2_oracle_goals.yaml $(both operators $R) $(both allow_spatial_composition False)
 run v2_R_noorder   baselines/skill_memory_v2_oracle_goals.yaml $(both operators $R) $(both use_episode_order False)
+# The sixth cell of that batch, added 09-04 when the re-measured table went to be quoted
+# and this row was the only one still carrying a 09-02 number. `repair_limit` is a code
+# default rather than a config key, hence the `+`.
+#
+# The archive ran this one at num_proc=16 while the rest of the batch ran at 20. It is
+# re-measured at 20, matching the other four, because what it has to be comparable with is
+# the table it is going into -- not the archived row it replaces.
+run v2_retry       baselines/skill_memory_v2_oracle_goals.yaml $(both operators $R) \
+    $(both retry_limit 6) \
+    +evaluation.agents.agent_0.planner.plan_config.repair_limit=10 \
+    +evaluation.agents.agent_1.planner.plan_config.repair_limit=10
 
 say "re-measurement finished -> $OUT"

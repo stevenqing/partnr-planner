@@ -164,6 +164,22 @@ def run_eval(config):
             config=config.habitat.dataset, episodes=incomplete_episodes
         )
 
+    # Filter to an explicit set of episode ids. Unlike `episode_indices` this runs before
+    # the multiprocessing chunk split, so a targeted rerun of a handful of episodes still
+    # gets the full `num_proc`; and unlike `+resume` it does not need a partially
+    # populated results directory to aim at. Added to re-measure the 70 `val_mini`
+    # episodes that the planner used to abandon at step 0.
+    if config.get("episode_id_filter", None) is not None:
+        wanted = {str(x) for x in config.episode_id_filter}
+        episode_subset = [x for x in dataset.episodes if str(x.episode_id) in wanted]
+        missing = wanted - {str(x.episode_id) for x in episode_subset}
+        if missing:
+            raise ValueError(f"episode_id_filter names episodes not in the split: {sorted(missing)}")
+        print(f"Episode id filter: {len(episode_subset)} of {len(dataset.episodes)} episodes")
+        dataset = CollaborationDatasetV0(
+            config=config.habitat.dataset, episodes=episode_subset
+        )
+
     # filter episodes by mod for running on multiple nodes
     if config.get("episode_mod_filter", None) is not None:
         rem, mod = config.episode_mod_filter
