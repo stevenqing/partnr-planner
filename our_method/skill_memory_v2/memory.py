@@ -64,8 +64,12 @@ class SkillMemoryV2:
             targets = [t for role in operator["roles"] for item in role["actions"] for t in item["action"][1:]]
         else:
             targets = [t for action in operator["body"] for t in action[1:]]
+        # A target is normally a token. A malformed body can nest a list there, and this
+        # used to raise AttributeError mid-build rather than refusing the operator; an
+        # operator we cannot read is exactly one that must not enter the library.
         return bool(targets) and all(
-            t.startswith("?") and not t.startswith("?agent") for t in targets
+            isinstance(t, str) and t.startswith("?") and not t.startswith("?agent")
+            for t in targets
         )
 
     def operators_for(self, effect_key: str, facts: Dict[str, bool], coordinated: bool = False):

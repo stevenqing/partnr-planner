@@ -438,3 +438,114 @@ none of the 24 comp cells -- so any difference between them can only appear on I
 That cell was produced under memory dispatch (`e2e_agentic_runner.csv` carries no
 `cast_by_model` column). Memory dispatch is no longer reported, so the number is not
 superseded by a better one -- it is withdrawn, and no replacement is sought for it.
+
+## REFROZEN 2026-09-06: ordering enters the gate, and libraries are built per family
+
+### Why the gate changed
+
+Three libraries built under the previous freeze differed by exactly one operator and scored
+**0.862 against 0.327** on recombination text -- and the gate registered no difference at
+all. The coverage test asks whether a holdout episode's goal is reached; a body that
+achieves its effect while visiting too little of the scene reaches the goal, so the test
+passes it, while Layer 2 is left unable to infer any ordering from its visit set. The gate
+could not see the one property that decided the column.
+
+**An episode now counts as unsolved unless the ordering its own `temporal_constraints` call
+for is actually emitted.** `Workbench.ordering_ok(operators, index)` is the per-episode form
+of `ordering_score`; the signal comes from the episode's own constraints and the library, so
+no model, no reference library and no test split enter it. Both `solved_before` and
+`episodes_newly_solved` use the combined criterion, which is what lets "the missing carrying
+variant" count as a coverage gain.
+
+Measured on the eight cutting holdout episodes, old gate against new:
+
+    library        e273 e278 e294 e298 e266 e268 e290 e293
+    seed20260901   S/S  S/S  S/S  S/S  S/S  S/S  S/S  S/S     holds the carrying variant
+    seed20260902   S/.  S/.  S/.  S/.  S/.  S/.  S/.  S/.
+    seed20260903   S/.  S/.  S/.  S/.  S/.  S/.  S/.  S/.
+    reference      S/S  S/S  S/S  S/S  S/S  S/S  S/S  S/S     known-correct, still passes
+
+The old gate is identical across all four. The new one separates them and still admits the
+reference everywhere, so it is not refusing correct operators. `--no-ordering-gate`
+reproduces the old behaviour.
+
+Also fixed: `memory.py:_usable` raised `AttributeError` when a malformed body nested a list
+where a token belongs, killing a build mid-run. A body we cannot read is exactly one that
+must be refused, so it is now refused rather than raised.
+
+### The sweep, v2
+
+One library per family, one build seed (20260901), no seed axis: variance is not estimated
+and the report says so. Each family's sweep sees only that family's elementary episodes, so
+the leakage constraint holds by construction -- a family library's seeds, unsolved list and
+support pool cannot contain another family's rows, let alone a comp row.
+
+    56 runs per family, split evenly across the effect schemas that family demonstrates
+    seed episodes  ascending workbench index over that family's elementary episodes
+    holdout        the next four of the same family and schema that are not seeds
+    9 families x 56 = 504 runs, plus 56 for the no-trace control
+
+**Nine families, not eight.** The eight are the families the ID test split contains. The
+recombination column needs `comp(cut+delivery)`, and the delivery family is
+`single_move_asset_to_target` by the audit's L1 division -- which is training-only and so is
+not among the eight. The ninth library is built and named rather than folded in silently.
+
+### Combining libraries, which is not the same rule for the three layers
+
+`scripts/viki_union_library.py`. Layer 1 is unioned, deduplicated by effect schema and body
+signature, provenance merged, and **support recomputed on the union's own episode pool** --
+the per-family counts are neither carried over nor summed. Layers 2 and 3 are **not**
+unioned: they are re-mined and re-harvested on that column's pool, thresholds unchanged.
+That is sound because mining is Layer-1-independent by construction (`dependencies.mine` and
+`vocabulary.harvest` take no library), so those layers are a property of the pool. A
+held-out-family column therefore never sees the held-out family in any layer.
+
+### The superseded libraries are kept
+
+The three libraries built under the coverage-only gate are retained as the evidence for why
+the ordering gate was added: one of three found the carrying variant, and that one scored
+0.862 on comp text against 0.327 for the other two, with the gate blind to the difference.
+
+## PARTNR 2026-09-07: the acceptance criterion does not exist yet
+
+An attempt to open the same ladder on PARTNR was stopped before any sweep ran, by the check
+this project now runs first: send the known-correct answers through the criterion.
+
+PARTNR rollouts carry actions and no world state, so there is no counterfactual replay. The
+strongest available test is `predicts` -- match a body's verb sequence against some agent's
+recorded actions on a rollout it was not derived from, bind the variables to the entities
+those actions name, and ask whether the recording says that proposition became true. Scored
+over the 21 factory operators and two deliberately broken variants of each:
+
+    variant       n    matched>=5   precision
+    factory      21       12        0.0 0.0 0.12 0.16 0.16 0.17 0.27 0.27 0.5 0.67 0.7 0.73 0.73 0.92 0.94 0.95 1.0 1.0
+    reversed     21        9        0.0 0.0 0.0 0.0 0.0 0.09 0.17 0.25 0.25 0.5 0.56 0.84 1.0 1.0
+    key-swapped  21       10        0.0 0.0 0.0 0.33 0.4 0.5 0.5 0.5 0.5 0.67 0.75 0.75 0.89 1.0 1.0 1.0
+
+    threshold 0.5   factory passes  6/21   broken passes 12/42
+    threshold 0.6   factory passes  6/21   broken passes  7/42
+    threshold 0.7   factory passes  6/21   broken passes  7/42
+    threshold 0.8   factory passes  3/21   broken passes  5/42
+
+**The distributions overlap completely, and at every threshold more broken operators pass
+than correct ones.** A correct but specialised long body mis-matches widely (a factory
+`Navigate/Pick/Navigate/Place/Navigate/Pick...` scores 0.16); a wrong body that happens to
+land on a common action sequence scores high.
+
+This does not contradict the 2026-09-05 two-way calibration, and the difference is worth
+stating because it is easy to misread -- as it was here. That calibration is **paired**: a
+given operator scores 0.92 and its own reversed body scores 0.17. Damaging an operator
+lowers its score. But an acceptance gate faces a newly proposed operator with no "itself" to
+compare against, so it needs an **absolute** threshold, and absolutely the two classes are
+not separable. A paired calibration was read as licensing an absolute gate.
+
+`scripts/partnr_agentic_rung.py` is kept as the record of the attempt; its acceptance test is
+refuted by the table above and must not be used as written.
+
+**What remains available** is the route this document already named: the adjudication is the
+outer gate. Operators are not admitted one at a time against a per-operator test; a candidate
+library is assembled and scored by running the privileged PARTNR sweep against the clean
+baseline (`v2_memory_R` 0.7319 absolute, 0.804 mean comp). Task score is objective and does
+not depend on the criterion that just failed. The cost is that credit assignment returns to
+the whole library, which is what the local oracles existed to avoid -- so the design has to
+recover it some other way, and that is the open question.

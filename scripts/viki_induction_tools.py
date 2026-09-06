@@ -303,6 +303,45 @@ class Workbench:
         self._traces[key] = rows
         return rows
 
+    def ordering_ok(self, operators: List[Dict[str, Any]], index: int):
+        """Does this episode require an ordering, and does this library emit one?
+
+        The per-episode form of `ordering_score`, so the acceptance gate can count an
+        episode unsolved when the ordering Layer 2's rules call for is never emitted --
+        which is invisible to every other test here. `run_operator` cannot see it (a short
+        body and a carrying body both achieve the effect) and the coverage test cannot
+        either (on the induction half the episode's own goals carry their constraints, so
+        `order_for` is never consulted).
+
+        Reads the episode's own `temporal_constraints`, which are training-set ground
+        truth, plus the library. No model, no reference library, no test split.
+        """
+        from viki_eval_skill_memory_v2 import visits_of
+        from our_method.skill_memory_v2 import planner as planner_module
+
+        truth = self.episodes[index]
+        if not isinstance(truth, dict) or not (truth.get("temporal_constraints") or []):
+            return False, False
+        key = ("ordering_row", index)
+        if key not in self._traces:
+            blind = {k: v for k, v in truth.items() if k != "time_steps"}
+            metadata = self.sim.metadata(blind, self.seed)
+            env = self.sim.world(metadata)
+            requirements = [r["predicate"]
+                            for r in planner_module.collect_requirements(metadata)]
+            self._traces[key] = (env, requirements)
+        env, requirements = self._traces[key]
+        memory = SkillMemoryV2({
+            "format": FORMAT, "built_from": "ordering_probe", "excluded_family": None,
+            "seed": self.seed, "per_family": 0, "layer1": {"operators": operators},
+            "layer2": self.reference_layers.get("layer2", {"rules": []}),
+            "layer3": self.reference_layers.get("layer3", {})})
+        try:
+            order = memory.order_for(requirements, visits_of(env, requirements, memory))
+        except Exception:                                            # noqa: BLE001
+            return True, False
+        return True, bool(order and any(len(group) > 1 for group in order))
+
     def ordering_score(self, operators: List[Dict[str, Any]], probe: int = 200):
         """How often this library emits an ordering on episodes known to have one.
 

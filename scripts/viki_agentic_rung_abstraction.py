@@ -182,6 +182,12 @@ def main():
     # consulted. Measured, the gap is 40/71 against 71/71. With this flag an operator is
     # admitted for a coverage gain OR an ordering gain -- it must still add something
     # measured, and it is still the simulator and the training episodes that decide.
+    parser.add_argument("--coverage-pool", type=int, nargs="*", default=None,
+                        help="family episodes the marginal test ranges over; the holdout "
+                             "is always included")
+    parser.add_argument("--no-ordering-gate", action="store_true",
+                        help="score an episode solved on its goal alone, as before "
+                             "2026-09-06; kept so the old gate can be reproduced")
     parser.add_argument("--no-traces", action="store_true",
                         help="leakage control arm (d): predicate menu only, no episode data")
     parser.add_argument("--accept-ordering", action="store_true",
@@ -224,13 +230,34 @@ def main():
     library_operators = []
     if args.library:
         library_operators = json.loads(Path(args.library).read_text())["operators"]
-    solved_before = {}
+    def episode_solved(operators, j):
+        """Solved means the goal is reached AND the ordering the episode calls for is emitted.
+
+        Added 2026-09-06. The coverage-only gate could not see a body that is too short: an
+        operator that achieves its effect while visiting too little of the scene leaves
+        Layer 2 unable to infer any ordering. The first three libraries built under the old
+        gate differed by exactly that operator and scored 0.86 against 0.33 on
+        recombination, and the gate registered no difference at all. The signal comes from
+        the episode's own `temporal_constraints` and the library -- no model, no reference
+        library, no test split.
+        """
+        try:
+            goal_ok = bench.plan_with(operators, j)["official_score"] >= 1.0
+        except Exception:                                            # noqa: BLE001
+            return False, None
+        if args.no_ordering_gate:
+            return goal_ok, None
+        requires, emitted = bench.ordering_ok(operators, j)
+        return bool(goal_ok and (not requires or emitted)), (requires, emitted)
+
+    # The marginal test ranges over the family's coverage pool, which contains the holdout.
+    # Restricted to four episodes it saturated after the first operator and refused every
+    # later variant; see the 2026-09-07 note in the sweep definition.
+    coverage_pool = sorted(set(args.coverage_pool or []) | set(args.holdout))
+    solved_before, ordering_detail = {}, {}
     if library_operators:
-        for j in args.holdout:
-            try:
-                solved_before[j] = bench.plan_with(library_operators, j)["official_score"] >= 1.0
-            except Exception:
-                solved_before[j] = False
+        for j in coverage_pool:
+            solved_before[j], ordering_detail[j] = episode_solved(library_operators, j)
 
     if args.no_traces:
         # The task text tells the reader to look at a trace and to check with `try_bind`.
@@ -321,15 +348,15 @@ def main():
                 gained = None
                 if library_operators and len(works) >= 2:
                     gained = []
-                    for j in args.holdout:
+                    for j in coverage_pool:
                         if solved_before.get(j):
                             continue
-                        try:
-                            after = bench.plan_with(library_operators + [operator], j)
-                        except Exception:
-                            continue
-                        if after["official_score"] >= 1.0:
+                        now, _ = episode_solved(library_operators + [operator], j)
+                        if now:
                             gained.append(j)
+                            break                 # one gain is enough; stop paying for more
+                    result["ordering_detail_before"] = {
+                        str(k): v for k, v in ordering_detail.items()}
                     result["episodes_newly_solved"] = gained
                     ordering_after = None
                     if ordering_before is not None:
