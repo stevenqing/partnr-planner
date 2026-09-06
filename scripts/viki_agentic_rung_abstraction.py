@@ -19,7 +19,7 @@ from viki_induction_tools import Workbench
 from our_method.skill_memory_v2.simulator import SEED
 
 TOOLS = """
-{"tool": "list_episodes", "args": {"family": null, "limit": 10}}
+{"tool": "list_episodes", "args": {"family": null, "limit": 10, "start": 0}}
 {"tool": "show_trace", "args": {"index": 0, "max_steps": 12}}
     the replayed episode: each step's actions per robot, what each robot carried, and the
     completions -- for every predicate the episode is judged on, the step it became true,
@@ -38,6 +38,28 @@ TOOLS = """
     binds on that episode, executes the bound body in the simulator, and reports whether
     the effect then holds.
 {"submit": {...the operator...}}
+"""
+
+# Arm (d) of the leakage control (docs/AGENTIC-OPERATOR-INDUCTION.md §5.3): the predicate
+# vocabulary and the primitive verbs, and no episode data at all. If a library built this way
+# scores like the one built from traces, the operators came from pretraining and the word
+# "memory" does not apply. Acceptance is unchanged and still mechanical -- the harness runs
+# the same test; the model simply cannot see the episodes while proposing.
+TOOLS_NO_TRACE = """
+{"submit": {...the operator...}}
+"""
+
+NO_TRACE_NOTE = """
+You have NO access to the demonstrations. No tool will show you an episode, a trace, an
+actor, or the result of executing anything. Propose the operator from the vocabulary below
+alone, and submit it.
+
+Predicate vocabulary of the training episodes:
+  pos.name       an object ends up at a named place
+  is_activated   an object is used, operated, switched on, or cut with
+
+Primitive verbs available to a body:
+  Move, Reach, Grasp, Place, Open, Interact, Push
 """
 
 TASK = """You are deriving one reusable operator from a replayed robot demonstration.
@@ -160,6 +182,8 @@ def main():
     # consulted. Measured, the gap is 40/71 against 71/71. With this flag an operator is
     # admitted for a coverage gain OR an ordering gain -- it must still add something
     # measured, and it is still the simulator and the training episodes that decide.
+    parser.add_argument("--no-traces", action="store_true",
+                        help="leakage control arm (d): predicate menu only, no episode data")
     parser.add_argument("--accept-ordering", action="store_true",
                         help="also admit an operator that raises the ordering score")
     args = parser.parse_args()
@@ -174,12 +198,14 @@ def main():
     outdir = Path("outputs/agentic_rung") / args.tag
     outdir.mkdir(parents=True, exist_ok=True)
 
-    KNOWN_TOOLS = {"list_episodes", "show_trace", "contrast_actors", "check_actor",
-                   "try_bind", "run_operator"}
+    KNOWN_TOOLS = (set() if args.no_traces else
+                   {"list_episodes", "show_trace", "contrast_actors", "check_actor",
+                    "try_bind", "run_operator"})
 
     def call(name, kwargs):
         if name == "list_episodes":
-            return bench.list_episodes(kwargs.get("family"), int(kwargs.get("limit", 10)))
+            return bench.list_episodes(kwargs.get("family"), int(kwargs.get("limit", 10)),
+                                       int(kwargs.get("start", 0)))
         if name == "show_trace":
             return bench.show_trace(int(kwargs["index"]), int(kwargs.get("max_steps", 12)))
         if name == "contrast_actors":
@@ -206,7 +232,23 @@ def main():
             except Exception:
                 solved_before[j] = False
 
-    task = (TASK % (TOOLS, args.moves)) + "\n\nStart from episode index %d." % args.seed_episode
+    if args.no_traces:
+        # The task text tells the reader to look at a trace and to check with `try_bind`.
+        # Left in place under arm (d) that is a contradiction, and a control that fails
+        # because its prompt was incoherent would not be evidence about pretraining. The
+        # two sentences are replaced; nothing else about the task changes.
+        coherent = TASK.replace(
+            "Work with the tools below. Look at a trace, decide who achieved which predicate"
+            " and over\nwhich actions, then write the body so it transfers. Use the tools to"
+            " check your answer\nbefore submitting -- `try_bind` and `run_operator` will tell"
+            " you exactly why something was\nrefused.",
+            "Write the body from the vocabulary below so that it transfers. You cannot"
+            " inspect any\ndemonstration and you cannot test a candidate; submit the"
+            " operator you judge correct.")
+        assert coherent != TASK, "no-trace task rewrite did not apply"
+        task = (coherent % (TOOLS_NO_TRACE, args.moves)) + NO_TRACE_NOTE
+    else:
+        task = (TASK % (TOOLS, args.moves)) + "\n\nStart from episode index %d." % args.seed_episode
     ordering_before = None
     if library_operators and args.accept_ordering:
         ordering_before = bench.ordering_score(library_operators)

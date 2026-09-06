@@ -1,0 +1,790 @@
+{
+ "frozen_on": "2026-09-05",
+ "inducer_model": "Qwen2.5-VL-72B",
+ "inducer_note": "72B only. The superseded library mixed 72B and 30B inducers, which was debugging history; this is a new configuration and does not inherit from it. The evaluation still runs three models.",
+ "target_keys": [
+  "pos.name",
+  "is_activated"
+ ],
+ "per_key": 28,
+ "build_seeds": [
+  20260901,
+  20260902,
+  20260903
+ ],
+ "runs_per_library": 56,
+ "runs_total": 168,
+ "moves_per_run": 18,
+ "temperature": 0.7,
+ "max_calls_total": 3024,
+ "seed_episode_rule": "round-robin across families sorted by name, within family by ascending workbench index, over elementary induction-half episodes demonstrating the target effect and replaying cleanly",
+ "elementary_rule": "induction half, replay OK, task_id not in comp_297, and not carrying the held-out combination (audit decisive detector)",
+ "elementary_episodes": 3596,
+ "selection": {
+  "pos.name": {
+   "families_available": [
+    "clear_table_with_two_robots_and_put_in_cabinet",
+    "dog_push_box_for_two_panda_transport",
+    "ensure_all_fruits_on_table",
+    "parallel_human_dual_asset_to_plate_or_bowl",
+    "sequential_pick_two_and_place",
+    "serve_bread_after_checking_cabinet",
+    "serve_bread_from_counter",
+    "set_plate_and_fork_on_table",
+    "single_move_asset_to_target",
+    "toast_bread_and_set_plate",
+    "wash_fruit_and_serve"
+   ],
+   "episodes_available": 2941,
+   "picked": 28
+  },
+  "is_activated": {
+   "families_available": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "dog_check_environment",
+    "toast_bread_and_set_plate"
+   ],
+   "episodes_available": 846,
+   "picked": 28
+  }
+ },
+ "acceptance": "marginal contribution (--library), rungs processed in the fixed order below, each seed's library grown incrementally",
+ "holdout_rule": "per rung, the four lowest-indexed elementary episodes of the same family demonstrating the same target key that are not seed episodes for that key; the shipped default [4,6,8,10] is not used",
+ "holdout_per_rung": 4,
+ "pool_hashes": {
+  "L0_induction_half.json": "ca07f39af3a1ec697e4130673e9f441a7b41d20f51a9bdad67edb368334529a7",
+  "L0_support_pool.json": "a106095b97bb7cc93dabd3cfff4d79fafa23b1bebefb737af80b2c8da0f279f3"
+ },
+ "rungs": [
+  {
+   "target_key": "pos.name",
+   "seed_episode": 31,
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet",
+   "task_id": "4741_5-1",
+   "holdout": [
+    67,
+    68,
+    73,
+    76
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 2,
+   "task_name": "dog_push_box_for_two_panda_transport",
+   "task_id": "558_13-2",
+   "holdout": [
+    44,
+    65,
+    243,
+    263
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 10,
+   "task_name": "ensure_all_fruits_on_table",
+   "task_id": "5573_12-3",
+   "holdout": [
+    29,
+    35,
+    36,
+    41
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 16,
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl",
+   "task_id": "1607_2-1",
+   "holdout": [
+    30,
+    59,
+    60,
+    113
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 0,
+   "task_name": "sequential_pick_two_and_place",
+   "task_id": "2361_6-1",
+   "holdout": [
+    61,
+    81,
+    102,
+    147
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 7,
+   "task_name": "serve_bread_after_checking_cabinet",
+   "task_id": "1742_10-1",
+   "holdout": [
+    90,
+    127,
+    130,
+    169
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 1,
+   "task_name": "serve_bread_from_counter",
+   "task_id": "1367_10-2",
+   "holdout": [
+    80,
+    97,
+    154,
+    156
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 21,
+   "task_name": "set_plate_and_fork_on_table",
+   "task_id": "2376_3-1",
+   "holdout": [
+    69,
+    112,
+    116,
+    136
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 3,
+   "task_name": "single_move_asset_to_target",
+   "task_id": "71_1-2",
+   "holdout": [
+    11,
+    14,
+    20,
+    49
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 4,
+   "task_name": "toast_bread_and_set_plate",
+   "task_id": "6835_4-1",
+   "holdout": [
+    39,
+    107,
+    119,
+    125
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 9,
+   "task_name": "wash_fruit_and_serve",
+   "task_id": "635_7-2",
+   "holdout": [
+    32,
+    33,
+    38,
+    53
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 34,
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet",
+   "task_id": "4634_5-1",
+   "holdout": [
+    67,
+    68,
+    73,
+    76
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 8,
+   "task_name": "dog_push_box_for_two_panda_transport",
+   "task_id": "4018_13-2",
+   "holdout": [
+    44,
+    65,
+    243,
+    263
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 19,
+   "task_name": "ensure_all_fruits_on_table",
+   "task_id": "2917_12-1",
+   "holdout": [
+    29,
+    35,
+    36,
+    41
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 23,
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl",
+   "task_id": "2974_2-1",
+   "holdout": [
+    30,
+    59,
+    60,
+    113
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 40,
+   "task_name": "sequential_pick_two_and_place",
+   "task_id": "3733_6-1",
+   "holdout": [
+    61,
+    81,
+    102,
+    147
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 72,
+   "task_name": "serve_bread_after_checking_cabinet",
+   "task_id": "54_10-1",
+   "holdout": [
+    90,
+    127,
+    130,
+    169
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 42,
+   "task_name": "serve_bread_from_counter",
+   "task_id": "456_10-2",
+   "holdout": [
+    80,
+    97,
+    154,
+    156
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 27,
+   "task_name": "set_plate_and_fork_on_table",
+   "task_id": "3866_3-1",
+   "holdout": [
+    69,
+    112,
+    116,
+    136
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 5,
+   "task_name": "single_move_asset_to_target",
+   "task_id": "6112_1-1",
+   "holdout": [
+    11,
+    14,
+    20,
+    49
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 17,
+   "task_name": "toast_bread_and_set_plate",
+   "task_id": "2923_4-1",
+   "holdout": [
+    39,
+    107,
+    119,
+    125
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 18,
+   "task_name": "wash_fruit_and_serve",
+   "task_id": "1505_7-1",
+   "holdout": [
+    32,
+    33,
+    38,
+    53
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 57,
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet",
+   "task_id": "4614_5-2",
+   "holdout": [
+    67,
+    68,
+    73,
+    76
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 43,
+   "task_name": "dog_push_box_for_two_panda_transport",
+   "task_id": "3908_13-2",
+   "holdout": [
+    44,
+    65,
+    243,
+    263
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 28,
+   "task_name": "ensure_all_fruits_on_table",
+   "task_id": "1571_12-1",
+   "holdout": [
+    29,
+    35,
+    36,
+    41
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 25,
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl",
+   "task_id": "3232_2-1",
+   "holdout": [
+    30,
+    59,
+    60,
+    113
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 52,
+   "task_name": "sequential_pick_two_and_place",
+   "task_id": "4155_6-1",
+   "holdout": [
+    61,
+    81,
+    102,
+    147
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "pos.name",
+   "seed_episode": 79,
+   "task_name": "serve_bread_after_checking_cabinet",
+   "task_id": "561_10-1",
+   "holdout": [
+    90,
+    127,
+    130,
+    169
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 6,
+   "task_name": "cut_fruit_on_board",
+   "task_id": "5179_8-2",
+   "holdout": [
+    71,
+    88,
+    98,
+    99
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 24,
+   "task_name": "cut_two_fruits_on_board",
+   "task_id": "462_9-1",
+   "holdout": [
+    189,
+    198,
+    212,
+    219
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 46,
+   "task_name": "dog_check_environment",
+   "task_id": "660_13-1",
+   "holdout": [
+    384,
+    412,
+    430,
+    459
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 4,
+   "task_name": "toast_bread_and_set_plate",
+   "task_id": "6835_4-1",
+   "holdout": [
+    144,
+    150,
+    170,
+    209
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 12,
+   "task_name": "cut_fruit_on_board",
+   "task_id": "399_8-1",
+   "holdout": [
+    71,
+    88,
+    98,
+    99
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 48,
+   "task_name": "cut_two_fruits_on_board",
+   "task_id": "7680_9-1",
+   "holdout": [
+    189,
+    198,
+    212,
+    219
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 47,
+   "task_name": "dog_check_environment",
+   "task_id": "2318_13-1",
+   "holdout": [
+    384,
+    412,
+    430,
+    459
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 17,
+   "task_name": "toast_bread_and_set_plate",
+   "task_id": "2923_4-1",
+   "holdout": [
+    144,
+    150,
+    170,
+    209
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 13,
+   "task_name": "cut_fruit_on_board",
+   "task_id": "2639_8-1",
+   "holdout": [
+    71,
+    88,
+    98,
+    99
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 50,
+   "task_name": "cut_two_fruits_on_board",
+   "task_id": "1861_9-1",
+   "holdout": [
+    189,
+    198,
+    212,
+    219
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 56,
+   "task_name": "dog_check_environment",
+   "task_id": "3000_13-1",
+   "holdout": [
+    384,
+    412,
+    430,
+    459
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 39,
+   "task_name": "toast_bread_and_set_plate",
+   "task_id": "5664_4-1",
+   "holdout": [
+    144,
+    150,
+    170,
+    209
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 15,
+   "task_name": "cut_fruit_on_board",
+   "task_id": "6095_8-2",
+   "holdout": [
+    71,
+    88,
+    98,
+    99
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 82,
+   "task_name": "cut_two_fruits_on_board",
+   "task_id": "2597_9-1",
+   "holdout": [
+    189,
+    198,
+    212,
+    219
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 86,
+   "task_name": "dog_check_environment",
+   "task_id": "4308_13-1",
+   "holdout": [
+    384,
+    412,
+    430,
+    459
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 107,
+   "task_name": "toast_bread_and_set_plate",
+   "task_id": "2035_4-1",
+   "holdout": [
+    144,
+    150,
+    170,
+    209
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 22,
+   "task_name": "cut_fruit_on_board",
+   "task_id": "4846_8-2",
+   "holdout": [
+    71,
+    88,
+    98,
+    99
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 91,
+   "task_name": "cut_two_fruits_on_board",
+   "task_id": "889_9-1",
+   "holdout": [
+    189,
+    198,
+    212,
+    219
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 264,
+   "task_name": "dog_check_environment",
+   "task_id": "4389_13-1",
+   "holdout": [
+    384,
+    412,
+    430,
+    459
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 119,
+   "task_name": "toast_bread_and_set_plate",
+   "task_id": "2937_4-1",
+   "holdout": [
+    144,
+    150,
+    170,
+    209
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 26,
+   "task_name": "cut_fruit_on_board",
+   "task_id": "6143_8-2",
+   "holdout": [
+    71,
+    88,
+    98,
+    99
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 129,
+   "task_name": "cut_two_fruits_on_board",
+   "task_id": "6325_9-1",
+   "holdout": [
+    189,
+    198,
+    212,
+    219
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 308,
+   "task_name": "dog_check_environment",
+   "task_id": "2251_13-1",
+   "holdout": [
+    384,
+    412,
+    430,
+    459
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 125,
+   "task_name": "toast_bread_and_set_plate",
+   "task_id": "2779_4-1",
+   "holdout": [
+    144,
+    150,
+    170,
+    209
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 37,
+   "task_name": "cut_fruit_on_board",
+   "task_id": "1576_8-1",
+   "holdout": [
+    71,
+    88,
+    98,
+    99
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 133,
+   "task_name": "cut_two_fruits_on_board",
+   "task_id": "2014_9-1",
+   "holdout": [
+    189,
+    198,
+    212,
+    219
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 346,
+   "task_name": "dog_check_environment",
+   "task_id": "4157_13-1",
+   "holdout": [
+    384,
+    412,
+    430,
+    459
+   ],
+   "holdout_short": false
+  },
+  {
+   "target_key": "is_activated",
+   "seed_episode": 143,
+   "task_name": "toast_bread_and_set_plate",
+   "task_id": "1508_4-1",
+   "holdout": [
+    144,
+    150,
+    170,
+    209
+   ],
+   "holdout_short": false
+  }
+ ],
+ "definition_sha256": "d2b9c30d72b6b50e2e74b5c26e8e67654af21d5d3afd2058485a009076f68039"
+}

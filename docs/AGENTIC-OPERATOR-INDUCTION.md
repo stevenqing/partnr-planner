@@ -360,3 +360,81 @@ ability to derive an operator under verification and the ability to use one are 
 capability and do not scale together.** Fifteen runs per model is enough to separate 0% from
 40% and not enough to separate 40% from 40%; a difference between 72B and 30B, if there is
 one, would need more runs.
+
+## REFROZEN 2026-09-05b: the sweep is defined, and induction is 72B only
+
+The results line is now the agent library alone. Rule-based replay induction is no longer
+part of the method and memory-based role assignment is no longer reported, so every cell has
+to be rebuilt on a sweep that is defined rather than inherited.
+
+**The thirteen rung tags the previous library was assembled from are discarded.** They were
+created while repairing the harness (`72b_iface_*`, `72b_runner_*`, family-targeted cells);
+they are debugging history and inheriting them would make the sweep a record of what went
+wrong rather than a design.
+
+**The definition** (`scripts/viki_frozen_sweep.py`, emitted to `results/frozen_sweep.json`,
+sha256 `d2b9c30d72b6b50e`):
+
+    rung set        = target effect schema x seed episode
+    target schemas  = pos.name, is_activated          (the benchmark's only two)
+    seed episodes   = 28 per schema, drawn from the audit-confirmed elementary pool by a
+                      deterministic rule: round-robin across families sorted by name,
+                      within a family by ascending workbench index, over episodes that
+                      demonstrate the schema and replay cleanly
+    holdout         = per rung, the four lowest-indexed elementary episodes of the same
+                      family demonstrating the same schema that are not seed episodes
+    build seeds     = 20260901, 20260902, 20260903
+    runs            = 56 per library, 168 total, 18 moves, temperature 0.7
+    acceptance      = marginal contribution, rungs in the definition's fixed order, each
+                      seed's library grown incrementally
+
+The three libraries share the seed episodes and holdouts **exactly** and differ only in the
+sample seed, so the variance between them is LLM sampling and nothing else.
+
+Elementary is the audit's decisive criterion — a row carrying neither a comp task_id nor the
+held-out combination (a two-robot cutting unit plus an independent delivery). 3596 of the
+3598 induction-half episodes qualify. Pool hashes are carried in the definition and a build
+that does not reproduce them stops.
+
+**Induction is Qwen2.5-VL-72B only.** The superseded library mixed 72B and 30B inducers,
+which was an artefact of which endpoint happened to be up. This is a new configuration and
+does not inherit from it. The inducer model and the evaluation models are separate axes;
+evaluation still runs all three.
+
+### Freeze broken a sixth time: `list_episodes` ignored `start`
+
+Found by a single smoke run before any sweep was launched, and reported here because it is a
+framework change.
+
+`list_episodes(family, limit)` had no offset. Asked for `{"limit": 10, "start": 10}` it
+silently dropped the argument and returned the same first page. Seeded at episode 31 -- which
+the new stratified rule selects and the old sweeps, seeded only at 0, 1, 3, 7 and 9, never
+did -- the model paginated for all 18 moves against an unchanging page and never submitted.
+Every run of the new sweep would have failed this way.
+
+The tool now takes `start` and returns `{"total", "start", "episodes"}`, so the range is
+knowable without probing for it. This is the same defect as discarding a submission on the
+key it arrived under: a well-formed request had part of it silently thrown away, and the
+refusal named neither the problem nor the fix. It does not tell the model what to write.
+
+After the fix the same rung uses `show_trace` and `check_actor` with real diagnostics and the
+degenerate loop is gone.
+
+### The evaluation fallback is replaced
+
+`viki_eval_v2_intent_choice.py` used to answer an infeasible LLM assignment by dropping the
+temporal constraints and retrying, then by falling back to the memory's own free search. Both
+are removed. The first ran the `w/o Ordering` ablation inside the main arm; the second scored
+a memory-dispatch row inside an LLM-dispatch arm.
+
+The rule now, fixed before any run: name the infeasibility to the model and ask once more;
+if the second answer is still infeasible the row is unsolved and recorded
+`infeasible_assignment`, with the re-ask tokens charged to that row. Measured beforehand on
+the archived cells, the two rules differ on **zero** recombination rows -- `recast` fired on
+none of the 24 comp cells -- so any difference between them can only appear on ID.
+
+### 74.24% is withdrawn
+
+That cell was produced under memory dispatch (`e2e_agentic_runner.csv` carries no
+`cast_by_model` column). Memory dispatch is no longer reported, so the number is not
+superseded by a better one -- it is withdrawn, and no replacement is sought for it.

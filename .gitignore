@@ -124,3 +124,7 @@ rlm/
 # macOS metadata and stray run logs at the repo root
 .DS_Store
 *.log
+
+# Audit and results artefacts: the reports are tracked, the per-row data is not.
+audit/*/L[0-6]_*.json
+audit/*.unfit-detector/

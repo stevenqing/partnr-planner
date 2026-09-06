@@ -69,18 +69,27 @@ class Workbench:
                 self._traces[index] = induction.replay(truth, self.sim, self.seed)
         return self._traces[index]
 
-    def list_episodes(self, family: Optional[str] = None, limit: int = 20):
-        out = []
+    def list_episodes(self, family: Optional[str] = None, limit: int = 20, start: int = 0):
+        """The induction half, listed. `start` is an offset into the listing.
+
+        It exists because a run seeded at an episode outside the first page could not
+        reach it: models ask for `{"limit": 10, "start": 10}`, the argument was silently
+        dropped, and the same first page came back until the move budget ran out. Silently
+        discarding part of a well-formed request is the same defect as discarding a
+        submission on its key -- the tool has to either honour the argument or say it does
+        not exist. `total` is returned so the range is knowable without probing for it.
+        """
+        matches = []
         for index, truth in enumerate(self.episodes):
             if not isinstance(truth, dict) or not truth.get("time_steps"):
                 continue
             if family and truth.get("task_name") != family:
                 continue
-            out.append({"index": index, "task_name": truth.get("task_name"),
-                        "steps": len(truth["time_steps"])})
-            if len(out) >= limit:
-                break
-        return out
+            matches.append({"index": index, "task_name": truth.get("task_name"),
+                            "steps": len(truth["time_steps"])})
+        start = max(0, int(start))
+        return {"total": len(matches), "start": start,
+                "episodes": matches[start:start + max(1, int(limit))]}
 
     def show_trace(self, index: int, max_steps: int = 12):
         trace, status = self.trace(index)

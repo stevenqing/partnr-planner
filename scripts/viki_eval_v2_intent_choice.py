@@ -59,6 +59,13 @@ SPLITS = {
 # produces partly a report on the test set. It is gone. What it was compensating for --
 # knowing that a verb in the instruction implies a predicate -- is Layer 2's job to learn
 # from training episodes, and the cost of not yet having learned it shows up here.
+REASK = """\
+That assignment cannot be carried out. The planner reported: %s
+The assignment you gave was: %s
+
+Reassign the work. Keep the same entries; change only which robot does what, so that every entry can be carried out by the robot you name. Reply with one JSON object in the same format and nothing else."""
+
+
 INSTRUCTION = """\
 Ignore the output format described above. Do NOT write out individual actions and do \
 NOT use <think> or <answer> tags.
@@ -96,16 +103,19 @@ number of steps.
 """
 
 
-def to_requirement(memory, item, scene_assets) -> Optional[Dict[str, Any]]:
+def to_requirement(memory, item, scene_assets, ground: bool = True) -> Optional[Dict[str, Any]]:
+    """`ground=False` is the `w/o Grounding` ablation: names are taken as written."""
     kind = str(item.get("do", "")).strip().lower()
-    subject = memory.canonical_asset(item.get("X"), scene_assets)
+    raw_subject = item.get("X")
+    subject = (memory.canonical_asset(raw_subject, scene_assets) if ground
+               else (raw_subject if raw_subject in scene_assets else None))
     if subject is None:
         return None
     where = item.get("Y")
     if kind == "put":
         if not isinstance(where, str):
             return None
-        status = {"pos.name": memory.canonical_place(where)}
+        status = {"pos.name": memory.canonical_place(where) if ground else where.strip()}
     elif kind in ("use", "open"):
         status = {"is_activated": True} if kind == "use" else {"pos.name": subject}
     else:
@@ -126,6 +136,17 @@ def main() -> None:
     parser.add_argument("--free-crew", action="store_true",
                         help="let the memory cast the robots instead of the model")
     parser.add_argument("--tag", default="intent_choice")
+    # The prompt is `user content + INSTRUCTION`, a module-level constant; the memory is
+    # consulted only AFTER the answer arrives. So a model's answer does not depend on which
+    # library is loaded, and one archived answer set can be scored against any number of
+    # libraries with no further generation. The endpoint is still needed for the fallback
+    # re-ask, which is per-row and rare.
+    parser.add_argument("--replay", type=Path, default=None,
+                        help="score these archived answers instead of generating new ones")
+    parser.add_argument("--no-order", action="store_true",
+                        help="ablation: do not apply Layer 2's ordering")
+    parser.add_argument("--no-grounding", action="store_true",
+                        help="ablation: do not ground names through Layer 3")
     arguments = parser.parse_args()
 
     sim = Simulator(BENCHMARK_ROOT)
@@ -149,6 +170,16 @@ def main() -> None:
         indices = indices[: arguments.limit]
     client = OpenAI(api_key="EMPTY", base_url=arguments.base_url, max_retries=5, timeout=3600)
     lock, done = threading.Lock(), [0]
+
+    replay: Dict[int, str] = {}
+    if arguments.replay:
+        for line in arguments.replay.read_text().splitlines():
+            if not line.strip():
+                continue
+            archived = json.loads(line)
+            if archived.get("raw") is not None:
+                replay[int(archived["index"])] = archived["raw"]
+        print("replaying %d archived answers from %s" % (len(replay), arguments.replay))
 
     def work_on(index: int) -> Dict[str, Any]:
         sample = bench.to_native(frame.iloc[index].to_dict())
@@ -179,13 +210,20 @@ def main() -> None:
             user["content"] = f"{content}\n\n{extra}"
         record = {"index": index, "task_name": truth.get("task_name", "?"),
                   "accuracy": 0.0, "reason": ""}
-        try:
-            completion = client.chat.completions.create(
-                model=arguments.model, messages=messages, temperature=0, max_tokens=700)
-            text = completion.choices[0].message.content or ""
-        except Exception as error:
-            record["reason"] = f"REQUEST_FAILED:{type(error).__name__}"
-            return record
+        if arguments.replay is not None:
+            if index not in replay:
+                record["reason"] = "NO_ARCHIVED_ANSWER"
+                return record
+            text = replay[index]
+            record["replayed"] = True
+        else:
+            try:
+                completion = client.chat.completions.create(
+                    model=arguments.model, messages=messages, temperature=0, max_tokens=700)
+                text = completion.choices[0].message.content or ""
+            except Exception as error:
+                record["reason"] = f"REQUEST_FAILED:{type(error).__name__}"
+                return record
         record["raw"] = text[-3000:]
         parsed = extract_json(text)
         work = (parsed or {}).get("work") if isinstance(parsed, dict) else None
@@ -194,13 +232,21 @@ def main() -> None:
             return record
 
         scene = sorted(metadata["assets"])
-        requirements, crew = [], []
-        for item in work:
-            requirement = to_requirement(memory, item, scene) if isinstance(item, dict) else None
-            if requirement is None:
-                continue
-            requirements.append(requirement)
-            crew.append([name for name in (item.get("robots") or []) if name in metadata["agents"]])
+
+        def read_work(items):
+            requirements, crew = [], []
+            for item in items:
+                requirement = (to_requirement(memory, item, scene,
+                                              ground=not arguments.no_grounding)
+                               if isinstance(item, dict) else None)
+                if requirement is None:
+                    continue
+                requirements.append(requirement)
+                crew.append([name for name in (item.get("robots") or [])
+                             if name in metadata["agents"]])
+            return requirements, crew
+
+        requirements, crew = read_work(work)
         if not requirements:
             record["reason"] = "NO_USABLE_WORK"
             return record
@@ -209,27 +255,65 @@ def main() -> None:
         # The model's ordering is not asked for; Layer 2 supplies it.
         from viki_eval_skill_memory_v2 import visits_of
         env = sim.world(metadata)
-        temporal = memory.order_for(requirements, visits_of(env, requirements, memory))
+        temporal = ([] if arguments.no_order
+                    else memory.order_for(requirements, visits_of(env, requirements, memory)))
         blind["goal_constraints"] = [[requirement] for requirement in requirements]
         blind["temporal_constraints"] = temporal
 
-        casting = None
-        if not arguments.free_crew:
-            casting = {}
-            for requirement, names in zip(requirements, crew):
+        def cast_from(requirement_list, crew_list):
+            if arguments.free_crew:
+                return None
+            out = {}
+            for requirement, names in zip(requirement_list, crew_list):
                 if names:
-                    casting[planner.predicate_key(requirement)] = names[0]
+                    out[planner.predicate_key(requirement)] = names[0]
+            return out
+
+        casting = cast_from(requirements, crew)
         plan, reason = planner.plan(blind, memory, sim, SEED, crew=casting)
         record["cast_by_model"] = bool(casting)
-        if plan is None:
-            blind["temporal_constraints"] = []
-            plan, reason = planner.plan(blind, memory, sim, SEED, crew=casting)
         if plan is None and casting:
-            # The model's casting can be impossible; falling back to a free search says
-            # so rather than scoring the row zero, and the rate is reported.
-            record["recast"] = True
-            blind["temporal_constraints"] = temporal
-            plan, reason = planner.plan(blind, memory, sim, SEED)
+            # The fallback rule, fixed before the run. The model is told what made its
+            # assignment infeasible and asked once more; if the second answer is still
+            # infeasible the row is unsolved and recorded as such.
+            #
+            # This replaces two earlier steps, both removed. Dropping the temporal
+            # constraints and retrying ran the `w/o Ordering` ablation inside the main
+            # arm; falling back to the memory's own free search scored a memory-dispatch
+            # row inside an LLM-dispatch arm.
+            record["reask"] = True
+            try:
+                followup = list(messages) + [
+                    {"role": "assistant", "content": text},
+                    {"role": "user", "content": REASK % (reason or "no feasible plan",
+                                                         json.dumps(casting, sort_keys=True))},
+                ]
+                again = client.chat.completions.create(
+                    model=arguments.model, messages=followup, temperature=0, max_tokens=700)
+                second = again.choices[0].message.content or ""
+                usage = getattr(again, "usage", None)
+                record["reask_prompt_tokens"] = getattr(usage, "prompt_tokens", None)
+                record["reask_completion_tokens"] = getattr(usage, "completion_tokens", None)
+            except Exception as error:                               # noqa: BLE001
+                record["reason"] = "infeasible_assignment"
+                record["reask_error"] = type(error).__name__
+                return record
+            record["raw_reask"] = second[-3000:]
+            reparsed = extract_json(second)
+            rework = (reparsed or {}).get("work") if isinstance(reparsed, dict) else None
+            if isinstance(rework, list):
+                requirements2, crew2 = read_work(rework)
+                if requirements2:
+                    env2 = sim.world(metadata)
+                    blind["goal_constraints"] = [[r] for r in requirements2]
+                    blind["temporal_constraints"] = ([] if arguments.no_order
+                        else memory.order_for(requirements2,
+                                              visits_of(env2, requirements2, memory)))
+                    plan, reason = planner.plan(blind, memory, sim, SEED,
+                                                crew=cast_from(requirements2, crew2))
+            if plan is None:
+                record["reason"] = "infeasible_assignment"
+                return record
         record["reason"] = reason
         if plan:
             record["plan_len"] = len(plan)
@@ -262,7 +346,10 @@ def main() -> None:
     print(f"\n=== {arguments.tag}: the model names the work, {len(records)} rows ===")
     print(f"accuracy       {hit:.0f}/{len(records)} = {hit / len(records) * 100:.2f}%")
     print(f"crew           {'model' if not arguments.free_crew else 'memory'}; "
-          f"re-cast on {sum(1 for r in records if r.get('recast')) / len(records) * 100:.1f}% of rows")
+          f"re-asked on {sum(1 for r in records if r.get('reask')) / len(records) * 100:.1f}% "
+          f"of rows; infeasible_assignment "
+          f"{sum(1 for r in records if r.get('reason') == 'infeasible_assignment')}"
+          f"/{len(records)}")
     for reason, count in Counter(r["reason"] for r in records).most_common():
         print(f"  {reason:<20} {count:>5}  {count / len(records) * 100:5.1f}%")
     families = defaultdict(lambda: [0, 0])
