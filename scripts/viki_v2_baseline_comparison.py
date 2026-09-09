@@ -32,6 +32,10 @@ OURS = {
     ("7B", "id"): "v2_ours_7B_id", ("7B", "text"): "v2_oursall_7B_text",
     ("7B", "imaged"): "v2_oursall_7B_imaged", ("7B", "heldout"): "v2_ours_7B_heldout",
 }
+# The sibling-grouped held-out column: the same 924 rows, but a fold hides the family's
+# whole pre-registered sibling group. See results/sibling_folds_preregistration.json.
+for _model in ("72B", "30B", "7B"):
+    OURS[(_model, "heldout_sibgrp")] = "v2_ours_%s_heldout_sibgrp" % _model
 # The half-memory cells, reported beside the whole-memory ones rather than in place of them.
 CURVE = {"comp(cut)": "v2_ourscut_%s_%s", "comp(cut+delivery)": "v2_ours_%s_%s",
          "comp(all)": "v2_oursall_%s_%s"}
@@ -69,6 +73,9 @@ def main(argv=None) -> int:
         "imaged": pd.read_parquet(p0.A10 / "recombination.imaged.parquet"),
         "text": pd.read_parquet(p0.A10 / "recombination.text.parquet"),
     }
+    # The held-out column is the ID rows scored under fold memories, so it reads ID truth.
+    frames["heldout"] = frames["id"]
+    frames["heldout_sibgrp"] = frames["id"]
     cache: Dict[str, Dict[int, Any]] = {}
 
     def truth_of(split, index):
@@ -85,9 +92,91 @@ def main(argv=None) -> int:
                ("72B", "text"): "memento_recomb_text.jsonl",
                ("72B", "imaged"): "memento_recomb_imaged.jsonl",
                ("30B", "id"): "memento_id_m30.jsonl",
-               ("7B", "id"): "memento_id_m7.jsonl"}
+               ("30B", "text"): "memento_recomb_text_m30.jsonl",
+               ("30B", "imaged"): "memento_recomb_imaged_m30.jsonl",
+               ("7B", "id"): "memento_id_m7.jsonl",
+               ("7B", "text"): "memento_recomb_text_m7.jsonl",
+               ("7B", "imaged"): "memento_recomb_imaged_m7.jsonl"}
+
+    # The held-out column for a baseline is assembled exactly the way ours is: family X's
+    # rows come from the run whose memory excluded X. Those runs exist only for the 72B
+    # (`amendment8b/folds/<family>/<stem>.jsonl`), so 30B and 7B are reported as missing
+    # rather than silently filled from another model -- the mistake that produced the
+    # bit-identical 30B/7B baseline columns in the first place.
+    FOLDS = p0.A8B / "folds"
+    FOLD_STEM = {"zero-shot": "zero_shot", "trajectory RAG": "trajectory_rag",
+                 "skill memory v1": "skill_memory.fullactions_k8", "G-Memory": "gmemory",
+                 "G-Memory (shuffled control)": "gmemory.shuffled"}
+    # The grouped and the cross-model runs carry their configuration in the environment
+    # rather than in the file name, so v1's cell is `skill_memory`, not
+    # `skill_memory.fullactions_k8`. The 72B archives predate that and keep the long stem.
+    ARM_STEM = {"zero-shot": "zero_shot", "trajectory RAG": "trajectory_rag",
+                "skill memory v1": "skill_memory", "G-Memory": "gmemory",
+                "G-Memory (shuffled control)": "gmemory.shuffled"}
+    # Every non-72B fold cell is namespaced by variant so it lands beside, never on top of,
+    # the 72B archive: folds/<family>/<arm>.<tag>[sibgrp].jsonl
+    FOLD_TAG = {"30B": "m30", "7B": "m7"}
+
+    def fold_families():
+        return sorted(d.name for d in FOLDS.iterdir() if d.is_dir()) if FOLDS.is_dir() else []
+
+    PRE = p0.ROOT / "results/sibling_folds_preregistration.json"
+    SIBGRP = (json.loads(PRE.read_text())["affected_eval_folds"] if PRE.is_file() else [])
+
+    def fold_path(model, method, family, grouped_here):
+        """Where one arm's fold cell lives, for any model."""
+        tag = FOLD_TAG.get(model)
+        if method[0] == "MEMENTO-style":
+            if model == "72B":
+                stem = "memento_foldgrp" if grouped_here else "memento_fold"
+                return A11 / ("%s_%s.jsonl" % (stem, family))
+            stem = "memento_foldgrp_%s" % tag if grouped_here else "memento_fold_%s" % tag
+            return A11 / ("%s_%s.jsonl" % (stem, family))
+        if model == "72B":
+            stem = ARM_STEM.get(method[0]) if grouped_here else FOLD_STEM.get(method[0])
+            suffix = ".sibgrp" if grouped_here else ""
+        else:
+            stem = ARM_STEM.get(method[0])
+            suffix = ".%s%s" % (tag, "sibgrp" if grouped_here else "")
+        return (FOLDS / family / ("%s%s.jsonl" % (stem, suffix))) if stem else None
+
+    def heldout_rows(model, method, grouped=False):
+        """One 924-row column, or None when this model has no fold runs.
+
+        `grouped` takes the sibling-grouped run for the three folds that have a sibling and
+        the original single-family run for the five that do not -- for a family with no
+        sibling those are the same experiment, so rerunning it would only add noise.
+        """
+        if model != "72B" and model not in FOLD_TAG:
+            return None, "no fold runs for %s" % model
+        families = fold_families()
+        if not families:
+            return None, str(FOLDS)
+        rows, missing = {}, []
+        for family in families:
+            # zero-shot holds no memory, so hiding a sibling cannot change it: the grouped
+            # column reuses its rows rather than paying for an identical rerun.
+            # zero-shot holds no memory, so hiding a sibling cannot change it: the grouped
+            # column reuses its rows rather than paying for an identical rerun.
+            grouped_here = (grouped and family in SIBGRP and method[0] != "zero-shot")
+            path = fold_path(model, method, family, grouped_here)
+            if path is None or not path.is_file():
+                missing.append(family + (".sibgrp" if grouped_here else ""))
+                continue
+            for line in path.read_text().splitlines():
+                if not line.strip():
+                    continue
+                record = json.loads(line)
+                index = int(record["index"])
+                text = record.get("response") or record.get("raw") or ""
+                rows[index] = p0.tolerant(sim, text, truth_of("heldout", index))
+        if missing:
+            return None, "folds missing: %s" % ",".join(missing)
+        return (rows or None), str(FOLDS)
 
     def baseline_rows(model, method, split):
+        if split in ("heldout", "heldout_sibgrp"):
+            return heldout_rows(model, method, grouped=split == "heldout_sibgrp")
         if method[0] == "MEMENTO-style":
             name = MEMENTO.get((model, split))
             path = (A11 / name) if name else None
@@ -108,8 +197,13 @@ def main(argv=None) -> int:
     report: Dict[str, Any] = {"generated": date.today().isoformat(), "cells": [],
                               "curve": [], "missing": []}
 
+    # The shuffled arm is a retrieval placebo, not a baseline: it is reported only on the
+    # held-out column and only to show how much of G-Memory's score there survives when
+    # retrieval is randomised. It must never be substituted for G-Memory itself.
+    SHUFFLED = ("G-Memory (shuffled control)", None, None)
+
     for model in arguments.models:
-        for split in ("id", "text", "imaged"):
+        for split in ("id", "heldout", "heldout_sibgrp", "text", "imaged"):
             mine = ours_rows(OURS.get((model, split), ""))
             if mine is None:
                 report["missing"].append("ours %s/%s" % (model, split))
@@ -118,7 +212,12 @@ def main(argv=None) -> int:
                    "n": len(mine), "solved": sum(mine.values()),
                    "rate": round(sum(mine.values()) / len(mine), 4)}
             report["cells"].append(row)
-            for method in list(p0.METHODS) + [("MEMENTO-style", None, None)]:
+            methods = list(p0.METHODS) + [("MEMENTO-style", None, None)]
+            # The placebo is reported on both held-out columns now that the grouped folds
+            # exist for it too. It stays a control, never a baseline.
+            if split.startswith("heldout"):
+                methods.append(SHUFFLED)
+            for method in methods:
                 base, where = baseline_rows(model, method, split)
                 if base is None:
                     report["missing"].append("%s %s/%s (%s)" % (method[0], model, split, where))

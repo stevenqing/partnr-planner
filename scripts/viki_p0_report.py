@@ -61,16 +61,30 @@ SPLITS = ["id", "imaged", "text"]
 TAG = "m30"
 
 
+# Which archive tag belongs to which backbone. Until 2026-09-07 this function used the
+# module-level TAG for every non-72B model, so a 7B row resolved to the 30B archive and the
+# two columns of `baseline_comparison.json` came out bit-identical (141 / 137 / 76 / 4) --
+# the 7B baselines had never been run at all. TAG stays the default so the 30B paths and
+# its repeat/no-think variants are unchanged; a model with its own tag is looked up here.
+MODEL_TAG = {"7B": "m7"}
+
+
+def tag_for(model: str) -> str:
+    """The archive tag for `model`. TAG (and its --tag override) still governs the 30B."""
+    return MODEL_TAG.get(model, TAG)
+
+
 def cell_path(model: str, method: Tuple[str, str, str], split: str) -> Optional[Path]:
     _, id_stem, recomb_stem = method
     if model == "72B":
         return (A8B / f"{id_stem}.jsonl" if split == "id"
                 else A10 / split / f"{recomb_stem}.jsonl")
+    tag = tag_for(model)
     if split == "id":
-        stem = f"{id_stem}_{TAG}" if id_stem.endswith("k8") else f"{id_stem}.{TAG}"
+        stem = f"{id_stem}_{tag}" if id_stem.endswith("k8") else f"{id_stem}.{tag}"
         return A8B / f"{stem}.jsonl"
     stem = "skill_memory" if recomb_stem.startswith("skill_memory") else recomb_stem
-    return A10 / split / f"{stem}.{TAG}.jsonl"
+    return A10 / split / f"{stem}.{tag}.jsonl"
 
 
 def mcnemar(a: Dict[int, int], b: Dict[int, int]) -> Tuple[int, int, float]:

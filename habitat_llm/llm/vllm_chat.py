@@ -17,6 +17,13 @@ given the same prompt see the same decode. And a request that fails is retried a
 answered with an empty string rather than raising: a planner that receives nothing treats
 it as an unparseable plan and moves on, which loses one step, whereas an exception loses
 the whole episode and would quietly bias an arm's score by dropping its hard episodes.
+
+A third: `extra_body` is passed through to the server. A reasoning model answers this
+planner's prompt with a `<think>` block, and the planner stops generation at a blank line,
+so what comes back is half a thought and nothing parseable -- an arm that would score zero
+for a reason that has nothing to do with the model. Qwen3 turns that off with
+`extra_body.chat_template_kwargs.enable_thinking=False`, and setting it is a property of
+the endpoint rather than of the method.
 """
 
 import os
@@ -46,6 +53,8 @@ class VLLMChat(BaseLLM):
         self.system_message = self.llm_conf.get("system_message", "")
         self.keep_message_history = bool(self.llm_conf.get("keep_message_history", False))
         self.verbose = bool(self.llm_conf.get("verbose", False))
+        extra = self.llm_conf.get("extra_body", None)
+        self.extra_body = OmegaConf.to_object(extra) if extra is not None else None
         self.message_history: List[Dict[str, Any]] = []
 
     def generate(
@@ -94,6 +103,8 @@ class VLLMChat(BaseLLM):
             messages.append({"role": "user", "content": content})
 
         try:
+            if self.extra_body:
+                params["extra_body"] = self.extra_body
             completion = self.client.chat.completions.create(
                 model=model, messages=messages, **params
             )

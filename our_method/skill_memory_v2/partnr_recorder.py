@@ -55,6 +55,8 @@ class RecordingScriptedPlanner(ScriptedCentralizedPlanner):
         self._steps: List[Dict[str, Any]] = []
         self._instruction: Optional[str] = None
         self._names: Dict[str, str] = {}
+        self._rooms: Dict[str, str] = {}
+        self._room_ids: Dict[str, str] = {}
         self._episode_id: Optional[str] = None
         self._satisfied: Optional[List[int]] = None
         self._sim_steps: int = 0
@@ -73,7 +75,14 @@ class RecordingScriptedPlanner(ScriptedCentralizedPlanner):
         return getattr(getattr(task, "measurements", None), "measures", {}) or {}
 
     def _harvest_names(self, world_graph) -> None:
-        """The handle-to-name correspondence, which exists only while the run is live."""
+        """The handle-to-name correspondence, which exists only while the run is live.
+
+        Room membership is harvested here too, and it is not an extra: `is_in_room` names
+        a room, every action in the recording names a piece of furniture, and without the
+        map between them the recording does not contain the relation its own proposition
+        is about. A reader of a trace written before this could see the carry -- pick, then
+        navigate -- and still not tell which room the carry ended in.
+        """
         graphs = world_graph.values() if isinstance(world_graph, dict) else [world_graph]
         for graph in graphs:
             for getter in ("get_all_objects", "get_all_furnitures", "get_all_receptacles",
@@ -87,6 +96,15 @@ class RecordingScriptedPlanner(ScriptedCentralizedPlanner):
                     name = getattr(node, "name", None)
                     if handle and name:
                         self._names[str(handle)] = str(name)
+                    if name is None:
+                        continue
+                    try:
+                        room = graph.get_room_for_entity(node)
+                    except Exception:
+                        continue
+                    room_name = getattr(room, "name", None)
+                    if room_name:
+                        self._rooms[str(name)] = str(room_name)
 
     # ------------------------------------------------------------------ recording
 
@@ -97,6 +115,8 @@ class RecordingScriptedPlanner(ScriptedCentralizedPlanner):
         self._steps = []
         self._instruction = None
         self._names = {}
+        self._rooms = {}
+        self._room_ids = {}
         self._episode_id = None
         self._satisfied = None
         self._sim_steps = 0
@@ -111,7 +131,7 @@ class RecordingScriptedPlanner(ScriptedCentralizedPlanner):
             # satisfaction vector from one episode be written into the next one's trace.
             if identifier is not None and identifier != self._episode_id:
                 self._flush()
-                self._steps, self._names = [], {}
+                self._steps, self._names, self._rooms = [], {}, {}
                 self._satisfied, self._sim_steps = None, 0
                 self._episode_id = identifier
                 # Everything about the episode is snapshotted here, at its first step.
@@ -132,6 +152,13 @@ class RecordingScriptedPlanner(ScriptedCentralizedPlanner):
                 )
             self._instruction = instruction
             self._harvest_names(world_graph)
+            # A proposition names a room as `kitchen`; the graph names it `kitchen_1`.
+            # The planner is handed this correspondence at run time and a reader of the
+            # trace needs the same one, or the room in the goal and the room in the
+            # actions are two unrelated strings.
+            self._room_ids = dict(
+                getattr(getattr(self.env_interface, "perception", None), "region_id_to_name", {}) or {}
+            )
             actions = {
                 str(agent): list(action) if isinstance(action, (list, tuple)) else [str(action)]
                 for agent, action in (getattr(self, "last_high_level_actions", {}) or {}).items()
@@ -164,6 +191,8 @@ class RecordingScriptedPlanner(ScriptedCentralizedPlanner):
             "episode_id": self._episode_id,
             "instruction": self._instruction,
             "handle_to_name": self._names,
+            "name_to_room": self._rooms,
+            "room_id_to_name": self._room_ids,
             "steps": self._steps,
         }
         # All three come from the snapshot taken at the episode's first step, never from

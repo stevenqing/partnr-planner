@@ -70,6 +70,14 @@ def build(episodes: Iterable[Dict[str, Any]], containers: set, exclude_family: O
     episode is very close to the answer. Each node is keyed on its own instruction, so
     retrieval can find that neighbour if one exists.
     """
+    # A fold may hide a whole pre-registered sibling group rather than one family; the
+    # single-family form stays the default so every archived graph is unchanged.
+    if exclude_family is None:
+        excluded = set()
+    elif isinstance(exclude_family, str):
+        excluded = {f.strip() for f in exclude_family.split(",") if f.strip()}
+    else:
+        excluded = set(exclude_family)
     where: Dict[str, Counter] = defaultdict(Counter)
     is_container: Dict[str, bool] = {}
     families: Dict[str, Dict[str, Any]] = {}
@@ -80,7 +88,7 @@ def build(episodes: Iterable[Dict[str, Any]], containers: set, exclude_family: O
         if not isinstance(truth, dict) or not truth.get("time_steps"):
             continue
         family = truth.get("task_name", "?")
-        if exclude_family and family == exclude_family:
+        if excluded and family in excluded:
             continue
         if seen[family] >= per_family:
             continue
@@ -178,6 +186,7 @@ def build(episodes: Iterable[Dict[str, Any]], containers: set, exclude_family: O
                       "support": int(seen[family]),
                       "objects": [name for name, _ in family_objects[family].most_common(6)]})
     return {"nodes": nodes, "excluded_family": exclude_family,
+            "excluded_families": sorted(excluded),
             "counts": {t: sum(1 for n in nodes if n["knowledge_type"] == t)
                        for t in ("object_semantics", "user_pattern")}}
 

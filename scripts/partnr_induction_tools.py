@@ -97,6 +97,31 @@ class Workbench:
         }
 
     # ------------------------------------------------------------------ oracles
+    def room_of(self, index: int, entity: str) -> Dict[str, Any]:
+        """Which room a piece of furniture (or an object) is in, in this rollout.
+
+        `is_in_room` names a room and every action names furniture, so without this the
+        recording cannot answer the question its own proposition asks. Traces recorded
+        before the map was written out say so rather than answering `None`, because "not
+        recorded" and "not in a room" are different facts and one of them is a bug.
+        """
+        trace = self.trace(index)
+        rooms = trace.get("name_to_room")
+        if not rooms:
+            return {"entity": entity, "room": None,
+                    "why": "this rollout was recorded before room membership was written down"}
+        return {"entity": entity, "room": rooms.get(entity),
+                "known_entities": len(rooms)}
+
+    def rooms(self, index: int) -> Dict[str, Any]:
+        """The rooms of this scene and the furniture in each, as the recording saw them."""
+        trace = self.trace(index)
+        mapping = trace.get("name_to_room") or {}
+        out: Dict[str, List[str]] = defaultdict(list)
+        for name, room in mapping.items():
+            out[room].append(name)
+        return {"index": index, "rooms": {k: sorted(v) for k, v in sorted(out.items())}}
+
     def held_by(self, index: int, entity: str, step: int) -> Dict[str, Any]:
         """Who was holding `entity` at `step`, from the recorded Pick/Place history.
 
@@ -220,10 +245,25 @@ class Workbench:
                     # about a room, and an acceptance test that cannot tell those apart
                     # accepts everything.
                     targets = (set(resolve(arguments.get("receptacle_handles"), names))
-                               or set(resolve(arguments.get("entity_handles_b"), names))
-                               or set(arguments.get("room_ids") or []))
+                               or set(resolve(arguments.get("entity_handles_b"), names)))
                     if targets and not (targets & touched):
                         continue
+                    # A room-valued target is never named by an action: the goal says
+                    # `kitchen`, the actions say `table_13`. Before the recording carried
+                    # room membership there was nothing to close that gap, so every
+                    # room-valued operator scored `matched: False` no matter what it said
+                    # -- a constant, and a misleading one. With the map, the body counts as
+                    # naming the room when something it touched is in it.
+                    if not targets:
+                        wanted = set(arguments.get("room_ids") or [])
+                        if wanted:
+                            graph_rooms = {(trace.get("room_id_to_name") or {}).get(r, r)
+                                           for r in wanted}
+                            membership = trace.get("name_to_room") or {}
+                            if not membership:
+                                continue
+                            if not (graph_rooms & {membership.get(entity) for entity in touched}):
+                                continue
                     if when < 0:
                         continue
                     when_step = self.step_of_sim(index, when)

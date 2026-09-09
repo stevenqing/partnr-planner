@@ -4,17 +4,26 @@ Memory-as-Skill / skill memory v2 的实验仓库。VIKI-L2 和 PARTNR 两条线
 
 ## 开工先读
 
-**`HANDOVER-2026-09-05b.md`** ← 当前交接（PARTNR step-0 猝死已修、六格重测完，差距
-0.181→0.113、ordering 消融不再成立；VIKI agent 算子库 32.47%→74.24%，全部来自修 harness；
-能力曲线重测后 7B 不再是 0，「阈值」说法被推翻）。**它取代 09-05 那份的结论 1 和 3。**
-**`HANDOVER-2026-09-05.md`** 配着读：挂死根因、P0 72 格、agentic framework 的由来。
+**`HANDOVER-2026-09-09.md`** ← 当前交接（PARTNR 的结论已定：执行门验收成立、库 21→22、
+确认池 +0.6717、privileged val_mini **+0.1093** 且 band 实测 = 0；**唯一没拿到的是 7B/8B 两列，
+两次重跑都 `complete: false`，死因是 4h 硬超时与端点中途死亡，不是模型也不是方法**。
+现场四条：无作业在跑、**7B 端点 8061 已不在**、箱子上多了别人的两个服务只剩 GPU 0 空、
+**这条线的代码一行都没提交**）。
+**`RESULTS-2026-09-08.md`**：VIKI 与 PARTNR 的全部表格，由脚本从盘上产物直读，**不要手改**。
+**`HANDOVER-2026-09-07b.md`**：PARTNR 这条线的方法与全部推导（缺口定位、造轨迹、提议、
+免费落地关、执行门双向校准、四条验收判据）。**它更正了 09-07 里「PARTNR 单算子验收门不存在」
+那句——死掉的只是 trace-matching 门。**
+**`HANDOVER-2026-09-07.md`**：VIKI 主表全部落在 agent 库上（4 个算子、72B ID 0.6126 /
+comp 0.8620·0.7980，留出族 0.1818 输给 G-Memory 0.2078），三条自己的诊断被推翻。
+**`HANDOVER-2026-09-05b.md`**：PARTNR step-0 猝死已修。注意其中「74.24%」是 memory RA 的数，已作废。
+**`HANDOVER-2026-09-05.md`**：挂死根因、P0 72 格、agentic framework 的由来。
 更早的 09-02 / 09-03 有 PARTNR 组合泛化对照与意图接口诊断；08-31 / 09-01 是历史。
 
 方法学结论在用户 memory 里（会话启动时自动加载索引），别在交接文档里重复找：
 `viki-l2-skill-memory-v2`（方法本体）、`viki-l2-dispatch-reverses`（委派方向反转）、
-`viki-partnr-v2-port`（PARTNR 移植，负结果）、`viki-l2-scorer-null-artifact`（打分口径）、
-`viki-l2-crossmodel-baselines`（30B 那一列 + 三轮 sd + no-think 的限定）、
-`viki-l2-fork-per-request-hang`（三次挂死的真根因）、
+`partnr-execution-gate`（PARTNR 的验收门与四条判据）、`partnr-is-in-room-wall`（缺口定位）、
+`viki-l2-scorer-null-artifact`（打分口径）、`viki-l2-crossmodel-baselines`（30B 那一列 + 三轮 sd
++ no-think 的限定）、`viki-l2-fork-per-request-hang`（三次挂死的真根因）、
 `viki-agentic-operator-induction`（agent 推导算子的 framework 与能力曲线，**能力曲线数已过期，
 见 `viki-harness-was-the-bottleneck`**）。
 
@@ -24,7 +33,7 @@ Memory-as-Skill / skill memory v2 的实验仓库。VIKI-L2 和 PARTNR 两条线
 - **PARTNR 的 percent_complete 是连续量**，配对检验用 Wilcoxon 或 bootstrap，不是 McNemar。
 - 远端 `ssh aibox-root`，仓库在 `/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner`，mutagen 双向同步。
   评测/归纳脚本的路径常量是远端绝对路径，**run/report 必须在远端跑**。
-- `pgrep -f <模式>` 会匹配到自己的 ssh 命令行、误杀远端 shell（**已中招六次**）。
+- `pgrep -f <模式>` / `pkill -f <模式>` 会匹配到自己的 ssh 命令行、误杀远端 shell（**已中招七次**）。
   括号写法 `ps -eo pid,cmd | grep '[d]rivers'` 只防 grep 匹配自己，**防不了模式出现在自己
   父进程命令行里**（09-04 的看守脚本就是这样死锁了整夜）。**等进程按 PID
   （`while kill -0 <pid>`），杀进程按完整二进制路径。**
@@ -38,6 +47,25 @@ Memory-as-Skill / skill memory v2 的实验仓库。VIKI-L2 和 PARTNR 两条线
 - **某一格得零时，先把参照/已知正确的答案送进同一个判据再下结论。** 09-05 有四次
   「模型不行」最后都是台子的问题（判据只试第一个机器人、按键名丢弃提交、信息不可读）。
   **先读 transcript，别先加采样。**
+- **判一个格死活看 `ps` 的 `hydra.run.dir=` 和 `stats/` 目录 mtime，不看 `CELL.json`**——
+  被杀那一次留下的 `CELL.json`（`status: 137`）会一直躺到重跑收尾才被覆盖。
+- **每次读 `compare_*.json` 先看 `complete` 字段。** 比较器默认在两格的交集上比，
+  半格能给出像模像样的增益、基线均值还会悄悄漂。
+- **模型格起飞前先探端点（不返 200 就拒绝启动）；Qwen3 系必须 `enable_thinking=False`**
+  （经 `extra_body` 透传），否则 planner 在空行处停止生成、可解析 requirement 0 条，
+  整列得零而原因是台子。
+- **放 habitat 进程前先看那块卡上有什么**（GPU 1 常驻 Qwen3-8B:8101），否则 CUDA OOM。
+- **拉 vLLM 一律 `CUDA_VISIBLE_DEVICES=<卡> setsid nohup ...`。** 不写卡号它会去抢 GPU 0；
+  不写 `setsid` 它会被父进程的信号带走（09-07 22:08 的 8B 服务就是这样没的）。
+- **端点起飞前探一次挡不住「跑到一半死」。** 假格的签名是 `sim_step_count == 0` +
+  `runtime ≈ 13 s`，按这个数，别数日志里的 `APIConnectionError`（会少数一个量级）。
+- **模型格必须带 `+resume=True`**：一格 5.5 小时，端点死一次就整格作废（已赔约 10 小时）。
+  同库同配置逐格确定（band = 0），所以 resume 安全——**但跨代码版本 resume 不安全**。
+- **`scp` 往远端仓库塞脚本会和 mutagen 抢**（文件会被抹掉、排的队从没启动）。
+  **写在本地让 mutagen 推，核对远端存在后再发。**
+- **不要在带残留的目录上重跑**；`rm -rf` 报 "Directory not empty" 之后要核实到空，否则会拿
+  上一次的假格做诊断。
+- **箱子不再独占**（GPU 6/7 上是别人的服务）。起格前 `nvidia-smi` 看卡，别用两天前的印象排。
 - 每个评测格必须独立 `hydra.run.dir`（`paths.results_dir` 挂在它下面，否则会覆盖别的 run）。
 
 ## 会话卫生

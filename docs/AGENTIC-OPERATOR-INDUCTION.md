@@ -549,3 +549,181 @@ baseline (`v2_memory_R` 0.7319 absolute, 0.804 mean comp). Task score is objecti
 not depend on the criterion that just failed. The cost is that credit assignment returns to
 the whole library, which is what the local oracles existed to avoid -- so the design has to
 recover it some other way, and that is the open question.
+
+## PARTNR 2026-09-07b: the outer gate becomes affordable, and the target is one predicate
+
+The section above ends on an open question -- with the per-operator test refuted, credit
+assignment returns to the whole library, and rebuilding a library and running the sweep
+costs hours. Three measurements taken the same day close it.
+
+### 1. The gap is one predicate, and it is an attribution failure rather than a new vocabulary
+
+The R-only memory holds 21 operators over two effect keys, `is_on_top` and `is_inside`. The
+all-types memory holds 134 over eight. **Neither holds a single `is_in_room` operator**, and
+that is structural: the shipped attribution rule requires the action at the satisfying step
+to carry a completing verb and name the proposition's entity, while `is_in_room` becomes true
+because somebody carried an object while navigating. No completing verb is ever involved.
+
+What that costs, measured on cells already on disk (`sweep_remeasured/val_mini`, post-fix;
+`sweep/val`, pre-fix):
+
+    split      episodes carrying is_in_room     ours      ceiling
+    val_mini              68 / 366             0.0699     0.9586
+    val                  184 / 996             0.1565     0.9292
+    val_mini    the other 298                  0.8133     0.9497
+
+    upper bound on val_mini from this key alone   +0.1086 by proposition share
+                                                  +0.165  if the episodes are recovered whole
+    upper bound on val                            +0.142
+
+For comparison, the whole gap this line currently reports against the prompt baseline is
+0.113. The failure mode differs by split and the difference is cosmetic: on `val_mini` 61 of
+the 68 end at planner step 0, on `train` the same episodes run to the step limit issuing
+`Explore` -- in both the memory contributes nothing, because there is no requirement it can
+act on.
+
+`is_in_room` is classified `R` by `partnr_task_types.classify`, so this is not the
+vocabulary-extrapolation cell (that is `is_next_to`, absent from R rollouts entirely). It is
+material inside the training vocabulary that the rule cannot reach: 127 satisfactions across
+50 `train_mini` rollouts, 15 of them in pure-`R` episodes.
+
+### 2. The material is readable through the workbench, and two things were missing
+
+Of the 127 recorded satisfactions, 126 convert to a planner step and name a holder, 126 show
+the `Pick` inside a twelve-step window, and 125 show a `Navigate` after it. The mechanism is
+visible.
+
+Two additions were needed and are recorded here as such, since the workbench is otherwise
+frozen:
+
+  - `partnr_recorder` now writes `name_to_room` and `room_id_to_name`. A proposition names a
+    room (`kitchen`); every action names furniture (`stool_26`); traces recorded before this
+    contain nothing connecting the two, so the relation the proposition is *about* was not in
+    the recording. Verified on a four-episode pool before 480 episodes were committed to it.
+  - `Workbench.room_of` and `Workbench.rooms` expose that map. Without them a proposer can see
+    the carry and still not say which room it ended in.
+
+Neither adds a hint about what the operator should be; both make the recorded fact legible.
+The execution machinery for such an operator already exists -- `PartnrSkillMemory._resolve`
+resolves a receptacle role for `is_in_room` by choosing furniture in the target room -- so
+what is missing is the entry, which is the thing induction is supposed to supply.
+
+### 3. The outer gate is affordable, and its paired noise band is zero
+
+Two facts make per-candidate execution testing practical:
+
+  - `planner_demo` accepts `episode_id_filter` before the multiprocessing split, and a cell
+    is bounded by its slowest episode rather than by their sum. **40 episodes at 40 processes
+    finished in 660 s and 510 s.** The box has 180 cores and used 116 GB for 40 processes, so
+    a wider gate costs no more wall clock.
+  - Two identical cells on the same 40-episode pool, run under different load, agreed on
+    **all 39 scored episodes exactly** -- paired mean delta 0.0, maximum absolute per-episode
+    delta 0.0, the same episode crashing in both. The privileged-intent configuration reads
+    the episode's propositions and calls no model, so a fixed pool is reproducible.
+
+A paired band of zero changes what acceptance can be. The guard that matters is no longer
+noise but selection, and it is handled by pre-registered disjoint pools
+(`results/partnr_pools/ledger.json`, carved by `scripts/partnr_make_pool.py`): `rec_*` for
+induction, `gate_iir` for acceptance, `conf_iir` run once at the end, `calib_ontop` for
+calibration, all from `train`. **`val_mini` is a subset of `val`** -- 365 of 365 episodes
+match by instruction and scene -- so nothing that selects may touch either.
+
+### 4. What acceptance now asks, and what is calibrated before it is trusted
+
+Per candidate, against the same pool run with the memory as it stands:
+
+    gain      the paired mean of task_percent_complete rises
+    aim       the gain lands on episodes that carry the target predicate
+    no harm   episodes that do not carry it do not fall
+
+The gate is calibrated the way the refuted one was, and the design of that calibration had
+to change. Dropping one of twenty `is_on_top` operators proves nothing, because the other
+nineteen cover the same requirement and a correct re-add and a broken one both move nothing.
+So the key is emptied first and exactly one operator is put back -- factory, its body
+reversed, and its effect key swapped -- which is also the shape the real question has, since
+`is_in_room` has no entries at all. `scripts/partnr_calib_libraries.py` builds the four
+libraries; the cells run on `calib_ontop`.
+
+Proposal and acceptance are separated (`partnr_propose_operators.py`, `partnr_gate_batch.py`)
+because the agent cannot wait minutes per test. The agent reads rollouts and hands in
+candidates; it never sees an end-to-end score, so it cannot tune a body against the set the
+gate measures on. `predicts` remains available to it and the prompt says what it is worth:
+whether a body matches anything at all, and nothing more.
+
+### 5. The calibration, run
+
+The gate was calibrated before it decided anything, on `calib_ontop` -- 40 pure-rearrangement
+train episodes carrying `is_on_top` and not `is_in_room`. The key is emptied (the library
+keeps only its one `is_inside` operator, and scores 0.1667 with 32 of 40 episodes at zero),
+then exactly one operator is put back:
+
+    variant                      what it is                     mean     delta   moved
+    is_on_top_factory            correct, as induced           0.9042   +0.7375   32/40
+    is_on_top_back_in_place      correct plus a redundant Open 0.4250   +0.2583   11/40
+    is_on_top_reversed           body backwards                0.1667   +0.0000    0/40
+    is_on_top_keyswap            right body, wrong effect key  0.1667   +0.0000    0/40
+    is_on_top_no_pick            places without picking up     0.1667   +0.0000    0/40
+    is_on_top_pick_only          picks up and stops            0.1292   -0.0375    3/40
+
+Read against the refuted trace-matching gate, whose factory and broken distributions
+overlapped completely at every threshold, this separates -- and it separates for the right
+reasons, which had to be checked one variant at a time:
+
+  - `reversed` never reaches execution: the memory refuses it when the library loads, so it
+    is the free groundability check that catches it, not the gate.
+  - `keyswap` loads and grounds perfectly well, but it claims `is_inside`, so it is never
+    offered for an `is_on_top` requirement. A correct rejection for a trivial reason.
+  - Neither of those tests what the gate is claimed to test, so two more were built that do
+    run and are wrong. `no_pick` navigates and places with an empty hand: zero gain, no
+    episode moved. `pick_only` -- the realistic induction error, half the segment attributed
+    -- picks objects up and strands them, and goes **negative**.
+  - `back_in_place` is correct with a redundant `Open` of the destination, which fails
+    wherever the destination cannot be opened. It scores a third of the factory's gain. The
+    gate is graded, not binary, which is what makes it usable for ranking candidates.
+
+The free check and the execution gate therefore divide the work exactly as intended, and the
+division was measured rather than assumed: a body that cannot be instantiated is rejected for
+nothing, and a body that runs is judged only by what running it does. One case shows the
+seam -- an operator that writes the room itself as its `Place` target grounds happily to
+`Place cup_0, on, kitchen_1` and can only be refuted by execution.
+
+### 6. Proposal, and the control arm
+
+Against `rec_R_iir` -- 239 pure-rearrangement train episodes carrying `is_in_room`, recorded
+for this purpose, where `train_mini` held 15 -- the 72B agent submitted 6 distinct candidates
+in 24 moves. The first is the shape the memory needs:
+
+    [Navigate ?x][Pick ?x][Navigate ?z1][Place ?x, on, ?z1, none, none]
+
+The same agent with the same task and tools that refuse to read produced **0 candidates in 30
+moves**, which is the PARTNR counterpart of the no-trace arm on VIKI.
+
+Two things about that run are worth keeping, because both are ours rather than the model's:
+
+  - The first proposal run wrote its spare as `?furniture`, which the memory cannot bind, and
+    was refused for a reason it could not act on. Naming the convention in the prompt -- spare
+    variables are `?z1`, `?z2` -- and returning a refusal that names the offending variable
+    produced the correct shape on the first attempt. Interface, not capability, again.
+  - Asking for a fixed number of distinct bodies manufactures distinctness: candidates 3 to 6
+    are permutations of `Open`/`Close` that match nothing. They cost gate cells and were sent
+    through anyway, because filtering them on the advisory would make the advisory decisive
+    and the calibration forbids exactly that.
+
+### 7. The arm a number gets reported on
+
+Everything above is the privileged-intent arm, which reads the episode's own propositions and
+calls no model. That arm is where an acceptance gate belongs -- deterministic, and it
+attributes a change to the operator and nothing else -- but it is an upper bound and no
+reported number may come from it alone.
+
+The reported arm is `baselines/skill_memory_v2_vllm.yaml`, where the model reads the
+instruction and says what must become true. On `probe40` the 7B (`qwen2.5-vl-7b`) scores
+0.3399 against the privileged arm's 0.5513 on the same 40 episodes, and a cell costs about
+30 minutes against 11 -- not because the endpoint is loaded (about 0.2 requests per second)
+but because worse plans run longer.
+
+That arm also carries an effect the privileged one cannot measure. The predicate menu the
+model is shown is built from `memory.intents()`, so a memory with no `is_in_room` operator
+gives the model no way to *say* "put it in the kitchen"; the operator does not merely add a
+body, it adds a word. The gate stays on the privileged arm, and the model arm is reported,
+never selected on.

@@ -35,6 +35,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from viki_amendment8b import drop_think_rule
+
 import pandas as pd
 from openai import OpenAI
 
@@ -187,7 +189,11 @@ def main() -> None:
         blind = {k: v for k, v in truth.items() if k != "time_steps"}
         metadata = sim.metadata(blind, SEED)
         if imaged:
-            messages = bench.get_messages(sample)
+            # VIKI_NO_THINK=1 drops the benchmark's own thinking instruction. The
+            # transformation is imported from the baseline harness rather than rewritten,
+            # so our no-think cell is the same condition its no-think cells were run in --
+            # a different edit here would make the two columns incomparable.
+            messages = drop_think_rule(bench.get_messages(sample))
         else:
             messages = [{"role": m["role"], "content": m["content"]}
                         for m in bench.to_native(sample["prompt"])]

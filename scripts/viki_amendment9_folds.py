@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import sys
+import os
 from functools import lru_cache
 from pathlib import Path
 from typing import Dict, List
@@ -89,8 +90,42 @@ def rows_of(family: str) -> List[int]:
     return sorted(i for i, name in eval_families().items() if name == family)
 
 
+# A fold removes a family label, not a distribution: a near-duplicate family stays in the
+# bank and an arm can retrieve it instead. Measured on the existing folds, G-Memory's
+# retrievals land on exactly such a family (cut_fruit_on_board -> cut_two_fruits_on_board on
+# 171 of 189 rows), and its fold score halves when retrieval is randomised. With
+# A9_SIBLINGS=1 a fold hides the whole sibling group, so the column measures transfer to an
+# unseen kind of task rather than to an unseen label.
+#
+# The groups are fixed in results/sibling_folds_preregistration.json and were derived from
+# instruction embeddings alone -- never from any arm's retrievals or scores, which would
+# tailor the split to the arm it judges. Off by default: with the flag unset every id set,
+# and therefore every archived fold artefact, is byte-identical to before this existed.
+SIBLING_GROUPS: List[List[str]] = [
+    ["cut_fruit_on_board", "cut_two_fruits_on_board"],
+    ["parallel_human_dual_asset_to_plate_or_bowl", "sequential_pick_two_and_place"],
+    ["serve_bread_after_checking_cabinet", "serve_bread_from_counter"],
+]
+
+
+def sibling_group(family: str) -> List[str]:
+    """The family plus its pre-registered siblings, or just the family."""
+    for group in SIBLING_GROUPS:
+        if family in group:
+            return list(group)
+    return [family]
+
+
+def masked_families(family: str) -> List[str]:
+    """What a fold hides from memory: the family, and its group when A9_SIBLINGS=1."""
+    if os.environ.get("A9_SIBLINGS") == "1":
+        return sibling_group(family)
+    return [family]
+
+
 def held_out_ids(family: str) -> set:
-    return {mid for mid, name in episode_families().items() if name == family}
+    hidden = set(masked_families(family))
+    return {mid for mid, name in episode_families().items() if name in hidden}
 
 
 def summary() -> Dict[str, object]:
