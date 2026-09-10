@@ -91,6 +91,58 @@ you were not shown. You have %d moves.
 
 
 
+# The submission interface, added 2026-09-09, and OFF by default so the frozen cell stays
+# byte-identical. Two things the task text never said, each of which was measured costing a
+# whole class of operator:
+#
+#   * What `?x` and `?y` mean. They are the planner's, not the model's: `?x` is bound to the
+#     subject the effect is about and `?y` to its target. Twice in the v2 sweep a model wrote
+#     the sealed-cupboard body with `?x` as the cupboard, was told "checker refused
+#     ['Open', 'plate']", and never recovered -- it had the right shape and the wrong
+#     convention, and nothing in the prompt or the refusal named the convention. That body,
+#     written the other way round, is worth 155 rows of the ID column on its own.
+#   * That a coordinated operator can be submitted at all. On `dog_push` the models submitted
+#     `Reach Grasp Place` 138 times: a fragment of one robot's part in a three-robot relay,
+#     because the shape they were shown has one `body` and no roles.
+#
+# This is the [[viki-interface-not-capability]] repair again, and it must be reported as its
+# own condition: a run with this flag is not comparable with the frozen 40%.
+INTERFACE = """
+
+The variables are not yours to name. The planner binds `?x` to the subject the effect is
+about and `?y` to its target, and you cannot repurpose either. A body often needs a third
+thing -- something to open, something to stand at, something to put `?x` down on -- and
+every such variable is a SPARE: write it `?z1`, `?z2`, ... and the planner fills it by
+reading what the body does with it. So the body that fetches an object out of a shut
+cupboard opens the spare and grasps `?x`, never the other way round. `run_operator` reports
+`bindings`, which says what each of your variables actually became on that episode; if `?x`
+became the thing you meant to open, the body has them the wrong way round.
+
+Some effects are brought about by two or three robots together and cannot be written as one
+body -- one robot pushes what another cannot carry, one opens what another is holding
+something for. Those are submitted as a coordinated operator instead of a body:
+
+  {"kind": "coordination", "coordinated": true,
+   "effect": {"key": "pos.name", "subject": "?x", "value": "?y"},
+   "roles": [{"variable": "?r0",
+              "actions": [{"action": ["Verb", "arg"], "offset": 3, "after": [[1, 2]]}]},
+             ...],
+   "preconditions": {fact_name: bool}, "cost": int}
+
+You find out that an effect needs one by asking: run `check_actor` on each robot in turn
+for that completion. If no single robot's own actions make the predicate hold -- `runs_alone`
+false for every one of them -- then no single body can be right, however it is written, and
+what you are looking at is a relay. `contrast_actors` then shows you which part each robot
+played.
+
+`offset` is the step of the demonstration the action was seen at; `after` says which other
+roles must have got further first, as [role_index, count] pairs, and it is what makes one
+robot wait for another. One robot fills each role and the planner casts them, so never name
+a robot yourself. `run_operator` executes all the roles together, against every casting of
+the episode's robots, so a coordinated body is tested the way it will be used.
+"""
+
+
 def extract_request(answer: str):
     """Find the model's JSON object.
 
@@ -192,6 +244,9 @@ def main():
                         help="leakage control arm (d): predicate menu only, no episode data")
     parser.add_argument("--accept-ordering", action="store_true",
                         help="also admit an operator that raises the ordering score")
+    parser.add_argument("--interface-v2", action="store_true",
+                        help="state what ?x/?y/?z mean and that a coordinated operator can "
+                             "be submitted; a DIFFERENT cell, never pooled with the frozen one")
     args = parser.parse_args()
 
     viki_fork_guard.install()
@@ -276,6 +331,8 @@ def main():
         task = (coherent % (TOOLS_NO_TRACE, args.moves)) + NO_TRACE_NOTE
     else:
         task = (TASK % (TOOLS, args.moves)) + "\n\nStart from episode index %d." % args.seed_episode
+    if args.interface_v2 and not args.no_traces:
+        task += INTERFACE
     ordering_before = None
     if library_operators and args.accept_ordering:
         ordering_before = bench.ordering_score(library_operators)
@@ -337,12 +394,38 @@ def main():
                     messages += [{"role": "assistant", "content": answer},
                                  {"role": "user", "content": json.dumps(result)[:4000]}]
                     continue
-                checks = [bench.run_operator(operator, j) for j in args.holdout]
+                def checked(j):
+                    # A submission is data, not code we trust: anything it makes the
+                    # workbench raise is reported back as a refusal for that episode. A
+                    # cell that dies here loses its whole induction run.
+                    try:
+                        return bench.run_operator(operator, j)
+                    except Exception as error:                            # noqa: BLE001
+                        return {"bound": False, "effect_holds": False,
+                                "failure": "%s: %s" % (type(error).__name__, error)}
+
+                checks = [checked(j) for j in args.holdout]
                 works = [j for j, c in zip(args.holdout, checks)
                          if c.get("bound") and c.get("effect_holds")]
                 result = {"submitted": True, "episodes_it_works_on": works,
-                          "detail": [{k: c.get(k) for k in ("bound", "effect_holds", "failure")}
+                          "detail": [{k: c.get(k) for k in ("bound", "effect_holds",
+                                                            "failure", "bindings")}
                                      for c in checks]}
+                # A mechanical reading of the body against the one thing the model does not
+                # get to choose. `?x` is the subject the effect is about, so an achievement
+                # body that never takes hold of it cannot be the reason the effect became
+                # true -- whatever it does instead, it does to something else. Measured: the
+                # v2 sweep's two correct-shaped submissions and this run's both fail exactly
+                # here, and the refusal they got named only the checker's complaint.
+                if args.interface_v2 and not operator.get("coordinated"):
+                    handled = {a[1] for a in (operator.get("body") or [])
+                               if len(a) > 1 and a[0] in ("Grasp", "Interact", "Push")}
+                    if "?x" not in handled:
+                        result["interface"] = (
+                            "your body never grasps, uses or pushes `?x`. `?x` is not a name "
+                            "you chose: the planner binds it to the object the effect is "
+                            "about, and `bindings` above says what it became on each episode. "
+                            "A body that acts on a spare instead is moving the wrong thing.")
                 record["result"] = result
                 transcript.append(record)
                 gained = None

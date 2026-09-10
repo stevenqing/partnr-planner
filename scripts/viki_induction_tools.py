@@ -16,6 +16,7 @@ asks whether the effect then holds.
 from __future__ import annotations
 
 import copy
+from itertools import permutations
 from typing import Any, Dict, List, Optional
 
 from our_method.skill_memory_v2 import induction, planner as planner_module
@@ -49,6 +50,38 @@ def _bound_tokens(operator: Dict[str, Any], option: Dict[str, str]) -> List[str]
             if value.startswith("?") and not value.startswith("?r"):
                 left.append(value)
     return sorted(set(left))
+
+
+def _roles_attempted(chains: Any) -> List[List[Any]]:
+    """The bound actions of each role, so a relay with a role missing is visible as one."""
+    return [list(one.get("actions") or []) for one in
+            (chains if isinstance(chains, list) else [chains])]
+
+
+def _bindings(operator: Dict[str, Any], chain: Any) -> Dict[str, Any]:
+    """What each variable was actually bound to, read off the chain the planner built.
+
+    `?x` and `?y` are not the operator's to choose: the planner binds `?x` to the subject
+    the effect is about and `?y` to its target, and everything else is a spare it fills by
+    what the body does with it. An operator that uses `?x` for the container it opens is
+    therefore opening the object it was supposed to fetch -- which is exactly what a run of
+    `Open plate` means, and what the refusal used to leave the reader to work out. Saying
+    what the variables became is an observation about the binding, not a hint about the
+    body.
+    """
+    chains = chain if isinstance(chain, list) else [chain]
+    if operator.get("coordinated"):
+        abstract = [item["action"] for role in operator.get("roles", [])
+                    for item in role.get("actions", [])]
+    else:
+        abstract = list(operator.get("body") or [])
+    concrete = [action for one in chains for action in (one.get("actions") or [])]
+    out: Dict[str, Any] = {}
+    for written, done in zip(abstract, concrete):
+        for token, value in zip(written[1:], list(done)[1:]):
+            if isinstance(token, str) and token.startswith("?") and token not in out:
+                out[token] = value
+    return out
 
 
 class Workbench:
@@ -156,7 +189,29 @@ class Workbench:
                     "one of them performed is still an operator",
         }
 
+    @staticmethod
+    def _normalised(operator: Dict[str, Any]) -> Dict[str, Any]:
+        """Fill in the bookkeeping fields a submission may leave out.
+
+        `support` and `cost` only order the candidates a memory offers, and a memory built
+        for one operator has nothing to order; `preconditions` absent means the operator
+        claims to apply anywhere, which is what an empty mismatch count already says. None
+        of these can make a wrong body look right -- but a missing one used to raise
+        KeyError inside `operators_for` and kill the whole cell, which loses an induction
+        run to a typo. A malformed submission has to be refused, not fatal.
+        """
+        filled = dict(operator)
+        filled.setdefault("support", 1)
+        filled.setdefault("preconditions", {})
+        filled.setdefault("types", {})
+        if "cost" not in filled:
+            filled["cost"] = len(filled.get("body") or []) or max(
+                (len(role.get("actions") or []) for role in filled.get("roles") or []),
+                default=1)
+        return filled
+
     def _memory_of(self, operator: Dict[str, Any]) -> SkillMemoryV2:
+        operator = self._normalised(operator)
         record = {"format": FORMAT, "built_from": "workbench", "excluded_family": None,
                   "seed": self.seed, "per_family": 0,
                   "layer1": {"operators": [operator]},
@@ -221,9 +276,20 @@ class Workbench:
         metadata = self.sim.metadata({k: v for k, v in truth.items() if k != "time_steps"}, self.seed)
         target = next(r for r in binding["requirements"] if r.get("first_chain"))
         chain = target["first_chain"]
-        actions = chain[0]["actions"] if isinstance(chain, list) else chain["actions"]
         predicate = next(p["predicate"] for p in planner_module.collect_requirements(metadata)
                          if p["predicate"].get("name") == target["predicate_name"])
+
+        # A coordinated body is several role chains that only mean anything laid out
+        # against each other, one robot per role. Running the first role's actions with a
+        # single robot -- which is what this did until 2026-09-09 -- asks a question the
+        # operator does not answer, and the reference library's own coordination operators
+        # fail it 0/6 while achieving their effect perfectly well through the planner. So
+        # a coordinated candidate is executed the way the consumer executes it, through
+        # `planner.schedule`, and the resulting steps are replayed to observe the effect.
+        if operator.get("coordinated"):
+            return self._run_coordinated(operator, chain, metadata, predicate)
+
+        actions = chain[0]["actions"] if isinstance(chain, list) else chain["actions"]
 
         # Try every robot, not just the first. This used to run `sorted(env.agents)[0]` and
         # nothing else, which quietly failed a whole class of correct operators: the
@@ -272,8 +338,82 @@ class Workbench:
         return {"bound": True, "executed": executed, "failure": failure,
                 "effect_holds": bool(holds(env, predicate)),
                 "effect_state": observed,
+                "bindings": _bindings(operator, chain),
                 "predicate_name": target["predicate_name"], "runner": runner,
                 "runners_tried": attempts}
+
+    # ------------------------------------------------- coordinated bodies
+    def _replay(self, metadata, steps):
+        """Re-execute a schedule and hand back the world it produced.
+
+        `schedule` decides feasibility on a world of its own and returns only the steps, so
+        the effect is observed here on a fresh world -- the same list of steps the judge
+        would be handed, run again.
+        """
+        env = self.sim.world(metadata)
+        for step in steps:
+            commands = []
+            for robot, action in (step.get("actions") or {}).items():
+                resolved = induction._resolve(env, action[0], list(action[1:]), self.sim.entities)
+                if resolved is None:
+                    return env, "cannot resolve %s for %s" % (action, robot)
+                commands.append([action[0].lower(), env.agents[robot]] + resolved)
+            if not commands:
+                continue
+            try:
+                env.sim_step(commands)
+            except Exception as error:                                    # noqa: BLE001
+                return env, "%s: %s" % (type(error).__name__, error)
+        return env, None
+
+    def _run_coordinated(self, operator, chain, metadata, predicate):
+        """Every injective casting of robots to roles, until one makes the effect hold."""
+        chains = chain if isinstance(chain, list) else [chain]
+        robots = sorted(metadata_agents(self.sim, metadata))
+        attempts: List[Dict[str, Any]] = []
+        if len(robots) < len(chains):
+            return {"bound": True, "effect_holds": False, "executed": [],
+                    "failure": "this episode has %d robots and the operator needs %d roles"
+                               % (len(robots), len(chains)),
+                    "bindings": _bindings(operator, chains),
+                    "roles_attempted": _roles_attempted(chains),
+                    "predicate_name": predicate.get("name"), "runner": None,
+                    "runners_tried": attempts}
+        best = None
+        for assignment in permutations(robots, len(chains)):
+            plans = {robot: [copy.deepcopy(one)] for robot, one in zip(assignment, chains)}
+            try:
+                steps = planner_module.schedule(metadata, plans, self.sim)
+            except Exception as error:                                    # noqa: BLE001
+                steps, note = None, "%s: %s" % (type(error).__name__, error)
+            else:
+                note = None if steps is not None else "no schedule lays these roles out"
+            if steps is None:
+                attempts.append({"runner": list(assignment), "failure": note,
+                                 "effect_holds": False})
+                continue
+            env, failure = self._replay(metadata, steps)
+            achieved = bool(holds(env, predicate))
+            attempts.append({"runner": list(assignment), "failure": failure,
+                             "effect_holds": achieved, "steps": len(steps)})
+            best = {"bound": True,
+                    "executed": [a for step in steps for a in step.get("actions", {}).values()],
+                    "failure": failure, "effect_holds": achieved,
+                    "bindings": _bindings(operator, chains),
+                    "roles_attempted": _roles_attempted(chains),
+                    "predicate_name": predicate.get("name"),
+                    "runner": list(assignment), "runners_tried": attempts}
+            if failure is None and achieved:
+                return best
+        return best or {"bound": True, "effect_holds": False, "executed": [],
+                        "failure": "no casting of robots to roles could be scheduled. The "
+                                   "roles as they were bound are below: read them against "
+                                   "what `contrast_actors` shows each robot doing, since a "
+                                   "relay written with a role missing can never be laid out.",
+                        "bindings": _bindings(operator, chains),
+                        "roles_attempted": _roles_attempted(chains),
+                        "predicate_name": predicate.get("name"), "runner": None,
+                        "runners_tried": attempts}
 
     # ------------------------------------------------- the ordering oracle
     def _ordering_probe(self, probe: int):

@@ -8,6 +8,7 @@ script rather than editing the markdown.
 from __future__ import annotations
 
 import argparse
+import glob
 import json
 import re
 from collections import defaultdict
@@ -30,7 +31,13 @@ FAMILIES = ["clear_table_with_two_robots_and_put_in_cabinet", "cut_fruit_on_boar
             "dog_push_box_for_two_panda_transport"]
 
 
+TAG = "v2"
+
+
 def rows(tag):
+    """Cells are named by build: `TAG` swaps a whole results document onto another one."""
+    if TAG != "v2" and tag.startswith("v2_"):
+        tag = TAG + tag[2:]
     path = A11 / ("%s.jsonl" % tag)
     if not path.is_file():
         return None
@@ -60,7 +67,12 @@ def main():
     parser.add_argument("--comparison", type=Path,
                         default=ROOT / "results/agent_library_2026-09-08/baseline_comparison.json")
     parser.add_argument("--out", type=Path, default=ROOT / ("RESULTS-%s.md" % date.today().isoformat()))
+    parser.add_argument("--tag-prefix", default="v2",
+                        help="which build's cells to read; the ablation and repeat sections "
+                             "fall back to the v2 cells when a build has none of its own")
     args = parser.parse_args()
+    global TAG
+    TAG = args.tag_prefix
 
     bc = json.loads(args.comparison.read_text())
     cells = {(c["model"], c["split"], c["arm"]): c for c in bc["cells"]}
@@ -76,13 +88,24 @@ def main():
     w("**口径**：VIKI-L2 一律 **JSON-tolerant**（官方 scorer 会把 79.5% 的行误判 0 分）；配对为"
       " **McNemar exact**。PARTNR 的 `percent_complete` 是连续量，配对用 **bootstrap**。")
     w("")
-    w("**方法**：算子由 agent 从轨迹推导，**验收全部机械**。VIKI 侧 14 族库并集去重后 **4 个算子**"
-      "（11 进 4 出）；对照臂「不给轨迹只给谓词菜单」2016 次提交、**0 个算子**。")
+    # Counted, not typed: a rebuilt library changes all three of these numbers.
+    _rung = sorted(glob.glob(str(ROOT / "outputs/agentic_rung/v2_*/*/verdict.json")))
+    if TAG != "v2":
+        _rung += sorted(glob.glob(str(ROOT / ("outputs/agentic_rung/%s/*/*/verdict.json" % TAG))))
+    _cells = [v for v in _rung if "/v2_notrace/" not in v]
+    _passes = sum(1 for v in _cells
+                  if str(json.loads(Path(v).read_text()).get("passed")) == "True")
+    _lib = json.loads((ROOT / ("outputs/%s_memories/memory_all.json"
+                               % ("v2" if TAG == "v2" else TAG))).read_text())
+    w("**方法**：算子由 agent 从轨迹推导，**验收全部机械**。VIKI 侧 14 族库并集去重后 "
+      "**%d 个算子**（%d 进 %d 出，%d 格）；对照臂「不给轨迹只给谓词菜单」交出 **0 个算子**。"
+      % (len(_lib["layer1"]["operators"]), _passes,
+         len(_lib["layer1"]["operators"]), len(_cells)))
     w("")
     w("---")
     w("")
     # ---- induction budget: how much data the operators were actually derived from
-    import ast, glob
+    import ast
     w("## 0. 归纳预算：这些算子是用多少 episode 推出来的")
     w("")
     w("这一节回答「凭什么说归纳出来的技能是可泛化的」。**归纳预算与评测预算是两回事**，"
@@ -91,6 +114,9 @@ def main():
     w("### VIKI-L2")
     w("")
     verdicts = sorted(glob.glob(str(ROOT / "outputs/agentic_rung/v2_*/*/verdict.json")))
+    if TAG != "v2":
+        # Round two lives under its own root; a build's budget is both rounds together.
+        verdicts += sorted(glob.glob(str(ROOT / ("outputs/agentic_rung/%s/*/*/verdict.json" % TAG))))
     passed = []
     for v in verdicts:
         d = json.loads(Path(v).read_text())
@@ -100,17 +126,21 @@ def main():
             works = len(ast.literal_eval(str(d.get("works_on"))))
         except Exception:
             works = d.get("works_on")
-        passed.append((Path(v).parts[-3][3:], Path(v).parts[-2], d.get("moves_used"), works))
+        family = Path(v).parts[-3]
+        passed.append((family[3:] if family.startswith("v2_") else family,
+                       Path(v).parts[-2], d.get("moves_used"), works))
     notrace = [v for v in verdicts if "/v2_notrace/" in v]
     notrace_pass = sum(1 for v in notrace
                        if str(json.loads(Path(v).read_text()).get("passed")) == "True")
-    mem = json.loads((ROOT / "outputs/v2_memories/memory_all.json").read_text())
+    mem = json.loads((ROOT / ("outputs/%s_memories/memory_all.json"
+                              % ("v2" if TAG == "v2" else TAG))).read_text())
     ops = mem["layer1"]["operators"]
     w("- **可见的归纳池**：train 7196 条 episode，归纳工具只开放 `episodes[::2]` = **3598 条**"
       "（`viki_induction_tools.py:58`）。另一半永不暴露给 agent，自检就在那一半上做，"
       "所以工具不可能成为过拟合通道。每族取样上限 `per_family=250`。")
-    w("- **agent 的实际动作**：14 个族 × 每族 56 个候选 effect = **%d 次尝试**，"
-      "通过 **%d 个**，去重后 **%d 个算子**。"
+    w("- **agent 的实际动作**：**%d 格**（14 个族，第一轮每族 56 个候选 effect；第二轮起于"
+      "2026-09-09，每族的库交回给它自己，所以一个族能交出第二个变体），"
+      "通过 **%d 个**，去重并重算 support 后 **%d 个算子**。"
       % (len(verdicts) - len(notrace), len(passed) - notrace_pass, len(ops)))
     w("- **无轨迹对照臂 (d)**：同样 56 个 effect，**通过 %d 个**。" % notrace_pass)
     w("")
@@ -126,16 +156,42 @@ def main():
         src = [Path(x).parts[-2] for x in (prov.get("sources") or [])]
         moves, works = seed_of.get(src[0], ("?", "?")) if src else ("?", "?")
         v = prov.get("verified_on")
-        w("| `%s` / %d 步 | %s | %s | %s | %s 条 | %s 条 |"
-          % (op["effect"]["key"], len(op["body"]), op.get("support"),
+        # A coordinated operator has roles instead of a body, and its length is the longest
+        # role -- writing `len(op["body"])` raised KeyError the first time one entered.
+        if op.get("coordinated"):
+            shape = "%d 角色 / %d 步" % (
+                len(op.get("roles") or []),
+                max((len(r.get("actions") or []) for r in op.get("roles") or []), default=0))
+        else:
+            shape = "%d 步" % len(op.get("body") or [])
+        w("| `%s` / %s | %s | %s | %s | %s 条 | %s 条 |"
+          % (op["effect"]["key"], shape, op.get("support"),
              ", ".join(src) or "?", moves, works, len(v) if isinstance(v, list) else v))
     w("")
-    w("**最值得引的一条不是 support 数，是跨族收敛**：11 个通过的算子里有 8 个是**不同的族"
-      "各自独立归纳出来的同一个 5 步体**（去重后就是 support 46 那个）。同一个体被八个族"
-      "分别推出来，比它在多少条 episode 上有支撑更能说明它不是某一族的特例。")
-    w("")
-    w("**风险也要写明**：support 3 的那个 7 步算子只在 3 条 episode 上验过"
-      "（`verified_on` 3 条），它是四个里最弱的一环。")
+    # Cross-family convergence, counted from the per-family libraries: how many DIFFERENT
+    # families independently arrived at the same body. That is the claim worth making, and
+    # it has to be recomputed for every build rather than restated.
+    donors = defaultdict(set)
+    libs_root = ROOT / ("outputs/%s_libraries" % ("v2" if TAG == "v2" else TAG))
+    for path in sorted(glob.glob(str(libs_root / "library_*.json"))):
+        family = Path(path).stem[len("library_"):]
+        for operator in json.loads(Path(path).read_text())["operators"]:
+            key = json.dumps([operator.get("effect"),
+                              [a[0] for a in (operator.get("body") or [])],
+                              bool(operator.get("coordinated"))], sort_keys=True)
+            donors[key].add(family)
+    if donors:
+        best = max(donors.values(), key=len)
+        shared = sum(1 for names in donors.values() if len(names) > 1)
+        w("**最值得引的一条不是 support 数，是跨族收敛**：进库的 %d 个算子里有 **%d 个是被"
+          "一个以上的族各自独立归纳出来的**，最广的那个体被 **%d 个族**分别推出来。"
+          "同一个体被多个族分别推出来，比它在多少条 episode 上有支撑更能说明它不是某一族的特例。"
+          "**留出列直接吃这件事**：只有一个族供体的算子，那一折就会把它折没。"
+          % (len(ops), shared, len(best)))
+        w("")
+        singles = [names for names in donors.values() if len(names) == 1]
+        w("**风险也要写明**：仍有 **%d 个算子只有一个族供体**（%s），它们在自己那一折上不存在。"
+          % (len(singles), "、".join(sorted(next(iter(n)) for n in singles))[:200]))
     w("")
     w("### PARTNR")
     w("")
@@ -166,7 +222,10 @@ def main():
 
     w("## 1. VIKI-L2 主表")
     w("")
-    w("**加粗 = 该行最高值**（不是「我们的」——OOD 那几行的最高值不在我们这一列）。")
+    # The parenthetical used to assert that the OOD rows' maximum was not ours. That was
+    # true of the v2 build and is a claim about the numbers, so it is checked rather than
+    # written: if a row's maximum is not ours, it is named here.
+    w("**加粗 = 该行最高值**，不是「我们的」——凡是最高值不在我们这一列的行，下面逐行点名。")
     w("")
     for model in ("72B", "30B", "7B"):
         w("### %s" % model)
@@ -239,7 +298,10 @@ def main():
       "兄弟就是把偏向反过来；zero-shot 无记忆，复用。"
       % ", ".join("`%s`" % f for f in pre["affected_eval_folds"]))
     w("")
-    w("### 拿掉兄弟族之后谁掉得多，**随模型反转**")
+    w("### 拿掉兄弟族之后谁掉得多")
+    w("")
+    w("兄弟组留出比单族留出严格，两条臂都掉；这张表只回答**掉完之后谁在前面**。"
+      "（v2 那一版这里写的是「随模型反转」——那是 4 算子库的性质，本表不再成立。）")
     w("")
     w("| 模型 | ours 单族→兄弟组 | G-Memory 单族→兄弟组 | 兄弟组这一列：ours vs G-Memory |")
     w("|---|---|---|---|")
@@ -285,14 +347,24 @@ def main():
     w("")
     w("## 3. 消融")
     w("")
-    w("原来只有 72B，而且它的 text/imaged 跑在**半份记忆**（`comp_cd`）上——**从没测过主表报的"
-      "那份全份记忆**。现在两件都补齐：`_full` 是对全份 `memory_all.json` 的消融，`_half` 是"
-      "对半份的（与归档的 72B 那批同条件）。对照永远取**同一份记忆**的未消融格。")
+    w("`_full` 是对全份 `memory_all.json` 的消融，`_half` 是对半份 `comp_cd` 的。"
+      "对照永远取**同一份记忆**的未消融格，所以每一行的两个数来自同一个库。")
     w("")
-    w("**两张表放在一起说明一件事**：`no-order` 在组合泛化两格「零效应」是**半份记忆造成的"
-      "假象**——换成全份记忆，72B 文本 0.8620 → 0.3266、带图 0.7980 → 0.2761。真正的零效应"
-      "只有一个：`no-grounding` 在**文本** split 上三个模型都是 297/297 逐行一致，"
-      "因为那一格没有图可 ground。")
+    # Which models this build actually has ablation cells for. Written from the cells, so a
+    # column that never ran cannot be implied by a sentence: the 30B and 7B cells of the v3
+    # build were not run because the box's endpoints were taken 2026-09-10.
+    _have = [m for m in ("72B", "30B", "7B")
+             if any(rows("v2_abl%s_%s_%s_%s" % (f, a, m, sp))
+                    for f in ("full", "") for a in ("noground", "noorder")
+                    for sp in ("id", "text", "imaged"))]
+    _absent = [m for m in ("72B", "30B", "7B") if m not in _have]
+    if _absent:
+        w("**这一组只跑了 %s**：%s 的消融格本 build 没有——重打分本身几乎不花算力，但每一格"
+          "仍要一个活着的端点做那少数几行的 re-ask，而这些模型的端点在跑到它们之前就没了。"
+          "**缺就是缺，不要用上一版的行补。**" % ("、".join(_have) or "无", "、".join(_absent)))
+        w("")
+    w("`no-grounding` 在**文本** split 上是结构性的零效应：那一格没有图可 ground，"
+      "所以逐行一致是预期而不是发现。其余每一行都要看配对。")
     w("")
     ABL_CTRL_FULL = {"id": "v2_ours_%s_id", "text": "v2_oursall_%s_text",
                      "imaged": "v2_oursall_%s_imaged"}
@@ -302,6 +374,7 @@ def main():
                                            ("半份记忆 `comp_cd`", "v2_abl", ABL_CTRL_HALF)):
         w("### %s" % memory_label)
         w("")
+        lines_before = len(L)
         w("| 模型 | 消融 | split | 对照 | 消融后 | 配对 |")
         w("|---|---|---|---|---|---|")
         for model in ("72B", "30B", "7B"):
@@ -316,6 +389,12 @@ def main():
                             else "对照胜 %d / 消融胜 %d  p=%.3g" % (wins, losses, p))
                     w("| %s | %s | %s | %.4f | %.4f | %s |"
                       % (model, ab_label, split, rate(c), rate(a), note))
+        # An empty table is not a result. Say which build has no such cells rather than
+        # printing a header with nothing under it and leaving the prose above unsupported.
+        if len(L) == lines_before + 2:
+            del L[lines_before:]
+            w("**本 build（`%s`）没有这一组格**：消融是一次独立的重打分，还没为它跑过。"
+              "不要拿上一版（`v2_%s_*`）的行填这里——那是另一个库的消融。" % (TAG, prefix.split("_", 1)[1]))
         w("")
 
     w("## 4. 留一族（ID 池，去掉一个族的库，评全部 924 行）")

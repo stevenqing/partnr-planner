@@ -40,7 +40,10 @@ def main() -> int:
     parser.add_argument("--libs-root", type=Path, default=ROOT / "outputs/v2_libraries")
     parser.add_argument("--out-root", type=Path, default=ROOT / "outputs/v2_memories")
     parser.add_argument("--models", nargs="+", default=["72B", "30B", "7B"])
+    # Which build these cells belong to; "v2" keeps every path this driver has written.
+    parser.add_argument("--tag-prefix", default="v2")
     args = parser.parse_args()
+    tag_prefix = args.tag_prefix
 
     pre = json.loads(PRE.read_text())
     groups = {f: g for g in pre["groups"] for f in g}
@@ -78,7 +81,7 @@ def main() -> int:
             continue
         url, served = ENDPOINT[model]
         for held, memory in memories.items():
-            tag = "v2_foldgrp_%s_%s" % (model, held)
+            tag = "%s_foldgrp_%s_%s" % (tag_prefix, model, held)
             if (A11 / ("%s.jsonl" % tag)).is_file():
                 say("skip   %s" % tag)
                 continue
@@ -93,10 +96,10 @@ def main() -> int:
     # unaffected family's from the single-family run it already had -- those two are the
     # same experiment for a family with no sibling.
     for model in args.models:
-        out = A11 / ("v2_ours_%s_heldout_sibgrp.jsonl" % model)
+        out = A11 / ("%s_ours_%s_heldout_sibgrp.jsonl" % (tag_prefix, model))
         rows, missing = [], []
         for family in pre["affected_eval_folds"] + pre["unaffected_eval_folds_reused_as_is"]:
-            stem = "v2_foldgrp" if family in affected else "v2_fold"
+            stem = ("%s_foldgrp" % tag_prefix) if family in affected else ("%s_fold" % tag_prefix)
             path = A11 / ("%s_%s_%s.jsonl" % (stem, model, family))
             if not path.is_file():
                 missing.append(path.name)

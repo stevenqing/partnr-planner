@@ -58,7 +58,18 @@ def main(argv=None) -> int:
     parser.add_argument("--out", type=Path,
                         default=ROOT / ("results/agent_library_%s" % date.today().isoformat()))
     parser.add_argument("--models", nargs="+", default=["72B", "30B"])
+    # Which build of ours to compare the archived baselines against. The baselines are the
+    # same rows either way -- only Layer 1 differs between builds -- so this is the switch
+    # that makes a rebuilt library comparable against the same five arms.
+    parser.add_argument("--tag-prefix", default="v2")
     arguments = parser.parse_args(argv)
+    if arguments.tag_prefix != "v2":
+        for key, value in list(OURS.items()):
+            OURS[key] = value.replace("v2_", arguments.tag_prefix + "_", 1)
+        # The half-to-whole curve is read from its own cell names and was left behind by the
+        # first version of this switch, which reported a v3 table with a v2 curve in it.
+        for key, value in list(CURVE.items()):
+            CURVE[key] = value.replace("v2_", arguments.tag_prefix + "_", 1)
     out = arguments.out.resolve()
     out.mkdir(parents=True, exist_ok=True)
 

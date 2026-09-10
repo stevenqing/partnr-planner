@@ -36,6 +36,8 @@ REPLAY = {
     ("7B", "recombination-text"): "m7_recomb_text.jsonl",
     ("7B", "recombination-imaged"): "m7_recomb_imaged.jsonl",
 }
+TAG = "v2"
+
 ENDPOINT = {"72B": ("http://192.168.32.40:8050/v1", "qwen2.5-vl-72b-amendment3-f2"),
             "30B": ("http://127.0.0.1:8062/v1", "qwen3-vl-30b"),
             "7B": ("http://127.0.0.1:8061/v1", "qwen2.5-vl-7b")}
@@ -94,7 +96,14 @@ def main(argv=None) -> int:
     parser.add_argument("--libs-root", type=Path, default=ROOT / "outputs/v2_libraries")
     parser.add_argument("--out-root", type=Path, default=ROOT / "outputs/v2_memories")
     parser.add_argument("--models", nargs="+", default=["72B", "30B", "7B"])
+    # Which build these cells belong to. Default "v2" keeps every path this driver has ever
+    # written byte-identical; a different prefix lands a whole build beside it rather than
+    # on top of it, which is what a rebuilt library needs -- the v2 cells stay readable and
+    # the two can be compared row by row.
+    parser.add_argument("--tag-prefix", default="v2")
     args = parser.parse_args(argv)
+    global TAG
+    TAG = args.tag_prefix
 
     definition = json.loads(args.definition.read_text())
     build_families = definition["build_families"]
@@ -136,32 +145,32 @@ def main(argv=None) -> int:
     # ---- cells
     for model in args.models:
         say("=== cells for %s ===" % model)
-        cell("v2_ours_%s_id" % model, id_memory, model, "id")
+        cell("%s_ours_%s_id" % (TAG, model), id_memory, model, "id")
         # The three comp cells are the half-to-whole curve: cut only, cut+delivery, all.
-        cell("v2_ourscut_%s_text" % model, comp_c, model, "recombination-text")
-        cell("v2_ourscut_%s_imaged" % model, comp_c, model, "recombination-imaged")
-        cell("v2_ours_%s_text" % model, comp_cd, model, "recombination-text")
-        cell("v2_ours_%s_imaged" % model, comp_cd, model, "recombination-imaged")
-        cell("v2_oursall_%s_text" % model, id_memory, model, "recombination-text")
-        cell("v2_oursall_%s_imaged" % model, id_memory, model, "recombination-imaged")
+        cell("%s_ourscut_%s_text" % (TAG, model), comp_c, model, "recombination-text")
+        cell("%s_ourscut_%s_imaged" % (TAG, model), comp_c, model, "recombination-imaged")
+        cell("%s_ours_%s_text" % (TAG, model), comp_cd, model, "recombination-text")
+        cell("%s_ours_%s_imaged" % (TAG, model), comp_cd, model, "recombination-imaged")
+        cell("%s_oursall_%s_text" % (TAG, model), id_memory, model, "recombination-text")
+        cell("%s_oursall_%s_imaged" % (TAG, model), id_memory, model, "recombination-imaged")
         if notrace_memory.is_file():
-            cell("v2_notrace_%s_id" % model, notrace_memory, model, "id")
-            cell("v2_notrace_%s_text" % model, notrace_memory, model, "recombination-text")
-            cell("v2_notrace_%s_imaged" % model, notrace_memory, model, "recombination-imaged")
+            cell("%s_notrace_%s_id" % (TAG, model), notrace_memory, model, "id")
+            cell("%s_notrace_%s_text" % (TAG, model), notrace_memory, model, "recombination-text")
+            cell("%s_notrace_%s_imaged" % (TAG, model), notrace_memory, model, "recombination-imaged")
         if model == "72B":
-            cell("v2_abl_noorder_%s_id" % model, id_memory, model, "id", ("--no-order",))
-            cell("v2_abl_noorder_%s_text" % model, comp_cd, model, "recombination-text",
+            cell("%s_abl_noorder_%s_id" % (TAG, model), id_memory, model, "id", ("--no-order",))
+            cell("%s_abl_noorder_%s_text" % (TAG, model), comp_cd, model, "recombination-text",
                  ("--no-order",))
-            cell("v2_abl_noorder_%s_imaged" % model, comp_cd, model, "recombination-imaged",
+            cell("%s_abl_noorder_%s_imaged" % (TAG, model), comp_cd, model, "recombination-imaged",
                  ("--no-order",))
-            cell("v2_abl_noground_%s_id" % model, id_memory, model, "id", ("--no-grounding",))
-            cell("v2_abl_noground_%s_text" % model, comp_cd, model, "recombination-text",
+            cell("%s_abl_noground_%s_id" % (TAG, model), id_memory, model, "id", ("--no-grounding",))
+            cell("%s_abl_noground_%s_text" % (TAG, model), comp_cd, model, "recombination-text",
                  ("--no-grounding",))
-            cell("v2_abl_noground_%s_imaged" % model, comp_cd, model, "recombination-imaged",
+            cell("%s_abl_noground_%s_imaged" % (TAG, model), comp_cd, model, "recombination-imaged",
                  ("--no-grounding",))
         # held-out family: score each family's rows with the memory built without it
         for held, memory in fold_memories.items():
-            cell("v2_fold_%s_%s" % (model, held), memory, model, "id")
+            cell("%s_fold_%s_%s" % (TAG, model, held), memory, model, "id")
         assemble_fold(model, fold_memories)
     say("done")
     return 0
@@ -171,13 +180,13 @@ def assemble_fold(model, fold_memories) -> None:
     """One 924-row cell: family X's rows taken from the run whose memory excluded X."""
     if not fold_memories:
         return
-    out = A11 / ("v2_ours_%s_heldout.jsonl" % model)
+    out = A11 / ("%s_ours_%s_heldout.jsonl" % (TAG, model))
     if out.is_file():
         say("skip   fold assembly %s" % out.name)
         return
     rows = []
     for held in fold_memories:
-        path = A11 / ("v2_fold_%s_%s.jsonl" % (model, held))
+        path = A11 / ("%s_fold_%s_%s.jsonl" % (TAG, model, held))
         if not path.is_file():
             say("未执行，缺 %s" % path)
             return

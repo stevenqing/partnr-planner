@@ -21,7 +21,10 @@ WORKERS=${WORKERS:-8}
 cd "$ROOT" || exit 1
 export TOKENIZERS_PARALLELISM=false
 A11=results/viki_memory_experiments/amendment11
-M=outputs/v2_memories
+# Which build's memories the ablation runs against, and the cell-name prefix that goes with
+# it. Defaults keep every path this driver has ever written.
+M=${M:-outputs/v2_memories}
+TAG=${TAG:-v2}
 say () { echo "[$(date +%m-%d\ %H:%M:%S)] $*"; }
 
 case "$MODEL" in
@@ -51,14 +54,14 @@ cell () {        # tag memory split replay flag
 for ab in noground noorder; do
   [ "$ab" = noground ] && flag=--no-grounding || flag=--no-order
   # full memory: the one the main table reports, for all three models
-  cell "v2_ablfull_${ab}_${MODEL}_id"     $M/memory_all.json id                   "$R_ID" "$flag"
-  cell "v2_ablfull_${ab}_${MODEL}_text"   $M/memory_all.json recombination-text   "$R_T"  "$flag"
-  cell "v2_ablfull_${ab}_${MODEL}_imaged" $M/memory_all.json recombination-imaged "$R_I"  "$flag"
+  cell "${TAG}_ablfull_${ab}_${MODEL}_id"     $M/memory_all.json id                   "$R_ID" "$flag"
+  cell "${TAG}_ablfull_${ab}_${MODEL}_text"   $M/memory_all.json recombination-text   "$R_T"  "$flag"
+  cell "${TAG}_ablfull_${ab}_${MODEL}_imaged" $M/memory_all.json recombination-imaged "$R_I"  "$flag"
   # half memory, to sit beside the archived 72B cells (which were produced this way)
   if [ "$MODEL" != 72B ]; then
-    cell "v2_abl_${ab}_${MODEL}_id"     $M/memory_all.json               id                   "$R_ID" "$flag"
-    cell "v2_abl_${ab}_${MODEL}_text"   $M/memory_comp_cut_delivery.json recombination-text   "$R_T"  "$flag"
-    cell "v2_abl_${ab}_${MODEL}_imaged" $M/memory_comp_cut_delivery.json recombination-imaged "$R_I"  "$flag"
+    cell "${TAG}_abl_${ab}_${MODEL}_id"     $M/memory_all.json               id                   "$R_ID" "$flag"
+    cell "${TAG}_abl_${ab}_${MODEL}_text"   $M/memory_comp_cut_delivery.json recombination-text   "$R_T"  "$flag"
+    cell "${TAG}_abl_${ab}_${MODEL}_imaged" $M/memory_comp_cut_delivery.json recombination-imaged "$R_I"  "$flag"
   fi
 done
 say "ablations finished for $MODEL"
