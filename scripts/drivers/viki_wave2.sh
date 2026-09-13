@@ -18,6 +18,11 @@ ROOT=${ROOT:-/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner}
 PY=${PY:-/root/venvs/partnr/bin/python}
 PART=${PART:?set PART to 72B / 30B / 7B}
 WORKERS=${WORKERS:-8}
+# Which build the no-think cells belong to. `v2` keeps the archived paths;
+# `TAG=v3 M=outputs/v3_memories` runs the condition on the shipped library.
+M=${M:-outputs/v2_memories}
+TAG=${TAG:-v2}
+CELL_TIMEOUT=${CELL_TIMEOUT:-21600}
 cd "$ROOT" || exit 1
 export TOKENIZERS_PARALLELISM=false
 A11=results/viki_memory_experiments/amendment11
@@ -63,17 +68,17 @@ PYEOF
     say "$BASE free; our arm under no-think"
     for split in id recombination-text recombination-imaged; do
       case $split in
-        id) tag="v2_ours_${PART}_id_nt" ;;
-        recombination-text) tag="v2_oursall_${PART}_text_nt" ;;
-        recombination-imaged) tag="v2_oursall_${PART}_imaged_nt" ;;
+        id) tag="${TAG}_ours_${PART}_id_nt" ;;
+        recombination-text) tag="${TAG}_oursall_${PART}_text_nt" ;;
+        recombination-imaged) tag="${TAG}_oursall_${PART}_imaged_nt" ;;
       esac
       out="$A11/$tag.jsonl"
       [ -f "$out" ] && { say "skip   $tag"; continue; }
       say "start  $tag (live, no replay)"
-      timeout -k 60 21600 $PY scripts/viki_eval_v2_intent_choice.py \
-          --memory outputs/v2_memories/memory_all.json --split "$split" --tag "$tag" \
+      timeout -k 60 "$CELL_TIMEOUT" $PY scripts/viki_eval_v2_intent_choice.py \
+          --memory $M/memory_all.json --split "$split" --tag "$tag" \
           --model "$SERVED" --base-url "$BASE" --workers "$WORKERS" \
-          >> "outputs/wave2_${PART}.detail.log" 2>&1 \
+          >> "outputs/wave2_${TAG}_${PART}.detail.log" 2>&1 \
           && say "done   $tag -> $(wc -l < "$out" 2>/dev/null || echo 0) rows" || say "FAILED $tag"
     done
     ;;

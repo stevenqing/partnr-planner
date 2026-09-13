@@ -18,6 +18,13 @@ PY=${PY:-/root/venvs/partnr/bin/python}
 MODEL=${MODEL:?set MODEL}
 REP=${REP:-2}
 WORKERS=${WORKERS:-8}
+# Which build the repeat belongs to. `v2` keeps every path this driver has
+# written so far; `TAG=v3 M=outputs/v3_memories` repeats the shipped library.
+M=${M:-outputs/v2_memories}
+TAG=${TAG:-v2}
+# Observed: a whole pass is ~13 min for the 72B, so 30 min per cell is already
+# 30x the real duration. Do not copy 10800 from a driver that runs 924 live rows.
+CELL_TIMEOUT=${CELL_TIMEOUT:-10800}
 cd "$ROOT" || exit 1
 export TOKENIZERS_PARALLELISM=false
 A11=results/viki_memory_experiments/amendment11
@@ -39,8 +46,8 @@ fi
 replay_for () {  # split
   case "$1" in
     id) echo "$A11/$REPLAY.jsonl" ;;
-    recombination-text)   [ "$MODEL" = 72B ] && echo "$A11/recomb_text_agentic.jsonl"   || echo "$A11/${MODEL,,}_recomb_text.jsonl" ;;
-    recombination-imaged) [ "$MODEL" = 72B ] && echo "$A11/recomb_imaged_agentic.jsonl" || echo "$A11/${MODEL,,}_recomb_imaged.jsonl" ;;
+    recombination-text)   [ "$MODEL" = 72B ] && echo "$A11/recomb_text_agentic.jsonl"   || echo "$A11/${REPLAY%_id}_recomb_text.jsonl" ;;
+    recombination-imaged) [ "$MODEL" = 72B ] && echo "$A11/recomb_imaged_agentic.jsonl" || echo "$A11/${REPLAY%_id}_recomb_imaged.jsonl" ;;
   esac
 }
 
@@ -52,21 +59,20 @@ cell () {        # tag memory split
   local src; src=$(replay_for "$split")
   [ -f "$src" ] || { say "未执行，缺 replay $src"; return 1; }
   say "start  $tag"
-  timeout -k 60 10800 "$PY" "$EVAL" --memory "$memory" --split "$split" --tag "$tag" \
+  timeout -k 60 "$CELL_TIMEOUT" "$PY" "$EVAL" --memory "$memory" --split "$split" --tag "$tag" \
       --replay "$src" --model "$SERVED" --base-url "$BASE" --workers "$WORKERS" \
-      >> "outputs/ours_repeats_${MODEL}.detail.log" 2>&1 \
+      >> "outputs/ours_repeats_${TAG}_${MODEL}.detail.log" 2>&1 \
       && say "done   $tag" || say "FAILED $tag"
 }
 
-M=outputs/v2_memories
-cell "v2_ours_${MODEL}_id"        $M/memory_all.json               id
-cell "v2_oursall_${MODEL}_text"   $M/memory_all.json               recombination-text
-cell "v2_oursall_${MODEL}_imaged" $M/memory_all.json               recombination-imaged
+cell "${TAG}_ours_${MODEL}_id"        $M/memory_all.json               id
+cell "${TAG}_oursall_${MODEL}_text"   $M/memory_all.json               recombination-text
+cell "${TAG}_oursall_${MODEL}_imaged" $M/memory_all.json               recombination-imaged
 for f in $($PY -c 'import sys;sys.path.insert(0,"scripts");sys.path.insert(0,".");
 import viki_amendment9_folds as F;print(" ".join(F.folds()))' 2>/dev/null); do
-  cell "v2_fold_${MODEL}_$f"    "$M/memory_heldout_$f.json"    id
+  cell "${TAG}_fold_${MODEL}_$f"    "$M/memory_heldout_$f.json"    id
 done
 for f in $($PY -c 'import json;print(" ".join(json.load(open("results/sibling_folds_preregistration.json"))["affected_eval_folds"]))'); do
-  cell "v2_foldgrp_${MODEL}_$f" "$M/memory_heldoutgrp_$f.json" id
+  cell "${TAG}_foldgrp_${MODEL}_$f" "$M/memory_heldoutgrp_$f.json" id
 done
-say "repeat $REP finished for $MODEL"
+say "repeat $REP finished for $MODEL ($TAG)"

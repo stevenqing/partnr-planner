@@ -363,8 +363,20 @@ def main():
           "仍要一个活着的端点做那少数几行的 re-ask，而这些模型的端点在跑到它们之前就没了。"
           "**缺就是缺，不要用上一版的行补。**" % ("、".join(_have) or "无", "、".join(_absent)))
         w("")
-    w("`no-grounding` 在**文本** split 上是结构性的零效应：那一格没有图可 ground，"
-      "所以逐行一致是预期而不是发现。其余每一行都要看配对。")
+    # The text cell has no image to ground, so the ablation is a no-op by construction --
+    # but the cell still sends 16-23% of its rows through a live re-ask, and that path is
+    # not deterministic below the 72B. Report what the rows did, do not promise identity.
+    _ng = []
+    for model in ("72B", "30B", "7B"):
+        c, a = rows("v2_oursall_%s_text" % model), rows("v2_ablfull_noground_%s_text" % model)
+        if not (c and a):
+            continue
+        n, wins, losses, _p = mcnemar(c, a)
+        _ng.append("%s %s" % (model, ("%d/%d 逐行一致" % (n, n)) if wins == 0 and losses == 0
+                              else ("%d/%d 行不同" % (wins + losses, n))))
+    w("`no-grounding` 在**文本** split 上按构造是零效应：那一格没有图可 ground。"
+      "本 build 实测 %s——不逐行一致的那几行是活 re-ask 路径的抽样噪声，不是 grounding 的效应。"
+      "其余每一行都要看配对。" % "、".join(_ng))
     w("")
     ABL_CTRL_FULL = {"id": "v2_ours_%s_id", "text": "v2_oursall_%s_text",
                      "imaged": "v2_oursall_%s_imaged"}
@@ -547,9 +559,18 @@ def main():
         agree = sum(1 for i in shared if a[i][0] == b[i][0])
         ident.append("%s %d/%d 行判定相同" % (model, agree, len(shared)))
     if ident:
+        _det, _non = [], []
+        for model in ("72B", "30B", "7B"):
+            draws = [rate(r) for r in (rows(("v2_ours_%s_id" % model) + sfx)
+                                       for sfx in ("", "_r2", "_r3")) if r]
+            if len(draws) < 2:
+                continue
+            (_det if statistics.stdev(draws) == 0 else _non).append(model)
         w("**sd = 0 不是「没重跑」**：三个文件是三次独立运行（不同 mtime 与 sha1），"
-          "ID 格 r1 与 r2 的逐行判定为 %s。72B 端点在 temperature 0 下对这条路径是确定性的；"
-          "30B / 7B 不是，所以那两行有非零 sd。" % "、".join(ident))
+          "ID 格 r1 与 r2 的逐行判定为 %s。本 build 里 %s 的三轮逐格同分——那条 re-ask "
+          "路径在 temperature 0 下对它是确定性的%s。"
+          % ("、".join(ident), "、".join(_det) or "无",
+             ("；%s 的 sd 非零" % "、".join(_non)) if _non else "，本 build 没有任何一列出现非零 sd"))
         w("")
     w("**留出族两列的重复**（逐族格各重跑三次后重新拼列）：")
     w("")
@@ -601,8 +622,20 @@ def main():
                  ("%.4f" % (sum(g_t) / len(g_t))) if (g_t and label == "ID") else "—",
                  ("%.4f" % (sum(g_n) / len(g_n))) if (g_n and label == "ID") else "—"))
     w("")
-    w("**条件效应是因臂而异的**：G-Memory 在 no-think 下几乎翻倍，我们几乎不动。"
-      "所以 30B 的 ID 在两种条件下都是我们赢，只是差距从 0.35 缩到约 0.19。")
+    _cond = []
+    for model in ("30B", "7B"):
+        a, b = rows("v2_ours_%s_id" % model), rows(("v2_ours_%s_id" % model) + "_nt")
+        g_t = [v["rate"] for k, v in sorted(gm.items()) if k.startswith("%s/think/" % model)]
+        g_n = [v["rate"] for k, v in sorted(gm.items()) if k.startswith("%s/no-think/" % model)]
+        if not (a and b and g_t and g_n):
+            continue
+        gt, gn = sum(g_t) / len(g_t), sum(g_n) / len(g_n)
+        _cond.append("%s 的 ID：我们 %.4f→%.4f，G-Memory %.4f→%.4f（×%.2f），"
+                     "领先 %+.4f→%+.4f" % (model, rate(a), rate(b), gt, gn,
+                                          (gn / gt) if gt else 0.0,
+                                          rate(a) - gt, rate(b) - gn))
+    if _cond:
+        w("**条件效应是因臂而异的**，所以每一句结论都要写明条件：%s。" % "；".join(_cond))
     w("")
     w("## 6. 不能说的话")
     w("")
