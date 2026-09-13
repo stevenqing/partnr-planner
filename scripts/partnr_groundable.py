@@ -27,7 +27,10 @@ from our_method.skill_memory_v2.partnr_memory import PartnrSkillMemory, WorldVie
 
 ROOMS = {"kitchen_1": ["counter_1", "fridge_2", "sink_3"],
          "living_room_1": ["table_10", "couch_11", "cabinet_12"]}
-CONTAINED = {"cup_0": "cabinet_12"}
+CONTAINED = {"cup_0": "cabinet_12",
+             # `is_next_to` asks for a placement beside another object, so the stub
+             # needs one object that sits on furniture rather than inside a container.
+             "plate_1": "table_10"}
 FLOORS = {"kitchen_1": "floor_kitchen_1", "living_room_1": "floor_living_room_1"}
 
 
@@ -63,7 +66,7 @@ class StubView(WorldView):
         return "sink_3"
 
 
-TARGETS = {"is_in_room": "kitchen_1", "is_on_floor": "kitchen_1"}
+TARGETS = {"is_in_room": "kitchen_1", "is_on_floor": "kitchen_1", "is_next_to": "plate_1"}
 
 
 def _variables(operator: Dict[str, Any]) -> List[str]:

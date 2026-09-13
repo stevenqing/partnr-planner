@@ -55,6 +55,8 @@ def main() -> int:
     ap.add_argument("--json", type=Path, required=True)
     ap.add_argument("--boot", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=20260907)
+    ap.add_argument("--key", default="is_in_room",
+                    help="the predicate the candidate is meant to serve; the aim\n                          criterion is read on the episodes that carry it")
     args = ap.parse_args()
 
     data = json.load(gzip.open(ROOT / f"data/datasets/partnr_episodes/v0_0/{args.pool}.json.gz", "rt"))
@@ -108,8 +110,14 @@ def main() -> int:
         "max_abs_delta": max((abs(d) for d in values), default=0.0),
         "step0_deaths_a": deaths(sa, both_ok), "step0_deaths_b": deaths(sb, both_ok),
     }
-    for label, subset in (("carrying_is_in_room", [k for k in both_ok if "is_in_room" in keys.get(k, set())]),
-                          ("not_carrying", [k for k in both_ok if "is_in_room" not in keys.get(k, set())])):
+    key = args.key
+    carrying = [k for k in both_ok if key in keys.get(k, set())]
+    labels = [("carrying", carrying),
+              ("not_carrying", [k for k in both_ok if key not in keys.get(k, set())])]
+    if key == "is_in_room":
+        labels.insert(0, ("carrying_is_in_room", carrying))
+    report["key"] = key
+    for label, subset in labels:
         if not subset:
             continue
         report[label] = {

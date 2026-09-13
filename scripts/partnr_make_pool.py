@@ -21,6 +21,36 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from partnr_task_types import classify
 
+
+def _handles(proposition, *names):
+    args = proposition.get("args") or {}
+    for name in names:
+        if args.get(name):
+            return {str(h) for h in args[name]}
+    return set()
+
+
+def has_unfoldable_next_to(episode) -> bool:
+    """An `is_next_to` neither of whose entities is being placed by another proposition.
+
+    `partnr_planner.fold_spatial` folds a spatial requirement into the placement that
+    carries it, so the ones that fold need no operator of their own. The ones that stand
+    do, and the library has none -- those are the episodes worth inducing from.
+    """
+    propositions = episode.get("evaluation_propositions") or []
+    placed = set()
+    for proposition in propositions:
+        if proposition.get("function_name") in ("is_on_top", "is_inside"):
+            placed |= _handles(proposition, "object_handles", "entity_handles_a")
+    for proposition in propositions:
+        if proposition.get("function_name") != "is_next_to":
+            continue
+        subjects = _handles(proposition, "object_handles", "entity_handles_a")
+        targets = _handles(proposition, "receptacle_handles", "entity_handles_b", "room_ids")
+        if not (subjects & placed) and not (targets & placed):
+            return True
+    return False
+
 DATA = ROOT / "data/datasets/partnr_episodes/v0_0"
 LEDGER = ROOT / "results/partnr_pools/ledger.json"
 
@@ -38,6 +68,8 @@ def main() -> int:
     ap.add_argument("--types", nargs="*", default=None, help="episode types to keep, e.g. R R_T")
     ap.add_argument("--require-key", nargs="*", default=None, help="keep only episodes carrying all of these proposition keys")
     ap.add_argument("--forbid-key", nargs="*", default=None)
+    ap.add_argument("--unfoldable-next-to", action="store_true",
+                    help="keep only episodes carrying an is_next_to that fold_spatial cannot fold")
     ap.add_argument("--n", type=int, required=True)
     ap.add_argument("--seed", type=int, default=20260907)
     ap.add_argument("--exclude-pools", nargs="*", default=None, help="pool names whose episodes must not be reused")
@@ -73,6 +105,8 @@ def main() -> int:
             continue
         if args.forbid_key and (set(args.forbid_key) & keys):
             continue
+        if args.unfoldable_next_to and not has_unfoldable_next_to(episode):
+            continue
         keep.append(episode)
 
     if len(keep) < args.n:
@@ -85,7 +119,8 @@ def main() -> int:
         json.dump({**{k: v for k, v in blob.items() if k != "episodes"}, "episodes": chosen}, handle)
 
     entry = {"source": args.source, "types": args.types, "require_key": args.require_key,
-             "forbid_key": args.forbid_key, "n": len(chosen), "seed": args.seed,
+             "forbid_key": args.forbid_key, "unfoldable_next_to": bool(args.unfoldable_next_to),
+             "n": len(chosen), "seed": args.seed,
              "excluded_pools": args.exclude_pools or [], "path": str(out.relative_to(ROOT)),
              "episode_ids": [str(e["episode_id"]) for e in chosen],
              "candidates": len(keep)}

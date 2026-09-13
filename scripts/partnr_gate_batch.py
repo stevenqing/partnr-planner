@@ -55,6 +55,8 @@ def main() -> int:
     ap.add_argument("--timeout", type=int, default=5400)
     ap.add_argument("--gpus", type=int, nargs="*", default=[0, 1, 6],
                     help="cells are run one per GPU, this many at a time")
+    ap.add_argument("--key", default=None,
+                    help="predicate the candidates serve; default is the candidates file's target_key")
     ap.add_argument("--band", type=float, default=None,
                     help="noise band; default is read from the determinism probe report")
     args = ap.parse_args()
@@ -69,6 +71,7 @@ def main() -> int:
 
     payload = json.loads(args.candidates.read_text())
     candidates = payload["candidates"]
+    target_key = args.key or payload.get("target_key") or "is_in_room"
     if not candidates:
         print(json.dumps({"tag": args.tag, "candidates": 0, "verdict": "nothing proposed"}))
         return 0
@@ -103,7 +106,8 @@ def main() -> int:
         report = outbase / name / "compare.json"
         subprocess.call([sys.executable, str(ROOT / "scripts/partnr_gate_compare.py"),
                          "--pool", args.pool, "--a", str(outbase / "base"),
-                         "--b", str(outbase / name), "--json", str(report)], cwd=ROOT)
+                         "--b", str(outbase / name), "--json", str(report),
+                         "--key", target_key], cwd=ROOT)
         comparison = json.loads(report.read_text()) if report.is_file() else {}
         results.append({"candidate": index, "move": entry.get("move"),
                         "advisory": entry.get("advisory"), "comparison": comparison,
@@ -112,7 +116,7 @@ def main() -> int:
     band = 0.0 if args.band is None else args.band
     for item in results:
         c = item["comparison"] or {}
-        carrying = c.get("carrying_is_in_room") or {}
+        carrying = c.get("carrying") or c.get("carrying_is_in_room") or {}
         others = c.get("not_carrying") or {}
         gain = c.get("mean_delta")
         reasons = []
