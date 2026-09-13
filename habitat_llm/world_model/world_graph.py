@@ -208,7 +208,13 @@ class WorldGraph(Graph):
                     # in the house unbeknownst to the human agent
                     objs_info += obj.name + ": " + "unknown" + "\n"
                 else:
-                    raise ValueError(f"Object {obj.name} has no parent")
+                    # Both agents picking and placing the same object can leave one
+                    # agent's graph with the object detached ("Edge doesn't exist between
+                    # the two nodes"). Raising here ended the whole episode (gate_S3
+                    # 25857); describing it as unknown only changes episodes that used to
+                    # die on this line.
+                    print(f"[world_graph] Object {obj.name} has no parent; described as unknown")
+                    objs_info += obj.name + ": " + "unknown" + "\n"
         return f"Furniture:\n{house_info}\nObjects:\n{objs_info}"
 
     def is_object_with_human(self, obj):

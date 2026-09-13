@@ -291,6 +291,7 @@ def grade(gt, pred, names, menu):
 # ------------------------------------------------------------------ report
 
 def main() -> None:
+    global RELAXED, INTENT
     parser = argparse.ArgumentParser()
     parser.add_argument("--split", default="val_mini")
     parser.add_argument("--no-fold", action="store_true",
@@ -299,10 +300,13 @@ def main() -> None:
                         help="price the binding fix: allow suffix and containment matches")
     parser.add_argument("--examples", type=int, default=0)
     parser.add_argument("--json", type=Path, default=None)
+    parser.add_argument("--intent", type=Path, default=INTENT,
+                        help="results dir whose prompts/0 holds prompt+response files to grade "
+                             "(default: the archived 30B intent arm)")
     args = parser.parse_args()
 
-    global RELAXED
     RELAXED = args.relaxed
+    INTENT = args.intent
 
     from partnr_task_types import classify
 

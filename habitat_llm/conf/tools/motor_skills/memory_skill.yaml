@@ -1,0 +1,10 @@
+memory_skill:
+
+  _target_                   : 'our_method.skill_memory_v2.skill_tool.MemorySkillTool'
+  _recursive_                : False
+
+  skill_config                :
+    name                       : 'Achieve'
+    # The induced operator library the tool grounds and executes; results/ is not in git.
+    operators                  : 'results/partnr_operators_iir1.json'
+    description                : 'Makes a goal true in one call using stored skills. Give the predicate that must become true, the object, and the target. The skill finds the object by name (a seen object can be named by its category, e.g. cup for cup_1), opens containers when needed, and navigates, picks and places by itself. If the object has not been found yet it says so, and you should explore first. API template - Achieve[<predicate>, <object>, <target>]. For is_on_top and is_inside the target is a furniture; for is_in_room it is a room. Example (Achieve[is_on_top, cup_1, table_10])'

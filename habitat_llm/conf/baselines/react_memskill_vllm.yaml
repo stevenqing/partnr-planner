@@ -1,0 +1,17 @@
+# @package _global_
+# PARTNR's decentralized ReAct with the skill memory as one more tool (Achieve), on both agents.
+#
+# The comparison this arm exists for: the same closed-loop planner, the same instructs and the
+# same endpoint as baselines/react_vllm.yaml, differing only in whether the model can ask the
+# memory to make a predicate true. It separates "executing a memory helps" from the one-shot
+# goal interface the intent arm is built on, which DIAG-why-v2-loses-2026-09-13 found to be
+# where 80% of that arm's gap to ReAct comes from.
+
+defaults:
+  - /baselines/react_vllm
+  - override /agent@evaluation.agents.agent_0.config: oracle_rearrange_memory_agent
+  - override /agent@evaluation.agents.agent_1.config: oracle_rearrange_object_states_memory_agent
+  # The stock instructs never show the new tool, and the 7B smoke run (09-13) never called it.
+  # These add one example (Example 0) using Achieve; every other example is unchanged.
+  - override /instruct@evaluation.agents.agent_0.planner.plan_config.instruct: few_shot_decentralized_partial_robot_spatialobjstates_memskill_instruct
+  - override /instruct@evaluation.agents.agent_1.planner.plan_config.instruct: few_shot_decentralized_partial_human_spatialobjstates_memskill_instruct

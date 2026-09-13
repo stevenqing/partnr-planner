@@ -1,0 +1,21 @@
+# oracle_rearrange_agent plus the skill memory as a callable tool (Achieve). Everything the
+# ReAct robot already has is kept, so the only difference from the baseline is one more tool.
+defaults:
+
+  - /tools/motor_skills@tools.motor_skills:
+    - oracle_nav
+    - oracle_pick
+    - oracle_place
+    - oracle_open
+    - oracle_close
+    - oracle_rearrange
+    - oracle_explore
+    - wait
+    - memory_skill
+  - /tools/perception@tools.perception:
+    - find_receptacle_tool
+    - find_object_tool
+    - find_agent_action_tool
+    - find_room_tool
+
+env: habitat
