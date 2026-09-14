@@ -463,11 +463,22 @@ class SkillMemoryV2Planner(Planner):
         # what the mined ordering rules will have to recover for the arm that has none.
         self.use_episode_order = bool(self._setting("use_episode_order", True))
         self.llm = None
-        if self.goal_source == "llm":
+        if self.goal_source in ("llm", "typed"):
             from hydra.utils import instantiate
 
             llm_conf = self.config.llm
             self.llm = instantiate(llm_conf.llm)(llm_conf)
+        # The typed arm's two pieces of memory besides the operators: the kinds of object
+        # train has shown, and how the benchmark names a placement on each kind of furniture.
+        self.object_kinds: List[str] = []
+        self.inside_prior = None
+        if self.goal_source == "typed":
+            with open(self._setting("object_kinds", "results/partnr_object_kinds_train.json")) as handle:
+                self.object_kinds = list(json.load(handle)["kinds"])
+            prior = self._setting("inside_prior", "results/partnr_inside_prior_train.json")
+            if prior:
+                with open(prior) as handle:
+                    self.inside_prior = json.load(handle)
         self._reset_state()
 
     def _setting(self, name: str, default: Any) -> Any:
@@ -538,6 +549,8 @@ class SkillMemoryV2Planner(Planner):
     def _build(self, instruction: str, view: GraphView) -> None:
         if self.goal_source == "llm":
             requirements = self._requirements_from_llm(instruction, view)
+        elif self.goal_source == "typed":
+            requirements = self._requirements_from_typed(instruction, view)
         else:
             episode = self._episode()
             perception = self.env_interface.perception
@@ -638,6 +651,39 @@ class SkillMemoryV2Planner(Planner):
                 }
             )
         return out
+
+    def _requirements_from_typed(self, instruction: str, view: GraphView) -> List[Dict[str, Any]]:
+        """Ask the model to choose from what the memory says is type-valid.
+
+        Same world block and same single call as `_requirements_from_llm`; what differs is
+        that the relations arrive with the places their type allows and the answer is type
+        checked before it becomes work. See `partnr_typed_goals`.
+        """
+        from habitat_llm.llm.instruct.utils import get_world_descr
+
+        from .partnr_typed_goals import (
+            StepZero, as_requirements, parse_typed, project, shortlist, typed_prompt,
+        )
+
+        effects = self.memory.effects()
+        scene = StepZero.from_graph(view.graph)
+        world = get_world_descr(view.graph, agent_uid=self.uid, include_room_name=True,
+                                add_state_info=True)
+        prompt = typed_prompt(world, instruction, shortlist(instruction, self.object_kinds),
+                              scene, effects)
+        text = ""
+        try:
+            text = self.llm.generate(prompt, stop="\n\n", max_length=384) or ""
+        except Exception as error:
+            self.notes.append(f"llm failed: {type(error).__name__}")
+        self.trace.append(prompt + text)
+        chosen, counts = project(parse_typed(text, effects), scene, self.object_kinds, effects,
+                                 self.inside_prior, instruction)
+        self.notes.append(
+            f"typed goals kept {len(chosen)}"
+            + "".join(f"; {reason} {n}" for reason, n in sorted(counts.items()))
+        )
+        return as_requirements(chosen)
 
     # ------------------------------------------------------------------ execution
 

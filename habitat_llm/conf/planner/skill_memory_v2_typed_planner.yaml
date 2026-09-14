@@ -1,0 +1,22 @@
+# The intent arm with the memory proposing: the model chooses object, relation and place
+# from what the operators' types allow, and the answer is type checked before it becomes
+# work (our_method/skill_memory_v2/partnr_typed_goals.py). Same memory, composer and single
+# step-0 call as skill_memory_v2_intent_planner -- only the requirement interface differs.
+
+defaults:
+  - /llm@plan_config.llm: llama
+
+_target_: 'our_method.skill_memory_v2.partnr_planner.SkillMemoryV2Planner'
+_recursive_: False
+_partial_: True
+
+plan_config:
+    operators: "results/partnr_operators_iir1.json"
+    goal_source: "typed"
+    object_kinds: "results/partnr_object_kinds_train.json"      # rec_R_iir + rec_RS + rec_R_plain graphs
+    inside_prior: "results/partnr_inside_prior_train.json"     # train, disjoint from train_mini
+    retry_limit: 2
+    patience: 3
+    allow_spatial_composition: True
+    use_episode_order: False         # no episode is read; staging comes from the answer's line order
+    planning_mode: "cot"
