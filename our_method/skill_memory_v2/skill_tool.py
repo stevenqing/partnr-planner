@@ -209,6 +209,15 @@ class MemorySkillTool(Tool):
                 self._done.append(f"{verb}[{argument}]")
                 self._queue.pop(0)
                 last_action = action
+                if verb in ("Pick", "Place"):
+                    # The planner updates both agents' graphs from the action name it issued,
+                    # and "Achieve" matches none of the names it knows (place / rearrange /
+                    # ...), so without this a placed object stays in the agent's hand in its
+                    # own graph and never lands in the partner's. OracleRearrangeSkill reports
+                    # its sub-skills the same way; the planner reads and clears this per step.
+                    self.env._composite_action_response = {
+                        self.agent_uid: (verb, argument, response),
+                    }
                 if verb == "Explore":
                     self._explored.add(argument)
                     if self._pending is not None:

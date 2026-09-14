@@ -1,0 +1,17 @@
+# @package _global_
+# Scripted verification of the Achieve tool: skill_memory_v2_oracle_goals.yaml with the
+# agents given the tool and the planner issuing each requirement through it. No model.
+# Compare per episode with outputs/report/priv_iir1/accepted (same requirements, same
+# 22-operator library, the chain executed by the planner itself).
+
+defaults:
+  - /examples/planner_multi_agent_demo_config
+  - override /evaluation: decentralized_evaluation_runner_skill_memory_v2
+  - override /planner@evaluation.agents.agent_0.planner: achieve_scripted_planner
+  - override /planner@evaluation.agents.agent_1.planner: achieve_scripted_planner
+  - override /agent@evaluation.agents.agent_0.config: oracle_rearrange_memory_agent
+  - override /agent@evaluation.agents.agent_1.config: oracle_rearrange_object_states_memory_agent
+
+agent_asymmetry: True
+world_model:
+  partial_obs: True

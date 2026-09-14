@@ -504,7 +504,10 @@ def actions_parser(
                     )
 
             # Split the action info into action name and action arguments (inputs)
-            action_name, action_input = action_info.split("[")
+            # Split on the first "[" only: an argument that itself contains a bracket
+            # (react_7b / rag / memento, one episode each on 09-14) used to raise here and
+            # end the episode. Single-bracket directives split exactly as before.
+            action_name, action_input = action_info.split("[", 1)
             action_input = action_input.rstrip("]")
 
             # Set action_input to None if its empty

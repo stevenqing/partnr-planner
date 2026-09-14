@@ -1,0 +1,15 @@
+# skill_memory_v2_planner with every body issued as one Achieve call. See
+# our_method/skill_memory_v2/achieve_scripted_planner.py. No model.
+
+_target_: 'our_method.skill_memory_v2.achieve_scripted_planner.AchieveScriptedPlanner'
+_recursive_: False
+_partial_: True
+
+plan_config:
+    operators: "results/partnr_operators_iir1.json"
+    goal_source: "oracle"
+    retry_limit: 2
+    patience: 3
+    allow_spatial_composition: True
+    use_episode_order: True
+    planning_mode: "cot"

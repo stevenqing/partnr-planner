@@ -701,6 +701,19 @@ class LLMPlanner(Planner):
             high_level_actions = self.actions_parser(
                 self.agents, llm_response, self.params
             )
+            # A response with no `Agent_<id>_Action:` line for an agent this planner drives
+            # parses to nothing for that agent. `process_high_level_actions` already answers
+            # an empty parse with the message below, but the agent was marked as replanned
+            # with no action, so `update_agent_action_history` asserted and the episode died
+            # (react_7b 47 of 48 crashes, 09-14). The agent now receives that same message as
+            # its observation and replans; a parse that names every agent is unchanged.
+            for agent in self.agents:
+                if agent.uid not in high_level_actions:
+                    high_level_actions[agent.uid] = (
+                        None,
+                        None,
+                        "No actions were assigned. Please assign action to this agent.",
+                    )
 
             print(f"\n\n[DEBUG] Now Executing: {high_level_actions}\n\n")
 
