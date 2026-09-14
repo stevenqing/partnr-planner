@@ -79,6 +79,26 @@ def collect(roots: List[Path]) -> List[Dict[str, Any]]:
     return found
 
 
+def collect_candidates(path: Path, family) -> List[Dict[str, Any]]:
+    """RQ2 no_execution_admission: every format- and type-valid submission of one family.
+
+    Reads the pre-admission candidates file; nothing in it was chosen by execution. The
+    family is the proposal cell's own family, not the model-written `families` list.
+    """
+    found = []
+    for line in Path(path).read_text().splitlines():
+        if not line.strip():
+            continue
+        record = json.loads(line)
+        if family is not None and record.get("family") != family:
+            continue
+        if not (record.get("format_valid") and record.get("type_valid")):
+            continue
+        found.append({"operator": record["parsed_operator"],
+                      "source": record["candidate_id"], "works_on_at_accept": []})
+    return found
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--rung-root", type=Path, nargs="+",
@@ -88,16 +108,38 @@ def main() -> int:
     parser.add_argument("--min-support", type=int, default=2)
     parser.add_argument("--out", type=Path, default=Path("outputs/agentic_library.json"))
     parser.add_argument("--report", type=Path, default=Path("outputs/agentic_library_assembly.json"))
+    # RQ2 condition `no_execution_admission` (2026-09-14), OFF by default: with neither flag
+    # this file behaves exactly as before. `--candidates` reads every format- and type-valid
+    # submission of one family from the pre-admission candidates file written by
+    # scripts/viki_rq2_no_exec_admission.py instead of the verdicts that passed the rung;
+    # `--no-support-probe` skips the support re-probe and the minimum, so dedup is the only
+    # step left. Support is then the number of distinct proposal cells that submitted the
+    # operator -- a count over proposal records, never an execution result.
+    parser.add_argument("--candidates", type=Path, default=None,
+                        help="pre-admission candidates JSONL (RQ2 no_execution_admission)")
+    parser.add_argument("--family", default=None,
+                        help="with --candidates: the proposal cells' family to assemble")
+    parser.add_argument("--no-support-probe", action="store_true",
+                        help="skip the support re-probe and --min-support (no execution)")
     arguments = parser.parse_args()
 
-    submissions = collect(arguments.rung_root)
+    if arguments.candidates is not None:
+        submissions = collect_candidates(arguments.candidates, arguments.family)
+        if not submissions:
+            print("no format/type-valid candidates for %s in %s"
+                  % (arguments.family, arguments.candidates))
+            return 1
+    else:
+        submissions = collect(arguments.rung_root)
     if not submissions:
         print("no accepted operators found under %s" % arguments.rung_root)
         return 1
 
-    reference = json.loads(REFERENCE.read_text())
-    bench = Workbench(TRAIN, BENCHMARK, SEED,
-                      {"layer2": reference["layer2"], "layer3": reference["layer3"]})
+    bench = None
+    if not arguments.no_support_probe:
+        reference = json.loads(REFERENCE.read_text())
+        bench = Workbench(TRAIN, BENCHMARK, SEED,
+                          {"layer2": reference["layer2"], "layer3": reference["layer3"]})
 
     grouped: Dict[Any, Dict[str, Any]] = {}
     for entry in submissions:
@@ -116,13 +158,14 @@ def main() -> int:
     for key, slot in grouped.items():
         operator = dict(slot["operator"])
         works = []
-        for index in range(arguments.probe):
-            try:
-                outcome = bench.run_operator(operator, index)
-            except Exception:
-                continue
-            if outcome.get("bound") and outcome.get("effect_holds"):
-                works.append(index)
+        if bench is not None:
+            for index in range(arguments.probe):
+                try:
+                    outcome = bench.run_operator(operator, index)
+                except Exception:
+                    continue
+                if outcome.get("bound") and outcome.get("effect_holds"):
+                    works.append(index)
         row = {"effect_key": key[0], "coordinated": key[3],
                "submissions": len(slot["sources"]), "sources": slot["sources"],
                "measured_support": len(works), "works_on": works[:20],
@@ -137,6 +180,14 @@ def main() -> int:
         operator["provenance"] = {"proposed_by": "agentic_rung", "sources": slot["sources"],
                                  "verified_on": works[:20]}
         row["admitted"] = len(works) >= arguments.min_support
+        if arguments.no_support_probe:
+            cells = sorted({source.split("#")[0] for source in slot["sources"]})
+            operator["support"] = len(cells)
+            operator["provenance"]["proposal_cells"] = cells
+            operator["provenance"]["admission"] = "no_execution_admission"
+            row["proposal_cells"] = len(cells)
+            row["probe_episodes"] = 0
+            row["admitted"] = True
         rows.append(row)
         if row["admitted"]:
             operators.append(operator)
@@ -146,6 +197,10 @@ def main() -> int:
                "built_by": "viki_assemble_agentic_library",
                "min_support": arguments.min_support,
                "probe_episodes": arguments.probe}
+    if arguments.no_support_probe:
+        library.update({"admission": "no_execution_admission", "min_support": None,
+                        "probe_episodes": 0,
+                        "support_meaning": "distinct proposal cells that submitted this operator"})
 
     report = {
         "submissions_found": len(submissions),

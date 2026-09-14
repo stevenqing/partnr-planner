@@ -32,6 +32,15 @@ def say(message: str) -> None:
     print("[%s] %s" % (datetime.now().strftime("%m-%d %H:%M:%S"), message), flush=True)
 
 
+def endpoint_alive(base_url: str) -> bool:
+    import urllib.request
+    try:
+        with urllib.request.urlopen(base_url.rstrip("/") + "/models", timeout=10) as response:
+            return response.status == 200 and b'"id"' in response.read()
+    except Exception:                                                # noqa: BLE001
+        return False
+
+
 def run_rungs(label, rungs, seed, args, manifest, manifest_path, working, extra=()):
     for rung in rungs:
         key_slug = rung["target_key"].replace(".", "_")
@@ -40,6 +49,14 @@ def run_rungs(label, rungs, seed, args, manifest, manifest_path, working, extra=
         if verdict_path.is_file():
             say("skip   %s" % tag)
             continue
+        if getattr(args, "probe_endpoint", False) and not endpoint_alive(args.base_url):
+            # Stop rather than skip: rungs within a family build on each other's library, so
+            # a hole left by a dead endpoint would change every later cell of the family.
+            manifest["aborted"] = {"at": tag, "why": "endpoint %s not answering" % args.base_url,
+                                   "when": datetime.now().isoformat()}
+            manifest_path.write_text(json.dumps(manifest, indent=1))
+            say("FATAL endpoint %s not answering before %s; stopping" % (args.base_url, tag))
+            raise SystemExit(3)
         held = json.loads(working.read_text())["operators"]
         command = [PY, str(RUNG), "--tag", tag,
                    "--seed-episode", str(rung["seed_episode"]),
@@ -89,6 +106,15 @@ def main(argv=None) -> int:
     parser.add_argument("--out-root", type=Path, default=ROOT / "outputs/v2_libraries")
     parser.add_argument("--hard", type=int, default=3600)
     parser.add_argument("--skip-notrace", action="store_true")
+    # RQ2 no_trace rerun (2026-09-14), all OFF by default so the v2 build is unchanged:
+    # `--label-format` puts the cells under a new rung directory, `--no-traces` hands the
+    # rung its leakage-control flag for every FAMILY cell (the same rungs, seeds, holdouts and
+    # budget as round one), `--families` restricts the run, `--probe-endpoint` stops the run
+    # when the endpoint is not answering before a cell.
+    parser.add_argument("--label-format", default="v2_%s")
+    parser.add_argument("--no-traces", action="store_true")
+    parser.add_argument("--families", nargs="*", default=None)
+    parser.add_argument("--probe-endpoint", action="store_true")
     args = parser.parse_args(argv)
 
     definition = json.loads(args.definition.read_text())
@@ -106,12 +132,15 @@ def main(argv=None) -> int:
             say("%s -- %s" % (entry["family"], entry["status"]))
             continue
         family = entry["family"]
-        label = "v2_%s" % family
+        if args.families and family not in args.families:
+            continue
+        label = args.label_format % family
         working = args.out_root / ("working_%s.json" % family)
         if not working.is_file():
             working.write_text(json.dumps({"operators": []}, indent=1))
         say("=== %s (%d rungs) ===" % (family, len(entry["rungs"])))
-        run_rungs(label, entry["rungs"], seed, args, manifest, manifest_path, working)
+        run_rungs(label, entry["rungs"], seed, args, manifest, manifest_path, working,
+                  extra=("--no-traces",) if args.no_traces else ())
         out = args.out_root / ("library_%s.json" % family)
         subprocess.run([PY, str(ASSEMBLE), "--rung-root",
                         str(ROOT / "outputs/agentic_rung" / label), "--out", str(out),

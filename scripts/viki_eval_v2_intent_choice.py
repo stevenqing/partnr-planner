@@ -149,6 +149,14 @@ def main() -> None:
                         help="ablation: do not apply Layer 2's ordering")
     parser.add_argument("--no-grounding", action="store_true",
                         help="ablation: do not ground names through Layer 3")
+    # Opt-in, for the RQ3 driver (scripts/viki_rq3_run_cell.py). Without --out-dir nothing
+    # below changes: the output still goes to amendment11/<tag>.jsonl, written at the end.
+    parser.add_argument("--out-dir", type=Path, default=None,
+                        help="write <tag>.jsonl here; stream every row to <tag>.partial.jsonl "
+                             "(append+flush) and, if that file exists, score only the "
+                             "indices missing from it")
+    parser.add_argument("--task-name", default=None,
+                        help="id split only: score only this family's rows")
     arguments = parser.parse_args()
 
     sim = Simulator(BENCHMARK_ROOT)
@@ -168,8 +176,38 @@ def main() -> None:
         )
         indices = list(range(len(frame)))
     imaged = arguments.split != "recombination-text"
+    if arguments.task_name is not None:
+        if arguments.split != "id":
+            raise SystemExit("--task-name needs --split id")
+        indices = [i for i in indices if manifest[i].get("task_name") == arguments.task_name]
     if arguments.limit:
         indices = indices[: arguments.limit]
+    target_indices = list(indices)
+    partial_handle = None
+    if arguments.out_dir is not None:
+        arguments.out_dir.mkdir(parents=True, exist_ok=True)
+        partial = arguments.out_dir / f"{arguments.tag}.partial.jsonl"
+        already = set()
+        if partial.is_file():
+            body = partial.read_text()
+            if body and not body.endswith("\n"):
+                # A row cut off mid-write by a kill. Keep the fragment beside the file and
+                # drop it from the file, so the next append starts on a clean line.
+                cut = body.rfind("\n") + 1
+                (arguments.out_dir / f"{arguments.tag}.partial.broken_tail.txt").open("a").write(
+                    body[cut:] + "\n")
+                partial.write_text(body[:cut])
+                body = body[:cut]
+            for line in body.splitlines():
+                if line.strip():
+                    index = int(json.loads(line)["index"])
+                    if index in already:
+                        raise SystemExit(f"duplicate index {index} in {partial}")
+                    already.add(index)
+        indices = [i for i in indices if i not in already]
+        print("resume: %d rows already in %s, %d to score" % (len(already), partial, len(indices)),
+              flush=True)
+        partial_handle = partial.open("a")
     client = OpenAI(api_key="EMPTY", base_url=arguments.base_url, max_retries=5, timeout=3600)
     lock, done = threading.Lock(), [0]
 
@@ -338,14 +376,35 @@ def main() -> None:
             record = future.result()
             with lock:
                 records.append(record)
+                if partial_handle is not None:
+                    partial_handle.write(json.dumps(record) + "\n")
+                    partial_handle.flush()
                 done[0] += 1
                 if done[0] % 100 == 0:
                     hit = sum(r["accuracy"] for r in records)
                     print(f"  {done[0]}/{len(indices)}  solved={hit:.0f} "
                           f"({hit / len(records) * 100:.1f}%)", flush=True)
 
+    out_dir = OUT
+    if partial_handle is not None:
+        partial_handle.close()
+        out_dir = arguments.out_dir
+        wanted, seen = set(target_indices), set()
+        records = []
+        for line in (arguments.out_dir / f"{arguments.tag}.partial.jsonl").read_text().splitlines():
+            if not line.strip():
+                continue
+            record = json.loads(line)
+            if record["index"] in seen:
+                raise SystemExit(f"duplicate index {record['index']} after merge")
+            seen.add(record["index"])
+            if record["index"] in wanted:
+                records.append(record)
     records.sort(key=lambda r: r["index"])
-    with (OUT / f"{arguments.tag}.jsonl").open("w") as handle:
+    if arguments.out_dir is not None and not records:
+        print("no rows")
+        return
+    with (out_dir / f"{arguments.tag}.jsonl").open("w") as handle:
         for record in records:
             handle.write(json.dumps(record) + "\n")
     hit = sum(r["accuracy"] for r in records)
@@ -365,7 +424,7 @@ def main() -> None:
     print("\nby family:")
     for family, (won, total) in sorted(families.items(), key=lambda kv: -kv[1][1]):
         print(f"  {family:<48} {won:>4}/{total:<4} {won / total * 100:5.1f}%")
-    print(f"\nwrote {OUT / (arguments.tag + '.jsonl')}")
+    print(f"\nwrote {out_dir / (arguments.tag + '.jsonl')}")
 
 
 if __name__ == "__main__":

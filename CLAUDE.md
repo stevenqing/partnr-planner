@@ -4,11 +4,12 @@ Memory-as-Skill / skill memory v2 的实验仓库。VIKI-L2 和 PARTNR 两条线
 
 ## 开工先读
 
-**`HANDOVER-2026-09-14.md`** ← 当前交接（**7B 基线的空解析崩溃（`evaluation_runner.py:517`）决定了之前的 7B 对比**，已修并重跑拼接：
-`val_mini_fixed/` 上我们 percent_complete 0.223 显著高于四条基线（+0.04~+0.07），**state_success 不赢**；30B 仍输、今天没碰。
-**Achieve 工具无模型执行 0.856 ≈ 链式执行 0.848**，7B 冒烟得 0 是不调用。
-**下一步：框架内改要求接口——记忆按类型提候选、模型只选择/排序，先在 train 上离线调召回。**
-**现场：无作业；四台 7B 端点 8061/8063/8064/8065 空闲未停；代码已提交到 `bd82e36`。**）
+**`HANDOVER-2026-09-14b.md`** ← 当前交接（**PARTNR 类型化要求接口已落地**（提交 `29a20f5`、`f96ba0f`）：train_mini 120 集仿真配对
+对自由生成臂 percent_complete 0.577 vs 0.210、**state_success 0.383 vs 0.067**；组合轴上 typed 衰减更多、时序 state_success 仍≈0。
+**现场：val_mini 两格（示例 R / RS，GPU1/2）17:54 在跑，预计 18:30 / 19:00 结束，收尾命令在 §3.1。**
+**主任务：VIKI-L2 ICLR 2027 补实验，要求原文在 `TASK-viki-iclr2027-2026-09-14.md`，第一步只读审计（§3.2 清单），不动 GPU。**）
+
+`HANDOVER-2026-09-14.md`（历史：7B 基线空解析崩溃修复、Achieve 执行对齐；其 §2 现场与「下一步」已过时）。
 
 `HANDOVER-2026-09-13b.md`（历史：30B 输基线的归因、7B 重问无效、Achieve 原型；其 §2 现场已过时）。
 

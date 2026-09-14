@@ -54,6 +54,15 @@ def main(argv=None) -> int:
     parser.add_argument("--probe", type=int, default=60,
                         help="episodes from the union pool that support is measured over")
     parser.add_argument("--min-support", type=int, default=2)
+    # RQ2 (2026-09-14), both OFF by default so every existing union is byte-identical.
+    # `--no-support-probe`: the no_execution_admission arm -- no operator is run, nothing is
+    # dropped for support; support becomes the number of distinct proposal cells (merged
+    # across donor libraries from `provenance.proposal_cells`). `--excluded-family` only
+    # records which family a fold leaves out; the family set itself is still `--families`.
+    parser.add_argument("--no-support-probe", action="store_true",
+                        help="skip the support re-probe and --min-support (no execution)")
+    parser.add_argument("--excluded-family", default=None,
+                        help="record the held-out family of a fold in `excluded_family`")
     arguments = parser.parse_args(argv)
 
     from our_method.skill_memory_v2 import dependencies, vocabulary
@@ -90,33 +99,46 @@ def main(argv=None) -> int:
                         if name not in slot.setdefault(field, []):
                             slot[field].append(name)
                 slot.setdefault("from_libraries", []).append(path.name)
+                if arguments.no_support_probe:
+                    cells = (operator.get("provenance") or {}).get("proposal_cells") or []
+                    slot["_proposal_cells"] = sorted(set(slot.get("_proposal_cells", [])) | set(cells))
             else:
                 entry = dict(operator)
                 entry["from_libraries"] = [path.name]
+                if arguments.no_support_probe:
+                    entry["_proposal_cells"] = sorted(
+                        set((operator.get("provenance") or {}).get("proposal_cells") or []))
                 merged[signature] = entry
 
     # ---- support recomputed on the union pool, never summed across families
     sim = Simulator(arguments.benchmark_root)
-    bench = Workbench(train, arguments.benchmark_root, SEED)
+    bench = None if arguments.no_support_probe else Workbench(train, arguments.benchmark_root, SEED)
     probe = pool_indices[:arguments.probe]
     operators, rows = [], []
     for signature, operator in merged.items():
         works = []
-        for index in probe:
-            try:
-                outcome = bench.run_operator(operator, index)
-            except Exception:                                        # noqa: BLE001
-                continue
-            if outcome.get("bound") and outcome.get("effect_holds"):
-                works.append(index)
+        if bench is not None:
+            for index in probe:
+                try:
+                    outcome = bench.run_operator(operator, index)
+                except Exception:                                        # noqa: BLE001
+                    continue
+                if outcome.get("bound") and outcome.get("effect_holds"):
+                    works.append(index)
         operator = dict(operator)
         operator["support"] = len(works)
+        admitted = len(works) >= arguments.min_support
+        if arguments.no_support_probe:
+            cells = operator.pop("_proposal_cells", [])
+            operator["support"] = len(cells)
+            operator["provenance"] = dict(operator.get("provenance") or {}, proposal_cells=cells)
+            admitted = True
         rows.append({"effect_key": (operator.get("effect") or {}).get("key"),
                      "body": [a[0] for a in operator.get("body", [])],
                      "from_libraries": operator.get("from_libraries"),
                      "measured_support": len(works),
-                     "admitted": len(works) >= arguments.min_support})
-        if len(works) >= arguments.min_support:
+                     "admitted": admitted})
+        if admitted:
             operators.append(operator)
     operators.sort(key=lambda item: -item.get("support", 0))
 
@@ -126,7 +148,7 @@ def main(argv=None) -> int:
 
     record = {"format": FORMAT,
               "built_from": "union of %s" % ", ".join(p.name for p in arguments.libraries),
-              "union_families": sorted(families), "excluded_family": None,
+              "union_families": sorted(families), "excluded_family": arguments.excluded_family,
               "seed": SEED, "per_family": 250,
               "layer1": {"operators": operators},
               "layer2": layer2, "layer3": layer3,

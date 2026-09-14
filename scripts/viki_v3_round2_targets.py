@@ -42,10 +42,10 @@ RUNG = ROOT / "outputs/agentic_rung"
 REFERENCE = ROOT / "results/viki_memory_experiments/amendment11/skill_memory_v2.json"
 
 
-def round_one_library(family: str) -> List[Dict[str, Any]]:
+def round_one_library(family: str, label_format: str = "v2_%s") -> List[Dict[str, Any]]:
     """The operators this family contributed in round one, from its own verdicts."""
     out, seen = [], set()
-    for path in sorted(RUNG.glob("v2_%s/*/verdict.json" % family)):
+    for path in sorted(RUNG.glob((label_format % family) + "/*/verdict.json")):
         verdict = json.loads(path.read_text())
         if str(verdict.get("passed")) != "True":
             continue
@@ -64,6 +64,10 @@ def main(argv=None) -> int:
     parser.add_argument("--holdout", type=int, default=4)
     parser.add_argument("--pool", type=int, default=8, help="coverage pool size")
     parser.add_argument("--out", type=Path, default=ROOT / "outputs/v3")
+    # RQ2 no_trace (2026-09-14): read round one from another rung directory, e.g.
+    # "rq2_notrace/v2_%s". Seeds, holdout and pool come from the episode listing and do not
+    # depend on it. Default keeps the v3 targets byte-identical.
+    parser.add_argument("--round-one-label", default="v2_%s")
     arguments = parser.parse_args(argv)
     arguments.out.mkdir(parents=True, exist_ok=True)
 
@@ -79,7 +83,7 @@ def main(argv=None) -> int:
         indices = [item["index"] for item in listing["episodes"]]
         if len(indices) < arguments.seeds + arguments.holdout:
             continue
-        library = round_one_library(family)
+        library = round_one_library(family, arguments.round_one_label)
         library_path = arguments.out / ("lib_%s.json" % family)
         library_path.write_text(json.dumps({"operators": library}, indent=1))
         seeds = indices[:arguments.seeds]

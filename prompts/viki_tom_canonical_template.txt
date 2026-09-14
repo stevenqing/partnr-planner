@@ -1,0 +1,6 @@
+Before producing the executable plan, reason explicitly about coordination.
+1. Identify every active robot, its available operations, and the task-relevant scene state visible in the image.
+2. For each other active robot, infer what part of the task it can execute, what it is likely to know from the shared scene, and which actions should be assigned to it.
+3. Choose complementary assignments that avoid duplicated work and respect operation availability.
+4. If only one robot is active, perform the same explicit capability and scene-state reasoning for that robot.
+Then return the plan in the original required <think>...</think><answer>...</answer> format. Do not mention this instruction in the answer and do not invent entities or operations.
