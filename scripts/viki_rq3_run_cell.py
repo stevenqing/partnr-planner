@@ -40,7 +40,8 @@ A10 = ROOT / "results/viki_memory_experiments/amendment10"
 CANONICAL = {"id": "id", "cg_image": "recombination-imaged", "pure_text": "recombination-text",
              "ood_single_family": "id"}
 # Display names as the task spec requires them; served ids come from viki_v2_evaluate.ENDPOINT.
-DISPLAY = {"72B": "Qwen2.5-72B", "30B": "Qwen3-8B", "7B": "Qwen2.5-7B-Instruct"}
+DISPLAY = {"72B": "Qwen2.5-VL-72B-Instruct", "30B": "Qwen3-VL-30B-A3B-Instruct", "7B": "Qwen2.5-VL-7B-Instruct"}
+TASK_DISPLAY = {"72B": "Qwen2.5-72B", "30B": "Qwen3-8B", "7B": "Qwen2.5-7B-Instruct"}
 DISPLAY_NOTE = {"30B": "spec display name 'Qwen3-8B'; the archived 30B column is served as "
                        "qwen3-vl-30b -- reconcile before publishing",
                 "7B": "served id is qwen2.5-vl-7b"}
@@ -138,6 +139,7 @@ def run(args) -> int:
     evaluate = load_evaluate()
     split_src = CANONICAL[args.split]
     url, served = evaluate.ENDPOINT[args.model]
+    url = args.base_url or url
     replay = A11 / evaluate.REPLAY[(args.model, split_src)]
     out_dir = args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -157,10 +159,10 @@ def run(args) -> int:
         return 2
 
     record = previous or {
-        "run_id": "rq3-%s-%s-%s%s-%s" % (args.model, args.condition, args.split,
-                                         ("-" + args.family) if args.family else "",
-                                         datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")),
-        "experiment": "rq3",
+        "run_id": "%s-%s-%s-%s%s-%s" % (args.experiment, args.model, args.condition, args.split,
+                                        ("-" + args.family) if args.family else "",
+                                        datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")),
+        "experiment": args.experiment,
         "attempts": [],
     }
     command = [PY, str(EVAL), "--memory", str(args.library), "--split", split_src,
@@ -172,7 +174,8 @@ def run(args) -> int:
         command.append(args.flag)
     record.update({
         "tag": args.tag, "condition": args.condition, "model_key": args.model,
-        "model_display_name": DISPLAY[args.model], "model_display_note": DISPLAY_NOTE.get(args.model),
+        "model_display_name": DISPLAY[args.model], "task_display_name": TASK_DISPLAY[args.model],
+        "model_display_note": DISPLAY_NOTE.get(args.model),
         "model_id": served, "endpoint": url,
         "canonical_split": args.split, "source_split_name": split_src, "fold_family": args.family,
         "library_path": str(args.library), "library_sha256": sha_file(args.library),
@@ -312,9 +315,9 @@ def assemble(args) -> int:
     final = out_dir / ("%s.jsonl" % args.tag)
     out_dir.mkdir(parents=True, exist_ok=True)
     record = {
-        "run_id": "rq3-%s-%s-ood_single_family-assembly-%s" % (
-            args.model, args.condition, datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")),
-        "experiment": "rq3", "condition": args.condition, "model_key": args.model,
+        "run_id": "%s-%s-%s-ood_single_family-assembly-%s" % (
+            args.experiment, args.model, args.condition, datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")),
+        "experiment": args.experiment, "condition": args.condition, "model_key": args.model,
         "model_display_name": DISPLAY[args.model], "canonical_split": "ood_single_family",
         "source_split_name": "heldout (8 single-family folds on the id manifest)",
         "manifest": str(MANIFEST), "manifest_sha256": sha_file(MANIFEST),
@@ -340,6 +343,8 @@ def main(argv=None) -> int:
     parser.add_argument("mode", choices=["run", "assemble"])
     parser.add_argument("--model", required=True, choices=sorted(DISPLAY))
     parser.add_argument("--condition", required=True)
+    parser.add_argument("--experiment", default="rq3", choices=["rq2", "rq3"])
+    parser.add_argument("--base-url", default=None, help="override viki_v2_evaluate.ENDPOINT's url")
     parser.add_argument("--split", choices=sorted(CANONICAL), default="id")
     parser.add_argument("--family", default=None)
     parser.add_argument("--library", type=Path)
