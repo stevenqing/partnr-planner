@@ -124,9 +124,43 @@ def shortlist(instruction: str, kinds: List[str]) -> List[str]:
     return out or list(kinds)
 
 
+# The compositional protocol builds everything from rearrangement alone and tests on its
+# compositions, so the examples are a variable: `R` shows single-stage rearrangement only,
+# `RS` adds spatial ("next to") but no ordering, `RST` is the original set, whose third example
+# teaches a two-stage move. `R` and `RS` also drop the rules that describe stages.
+EXAMPLES_R = """Examples (from other houses):
+Task: Move the mug and the book from the kitchen counter to the bedroom table.
+mug | on | table_7
+book | on | table_7
+Task: Take the soap to the laundry room.
+soap | in_room | laundryroom_1
+Task: Bring the vase to the living room couch.
+vase | on | couch_12
+Task: Put the phone on the office shelves.
+phone | on | shelves_4
+"""
+
+EXAMPLES_RS = """Examples (from other houses):
+Task: Move the mug and the book from the kitchen counter to the bedroom table.
+mug | on | table_7
+book | on | table_7
+Task: Take the soap to the laundry room.
+soap | in_room | laundryroom_1
+Task: Move the cup and the plate to the dining table and place them next to each other.
+cup | on | table_20
+plate | on | table_20
+Task: Put the lamp on the bedroom table next to the clock.
+lamp | on | table_9
+"""
+
+EXAMPLE_SETS = {"R": EXAMPLES_R, "RS": EXAMPLES_RS, "RST": EXAMPLES}
+
+
 def typed_prompt(world: str, instruction: str, kinds: List[str], scene: StepZero,
-                 effects: List[str]) -> str:
-    """The `typed3` prompt of the inner loop."""
+                 effects: List[str], examples: str = "RST") -> str:
+    """The `typed3` prompt of the inner loop (`examples="RST"`), or its R / RS variants."""
+    if examples not in EXAMPLE_SETS:
+        raise ValueError(f"typed examples must be one of {sorted(EXAMPLE_SETS)}, not {examples!r}")
     offered = []
     if "is_on_top" in effects:
         offered.append("  on       -- place: one furniture name from the Furniture list above")
@@ -141,13 +175,20 @@ def typed_prompt(world: str, instruction: str, kinds: List[str], scene: StepZero
         "  object | relation | place\n\n"
         f"object: a kind the task mentions, from -- {', '.join(kinds)}\n"
         "relation:\n" + "\n".join(offered) + "\n\n"
-        "Rules: choose the single piece of furniture the task means -- in the room the task "
-        "names -- and never list alternatives. Write a second line for an object only if the "
-        "task moves it again, in the task's order. Nothing else.\n"
-        "Objects are not in the description yet: name them by kind from the list above. "
-        "Write only where objects must end up (and any stop the task asks for on the way), "
-        "never where they start.\n\n"
-        f"{EXAMPLES}\n"
+        + (
+            "Rules: choose the single piece of furniture the task means -- in the room the task "
+            "names -- and never list alternatives. Write a second line for an object only if the "
+            "task moves it again, in the task's order. Nothing else.\n"
+            "Objects are not in the description yet: name them by kind from the list above. "
+            "Write only where objects must end up (and any stop the task asks for on the way), "
+            "never where they start.\n\n"
+            if examples == "RST" else
+            "Rules: choose the single piece of furniture the task means -- in the room the task "
+            "names -- and never list alternatives. Nothing else.\n"
+            "Objects are not in the description yet: name them by kind from the list above. "
+            "Write only where objects must end up, never where they start.\n\n"
+        )
+        + f"{EXAMPLE_SETS[examples]}\n"
         f"Task: {instruction}\n"
         "Requirements:\n"
     )

@@ -67,7 +67,10 @@ def paired(a, b, ids, boot, seed):
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--pair", type=Path, required=True)
+    ap.add_argument("--pair", type=Path, default=None,
+                    help="dir holding the cells and episodes.json (the train pairing)")
+    ap.add_argument("--cell", nargs="*", default=[],
+                    help="NAME=PATH for cells outside --pair, e.g. the val_mini_fixed baselines")
     ap.add_argument("--pool", default="train_mini")
     ap.add_argument("--compare", nargs="+", required=True, help="armA:armB, delta is A - B")
     ap.add_argument("--json", type=Path, required=True)
@@ -77,16 +80,27 @@ def main() -> int:
 
     from partnr_task_types import classify
 
-    ids = [str(i) for i in json.load(open(args.pair / "episodes.json"))["ids"]]
     with gzip.open(ROOT / "data/datasets/partnr_episodes/v0_0" / f"{args.pool}.json.gz") as handle:
         kind = {str(e["episode_id"]): classify(e) for e in json.load(handle)["episodes"]}
+    if args.pair is not None and (args.pair / "episodes.json").exists():
+        ids = [str(i) for i in json.load(open(args.pair / "episodes.json"))["ids"]]
+    else:
+        ids = sorted(kind, key=int)  # a whole split: every episode it has
+    where = dict(spec.split("=", 1) for spec in args.cell)
+
+    def cell_dir(arm: str) -> Path:
+        if arm in where:
+            return Path(where[arm])
+        if args.pair is None:
+            raise SystemExit(f"no --cell given for {arm} and no --pair")
+        return args.pair / arm
 
     cells = {}
     for spec in args.compare:
         for arm in spec.split(":"):
             if arm not in cells:
-                scores, crashed, zero = load_cell(args.pair / arm, args.pool)
-                cell_json = args.pair / arm / "CELL.json"
+                scores, crashed, zero = load_cell(cell_dir(arm), args.pool)
+                cell_json = cell_dir(arm) / "CELL.json"
                 cells[arm] = {
                     "scores": scores, "crashed": crashed, "zero_step": zero,
                     "missing": [i for i in ids if i not in scores and i not in crashed],
@@ -123,6 +137,36 @@ def main() -> int:
             entry["by_type"][k] = paired(a, b, members, 2000, args.seed)
         report["comparisons"].append(entry)
 
+    # The compositional axis (HANDOVER-2026-09-03): the library is induced from R alone, so each
+    # arm's R_S / R_T / R_S_T scores over its own R score say how it holds up as rearrangement is
+    # composed. Absolute means are kept beside it: an arm flat at the floor is not generalizing.
+    # H_R is a vocabulary boundary and stays out of the slope. Crashes count as zero.
+    compositional = ["R_S", "R_T", "R_S_T"]
+    rng = random.Random(args.seed)
+    report["compositional_axis"] = {}
+    for arm, c in cells.items():
+        report["compositional_axis"][arm] = {}
+        for metric in METRICS:
+            by = {k: [c["scores"].get(i, {}).get(metric, 0.0) for i in ids if kind.get(i) == k]
+                  for k in ["R"] + compositional + ["H_R"]}
+            mean = lambda xs: sum(xs) / len(xs) if xs else None  # noqa: E731
+            means = {k: mean(v) for k, v in by.items()}
+            slope, ci = None, None
+            if means["R"] and all(by[k] for k in compositional):
+                slope = sum(means[k] / means["R"] for k in compositional) / len(compositional)
+                draws = []
+                for _ in range(2000):
+                    m = {k: mean([v[rng.randrange(len(v))] for _ in v]) for k, v in by.items() if v}
+                    if m["R"]:
+                        draws.append(sum(m[k] / m["R"] for k in compositional) / len(compositional))
+                draws.sort()
+                ci = [draws[int(0.025 * len(draws))], draws[int(0.975 * len(draws)) - 1]]
+            report["compositional_axis"][arm][metric] = {
+                "means": means, "n": {k: len(v) for k, v in by.items()},
+                "comp_mean": mean([x for k in compositional for x in by[k]]),
+                "comp_over_R": slope, "ci95": ci,
+            }
+
     args.json.write_text(json.dumps(report, indent=1))  # disk before print
 
     print(f"pool {args.pool}: {len(ids)} episodes")
@@ -143,6 +187,18 @@ def main() -> int:
         for k, r in entry["by_type"].items():
             print(f"    {k:8s} n={r['n']:3d}  {r['a']:.3f} vs {r['b']:.3f}  delta {r['delta']:+.3f}"
                   f" CI[{r['ci95'][0]:+.3f},{r['ci95'][1]:+.3f}]")
+    print("\ncompositional axis (crash as zero; comp/R = mean of R_S, R_T, R_S_T over the arm's own R):")
+    for metric in METRICS:
+        print(f"  {metric}")
+        for arm, per in report["compositional_axis"].items():
+            r = per[metric]
+            cells_txt = "  ".join(
+                f"{k} {r['means'][k]:.3f}(n={r['n'][k]})" if r["means"][k] is not None else f"{k} -"
+                for k in ["R", "R_S", "R_T", "R_S_T", "H_R"])
+            slope = (f"comp/R {r['comp_over_R']:.3f} CI[{r['ci95'][0]:.3f},{r['ci95'][1]:.3f}]"
+                     if r["comp_over_R"] is not None else "comp/R -")
+            comp = f"comp mean {r['comp_mean']:.3f}" if r["comp_mean"] is not None else ""
+            print(f"    {arm:22s} {cells_txt}  {comp}  {slope}")
     print(f"\nwrote {args.json}")
     return 0
 

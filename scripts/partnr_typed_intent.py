@@ -616,7 +616,7 @@ def main() -> int:
     ap.add_argument("--inside-prior", type=Path, default=None,
                     help="per furniture kind is_on_top/is_inside counts from train episodes disjoint "
                          "from --split (outputs/cand_iface_0914/inside_prior_train.json)")
-    ap.add_argument("--arms", nargs="+", default=["free", "typed"], choices=["free", "typed", "typed2", "typed3", "typed4"])
+    ap.add_argument("--arms", nargs="+", default=["free", "typed"], choices=["free", "typed", "typed2", "typed3", "typed4", "typedR", "typedRS", "typedRST"])
     ap.add_argument("--model", default=None)
     ap.add_argument("--base-url", default="http://127.0.0.1:8063/v1")
     ap.add_argument("--workers", type=int, default=8)
@@ -724,9 +724,19 @@ def main() -> int:
             if answers is not None:
                 prompt, answer = (prompts or {}).get(arm, ""), answers.get(arm, "")
             else:
-                prompt = free_prompt(scene, episode["instruction"], menu) if arm == "free" \
-                    else typed_prompt(scene, episode["instruction"], short, effects,
-                                      examples=arm if arm in ("typed2", "typed3", "typed4") else False)
+                if arm.startswith("typedR"):
+                    # The planner's own prompt, from the shared module: what is measured here
+                    # is what the sim cell will send. typedRST must equal typed3 byte for byte.
+                    from skill_memory_v2 import partnr_typed_goals as goals
+                    step_zero = goals.StepZero(scene.rooms, scene.furniture, scene.openable,
+                                               scene.room_of_furniture)
+                    prompt = goals.typed_prompt(scene.world, episode["instruction"], short,
+                                                step_zero, effects, examples=arm[len("typed"):])
+                elif arm == "free":
+                    prompt = free_prompt(scene, episode["instruction"], menu)
+                else:
+                    prompt = typed_prompt(scene, episode["instruction"], short, effects,
+                                          examples=arm if arm in ("typed2", "typed3", "typed4") else False)
                 # typed4 opens with an `Objects:` line that 7B follows with a blank line, and the
                 # planner's "\n\n" stop then ends the answer before any requirement (221/342 on
                 # train_mini). It stops at the next task instead; only `|` lines are parsed.

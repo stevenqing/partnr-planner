@@ -670,7 +670,7 @@ class SkillMemoryV2Planner(Planner):
         world = get_world_descr(view.graph, agent_uid=self.uid, include_room_name=True,
                                 add_state_info=True)
         prompt = typed_prompt(world, instruction, shortlist(instruction, self.object_kinds),
-                              scene, effects)
+                              scene, effects, examples=str(self._setting("typed_examples", "RST")))
         text = ""
         try:
             text = self.llm.generate(prompt, stop="\n\n", max_length=384) or ""

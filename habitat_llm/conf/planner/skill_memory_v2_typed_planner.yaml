@@ -15,6 +15,7 @@ plan_config:
     goal_source: "typed"
     object_kinds: "results/partnr_object_kinds_train.json"      # rec_R_iir + rec_RS + rec_R_plain graphs
     inside_prior: "results/partnr_inside_prior_train.json"     # train, disjoint from train_mini
+    typed_examples: "RST"            # R | RS | RST: which kinds of task the prompt's examples show
     retry_limit: 2
     patience: 3
     allow_spatial_composition: True
