@@ -20,16 +20,20 @@ case "$EXAMPLES" in R|RS|RST) ;; *) echo "EXAMPLES must be R, RS or RST"; exit 2
 SWITCHES=${SWITCHES:-}
 TAG=${TAG:-}
 [ -n "$SWITCHES" ] && [ -z "$TAG" ] && { echo "set TAG when SWITCHES is set"; exit 2; }
-ARM=typed_v7b_${EXAMPLES}${TAG:+_$TAG}_7b
+ARM=typed_v7b_${EXAMPLES}${TAG:+_$TAG}_${MTAG:-7b}
 OUT=outputs/cand_iface_0914/val_mini/$ARM
 POOL=val_mini
-MODEL=qwen2.5-vl-7b
+MODEL=${MODEL:-qwen2.5-vl-7b}
+# NO_THINK=1 for Qwen3 models (their chat template otherwise opens a <think> block).
+NO_THINK=${NO_THINK:-0}
 OPS=results/partnr_operators_iir1.json
 PRIOR=results/partnr_inside_prior_train_R_only.json   # R-only train; same decisions as the all-type prior
 GPU=${GPU:-1}
 PORT=${PORT:-8063}
 PROCS=${PROCS:-24}
 export MAGNUM_LOG=quiet HABITAT_SIM_LOG=quiet TOKENIZERS_PARALLELISM=false
+# Caches and temp files off the 197G container root (09-16: a re-download there filled it).
+export HF_HOME=/mnt/pfs/devs/pn5wp/shishuqing/hf VLLM_CACHE_ROOT=/mnt/pfs/devs/pn5wp/shishuqing/vllm_cache TMPDIR=/mnt/pfs/devs/pn5wp/shishuqing/tmp
 say () { echo "[$(date +%m-%d\ %H:%M:%S)] $*"; }
 probe () { curl -s -m 10 -o /dev/null -w "%{http_code}" "$1/models" | grep -q "^200$"; }
 
@@ -50,6 +54,10 @@ WANT=$("$PY" -c "import gzip, json; print(len(json.load(gzip.open('data/datasets
 both () { echo "evaluation.agents.agent_0.planner.plan_config.$1=$2 evaluation.agents.agent_1.planner.plan_config.$1=$2"; }
 EXTRA=""
 for kv in $SWITCHES; do EXTRA="$EXTRA $(both "${kv%%=*}" "${kv#*=}")"; done
+if [ "$NO_THINK" = "1" ]; then
+  EXTRA="$EXTRA +evaluation.agents.agent_0.planner.plan_config.llm.extra_body.chat_template_kwargs.enable_thinking=False"
+  EXTRA="$EXTRA +evaluation.agents.agent_1.planner.plan_config.llm.extra_body.chat_template_kwargs.enable_thinking=False"
+fi
 if [ -n "$SWITCHES" ]; then
   grep -q "def beside_requirements" our_method/skill_memory_v2/partnr_typed_goals.py \
     && grep -q "typed_beside" our_method/skill_memory_v2/partnr_planner.py \
@@ -60,7 +68,7 @@ url=http://127.0.0.1:$PORT/v1
 stats=$OUT/results/$POOL.json.gz/stats
 mkdir -p "$OUT"
 git rev-parse HEAD > "$OUT/COMMIT"
-echo "$SWITCHES" > "$OUT/SWITCHES"
+echo "$SWITCHES model=$MODEL no_think=$NO_THINK" > "$OUT/SWITCHES"
 started=$(date +%s)
 VLLM_BASE_URL=$url CUDA_VISIBLE_DEVICES=$GPU "$PY" -m habitat_llm.examples.planner_demo \
     --config-name baselines/skill_memory_v2_typed_vllm.yaml \
