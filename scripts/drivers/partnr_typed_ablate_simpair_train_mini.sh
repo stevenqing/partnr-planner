@@ -17,10 +17,12 @@
 set -u
 cd /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner || exit 1
 PY=/root/venvs/partnr/bin/python
-ROOT_OUT=outputs/cand_iface_0915/ablate_train_mini
+ROOT_OUT=${ROOT_OUT:-outputs/cand_iface_0915/ablate_train_mini}
 BASE_POOL=outputs/cand_iface_0915/stage_simpair_train_mini/episodes.json
 POOL=train_mini
-MODEL=qwen2.5-vl-7b
+MODEL=${MODEL:-qwen2.5-vl-7b}
+# NO_THINK=1 for Qwen3 models: their chat template otherwise opens a <think> block.
+NO_THINK=${NO_THINK:-0}
 OPS=results/partnr_operators_iir1.json
 PRIOR=results/partnr_inside_prior_train_R_only.json
 CELL=${CELL:?} GPU=${GPU:?} PORT=${PORT:?} SWITCHES=${SWITCHES:?}
@@ -34,6 +36,7 @@ OUT=$ROOT_OUT/$CELL
 grep -q "def beside_requirements" our_method/skill_memory_v2/partnr_typed_goals.py \
   && grep -q "typed_beside" our_method/skill_memory_v2/partnr_planner.py \
   && grep -q "typed_stops" our_method/skill_memory_v2/partnr_planner.py \
+  && grep -q "typed_same_object" our_method/skill_memory_v2/partnr_planner.py \
   && grep -q "def stage_lines" our_method/skill_memory_v2/partnr_typed_goals.py \
   || { say "REFUSING: switches not in the code"; exit 6; }
 [ -s "$PRIOR" ] && [ -s "$BASE_POOL" ] || { say "REFUSING: $PRIOR or $BASE_POOL missing"; exit 6; }
@@ -43,13 +46,17 @@ mkdir -p "$OUT"
 cp "$BASE_POOL" "$ROOT_OUT/episodes.json" 2>/dev/null
 md5sum our_method/skill_memory_v2/partnr_typed_goals.py our_method/skill_memory_v2/partnr_planner.py \
   habitat_llm/conf/planner/skill_memory_v2_typed_planner.yaml > "$OUT/CODE_MD5"
-echo "$SWITCHES" > "$OUT/SWITCHES"
+echo "$SWITCHES model=$MODEL no_think=$NO_THINK" > "$OUT/SWITCHES"
 IDS=$("$PY" -c "import json; print(','.join(json.load(open('$BASE_POOL'))['ids']))")
 WANT=$(echo "$IDS" | tr ',' '\n' | grep -c .)
 
 both () { echo "evaluation.agents.agent_0.planner.plan_config.$1=$2 evaluation.agents.agent_1.planner.plan_config.$1=$2"; }
 EXTRA=""
 for kv in $SWITCHES; do EXTRA="$EXTRA $(both "${kv%%=*}" "${kv#*=}")"; done
+if [ "$NO_THINK" = "1" ]; then
+  EXTRA="$EXTRA +evaluation.agents.agent_0.planner.plan_config.llm.extra_body.chat_template_kwargs.enable_thinking=False"
+  EXTRA="$EXTRA +evaluation.agents.agent_1.planner.plan_config.llm.extra_body.chat_template_kwargs.enable_thinking=False"
+fi
 
 url=http://127.0.0.1:$PORT/v1
 stats=$OUT/results/$POOL.json.gz/stats
@@ -63,7 +70,7 @@ VLLM_BASE_URL=$url CUDA_VISIBLE_DEVICES=$GPU "$PY" -m habitat_llm.examples.plann
     $(both inside_prior $PRIOR) $(both typed_examples RS) $EXTRA >> "$OUT/run.log" 2>&1 &
 runner=$!
 echo "$runner" > "$OUT/PID"
-say "$CELL pid=$runner gpu=$GPU url=$url procs=$PROCS episodes=$WANT switches=[$SWITCHES]"
+say "$CELL pid=$runner gpu=$GPU url=$url model=$MODEL no_think=$NO_THINK procs=$PROCS episodes=$WANT switches=[$SWITCHES]"
 last=-1; changed=$started; misses=0; why=""
 while kill -0 "$runner" 2>/dev/null; do
   sleep 30
