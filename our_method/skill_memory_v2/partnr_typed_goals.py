@@ -586,8 +586,19 @@ def as_requirements(chosen: List[Dict[str, Any]], instruction: str = "",
                 places[item["subject"]].append(item["target"])
             copies[(item["subject"], item["target"])].append(index)
         same_as: Dict[int, int] = {}
+        # Only across stages: places of one kind inside one stage are different objects or a
+        # list of options ("the plants on table_18 and table_19", "the cushions on bed_20, 23,
+        # 26"), and chaining them made every line bind one instance -- 4 of the 8 episodes the
+        # first version made worse on the train_mini pool. A place links to the nearest place of
+        # that kind in a strictly earlier stage.
+        place_stage = {key: min(numbers[i] for i in indices) for key, indices in copies.items()}
         for kind, targets in places.items():
-            for earlier, later in zip(targets, targets[1:]):
+            for position, later in enumerate(targets):
+                stage = place_stage[(kind, later)]
+                prior = [t for t in targets[:position] if place_stage[(kind, t)] < stage]
+                if not prior:
+                    continue
+                earlier = max(prior, key=lambda t: place_stage[(kind, t)])
                 for k, index in enumerate(copies[(kind, later)]):
                     if k < len(copies[(kind, earlier)]):
                         same_as[index] = copies[(kind, earlier)][k]
