@@ -662,7 +662,8 @@ class SkillMemoryV2Planner(Planner):
         from habitat_llm.llm.instruct.utils import get_world_descr
 
         from .partnr_typed_goals import (
-            StepZero, as_requirements, parse_typed, project, shortlist, typed_prompt,
+            StepZero, as_requirements, beside_requirements, parse_typed, project, shortlist,
+            typed_prompt,
         )
 
         effects = self.memory.effects()
@@ -670,7 +671,8 @@ class SkillMemoryV2Planner(Planner):
         world = get_world_descr(view.graph, agent_uid=self.uid, include_room_name=True,
                                 add_state_info=True)
         prompt = typed_prompt(world, instruction, shortlist(instruction, self.object_kinds),
-                              scene, effects, examples=str(self._setting("typed_examples", "RST")))
+                              scene, effects, examples=str(self._setting("typed_examples", "RST")),
+                              stops=bool(self._setting("typed_stops", False)))
         text = ""
         try:
             text = self.llm.generate(prompt, stop="\n\n", max_length=384) or ""
@@ -683,7 +685,16 @@ class SkillMemoryV2Planner(Planner):
             f"typed goals kept {len(chosen)}"
             + "".join(f"; {reason} {n}" for reason, n in sorted(counts.items()))
         )
-        return as_requirements(chosen)
+        requirements = as_requirements(chosen, instruction,
+                                       stages=bool(self._setting("typed_stages", False)))
+        if any("stage" in r for r in requirements):
+            self.notes.append(f"typed stages {[r['stage'] for r in requirements]}")
+        if bool(self._setting("typed_beside", False)):
+            beside = beside_requirements(instruction, chosen, start=len(requirements))
+            if beside:
+                self.notes.append(f"typed beside {[(r['subject'], r['target']) for r in beside]}")
+            requirements += beside
+        return requirements
 
     # ------------------------------------------------------------------ execution
 

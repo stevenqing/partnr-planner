@@ -16,6 +16,9 @@ plan_config:
     object_kinds: "results/partnr_object_kinds_train.json"      # rec_R_iir + rec_RS + rec_R_plain graphs
     inside_prior: "results/partnr_inside_prior_train.json"     # train, disjoint from train_mini
     typed_examples: "RST"            # R | RS | RST: which kinds of task the prompt's examples show
+    typed_stages: False              # order lines by stages read off the instruction (partnr_typed_goals.stage_lines)
+    typed_stops: False               # R/RS prompt keeps the "stop on the way / moves it again" rules, no two-stage example
+    typed_beside: False              # fold "next to" read off the instruction into placements (beside_requirements)
     retry_limit: 2
     patience: 3
     allow_spatial_composition: True

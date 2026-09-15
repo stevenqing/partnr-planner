@@ -16,7 +16,11 @@ PY=/root/venvs/partnr/bin/python
 # interface saw is elementary; RST is the train-tuned set whose third example is two-stage.
 EXAMPLES=${EXAMPLES:?set EXAMPLES=R or RS or RST}
 case "$EXAMPLES" in R|RS|RST) ;; *) echo "EXAMPLES must be R, RS or RST"; exit 2 ;; esac
-ARM=typed_v7b_${EXAMPLES}_7b
+# SWITCHES adds planner switches ("typed_stages=True typed_beside=True"); TAG names the arm for them.
+SWITCHES=${SWITCHES:-}
+TAG=${TAG:-}
+[ -n "$SWITCHES" ] && [ -z "$TAG" ] && { echo "set TAG when SWITCHES is set"; exit 2; }
+ARM=typed_v7b_${EXAMPLES}${TAG:+_$TAG}_7b
 OUT=outputs/cand_iface_0914/val_mini/$ARM
 POOL=val_mini
 MODEL=qwen2.5-vl-7b
@@ -44,18 +48,26 @@ probe "http://127.0.0.1:$PORT/v1" || { say "REFUSING: :$PORT not up"; exit 4; }
 
 WANT=$("$PY" -c "import gzip, json; print(len(json.load(gzip.open('data/datasets/partnr_episodes/v0_0/$POOL.json.gz'))['episodes']))")
 both () { echo "evaluation.agents.agent_0.planner.plan_config.$1=$2 evaluation.agents.agent_1.planner.plan_config.$1=$2"; }
+EXTRA=""
+for kv in $SWITCHES; do EXTRA="$EXTRA $(both "${kv%%=*}" "${kv#*=}")"; done
+if [ -n "$SWITCHES" ]; then
+  grep -q "def beside_requirements" our_method/skill_memory_v2/partnr_typed_goals.py \
+    && grep -q "typed_beside" our_method/skill_memory_v2/partnr_planner.py \
+    || { say "REFUSING: switches not in the code"; exit 6; }
+fi
 
 url=http://127.0.0.1:$PORT/v1
 stats=$OUT/results/$POOL.json.gz/stats
 mkdir -p "$OUT"
 git rev-parse HEAD > "$OUT/COMMIT"
+echo "$SWITCHES" > "$OUT/SWITCHES"
 started=$(date +%s)
 VLLM_BASE_URL=$url CUDA_VISIBLE_DEVICES=$GPU "$PY" -m habitat_llm.examples.planner_demo \
     --config-name baselines/skill_memory_v2_typed_vllm.yaml \
     habitat.dataset.data_path="data/datasets/partnr_episodes/v0_0/$POOL.json.gz" \
     num_proc="$PROCS" evaluation.save_video=False +resume=True hydra.run.dir="$PWD/$OUT" \
     $(both llm.generation_params.model $MODEL) $(both operators $OPS) \
-    $(both inside_prior $PRIOR) $(both typed_examples $EXAMPLES) >> "$OUT/run.log" 2>&1 &
+    $(both inside_prior $PRIOR) $(both typed_examples $EXAMPLES) $EXTRA >> "$OUT/run.log" 2>&1 &
 runner=$!
 echo "$runner" > "$OUT/PID"
 say "$ARM pid=$runner gpu=$GPU url=$url procs=$PROCS episodes=$WANT commit=$(cat "$OUT/COMMIT")"

@@ -616,7 +616,7 @@ def main() -> int:
     ap.add_argument("--inside-prior", type=Path, default=None,
                     help="per furniture kind is_on_top/is_inside counts from train episodes disjoint "
                          "from --split (outputs/cand_iface_0914/inside_prior_train.json)")
-    ap.add_argument("--arms", nargs="+", default=["free", "typed"], choices=["free", "typed", "typed2", "typed3", "typed4", "typedR", "typedRS", "typedRST"])
+    ap.add_argument("--arms", nargs="+", default=["free", "typed"], choices=["free", "typed", "typed2", "typed3", "typed4", "typedR", "typedRS", "typedRST", "typedRstops", "typedRSstops"])
     ap.add_argument("--model", default=None)
     ap.add_argument("--base-url", default="http://127.0.0.1:8063/v1")
     ap.add_argument("--workers", type=int, default=8)
@@ -730,8 +730,11 @@ def main() -> int:
                     from skill_memory_v2 import partnr_typed_goals as goals
                     step_zero = goals.StepZero(scene.rooms, scene.furniture, scene.openable,
                                                scene.room_of_furniture)
+                    examples = arm[len("typed"):]
+                    stops = examples.endswith("stops")
+                    examples = examples[: -len("stops")] if stops else examples
                     prompt = goals.typed_prompt(scene.world, episode["instruction"], short,
-                                                step_zero, effects, examples=arm[len("typed"):])
+                                                step_zero, effects, examples=examples, stops=stops)
                 elif arm == "free":
                     prompt = free_prompt(scene, episode["instruction"], menu)
                 else:

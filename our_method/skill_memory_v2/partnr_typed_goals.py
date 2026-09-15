@@ -157,7 +157,7 @@ EXAMPLE_SETS = {"R": EXAMPLES_R, "RS": EXAMPLES_RS, "RST": EXAMPLES}
 
 
 def typed_prompt(world: str, instruction: str, kinds: List[str], scene: StepZero,
-                 effects: List[str], examples: str = "RST") -> str:
+                 effects: List[str], examples: str = "RST", stops: bool = False) -> str:
     """The `typed3` prompt of the inner loop (`examples="RST"`), or its R / RS variants."""
     if examples not in EXAMPLE_SETS:
         raise ValueError(f"typed examples must be one of {sorted(EXAMPLE_SETS)}, not {examples!r}")
@@ -182,7 +182,9 @@ def typed_prompt(world: str, instruction: str, kinds: List[str], scene: StepZero
             "Objects are not in the description yet: name them by kind from the list above. "
             "Write only where objects must end up (and any stop the task asks for on the way), "
             "never where they start.\n\n"
-            if examples == "RST" else
+            # `stops` keeps the stage rules without the two-stage example: 37% of intermediate
+            # stops on train_mini temporal episodes were never written under the R/RS rules.
+            if examples == "RST" or stops else
             "Rules: choose the single piece of furniture the task means -- in the room the task "
             "names -- and never list alternatives. Nothing else.\n"
             "Objects are not in the description yet: name them by kind from the list above. "
@@ -382,14 +384,210 @@ def project(pred: List[Dict[str, Any]], scene: StepZero, kinds: List[str], effec
     return out, counts
 
 
-def as_requirements(chosen: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Planner requirements, with a second place for the same object ordered after the first.
+# ------------------------------------------------------------------ stages from the instruction
+#
+# Every temporal episode in train_mini and val_mini has a DAG whose closure is "stage(u) <
+# stage(v)" over stages contiguous in proposition order, and an order word in the instruction.
+# So the DAG is one stage number per line, read here from the instruction's words alone -- no
+# temporal example, no model call. Most edges join different objects, which the line-order
+# rule below (a second place for the same object) cannot see. Frozen at rule v2, tuned on
+# train_mini failures only (scripts/partnr_stage_recovery.py): ordered-pair recall on the
+# stored 7B typedRS answers 0.971, precision 0.975, against 0.278 for the line-order rule.
 
-    The answer's line order is the only ordering this arm has, and the prompt asks for the
-    task's order exactly so that "first the couch, then the table" becomes a stage rather
-    than two contradictory end states.
+STEP = r"then|next(?!\s+to\b)|finally|lastly|after\s+that|afterwards?|subsequently|secondly|second|third"
+LEAD = rf"(?:and\s+)?(?:{STEP}|first(?:ly)?|before|after|once)\b"
+# A spatial anchor names an object without moving it; the anchor phrase ends at a comma or "and".
+ANCHOR = re.compile(r"\b(?:next\s+to|beside|besides|near|close\s+to)\b[^,;.?!]*?(?=,|;|\.|\?|!|\band\b|$)")
+PRONOUN = re.compile(r"\b(?:it|them|they|these|those|both)\b")
+
+
+def _words(text: str) -> List[str]:
+    return [singular(w) for w in re.findall(r"[a-z]+", text.lower())]
+
+
+def order_clauses(instruction: str) -> List[Dict[str, Any]]:
+    """Clauses in text order, each with the order word that opens it (or None)."""
+    out = []
+    for sentence_index, sentence in enumerate(re.split(r"(?<=[.!?;])\s+", instruction.strip())):
+        # Cut before an order word that follows a comma or "and", or that opens the sentence;
+        # also before a bare mid-clause "before"/"after" ("place it before moving the cup").
+        pieces = re.split(rf"(?:,\s*|\s+and\s+|\s+)(?=(?:{LEAD}))", sentence, flags=re.I)
+        # "Before / After / Once A, B": the comma, not an order word, separates the two halves.
+        if pieces and re.match(r"\s*(?:before|after(?!\s+that)|once)\b", pieces[0], flags=re.I) and "," in pieces[0]:
+            head, _, rest = pieces[0].partition(",")
+            pieces = [head, rest] + pieces[1:]
+        for position, piece in enumerate(p for p in pieces if p and p.strip(" ,")):
+            text = piece.strip(" ,").lower()
+            match = re.match(rf"(?:and\s+)?({STEP}|first(?:ly)?|before|after|once)\b", text)
+            lead = re.sub(r"\s+", " ", match.group(1)) if match else None
+            out.append({"sentence": sentence_index, "position": position, "text": text, "lead": lead})
+    return out
+
+
+def _stage_clauses(parts: List[Dict[str, Any]]) -> None:
+    """Give every clause a stage number, in place."""
+    stage = 0
+    seen_work = False
+    by_sentence = defaultdict(list)
+    for part in parts:
+        by_sentence[part["sentence"]].append(part)
+    for sentence in sorted(by_sentence):
+        group = by_sentence[sentence]
+        head = group[0]["lead"]
+        if head in ("before",) and len(group) > 1:
+            # "Before A, B": B happens first.
+            for part in group[1:]:
+                part["stage"] = stage
+            group[0]["stage"] = stage + 1
+            stage += 1
+            seen_work = True
+            continue
+        for index, part in enumerate(group):
+            lead = part["lead"]
+            if lead and re.fullmatch(STEP, lead) and seen_work:
+                stage += 1
+            elif lead in ("before",) and index > 0:
+                stage += 1  # "A before B"
+            elif lead in ("after",) and index > 0:
+                # "A after B": B first. Push every earlier clause of this sentence one stage later.
+                for earlier in group[:index]:
+                    earlier["stage"] = stage + 1
+                part["stage"] = stage
+                stage += 1
+                seen_work = True
+                continue
+            elif lead in ("after", "once") and index == 0 and len(group) > 1:
+                part["stage"] = stage  # "After A, B": A then B
+                stage += 1
+                seen_work = True
+                for later in group[1:]:
+                    later["stage"] = stage
+                break
+            part["stage"] = stage
+            seen_work = True
+
+
+def _unanchored(text: str) -> str:
+    return ANCHOR.sub(" ", text)
+
+
+def _full_match(kind: str, head: str) -> bool:
+    tokens = [singular(t) for t in kind.split("_") if t]
+    return bool(tokens) and (all(t in set(_words(head)) for t in tokens)
+                             or kind.replace("_", "") in head.replace(" ", ""))
+
+
+def _named_kinds(part: Dict[str, Any], kinds) -> List[str]:
+    """Kinds the clause names other than as a spatial anchor.
+
+    A kind whose full name is not there ("plant_container" for "the plants") still counts on
+    one long token of its name, unless another kind in play already claims that token here.
+    """
+    head = _unanchored(part["text"])
+    said = set(_words(head))
+    full = [k for k in set(kinds) if _full_match(k, head)]
+    claimed = {singular(t) for k in full for t in k.split("_")}
+    partial = [k for k in set(kinds) if k not in full
+               and any(len(t) >= 4 and singular(t) in said and singular(t) not in claimed
+                       for t in k.split("_"))]
+    return sorted(full + partial)
+
+
+def stage_lines(instruction: str, kinds, targets=None) -> Tuple[List[int], List[Dict[str, Any]]]:
+    """A stage for each line, given each line's kind of object (and target), in line order."""
+    targets = list(targets) if targets is not None else [None] * len(kinds)
+    parts = order_clauses(instruction)
+    _stage_clauses(parts)
+    first_marked = next((i for i, p in enumerate(parts) if p["lead"]), None)
+    # Places per kind, in line order: copies sent to the same place are one stage, a second
+    # place for the kind is a later one.
+    places: Dict[str, List[Any]] = defaultdict(list)
+    for kind, target in zip(kinds, targets):
+        if target not in places[kind]:
+            places[kind].append(target)
+    moved_twice = {k for k, p in places.items() if len(p) > 1}
+    # A pronoun refers to what the previous sentence (and this sentence so far) named:
+    # "Then, place them next to each other", "all these items, including the basket".
+    where: Dict[str, List[int]] = defaultdict(list)
+    by_sentence: Dict[int, set] = defaultdict(set)
+    seen: set = set()
+    bump = 0
+    for index, part in enumerate(parts):
+        named = set(_named_kinds(part, kinds))
+        referred = set(named)
+        if PRONOUN.search(_unanchored(part["text"]).replace("each other", "")):
+            earlier = [s for s in by_sentence if s < part["sentence"]]
+            referred |= by_sentence[max(earlier)] if earlier else set()
+            referred |= by_sentence[part["sentence"]]
+        # Sending an already-named kind to its second place is a new stage even with no
+        # order word ("...on the coffee table. Move these toys to the bed.").
+        if not part["lead"] and index > 0 and (referred & seen & moved_twice):
+            bump += 1
+        part["stage"] = part["stage"] + bump
+        part["referred"] = sorted(referred)
+        part["named"] = sorted(named)
+        for kind in referred:
+            where[kind].append(index)
+        seen |= referred
+        by_sentence[part["sentence"]] |= named
+    stages: List[Optional[int]] = []
+    for kind, target in zip(kinds, targets):
+        spots = where.get(kind) or []
+        if not spots:
+            stages.append(None)
+            continue
+        k = places[kind].index(target)
+        if len(places[kind]) == 1:
+            # Overview clauses before the first order word only count when the kind is not
+            # mentioned again after it.
+            marked = [s for s in spots if first_marked is not None and s >= first_marked]
+            chosen = (marked or spots)[0]
+        else:
+            # The k-th place of the kind goes with the k-th distinct stage it is mentioned in.
+            distinct = []
+            for s in spots:
+                if not distinct or parts[s]["stage"] != parts[distinct[-1]]["stage"]:
+                    distinct.append(s)
+            chosen = distinct[min(k, len(distinct) - 1)]
+        stages.append(parts[chosen]["stage"])
+    # A line whose kind the instruction never names keeps the stage of the line before it.
+    last = 0
+    out = []
+    for stage in stages:
+        last = stage if stage is not None else last
+        out.append(last)
+    return out, parts
+
+
+def as_requirements(chosen: List[Dict[str, Any]], instruction: str = "",
+                    stages: bool = False) -> List[Dict[str, Any]]:
+    """Planner requirements with their ordering.
+
+    Without `stages`, the answer's line order is the only ordering: a second place for the
+    same object is ordered after the first, so "first the couch, then the table" becomes a
+    stage rather than two contradictory end states. With `stages`, every line waits for the
+    lines of the nearest earlier stage read off the instruction (`stage_lines`), which also
+    orders different objects -- most temporal edges in PARTNR do.
     """
     requirements: List[Dict[str, Any]] = []
+    if stages and chosen:
+        numbers, _ = stage_lines(instruction, [item["subject"] for item in chosen],
+                                 [item["target"] for item in chosen])
+        levels = sorted(set(numbers))
+        previous = {level: levels[i - 1] for i, level in enumerate(levels) if i > 0}
+        for index, item in enumerate(chosen):
+            before = previous.get(numbers[index])
+            requirements.append({
+                "key": item["key"],
+                "subject": item["subject"],
+                "target": item["target"],
+                "alternatives": [item["target"]],
+                "next_to": None,
+                "proposition": index,
+                "stage": numbers[index],
+                "after_propositions": [j for j, n in enumerate(numbers) if before is not None and n == before],
+            })
+        return requirements
     last: Dict[str, int] = {}
     for item in chosen:
         index = len(requirements)
@@ -405,3 +603,80 @@ def as_requirements(chosen: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         })
         last[item["subject"]] = index
     return requirements
+
+
+EACH_OTHER = re.compile(r"^(?:next\s+to|close\s+to|beside|near)\s+(?:each\s+other|one\s+another)\b")
+ANCHOR_WORD = re.compile(r"^(?:next\s+to|beside|besides|near|close\s+to)\b")
+
+
+def beside_requirements(instruction: str, chosen: List[Dict[str, Any]], start: int = 0) -> List[Dict[str, Any]]:
+    """`is_next_to` requirements read off the instruction, over objects the answer places.
+
+    The typed answer has no place for "next to", so the relation is read from the words, the
+    way stages are: "next to each other" chains the clause's objects in line order ("the phone,
+    watch and tape ... next to each other" is phone-watch, watch-tape, as PARTNR writes it);
+    "X next to Y" pairs the object named last before the anchor (or the pronoun's objects) with
+    the object in the anchor phrase. Only pairs whose two objects the answer places are kept:
+    those fold into the placement (`fold_spatial`); a fixed anchor ("next to the sofa") has no
+    operator in an R-only library and would only burn retries. The later-staged object carries
+    the relation, so the fold's own ordering (after the anchor lands) never contradicts a stage.
+    """
+    if not chosen:
+        return []
+    kinds = [item["subject"] for item in chosen]
+    numbers, parts = stage_lines(instruction, kinds, [item["target"] for item in chosen])
+    placed = [i for i, item in enumerate(chosen) if item["key"] in PLACEMENTS]
+
+    def line_of(kind: str, stage: int) -> Optional[int]:
+        same = [i for i in placed if kinds[i] == kind and numbers[i] == stage]
+        anywhere = [i for i in placed if kinds[i] == kind]
+        return (same or anywhere or [None])[-1]
+
+    pairs: List[Tuple[int, int]] = []
+    for part in parts:
+        text = part["text"]
+        for match in ANCHOR.finditer(text):
+            phrase = match.group(0)
+            if EACH_OTHER.match(phrase):
+                # The clause's own objects when it names two or more; a pronoun's otherwise
+                # ("Then, take the backpack and ball ... next to each other" is not the phone).
+                named = part.get("named", [])
+                group = [line_of(k, part["stage"]) for k in (named if len(named) >= 2 else part.get("referred", []))]
+                group = sorted({i for i in group if i is not None})
+                pairs += list(zip(group, group[1:]))
+                continue
+            inside = ANCHOR_WORD.sub("", phrase)
+            anchors = [k for k in set(kinds) if _full_match(k, inside)]
+            head = _unanchored(text[: match.start()])
+            before = [k for k in set(kinds) if _full_match(k, head) and k not in anchors]
+            if before:
+                # the kind whose name ends latest before the anchor
+                def last_position(kind: str) -> int:
+                    token = singular(kind.split("_")[-1])
+                    spots = [m.start() for m in re.finditer(r"[a-z]+", head) if singular(m.group(0)) == token]
+                    return max(spots) if spots else -1
+                movers = [max(before, key=last_position)]
+            else:
+                movers = [k for k in part.get("referred", []) if k not in anchors]
+            for mover in movers:
+                for anchor in anchors:
+                    i, j = line_of(mover, part["stage"]), line_of(anchor, part["stage"])
+                    if i is not None and j is not None and i != j:
+                        pairs.append((i, j))
+    out: List[Dict[str, Any]] = []
+    seen = set()
+    for i, j in pairs:
+        if frozenset((i, j)) in seen:
+            continue
+        seen.add(frozenset((i, j)))
+        holder, other = (i, j) if (numbers[i], i) >= (numbers[j], j) else (j, i)
+        out.append({
+            "key": "is_next_to",
+            "subject": kinds[holder],
+            "target": kinds[other],
+            "alternatives": [kinds[other]],
+            "next_to": None,
+            "proposition": start + len(out),
+            "after_propositions": [],
+        })
+    return out
