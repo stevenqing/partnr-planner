@@ -41,7 +41,11 @@ dog_push_box_for_two_panda_transport ensure_all_fruits_on_table parallel_human_d
 set_plate_and_fork_on_table toast_bread_and_set_plate"
 [ -f "$LIBS/memory_all.json" ] || { say "未执行，缺 $LIBS/memory_all.json"; exit 1; }
 
-common=(--experiment "$EXPERIMENT" --model "$MODEL" --condition "$CONDITION" --workers "$WORKERS" "${URL[@]}")
+# TIMEOUT (seconds) overrides the runner's per-split default (1800 s), which a replay with a near-empty
+# library -- most rows re-asked live -- can exceed on the 924-row id split.
+TIMEOUT=${TIMEOUT:-}
+TO=(); [ -n "$TIMEOUT" ] && TO=(--timeout "$TIMEOUT")
+common=(--experiment "$EXPERIMENT" --model "$MODEL" --condition "$CONDITION" --workers "$WORKERS" "${URL[@]}" "${TO[@]}")
 ran=0; ok=0
 for split in $SPLITS; do
   if [ "$split" != ood_single_family ]; then
