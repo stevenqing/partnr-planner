@@ -115,7 +115,9 @@ stage_targets () {
     have=$(find "outputs/agentic_rung/$LABEL" -path "*/v2_*/*" -name verdict.json 2>/dev/null | wc -l)
     want=$(expected_round1)
     [ "$have" -eq "$want" ] || { say "FATAL round 1 incomplete ($have / $want); targets not written"; return 1; }
-    "$PY" scripts/viki_v3_round2_targets.py --out "$OUT/round2" --round-one-label "$LABEL/v2_%s" \
+    # --out must be absolute: the targets script records each library relative to the repo root
+    # (full ran with its absolute default, outputs/v3); a relative --out fails that step.
+    "$PY" scripts/viki_v3_round2_targets.py --out "$ROOT/$OUT/round2" --round-one-label "$LABEL/v2_%s" \
         > "$OUT/round2/targets.log" 2>&1 || { say "FATAL targets script failed"; return 1; }
     "$PY" - "$OUT/round2/targets.json" "$FULL_TARGETS" <<'PYEOF'
 import json, sys
