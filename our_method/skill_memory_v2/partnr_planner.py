@@ -686,7 +686,8 @@ class SkillMemoryV2Planner(Planner):
             + "".join(f"; {reason} {n}" for reason, n in sorted(counts.items()))
         )
         requirements = as_requirements(chosen, instruction,
-                                       stages=bool(self._setting("typed_stages", False)))
+                                       stages=bool(self._setting("typed_stages", False)),
+                                       same_object=bool(self._setting("typed_same_object", False)))
         if any("stage" in r for r in requirements):
             self.notes.append(f"typed stages {[r['stage'] for r in requirements]}")
         if bool(self._setting("typed_beside", False)):
@@ -708,10 +709,28 @@ class SkillMemoryV2Planner(Planner):
         requirement = self.requirements[index]
         if requirement.get("bound"):
             return True
+        # A line that moves an earlier line's object again (`same_as`, typed stages) takes that
+        # line's instance, and never counts its own chain as taken: excluding it is what kept
+        # the second stage of "move it here, then there" from ever binding.
+        chain = set()
+        link = requirement.get("same_as")
+        while link is not None and link not in chain and 0 <= link < len(self.requirements):
+            chain.add(link)
+            link = self.requirements[link].get("same_as")
+        chain |= {position for position, other in enumerate(self.requirements)
+                  if position != index and other.get("same_as") is not None
+                  and (other.get("same_as") == index or other.get("same_as") in chain)}
+        for position in sorted(chain):
+            other = self.requirements[position]
+            if other.get("bound") and other.get("key") in ("is_on_top", "is_inside", "is_in_room") \
+                    and view.knows(other["subject"]):
+                requirement["asked"] = requirement.get("asked", requirement["subject"])
+                requirement["subject"] = other["subject"]
+                break
         taken = {
             other["subject"]
             for position, other in enumerate(self.requirements)
-            if position != index and other.get("bound")
+            if position != index and other.get("bound") and position not in chain
         }
         subject = view.resolve(requirement["subject"], taken)
         if subject is None:

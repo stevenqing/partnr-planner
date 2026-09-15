@@ -19,6 +19,7 @@ plan_config:
     typed_stages: False              # order lines by stages read off the instruction (partnr_typed_goals.stage_lines)
     typed_stops: False               # R/RS prompt keeps the "stop on the way / moves it again" rules, no two-stage example
     typed_beside: False              # fold "next to" read off the instruction into placements (beside_requirements)
+    typed_same_object: False         # a later place of a kind reuses the instance its earlier place moved (same_as)
     retry_limit: 2
     patience: 3
     allow_spatial_composition: True

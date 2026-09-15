@@ -560,7 +560,7 @@ def stage_lines(instruction: str, kinds, targets=None) -> Tuple[List[int], List[
 
 
 def as_requirements(chosen: List[Dict[str, Any]], instruction: str = "",
-                    stages: bool = False) -> List[Dict[str, Any]]:
+                    stages: bool = False, same_object: bool = False) -> List[Dict[str, Any]]:
     """Planner requirements with their ordering.
 
     Without `stages`, the answer's line order is the only ordering: a second place for the
@@ -575,9 +575,25 @@ def as_requirements(chosen: List[Dict[str, Any]], instruction: str = "",
                                  [item["target"] for item in chosen])
         levels = sorted(set(numbers))
         previous = {level: levels[i - 1] for i, level in enumerate(levels) if i > 0}
+        # The same object moved twice: the k-th copy of a kind at its second place is the k-th
+        # copy at its first. Without this link `_bind` excludes every instance another line has
+        # bound, so the second stage can never take the object the first stage moved -- on the
+        # stage cell 138 of 229 "never saw" notes on temporal episodes were kinds with two places.
+        places: Dict[str, List[Any]] = defaultdict(list)
+        copies: Dict[Tuple[str, Any], List[int]] = defaultdict(list)
+        for index, item in enumerate(chosen):
+            if item["target"] not in places[item["subject"]]:
+                places[item["subject"]].append(item["target"])
+            copies[(item["subject"], item["target"])].append(index)
+        same_as: Dict[int, int] = {}
+        for kind, targets in places.items():
+            for earlier, later in zip(targets, targets[1:]):
+                for k, index in enumerate(copies[(kind, later)]):
+                    if k < len(copies[(kind, earlier)]):
+                        same_as[index] = copies[(kind, earlier)][k]
         for index, item in enumerate(chosen):
             before = previous.get(numbers[index])
-            requirements.append({
+            requirement = {
                 "key": item["key"],
                 "subject": item["subject"],
                 "target": item["target"],
@@ -586,7 +602,10 @@ def as_requirements(chosen: List[Dict[str, Any]], instruction: str = "",
                 "proposition": index,
                 "stage": numbers[index],
                 "after_propositions": [j for j, n in enumerate(numbers) if before is not None and n == before],
-            })
+            }
+            if same_object:
+                requirement["same_as"] = same_as.get(index)
+            requirements.append(requirement)
         return requirements
     last: Dict[str, int] = {}
     for item in chosen:
