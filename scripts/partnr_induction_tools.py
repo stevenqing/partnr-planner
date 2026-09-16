@@ -142,13 +142,30 @@ class Workbench:
         return {"held_by": holder, "since_step": since, "entity": entity, "at_step": step}
 
     def actor_window(self, index: int, actor: str, end: int, back: int = 12) -> Dict[str, Any]:
-        """That actor's own consecutive actions ending at `end`, skipping its idle steps."""
+        """That actor's own consecutive actions ending at `end`, skipping its idle steps.
+
+        An actor the rollout does not have is refused by name rather than answered with an
+        empty list: a 7B proposer spent 3 of its 6 smoke moves asking for actors 2 and 3 of a
+        two-agent episode and could not tell that from an idle agent. Informative refusals
+        were worth 32% -> 50% on the VIKI library for exactly this reason.
+        """
         trace = self.trace(index)
+        actors = sorted({uid for step in trace["steps"]
+                         for uid, action in (step.get("actions") or {}).items() if action})
+        if actor not in actors:
+            return {"index": index, "actor": actor, "actions": [],
+                    "refused": f"this rollout has no actor {actor!r}; its actors are {actors}"}
         window = []
         for position in range(max(0, end - back), min(end + 1, len(trace["steps"]))):
             action = (trace["steps"][position].get("actions") or {}).get(actor)
             if action and action[0] not in ("Wait", "Done"):
                 window.append({"step": position, "action": list(action)})
+        if not window:
+            return {"index": index, "actor": actor, "end": end, "actions": [],
+                    "refused": f"actor {actor!r} has no action other than Wait/Done in steps "
+                               f"{max(0, end - back)}..{min(end, len(trace['steps']) - 1)}; "
+                               f"it has {sum(1 for step in trace['steps'] if (step.get('actions') or {}).get(actor))} "
+                               f"recorded steps in this rollout"}
         return {"index": index, "actor": actor, "end": end, "actions": window}
 
     def step_of_sim(self, index: int, when: int) -> Optional[int]:
