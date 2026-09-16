@@ -188,7 +188,26 @@ def normalise_request(request):
     """
     if not isinstance(request, dict):
         return request
-    if "submit" in request or "tool" in request:
+    if "submit" in request:
+        return request
+    # `{"tool": "submit", "args": {"operator": ...}}` is the tool-call shape the rest of the
+    # menu uses, so models reach for it -- and the dispatcher has no tool by that name, so it
+    # used to answer "unknown tool 'submit'". A 7B run on PARTNR produced the exactly correct
+    # is_next_to operator in this envelope on move 20 and spent its last four moves apologising.
+    # Same principle as below: the envelope a correct answer arrives in is presentation.
+    if str(request.get("tool", "")).lower() in ("submit", "submit_operator"):
+        payload = request.get("args")
+        if isinstance(payload, dict):
+            for alias in ("operator", "submit", "submission", "candidate"):
+                if isinstance(payload.get(alias), dict):
+                    return {"submit": payload[alias]}
+            if "effect" in payload and ("body" in payload or "roles" in payload):
+                return {"submit": payload}
+        for alias in ("operator", "submit", "submission", "candidate"):
+            if isinstance(request.get(alias), dict):
+                return {"submit": request[alias]}
+        return {"submit": payload if isinstance(payload, dict) else {}}
+    if "tool" in request:
         return request
     for alias in ("operator", "submission", "answer", "result"):
         if isinstance(request.get(alias), dict):
