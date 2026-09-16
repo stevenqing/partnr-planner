@@ -30,6 +30,32 @@ def _handles(proposition, *names):
     return set()
 
 
+def next_to_starts_apart(episode) -> bool:
+    """Every `is_next_to` whose two entities do NOT already sit on the same receptacle.
+
+    `has_unfoldable_next_to` asks only whether another proposition *places* either entity.
+    It never asks whether they already sit together, and on `gate_nxt` -- carved with that
+    flag, all 75 of its propositions passing it -- 38 of those 75 start with subject and
+    anchor on one receptacle, so the goal holds before the robot moves. The base library,
+    which has no is_next_to operator at all, still satisfies 59 of 75, leaving 16
+    recoverable and no candidate admissible. A trigger pool for this key has to require
+    both conditions.
+    """
+    propositions = episode.get("evaluation_propositions") or []
+    where = episode.get("name_to_receptacle") or {}
+    found = False
+    for proposition in propositions:
+        if proposition.get("function_name") != "is_next_to":
+            continue
+        found = True
+        subjects = _handles(proposition, "object_handles", "entity_handles_a")
+        anchors = _handles(proposition, "entity_handles_b")
+        here = {where[h] for h in subjects if h in where}
+        there = {where[h] for h in anchors if h in where}
+        if not here or not there or (here & there):
+            return False
+    return found
+
 def has_unfoldable_next_to(episode) -> bool:
     """An `is_next_to` neither of whose entities is being placed by another proposition.
 
@@ -70,6 +96,9 @@ def main() -> int:
     ap.add_argument("--forbid-key", nargs="*", default=None)
     ap.add_argument("--unfoldable-next-to", action="store_true",
                     help="keep only episodes carrying an is_next_to that fold_spatial cannot fold")
+    ap.add_argument("--next-to-starts-apart", action="store_true",
+                    help="keep only episodes whose every is_next_to starts with subject and anchor "
+                         "on different receptacles, so the goal is not already true at step 0")
     ap.add_argument("--n", type=int, required=True)
     ap.add_argument("--seed", type=int, default=20260907)
     ap.add_argument("--exclude-pools", nargs="*", default=None, help="pool names whose episodes must not be reused")
@@ -107,6 +136,8 @@ def main() -> int:
             continue
         if args.unfoldable_next_to and not has_unfoldable_next_to(episode):
             continue
+        if args.next_to_starts_apart and not next_to_starts_apart(episode):
+            continue
         keep.append(episode)
 
     if len(keep) < args.n:
@@ -120,6 +151,7 @@ def main() -> int:
 
     entry = {"source": args.source, "types": args.types, "require_key": args.require_key,
              "forbid_key": args.forbid_key, "unfoldable_next_to": bool(args.unfoldable_next_to),
+             "next_to_starts_apart": bool(args.next_to_starts_apart),
              "n": len(chosen), "seed": args.seed,
              "excluded_pools": args.exclude_pools or [], "path": str(out.relative_to(ROOT)),
              "episode_ids": [str(e["episode_id"]) for e in chosen],
