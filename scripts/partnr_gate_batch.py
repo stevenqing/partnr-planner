@@ -128,6 +128,20 @@ def main() -> int:
         else:
             if gain <= band:
                 reasons.append(f"paired gain {gain:.4f} does not clear the band {band:.4f}")
+            # The interval was always computed and never consulted. Requiring only
+            # "gain > band" is the first version of this rule, and it admitted all six
+            # candidates it was ever shown (memory `partnr-execution-gate`); on 2026-09-16
+            # it passed an is_next_to body whose own interval was [-0.032, +0.079].
+            interval = c.get("paired_bootstrap_95")
+            if interval and not (interval[0] > 0 or interval[1] < 0):
+                reasons.append(f"the paired 95% interval [{interval[0]:.4f},{interval[1]:.4f}] "
+                               f"includes 0")
+            # Fourth criterion: a candidate must not push down more episodes than it lifts.
+            moved = c.get("episodes_moved") or {}
+            up = sum(1 for d in moved.values() if d > 0)
+            down = sum(1 for d in moved.values() if d < 0)
+            if down > up:
+                reasons.append(f"it pushes down more episodes than it lifts ({down} down, {up} up)")
             if carrying and carrying.get("mean_delta", 0.0) <= 0:
                 reasons.append("no gain on the episodes that carry the predicate")
             if others and others.get("mean_delta", 0.0) < -1e-9:
