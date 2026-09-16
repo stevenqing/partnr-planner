@@ -193,8 +193,21 @@ def main() -> int:
 
         record["result"] = result
         transcript.append(record)
+        # The budget was stated once, in the opening task, and never again: a 30B run on
+        # 2026-09-16 spent all 24 moves reading traces and never submitted at all. Carry it
+        # in every observation, and say plainly when it is time to stop looking. This adds
+        # information only -- nothing here accepts a candidate that would otherwise be refused.
+        left = args.moves - move
+        budget = {"moves_left": left, "candidates_queued": len(submitted),
+                  "candidates_wanted": args.candidates}
+        nudge = ""
+        if left > 0 and len(submitted) < args.candidates and left <= max(4, args.moves // 4):
+            nudge = (" Only %d moves remain and you have queued %d of %d candidates. Stop"
+                     " looking and submit now: {\"submit\": {...the operator...}}."
+                     % (left, len(submitted), args.candidates))
         messages += [{"role": "assistant", "content": answer},
-                     {"role": "user", "content": json.dumps(result, default=str)[:4000]}]
+                     {"role": "user", "content": json.dumps(result, default=str)[:4000]
+                      + "\n" + json.dumps(budget) + nudge}]
 
     payload = {"target_key": args.target_key, "rollouts": str(args.rollouts),
                "model": args.model, "no_traces": args.no_traces,
