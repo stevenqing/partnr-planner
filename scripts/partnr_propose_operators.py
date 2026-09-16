@@ -19,7 +19,7 @@ matches nothing is a body nobody has looked at.
 """
 from __future__ import annotations
 
-import argparse, json, sys
+import argparse, json, re, sys
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -141,7 +141,28 @@ def main() -> int:
     refused: List[Dict[str, Any]] = []
 
     def shape(operator: Dict[str, Any]) -> str:
-        return json.dumps([list(a) for a in (operator.get("body") or [])], sort_keys=True)
+        """Canonical body, for the distinctness test only -- never for execution.
+
+        "Distinct" is asked for in the prompt and the prompt spells out that a renamed
+        variable does not count. A 30B run on 2026-09-16 found the gap anyway and padded
+        the arity instead: PowerOn ?x, PowerOn ?x ?z1, PowerOn ?x ?z1 ?z2, PowerOn ?x ?z1
+        ?z2 ?z3 -- four "candidates", one operator, and four near-identical gate cells.
+        An argument slot holding a variable that occurs exactly once in the whole body is
+        bound by nothing and used by nothing, so it is padding; drop it, and drop empty
+        trailing slots, before comparing. This only merges twins into one submission, it
+        never admits a body the gate would otherwise refuse.
+        """
+        body = [list(a) for a in (operator.get("body") or [])]
+        text = json.dumps(body)
+        once = {v for v in re.findall(r"\?[A-Za-z]\w*", text)
+                if len(re.findall(re.escape(v) + r"(?![A-Za-z0-9_])", text)) == 1}
+        canonical = []
+        for action in body:
+            slots = list(action)
+            while len(slots) > 1 and (not str(slots[-1]).strip() or str(slots[-1]).strip() in once):
+                slots.pop()
+            canonical.append(slots)
+        return json.dumps(canonical, sort_keys=True)
 
     for move in range(1, args.moves + 1):
         completion = client.chat.completions.create(
