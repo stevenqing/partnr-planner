@@ -37,7 +37,11 @@ export HF_HOME=/mnt/pfs/devs/pn5wp/shishuqing/hf VLLM_CACHE_ROOT=/mnt/pfs/devs/p
 say () { echo "[$(date +%m-%d\ %H:%M:%S)] $*"; }
 probe () { curl -s -m 10 -o /dev/null -w "%{http_code}" "$1/models" | grep -q "^200$"; }
 
-[ -e "$OUT" ] && { say "REFUSING: $OUT exists, not running on residue"; exit 3; }
+# RESUME=1 continues a cell that stopped part way (the runner already gets +resume=True, which is only
+# safe while the code is unchanged -- 09-16: the 30B val cell died of CUDA OOM at 278/369 because it was
+# given 48 processes next to a 69 GiB endpoint; resume it with PROCS=24 and a smaller endpoint).
+if [ -e "$OUT" ] && [ "${RESUME:-0}" != "1" ]; then say "REFUSING: $OUT exists, not running on residue"; exit 3; fi
+[ "${RESUME:-0}" = "1" ] && say "RESUME: continuing $OUT ($(ls "$OUT/results/$POOL.json.gz/stats" 2>/dev/null | wc -l) episodes present)"
 grep -q "return sorted(in_named)\[0\]" our_method/skill_memory_v2/partnr_typed_goals.py \
   && grep -q "collapsed: another place of the same kind in the same room" our_method/skill_memory_v2/partnr_typed_goals.py \
   && grep -q "_requirements_from_typed" our_method/skill_memory_v2/partnr_planner.py \
