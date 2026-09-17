@@ -16,6 +16,9 @@ ROOT=${ROOT:-/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner}
 PY=${PY:-/root/venvs/partnr/bin/python}
 PROCS=${PROCS:-45}
 OPERATORS=${OPERATORS:-results/partnr_operators.json}
+# CONFIG picks the planner config; the default is the free-form arm this driver was written for,
+# and the typed arm passes baselines/skill_memory_v2_typed_vllm.yaml.
+CONFIG=${CONFIG:-baselines/skill_memory_v2_vllm.yaml}
 HARD_TIMEOUT=${HARD_TIMEOUT:-14400}
 STALL_SECONDS=${STALL_SECONDS:-1800}
 MODEL=${MODEL:?set MODEL}
@@ -49,14 +52,14 @@ fi
 
 started=$(date +%s); endpoint_dead=0
 "$PY" -m habitat_llm.examples.planner_demo \
-    --config-name baselines/skill_memory_v2_vllm.yaml \
+    --config-name "$CONFIG" \
     habitat.dataset.data_path="data/datasets/partnr_episodes/v0_0/$pool.json.gz" \
     num_proc="$PROCS" evaluation.save_video=False hydra.run.dir="$out" \
     $(both operators "$OPERATORS") $(both llm.generation_params.model "$MODEL") $think \
     "$@" >> "$out/run.log" 2>&1 &
 runner=$!
 echo "$runner" > "$out/PID"
-echo "[$(date +%H:%M:%S)] $cell model=$MODEL url=$URL no_think=${NO_THINK:-0} pid=$runner operators=$OPERATORS"
+echo "[$(date +%H:%M:%S)] $cell model=$MODEL url=$URL no_think=${NO_THINK:-0} pid=$runner operators=$OPERATORS config=$CONFIG"
 
 # The preflight above only proves the endpoint was alive at launch. On 09-07 the 8101 server
 # was shut down at 22:08 with the cell four hours in, and the cell kept going for another nine

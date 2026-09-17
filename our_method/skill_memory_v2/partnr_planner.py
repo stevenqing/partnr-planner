@@ -670,17 +670,23 @@ class SkillMemoryV2Planner(Planner):
         scene = StepZero.from_graph(view.graph)
         world = get_world_descr(view.graph, agent_uid=self.uid, include_room_name=True,
                                 add_state_info=True)
+        # `typed_state` lets the answer name the unary H predicates the library can bring about
+        # (`mug | clean | -`). Off by default: the interface hard-codes three placement relations, so
+        # a library holding is_clean/is_powered_on was offering effects the prompt never listed and the
+        # parser would have dropped -- the model had no word for them, which is why the two H operators
+        # moved nothing end to end on val_mini (2026-09-17) while conf_H gave +0.2563 on the oracle arm.
+        state = bool(self._setting("typed_state", False))
         prompt = typed_prompt(world, instruction, shortlist(instruction, self.object_kinds),
                               scene, effects, examples=str(self._setting("typed_examples", "RST")),
-                              stops=bool(self._setting("typed_stops", False)))
+                              stops=bool(self._setting("typed_stops", False)), state=state)
         text = ""
         try:
             text = self.llm.generate(prompt, stop="\n\n", max_length=384) or ""
         except Exception as error:
             self.notes.append(f"llm failed: {type(error).__name__}")
         self.trace.append(prompt + text)
-        chosen, counts = project(parse_typed(text, effects), scene, self.object_kinds, effects,
-                                 self.inside_prior, instruction)
+        chosen, counts = project(parse_typed(text, effects, state=state), scene, self.object_kinds,
+                                 effects, self.inside_prior, instruction, state=state)
         self.notes.append(
             f"typed goals kept {len(chosen)}"
             + "".join(f"; {reason} {n}" for reason, n in sorted(counts.items()))

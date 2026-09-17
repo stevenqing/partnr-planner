@@ -20,13 +20,18 @@ case "$EXAMPLES" in R|RS|RST) ;; *) echo "EXAMPLES must be R, RS or RST"; exit 2
 SWITCHES=${SWITCHES:-}
 TAG=${TAG:-}
 [ -n "$SWITCHES" ] && [ -z "$TAG" ] && { echo "set TAG when SWITCHES is set"; exit 2; }
-ARM=typed_v7b_${EXAMPLES}${TAG:+_$TAG}_${MTAG:-7b}
+# LIB names the operator library; the default is the frozen iir1 one, so an arm launched without
+# it keeps its old name and old cell directory. LIBTAG goes into the arm name so a second library
+# cannot land on top of the first cell.
+LIB=${LIB:-results/partnr_operators_iir1.json}
+LIBTAG=${LIBTAG:-}
+ARM=typed_v7b_${EXAMPLES}${TAG:+_$TAG}_${MTAG:-7b}${LIBTAG:+_$LIBTAG}
 OUT=outputs/cand_iface_0914/val_mini/$ARM
 POOL=val_mini
 MODEL=${MODEL:-qwen2.5-vl-7b}
 # NO_THINK=1 for Qwen3 models (their chat template otherwise opens a <think> block).
 NO_THINK=${NO_THINK:-0}
-OPS=results/partnr_operators_iir1.json
+OPS=$LIB
 PRIOR=results/partnr_inside_prior_train_R_only.json   # R-only train; same decisions as the all-type prior
 GPU=${GPU:-1}
 PORT=${PORT:-8063}
@@ -49,6 +54,8 @@ grep -q "return sorted(in_named)\[0\]" our_method/skill_memory_v2/partnr_typed_g
 [ "$("$PY" -c "import json; print(len(json.load(open('results/partnr_object_kinds_train.json'))['kinds']))")" = 106 ] \
   || { say "REFUSING: object kinds file is not the 106-kind union"; exit 6; }
 [ -s "$PRIOR" ] || { say "REFUSING: $PRIOR missing"; exit 6; }
+[ -s "$OPS" ] || { say "REFUSING: $OPS missing"; exit 6; }
+[ "$LIB" = "results/partnr_operators_iir1.json" ] || [ -n "$LIBTAG" ] || { say "REFUSING: set LIBTAG when LIB is not iir1"; exit 2; }
 grep -q "EXAMPLE_SETS = {" our_method/skill_memory_v2/partnr_typed_goals.py \
   && grep -q "typed_examples" our_method/skill_memory_v2/partnr_planner.py \
   || { say "REFUSING: typed_examples switch not in the code"; exit 6; }
@@ -72,7 +79,7 @@ url=http://127.0.0.1:$PORT/v1
 stats=$OUT/results/$POOL.json.gz/stats
 mkdir -p "$OUT"
 git rev-parse HEAD > "$OUT/COMMIT"
-echo "$SWITCHES model=$MODEL no_think=$NO_THINK" > "$OUT/SWITCHES"
+echo "$SWITCHES model=$MODEL no_think=$NO_THINK lib=$OPS" > "$OUT/SWITCHES"
 started=$(date +%s)
 VLLM_BASE_URL=$url CUDA_VISIBLE_DEVICES=$GPU "$PY" -m habitat_llm.examples.planner_demo \
     --config-name baselines/skill_memory_v2_typed_vllm.yaml \

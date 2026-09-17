@@ -24,6 +24,17 @@ from collections import Counter, defaultdict
 from typing import Any, Dict, List, Optional, Tuple
 
 RELATIONS = {"on": "is_on_top", "inside": "is_inside", "in_room": "is_in_room"}
+# PARTNR's H family is unary -- "the mug must be clean" names no place -- and the line grammar
+# below is `object | relation | place`, three columns always. So a state line writes `-` where a
+# placement names furniture, and everything here is gated on `state`, which is off by default:
+# with it off, prompt, parser and projection behave exactly as they did before it existed.
+STATE_RELATIONS = {"clean": "is_clean", "powered_on": "is_powered_on"}
+STATE_KEYS = set(STATE_RELATIONS.values())
+
+EXAMPLES_STATE = """Task: Clean the mug and switch on the lamp.
+mug | clean | -
+lamp | powered_on | -
+"""
 PLACEMENTS = ("is_on_top", "is_inside")
 INDEXED = re.compile(r"^(.*)_\d+$")
 
@@ -157,7 +168,8 @@ EXAMPLE_SETS = {"R": EXAMPLES_R, "RS": EXAMPLES_RS, "RST": EXAMPLES}
 
 
 def typed_prompt(world: str, instruction: str, kinds: List[str], scene: StepZero,
-                 effects: List[str], examples: str = "RST", stops: bool = False) -> str:
+                 effects: List[str], examples: str = "RST", stops: bool = False,
+                 state: bool = False) -> str:
     """The `typed3` prompt of the inner loop (`examples="RST"`), or its R / RS variants."""
     if examples not in EXAMPLE_SETS:
         raise ValueError(f"typed examples must be one of {sorted(EXAMPLE_SETS)}, not {examples!r}")
@@ -169,6 +181,10 @@ def typed_prompt(world: str, instruction: str, kinds: List[str], scene: StepZero
     if "is_in_room" in effects:
         offered.append(f"  in_room  -- place: one of {', '.join(scene.rooms)}; "
                        "use it only when the task names a room and no furniture in it")
+    for word, key in STATE_RELATIONS.items():
+        if state and key in effects:
+            offered.append(f"  {word:8s} -- no place: write -  (the object itself must end up "
+                           f"{word.replace('_', ' ')}; it does not move)")
     return (
         f"{world}\n\n"
         "Say where each object must be when the task is done, one line each, as\n"
@@ -190,20 +206,29 @@ def typed_prompt(world: str, instruction: str, kinds: List[str], scene: StepZero
             "Objects are not in the description yet: name them by kind from the list above. "
             "Write only where objects must end up, never where they start.\n\n"
         )
-        + f"{EXAMPLE_SETS[examples]}\n"
+        + f"{EXAMPLE_SETS[examples]}"
+        + (EXAMPLES_STATE if state and any(k in effects for k in STATE_KEYS) else "")
+        + "\n"
         f"Task: {instruction}\n"
         "Requirements:\n"
     )
 
 
-def parse_typed(text: str, effects: List[str]) -> List[Dict[str, Any]]:
+def parse_typed(text: str, effects: List[str], state: bool = False) -> List[Dict[str, Any]]:
     out = []
     for line in str(text).splitlines():
         line = re.sub(r"^\s*(?:\d+[.)]|[-*])\s*", "", line.strip())
         pieces = [p.strip() for p in line.split("|")]
         if len(pieces) != 3 or not all(pieces):
             continue
-        key = RELATIONS.get(pieces[1].lower().replace(" ", "_"))
+        word = pieces[1].lower().replace(" ", "_")
+        key = RELATIONS.get(word)
+        if key is None and state:
+            key = STATE_RELATIONS.get(word)
+            if key in effects:
+                # The third column is the placeholder `-`; a state requirement has no target.
+                out.append({"key": key, "subject": pieces[0], "target": None})
+                continue
         if key in effects:
             out.append({"key": key, "subject": pieces[0], "target": pieces[2]})
     return out
@@ -266,8 +291,8 @@ def snap(target: Optional[str], scene: StepZero, instruction: str) -> Optional[s
 
 
 def project(pred: List[Dict[str, Any]], scene: StepZero, kinds: List[str], effects: List[str],
-            inside_prior: Optional[Dict[str, Dict[str, int]]] = None, instruction: str = ""
-            ) -> Tuple[List[Dict[str, Any]], Counter]:
+            inside_prior: Optional[Dict[str, Dict[str, int]]] = None, instruction: str = "",
+            state: bool = False) -> Tuple[List[Dict[str, Any]], Counter]:
     """The memory's type check: keep what can be typed, retype what is mistyped.
 
     Matches the inner loop's `--keep-duplicates --snap-furniture --room-snap --collapse-places
@@ -278,6 +303,30 @@ def project(pred: List[Dict[str, Any]], scene: StepZero, kinds: List[str], effec
     fixed = {category(n) for n in scene.furniture} | {category(n) for n in scene.rooms}
     kept = []
     for item in pred:
+        # A state predicate is typed before the placement rules, because its subject is whatever the
+        # task names: PARTNR asks for a *table* to be clean (every is_clean proposition in gate_H and
+        # conf_H names furniture) and for a *lamp* to be powered on. The rule below -- drop a subject
+        # that is furniture or a room -- exists because a placement's subject has to be carryable, and
+        # applying it here is what made is_clean 0.000 on both models while is_powered_on reached 0.78:
+        # `table_7 | clean | -` parsed correctly and was then thrown away as "subject is furniture".
+        if state and item["key"] in STATE_KEYS:
+            if item["key"] not in effects:
+                counts["dropped: relation not in the memory"] += 1
+                continue
+            named = resolve(item["subject"], scene.furniture)
+            if named:
+                kept.append({"key": item["key"], "subject": named, "target": None})
+                continue
+            state_subject = category(item["subject"])
+            if state_subject not in kinds:
+                near = sorted((k for k in kinds if related(state_subject, k)), key=len)
+                if not near:
+                    counts["dropped: nothing answers to the state subject"] += 1
+                    continue
+                state_subject = near[0]
+                counts["retyped: state subject to a known kind"] += 1
+            kept.append({"key": item["key"], "subject": state_subject, "target": None})
+            continue
         subject = category(item["subject"])
         if subject in fixed:
             counts["dropped: subject is furniture or a room"] += 1
