@@ -409,6 +409,55 @@ def main():
               "不要拿上一版（`v2_%s_*`）的行填这里——那是另一个库的消融。" % (TAG, prefix.split("_", 1)[1]))
         w("")
 
+    # ---- zero-GPU replay ablation (scripts/viki_ablation_replay.py, 2026-09-17)
+    # The cells above need a live endpoint for the re-ask rows, which is why 30B never got any.
+    # Replaying the archived answers needs none, and it also covers the held-out column. A row is
+    # printed only when that cell's `full` arm reproduces the published number.
+    REPLAY_ARMS = [("no_grounding", "no-grounding"), ("no_ordering", "no-order"), ("no_reask", "no-reask")]
+    REPLAY_SPLITS = [("id", "ID"), ("fold", "OOD·单族")]
+    w("### 3b. 零 GPU 重放消融：ID 与单族留出，三个模型")
+    w("")
+    w("`scripts/viki_ablation_replay.py` 把归档答案对同一个库重新规划，每次只关一个模块，模型写的机器人分配一律保留。"
+      "**每一格先要求 `full` 臂精确复现主表的数，复现不了的格不进表**。配对是逐 episode 的 McNemar exact。"
+      "`no-reask` 只用第一次回答，忽略归档里的重问。")
+    w("")
+    w("| 模型 | 消融 | split | 对照 | 消融后 | 配对 |")
+    w("|---|---|---|---|---|---|")
+    _replay_missing, _replay_l1 = [], []
+    for model in ("72B", "30B", "7B"):
+        for arm, label in REPLAY_ARMS:
+            for split, split_label in REPLAY_SPLITS:
+                path = ROOT / ("outputs/viki_ablation/%s_layers_%s_%s.json" % (TAG, split, model))
+                rep = json.loads(path.read_text()) if path.is_file() else None
+                if not rep or not rep.get("reproduces_published") or "ALARM" in rep:
+                    _replay_missing.append("%s/%s" % (model, split))
+                    continue
+                a, full = rep["arms"].get(arm), rep["arms"]["full"]
+                if a is None:
+                    continue
+                lost, gained = a["vs_full"]["lost"], a["vs_full"]["gained"]
+                n = lost + gained
+                p = 1.0 if n == 0 else min(1.0, 2 * sum(comb(n, i) for i in range(min(lost, gained) + 1)) / 2 ** n)
+                note = ("**%d/%d 逐行一致，零效应**" % (a["vs_full"]["n_shared"], a["vs_full"]["n_shared"])
+                        if n == 0 else "对照胜 %d / 消融胜 %d  p=%.3g" % (lost, gained, p))
+                w("| %s | %s | %s | %.4f | %.4f | %s |" % (model, label, split_label, full["rate"], a["rate"], note))
+                if arm == "no_grounding":
+                    for l1 in ("no_preconditions", "no_coordinated"):
+                        v = rep["arms"].get(l1, {}).get("vs_full")
+                        if v is not None:
+                            _replay_l1.append(v["lost"] + v["gained"])
+    w("")
+    if _replay_missing:
+        w("**缺或未复现的格**：%s。" % "、".join(sorted(set(_replay_missing))))
+        w("")
+    if _replay_l1:
+        w("第 1 层的两个开关（`no_preconditions` 按前置条件挑算子、`no_coordinated` 接力算子）在全部 %d 个格上"
+          "变动 **%d** 行，不进主消融：前者按构造为零（`compose` 在全部候选的笛卡尔积里取最短调度，排序只在截断到 "
+          "4 个候选时起作用，而 v3 每个效果最多 4 个算子），后者那条接力算子只出现在本来就失败的行上。"
+          "`no-grounding` 与 `no-order` 在 ID 上的 72B / 7B 四格与上表的活端点格同分同配对，是这套重放的独立佐证。"
+          % (len(_replay_l1), sum(_replay_l1)))
+        w("")
+
     w("## 4. 留一族（ID 池，去掉一个族的库，评全部 924 行）")
     w("")
     w("| 去掉哪一族 | 72B | 30B | 7B |")
@@ -651,7 +700,7 @@ def main():
     w("3. ~~消融没有测主表报的那份记忆，且在组合泛化那格零效应~~ —— **这条已被自己推翻**。在**全份记忆**上 `no-order`"
       " 在组合泛化两格都是巨大效应（72B 文本 0.8620 → 0.3266、带图 0.7980 → 0.2761）。之前那个「零效应」是**"
       "消融了半份记忆造成的假象**。仍然成立的只有一条：`no-grounding` 在**文本** split 上是 297/297 逐行一致的真零效应——那一格没有图可 "
-      "ground。**但 v3 库下 §3 只有 72B**：30B / 7B 的消融格是 v2 库上跑的，没有重跑，别把那两组数混进这一版。")
+      "ground。**v3 库下活端点消融格只有 72B 与 7B**；30B 只有 §3b 的零 GPU 重放（ID 与单族留出，没有组合泛化两格）。")
     w("4. **组合泛化两格分不开我们的库与 19 算子手写参考库——但这是在 v2 的 4 算子库上测的**（72B 297 行逐行一致；ID "
       "上 4 算子库**显著输给**参考库，0.6126 vs 0.6742，115/172 p=0.00092）。**v3 的 8 算子库没有对参考库的格*"
       "*（`results/agent_library_v3/baseline_comparison.json` 里没有这个臂），所以主表的 0.8620 "
@@ -728,8 +777,8 @@ def main():
       "false`（4h 硬超时 / 端点中途死亡），已停、待重跑（`scripts/drivers/partnr_model_rerun.sh`"
       " 已写好，**还缺 `+resume=True`**）。现在 PARTNR 只有 privileged 臂，而它在带 `is_in_room`"
       " 的格上**不是上界**。")
-    w("- ~~消融只有 72B / 只跑在半份记忆上~~ —— **半份那一半已补**（见 §3，全份与半份两套），**但 v3 库下只有 72B*"
-      "*：30B / 7B 的消融格还停在 v2 库，本版没有重跑。")
+    w("- ~~消融只有 72B / 只跑在半份记忆上~~ —— **半份那一半已补**（见 §3，全份与半份两套）。v3 库下活端点格有 72B 与 7B；"
+      "**30B 只有 §3b 的零 GPU 重放**，覆盖 ID 与单族留出，组合泛化两格仍没有 30B 消融。")
     w("- **组合泛化那两个 split 没有留出族口径，而且不可能有**：它们的 297 行全部属于同一个"
       "合成族 `recombine_cut_and_deliver`（实测 297/297），只有一个族就没有可留出的族——"
       "留出它等于留出全部。而且这两个 split 本身就是留出条件（重组任务从不出现在训练里），"

@@ -4,10 +4,31 @@ Memory-as-Skill / skill memory v2 的实验仓库。VIKI-L2 和 PARTNR 两条线
 
 ## 开工先读
 
-**`HANDOVER-2026-09-14b.md`** ← 当前交接（**PARTNR 类型化要求接口已落地**（提交 `29a20f5`、`f96ba0f`）：train_mini 120 集仿真配对
-对自由生成臂 percent_complete 0.577 vs 0.210、**state_success 0.383 vs 0.067**；组合轴上 typed 衰减更多、时序 state_success 仍≈0。
-**现场：val_mini 两格（示例 R / RS，GPU1/2）17:54 在跑，预计 18:30 / 19:00 结束，收尾命令在 §3.1。**
-**主任务：VIKI-L2 ICLR 2027 补实验，要求原文在 `TASK-viki-iclr2027-2026-09-14.md`，第一步只读审计（§3.2 清单），不动 GPU。**）
+**`HANDOVER-2026-09-17.md`** ← 当前交接（**两条线**。PARTNR：5 算子纯 LLM 库在冻结 typed 模型臂上对 iir1
+**完全打平**（30B +0.002、7B −0.001，四格 369/369），第三臂 h30b 把两个效应拆开、**两个都是零**；
+根因是 **typed 要求接口没有 H 谓词这个词**（`RELATIONS` 只有三个放置关系），已加 `typed_state` 开关（默认关闭）；
+接口修好后 `is_powered_on` 0→0.727/0.778，`is_clean` 仍 0——又是判据（`project()` 把家具主语一律丢弃，
+而池里每条 `is_clean` 都指家具），修好后 **7B 上 0.000→0.327 [+0.204,+0.449]、16 升 0 降，且只有该动的键动了**；
+**30B 确认欠着**（八张卡全被占）。VIKI：ToM 无效的机制查清（zero-shot 本来就 100% 在推理伙伴、
+ToM 修好 181 格幻觉但 0 格得分、94% 死在模拟器那一关），四臂零 GPU 消融跑出
+**拿掉模型的机器人分配反而涨 11.7 分（108 格变好 0 格变坏）**、**re-ask 零贡献**、**ordering 扛结果**。
+**现场：远端无本人作业与端点；八张卡全部被别人占；根分区回到 44G。**）
+
+`HANDOVER-2026-09-16b.md`（历史：LLM 生成 memory 在 R 与 H 两族跑通并经留出池确认——30B 归纳 → 按谓词执行门
+→ 装库 → 不相交确认池；`conf_H` 上 `is_clean` 0→0.981、`is_powered_on` 0.037→0.926、pc **+0.2563**；
+**`is_on_top` 一条 LLM 算子与 20 条规则算子逐条 episode 完全一致**。阴性：`is_next_to` 归纳正确但在特权门下不可验收
+（base 无该算子仍满足 83.5%），别再切第三版池子；`is_filled`/`is_inside`/`is_on_floor` 材料只有个位数。
+其 §3 优先级 1 已在 09-17 做完，**且它预期的「库变小会改善模型选谓词」被证否——见 09-17 §1a**；优先级 2/3 未动）
+
+`HANDOVER-2026-09-16.md`（历史：组合泛化 7B 上成立、30B 上输给所有强基线；冻结配置
+tag `partnr-comp-freeze-0916`、val_mini 7B ss 0.358→0.485、组合轴 0.427→0.799；执行器诊断
+typed 0.158 → 特权臂真 DAG 0.451 → ceiling 0.835。其 §3 的优先级 1 与 2 已在 09-16b 做完，
+**其中 §3 对 `v2_prompt` 的解读是错的，见 09-16b §1c**）
+
+`HANDOVER-2026-09-15.md`（历史：VIKI-L2 ICLR 2027 补实验 144/144 格交付、PARTNR typed 接口首次 val_mini 0.583/0.590；
+其 §3 下一步已全部完成）
+
+`HANDOVER-2026-09-14b.md`（历史：PARTNR 类型化要求接口落地与 train_mini 配对；其 §2 现场、§3 下一步均已完成）。
 
 `HANDOVER-2026-09-14.md`（历史：7B 基线空解析崩溃修复、Achieve 执行对齐；其 §2 现场与「下一步」已过时）。
 
@@ -20,7 +41,7 @@ Memory-as-Skill / skill memory v2 的实验仓库。VIKI-L2 和 PARTNR 两条线
 两次重跑都 `complete: false`，死因是 4h 硬超时与端点中途死亡，不是模型也不是方法**。
 现场四条：无作业在跑、**7B 端点 8061 已不在**、箱子上多了别人的两个服务只剩 GPU 0 空、
 **这条线的代码一行都没提交**）。
-**`RESULTS-2026-09-13.md`**：VIKI 与 PARTNR 的全部表格，由 `scripts/viki_partnr_results_md.py` 从盘上产物直读，**表格不要手改**（§6/§7 是脚本里的手写散文，要改改脚本里的字面量）。
+**`RESULTS-2026-09-17.md`**：VIKI 与 PARTNR 的全部表格，由 `scripts/viki_partnr_results_md.py` 从盘上产物直读，**表格不要手改**（§6/§7 是脚本里的手写散文，要改改脚本里的字面量）。重生成：远端 `--tag-prefix v3 --comparison results/agent_library_v3/baseline_comparison.json --out RESULTS-<日期>.md`。09-17 版比 09-13 只多了 **§3b 零 GPU 重放消融**（三模型 × ID/单族，报 no-grounding / no-order / no-reask；**用户定 `no_casting` 不报**）和新池子行，其余逐字相同。
 这一版是 **v3 库（8 算子）**：72B ID 0.7803、单族留出 0.5422、兄弟组 0.3193，留出列已翻盘。
 09-13 补上了 **72B 三轮重复、7B 的消融/重复/no-think**；**还缺 30B 那三组**（要四张卡才能按归档的
 TP=4 起，用两卡凑合会把 TP 的数值差异混进重复表的 sd）。**抢卡守卫 `/tmp/serve_30b_when_free.sh`
