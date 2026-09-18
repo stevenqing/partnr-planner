@@ -41,7 +41,7 @@ typed 0.158 → 特权臂真 DAG 0.451 → ceiling 0.835。其 §3 的优先级 
 两次重跑都 `complete: false`，死因是 4h 硬超时与端点中途死亡，不是模型也不是方法**。
 现场四条：无作业在跑、**7B 端点 8061 已不在**、箱子上多了别人的两个服务只剩 GPU 0 空、
 **这条线的代码一行都没提交**）。
-**`RESULTS-2026-09-17.md`**：VIKI 与 PARTNR 的全部表格，由 `scripts/viki_partnr_results_md.py` 从盘上产物直读，**表格不要手改**（§6/§7 是脚本里的手写散文，要改改脚本里的字面量）。重生成：远端 `--tag-prefix v3 --comparison results/agent_library_v3/baseline_comparison.json --out RESULTS-<日期>.md`。09-17 版比 09-13 只多了 **§3b 零 GPU 重放消融**（三模型 × ID/单族，报 no-grounding / no-order / no-reask；**用户定 `no_casting` 不报**）和新池子行，其余逐字相同。
+**`RESULTS-2026-09-18.md`**：VIKI 与 PARTNR 的全部表格，由 `scripts/viki_partnr_results_md.py` 从盘上产物直读，**表格不要手改**（§6/§7 是脚本里的手写散文，要改改脚本里的字面量）。重生成：远端 `--tag-prefix v3 --comparison results/agent_library_v3/baseline_comparison.json --out RESULTS-<日期>.md`。09-18 版比 09-13 多四处：**§3b** 零 GPU 重放消融（三模型 × ID/单族，报 no-grounding / no-order / no-reask；**用户定 `no_casting` 不报**）、**§3c** 19 算子参考库对照（**7B 上参考库在 ID 也赢我们**）、**§5c** ToM 失效机制（12 格无一显著）、**§5d** ICLR 补实验 144 格（figure2 / rq2 / rq3 / 配对 / 归纳预算）。同时更正了三处过时散文：no-trace 交出的是 2 个算子不是 0、§6 第 4 条、§7.4。**PARTNR 侧仍只到 09-09 的 `is_in_room`**：typed 模型臂、LLM 生成 memory、H 谓词接口都还没进文档。
 这一版是 **v3 库（8 算子）**：72B ID 0.7803、单族留出 0.5422、兄弟组 0.3193，留出列已翻盘。
 09-13 补上了 **72B 三轮重复、7B 的消融/重复/no-think**；**还缺 30B 那三组**（要四张卡才能按归档的
 TP=4 起，用两卡凑合会把 TP 的数值差异混进重复表的 sd）。**抢卡守卫 `/tmp/serve_30b_when_free.sh`

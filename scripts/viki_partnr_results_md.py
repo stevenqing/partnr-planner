@@ -97,10 +97,20 @@ def main():
                   if str(json.loads(Path(v).read_text()).get("passed")) == "True")
     _lib = json.loads((ROOT / ("outputs/%s_memories/memory_all.json"
                                % ("v2" if TAG == "v2" else TAG))).read_text())
+    # The no-trace arm's yield is read from the ICLR ledger, not asserted: it is 2 skills from 9
+    # execution passes, not 0 (the earlier "0" predates the 896-cell rerun). Both numbers matter --
+    # the arm does clear the gate twice, and §5d.4 shows those two skills score nothing downstream.
+    _ledger_path = ROOT / "results/paper_viki_iclr2027/induction_ledger.json"
+    _ledger = json.loads(_ledger_path.read_text()) if _ledger_path.is_file() else {}
+    _nt = (_ledger.get("conditions") or {}).get("no_trace") or {}
+    _nt_skills = _nt.get("deduplicated_skill_count")
     w("**方法**：算子由 agent 从轨迹推导，**验收全部机械**。VIKI 侧 14 族库并集去重后 "
-      "**%d 个算子**（%d 进 %d 出，%d 格）；对照臂「不给轨迹只给谓词菜单」交出 **0 个算子**。"
+      "**%d 个算子**（%d 进 %d 出，%d 格）；对照臂「不给轨迹只给谓词菜单」交出 **%s 个算子**%s。"
       % (len(_lib["layer1"]["operators"]), _passes,
-         len(_lib["layer1"]["operators"]), len(_cells)))
+         len(_lib["layer1"]["operators"]), len(_cells),
+         "0" if _nt_skills is None else _nt_skills,
+         "" if not _nt else "（%s 条提交、%s 次通过执行门，见 §5d.4——这两个算子下游一格没得分）"
+         % (_nt.get("submission_count"), _nt.get("execution_passed_count"))))
     w("")
     w("---")
     w("")
@@ -361,7 +371,9 @@ def main():
     if _absent:
         w("**这一组只跑了 %s**：%s 的消融格本 build 没有——重打分本身几乎不花算力，但每一格"
           "仍要一个活着的端点做那少数几行的 re-ask，而这些模型的端点在跑到它们之前就没了。"
-          "**缺就是缺，不要用上一版的行补。**" % ("、".join(_have) or "无", "、".join(_absent)))
+          "**缺就是缺，不要用上一版的行补。**这三个模型的 grounding / ordering 另有两套独立的格："
+          "**§3b**（零 GPU 重放，ID 与单族留出）与 **§5d.3**（ICLR 登记表的 rq3，四个 split 齐）——"
+          "三套的行不是同一批，**不要互相补格**。" % ("、".join(_have) or "无", "、".join(_absent)))
         w("")
     # The text cell has no image to ground, so the ablation is a no-op by construction --
     # but the cell still sends 16-23% of its rows through a live re-ask, and that path is
@@ -456,6 +468,52 @@ def main():
           "4 个候选时起作用，而 v3 每个效果最多 4 个算子），后者那条接力算子只出现在本来就失败的行上。"
           "`no-grounding` 与 `no-order` 在 ID 上的 72B / 7B 四格与上表的活端点格同分同配对，是这套重放的独立佐证。"
           % (len(_replay_l1), sum(_replay_l1)))
+        w("")
+
+    # ---- 3c: our library against the 19-operator handwritten reference, same answers, same planner.
+    # This is the arm §8 item 4 used to say the v3 build did not have.
+    w("### 3c. 19 算子手写参考库：同一批答案换库重放")
+    w("")
+    w("同一个重放脚本，只把库换成 `results/viki_memory_experiments/amendment11/skill_memory_v2.json`"
+      "（19 个人写算子）。**参考库不随留出折变化**，所以它在两列上是同一个数，而我们的库会掉——"
+      "这一格量的就是那个差。")
+    w("")
+    w("| 模型 | split | 我们的库（%s） | 19 算子参考库 | 配对 |" % ("v3 8 算子" if TAG == "v3" else TAG))
+    w("|---|---|---|---|---|")
+    _lib_missing, _lib_verdict = [], {}
+    for model in ("72B", "30B", "7B"):
+        for split, split_label in (("id", "ID"), ("fold", "OOD·单族")):
+            path = ROOT / ("outputs/viki_ablation/%s_lib_%s_%s.json" % (TAG, split, model))
+            rep_json = json.loads(path.read_text()) if path.is_file() else None
+            if not rep_json or not rep_json.get("reproduces_published") or "ALARM" in rep_json:
+                _lib_missing.append("%s/%s" % (model, split))
+                continue
+            ours_arm = rep_json["arms"]["full"]
+            ref = next((v for k, v in rep_json["arms"].items() if k.startswith("lib_")), None)
+            if ref is None:
+                continue
+            lost, gained = ref["vs_full"]["lost"], ref["vs_full"]["gained"]
+            n = lost + gained
+            p = 1.0 if n == 0 else min(1.0, 2 * sum(comb(n, i) for i in range(min(lost, gained) + 1)) / 2 ** n)
+            w("| %s | %s | %.4f | %.4f | 我们胜 %d / 参考胜 %d  p=%.3g |"
+              % (model, split_label, ours_arm["rate"], ref["rate"], lost, gained, p))
+            _lib_verdict[(model, split)] = (ours_arm["rate"], ref["rate"], p)
+    w("")
+    if _lib_missing:
+        w("**缺或未复现的格**：%s。" % "、".join(sorted(set(_lib_missing))))
+        w("")
+    if _lib_verdict:
+        # Counted, not asserted: the 7B cell has our library LOSING on ID too, so a sentence saying
+        # "ours wins ID, reference wins held-out" would be false for one of the three models.
+        def _verdict(split):
+            win = [m for m in ("72B", "30B", "7B")
+                   if (m, split) in _lib_verdict and _lib_verdict[(m, split)][0] > _lib_verdict[(m, split)][1]]
+            lose = [m for m in ("72B", "30B", "7B")
+                    if (m, split) in _lib_verdict and _lib_verdict[(m, split)][0] < _lib_verdict[(m, split)][1]]
+            return ("我们高：%s；参考库高：%s" % ("、".join(win) or "无", "、".join(lose) or "无"))
+        w("**逐格结论（%d 格，配对全部 p<0.01）**：ID 上 %s。单族留出上 %s——留出折换了库就掉，"
+          "而参考库不随折变化，所以那一列的差不是「参考库更好」，是**我们的库在留出族上覆盖不住**。"
+          % (len(_lib_verdict), _verdict("id"), _verdict("fold")))
         w("")
 
     w("## 4. 留一族（ID 池，去掉一个族的库，评全部 924 行）")
@@ -686,6 +744,154 @@ def main():
     if _cond:
         w("**条件效应是因臂而异的**，所以每一句结论都要写明条件：%s。" % "；".join(_cond))
     w("")
+    # ---- 5c: why the ToM arm ties zero-shot. Zero GPU: the archived rows are re-read, never regenerated.
+    _tom_path = ROOT / "outputs/viki_tom_failures/analysis.json"
+    if _tom_path.is_file():
+        tom = json.loads(_tom_path.read_text())
+        w("## 5c. ToM 臂为什么不比 zero-shot 好（零 GPU，读归档 rows）")
+        w("")
+        w("`scripts/viki_tom_failure_analysis.py` 读 `%s`。两个臂都输出逐步原语、只差提示词，"
+          "所以差别全部归 ToM 适配器。**干净对照只有 tom 对 zero_shot**——`ours` 输出的是高层技能调用，"
+          "拿 `ours` 的分对比 tom 是表示的差距，不是 ToM 的效果。"
+          % tom["rows_dir"].replace(str(ROOT) + "/", ""))
+        w("")
+        w("| 格 | n | ToM | zero-shot | 只 ToM 对 | 只 zs 对 | McNemar p |")
+        w("|---|---|---|---|---|---|---|")
+        for cell, d in tom["cells"].items():
+            m = d["mcnemar_tom_vs_zero_shot"]
+            w("| %s | %d | %.4f | %.4f | %d | %d | %.3g |"
+              % (cell, d["n"], d["rate"]["tom"], d["rate"]["zero_shot"], m["n10"], m["n01"], m["p"]))
+        w("")
+        _sig = [c for c, d in tom["cells"].items() if d["mcnemar_tom_vs_zero_shot"]["p"] < 0.05]
+        w("**%d / %d 格显著**（p<0.05）。下面拿分最高的那一格看卡在哪一关。"
+          % (len(_sig), len(tom["cells"])))
+        w("")
+        ref_cell = max(tom["cells"], key=lambda c: tom["cells"][c]["rate"]["tom"])
+        ref = tom["cells"][ref_cell]
+        w("### 5c.1 漏斗（累计，%s）" % ref_cell)
+        w("")
+        w("| 关 | ToM | zero-shot |")
+        w("|---|---|---|")
+        for stage in ref["funnel"]["tom"]["stages"]:
+            a, b = ref["funnel"]["tom"]["stages"][stage], ref["funnel"]["zero_shot"]["stages"][stage]
+            w("| %s | %d (%.1f%%) | %d (%.1f%%) |" % (stage, a["n"], 100 * a["share"], b["n"], 100 * b["share"]))
+        w("")
+        w("### 5c.2 中介：ToM 修好的是不是决定得分的那一关")
+        w("")
+        w("| 关 | ToM 修好 | ToM 弄坏 | 修好的里面因此得分 |")
+        w("|---|---|---|---|")
+        for key, label in (("objects", "物体幻觉"), ("length", "计划长度")):
+            m = ref["mediation"][key]
+            w("| %s | %d | %d | **%d** |" % (label, m["tom_repaired"], m["tom_broke"],
+                                             m["of_repaired_tom_now_succeeds"]))
+        w("")
+        w("即 **ToM 确实在修它该修的东西，修完一格也不多得**（%s）。同一格里 zero-shot 有 **%.1f%%** 的输出"
+          "已经在推理伙伴、ToM 是 **%.1f%%**——所以「ToM 无效是因为 zero-shot 根本不考虑伙伴」这个解释"
+          "不成立，两个臂都在考虑。"
+          % (ref_cell, 100 * ref["funnel"]["zero_shot"]["partner_talk_share"],
+             100 * ref["funnel"]["tom"]["partner_talk_share"]))
+        w("")
+
+    # ---- 5d: the ICLR 2027 supplement, all 144 registered cells, read from its own artefacts.
+    _sup = ROOT / "results/paper_viki_iclr2027"
+    if (_sup / "cells.json").is_file():
+        import csv
+        reg = json.loads((_sup / "cells.json").read_text())
+        w("## 5d. ICLR 2027 补实验：144 格")
+        w("")
+        w("这一组有自己的登记表 `results/paper_viki_iclr2027/cells.json`（每格带 row 文件的 sha256、"
+          "提示词与 scorer 的 sha256），下面的数全部从它和它旁边的四个 csv 读出。")
+        w("")
+        by_exp = defaultdict(lambda: [0, 0, 0])
+        for cell in reg["cells"]:
+            slot = by_exp[cell["experiment"]]
+            slot[0] += 1
+            slot[1] += int(cell.get("status") == "available")
+            slot[2] += int(cell.get("provenance_status") == "verified")
+        w("| 组 | 格数 | available | provenance verified |")
+        w("|---|---|---|---|")
+        for exp in sorted(by_exp):
+            n, ok, ver = by_exp[exp]
+            w("| %s | %d | %d | %d |" % (exp, n, ok, ver))
+        w("| **合计** | **%d** | **%d** | **%d** |"
+          % tuple(sum(v[i] for v in by_exp.values()) for i in range(3)))
+        w("")
+
+        SPLIT_ORDER = ["id", "ood_single_family", "pure_text", "cg_image"]
+        def table(csv_name, title, note):
+            path = _sup / csv_name
+            if not path.is_file():
+                return
+            rowsv = list(csv.DictReader(path.read_text().splitlines()))
+            incomplete = [r["cell_id"] for r in rowsv if r.get("complete") != "True"]
+            w("### %s" % title)
+            w("")
+            w(note)
+            w("")
+            splits = [sp for sp in SPLIT_ORDER if any(r["canonical_split"] == sp for r in rowsv)]
+            w("| 模型 | 臂 | %s |" % " | ".join(splits))
+            w("|---|---|%s" % ("---|" * len(splits)))
+            models = sorted({r["model_display_name"] for r in rowsv})
+            conditions = sorted({r["condition"] for r in rowsv})
+            for model in models:
+                for cond in conditions:
+                    line = "| %s | %s " % (model, cond)
+                    for sp in splits:
+                        hit = [r for r in rowsv if r["model_display_name"] == model
+                               and r["condition"] == cond and r["canonical_split"] == sp]
+                        line += "| %s " % ("%.4f" % float(hit[0]["success_rate"]) if hit else "—")
+                    w(line + "|")
+            w("")
+            if incomplete:
+                w("**未完成的格**：%s。" % "、".join(incomplete))
+                w("")
+
+        table("figure2_tom_summary.csv", "5d.1 figure2：六个臂（含 ToM）",
+              "`ours` 与五个基线的数与 §1 主表同源（同一批 row 文件），`tom` 是这一组新跑的臂。")
+        table("rq2_summary.csv", "5d.2 RQ2：拿掉轨迹、拿掉执行门",
+              "`no_trace` 是「只给谓词菜单不给轨迹」，`no_execution_admission` 是「提交即入库、不过执行门」。")
+        table("rq3_summary.csv", "5d.3 RQ3：grounding 与 ordering（活端点格）",
+              "与 §3 的活端点消融同源，这里按登记表的口径再列一遍，四个 split 齐。")
+
+        _pt = _sup / "paired_tests.csv"
+        if _pt.is_file():
+            pt = list(csv.DictReader(_pt.read_text().splitlines()))
+            w("### 5d.4 配对检验（全部 %d 行，McNemar exact）" % len(pt))
+            w("")
+            w("| 组 | 模型 | split | A | B | A 胜 | B 胜 | ΔA−B | p |")
+            w("|---|---|---|---|---|---|---|---|---|")
+            for r in sorted(pt, key=lambda r: (r["experiment"], r["model_display_name"],
+                                               SPLIT_ORDER.index(r["canonical_split"])
+                                               if r["canonical_split"] in SPLIT_ORDER else 9,
+                                               r["arm_b"])):
+                w("| %s | %s | %s | %s | %s | %s | %s | %+.4f | %.3g |"
+                  % (r["experiment"], r["model_display_name"], r["canonical_split"], r["arm_a"], r["arm_b"],
+                     r["arm_a_only_success"], r["arm_b_only_success"],
+                     float(r["absolute_delta"]), float(r["mcnemar_exact_p"])))
+            w("")
+
+        _cond_led = (_ledger.get("conditions") or {})
+        if _cond_led:
+            w("### 5d.5 这三个臂各自归纳出多少算子（`induction_ledger.json`）")
+            w("")
+            w("| 臂 | 提交 | type 合法 | 过执行门 | 去重后算子 |")
+            w("|---|---|---|---|---|")
+            for name in ("full", "no_execution_admission", "no_trace"):
+                d = _cond_led.get(name)
+                if not d:
+                    continue
+                w("| %s | %s | %s | %s | **%s** |"
+                  % (name, d.get("submission_count"), d.get("type_valid_count"),
+                     "—" if d.get("execution_passed_count") is None else d.get("execution_passed_count"),
+                     d.get("deduplicated_skill_count")))
+            w("")
+            w("**两个阴性的形状不一样**：`no_trace` 把预算烧到 %s 条提交只留下 %s 个算子（下游见 §5d.2，全 0）；"
+              "`no_execution_admission` 留下 %s 个算子却大幅掉分——**门不是在挡数量，是在挡不能执行的东西**。"
+              % (_cond_led.get("no_trace", {}).get("submission_count"),
+                 _cond_led.get("no_trace", {}).get("deduplicated_skill_count"),
+                 _cond_led.get("no_execution_admission", {}).get("deduplicated_skill_count")))
+            w("")
+
     w("## 6. 不能说的话")
     w("")
     w("1. ~~不能说我们在留出族 OOD 上更强~~ —— **这条已被 v3 推翻**。三模型 × 两口径共六格对 G-Memory：**赢 "
@@ -701,10 +907,11 @@ def main():
       " 在组合泛化两格都是巨大效应（72B 文本 0.8620 → 0.3266、带图 0.7980 → 0.2761）。之前那个「零效应」是**"
       "消融了半份记忆造成的假象**。仍然成立的只有一条：`no-grounding` 在**文本** split 上是 297/297 逐行一致的真零效应——那一格没有图可 "
       "ground。**v3 库下活端点消融格只有 72B 与 7B**；30B 只有 §3b 的零 GPU 重放（ID 与单族留出，没有组合泛化两格）。")
-    w("4. **组合泛化两格分不开我们的库与 19 算子手写参考库——但这是在 v2 的 4 算子库上测的**（72B 297 行逐行一致；ID "
-      "上 4 算子库**显著输给**参考库，0.6126 vs 0.6742，115/172 p=0.00092）。**v3 的 8 算子库没有对参考库的格*"
-      "*（`results/agent_library_v3/baseline_comparison.json` 里没有这个臂），所以主表的 0.8620 "
-      "/ 0.7980 既不能当作「我们这个库好」的证据，也不能说已经翻过来了。")
+    w("4. ~~v3 的 8 算子库没有对 19 算子手写参考库的格~~ —— **已补，见 §3c**：零 GPU 重放，同一批答案只换库，"
+      "六格全部要求 `full` 复现主表，逐格结论写在那一节里（**7B 上参考库在 ID 也赢我们**）。"
+      "仍然成立的限定是**组合泛化那两格分不开两个库，而那是在 v2 的 4 算子库上测的**（72B 297 行逐行一致；"
+      "ID 上 4 算子库**显著输给**参考库，0.6126 vs 0.6742，115/172 p=0.00092），所以主表的 0.8620 "
+      "/ 0.7980 在那两格上仍然不能当作「我们这个库好」的证据。")
     w("5. **PARTNR 的模型臂（7B/8B × base/accepted）没有数**：两次重跑（09-07 `model_iir1`、09-08 "
       "`model_rerun`）的四份 compare **全是 `complete: false`**——死因是 4h 硬超时与端点中途死亡，"
       "不是模型也不是方法。按仓库自己的规矩，半格不取结论。现有的只有 privileged 臂，而 **privileged 臂在带 `is_in_room`"
@@ -764,11 +971,14 @@ def main():
         w("- 表内是自洽的（两边都是 think），**但 30B 的每一句结论都必须写明「think 条件」**；")
         w("- 想报 no-think 的话，我们这边要从头跑，基线那边 7B 也还没有 no-think 变体。")
         w("")
-        w("### 7.4 重复次数：基线有三轮，**我们一轮都没有**")
+        _rep_have = [m for m in ("72B", "30B", "7B") if rows("v2_ours_%s_id_r2" % m)]
+        _rep_lack = [m for m in ("72B", "30B", "7B") if m not in _rep_have]
+        w("### 7.4 重复次数：基线三轮，我们缺 %s" % ("、".join(_rep_lack) or "无"))
         w("")
-        w("30B 基线每个条件有 3 轮（上表），可以给出 sd。**ours 的每一格都是单次抽样，"
-          "全表没有任何方差估计**——`v2_ours_*` 下不存在 r2/r3 之类的重复格。"
-          "这一条审稿人一定会问。")
+        w("30B 基线每个条件有 3 轮（上表）。我们这一臂的重复见 §5b.1：**%s 有三轮，%s 只有一轮**。"
+          "缺的那一列要按归档的 TP=4 起 30B，用两卡凑合会把 TP 的数值差异混进 sd。"
+          "**§5b.1 的 sd 全是 0 不等于没重跑**：那条 replay + re-ask 路径在 temperature 0 下对这两个模型"
+          "是确定的，逐行判定都相同。" % ("、".join(_rep_have) or "无", "、".join(_rep_lack) or "无"))
         w("")
 
     w("### 7.5 表外没有覆盖的东西")
