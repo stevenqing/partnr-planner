@@ -1,0 +1,13 @@
+model,split,n,ours,replay,ours_only,replay_only,p
+72B,ID,924,721,738,0,17,1.53e-05
+72B,single-family OOD,924,501,501,0,0,1
+72B,CG w/ Image,297,237,237,0,0,1
+72B,CG w/o Image,297,256,256,0,0,1
+30B,ID,924,530,568,10,48,4.52e-07
+30B,single-family OOD,924,327,328,0,1,1
+30B,CG w/ Image,297,193,196,0,3,0.25
+30B,CG w/o Image,297,215,218,0,3,0.25
+7B,ID,924,128,165,0,37,1.46e-11
+7B,single-family OOD,924,108,124,0,16,3.05e-05
+7B,CG w/ Image,297,45,47,0,2,0.5
+7B,CG w/o Image,297,76,78,0,2,0.5

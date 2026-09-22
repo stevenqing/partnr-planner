@@ -54,7 +54,7 @@ CG 只有一种组合（297 行全是 `recombine_cut_and_deliver`），不存在
 ## 需要用户决定
 
 1. pass10 `main.tex` 放到盘上后生成 `main_patch.diff`（P1–P5）。
-2. A3 待核：模板 yaml 的 similarity_threshold 为 0.7，稿件写 θ=0.3。
+2. A3 已核（09-22 Part B0）：θ=0.3 写死在 `rag.py:468`，模板 yaml 的 0.7 没有代码读取，稿件的 θ=0.3 正确。
 
 ## Future（不跑）
 

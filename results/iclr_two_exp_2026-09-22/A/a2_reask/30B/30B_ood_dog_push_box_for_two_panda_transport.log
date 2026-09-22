@@ -1,0 +1,21 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+resume: 0 rows already in /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/30B/30B_ood_dog_push_box_for_two_panda_transport.partial.jsonl, 46 to score
+replaying 46 archived answers from /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/30B/30B_ood_dog_push_box_for_two_panda_transport.replay.jsonl
+
+=== 30B_ood_dog_push_box_for_two_panda_transport: the model names the work, 46 rows ===
+accuracy       0/46 = 0.00%
+crew           model; re-asked on 100.0% of rows; infeasible_assignment 46/46
+  infeasible_assignment    46  100.0%
+
+by family:
+  dog_push_box_for_two_panda_transport                0/46     0.0%
+
+wrote /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/30B/30B_ood_dog_push_box_for_two_panda_transport.jsonl

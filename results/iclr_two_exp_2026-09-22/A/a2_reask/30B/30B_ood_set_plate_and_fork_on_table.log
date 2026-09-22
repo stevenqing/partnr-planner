@@ -1,0 +1,22 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+resume: 0 rows already in /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/30B/30B_ood_set_plate_and_fork_on_table.partial.jsonl, 85 to score
+replaying 1 archived answers from /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/30B/30B_ood_set_plate_and_fork_on_table.replay.jsonl
+
+=== 30B_ood_set_plate_and_fork_on_table: the model names the work, 85 rows ===
+accuracy       0/85 = 0.00%
+crew           model; re-asked on 1.2% of rows; infeasible_assignment 0/85
+  NO_ARCHIVED_ANSWER      84   98.8%
+  OVER_BUDGET              1    1.2%
+
+by family:
+  set_plate_and_fork_on_table                         0/85     0.0%
+
+wrote /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/30B/30B_ood_set_plate_and_fork_on_table.jsonl

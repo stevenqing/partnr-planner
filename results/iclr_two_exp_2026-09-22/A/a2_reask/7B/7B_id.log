@@ -1,0 +1,40 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+resume: 0 rows already in /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/7B/7B_id.partial.jsonl, 924 to score
+replaying 120 archived answers from /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/7B/7B_id.replay.jsonl
+  100/924  solved=0 (0.0%)
+  200/924  solved=0 (0.0%)
+  300/924  solved=0 (0.0%)
+  400/924  solved=0 (0.0%)
+  500/924  solved=0 (0.0%)
+  600/924  solved=2 (0.3%)
+  700/924  solved=3 (0.4%)
+  800/924  solved=3 (0.4%)
+  900/924  solved=6 (0.7%)
+
+=== 7B_id: the model names the work, 924 rows ===
+accuracy       7/924 = 0.76%
+crew           model; re-asked on 13.0% of rows; infeasible_assignment 111/924
+  NO_ARCHIVED_ANSWER     804   87.0%
+  infeasible_assignment   111   12.0%
+  SOLVED                   7    0.8%
+  OVER_BUDGET              2    0.2%
+
+by family:
+  clear_table_with_two_robots_and_put_in_cabinet      7/220    3.2%
+  cut_fruit_on_board                                  0/189    0.0%
+  toast_bread_and_set_plate                           0/108    0.0%
+  cut_two_fruits_on_board                             0/108    0.0%
+  parallel_human_dual_asset_to_plate_or_bowl          0/86     0.0%
+  set_plate_and_fork_on_table                         0/85     0.0%
+  ensure_all_fruits_on_table                          0/82     0.0%
+  dog_push_box_for_two_panda_transport                0/46     0.0%
+
+wrote /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/7B/7B_id.jsonl

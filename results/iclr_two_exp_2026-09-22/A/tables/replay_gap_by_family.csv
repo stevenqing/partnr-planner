@@ -1,0 +1,55 @@
+model,split,family,n,ours,replay,replay_only,ours_only,operators_used_on_replay_only_rows
+72B,ID,clear_table_with_two_robots_and_put_in_cabinet,220,220,220,0,0,
+72B,ID,cut_fruit_on_board,189,178,178,0,0,
+72B,ID,cut_two_fruits_on_board,108,82,82,0,0,
+72B,ID,dog_push_box_for_two_panda_transport,46,0,17,17,0,"pos.name:COORD[3] Move(?z1) Push(?z1,?r1) Push(?z1,?r2) | Reach(?x) Grasp(?x) Place(?z1) | Reach(?x) Grasp(?x) Place(?y) x51"
+72B,ID,ensure_all_fruits_on_table,82,70,70,0,0,
+72B,ID,parallel_human_dual_asset_to_plate_or_bowl,86,86,86,0,0,
+72B,ID,set_plate_and_fork_on_table,85,85,85,0,0,
+72B,ID,toast_bread_and_set_plate,108,0,0,0,0,
+72B,single-family OOD,clear_table_with_two_robots_and_put_in_cabinet,220,0,0,0,0,
+72B,single-family OOD,cut_fruit_on_board,189,178,178,0,0,
+72B,single-family OOD,cut_two_fruits_on_board,108,82,82,0,0,
+72B,single-family OOD,dog_push_box_for_two_panda_transport,46,0,0,0,0,
+72B,single-family OOD,ensure_all_fruits_on_table,82,70,70,0,0,
+72B,single-family OOD,parallel_human_dual_asset_to_plate_or_bowl,86,86,86,0,0,
+72B,single-family OOD,set_plate_and_fork_on_table,85,85,85,0,0,
+72B,single-family OOD,toast_bread_and_set_plate,108,0,0,0,0,
+72B,CG w/ Image,recombine_cut_and_deliver,297,237,237,0,0,
+72B,CG w/o Image,recombine_cut_and_deliver,297,256,256,0,0,
+30B,ID,clear_table_with_two_robots_and_put_in_cabinet,220,203,194,1,10,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x1; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Reach(?y) Open(?y) Place(?y) x1
+30B,ID,cut_fruit_on_board,189,133,133,0,0,
+30B,ID,cut_two_fruits_on_board,108,48,49,1,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x1; is_activated:Move(?x) Interact(?x) x1
+30B,ID,dog_push_box_for_two_panda_transport,46,0,46,46,0,"pos.name:COORD[3] Move(?z1) Push(?z1,?r1) Push(?z1,?r2) | Reach(?x) Grasp(?x) Place(?z1) | Reach(?x) Grasp(?x) Place(?y) x138"
+30B,ID,ensure_all_fruits_on_table,82,56,56,0,0,
+30B,ID,parallel_human_dual_asset_to_plate_or_bowl,86,84,84,0,0,
+30B,ID,set_plate_and_fork_on_table,85,3,3,0,0,
+30B,ID,toast_bread_and_set_plate,108,3,3,0,0,
+30B,single-family OOD,clear_table_with_two_robots_and_put_in_cabinet,220,0,0,0,0,
+30B,single-family OOD,cut_fruit_on_board,189,133,133,0,0,
+30B,single-family OOD,cut_two_fruits_on_board,108,48,49,1,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x1; is_activated:Move(?x) Interact(?x) x1
+30B,single-family OOD,dog_push_box_for_two_panda_transport,46,0,0,0,0,
+30B,single-family OOD,ensure_all_fruits_on_table,82,56,56,0,0,
+30B,single-family OOD,parallel_human_dual_asset_to_plate_or_bowl,86,84,84,0,0,
+30B,single-family OOD,set_plate_and_fork_on_table,85,3,3,0,0,
+30B,single-family OOD,toast_bread_and_set_plate,108,3,3,0,0,
+30B,CG w/ Image,recombine_cut_and_deliver,297,193,196,3,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x3; is_activated:Move(?x) Interact(?x) x3; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2
+30B,CG w/o Image,recombine_cut_and_deliver,297,215,218,3,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x3; is_activated:Move(?x) Interact(?x) x3; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2
+7B,ID,clear_table_with_two_robots_and_put_in_cabinet,220,20,27,7,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x7; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Reach(?y) Open(?y) Place(?y) x7
+7B,ID,cut_fruit_on_board,189,71,71,0,0,
+7B,ID,cut_two_fruits_on_board,108,3,19,16,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x16; is_activated:Move(?x) Interact(?x) x16
+7B,ID,dog_push_box_for_two_panda_transport,46,0,14,14,0,"pos.name:COORD[3] Move(?z1) Push(?z1,?r1) Push(?z1,?r2) | Reach(?x) Grasp(?x) Place(?z1) | Reach(?x) Grasp(?x) Place(?y) x42"
+7B,ID,ensure_all_fruits_on_table,82,6,6,0,0,
+7B,ID,parallel_human_dual_asset_to_plate_or_bowl,86,28,28,0,0,
+7B,ID,set_plate_and_fork_on_table,85,0,0,0,0,
+7B,ID,toast_bread_and_set_plate,108,0,0,0,0,
+7B,single-family OOD,clear_table_with_two_robots_and_put_in_cabinet,220,0,0,0,0,
+7B,single-family OOD,cut_fruit_on_board,189,71,71,0,0,
+7B,single-family OOD,cut_two_fruits_on_board,108,3,19,16,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x16; is_activated:Move(?x) Interact(?x) x16
+7B,single-family OOD,dog_push_box_for_two_panda_transport,46,0,0,0,0,
+7B,single-family OOD,ensure_all_fruits_on_table,82,6,6,0,0,
+7B,single-family OOD,parallel_human_dual_asset_to_plate_or_bowl,86,28,28,0,0,
+7B,single-family OOD,set_plate_and_fork_on_table,85,0,0,0,0,
+7B,single-family OOD,toast_bread_and_set_plate,108,0,0,0,0,
+7B,CG w/ Image,recombine_cut_and_deliver,297,45,47,2,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2; is_activated:Move(?x) Interact(?x) x2
+7B,CG w/o Image,recombine_cut_and_deliver,297,76,78,2,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2; is_activated:Move(?x) Interact(?x) x2; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x1

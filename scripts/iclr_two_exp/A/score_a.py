@@ -129,7 +129,7 @@ def main() -> int:
                 osel = {r["index"]: r.get("selected") for r in of["rows"]}
                 same = sum(1 for i, r in final.items()
                            if r.get("selected") is not None and osel.get(i) is not None
-                           and sorted(map(tuple, map(sorted, r["selected"]))) == sorted(map(tuple, map(sorted, osel[i]))))
+                           and sorted(tuple(sorted(set(ch))) for ch in r["selected"]) == sorted(tuple(sorted(set(ch))) for ch in osel[i]))
                 both_planned = sum(1 for i, r in final.items() if r.get("selected") is not None and osel.get(i) is not None)
                 ops = Counter()
                 for i, r in final.items():

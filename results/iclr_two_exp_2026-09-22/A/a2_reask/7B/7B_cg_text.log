@@ -1,0 +1,24 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+resume: 0 rows already in /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/7B/7B_cg_text.partial.jsonl, 297 to score
+replaying 1 archived answers from /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/7B/7B_cg_text.replay.jsonl
+  100/297  solved=0 (0.0%)
+  200/297  solved=0 (0.0%)
+
+=== 7B_cg_text: the model names the work, 297 rows ===
+accuracy       0/297 = 0.00%
+crew           model; re-asked on 0.3% of rows; infeasible_assignment 1/297
+  NO_ARCHIVED_ANSWER     296   99.7%
+  infeasible_assignment     1    0.3%
+
+by family:
+  recombine_cut_and_deliver                           0/297    0.0%
+
+wrote /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/7B/7B_cg_text.jsonl

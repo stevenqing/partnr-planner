@@ -1,0 +1,7 @@
+model,split,n,rows_both_arms_planned,same_operator_sequence,replay_only,ours_only,operators_used_on_replay_only_rows
+72B,CG w/ Image,297,297,297,0,0,
+72B,CG w/o Image,297,297,297,0,0,
+30B,CG w/ Image,297,297,283,3,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x3; is_activated:Move(?x) Interact(?x) x3; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2
+30B,CG w/o Image,297,297,286,3,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x3; is_activated:Move(?x) Interact(?x) x3; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2
+7B,CG w/ Image,297,275,262,2,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2; is_activated:Move(?x) Interact(?x) x2
+7B,CG w/o Image,297,295,277,2,0,pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?z1) Reach(?z1) Grasp(?z1) Move(?y) Place(?y) / pos.name:Move(?z1) Reach(?z1) Grasp(?z1) Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x2; is_activated:Move(?x) Interact(?x) x2; pos.name:Move(?x) Reach(?x) Grasp(?x) Move(?y) Place(?y) x1

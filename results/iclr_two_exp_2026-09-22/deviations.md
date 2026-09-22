@@ -34,6 +34,7 @@ Written before each affected run started. The runs continued under user instruct
 - A2-4. "Which operator was selected" is logged by matching each chain of the schedule that `compose` returned against the memory's operator bodies (consistent variable binding). The CG "same operator sequence" count compares the multiset of selected operator bodies per row.
 - A2-5. 30B and 7B services use `--gpu-memory-utilization 0.80` instead of the archived 0.90. After the 72B service stopped, another user's Isaac jobs held 8–11 GB on GPUs 2 and 4, so 0.90 would not fit. This is a resource-only change.
 - A2-6. The Qwen3-VL-30B-A3B-Instruct chat template (`tokenizer_config.json`, `chat_template.json`, snapshot 9c4b90e1) has no `enable_thinking` branch. Passing `enable_thinking=False` would change nothing, and the archived 30B cells did not pass it. The unchanged runner is used.
+- A2-7. For the CG same-sequence count, each chain is compared as the set of operator bodies it matches. The admitted library holds two `is_activated` operators with the identical body `Move ?x, Interact ?x` (they differ only in types and preconditions), so a chain can match that body twice. Operator counts in `replay_gap_by_family.csv` count chains (a row using three chains counts three).
 
 # Part B (copy of B/deviations_B.md; edit there, both kept in sync)
 
@@ -109,6 +110,21 @@ passed unchanged as an xgrammar structured-output grammar. All conditions in thi
 Validation against the HF smoke cells of 09-22 (same 5 episodes, seed 0, same config): see
 `B/backend_validation.json` and the note appended below once it finishes.
 
+### B-D10 validation result (16:15, before any B3 cell)
+Same 5 H_R episodes (`hr_eval_smoke5`), seed 0, same config as the 09-22 HF smoke cells (C1 both-memory, C2
+leader-only; v4 template, route-Q library), vLLM backend vs the HF cells on disk (`B/backend_validation_C{1,2}.json`,
+episodes both sides finished: C1 439/443/445/447, C2 439/445/447):
+- parse-error turns (next user message reports a syntax/parse error): C1 HF 21/250 (8.4%) vs vLLM 0/192 (0.0%);
+  C2 HF 11/95 (11.6%) vs vLLM 11/219 (5.0%). Not higher on vLLM.
+- percent complete (mean over episodes with stats): C1 0.625 vs 0.639; C2 0.708 vs 0.750. Success 0/4 vs 0/3 (C1),
+  0/2 vs 1/3 (C2).
+- runtime per episode: C1 1,077 s vs 249 s; C2 1,407 s vs 553 s.
+- Per-turn identity is not testable: the first prompt of the same episode already differs between the two runs
+  (agent start room, retrieval scores in the second decimal), independent of the backend. The odd tokens between
+  turns ("datingsider", "assistantinely") appear in both backends' transcripts (prompt construction, not decoding).
+- One vLLM episode (C1 443) crashed on a 31,498-token prompt against a 32,768 context; all endpoints now use
+  max-model-len 65,536. The HF path has no context cap.
+
 ## B-D11. Failure metrics
 No script that computes Conflict/Ep, FailPick/Ep, SelfConf/Ep, NotClose/Ep is on disk (searched repo A, repo B,
 zips, remote). B4 will need a new counter written from the manuscript's definitions; its definitions will be
@@ -117,3 +133,11 @@ recorded here before it is run on B3 output.
 ## B-D12. Listing 3
 Listing 3 (`lst:ours`, "Observation Diff / Skill Prediction ...") matches no template file on disk; neither the
 v4 template nor `rag_prompt_sequential_cooperation_skills.yaml` (used here) contains that text.
+
+## B-D13. Run resources
+num_proc = 8 in every B3 cell (the H_R script used 14), habitat processes on the slot's GPU, LLM calls to an 8B vLLM
+endpoint (GPU 6 port 8206 at first, GPUs 0/1 ports 8200/8201 after B2). The backend validation (B-D10) ran on the
+v4-template config of the HF smoke cells, not on the B3 template; the backend change is the same code path for both.
+
+## B-D14. Concurrent fold builds (user instruction 09-22 16:19)
+From 16:19 fold B is built concurrently with fold A on the same 70B endpoint (supersedes the "one after the other" in B-D5). Within a fold the builder stays sequential: skills are merged by name in episode order, so parallel episodes would change which episode names a skill. Per-fold call counts are no longer separable in the vLLM log; the driver reports the total.

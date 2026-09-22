@@ -1,0 +1,13 @@
+model,split,n,replay_reask_fired,replay_reask_done,replay_reask_rate,ours_reask,ours_reask_rate,reask_rows_missing,second_answer_replan_mismatch
+72B,ID,924,29,29,0.0314,46,0.0498,0,0
+72B,single-family OOD,924,266,266,0.2879,266,0.2879,0,0
+72B,CG w/ Image,297,0,0,0.0000,0,0.0000,0,0
+72B,CG w/o Image,297,0,0,0.0000,0,0.0000,0,0
+30B,ID,924,25,25,0.0271,71,0.0768,0,0
+30B,single-family OOD,924,268,268,0.2900,268,0.2900,0,0
+30B,CG w/ Image,297,0,0,0.0000,0,0.0000,0,0
+30B,CG w/o Image,297,0,0,0.0000,0,0.0000,0,0
+7B,ID,924,120,120,0.1299,135,0.1461,0,0
+7B,single-family OOD,924,243,243,0.2630,244,0.2641,0,0
+7B,CG w/ Image,297,0,0,0.0000,0,0.0000,0,0
+7B,CG w/o Image,297,1,1,0.0034,1,0.0034,0,0
