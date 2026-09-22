@@ -128,3 +128,8 @@ rlm/
 # Audit and results artefacts: the reports are tracked, the per-row data is not.
 audit/*/L[0-6]_*.json
 audit/*.unfit-detector/
+
+# iclr_two_exp Part B raw run outputs: only stats/ and retrieval_dump/ are tracked
+results/iclr_two_exp_2026-09-22/B/raw/runs/*/hydra/results/*/traces/
+results/iclr_two_exp_2026-09-22/B/raw/runs/*/hydra/results/*/prompts/
+results/iclr_two_exp_2026-09-22/B/raw/runs/*/llm_calls/

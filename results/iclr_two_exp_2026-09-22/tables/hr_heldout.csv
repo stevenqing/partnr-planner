@@ -1,0 +1,7 @@
+protocol,condition,n_per_seed,seeds,success_mean,success_std,completion_mean,completion_std,conflict_mean,conflict_std,failpick_mean,failpick_std,selfconf_mean,selfconf_std,selfconf_literal_mean,selfconf_literal_std,notclose_mean,notclose_std,note
+held-out (this work),both,197,3,0.225,0.0163,0.5514,0.0138,0.1722,0.0557,4.9851,0.1471,0.4159,0.0686,8.4082,0.2236,6.4576,0.5581,"Llama-3.1-8B, vLLM backend, run_ours_hr_mem_hr.sh config, fold library from the other fold"
+held-out (this work),a0,197,3,0.1354,0.028,0.4936,0.0288,0.3463,0.0713,5.0412,0.1324,0.3298,0.0601,6.5133,0.2903,6.3195,0.3038,"Llama-3.1-8B, vLLM backend, run_ours_hr_mem_hr.sh config, fold library from the other fold"
+held-out (this work),a1,197,3,0.1844,0.0205,0.5234,0.0147,0.0614,0.033,4.2718,0.0671,0.2543,0.0653,6.1446,0.1422,6.2101,0.0252,"Llama-3.1-8B, vLLM backend, run_ours_hr_mem_hr.sh config, fold library from the other fold"
+seen (Table 5),both,197,?,0.223,,,,1.63,,1.69,,0.27,,,,15.99,,manuscript Table 5; H_R memory covers 196/197 evaluated episodes; HF backend; config not on disk
+seen (Table 5),a0,197,?,0.496,,,,0.33,,1.83,,1.36,,,,9.82,,manuscript Table 5; H_R memory covers 196/197 evaluated episodes; HF backend; config not on disk
+seen (Table 5),a1,197,?,0.056,,,,0.75,,2.69,,1.51,,,,13.81,,manuscript Table 5; H_R memory covers 196/197 evaluated episodes; HF backend; config not on disk

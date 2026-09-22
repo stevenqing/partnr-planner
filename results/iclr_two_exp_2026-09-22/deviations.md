@@ -141,3 +141,23 @@ v4-template config of the HF smoke cells, not on the B3 template; the backend ch
 
 ## B-D14. Concurrent fold builds (user instruction 09-22 16:19)
 From 16:19 fold B is built concurrently with fold A on the same 70B endpoint (supersedes the "one after the other" in B-D5). Within a fold the builder stays sequential: skills are merged by name in episode order, so parallel episodes would change which episode names a skill. Per-fold call counts are no longer separable in the vLLM log; the driver reports the total.
+
+## B-D15. Failure-metric operationalisation (written 09-23 01:00, before the final B4 run)
+Definitions from the manuscript appendix "Coordination Failure Metrics"; computed by
+`scripts/iclr_two_exp/B/b4_metrics.py` from `planner-log-episode_<id>_0.json`. Where the text is not operational:
+- Time unit: one high-level action of an agent (a replan step with a tool call), not a simulator step; outcome = the
+  agent's next response that is not "still in progress". Replans whose output did not parse (SyntaxError, no tool)
+  are not actions.
+- Conflict "within one coordination round": agent i issues Pick/Place/Open/Close on o while agent j's latest
+  action, issued after agent i's previous action, is a manip action on o. Counted once per such event.
+- FailPick: Pick whose outcome is not "Successful execution!" (inventory is not logged; outcome text is used).
+- SelfConf: the formula counts every Pick(o)/Place(o) pair within tau=5, which fires on every ordinary transport;
+  the text restricts it to placing o back where it was picked. Reported value = the restricted form (source of o =
+  its location in the agent's world graph at the Pick step; plus Open(o)/Close(o) pairs); the literal form is
+  reported as SelfConf_literal.
+- NotClose: target-object positions are not logged, so d_thresh = 1.5 m cannot be applied; counted as manip actions
+  whose outcome is the skill's "Not close enough" failure.
+- Episodes that crash with `noneaction` write no planner log: success and completion count 0 (n = 197), failure
+  metrics are averaged over the episodes with a log (n reported per seed).
+Consequence: the four failure metrics are not on the same scale as Table 5 (whose computation is not on disk);
+only within-experiment comparisons between conditions are meaningful.

@@ -1,0 +1,15 @@
+{
+ "instances": 933,
+ "source_episodes": 105,
+ "episodic_memory": 106,
+ "all_in_own_fold": true,
+ "outside_own_fold": [],
+ "overlap_with_evaluated_fold": [],
+ "explicit_id_mismatch": [],
+ "evaluates_fold": "A",
+ "own_fold_episodes_without_instances": [
+  "438",
+  "1858"
+ ],
+ "sources_ok": true
+}

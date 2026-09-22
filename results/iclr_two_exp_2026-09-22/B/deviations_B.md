@@ -72,6 +72,21 @@ passed unchanged as an xgrammar structured-output grammar. All conditions in thi
 Validation against the HF smoke cells of 09-22 (same 5 episodes, seed 0, same config): see
 `B/backend_validation.json` and the note appended below once it finishes.
 
+### B-D10 validation result (16:15, before any B3 cell)
+Same 5 H_R episodes (`hr_eval_smoke5`), seed 0, same config as the 09-22 HF smoke cells (C1 both-memory, C2
+leader-only; v4 template, route-Q library), vLLM backend vs the HF cells on disk (`B/backend_validation_C{1,2}.json`,
+episodes both sides finished: C1 439/443/445/447, C2 439/445/447):
+- parse-error turns (next user message reports a syntax/parse error): C1 HF 21/250 (8.4%) vs vLLM 0/192 (0.0%);
+  C2 HF 11/95 (11.6%) vs vLLM 11/219 (5.0%). Not higher on vLLM.
+- percent complete (mean over episodes with stats): C1 0.625 vs 0.639; C2 0.708 vs 0.750. Success 0/4 vs 0/3 (C1),
+  0/2 vs 1/3 (C2).
+- runtime per episode: C1 1,077 s vs 249 s; C2 1,407 s vs 553 s.
+- Per-turn identity is not testable: the first prompt of the same episode already differs between the two runs
+  (agent start room, retrieval scores in the second decimal), independent of the backend. The odd tokens between
+  turns ("datingsider", "assistantinely") appear in both backends' transcripts (prompt construction, not decoding).
+- One vLLM episode (C1 443) crashed on a 31,498-token prompt against a 32,768 context; all endpoints now use
+  max-model-len 65,536. The HF path has no context cap.
+
 ## B-D11. Failure metrics
 No script that computes Conflict/Ep, FailPick/Ep, SelfConf/Ep, NotClose/Ep is on disk (searched repo A, repo B,
 zips, remote). B4 will need a new counter written from the manuscript's definitions; its definitions will be
@@ -80,3 +95,31 @@ recorded here before it is run on B3 output.
 ## B-D12. Listing 3
 Listing 3 (`lst:ours`, "Observation Diff / Skill Prediction ...") matches no template file on disk; neither the
 v4 template nor `rag_prompt_sequential_cooperation_skills.yaml` (used here) contains that text.
+
+## B-D13. Run resources
+num_proc = 8 in every B3 cell (the H_R script used 14), habitat processes on the slot's GPU, LLM calls to an 8B vLLM
+endpoint (GPU 6 port 8206 at first, GPUs 0/1 ports 8200/8201 after B2). The backend validation (B-D10) ran on the
+v4-template config of the HF smoke cells, not on the B3 template; the backend change is the same code path for both.
+
+## B-D14. Concurrent fold builds (user instruction 09-22 16:19)
+From 16:19 fold B is built concurrently with fold A on the same 70B endpoint (supersedes the "one after the other" in B-D5). Within a fold the builder stays sequential: skills are merged by name in episode order, so parallel episodes would change which episode names a skill. Per-fold call counts are no longer separable in the vLLM log; the driver reports the total.
+
+## B-D15. Failure-metric operationalisation (written 09-23 01:00, before the final B4 run)
+Definitions from the manuscript appendix "Coordination Failure Metrics"; computed by
+`scripts/iclr_two_exp/B/b4_metrics.py` from `planner-log-episode_<id>_0.json`. Where the text is not operational:
+- Time unit: one high-level action of an agent (a replan step with a tool call), not a simulator step; outcome = the
+  agent's next response that is not "still in progress". Replans whose output did not parse (SyntaxError, no tool)
+  are not actions.
+- Conflict "within one coordination round": agent i issues Pick/Place/Open/Close on o while agent j's latest
+  action, issued after agent i's previous action, is a manip action on o. Counted once per such event.
+- FailPick: Pick whose outcome is not "Successful execution!" (inventory is not logged; outcome text is used).
+- SelfConf: the formula counts every Pick(o)/Place(o) pair within tau=5, which fires on every ordinary transport;
+  the text restricts it to placing o back where it was picked. Reported value = the restricted form (source of o =
+  its location in the agent's world graph at the Pick step; plus Open(o)/Close(o) pairs); the literal form is
+  reported as SelfConf_literal.
+- NotClose: target-object positions are not logged, so d_thresh = 1.5 m cannot be applied; counted as manip actions
+  whose outcome is the skill's "Not close enough" failure.
+- Episodes that crash with `noneaction` write no planner log: success and completion count 0 (n = 197), failure
+  metrics are averaged over the episodes with a log (n reported per seed).
+Consequence: the four failure metrics are not on the same scale as Table 5 (whose computation is not on disk);
+only within-experiment comparisons between conditions are meaningful.

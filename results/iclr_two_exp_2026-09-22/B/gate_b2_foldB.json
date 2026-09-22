@@ -1,0 +1,267 @@
+{
+ "required_actions": [
+  "Pick",
+  "Place",
+  "Clean",
+  "Fill",
+  "PowerOn",
+  "PowerOff"
+ ],
+ "proposition_counts": {
+  "is_in_room": 186,
+  "is_clean": 203,
+  "is_on_top": 375,
+  "is_filled": 106,
+  "is_powered_on": 64,
+  "is_powered_off": 27,
+  "is_inside": 14
+ },
+ "rule": "strict count >= 1 for every kind:action",
+ "archived_reference": {
+  "counts": {
+   "L_ind_skills": {
+    "skills": 280,
+    "instances": 1189
+   },
+   "L_coop_skills": {
+    "skills": 175,
+    "instances": 554
+   }
+  },
+  "coverage": {
+   "individual:Pick": {
+    "strict": 153,
+    "loose": 154,
+    "strict_examples": [
+     "pickup_object_individual",
+     "pickup_and_place_individual",
+     "move_object_to_shelves_individual"
+    ]
+   },
+   "individual:Place": {
+    "strict": 129,
+    "loose": 132,
+    "strict_examples": [
+     "place_object_individual",
+     "pickup_and_place_individual",
+     "move_object_to_shelves_individual"
+    ]
+   },
+   "individual:Clean": {
+    "strict": 48,
+    "loose": 53,
+    "strict_examples": [
+     "clean_object_individual",
+     "clean_surface_individual",
+     "clean_table_individual"
+    ]
+   },
+   "individual:Fill": {
+    "strict": 32,
+    "loose": 32,
+    "strict_examples": [
+     "fill_container_individual",
+     "Fill Kettle with Water_individual",
+     "Fill Bottle with Water_individual"
+    ]
+   },
+   "individual:PowerOn": {
+    "strict": 21,
+    "loose": 21,
+    "strict_examples": [
+     "Turn On Lamp_individual",
+     "turn_on_lamp_individual",
+     "power_on_laptop_individual"
+    ]
+   },
+   "individual:PowerOff": {
+    "strict": 12,
+    "loose": 12,
+    "strict_examples": [
+     "Turn Off Lamp_individual",
+     "Turn off lamp_individual",
+     "Clean Table and Turn Off Lamp_individual"
+    ]
+   },
+   "cooperation:Pick": {
+    "strict": 138,
+    "loose": 140,
+    "strict_examples": [
+     "Transport and Clean_cooperation",
+     "Table Setting_cooperation",
+     "Kitchen Cleaning_cooperation"
+    ]
+   },
+   "cooperation:Place": {
+    "strict": 128,
+    "loose": 134,
+    "strict_examples": [
+     "Transport and Clean_cooperation",
+     "Table Setting_cooperation",
+     "Kitchen Cleaning_cooperation"
+    ]
+   },
+   "cooperation:Clean": {
+    "strict": 68,
+    "loose": 79,
+    "strict_examples": [
+     "Transport and Clean_cooperation",
+     "Table Setting_cooperation",
+     "Kitchen Cleaning_cooperation"
+    ]
+   },
+   "cooperation:Fill": {
+    "strict": 57,
+    "loose": 64,
+    "strict_examples": [
+     "Filling Jug and Cleaning Table_cooperation",
+     "Corrected Move and Water Plant_cooperation_patched",
+     "Corrected Move Kettle to Kitchen_cooperation_patched"
+    ]
+   },
+   "cooperation:PowerOn": {
+    "strict": 24,
+    "loose": 26,
+    "strict_examples": [
+     "Cleaning and Lamp Setup_cooperation",
+     "Laptop and Mouse Pad Transportation_cooperation",
+     "Object Transportation_cooperation"
+    ]
+   },
+   "cooperation:PowerOff": {
+    "strict": 9,
+    "loose": 11,
+    "strict_examples": [
+     "Object Relocation_cooperation",
+     "Object Transportation_cooperation",
+     "Joint Object Transportation_cooperation"
+    ]
+   }
+  },
+  "passes": true
+ },
+ "foldB": {
+  "counts": {
+   "L_ind_skills": {
+    "skills": 193,
+    "instances": 640
+   },
+   "L_coop_skills": {
+    "skills": 102,
+    "instances": 293
+   }
+  },
+  "coverage": {
+   "individual:Pick": {
+    "strict": 112,
+    "loose": 113,
+    "strict_examples": [
+     "pickup_object_individual",
+     "pickup_and_place_individual",
+     "move_object_to_shelves_individual"
+    ]
+   },
+   "individual:Place": {
+    "strict": 91,
+    "loose": 93,
+    "strict_examples": [
+     "place_object_individual",
+     "pickup_and_place_individual",
+     "move_object_to_shelves_individual"
+    ]
+   },
+   "individual:Clean": {
+    "strict": 31,
+    "loose": 31,
+    "strict_examples": [
+     "clean_object_individual",
+     "clean_counter_individual",
+     "clean_table_individual"
+    ]
+   },
+   "individual:Fill": {
+    "strict": 23,
+    "loose": 23,
+    "strict_examples": [
+     "Fill Jug with Water_individual",
+     "fill_teapot_individual",
+     "fill_container_individual"
+    ]
+   },
+   "individual:PowerOn": {
+    "strict": 15,
+    "loose": 15,
+    "strict_examples": [
+     "power_on_laptop_individual",
+     "turn_on_lamp_individual",
+     "Turn on lamp_individual"
+    ]
+   },
+   "individual:PowerOff": {
+    "strict": 7,
+    "loose": 7,
+    "strict_examples": [
+     "Turn Off Lamp_individual",
+     "navigate_and_power_off_individual",
+     "turn_off_lamp_individual"
+    ]
+   },
+   "cooperation:Pick": {
+    "strict": 82,
+    "loose": 86,
+    "strict_examples": [
+     "Joint Object Transportation and Cleaning_cooperation",
+     "Table Setting_cooperation",
+     "Kitchen Cleaning_cooperation"
+    ]
+   },
+   "cooperation:Place": {
+    "strict": 74,
+    "loose": 82,
+    "strict_examples": [
+     "Joint Object Transportation and Cleaning_cooperation",
+     "Table Setting_cooperation",
+     "Kitchen Cleaning_cooperation"
+    ]
+   },
+   "cooperation:Clean": {
+    "strict": 41,
+    "loose": 47,
+    "strict_examples": [
+     "Joint Object Transportation and Cleaning_cooperation",
+     "Table Setting_cooperation",
+     "Kitchen Cleaning_cooperation"
+    ]
+   },
+   "cooperation:Fill": {
+    "strict": 31,
+    "loose": 37,
+    "strict_examples": [
+     "Corrected Move Jug to Table and Fill with Water_cooperation_patched",
+     "Teapot Filling_cooperation",
+     "Corrected kettle filling and placement_cooperation_patched"
+    ]
+   },
+   "cooperation:PowerOn": {
+    "strict": 14,
+    "loose": 16,
+    "strict_examples": [
+     "Laptop and Mouse Pad Transportation_cooperation",
+     "Object Transportation_cooperation",
+     "Corrected Move and Fill Kettle_cooperation_patched"
+    ]
+   },
+   "cooperation:PowerOff": {
+    "strict": 3,
+    "loose": 4,
+    "strict_examples": [
+     "Object Transportation_cooperation",
+     "Sequential Task Completion_cooperation",
+     "Joint Object Transport_cooperation"
+    ]
+   }
+  },
+  "missing": [],
+  "passes": true
+ }
+}
