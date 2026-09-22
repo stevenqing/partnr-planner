@@ -1,0 +1,67 @@
+{
+ "mined": 17,
+ "certified": 9,
+ "certified_ids": [
+  "m0000",
+  "m0001",
+  "m0003",
+  "m0004",
+  "m0005",
+  "m0006",
+  "m0008",
+  "m0010",
+  "m0011"
+ ],
+ "family_admitted_before_support": {
+  "clear_table_with_two_robots_and_put_in_cabinet": [
+   "m0003"
+  ],
+  "cut_fruit_on_board": [
+   "m0000",
+   "m0006"
+  ],
+  "cut_two_fruits_on_board": [
+   "m0004",
+   "m0008"
+  ],
+  "dog_check_environment": [
+   "m0010"
+  ],
+  "dog_push_box_for_two_panda_transport": [
+   "m0011"
+  ],
+  "ensure_all_fruits_on_table": [
+   "m0000"
+  ],
+  "parallel_human_dual_asset_to_plate_or_bowl": [
+   "m0000"
+  ],
+  "sequential_pick_two_and_place": [
+   "m0004",
+   "m0005"
+  ],
+  "serve_bread_after_checking_cabinet": [
+   "m0001"
+  ],
+  "serve_bread_from_counter": [
+   "m0000"
+  ],
+  "set_plate_and_fork_on_table": [
+   "m0000",
+   "m0001"
+  ],
+  "single_move_asset_to_target": [
+   "m0000"
+  ],
+  "toast_bread_and_set_plate": [
+   "m0000"
+  ],
+  "wash_fruit_and_serve": [
+   "m0000"
+  ]
+ },
+ "families_without_targets": [],
+ "certify_script_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29",
+ "mined_library_sha256": "adbe56392712ada9549d78cc6d5c39288e0dd7180cdffef455fbc60c6095d021",
+ "llm_calls": 0
+}

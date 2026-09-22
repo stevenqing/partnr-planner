@@ -1,0 +1,81 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+{
+ "verdict": "HALTED",
+ "appendix_numbers": {
+  "tool_addressed_train_indices": {
+   "old": 180,
+   "new": 1242,
+   "contributing_families_only": 1081,
+   "including_result_side": 2496
+  },
+  "transcripts_run_dirs": {
+   "old": 884,
+   "new_run_dirs": 896,
+   "new_transcripts": 896,
+   "new_verdicts": 896,
+   "by_round": {
+    "R1": 784,
+    "R2": 112
+   }
+  },
+  "actor_blind_sensitivity_train_rows": {
+   "old": 1033,
+   "new": 1033,
+   "families": {
+    "toast_bread_and_set_plate": 406,
+    "wash_fruit_and_serve": 627
+   },
+   "indices_identical_to_0905": true
+  },
+  "decisive_detector_train_rows": {
+   "old": 0,
+   "new": 0
+  },
+  "cg_distinct_task_ids": {
+   "old": 295,
+   "new": 295,
+   "rows_per_form": {
+    "text": 297,
+    "imaged": 297
+   },
+   "repeated": {
+    "4307_8-1": 2,
+    "1426_9-1": 2
+   }
+  }
+ },
+ "totals": {
+  "cg_task_id_hits": 10,
+  "decisive_sig_hits": 0,
+  "indices_outside_induction_half": 0,
+  "exact_task_id_text_matches": 0,
+  "trigram_ge_0.9": 0
+ }
+}
+R1 rung seed episodes (frozen_sweep_v2)                            n=756   cg=0 sig=0 out=0
+R1 holdout                                                         n=56    cg=0 sig=0 out=0
+R1 coverage_pool                                                   n=0     cg=0 sig=0 out=0
+R2 rung seed episodes (outputs/v3/targets.json)                    n=28    cg=0 sig=0 out=0
+R2 holdout                                                         n=56    cg=0 sig=0 out=0
+R2 coverage_pool (superset of the unsolved list shown)             n=112   cg=0 sig=0 out=0
+seed episodes from run-dir names                                   n=756   cg=0 sig=0 out=0
+all tool-addressed episodes (request side, 09-05 rule)             n=1242  cg=1 sig=0 out=0
+tool-addressed, contributing families only                         n=1081  cg=1 sig=0 out=0
+indices shown inside tool results (e.g. list_episodes pages)       n=2496  cg=2 sig=0 out=0
+tool:run_operator                                                  n=992   cg=1 sig=0 out=0
+tool:try_bind                                                      n=1052  cg=1 sig=0 out=0
+tool:check_actor                                                   n=1242  cg=1 sig=0 out=0
+tool:contrast_actors                                               n=201   cg=0 sig=0 out=0
+tool:show_trace                                                    n=1242  cg=1 sig=0 out=0
+assembly support probe range(60)                                   n=60    cg=0 sig=0 out=0
+union support probe pool_indices[:60]                              n=60    cg=0 sig=0 out=0
+accepted-operator provenance verified_on                           n=44    cg=0 sig=0 out=0
+Layer 2/3 mining pool (induction half & 14 union families)         n=3598  cg=2 sig=0 out=0

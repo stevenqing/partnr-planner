@@ -1,0 +1,32 @@
+# Deviations from SPEC.md (Part A)
+
+Written before each affected run started. The runs continued under user instruction of 2026-09-22 (run at full speed, no approval wait; record deviations, take the closest-to-SPEC route).
+
+## A0
+
+- A0-1. Figure 3 is `fig:viki_rq2` (third figure: `fig:workflow`, `fig:viki_main`, `fig:viki_rq2`). No plotting script for `figs/viki_rq2_ablation.pdf` is on disk. Its provenance is taken from the registry `results/paper_viki_iclr2027/` (`cells.json`, `rows/rq2/full/<model>/<split>.jsonl`, `SHA256SUMS.txt`, `rq2_summary.csv`). The byte-identity check compares the first-turn answer of every row (`raw` in the amendment11 cell vs `raw_output` in the registry row) and checks the registry file against `SHA256SUMS.txt`.
+- A0-2. The archived first answer is stored truncated to its last 3,000 characters (`record["raw"] = text[-3000:]` in the runner). That stored text is what every published cell was scored from, so it is the frozen first-turn output here too.
+
+## A1 mining
+
+- A1-1. `our_method/skill_memory_v2/build.py` (the builder of the 19-operator reference library) is not used as is. It caps each family at 250 episodes, deduplicates by (effect, body, preconditions), keeps non-asset place names literal, and mines a `repair` kind. `scripts/iclr_two_exp/A/mine_replay.py` keeps its replay and segmentation functions (`induction.replay`, `_segment_start`, `_runs_alone`, `_bind`) and changes exactly those four points.
+- A1-2. Step 2 segmentation is per actor, as in the builder: when a judged predicate (goal or temporal stage) becomes true, the segment is the completing robot's own actions since its previous completion. If those actions alone do not reproduce the predicate in the simulator, the whole window becomes one coordination candidate with one role per robot (`?r0`, `?r1`, ...).
+- A1-3. Preconditions are the planner's fact vocabulary (`state_facts`: subject/target sealed, in container, on agent) at segment start. The merged operator keeps the facts that held with the same value in every supporting occurrence. SPEC's "predicates read by the segment" is approximated by these subject/target facts.
+- A1-4. Lifting: subject `?x`, target `?y`, every other asset or place `?z1, ?z2, ...`. A place that is not an asset gets an empty type. A robot named as a target inside a single-robot body would become `?agent:<name>` as in the builder, and the planner cannot bind it. No mined operator had one.
+- A1-5. Support counts distinct episodes. All 3,598 episodes replayed OK.
+
+## A1 certification
+
+- A1-6. The paper names an execution check and three criteria: (i) solve a validation episode, (ii) cover the segment's necessary actions, (iii) recur across traces. In code they map as follows. Execution check: `Workbench.run_operator` holds on at least 2 of the family's 4 holdout episodes (rung rule). (i): the rung's marginal test, where adding the operator to the family library turns at least one coverage-pool episode from unsolved to solved, with solved meaning the official score plus the ordering gate. (ii) has no separate code path in the admitted pipeline. The ordering gate inside the rung's `episode_solved` is the nearest thing and is applied through (i). (iii): the assembler's measured support, at least 2 over induction-half episodes 0..59. The union script then re-probes support on each column pool, which is unchanged.
+- A1-7. Validation episodes per family are the admitted library's round-2 holdout (4) and coverage pool (8) from `outputs/v3/targets.json`, all induction-half indices.
+- A1-8. Round structure. The admitted library had a first round with an empty family library, where any operator passing the execution check was accepted, and a second round with the marginal test. Mined operators are processed per family in descending support. The first operator of each (family, effect key) that passes the execution check is admitted as in round one. Every later one needs the marginal gain. The admitted round one was run per (family, seed episode, sample, effect key) cell, so this ordering rule is the closest mechanical analogue, not an identical procedure.
+- A1-9. Column memories are built by the unchanged `scripts/viki_union_library.py`, as the admitted ones were: all 14 families for ID and CG, and the other 13 for each OOD fold. Layers 2 and 3 are then replaced by the admitted column memory's own. They were byte-identical before the swap in all 9 memories (`A/memories/swap_report.json`).
+
+## A2
+
+- A2-1. Re-ask rows are sent through the unchanged live runner `scripts/viki_eval_v2_intent_choice.py` (`--replay` with a file holding only those rows' archived first answers, `--memory` the replay-mined column memory, `--out-dir`). OOD rows use `--task-name <family>` with that fold's memory.
+- A2-2. Services: 72B uses the archived command (`serve-qwen72b.sh`, the `unchanged` block of `amendment7/service_resource_reuse.json`) on GPUs 2,3,4,5. 30B and 7B use the archived `scripts/drivers/a11_serve.sh` arguments on GPUs 2–5. `max_num_seqs` is raised to 64 and the runner uses 64 workers, on user instruction. This changes only batching. Temperature-0 vLLM is already not row-deterministic under concurrency (see memory `viki-incontext-library-control`).
+- A2-3. Qwen3-VL-30B-A3B-Instruct: the archived 30B cells were generated without `enable_thinking`. It is an Instruct (non-thinking) model, and the runner is kept unchanged, so no `extra_body` is passed. The chat template is checked for an `enable_thinking` branch before launch, and the result is recorded in report_A0.md.
+- A2-4. "Which operator was selected" is logged by matching each chain of the schedule that `compose` returned against the memory's operator bodies (consistent variable binding). The CG "same operator sequence" count compares the multiset of selected operator bodies per row.
+- A2-5. 30B and 7B services use `--gpu-memory-utilization 0.80` instead of the archived 0.90. After the 72B service stopped, another user's Isaac jobs held 8–11 GB on GPUs 2 and 4, so 0.90 would not fit. This is a resource-only change.
+- A2-6. The Qwen3-VL-30B-A3B-Instruct chat template (`tokenizer_config.json`, `chat_template.json`, snapshot 9c4b90e1) has no `enable_thinking` branch. Passing `enable_thinking=False` would change nothing, and the archived 30B cells did not pass it. The unchanged runner is used.

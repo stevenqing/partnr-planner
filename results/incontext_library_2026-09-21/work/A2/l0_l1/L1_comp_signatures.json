@@ -1,0 +1,12953 @@
+{
+ "1044_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4363_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3035_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4554_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4168_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2018_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7543_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1943_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5937_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3173_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4307_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1292_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3800_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1468_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1782_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4438_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6277_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5845_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5501_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1850_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5900_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3071_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7027_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "904_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4649_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4898_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6520_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1671_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1366_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5885_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7674_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3687_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3594_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5695_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4690_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4420_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3519_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6432_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6453_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2568_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5027_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1933_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1893_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6086_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3198_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3693_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1235_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "762_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3949_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "858_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4799_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "311_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3891_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6536_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2101_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "797_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1822_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1331_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1581_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2493_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1487_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1064_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6466_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "449_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4366_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6066_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2654_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7587_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3831_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "519_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4215_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3292_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "266_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5144_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2563_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4032_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1695_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1196_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3268_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6154_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6875_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5260_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3356_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "350_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "817_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7207_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "295_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4547_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4120_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3432_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4521_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2090_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4818_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1546_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2420_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1831_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3280_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "28_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4512_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2772_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1426_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3330_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3502_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5710_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2978_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4587_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6128_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1907_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2045_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1521_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1026_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1463_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2633_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6816_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1404_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1273_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4494_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3515_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2999_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3723_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2855_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4996_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7424_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "104_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4093_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5738_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4471_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3069_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4003_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "416_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4244_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "464_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6661_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "669_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4224_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4660_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5399_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1648_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6496_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1620_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2023_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6028_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6750_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4230_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3511_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1684_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1014_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7558_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4968_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4159_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3932_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1462_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7525_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5199_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2900_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2786_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7759_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3228_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3232_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6027_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3128_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4041_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1672_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2759_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7183_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2819_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6462_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2462_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7406_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1518_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2974_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7728_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6970_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1067_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3941_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "100_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3264_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6924_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "639_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7051_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1622_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2017_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3722_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2116_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2124_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1678_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7666_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "190_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "243_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4496_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "642_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6188_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3437_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7421_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4850_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2066_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2867_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3589_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4104_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2905_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "657_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3972_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2432_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2883_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2182_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "618_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5308_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "92_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6118_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5150_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "789_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4485_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4534_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "771_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3311_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6761_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "53_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2724_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2417_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4195_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "248_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6573_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2208_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2042_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "568_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6616_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1550_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3330_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1237_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7045_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "808_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6022_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3186_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5303_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7709_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2895_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3367_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2111_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4413_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5733_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "175_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7605_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "408_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3355_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4306_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "68_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6895_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7533_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1309_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "210_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "470_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4855_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4226_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2642_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2449_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7168_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4316_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4640_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2098_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3738_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5215_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2877_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1126_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4555_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3303_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "406_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5299_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6635_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4586_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "528_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2772_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "7721_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4336_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5234_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1982_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6058_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1806_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2315_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6369_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2395_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "551_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2863_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4209_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1112_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "5081_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "4611_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "678_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3103_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1356_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "3773_8-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "1522_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "2735_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ },
+ "669_9-1": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 2,
+   "n_two_robot_cut_pairs": 2,
+   "n_activations": 1,
+   "n_placements": 3,
+   "n_independent_deliveries": 1
+  }
+ },
+ "6784_8-2": {
+  "replay": "OK",
+  "multiset": [
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "ordered": [
+   [
+    "pos.name",
+    "solo"
+   ],
+   [
+    "is_activated",
+    "solo"
+   ],
+   [
+    "pos.name",
+    "unknown"
+   ]
+  ],
+  "units": {
+   "has_cut_unit": true,
+   "has_two_robot_cut_unit": true,
+   "has_independent_delivery": true,
+   "n_cut_pairs": 1,
+   "n_two_robot_cut_pairs": 1,
+   "n_activations": 1,
+   "n_placements": 2,
+   "n_independent_deliveries": 1
+  }
+ }
+}

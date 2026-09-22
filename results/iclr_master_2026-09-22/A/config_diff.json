@@ -1,0 +1,19 @@
+{
+ "llm_calls": 0,
+ "what_is_replayed": "The archived first answer (`raw`) and, for ours_full only, the archived answer to the single re-ask (`raw_reask`) of every row of the published cells v3_ours_<M>_{id,heldout,heldout_sibgrp} and v3_oursall_<M>_{text,imaged} in results/viki_memory_experiments/amendment11/.",
+ "planner": "our_method.skill_memory_v2.planner.plan, SEED from our_method.skill_memory_v2, identical to scripts/viki_eval_v2_intent_choice.py (live runner) and scripts/viki_ablation_replay.py",
+ "scoring": "Simulator.score(plan, truth, SEED) > 0, i.e. strict SOLVED",
+ "modes": {
+  "ours_full": {"library": "same as the published cell", "second_turn": "archived raw_reask, only when the first answer parsed, carried a robot assignment and produced no plan (live runner line 319)"},
+  "ours_first": {"library": "same as the published cell", "second_turn": "none"},
+  "ref_first": {"library": "amendment11/skill_memory_v2.json for id/text/imaged; amendment11/skill_memory_v2.fold_<family>.json for the single-family OOD split; sibling-group: none on disk (NOT_FOUND)", "second_turn": "none, because the archived re-ask answers a message produced by our library"}
+ },
+ "libraries_ours": {
+  "id,text,imaged": "outputs/v3_memories/memory_all.json",
+  "heldout": "outputs/v3_memories/memory_heldout_<family>.json",
+  "heldout_sibgrp": "outputs/v3_memories/memory_heldoutgrp_<family>.json for the 3 affected families, memory_heldout_<family>.json otherwise (results/sibling_folds_preregistration.json)"
+ },
+ "check": "ours_full reproduces all 15 published cells row for row (0 mismatching rows); ours_first equals the archive-derived first-turn outcome (SOLVED and not reask) row for row in all 15 cells",
+ "scripts": ["scripts/iclr_master/A/a_replay.py", "scripts/iclr_master/A/a_report.py"],
+ "changes_to_frozen_artifacts": "none"
+}

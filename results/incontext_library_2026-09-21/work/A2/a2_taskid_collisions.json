@@ -1,0 +1,119 @@
+{
+ "cg_ids_in_test": 295,
+ "cg_ids": 295,
+ "train_distinct_ids": 7134,
+ "test_distinct_ids": 1795,
+ "train_test_shared_ids": 24,
+ "cg_ids_in_train": 4,
+ "rows": [
+  {
+   "task_id": "210_9-1",
+   "train_index": 1043,
+   "half": "selfcheck",
+   "workbench_index": null,
+   "train_task_name": "cut_two_fruits_on_board",
+   "cg_source_test_row": 1579,
+   "test_source_task_id": "210_9-1",
+   "train_equals_test_source": {
+    "description": false,
+    "init_pos": false,
+    "goal_constraints": true,
+    "time_steps": false,
+    "layout_id": true,
+    "task_name": true
+   },
+   "train_equals_cg": {
+    "description": false,
+    "init_pos": false,
+    "goal_constraints": false,
+    "time_steps": false,
+    "layout_id": true,
+    "task_name": false
+   },
+   "train_description": "When you have a moment, place the pear beside the banana on the wooden cutting board, then trim them with the knife.",
+   "cg_description": "Set the peach and tomato on the wooden cutting board, then slice them cleanly with the knife, and move the pear to the kitchen island area."
+  },
+  {
+   "task_id": "2395_9-1",
+   "train_index": 2692,
+   "half": "induction",
+   "workbench_index": 1346,
+   "train_task_name": "cut_two_fruits_on_board",
+   "cg_source_test_row": 1731,
+   "test_source_task_id": "2395_9-1",
+   "train_equals_test_source": {
+    "description": false,
+    "init_pos": false,
+    "goal_constraints": true,
+    "time_steps": false,
+    "layout_id": false,
+    "task_name": true
+   },
+   "train_equals_cg": {
+    "description": false,
+    "init_pos": false,
+    "goal_constraints": false,
+    "time_steps": false,
+    "layout_id": false,
+    "task_name": false
+   },
+   "train_description": "Quick, give both the apple and bread a good chop on the wooden cutting board with that knife!",
+   "cg_description": "All right, partner: line up the pear and bread on the wooden cutting board for a tidy cut using the knife, and move the pizza to the kitchen island area."
+  },
+  {
+   "task_id": "350_9-1",
+   "train_index": 1404,
+   "half": "induction",
+   "workbench_index": 702,
+   "train_task_name": "cut_two_fruits_on_board",
+   "cg_source_test_row": 531,
+   "test_source_task_id": "350_9-1",
+   "train_equals_test_source": {
+    "description": false,
+    "init_pos": false,
+    "goal_constraints": true,
+    "time_steps": false,
+    "layout_id": false,
+    "task_name": true
+   },
+   "train_equals_cg": {
+    "description": false,
+    "init_pos": false,
+    "goal_constraints": false,
+    "time_steps": false,
+    "layout_id": false,
+    "task_name": false
+   },
+   "train_description": "Move the pear together with the banana onto the wooden cutting board, then cut them using the knife.",
+   "cg_description": "All right, partner: line up the pear and tomato on the wooden cutting board for a tidy cut using the knife, and move the peach to the kitchen work area."
+  },
+  {
+   "task_id": "92_8-1",
+   "train_index": 1863,
+   "half": "selfcheck",
+   "workbench_index": null,
+   "train_task_name": "cut_fruit_on_board",
+   "cg_source_test_row": 1331,
+   "test_source_task_id": "92_8-1",
+   "train_equals_test_source": {
+    "description": false,
+    "init_pos": false,
+    "goal_constraints": true,
+    "time_steps": false,
+    "layout_id": false,
+    "task_name": true
+   },
+   "train_equals_cg": {
+    "description": false,
+    "init_pos": false,
+    "goal_constraints": false,
+    "time_steps": false,
+    "layout_id": false,
+    "task_name": false
+   },
+   "train_description": "Position the peach on the wooden cutting board; slice it neatly with the knife.",
+   "cg_description": "Use the knife to slice the pear on the wooden cutting board, and move the bread to the kitchen island area."
+  }
+ ],
+ "same_episode_count": 0
+}

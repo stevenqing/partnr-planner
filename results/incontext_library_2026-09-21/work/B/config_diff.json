@@ -1,0 +1,50 @@
+{
+ "compared": "72B G-Memory arm on CG (amendment10/{text,imaged}/gmemory.jsonl, run 2026-08-31) vs P arm (scripts/incontext_library/run_p_arm.py)",
+ "identical_by_construction": {
+  "runner": "scripts/viki_amendment10_run.py run() and build_messages(), imported unchanged",
+  "served_model": "qwen2.5-vl-72b-amendment3-f2",
+  "temperature": 0,
+  "max_tokens": 2000,
+  "seed": 20260829,
+  "extra_body": "none (no think switch at API level; benchmark system prompt asks for <think>/<answer>; VIKI_NO_THINK unset in both)",
+  "images": "imaged: bench.get_messages -> PNG base64 image_url; text: no image, same as baseline",
+  "memory_insertion": "habitat_llm/evaluation/viki_memory_skill.py:420-434 add_memory_to_messages",
+  "scorer": "official scorer via bench.score_response (task_score) + JSON-tolerant viki_report_matrix.tolerant, same as Figure 2",
+  "env": {
+   "A8B_SKILL_TOPK": "8",
+   "A9_ROLE_AWARE": "0",
+   "A9_PATTERN_SLOTS": "0",
+   "A9_ACTION_CAP": "",
+   "A9_STEP_ALIGNED": "",
+   "A9_MODE": ""
+  }
+ },
+ "template_check_zero_calls": {
+  "text": "297/297 zero-shot prompt_sha256 identical to archived",
+  "imaged": "297/297 identical"
+ },
+ "service": {
+  "unchanged_block_reproduced": {
+   "model": "Qwen/Qwen2.5-VL-72B-Instruct",
+   "revision": "89c86200743eec961a297729e7990e8f2ddbc4c5",
+   "served_model": "qwen2.5-vl-72b-amendment3-f2",
+   "dtype": "bfloat16",
+   "tensor_parallel_size": 4,
+   "max_model_len": 16384,
+   "max_num_seqs": 16,
+   "async_scheduling": true,
+   "generation_config": "vllm",
+   "seed": 0
+  },
+  "resource_only_differs": {
+   "host": "baseline 192.168.32.40:8050 (other machine, gone) -> this box 127.0.0.1:8050",
+   "cuda_visible_devices": "0,1,2,3",
+   "gpu_memory_utilization": 0.72
+  },
+  "not_verifiable": "vLLM build on 192.168.32.40 at 2026-08-31; this box runs vllm 0.11.2 (installed 2026-08-27). The baseline runner was uncommitted at run time (committed 2026-09-02, 89044d1)."
+ },
+ "differs": {
+  "memory_block": "G-Memory: per-row retrieved trajectory+insights (text 1950 chars on row 4, imaged 2029 on row 5); P: fixed library block, 2251 chars (+ newline stripped), sha256 13e33587b2a7123ba6ff8e36e290abb86153d76fbe13129a09a5e23b11d712a1",
+  "arm_name": "gmemory -> incontext_library"
+ }
+}

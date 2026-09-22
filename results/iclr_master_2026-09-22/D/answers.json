@@ -1,0 +1,65 @@
+{
+ "status": "done_zero_call",
+ "ending": "D-E3",
+ "numbers": {
+  "skills_total": {
+   "value": 470,
+   "numerator": 470,
+   "denominator": null,
+   "source_path": "~/restore_isambard/partnr-planner/data/hierarchical_skill_memory/hierarchical_{rerange_only,spatial_only}"
+  },
+  "frac_skills_demo_parse_and_transition": {
+   "value": 0.0,
+   "numerator": 0,
+   "denominator": 470,
+   "source_path": "results/iclr_master_2026-09-22/D/executability_summary.json"
+  },
+  "frac_skills_seq_parse_and_transition": {
+   "value": 0.5362,
+   "numerator": 252,
+   "denominator": 470,
+   "source_path": "results/iclr_master_2026-09-22/D/executability_summary.json"
+  },
+  "frac_skills_seq_parse_transition_single": {
+   "value": 0.2936,
+   "numerator": 138,
+   "denominator": 470,
+   "source_path": "results/iclr_master_2026-09-22/D/executability_summary.json"
+  },
+  "instances_demo_parse": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 6161,
+   "source_path": "results/iclr_master_2026-09-22/D/executability_summary.json"
+  },
+  "instances_seq_parse": {
+   "value": 0.6578,
+   "numerator": 4053,
+   "denominator": 6161,
+   "source_path": "results/iclr_master_2026-09-22/D/executability_summary.json"
+  },
+  "instances_with_source_episode": {
+   "value": 0.0235,
+   "numerator": 145,
+   "denominator": 6161,
+   "source_path": "results/iclr_master_2026-09-22/D/executability_summary.json"
+  },
+  "instances_transition_derivable": {
+   "value": 0.2623,
+   "numerator": 1616,
+   "denominator": 6161,
+   "source_path": "results/iclr_master_2026-09-22/D/executability_summary.json"
+  }
+ },
+ "notes": [
+  "feasibility bar 80% not met under either reading -> D-E3, B layer not run",
+  "gate in A repo is a paired pool-level execution gate, not the three-criterion form in the manuscript; see report D.1.1",
+  "B% for Limitations sentence awaits user choice (0% spec reading / 54% lenient)"
+ ],
+ "sha256": {
+  "rerange_only/L_ind": "515a6cef0d47e9a22d81338a0d30e0a880bb87290e6e5561ae2bc6b3b4ef2745",
+  "rerange_only/L_coop": "4f307d4f24ec4d5434fe19e735e00d718fb042714413e2b906da99334b163938",
+  "spatial_only/L_ind": "dbec14bf8b362ff0970ddde1b50a5c0c369be472f05f4a9a61138ad96f263bf7",
+  "spatial_only/L_coop": "31f4d880cc5bf353042629060df4d8bd736c5cd4ab54ee2957de24184ccb2d0c"
+ }
+}

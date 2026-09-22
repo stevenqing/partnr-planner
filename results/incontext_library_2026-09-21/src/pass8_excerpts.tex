@@ -1,0 +1,33 @@
+Under the stricter sibling-group split, it remains above G-Memory at 72B (31.9 vs.\ 14.4\%, $p=6.4\!\times\!10^{-25}$) and 30B (15.9 vs.\ 11.4\%, $p=3.2\!\times\!10^{-5}$), but not at 7B (3.7 vs.\ 3.3\%, $p=.665$). The 30B and 7B comparison baselines use the think condition, and no matched no-think arm is available for ours.
+% TODO[gmemory-72b] The G-Memory 72B values 51.0/20.8/4.7/3.4 come from the Sep 2 and Sep 8 result
+% documents (JSON-tolerant scoring). Check them against the data behind Figure 2.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figs/viki_main_results.pdf}
+    \caption{VIKI-L2 success. OOD denotes single-family withholding, and CG denotes compositional generalization with or without image input. Numeric labels mark our method. Sibling-group-held-out OOD appears in Appendix~\ref{sec:viki_audit}.}
+    \label{fig:viki_main}
+\end{figure}
+
+ToM and zero-shot both emit primitive plans, and ToM differs significantly from zero-shot in none of the 12 paired cells (all $p\geq.296$). In its highest-scoring cell, 72B OOD, ToM raises in-scene-object validity from 52.7\% to 64.4\%, yet success moves from 3.5\% to 2.7\% (Table~\ref{tab:tom_funnel}, Figure~\ref{fig:tom_failure}). Our method instead outputs skill calls, so its gap to the primitive-plan baselines measures the skill-call interface and the library together. The RQ2 arms hold the interface and the planner fixed and change only the library. The no-trace library yields zero successes in every cell, the library without admission averages 21.9\% at 72B, and the admitted library averages 74.6\% (Section~\ref{subsec:induction_validation}). The interface alone therefore produces no success, and within it the library accounts for the gain. Whether a baseline memory would gain from the same interface is not tested.
+% TODO[in-context-library] (formerly skill-call-baseline) Put the admitted library in the prompt,
+% let the model write primitive plans, score like the baselines. 72B, two CG splits, 594 calls.
+% See specs/incontext_library_spec.md. The result replaces the last sentence of this paragraph.
+
+\subsection{Validating Trace-Based Skill Induction (RQ2)}
+\label{subsec:induction_validation}
+
+[... unchanged text between excerpts ...]
+
+\paragraph{Limitations.} We study alternating rather than concurrent actions. Each VIKI-L2 library is built once, and the 30B full arm has one run and no matched no-think arm. The PARTNR libraries behind Tables~\ref{tab:main_results_task} and~\ref{tab:partnr_composition} are built without the execution gate, and the PARTNR gate validation uses privileged state. On PARTNR the partner condition of a cooperation skill is free text that only the planner reads, and observed state changes trigger replanning but are not written into the prompt. The VIKI-L2 CG split has one composition pattern, and no single setting combines decentralized cooperation with a well-powered compositional test. Low 7B sibling-group success precludes transfer claims for smaller backbones.
+% Acknowledgments are omitted in the anonymous submission.  Add an
+% acknowledgments paragraph here for the camera-ready version.
+
+[... unchanged text between excerpts ...]
+
+\paragraph{CG split audit.}
+A read-only audit compares the CG task identifiers with the nine episode pools used to build the library and finds no overlap. The 180 episodes that the proposing agent opens all lie in the induction half, and none of its 884 transcripts contains a CG task identifier. The 297 CG rows hold 295 distinct tasks because two tasks occur twice. The unseen property is the combination of a two-robot cutting subtask with an independent delivery subtask. A weaker structure, an activation step followed by a transport step, does occur in training (1{,}033 rows), so we do not claim that this structure is unseen.
+% TODO[cg-audit] Numbers are from the 2026-09-05 audit. Confirm that the nine pools are those of the
+% library evaluated in Figure 2 (the 14-family build) and rerun the id intersection if they differ.
+
+\paragraph{Sibling-group-held-out OOD.}

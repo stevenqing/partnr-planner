@@ -1,0 +1,81 @@
+[
+ {
+  "tag": "72B_id",
+  "split": "id",
+  "rows": 29,
+  "command": [
+   "/root/venvs/partnr/bin/python",
+   "scripts/viki_eval_v2_intent_choice.py",
+   "--memory",
+   "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/memories/memory_all.json",
+   "--split",
+   "id",
+   "--tag",
+   "72B_id",
+   "--replay",
+   "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/72B/72B_id.replay.jsonl",
+   "--model",
+   "qwen2.5-vl-72b-amendment3-f2",
+   "--base-url",
+   "http://127.0.0.1:8050/v1",
+   "--workers",
+   "64",
+   "--out-dir",
+   "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/72B"
+  ]
+ },
+ {
+  "tag": "72B_ood_dog_push_box_for_two_panda_transport",
+  "split": "ood",
+  "rows": 46,
+  "command": [
+   "/root/venvs/partnr/bin/python",
+   "scripts/viki_eval_v2_intent_choice.py",
+   "--memory",
+   "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/memories/memory_heldout_dog_push_box_for_two_panda_transport.json",
+   "--split",
+   "id",
+   "--tag",
+   "72B_ood_dog_push_box_for_two_panda_transport",
+   "--replay",
+   "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/72B/72B_ood_dog_push_box_for_two_panda_transport.replay.jsonl",
+   "--model",
+   "qwen2.5-vl-72b-amendment3-f2",
+   "--base-url",
+   "http://127.0.0.1:8050/v1",
+   "--workers",
+   "64",
+   "--out-dir",
+   "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/72B",
+   "--task-name",
+   "dog_push_box_for_two_panda_transport"
+  ]
+ },
+ {
+  "tag": "72B_ood_clear_table_with_two_robots_and_put_in_cabinet",
+  "split": "ood",
+  "rows": 220,
+  "command": [
+   "/root/venvs/partnr/bin/python",
+   "scripts/viki_eval_v2_intent_choice.py",
+   "--memory",
+   "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/memories/memory_heldout_clear_table_with_two_robots_and_put_in_cabinet.json",
+   "--split",
+   "id",
+   "--tag",
+   "72B_ood_clear_table_with_two_robots_and_put_in_cabinet",
+   "--replay",
+   "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/72B/72B_ood_clear_table_with_two_robots_and_put_in_cabinet.replay.jsonl",
+   "--model",
+   "qwen2.5-vl-72b-amendment3-f2",
+   "--base-url",
+   "http://127.0.0.1:8050/v1",
+   "--workers",
+   "64",
+   "--out-dir",
+   "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/72B",
+   "--task-name",
+   "clear_table_with_two_robots_and_put_in_cabinet"
+  ]
+ }
+]

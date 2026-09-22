@@ -1,0 +1,169 @@
+family,episodes_in_induction_half,effect_key,effect_instance,episodes_with_effect
+clear_table_with_two_robots_and_put_in_cabinet,422,pos.name,pos.name(fork -> cabinet),114
+clear_table_with_two_robots_and_put_in_cabinet,422,pos.name,pos.name(knife -> cabinet),110
+clear_table_with_two_robots_and_put_in_cabinet,422,pos.name,pos.name(scissors -> cabinet),100
+clear_table_with_two_robots_and_put_in_cabinet,422,pos.name,pos.name(spoon -> cabinet),98
+clear_table_with_two_robots_and_put_in_cabinet,422,pos.name,pos.name(pumpkin -> cabinet),93
+clear_table_with_two_robots_and_put_in_cabinet,422,pos.name,pos.name(bread -> cabinet),86
+clear_table_with_two_robots_and_put_in_cabinet,422,pos.name,pos.name(peach -> cabinet),84
+clear_table_with_two_robots_and_put_in_cabinet,422,pos.name,pos.name(apple -> cabinet),80
+clear_table_with_two_robots_and_put_in_cabinet,422,pos.name,pos.name(tomato -> cabinet),79
+cut_fruit_on_board,384,is_activated,is_activated(knife),384
+cut_fruit_on_board,384,pos.name,pos.name(peach -> wooden cutting board),135
+cut_fruit_on_board,384,pos.name,pos.name(apple -> wooden cutting board),131
+cut_fruit_on_board,384,pos.name,pos.name(pear -> wooden cutting board),118
+cut_two_fruits_on_board,190,is_activated,is_activated(knife),190
+cut_two_fruits_on_board,190,pos.name,pos.name(banana -> wooden cutting board),68
+cut_two_fruits_on_board,190,pos.name,pos.name(pear -> wooden cutting board),65
+cut_two_fruits_on_board,190,pos.name,pos.name(peach -> wooden cutting board),64
+cut_two_fruits_on_board,190,pos.name,pos.name(bread -> wooden cutting board),63
+cut_two_fruits_on_board,190,pos.name,pos.name(apple -> wooden cutting board),61
+cut_two_fruits_on_board,190,pos.name,pos.name(tomato -> wooden cutting board),59
+dog_check_environment,83,is_activated,is_activated(oven),29
+dog_check_environment,83,is_activated,is_activated(drawer),28
+dog_check_environment,83,is_activated,is_activated(fridge),26
+dog_push_box_for_two_panda_transport,89,pos.name,pos.name(peach -> sink),17
+dog_push_box_for_two_panda_transport,89,pos.name,pos.name(apple -> sink),14
+dog_push_box_for_two_panda_transport,89,pos.name,pos.name(pumpkin -> sink),13
+dog_push_box_for_two_panda_transport,89,pos.name,pos.name(pear -> sink),13
+dog_push_box_for_two_panda_transport,89,pos.name,pos.name(fork -> sink),12
+dog_push_box_for_two_panda_transport,89,pos.name,pos.name(spoon -> sink),12
+dog_push_box_for_two_panda_transport,89,pos.name,pos.name(meat -> sink),8
+ensure_all_fruits_on_table,599,pos.name,pos.name(tomato -> table),300
+ensure_all_fruits_on_table,599,pos.name,pos.name(banana -> table),299
+ensure_all_fruits_on_table,599,pos.name,pos.name(apple -> table),217
+ensure_all_fruits_on_table,599,pos.name,pos.name(pear -> table),195
+ensure_all_fruits_on_table,599,pos.name,pos.name(peach -> table),187
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(apple -> bowl),31
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(pear -> bowl),29
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(meat -> plate),29
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(pumpkin -> bowl),27
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(bread -> bowl),26
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(apple -> plate),26
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(tomato -> plate),25
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(banana -> bowl),25
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(pizza -> bowl),24
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(bread -> plate),24
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(tomato -> bowl),23
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(pizza -> plate),23
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(meat -> bowl),21
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(pumpkin -> plate),18
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(pear -> plate),16
+parallel_human_dual_asset_to_plate_or_bowl,190,pos.name,pos.name(banana -> plate),13
+sequential_pick_two_and_place,207,pos.name,pos.name(banana -> plate),32
+sequential_pick_two_and_place,207,pos.name,pos.name(tomato -> plate),31
+sequential_pick_two_and_place,207,pos.name,pos.name(pumpkin -> plate),30
+sequential_pick_two_and_place,207,pos.name,pos.name(green peas -> plate),30
+sequential_pick_two_and_place,207,pos.name,pos.name(pear -> plate),28
+sequential_pick_two_and_place,207,pos.name,pos.name(green peas -> bowl),28
+sequential_pick_two_and_place,207,pos.name,pos.name(apple -> plate),27
+sequential_pick_two_and_place,207,pos.name,pos.name(meat -> bowl),27
+sequential_pick_two_and_place,207,pos.name,pos.name(bread -> plate),26
+sequential_pick_two_and_place,207,pos.name,pos.name(pumpkin -> bowl),25
+sequential_pick_two_and_place,207,pos.name,pos.name(meat -> plate),24
+sequential_pick_two_and_place,207,pos.name,pos.name(tomato -> bowl),23
+sequential_pick_two_and_place,207,pos.name,pos.name(apple -> bowl),23
+sequential_pick_two_and_place,207,pos.name,pos.name(pear -> bowl),23
+sequential_pick_two_and_place,207,pos.name,pos.name(banana -> bowl),20
+sequential_pick_two_and_place,207,pos.name,pos.name(bread -> bowl),17
+serve_bread_after_checking_cabinet,146,pos.name,pos.name(banana -> plate),31
+serve_bread_after_checking_cabinet,146,pos.name,pos.name(apple -> plate),29
+serve_bread_after_checking_cabinet,146,pos.name,pos.name(banana -> bowl),25
+serve_bread_after_checking_cabinet,146,pos.name,pos.name(apple -> bowl),23
+serve_bread_after_checking_cabinet,146,pos.name,pos.name(bread -> plate),21
+serve_bread_after_checking_cabinet,146,pos.name,pos.name(bread -> bowl),17
+serve_bread_from_counter,146,pos.name,pos.name(apple -> plate),31
+serve_bread_from_counter,146,pos.name,pos.name(apple -> bowl),29
+serve_bread_from_counter,146,pos.name,pos.name(banana -> plate),27
+serve_bread_from_counter,146,pos.name,pos.name(bread -> bowl),21
+serve_bread_from_counter,146,pos.name,pos.name(banana -> bowl),21
+serve_bread_from_counter,146,pos.name,pos.name(bread -> plate),17
+set_plate_and_fork_on_table,206,pos.name,pos.name(bowl -> kitchen work area),61
+set_plate_and_fork_on_table,206,pos.name,pos.name(bowl -> kitchen island area),51
+set_plate_and_fork_on_table,206,pos.name,pos.name(plate -> kitchen work area),51
+set_plate_and_fork_on_table,206,pos.name,pos.name(plate -> kitchen island area),43
+set_plate_and_fork_on_table,206,pos.name,pos.name(tomato -> bowl),33
+set_plate_and_fork_on_table,206,pos.name,pos.name(apple -> bowl),27
+set_plate_and_fork_on_table,206,pos.name,pos.name(tomato -> plate),27
+set_plate_and_fork_on_table,206,pos.name,pos.name(banana -> bowl),26
+set_plate_and_fork_on_table,206,pos.name,pos.name(bread -> bowl),26
+set_plate_and_fork_on_table,206,pos.name,pos.name(bread -> plate),25
+set_plate_and_fork_on_table,206,pos.name,pos.name(apple -> plate),22
+set_plate_and_fork_on_table,206,pos.name,pos.name(banana -> plate),20
+single_move_asset_to_target,430,pos.name,pos.name(scissors -> kitchen work area),15
+single_move_asset_to_target,430,pos.name,pos.name(fork -> kitchen island area),14
+single_move_asset_to_target,430,pos.name,pos.name(cup -> kitchen work area),14
+single_move_asset_to_target,430,pos.name,pos.name(spoon -> kitchen work area),13
+single_move_asset_to_target,430,pos.name,pos.name(bread -> kitchen island area),13
+single_move_asset_to_target,430,pos.name,pos.name(wine -> kitchen island area),12
+single_move_asset_to_target,430,pos.name,pos.name(pumpkin -> kitchen island area),12
+single_move_asset_to_target,430,pos.name,pos.name(peach -> kitchen work area),12
+single_move_asset_to_target,430,pos.name,pos.name(apple -> kitchen island area),12
+single_move_asset_to_target,430,pos.name,pos.name(banana -> kitchen island area),12
+single_move_asset_to_target,430,pos.name,pos.name(tomato -> kitchen work area),12
+single_move_asset_to_target,430,pos.name,pos.name(cardboardbox -> kitchen work area),11
+single_move_asset_to_target,430,pos.name,pos.name(spoon -> kitchen island area),11
+single_move_asset_to_target,430,pos.name,pos.name(pizza -> kitchen island area),11
+single_move_asset_to_target,430,pos.name,pos.name(tomato -> kitchen island area),11
+single_move_asset_to_target,430,pos.name,pos.name(bottle -> kitchen work area),10
+single_move_asset_to_target,430,pos.name,pos.name(kettle -> kitchen work area),10
+single_move_asset_to_target,430,pos.name,pos.name(cup -> kitchen island area),10
+single_move_asset_to_target,430,pos.name,pos.name(pear -> kitchen island area),10
+single_move_asset_to_target,430,pos.name,pos.name(fork -> kitchen work area),10
+single_move_asset_to_target,430,pos.name,pos.name(pizza -> kitchen work area),9
+single_move_asset_to_target,430,pos.name,pos.name(pear -> rack),9
+single_move_asset_to_target,430,pos.name,pos.name(bottle -> kitchen island area),9
+single_move_asset_to_target,430,pos.name,pos.name(scissors -> kitchen island area),9
+single_move_asset_to_target,430,pos.name,pos.name(kettle -> rack),8
+single_move_asset_to_target,430,pos.name,pos.name(plate -> kitchen island area),8
+single_move_asset_to_target,430,pos.name,pos.name(cardboardbox -> kitchen island area),8
+single_move_asset_to_target,430,pos.name,pos.name(fork -> rack),8
+single_move_asset_to_target,430,pos.name,pos.name(bread -> rack),7
+single_move_asset_to_target,430,pos.name,pos.name(cooling fan -> kitchen island area),7
+single_move_asset_to_target,430,pos.name,pos.name(plate -> kitchen work area),7
+single_move_asset_to_target,430,pos.name,pos.name(banana -> kitchen work area),7
+single_move_asset_to_target,430,pos.name,pos.name(pear -> kitchen work area),6
+single_move_asset_to_target,430,pos.name,pos.name(bread -> kitchen work area),6
+single_move_asset_to_target,430,pos.name,pos.name(peach -> rack),6
+single_move_asset_to_target,430,pos.name,pos.name(meat -> kitchen work area),6
+single_move_asset_to_target,430,pos.name,pos.name(pumpkin -> kitchen work area),6
+single_move_asset_to_target,430,pos.name,pos.name(apple -> kitchen work area),6
+single_move_asset_to_target,430,pos.name,pos.name(wine -> kitchen work area),6
+single_move_asset_to_target,430,pos.name,pos.name(kettle -> kitchen island area),5
+single_move_asset_to_target,430,pos.name,pos.name(pumpkin -> rack),5
+single_move_asset_to_target,430,pos.name,pos.name(cooling fan -> kitchen work area),5
+single_move_asset_to_target,430,pos.name,pos.name(cup -> rack),4
+single_move_asset_to_target,430,pos.name,pos.name(cooling fan -> rack),4
+single_move_asset_to_target,430,pos.name,pos.name(cardboardbox -> rack),4
+single_move_asset_to_target,430,pos.name,pos.name(banana -> rack),4
+single_move_asset_to_target,430,pos.name,pos.name(apple -> rack),4
+single_move_asset_to_target,430,pos.name,pos.name(meat -> kitchen island area),4
+single_move_asset_to_target,430,pos.name,pos.name(spoon -> rack),3
+single_move_asset_to_target,430,pos.name,pos.name(scissors -> rack),3
+single_move_asset_to_target,430,pos.name,pos.name(wine -> rack),3
+single_move_asset_to_target,430,pos.name,pos.name(bottle -> rack),3
+single_move_asset_to_target,430,pos.name,pos.name(pizza -> rack),3
+single_move_asset_to_target,430,pos.name,pos.name(plate -> rack),2
+single_move_asset_to_target,430,pos.name,pos.name(tomato -> rack),1
+toast_bread_and_set_plate,191,is_activated,is_activated(toaster),191
+toast_bread_and_set_plate,191,pos.name,pos.name(bread -> toaster),191
+toast_bread_and_set_plate,191,pos.name,pos.name(plate -> kitchen work area),55
+toast_bread_and_set_plate,191,pos.name,pos.name(bowl -> kitchen work area),47
+toast_bread_and_set_plate,191,pos.name,pos.name(bowl -> kitchen island area),46
+toast_bread_and_set_plate,191,pos.name,pos.name(plate -> kitchen island area),43
+wash_fruit_and_serve,315,is_activated,is_activated(sink),315
+wash_fruit_and_serve,315,pos.name,pos.name(apple -> sink),71
+wash_fruit_and_serve,315,pos.name,pos.name(banana -> sink),69
+wash_fruit_and_serve,315,pos.name,pos.name(tomato -> sink),67
+wash_fruit_and_serve,315,pos.name,pos.name(pear -> sink),55
+wash_fruit_and_serve,315,pos.name,pos.name(peach -> sink),53
+wash_fruit_and_serve,315,pos.name,pos.name(apple -> plate),37
+wash_fruit_and_serve,315,pos.name,pos.name(tomato -> plate),36
+wash_fruit_and_serve,315,pos.name,pos.name(banana -> plate),36
+wash_fruit_and_serve,315,pos.name,pos.name(apple -> bowl),34
+wash_fruit_and_serve,315,pos.name,pos.name(banana -> bowl),33
+wash_fruit_and_serve,315,pos.name,pos.name(tomato -> bowl),31
+wash_fruit_and_serve,315,pos.name,pos.name(peach -> plate),30
+wash_fruit_and_serve,315,pos.name,pos.name(pear -> bowl),28
+wash_fruit_and_serve,315,pos.name,pos.name(pear -> plate),27
+wash_fruit_and_serve,315,pos.name,pos.name(peach -> bowl),23

@@ -1,0 +1,5 @@
+{"layer": "A", "calls": 0, "note": "A1-A4 zero LLM calls"}
+{"layer": "B", "step": "4.3.1 smoke", "split": "CG w/o Image (text)", "rows": 20, "calls": 20, "file": "runs/text/incontext_library.smoke20.jsonl", "model": "qwen2.5-vl-72b-amendment3-f2 rev 89c86200", "temperature": 0, "max_tokens": 2000, "seed": 20260829}
+{"layer": "B", "step": "4.3.2", "split": "CG w/o Image (text)", "rows": 297, "calls": 297, "file": "runs/text/incontext_library.jsonl", "complete": true}
+{"layer": "B", "step": "4.3.2", "split": "CG w/ Image (imaged)", "rows": 297, "calls": 297, "file": "runs/imaged/incontext_library.jsonl", "complete": true}
+{"total_calls": 614, "call_cap": 700, "note": "smoke rows are rerun inside the full split because the runner's metadata guard forbids resuming across a different row count; the spec budgeted 594"}

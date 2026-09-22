@@ -1,0 +1,4 @@
+# backbone	np	peak_mib (per process, ICLR_SHARE_LLM=True, measured 09-22 B_verify/share_llm, rounded up)
+# np = floor((97887 card - 8192 margin - ~2600 navdp) / peak); lower np here to take effect at a lane's next cell
+llama8b	2	35000
+qwen7b	3	27000

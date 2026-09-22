@@ -1,0 +1,23 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+resume: 0 rows already in /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/72B/72B_ood_clear_table_with_two_robots_and_put_in_cabinet.partial.jsonl, 220 to score
+replaying 220 archived answers from /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/72B/72B_ood_clear_table_with_two_robots_and_put_in_cabinet.replay.jsonl
+  100/220  solved=0 (0.0%)
+  200/220  solved=0 (0.0%)
+
+=== 72B_ood_clear_table_with_two_robots_and_put_in_cabinet: the model names the work, 220 rows ===
+accuracy       0/220 = 0.00%
+crew           model; re-asked on 100.0% of rows; infeasible_assignment 220/220
+  infeasible_assignment   220  100.0%
+
+by family:
+  clear_table_with_two_robots_and_put_in_cabinet      0/220    0.0%
+
+wrote /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_two_exp_2026-09-22/A/a2_reask/72B/72B_ood_clear_table_with_two_robots_and_put_in_cabinet.jsonl

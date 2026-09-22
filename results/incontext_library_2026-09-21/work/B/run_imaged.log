@@ -1,0 +1,204 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+imaged/incontext_library: 0 done, 297 to run
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting board
+Not Found Entity: cutting board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_surface
+Not Found Entity: cutting_surface
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cooling_fan
+Not Found Entity: cooling_fan
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: wooden_cutting_board
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+Current command: <>
+Current command: <>
+Current command: <>
+Current command: <>
+Not Found Entity: cutting_board
+Not Found Entity: cutting_board
+{
+  "task": "Amendment10_recombination",
+  "split": "imaged",
+  "arm": "incontext_library",
+  "rows": 297,
+  "successes": 0,
+  "format_successes": 297,
+  "accuracy": 0.0,
+  "results_sha256": "10b5a476e9b3f490898557b89135ded5ef0300ebf3b92a29e53d1cfd3573e53a"
+}

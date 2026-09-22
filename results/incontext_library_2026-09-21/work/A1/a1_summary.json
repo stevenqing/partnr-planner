@@ -1,0 +1,1163 @@
+{
+ "cells_json": "results/paper_viki_iclr2027/cells.json",
+ "per_cell": [
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_oursall_30B_imaged.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/30B/no_trace/cg_image/rq2_no_trace_30B_cg_image.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/30B/no_execution_admission/cg_image/rq2_no_execution_admission_30B_cg_image.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/m30_recomb_imaged.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/m30_recomb_imaged.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/m30_recomb_imaged.jsonl"
+   },
+   "rows": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "rows_in_all_three": 297,
+   "rows_in_union": 297,
+   "replayed_flag_true": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "first_response_identical_all3": 297,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 297,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 0,
+    "no_trace": 278,
+    "no_execution_admission": 0
+   },
+   "reasked_all3": 0,
+   "reask_text_identical_all3": 0,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 278
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 0
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 278
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {},
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 278
+    },
+    "no_execution_admission": {}
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_ours_30B_id.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/30B/no_trace/id/rq2_no_trace_30B_id.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/30B/no_execution_admission/id/rq2_no_execution_admission_30B_id.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/m30_id.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/m30_id.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/m30_id.jsonl"
+   },
+   "rows": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "rows_in_all_three": 924,
+   "rows_in_union": 924,
+   "replayed_flag_true": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "first_response_identical_all3": 924,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 924,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 71,
+    "no_trace": 912,
+    "no_execution_admission": 35
+   },
+   "reasked_all3": 24,
+   "reask_text_identical_all3": 21,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 71,
+     "same_reask_text": 54,
+     "same_reask_prompt": 2,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 17,
+     "diff_prompt_same_text": 52,
+     "diff_reason_code": 69,
+     "diff_casting": 0,
+     "reask_only_in_one": 841
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 24,
+     "same_reask_text": 22,
+     "same_reask_prompt": 23,
+     "same_prompt_diff_text": 2,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 1,
+     "diff_reason_code": 1,
+     "diff_casting": 0,
+     "reask_only_in_one": 58
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 35,
+     "same_reask_text": 33,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 2,
+     "diff_prompt_same_text": 33,
+     "diff_reason_code": 35,
+     "diff_casting": 0,
+     "reask_only_in_one": 877
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {
+     "NO_SCHEDULE": 69,
+     "UNSUPPORTED_PREDICATE": 2
+    },
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 912
+    },
+    "no_execution_admission": {
+     "NO_SCHEDULE": 35
+    }
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_fold_30B_clear_table_with_two_robots_and_put_in_cabinet.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_30B_cut_fruit_on_board.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_30B_cut_two_fruits_on_board.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_30B_dog_push_box_for_two_panda_transport.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_30B_ensure_all_fruits_on_table.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_30B_parallel_human_dual_asset_to_plate_or_bowl.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_30B_set_plate_and_fork_on_table.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_30B_toast_bread_and_set_plate.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/30B/no_trace/ood_single_family/assembled/rq2_no_trace_30B_ood_single_family.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/30B/no_execution_admission/ood_single_family/assembled/rq2_no_execution_admission_30B_ood_single_family.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/m30_id.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/m30_id.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/m30_id.jsonl"
+   },
+   "rows": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "rows_in_all_three": 924,
+   "rows_in_union": 924,
+   "replayed_flag_true": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "first_response_identical_all3": 924,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 924,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 268,
+    "no_trace": 912,
+    "no_execution_admission": 238
+   },
+   "reasked_all3": 230,
+   "reask_text_identical_all3": 131,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 268,
+     "same_reask_text": 179,
+     "same_reask_prompt": 2,
+     "same_prompt_diff_text": 1,
+     "diff_prompt_diff_text": 88,
+     "diff_prompt_same_text": 178,
+     "diff_reason_code": 266,
+     "diff_casting": 0,
+     "reask_only_in_one": 644
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 230,
+     "same_reask_text": 178,
+     "same_reask_prompt": 229,
+     "same_prompt_diff_text": 51,
+     "diff_prompt_diff_text": 1,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 1,
+     "diff_casting": 0,
+     "reask_only_in_one": 46
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 238,
+     "same_reask_text": 167,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 71,
+     "diff_prompt_same_text": 167,
+     "diff_reason_code": 238,
+     "diff_casting": 0,
+     "reask_only_in_one": 674
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {
+     "NO_SCHEDULE": 266,
+     "UNSUPPORTED_PREDICATE": 2
+    },
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 912
+    },
+    "no_execution_admission": {
+     "NO_SCHEDULE": 238
+    }
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_oursall_30B_text.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/30B/no_trace/pure_text/rq2_no_trace_30B_pure_text.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/30B/no_execution_admission/pure_text/rq2_no_execution_admission_30B_pure_text.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/m30_recomb_text.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/m30_recomb_text.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/m30_recomb_text.jsonl"
+   },
+   "rows": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "rows_in_all_three": 297,
+   "rows_in_union": 297,
+   "replayed_flag_true": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "first_response_identical_all3": 297,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 297,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 0,
+    "no_trace": 280,
+    "no_execution_admission": 0
+   },
+   "reasked_all3": 0,
+   "reask_text_identical_all3": 0,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 280
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 0
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 280
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {},
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 280
+    },
+    "no_execution_admission": {}
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_oursall_72B_imaged.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/72B/no_trace/cg_image/rq2_no_trace_72B_cg_image.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/72B/no_execution_admission/cg_image/rq2_no_execution_admission_72B_cg_image.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/recomb_imaged_agentic.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/recomb_imaged_agentic.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/recomb_imaged_agentic.jsonl"
+   },
+   "rows": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "rows_in_all_three": 297,
+   "rows_in_union": 297,
+   "replayed_flag_true": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "first_response_identical_all3": 297,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 297,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 0,
+    "no_trace": 283,
+    "no_execution_admission": 0
+   },
+   "reasked_all3": 0,
+   "reask_text_identical_all3": 0,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 283
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 0
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 283
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {},
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 283
+    },
+    "no_execution_admission": {}
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_ours_72B_id.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/72B/no_trace/id/rq2_no_trace_72B_id.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/72B/no_execution_admission/id/rq2_no_execution_admission_72B_id.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl"
+   },
+   "rows": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "rows_in_all_three": 924,
+   "rows_in_union": 924,
+   "replayed_flag_true": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "first_response_identical_all3": 924,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 924,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 46,
+    "no_trace": 924,
+    "no_execution_admission": 123
+   },
+   "reasked_all3": 37,
+   "reask_text_identical_all3": 15,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 46,
+     "same_reask_text": 21,
+     "same_reask_prompt": 6,
+     "same_prompt_diff_text": 2,
+     "diff_prompt_diff_text": 23,
+     "diff_prompt_same_text": 17,
+     "diff_reason_code": 40,
+     "diff_casting": 0,
+     "reask_only_in_one": 878
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 37,
+     "same_reask_text": 27,
+     "same_reask_prompt": 31,
+     "same_prompt_diff_text": 6,
+     "diff_prompt_diff_text": 4,
+     "diff_prompt_same_text": 2,
+     "diff_reason_code": 6,
+     "diff_casting": 0,
+     "reask_only_in_one": 95
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 123,
+     "same_reask_text": 99,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 24,
+     "diff_prompt_same_text": 99,
+     "diff_reason_code": 123,
+     "diff_casting": 0,
+     "reask_only_in_one": 801
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {
+     "NO_SCHEDULE": 40,
+     "UNSUPPORTED_PREDICATE": 6
+    },
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 924
+    },
+    "no_execution_admission": {
+     "NO_SCHEDULE": 123
+    }
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_fold_72B_clear_table_with_two_robots_and_put_in_cabinet.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_72B_cut_fruit_on_board.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_72B_cut_two_fruits_on_board.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_72B_dog_push_box_for_two_panda_transport.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_72B_ensure_all_fruits_on_table.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_72B_parallel_human_dual_asset_to_plate_or_bowl.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_72B_set_plate_and_fork_on_table.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_72B_toast_bread_and_set_plate.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/72B/no_trace/ood_single_family/assembled/rq2_no_trace_72B_ood_single_family.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/72B/no_execution_admission/ood_single_family/assembled/rq2_no_execution_admission_72B_ood_single_family.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl"
+   },
+   "rows": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "rows_in_all_three": 924,
+   "rows_in_union": 924,
+   "replayed_flag_true": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "first_response_identical_all3": 924,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 924,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 266,
+    "no_trace": 924,
+    "no_execution_admission": 257
+   },
+   "reasked_all3": 255,
+   "reask_text_identical_all3": 122,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 266,
+     "same_reask_text": 130,
+     "same_reask_prompt": 6,
+     "same_prompt_diff_text": 1,
+     "diff_prompt_diff_text": 135,
+     "diff_prompt_same_text": 125,
+     "diff_reason_code": 260,
+     "diff_casting": 0,
+     "reask_only_in_one": 658
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 255,
+     "same_reask_text": 246,
+     "same_reask_prompt": 249,
+     "same_prompt_diff_text": 5,
+     "diff_prompt_diff_text": 4,
+     "diff_prompt_same_text": 2,
+     "diff_reason_code": 6,
+     "diff_casting": 0,
+     "reask_only_in_one": 13
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 257,
+     "same_reask_text": 124,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 133,
+     "diff_prompt_same_text": 124,
+     "diff_reason_code": 257,
+     "diff_casting": 0,
+     "reask_only_in_one": 667
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {
+     "NO_SCHEDULE": 260,
+     "UNSUPPORTED_PREDICATE": 6
+    },
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 924
+    },
+    "no_execution_admission": {
+     "NO_SCHEDULE": 257
+    }
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_oursall_72B_text.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/72B/no_trace/pure_text/rq2_no_trace_72B_pure_text.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/72B/no_execution_admission/pure_text/rq2_no_execution_admission_72B_pure_text.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/recomb_text_agentic.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/recomb_text_agentic.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/recomb_text_agentic.jsonl"
+   },
+   "rows": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "rows_in_all_three": 297,
+   "rows_in_union": 297,
+   "replayed_flag_true": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "first_response_identical_all3": 297,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 297,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 0,
+    "no_trace": 286,
+    "no_execution_admission": 0
+   },
+   "reasked_all3": 0,
+   "reask_text_identical_all3": 0,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 286
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 0
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 286
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {},
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 286
+    },
+    "no_execution_admission": {}
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_oursall_7B_imaged.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/7B/no_trace/cg_image/rq2_no_trace_7B_cg_image.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/7B/no_execution_admission/cg_image/rq2_no_execution_admission_7B_cg_image.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/m7_recomb_imaged.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/m7_recomb_imaged.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/m7_recomb_imaged.jsonl"
+   },
+   "rows": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "rows_in_all_three": 297,
+   "rows_in_union": 297,
+   "replayed_flag_true": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "first_response_identical_all3": 297,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 297,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 0,
+    "no_trace": 169,
+    "no_execution_admission": 0
+   },
+   "reasked_all3": 0,
+   "reask_text_identical_all3": 0,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 169
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 0
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 169
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {},
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 169
+    },
+    "no_execution_admission": {}
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_ours_7B_id.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/7B/no_trace/id/rq2_no_trace_7B_id.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/7B/no_execution_admission/id/rq2_no_execution_admission_7B_id.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/m7_id.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/m7_id.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/m7_id.jsonl"
+   },
+   "rows": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "rows_in_all_three": 924,
+   "rows_in_union": 924,
+   "replayed_flag_true": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "first_response_identical_all3": 924,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 924,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 135,
+    "no_trace": 699,
+    "no_execution_admission": 220
+   },
+   "reasked_all3": 114,
+   "reask_text_identical_all3": 62,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 135,
+     "same_reask_text": 108,
+     "same_reask_prompt": 106,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 27,
+     "diff_prompt_same_text": 2,
+     "diff_reason_code": 29,
+     "diff_casting": 0,
+     "reask_only_in_one": 564
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 114,
+     "same_reask_text": 71,
+     "same_reask_prompt": 10,
+     "same_prompt_diff_text": 1,
+     "diff_prompt_diff_text": 42,
+     "diff_prompt_same_text": 62,
+     "diff_reason_code": 104,
+     "diff_casting": 0,
+     "reask_only_in_one": 127
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 220,
+     "same_reask_text": 115,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 105,
+     "diff_prompt_same_text": 115,
+     "diff_reason_code": 220,
+     "diff_casting": 0,
+     "reask_only_in_one": 479
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {
+     "NO_SCHEDULE": 29,
+     "UNSUPPORTED_PREDICATE": 106
+    },
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 699
+    },
+    "no_execution_admission": {
+     "NO_SCHEDULE": 220
+    }
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_fold_7B_clear_table_with_two_robots_and_put_in_cabinet.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_7B_cut_fruit_on_board.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_7B_cut_two_fruits_on_board.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_7B_dog_push_box_for_two_panda_transport.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_7B_ensure_all_fruits_on_table.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_7B_parallel_human_dual_asset_to_plate_or_bowl.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_7B_set_plate_and_fork_on_table.jsonl",
+     "results/viki_memory_experiments/amendment11/v3_fold_7B_toast_bread_and_set_plate.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/7B/no_trace/ood_single_family/assembled/rq2_no_trace_7B_ood_single_family.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/7B/no_execution_admission/ood_single_family/assembled/rq2_no_execution_admission_7B_ood_single_family.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/m7_id.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/m7_id.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/m7_id.jsonl"
+   },
+   "rows": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "rows_in_all_three": 924,
+   "rows_in_union": 924,
+   "replayed_flag_true": {
+    "full": 924,
+    "no_trace": 924,
+    "no_execution_admission": 924
+   },
+   "first_response_identical_all3": 924,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 924,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 244,
+    "no_trace": 699,
+    "no_execution_admission": 265
+   },
+   "reasked_all3": 228,
+   "reask_text_identical_all3": 113,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 244,
+     "same_reask_text": 200,
+     "same_reask_prompt": 185,
+     "same_prompt_diff_text": 1,
+     "diff_prompt_diff_text": 43,
+     "diff_prompt_same_text": 16,
+     "diff_reason_code": 59,
+     "diff_casting": 0,
+     "reask_only_in_one": 455
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 228,
+     "same_reask_text": 143,
+     "same_reask_prompt": 45,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 85,
+     "diff_prompt_same_text": 98,
+     "diff_reason_code": 183,
+     "diff_casting": 0,
+     "reask_only_in_one": 53
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 265,
+     "same_reask_text": 132,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 133,
+     "diff_prompt_same_text": 132,
+     "diff_reason_code": 265,
+     "diff_casting": 0,
+     "reask_only_in_one": 434
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {
+     "NO_SCHEDULE": 59,
+     "UNSUPPORTED_PREDICATE": 185
+    },
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 699
+    },
+    "no_execution_admission": {
+     "NO_SCHEDULE": 265
+    }
+   },
+   "reconstruction_disagrees_with_record": {}
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "files": {
+    "full": [
+     "results/viki_memory_experiments/amendment11/v3_oursall_7B_text.jsonl"
+    ],
+    "no_trace": [
+     "results/paper_viki_iclr2027/raw/rq2/7B/no_trace/pure_text/rq2_no_trace_7B_pure_text.jsonl"
+    ],
+    "no_execution_admission": [
+     "results/paper_viki_iclr2027/raw/rq2/7B/no_execution_admission/pure_text/rq2_no_execution_admission_7B_pure_text.jsonl"
+    ]
+   },
+   "replay_source": {
+    "full": "results/viki_memory_experiments/amendment11/m7_recomb_text.jsonl",
+    "no_trace": "results/viki_memory_experiments/amendment11/m7_recomb_text.jsonl",
+    "no_execution_admission": "results/viki_memory_experiments/amendment11/m7_recomb_text.jsonl"
+   },
+   "rows": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "rows_in_all_three": 297,
+   "rows_in_union": 297,
+   "replayed_flag_true": {
+    "full": 297,
+    "no_trace": 297,
+    "no_execution_admission": 297
+   },
+   "first_response_identical_all3": 297,
+   "first_response_differs": 0,
+   "first_response_equals_replay_source_all3": 297,
+   "first_diff_examples": [],
+   "reasked": {
+    "full": 1,
+    "no_trace": 250,
+    "no_execution_admission": 0
+   },
+   "reasked_all3": 0,
+   "reask_text_identical_all3": 0,
+   "pairwise_reask": {
+    "full~no_trace": {
+     "both_reasked": 1,
+     "same_reask_text": 1,
+     "same_reask_prompt": 1,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 249
+    },
+    "full~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 1
+    },
+    "no_trace~no_execution_admission": {
+     "both_reasked": 0,
+     "same_reask_text": 0,
+     "same_reask_prompt": 0,
+     "same_prompt_diff_text": 0,
+     "diff_prompt_diff_text": 0,
+     "diff_prompt_same_text": 0,
+     "diff_reason_code": 0,
+     "diff_casting": 0,
+     "reask_only_in_one": 250
+    }
+   },
+   "reconstructed_reask_reason_codes": {
+    "full": {
+     "UNSUPPORTED_PREDICATE": 1
+    },
+    "no_trace": {
+     "UNSUPPORTED_PREDICATE": 250
+    },
+    "no_execution_admission": {}
+   },
+   "reconstruction_disagrees_with_record": {}
+  }
+ ],
+ "llm_calls": 0,
+ "prompt_scan": {
+  "libraries_scanned": [
+   "outputs/v3_memories/memory_all.json",
+   "outputs/v3_memories/memory_heldout_clear_table_with_two_robots_and_put_in_cabinet.json",
+   "outputs/v3_memories/memory_heldout_cut_fruit_on_board.json",
+   "outputs/v3_memories/memory_heldout_cut_two_fruits_on_board.json",
+   "outputs/v3_memories/memory_heldout_dog_push_box_for_two_panda_transport.json",
+   "outputs/v3_memories/memory_heldout_ensure_all_fruits_on_table.json",
+   "outputs/v3_memories/memory_heldout_parallel_human_dual_asset_to_plate_or_bowl.json",
+   "outputs/v3_memories/memory_heldout_set_plate_and_fork_on_table.json",
+   "outputs/v3_memories/memory_heldout_toast_bread_and_set_plate.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_execution_admission/memory_all.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_execution_admission/memory_heldout_clear_table_with_two_robots_and_put_in_cabinet.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_execution_admission/memory_heldout_cut_fruit_on_board.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_execution_admission/memory_heldout_cut_two_fruits_on_board.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_execution_admission/memory_heldout_dog_push_box_for_two_panda_transport.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_execution_admission/memory_heldout_ensure_all_fruits_on_table.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_execution_admission/memory_heldout_parallel_human_dual_asset_to_plate_or_bowl.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_execution_admission/memory_heldout_set_plate_and_fork_on_table.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_execution_admission/memory_heldout_toast_bread_and_set_plate.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_trace/memory_all.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_trace/memory_heldout_clear_table_with_two_robots_and_put_in_cabinet.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_trace/memory_heldout_cut_fruit_on_board.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_trace/memory_heldout_cut_two_fruits_on_board.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_trace/memory_heldout_dog_push_box_for_two_panda_transport.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_trace/memory_heldout_ensure_all_fruits_on_table.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_trace/memory_heldout_parallel_human_dual_asset_to_plate_or_bowl.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_trace/memory_heldout_set_plate_and_fork_on_table.json",
+   "results/paper_viki_iclr2027/libraries/rq2/no_trace/memory_heldout_toast_bread_and_set_plate.json"
+  ],
+  "n_signatures": 163,
+  "instruction_hits": [],
+  "reask_template_hits": [],
+  "memory_refs_before_first_call": [],
+  "first_prompts": [
+   {
+    "index": 2,
+    "sha256": "aeaa52e6cba9fb75d46dc46f3f32a1ee2b1db8ba4d9f80fe69ffc73e7c343764",
+    "chars": 5033,
+    "library_signature_hits": [],
+    "hits_in_benchmark_text": []
+   },
+   {
+    "index": 3,
+    "sha256": "55ce47e3fc36435e29126ba1057c651c6d778e82c6a00b069b708a4091f96bdc",
+    "chars": 5045,
+    "library_signature_hits": [],
+    "hits_in_benchmark_text": []
+   },
+   {
+    "index": 5,
+    "sha256": "a58f5d215de142af08aae9f15d9b43f37f0e26f177ec58fabddab08255b935e6",
+    "chars": 5079,
+    "library_signature_hits": [],
+    "hits_in_benchmark_text": []
+   },
+   {
+    "index": 10,
+    "sha256": "03c995db3a645b1f02875978d3be758cfc92232f536c348353f1ea33d66f4722",
+    "chars": 5025,
+    "library_signature_hits": [],
+    "hits_in_benchmark_text": []
+   },
+   {
+    "index": 13,
+    "sha256": "d534c90ce5fdcf495ca2100c4be287a80110d364cc857ac1892f7e9809176a12",
+    "chars": 5084,
+    "library_signature_hits": [],
+    "hits_in_benchmark_text": []
+   }
+  ]
+ }
+}

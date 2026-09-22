@@ -1,0 +1,72 @@
+{
+ "ours_RS_R": {
+  "source": "all_scripts/bash_files/run_ours_rs_mem_r.sh",
+  "source_sha256": "c52f1802f55a1a74a1bb302cfddd189a2636e3607275aeb3e8dd7f6afe0f2df2",
+  "n_args": 25
+ },
+ "ours_RS_RS": {
+  "source": "all_scripts/bash_files/run_ours_rs_mem_rs.sh",
+  "source_sha256": "2a28129c7760687021e0c23bc4c9755676f3c9427c679b7c5f5f85a18f9ce269",
+  "n_args": 25
+ },
+ "ours_HRT_HRHT": {
+  "source": "all_scripts/bash_files/run_ours_hrt_mem_hr_ht.sh",
+  "source_sha256": "190853fc4d5c07e9292ba725aed41d59eb538f51715b74fcce2aee04d6e78121",
+  "n_args": 25
+ },
+ "ours_HRST_RSHRHT": {
+  "source": "all_scripts/bash_files/run_ours_hrst_mem_hrst.sh",
+  "source_sha256": "32bb3f51b062f0abbc71b8a300d31b11564e5b515fcba34448e789ad5890f1fe",
+  "n_args": 25
+ },
+ "rag_RS_R": {
+  "source": "all_scripts/bash_files/run_traj_rs_mem_r.sh",
+  "source_sha256": "b9aa688b8db824740a28765f9b1f8f8e4b8ccd07aa4ca04df67eaf32ebf93df5",
+  "n_args": 15
+ },
+ "rag_RS_RS": {
+  "source": "all_scripts/bash_files/run_traj_rs_mem_rs.sh",
+  "source_sha256": "c8ab2b331ac9da51cd659b9d7090649588aabd7a2f026c23aacf37bfff4e9834",
+  "n_args": 15
+ },
+ "rag_HRT_HRHT": {
+  "source": "all_scripts/bash_files/run_traj_rht_mem_rht.sh",
+  "source_sha256": "d2248e27a6b000a2fedc9502904c2c6c6eb0c78d0bcafddd01a303b1643eaa71",
+  "n_args": 15
+ },
+ "rag_HRST_RSHRHT": {
+  "source": "all_scripts/bash_files/run_traj_rhst_mem_rhst.sh",
+  "source_sha256": "9470ec786a79d6777b78e1a81b37ce5dfab7b015a171e0418aa0c70bb0e95a67",
+  "n_args": 15
+ },
+ "memento_RS_R": {
+  "source": "all_scripts/bash_files/run_memento_rs_mem_r.sh",
+  "source_sha256": "744054fa35569116b467a5691921da8c89086ad40f17913a9c106ae7272a7522",
+  "n_args": 23
+ },
+ "memento_RS_RS": {
+  "source": "all_scripts/bash_files/run_memento_rs_mem_rs.sh",
+  "source_sha256": "aa7b11e1aa6b2ac47b79b6e331631ff5c6a2a0ba14ee1c14f65bed4f1e2f61c3",
+  "n_args": 23
+ },
+ "memento_HRT_HRHT": {
+  "source": "all_scripts/bash_files/run_memento_rht_mem_rht.sh",
+  "source_sha256": "3e575d4ca352ef78021d90f29f3a78dfe5aefa8fae871ec037e2ec542a61b142",
+  "n_args": 23
+ },
+ "memento_HRST_RSHRHT": {
+  "source": "all_scripts/bash_files/run_memento_rhst_mem_rhst.sh",
+  "source_sha256": "c2f7d7c1fabe5f089edc9b0f993851c50ce3d8affcbdbed5619c30addd7ac9f5",
+  "n_args": 23
+ },
+ "zs": {
+  "source": "old/run_planner_demo_openrouter_llama31_70b_org.sh",
+  "source_sha256": "19f9383fd8fad9c7277a4048325bde12f5911733ef3bbb49fc83f2a1d3729b74",
+  "n_args": 11
+ },
+ "tom": {
+  "source": "old/run_planner_demo_openrouter_llama33_70b_tom.sh",
+  "source_sha256": "d848c8a50b82526f2360f00f6da2d57b77178472938f60358b5d537d419ddcf0",
+  "n_args": 11
+ }
+}

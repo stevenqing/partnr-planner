@@ -1,0 +1,20 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+[full] 327/924 = 0.3539  {'SOLVED': 327, 'NO_SCHEDULE': 266, 'OVER_BUDGET': 165, 'GOAL_UNMET': 163}
+# Post-answer ablation, 30B / fold (n=924, zero GPU)
+
+full replay 0.3539 vs published 0.3539 -- reproduces
+
+| arm | solved | rate | vs full | lost | gained | top reasons |
+|---|---|---|---|---|---|---|
+| full | 327/924 | 0.3539 |  |  |  | SOLVED 327, NO_SCHEDULE 266, OVER_BUDGET 165 |
+
+wrote /tmp/tmpcql52i5s/ours.json
+/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/outputs/viki_ablation/v3_libfold_fold_30B.json ours 0.3539 ref 0.46 {'delta': 0.1061, 'lost': 0, 'gained': 98, 'n_shared': 924}

@@ -1,0 +1,28 @@
+{
+ "base": "all_scripts/bash_files/run_ours_rs_mem_r.sh (Table 1 Llama-3.1-8B ours; tab:hr_failure config not found)",
+ "changed": {
+  "data_path": "task_classification_datasets/hr_eval_half.json.gz",
+  "rag_dataset_dir": "[data/hierarchical_skill_memory_heldout_hr_q/hierarchical_heterogeneous_rerange/]",
+  "num_proc": "2 per GPU (was 4)",
+  "+resume": "True",
+  "+seed_override": "0/1/2",
+  "PYTHONHASHSEED": "= seed",
+  "+retrieval_dump_dir": "logging only",
+  "+iclr_env_over_metrics": "True (same as B)"
+ },
+ "conditions": {
+  "C0": "both enable_rag=False",
+  "C1": "both enable_rag=True",
+  "C2": "agent_1 enable_rag=False",
+  "C3": "agent_1 ablation_config.include_ind_skills=False",
+  "C4": "both enable_rag=True + role_hint on each agent"
+ },
+ "unchanged": [
+  "v4 template",
+  "max_tokens 2000",
+  "rag_top_k 5",
+  "theta 0.3",
+  "instance_top_k 5",
+  "HF greedy"
+ ]
+}

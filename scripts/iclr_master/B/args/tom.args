@@ -1,0 +1,11 @@
+--config-name baselines/decentralized_zero_shot_react_summary.yaml
++evaluation.sequential_execution=True
+habitat.dataset.data_path=task_classification_datasets/rerange+spatial_matched_subtasks.json.gz
+evaluation.agents.agent_0.planner.plan_config.llm.generation_params.max_tokens=1500
+evaluation.agents.agent_1.planner.plan_config.llm.generation_params.max_tokens=1500
+instruct@evaluation.agents.agent_0.planner.plan_config.instruct=zero_shot_prompt_tom
+instruct@evaluation.agents.agent_1.planner.plan_config.instruct=zero_shot_prompt_tom
+evaluation.agents.agent_0.planner.plan_config.constrained_generation=False
+evaluation.agents.agent_1.planner.plan_config.constrained_generation=False
+evaluation.agents.agent_0.planner.plan_config.enable_rag=False
+evaluation.agents.agent_1.planner.plan_config.enable_rag=False

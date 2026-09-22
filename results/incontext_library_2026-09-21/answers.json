@@ -1,0 +1,239 @@
+{
+ "same-output (A1)": {
+  "status": "DONE",
+  "ending": "S2",
+  "numbers": [
+   {
+    "value": 1.0,
+    "numerator": 924,
+    "denominator": 924,
+    "source_path": "results/incontext_library_2026-09-21/work/A1/a1_summary.json",
+    "label": "first-turn raw identical across full/no_trace/no_adm, each ID and OOD cell (x3 models)"
+   },
+   {
+    "value": 1.0,
+    "numerator": 297,
+    "denominator": 297,
+    "source_path": "results/incontext_library_2026-09-21/work/A1/a1_summary.json",
+    "label": "first-turn raw identical, each CG cell (x3 models)"
+   },
+   {
+    "value": 46,
+    "numerator": 46,
+    "denominator": 924,
+    "source_path": "results/incontext_library_2026-09-21/work/A1/a1_summary.json",
+    "label": "72B ID re-asks, full arm (no_trace 924, no_adm 123)"
+   }
+  ],
+  "notes": "Differences come only from the re-ask: whether it fires depends on the library, and its prompt carries the planner's library-dependent reason code. Prompt contains no library content (163 probe strings, 0 hits). RQ1 sentence left unchanged per S2."
+ },
+ "cg-audit (A2)": {
+  "status": "DONE",
+  "ending": "PASS by user decision (task_id collisions, not the same episodes); literal rule gave HALTED",
+  "numbers": [
+   {
+    "value": 1242,
+    "numerator": 1242,
+    "denominator": null,
+    "source_path": "results/incontext_library_2026-09-21/work/A2/a2_summary.json",
+    "label": "tool-addressed train episodes (was 180)"
+   },
+   {
+    "value": 896,
+    "numerator": 896,
+    "denominator": null,
+    "source_path": "results/incontext_library_2026-09-21/work/A2/a2_summary.json",
+    "label": "transcripts / run dirs (was 884; 784 + 112)"
+   },
+   {
+    "value": 1033,
+    "numerator": 1033,
+    "denominator": 7196,
+    "source_path": "results/incontext_library_2026-09-21/work/A2/a2_summary.json",
+    "label": "actor-blind sensitivity train rows, unchanged"
+   },
+   {
+    "value": 295,
+    "numerator": 295,
+    "denominator": 297,
+    "source_path": "results/incontext_library_2026-09-21/work/A2/a2_summary.json",
+    "label": "distinct CG task ids, unchanged"
+   },
+   {
+    "value": 4,
+    "numerator": 4,
+    "denominator": 295,
+    "source_path": "results/incontext_library_2026-09-21/work/A2/a2_taskid_collisions.json",
+    "label": "CG task ids that also label train episodes; 2 in the induction half (350_9-1, 2395_9-1); 0/4 same episode"
+   },
+   {
+    "value": 0,
+    "numerator": 0,
+    "denominator": null,
+    "source_path": "results/incontext_library_2026-09-21/work/A2/a2_summary.json",
+    "label": "pool indices outside the induction half"
+   }
+  ],
+  "notes": "Appendix paragraph rewritten with these numbers; TODO[cg-audit] removed."
+ },
+ "gmemory-72b (A3)": {
+  "status": "DONE",
+  "ending": "all MATCH, TODO removed",
+  "numbers": [
+   {
+    "value": 0.5097,
+    "numerator": 471,
+    "denominator": 924,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "G-Memory 72B ID"
+   },
+   {
+    "value": 0.2078,
+    "numerator": 192,
+    "denominator": 924,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "G-Memory 72B OOD"
+   },
+   {
+    "value": 0.0471,
+    "numerator": 14,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "G-Memory 72B CG w/ Image"
+   },
+   {
+    "value": 0.0337,
+    "numerator": 10,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "G-Memory 72B CG w/o Image"
+   },
+   {
+    "value": 0.6498,
+    "numerator": 193,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "ours 30B CG w/ Image"
+   },
+   {
+    "value": 0.7239,
+    "numerator": 215,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "ours 30B CG w/o Image"
+   },
+   {
+    "value": 0.1515,
+    "numerator": 45,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "ours 7B CG w/ Image"
+   },
+   {
+    "value": 0.2559,
+    "numerator": 76,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "ours 7B CG w/o Image"
+   },
+   {
+    "value": 0.0249,
+    "numerator": 23,
+    "denominator": 924,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "ToM 72B ID"
+   },
+   {
+    "value": 0.0271,
+    "numerator": 25,
+    "denominator": 924,
+    "source_path": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "label": "ToM 72B OOD"
+   }
+  ],
+  "notes": "Sep 8 document matches (RESULTS-2026-09-08.md:19-23); no Sep 2 document with these numbers found. Official strict for G-Memory CG is 0/297 on both splits."
+ },
+ "inventory (A4)": {
+  "status": "DONE",
+  "ending": "nothing reusable; B run",
+  "numbers": [],
+  "notes": "Only in-prompt run: amendment11/inprompt_v2_full.jsonl, ID only, 19-operator reference library, not the Figure 2 library."
+ },
+ "in-context-library (B)": {
+  "status": "DONE",
+  "ending": "none of E1/E2/E3 fits; E2 structure used with its false clause replaced (see report §0)",
+  "numbers": [
+   {
+    "value": 0.030303030303030304,
+    "numerator": 9,
+    "denominator": 297,
+    "source_path": "results/incontext_library_2026-09-21/per_row/text.csv",
+    "label": "P CG w/o Image JSON-tolerant (official identical)"
+   },
+   {
+    "value": 0.0,
+    "numerator": 0,
+    "denominator": 297,
+    "source_path": "results/incontext_library_2026-09-21/per_row/imaged.csv",
+    "label": "P CG w/ Image JSON-tolerant (official identical)"
+   },
+   {
+    "value": 1.0,
+    "numerator": 9,
+    "denominator": 19,
+    "source_path": "results/incontext_library_2026-09-21/work/B/score_summary.json",
+    "label": "P vs G-Memory, w/o Image: P-only 9, G-only 10, p"
+   },
+   {
+    "value": 0.0078125,
+    "numerator": 8,
+    "denominator": 8,
+    "source_path": "results/incontext_library_2026-09-21/work/B/score_summary.json",
+    "label": "P vs zero-shot, w/o Image: 8 vs 0, p"
+   },
+   {
+    "value": 0.0001220703125,
+    "numerator": 0,
+    "denominator": 14,
+    "source_path": "results/incontext_library_2026-09-21/work/B/score_summary.json",
+    "label": "P vs G-Memory, w/ Image: 0 vs 14, p"
+   },
+   {
+    "value": 8.843436600416711e-75,
+    "numerator": 247,
+    "denominator": 247,
+    "source_path": "results/incontext_library_2026-09-21/work/B/score_summary.json",
+    "label": "ours vs P, w/o Image: 247 vs 0"
+   },
+   {
+    "value": 9.055679078826712e-72,
+    "numerator": 237,
+    "denominator": 237,
+    "source_path": "results/incontext_library_2026-09-21/work/B/score_summary.json",
+    "label": "ours vs P, w/ Image: 237 vs 0"
+   },
+   {
+    "value": 3,
+    "numerator": 3,
+    "denominator": 20,
+    "source_path": "results/incontext_library_2026-09-21/runs/text/incontext_library.smoke20.jsonl",
+    "label": "same 20 rows rerun: 0/20 in smoke, 3/20 in the full run; 19/20 responses differ"
+   },
+   {
+    "value": 0.03367003367003367,
+    "numerator": 10,
+    "denominator": 297,
+    "source_path": "results/incontext_library_2026-09-21/work/B/score_summary.json",
+    "label": "P-canon, w/ Image, descriptive"
+   },
+   {
+    "value": 0.08080808080808081,
+    "numerator": 24,
+    "denominator": 297,
+    "source_path": "results/incontext_library_2026-09-21/work/B/score_summary.json",
+    "label": "G-canon, w/ Image, descriptive"
+   }
+  ],
+  "notes": "614 calls (20 smoke + 594), CALL_CAP 700. Library block sha256 13e33587... (file) / e8d9028c... (as inserted, trailing newline stripped), identical on all 594 rows."
+ }
+}

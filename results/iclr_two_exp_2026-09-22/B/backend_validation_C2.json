@@ -1,0 +1,172 @@
+{
+ "hf": {
+  "episodes": 3,
+  "turns": 95,
+  "err_turns": 11,
+  "err_rate": 0.1158,
+  "success": [
+   0.0,
+   0.0
+  ],
+  "pc_mean": 0.7083,
+  "runtime_mean": 1407.2
+ },
+ "vllm": {
+  "episodes": 3,
+  "turns": 219,
+  "err_turns": 11,
+  "err_rate": 0.0502,
+  "success": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "pc_mean": 0.75,
+  "runtime_mean": 553.1
+ },
+ "episodes_compared": [
+  "439",
+  "445",
+  "447"
+ ],
+ "per_episode": {
+  "439": {
+   "hf": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.75,
+    "sim_steps": 4416.0,
+    "runtime": 798.17427277565,
+    "info": null
+   },
+   "vllm": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.75,
+    "sim_steps": 19910.0,
+    "runtime": 622.2754125595093,
+    "info": null
+   },
+   "agent0": {
+    "hf": {
+     "turns": 24,
+     "err_turns": 0,
+     "mean_chars": 110.3
+    },
+    "vllm": {
+     "turns": 29,
+     "err_turns": 0,
+     "mean_chars": 103.3
+    },
+    "first_divergence_turn": 3,
+    "same_prefix_actions": 3
+   },
+   "agent1": {
+    "hf": {
+     "turns": 26,
+     "err_turns": 7,
+     "mean_chars": 134.7
+    },
+    "vllm": {
+     "turns": 46,
+     "err_turns": 0,
+     "mean_chars": 135.8
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   }
+  },
+  "445": {
+   "hf": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.6666666666666666,
+    "sim_steps": 20000.0,
+    "runtime": 2016.3140375614166,
+    "info": null
+   },
+   "vllm": {
+    "stats_ok": true,
+    "success": 1.0,
+    "pc": 1.0,
+    "sim_steps": 3236.0,
+    "runtime": 596.1358759403229,
+    "info": null
+   },
+   "agent0": {
+    "hf": {
+     "turns": 21,
+     "err_turns": 0,
+     "mean_chars": 116.4
+    },
+    "vllm": {
+     "turns": 23,
+     "err_turns": 0,
+     "mean_chars": 116.0
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   },
+   "agent1": {
+    "hf": {
+     "turns": 24,
+     "err_turns": 4,
+     "mean_chars": 1389.0
+    },
+    "vllm": {
+     "turns": 45,
+     "err_turns": 6,
+     "mean_chars": 110.5
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   }
+  },
+  "447": {
+   "hf": {
+    "stats_ok": false,
+    "success": null,
+    "pc": null,
+    "sim_steps": null,
+    "runtime": null,
+    "info": " try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+   },
+   "vllm": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.5,
+    "sim_steps": 3250.0,
+    "runtime": 440.84153723716736,
+    "info": null
+   },
+   "agent0": {
+    "hf": {
+     "turns": 0,
+     "err_turns": 0,
+     "mean_chars": null
+    },
+    "vllm": {
+     "turns": 30,
+     "err_turns": 0,
+     "mean_chars": 137.0
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   },
+   "agent1": {
+    "hf": {
+     "turns": 0,
+     "err_turns": 0,
+     "mean_chars": null
+    },
+    "vllm": {
+     "turns": 46,
+     "err_turns": 5,
+     "mean_chars": 109.3
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   }
+  }
+ }
+}

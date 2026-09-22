@@ -1,0 +1,53 @@
+{
+ "n": 8,
+ "rows": [
+  {
+   "artefact": "results/viki_memory_experiments/amendment11/skill_memory_v2.fold_clear_table_with_two_robots_and_put_in_cabinet.json",
+   "excluded_family": "clear_table_with_two_robots_and_put_in_cabinet",
+   "layer1_operators": 16,
+   "layer1_sha256": "801bb0ca2bcb6a213aa34116768510facc615c87711308cc44312b2095e08cdd"
+  },
+  {
+   "artefact": "results/viki_memory_experiments/amendment11/skill_memory_v2.fold_cut_fruit_on_board.json",
+   "excluded_family": "cut_fruit_on_board",
+   "layer1_operators": 18,
+   "layer1_sha256": "4aa7d97e40f927bd35285b2b6e25716ecaeb2ceb0a430e508c34e31e549a5413"
+  },
+  {
+   "artefact": "results/viki_memory_experiments/amendment11/skill_memory_v2.fold_cut_two_fruits_on_board.json",
+   "excluded_family": "cut_two_fruits_on_board",
+   "layer1_operators": 18,
+   "layer1_sha256": "df27dd535751a974ca24c9c5f845d1076d2ae0ad53e5dd3705ca7a911cadf6ac"
+  },
+  {
+   "artefact": "results/viki_memory_experiments/amendment11/skill_memory_v2.fold_dog_push_box_for_two_panda_transport.json",
+   "excluded_family": "dog_push_box_for_two_panda_transport",
+   "layer1_operators": 13,
+   "layer1_sha256": "b47a378bf5d319c3b05644a1afd9e632b840f92060155419ad5eadc6eec6b8fd"
+  },
+  {
+   "artefact": "results/viki_memory_experiments/amendment11/skill_memory_v2.fold_ensure_all_fruits_on_table.json",
+   "excluded_family": "ensure_all_fruits_on_table",
+   "layer1_operators": 19,
+   "layer1_sha256": "bb8d029a5b105d95b649c31aec653d9309bb3a6a61490fc98440da22b94cea06"
+  },
+  {
+   "artefact": "results/viki_memory_experiments/amendment11/skill_memory_v2.fold_parallel_human_dual_asset_to_plate_or_bowl.json",
+   "excluded_family": "parallel_human_dual_asset_to_plate_or_bowl",
+   "layer1_operators": 19,
+   "layer1_sha256": "5c5daa3e8171954995d7268bb21a528e98537a1a38ea08e7708d68097a6f379b"
+  },
+  {
+   "artefact": "results/viki_memory_experiments/amendment11/skill_memory_v2.fold_set_plate_and_fork_on_table.json",
+   "excluded_family": "set_plate_and_fork_on_table",
+   "layer1_operators": 19,
+   "layer1_sha256": "1ea006937f2a75ff0585f55ea28c908a8dc05f2f9ad1124df25a15c5cfec86c6"
+  },
+  {
+   "artefact": "results/viki_memory_experiments/amendment11/skill_memory_v2.fold_toast_bread_and_set_plate.json",
+   "excluded_family": "toast_bread_and_set_plate",
+   "layer1_operators": 19,
+   "layer1_sha256": "c8fe1e825e81b3e04160c22dec0875d3a2f75cc78b4b852c4a19e2b1b01b6070"
+  }
+ ]
+}

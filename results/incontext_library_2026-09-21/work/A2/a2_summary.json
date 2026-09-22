@@ -1,0 +1,707 @@
+{
+ "task": "A2 cg-audit (v3 library)",
+ "llm_calls": 0,
+ "verdict": "HALTED",
+ "figure2_cg_library_paths": [
+  "outputs/v3_memories/memory_all.json"
+ ],
+ "library": {
+  "path": "outputs/v3_memories/memory_all.json",
+  "sha256": "d580b15c90b539aee5cb9f761d460f4b8e57b36b84af6ca4b8379f59d8237c87",
+  "built_from": "union of library_ensure_all_fruits_on_table.json, library_single_move_asset_to_target.json, library_clear_table_with_two_robots_and_put_in_cabinet.json, library_cut_fruit_on_board.json, library_wash_fruit_and_serve.json, library_sequential_pick_two_and_place.json, library_set_plate_and_fork_on_table.json, library_toast_bread_and_set_plate.json, library_parallel_human_dual_asset_to_plate_or_bowl.json, library_cut_two_fruits_on_board.json, library_serve_bread_from_counter.json, library_serve_bread_after_checking_cabinet.json, library_dog_check_environment.json",
+  "union_families": [
+   "clear_table_with_two_robots_and_put_in_cabinet",
+   "cut_fruit_on_board",
+   "cut_two_fruits_on_board",
+   "dog_check_environment",
+   "dog_push_box_for_two_panda_transport",
+   "ensure_all_fruits_on_table",
+   "parallel_human_dual_asset_to_plate_or_bowl",
+   "sequential_pick_two_and_place",
+   "serve_bread_after_checking_cabinet",
+   "serve_bread_from_counter",
+   "set_plate_and_fork_on_table",
+   "single_move_asset_to_target",
+   "toast_bread_and_set_plate",
+   "wash_fruit_and_serve"
+  ],
+  "families_with_library": [
+   "clear_table_with_two_robots_and_put_in_cabinet",
+   "cut_fruit_on_board",
+   "cut_two_fruits_on_board",
+   "dog_check_environment",
+   "ensure_all_fruits_on_table",
+   "parallel_human_dual_asset_to_plate_or_bowl",
+   "sequential_pick_two_and_place",
+   "serve_bread_after_checking_cabinet",
+   "serve_bread_from_counter",
+   "set_plate_and_fork_on_table",
+   "single_move_asset_to_target",
+   "toast_bread_and_set_plate",
+   "wash_fruit_and_serve"
+  ],
+  "families_without_library": [
+   "dog_push_box_for_two_panda_transport"
+  ],
+  "layer2_3": "re-mined in place by scripts/viki_union_library.py on the union pool (3598 episodes); NOT borrowed",
+  "workbench_reference_layers": {
+   "path": "results/viki_memory_experiments/amendment11/skill_memory_v2.json",
+   "built_from": "VIKI-L2 train.parquet, even-indexed episodes",
+   "used_by": "viki_agentic_rung_abstraction.py and viki_assemble_agentic_library.py Workbench"
+  }
+ },
+ "appendix_numbers": {
+  "tool_addressed_train_indices": {
+   "old": 180,
+   "new": 1242,
+   "contributing_families_only": 1081,
+   "including_result_side": 2496
+  },
+  "transcripts_run_dirs": {
+   "old": 884,
+   "new_run_dirs": 896,
+   "new_transcripts": 896,
+   "new_verdicts": 896,
+   "by_round": {
+    "R1": 784,
+    "R2": 112
+   }
+  },
+  "actor_blind_sensitivity_train_rows": {
+   "old": 1033,
+   "new": 1033,
+   "families": {
+    "toast_bread_and_set_plate": 406,
+    "wash_fruit_and_serve": 627
+   },
+   "indices_identical_to_0905": true
+  },
+  "decisive_detector_train_rows": {
+   "old": 0,
+   "new": 0
+  },
+  "cg_distinct_task_ids": {
+   "old": 295,
+   "new": 295,
+   "rows_per_form": {
+    "text": 297,
+    "imaged": 297
+   },
+   "repeated": {
+    "4307_8-1": 2,
+    "1426_9-1": 2
+   }
+  }
+ },
+ "l1_selfcheck": {
+  "decisive_detector": "structural: cut unit (placement ordered before an activation) AND an independent delivery (placement entangled with no activation)",
+  "comp_rows": 295,
+  "comp_rows_detected": 295,
+  "comp_detection_rate": 1.0,
+  "donor_family_rows_detected": {
+   "cut_fruit_on_board": 0,
+   "cut_two_fruits_on_board": 0
+  },
+  "sensitivity_actor_blind_detector": "cut unit WITHOUT the two-robot requirement -- reported as an upper bound",
+  "sensitivity_comp_rows_detected": 295,
+  "sensitivity_train_rows_flagged": 1033,
+  "sensitivity_families": {
+   "toast_bread_and_set_plate": 406,
+   "wash_fruit_and_serve": 627
+  },
+  "superseded_detector": "(effect, solo|coop) multiset -- unfit, kept as the record",
+  "superseded_comp_rows_detected": 0,
+  "superseded_is_unfit": true,
+  "pass": true
+ },
+ "train_rows": 7196,
+ "induction_half": 3598,
+ "cg_task_ids_present_anywhere_in_train_7196": 4,
+ "pools": [
+  {
+   "pool": "R1 rung seed episodes (frozen_sweep_v2)",
+   "n_indices": 756,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 56,
+    "serve_bread_from_counter": 56,
+    "dog_push_box_for_two_panda_transport": 56,
+    "single_move_asset_to_target": 56,
+    "toast_bread_and_set_plate": 28,
+    "cut_fruit_on_board": 56,
+    "serve_bread_after_checking_cabinet": 56,
+    "wash_fruit_and_serve": 56,
+    "ensure_all_fruits_on_table": 56,
+    "parallel_human_dual_asset_to_plate_or_bowl": 56,
+    "set_plate_and_fork_on_table": 56,
+    "cut_two_fruits_on_board": 56,
+    "clear_table_with_two_robots_and_put_in_cabinet": 56,
+    "dog_check_environment": 56
+   }
+  },
+  {
+   "pool": "R1 holdout",
+   "n_indices": 56,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "ensure_all_fruits_on_table": 4,
+    "single_move_asset_to_target": 4,
+    "cut_fruit_on_board": 4,
+    "toast_bread_and_set_plate": 4,
+    "clear_table_with_two_robots_and_put_in_cabinet": 4,
+    "wash_fruit_and_serve": 4,
+    "parallel_human_dual_asset_to_plate_or_bowl": 4,
+    "set_plate_and_fork_on_table": 4,
+    "cut_two_fruits_on_board": 4,
+    "sequential_pick_two_and_place": 4,
+    "serve_bread_from_counter": 4,
+    "serve_bread_after_checking_cabinet": 4,
+    "dog_push_box_for_two_panda_transport": 4,
+    "dog_check_environment": 4
+   }
+  },
+  {
+   "pool": "R1 coverage_pool",
+   "n_indices": 0,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {}
+  },
+  {
+   "pool": "R2 rung seed episodes (outputs/v3/targets.json)",
+   "n_indices": 28,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 2,
+    "serve_bread_from_counter": 2,
+    "dog_push_box_for_two_panda_transport": 2,
+    "single_move_asset_to_target": 2,
+    "toast_bread_and_set_plate": 2,
+    "cut_fruit_on_board": 2,
+    "serve_bread_after_checking_cabinet": 2,
+    "wash_fruit_and_serve": 2,
+    "ensure_all_fruits_on_table": 2,
+    "parallel_human_dual_asset_to_plate_or_bowl": 2,
+    "set_plate_and_fork_on_table": 2,
+    "cut_two_fruits_on_board": 2,
+    "clear_table_with_two_robots_and_put_in_cabinet": 2,
+    "dog_check_environment": 2
+   }
+  },
+  {
+   "pool": "R2 holdout",
+   "n_indices": 56,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "single_move_asset_to_target": 4,
+    "cut_fruit_on_board": 4,
+    "parallel_human_dual_asset_to_plate_or_bowl": 4,
+    "ensure_all_fruits_on_table": 4,
+    "wash_fruit_and_serve": 4,
+    "toast_bread_and_set_plate": 4,
+    "dog_push_box_for_two_panda_transport": 4,
+    "cut_two_fruits_on_board": 4,
+    "sequential_pick_two_and_place": 4,
+    "dog_check_environment": 4,
+    "clear_table_with_two_robots_and_put_in_cabinet": 4,
+    "set_plate_and_fork_on_table": 4,
+    "serve_bread_after_checking_cabinet": 4,
+    "serve_bread_from_counter": 4
+   }
+  },
+  {
+   "pool": "R2 coverage_pool (superset of the unsolved list shown)",
+   "n_indices": 112,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "single_move_asset_to_target": 8,
+    "cut_fruit_on_board": 8,
+    "parallel_human_dual_asset_to_plate_or_bowl": 8,
+    "ensure_all_fruits_on_table": 8,
+    "wash_fruit_and_serve": 8,
+    "toast_bread_and_set_plate": 8,
+    "dog_push_box_for_two_panda_transport": 8,
+    "cut_two_fruits_on_board": 8,
+    "sequential_pick_two_and_place": 8,
+    "dog_check_environment": 8,
+    "clear_table_with_two_robots_and_put_in_cabinet": 8,
+    "set_plate_and_fork_on_table": 8,
+    "serve_bread_after_checking_cabinet": 8,
+    "serve_bread_from_counter": 8
+   }
+  },
+  {
+   "pool": "seed episodes from run-dir names",
+   "n_indices": 756,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 56,
+    "serve_bread_from_counter": 56,
+    "dog_push_box_for_two_panda_transport": 56,
+    "single_move_asset_to_target": 56,
+    "toast_bread_and_set_plate": 28,
+    "cut_fruit_on_board": 56,
+    "serve_bread_after_checking_cabinet": 56,
+    "wash_fruit_and_serve": 56,
+    "ensure_all_fruits_on_table": 56,
+    "parallel_human_dual_asset_to_plate_or_bowl": 56,
+    "set_plate_and_fork_on_table": 56,
+    "cut_two_fruits_on_board": 56,
+    "clear_table_with_two_robots_and_put_in_cabinet": 56,
+    "dog_check_environment": 56
+   }
+  },
+  {
+   "pool": "all tool-addressed episodes (request side, 09-05 rule)",
+   "n_indices": 1242,
+   "intersect_cg_task_ids": 1,
+   "cg_hits": [
+    {
+     "workbench_index": 702,
+     "train_index": 1404,
+     "task_id": "350_9-1"
+    }
+   ],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 85,
+    "serve_bread_from_counter": 65,
+    "dog_push_box_for_two_panda_transport": 57,
+    "single_move_asset_to_target": 131,
+    "toast_bread_and_set_plate": 55,
+    "cut_fruit_on_board": 116,
+    "serve_bread_after_checking_cabinet": 65,
+    "wash_fruit_and_serve": 96,
+    "ensure_all_fruits_on_table": 164,
+    "parallel_human_dual_asset_to_plate_or_bowl": 77,
+    "set_plate_and_fork_on_table": 74,
+    "cut_two_fruits_on_board": 75,
+    "clear_table_with_two_robots_and_put_in_cabinet": 126,
+    "dog_check_environment": 56
+   }
+  },
+  {
+   "pool": "tool-addressed, contributing families only",
+   "n_indices": 1081,
+   "intersect_cg_task_ids": 1,
+   "cg_hits": [
+    {
+     "workbench_index": 702,
+     "train_index": 1404,
+     "task_id": "350_9-1"
+    }
+   ],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 76,
+    "serve_bread_from_counter": 63,
+    "dog_push_box_for_two_panda_transport": 10,
+    "single_move_asset_to_target": 103,
+    "toast_bread_and_set_plate": 49,
+    "cut_fruit_on_board": 112,
+    "serve_bread_after_checking_cabinet": 60,
+    "wash_fruit_and_serve": 92,
+    "ensure_all_fruits_on_table": 135,
+    "parallel_human_dual_asset_to_plate_or_bowl": 69,
+    "set_plate_and_fork_on_table": 74,
+    "cut_two_fruits_on_board": 74,
+    "clear_table_with_two_robots_and_put_in_cabinet": 108,
+    "dog_check_environment": 56
+   }
+  },
+  {
+   "pool": "indices shown inside tool results (e.g. list_episodes pages)",
+   "n_indices": 2496,
+   "intersect_cg_task_ids": 2,
+   "cg_hits": [
+    {
+     "workbench_index": 702,
+     "train_index": 1404,
+     "task_id": "350_9-1"
+    },
+    {
+     "workbench_index": 1346,
+     "train_index": 2692,
+     "task_id": "2395_9-1"
+    }
+   ],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 146,
+    "serve_bread_from_counter": 95,
+    "dog_push_box_for_two_panda_transport": 60,
+    "single_move_asset_to_target": 288,
+    "toast_bread_and_set_plate": 141,
+    "cut_fruit_on_board": 272,
+    "serve_bread_after_checking_cabinet": 95,
+    "wash_fruit_and_serve": 200,
+    "ensure_all_fruits_on_table": 429,
+    "parallel_human_dual_asset_to_plate_or_bowl": 125,
+    "set_plate_and_fork_on_table": 130,
+    "cut_two_fruits_on_board": 161,
+    "clear_table_with_two_robots_and_put_in_cabinet": 298,
+    "dog_check_environment": 56
+   }
+  },
+  {
+   "pool": "tool:run_operator",
+   "n_indices": 992,
+   "intersect_cg_task_ids": 1,
+   "cg_hits": [
+    {
+     "workbench_index": 702,
+     "train_index": 1404,
+     "task_id": "350_9-1"
+    }
+   ],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 72,
+    "serve_bread_from_counter": 55,
+    "dog_push_box_for_two_panda_transport": 55,
+    "single_move_asset_to_target": 89,
+    "toast_bread_and_set_plate": 49,
+    "cut_fruit_on_board": 86,
+    "serve_bread_after_checking_cabinet": 55,
+    "wash_fruit_and_serve": 89,
+    "ensure_all_fruits_on_table": 135,
+    "parallel_human_dual_asset_to_plate_or_bowl": 66,
+    "set_plate_and_fork_on_table": 68,
+    "cut_two_fruits_on_board": 49,
+    "clear_table_with_two_robots_and_put_in_cabinet": 102,
+    "dog_check_environment": 22
+   }
+  },
+  {
+   "pool": "tool:try_bind",
+   "n_indices": 1052,
+   "intersect_cg_task_ids": 1,
+   "cg_hits": [
+    {
+     "workbench_index": 702,
+     "train_index": 1404,
+     "task_id": "350_9-1"
+    }
+   ],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 74,
+    "serve_bread_from_counter": 56,
+    "dog_push_box_for_two_panda_transport": 55,
+    "single_move_asset_to_target": 94,
+    "toast_bread_and_set_plate": 49,
+    "cut_fruit_on_board": 106,
+    "serve_bread_after_checking_cabinet": 56,
+    "wash_fruit_and_serve": 89,
+    "ensure_all_fruits_on_table": 144,
+    "parallel_human_dual_asset_to_plate_or_bowl": 66,
+    "set_plate_and_fork_on_table": 69,
+    "cut_two_fruits_on_board": 68,
+    "clear_table_with_two_robots_and_put_in_cabinet": 104,
+    "dog_check_environment": 22
+   }
+  },
+  {
+   "pool": "tool:check_actor",
+   "n_indices": 1242,
+   "intersect_cg_task_ids": 1,
+   "cg_hits": [
+    {
+     "workbench_index": 702,
+     "train_index": 1404,
+     "task_id": "350_9-1"
+    }
+   ],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 85,
+    "serve_bread_from_counter": 65,
+    "dog_push_box_for_two_panda_transport": 57,
+    "single_move_asset_to_target": 131,
+    "toast_bread_and_set_plate": 55,
+    "cut_fruit_on_board": 116,
+    "serve_bread_after_checking_cabinet": 65,
+    "wash_fruit_and_serve": 96,
+    "ensure_all_fruits_on_table": 164,
+    "parallel_human_dual_asset_to_plate_or_bowl": 77,
+    "set_plate_and_fork_on_table": 74,
+    "cut_two_fruits_on_board": 75,
+    "clear_table_with_two_robots_and_put_in_cabinet": 126,
+    "dog_check_environment": 56
+   }
+  },
+  {
+   "pool": "tool:contrast_actors",
+   "n_indices": 201,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 23,
+    "serve_bread_from_counter": 10,
+    "dog_push_box_for_two_panda_transport": 7,
+    "single_move_asset_to_target": 16,
+    "toast_bread_and_set_plate": 12,
+    "cut_fruit_on_board": 17,
+    "serve_bread_after_checking_cabinet": 4,
+    "wash_fruit_and_serve": 13,
+    "ensure_all_fruits_on_table": 26,
+    "parallel_human_dual_asset_to_plate_or_bowl": 25,
+    "set_plate_and_fork_on_table": 14,
+    "cut_two_fruits_on_board": 5,
+    "clear_table_with_two_robots_and_put_in_cabinet": 25,
+    "dog_check_environment": 4
+   }
+  },
+  {
+   "pool": "tool:show_trace",
+   "n_indices": 1242,
+   "intersect_cg_task_ids": 1,
+   "cg_hits": [
+    {
+     "workbench_index": 702,
+     "train_index": 1404,
+     "task_id": "350_9-1"
+    }
+   ],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 85,
+    "serve_bread_from_counter": 65,
+    "dog_push_box_for_two_panda_transport": 57,
+    "single_move_asset_to_target": 131,
+    "toast_bread_and_set_plate": 55,
+    "cut_fruit_on_board": 116,
+    "serve_bread_after_checking_cabinet": 65,
+    "wash_fruit_and_serve": 96,
+    "ensure_all_fruits_on_table": 164,
+    "parallel_human_dual_asset_to_plate_or_bowl": 77,
+    "set_plate_and_fork_on_table": 74,
+    "cut_two_fruits_on_board": 75,
+    "clear_table_with_two_robots_and_put_in_cabinet": 126,
+    "dog_check_environment": 56
+   }
+  },
+  {
+   "pool": "assembly support probe range(60)",
+   "n_indices": 60,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 3,
+    "serve_bread_from_counter": 2,
+    "dog_push_box_for_two_panda_transport": 4,
+    "single_move_asset_to_target": 7,
+    "toast_bread_and_set_plate": 3,
+    "cut_fruit_on_board": 7,
+    "serve_bread_after_checking_cabinet": 1,
+    "wash_fruit_and_serve": 7,
+    "ensure_all_fruits_on_table": 10,
+    "parallel_human_dual_asset_to_plate_or_bowl": 5,
+    "set_plate_and_fork_on_table": 2,
+    "cut_two_fruits_on_board": 3,
+    "clear_table_with_two_robots_and_put_in_cabinet": 3,
+    "dog_check_environment": 3
+   }
+  },
+  {
+   "pool": "union support probe pool_indices[:60]",
+   "n_indices": 60,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 3,
+    "serve_bread_from_counter": 2,
+    "dog_push_box_for_two_panda_transport": 4,
+    "single_move_asset_to_target": 7,
+    "toast_bread_and_set_plate": 3,
+    "cut_fruit_on_board": 7,
+    "serve_bread_after_checking_cabinet": 1,
+    "wash_fruit_and_serve": 7,
+    "ensure_all_fruits_on_table": 10,
+    "parallel_human_dual_asset_to_plate_or_bowl": 5,
+    "set_plate_and_fork_on_table": 2,
+    "cut_two_fruits_on_board": 3,
+    "clear_table_with_two_robots_and_put_in_cabinet": 3,
+    "dog_check_environment": 3
+   }
+  },
+  {
+   "pool": "accepted-operator provenance verified_on",
+   "n_indices": 44,
+   "intersect_cg_task_ids": 0,
+   "cg_hits": [],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 1,
+    "serve_bread_from_counter": 2,
+    "single_move_asset_to_target": 5,
+    "toast_bread_and_set_plate": 3,
+    "cut_fruit_on_board": 7,
+    "serve_bread_after_checking_cabinet": 1,
+    "wash_fruit_and_serve": 7,
+    "ensure_all_fruits_on_table": 3,
+    "parallel_human_dual_asset_to_plate_or_bowl": 5,
+    "set_plate_and_fork_on_table": 2,
+    "cut_two_fruits_on_board": 3,
+    "clear_table_with_two_robots_and_put_in_cabinet": 3,
+    "dog_check_environment": 2
+   }
+  },
+  {
+   "pool": "Layer 2/3 mining pool (induction half & 14 union families)",
+   "n_indices": 3598,
+   "intersect_cg_task_ids": 2,
+   "cg_hits": [
+    {
+     "workbench_index": 702,
+     "train_index": 1404,
+     "task_id": "350_9-1"
+    },
+    {
+     "workbench_index": 1346,
+     "train_index": 2692,
+     "task_id": "2395_9-1"
+    }
+   ],
+   "intersect_train_with_heldout_sig_decisive": 0,
+   "indices_outside_induction_half": 0,
+   "outside": [],
+   "families": {
+    "sequential_pick_two_and_place": 207,
+    "serve_bread_from_counter": 146,
+    "dog_push_box_for_two_panda_transport": 89,
+    "single_move_asset_to_target": 430,
+    "toast_bread_and_set_plate": 191,
+    "cut_fruit_on_board": 384,
+    "serve_bread_after_checking_cabinet": 146,
+    "wash_fruit_and_serve": 315,
+    "ensure_all_fruits_on_table": 599,
+    "parallel_human_dual_asset_to_plate_or_bowl": 190,
+    "set_plate_and_fork_on_table": 206,
+    "cut_two_fruits_on_board": 190,
+    "clear_table_with_two_robots_and_put_in_cabinet": 422,
+    "dog_check_environment": 83
+   }
+  }
+ ],
+ "totals": {
+  "cg_task_id_hits": 10,
+  "decisive_sig_hits": 0,
+  "indices_outside_induction_half": 0,
+  "exact_task_id_text_matches": 0,
+  "trigram_ge_0.9": 0
+ },
+ "text_examples": {
+  "exact": [],
+  "trigram": []
+ },
+ "inputs_sha256": {
+  "outputs/v3_memories/memory_all.json": "d580b15c90b539aee5cb9f761d460f4b8e57b36b84af6ca4b8379f59d8237c87",
+  "results/frozen_sweep_v2.json": "db513c8cbf7700a92b2e1345f69c27b8e2fc772e5147fc8821148ab198477226",
+  "outputs/v3/targets.json": "4bc8f7e8563c8915a9c067a0aa0ca8d52ba7aabf6e6d6ad7bd1b30f6fee1a9d2",
+  "results/viki_memory_experiments/amendment11/skill_memory_v2.json": "99dc28d4d3bb8fc31189dbea54a91bb81c005eb198d02b3fe59afe984bda0213",
+  "train.parquet": "7bc46fc29a001eb83953631ba2cc710638a21d774f178cdba62177a3ce9091dd"
+ },
+ "taskid_collision_analysis": {
+  "cg_ids_in_test": 295,
+  "cg_ids": 295,
+  "train_distinct_ids": 7134,
+  "test_distinct_ids": 1795,
+  "train_test_shared_ids": 24,
+  "cg_ids_in_train": 4,
+  "same_episode_count": 0,
+  "rows_brief": [
+   {
+    "task_id": "210_9-1",
+    "train_index": 1043,
+    "half": "selfcheck",
+    "workbench_index": null,
+    "train_task_name": "cut_two_fruits_on_board",
+    "cg_source_test_row": 1579,
+    "identical_fields_vs_cg": [
+     "layout_id"
+    ]
+   },
+   {
+    "task_id": "2395_9-1",
+    "train_index": 2692,
+    "half": "induction",
+    "workbench_index": 1346,
+    "train_task_name": "cut_two_fruits_on_board",
+    "cg_source_test_row": 1731,
+    "identical_fields_vs_cg": []
+   },
+   {
+    "task_id": "350_9-1",
+    "train_index": 1404,
+    "half": "induction",
+    "workbench_index": 702,
+    "train_task_name": "cut_two_fruits_on_board",
+    "cg_source_test_row": 531,
+    "identical_fields_vs_cg": []
+   },
+   {
+    "task_id": "92_8-1",
+    "train_index": 1863,
+    "half": "selfcheck",
+    "workbench_index": null,
+    "train_task_name": "cut_fruit_on_board",
+    "cg_source_test_row": 1331,
+    "identical_fields_vs_cg": []
+   }
+  ]
+ },
+ "verdict_rule_applied": "task_id intersection non-zero -> HALTED (literal rule); content check: same_episode_count=0"
+}

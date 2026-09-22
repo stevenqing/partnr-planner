@@ -1,0 +1,42 @@
+{
+ "case": "a",
+ "rule_source": "scripts/viki_amendment10_recombine.py:40-41 (CUTTING x DELIVERY), docstring lines 3-14",
+ "H_structural": [
+  "[true, true]"
+ ],
+ "H_multiset_diagnostic": [
+  "[[\"is_activated\", \"solo\"], [\"pos.name\", \"solo\"], [\"pos.name\", \"solo\"], [\"pos.name\", \"solo\"]]",
+  "[[\"is_activated\", \"solo\"], [\"pos.name\", \"solo\"], [\"pos.name\", \"solo\"], [\"pos.name\", \"unknown\"]]",
+  "[[\"is_activated\", \"solo\"], [\"pos.name\", \"solo\"], [\"pos.name\", \"solo\"]]",
+  "[[\"is_activated\", \"solo\"], [\"pos.name\", \"solo\"], [\"pos.name\", \"unknown\"]]"
+ ],
+ "H_ordered_diagnostic": [
+  "[[\"pos.name\", \"solo\"], [\"is_activated\", \"solo\"], [\"pos.name\", \"solo\"]]",
+  "[[\"pos.name\", \"solo\"], [\"is_activated\", \"solo\"], [\"pos.name\", \"unknown\"]]",
+  "[[\"pos.name\", \"solo\"], [\"pos.name\", \"solo\"], [\"is_activated\", \"solo\"], [\"pos.name\", \"solo\"]]",
+  "[[\"pos.name\", \"solo\"], [\"pos.name\", \"solo\"], [\"is_activated\", \"solo\"], [\"pos.name\", \"unknown\"]]"
+ ],
+ "comp_rows_carrying_the_heldout_combination": 295,
+ "comp_distinct_task_ids": 295,
+ "selfcheck": {
+  "decisive_detector": "structural: cut unit (placement ordered before an activation) AND an independent delivery (placement entangled with no activation)",
+  "comp_rows": 295,
+  "comp_rows_detected": 295,
+  "comp_detection_rate": 1.0,
+  "donor_family_rows_detected": {
+   "cut_fruit_on_board": 0,
+   "cut_two_fruits_on_board": 0
+  },
+  "sensitivity_actor_blind_detector": "cut unit WITHOUT the two-robot requirement -- reported as an upper bound",
+  "sensitivity_comp_rows_detected": 295,
+  "sensitivity_train_rows_flagged": 1033,
+  "sensitivity_families": {
+   "toast_bread_and_set_plate": 406,
+   "wash_fruit_and_serve": 627
+  },
+  "superseded_detector": "(effect, solo|coop) multiset -- unfit, kept as the record",
+  "superseded_comp_rows_detected": 0,
+  "superseded_is_unfit": true,
+  "pass": true
+ }
+}

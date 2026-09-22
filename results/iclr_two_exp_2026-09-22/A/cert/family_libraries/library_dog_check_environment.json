@@ -1,0 +1,82 @@
+{
+ "operators": [
+  {
+   "kind": "achievement",
+   "effect": {
+    "key": "is_activated",
+    "subject": "?x",
+    "value": true
+   },
+   "body": [
+    [
+     "Move",
+     "?x"
+    ],
+    [
+     "Interact",
+     "?x"
+    ]
+   ],
+   "preconditions": {
+    "subject_sealed": false,
+    "subject_in_container": false,
+    "subject_on_agent": false,
+    "target_sealed": false,
+    "target_on_agent": false
+   },
+   "types": {
+    "?x": {
+     "isolated": false,
+     "pushable": false
+    }
+   },
+   "support": 23,
+   "families": [
+    "dog_check_environment"
+   ],
+   "runner_types": [
+    "unitree_go2",
+    "anymal_c"
+   ],
+   "requires": [
+    "interact",
+    "move"
+   ],
+   "carries": false,
+   "cost": 2,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0010",
+    "verified_on": [
+     4,
+     6,
+     9,
+     12,
+     13,
+     15,
+     17,
+     18,
+     22,
+     24,
+     26,
+     32,
+     33,
+     37,
+     38,
+     39,
+     46,
+     47,
+     48,
+     50
+    ],
+    "certified_by": "scripts/iclr_two_exp/A/certify_replay.py",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  }
+ ],
+ "built_by": "certify_replay",
+ "min_support": 2,
+ "probe_episodes": 60
+}

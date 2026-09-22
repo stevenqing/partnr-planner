@@ -1,0 +1,815 @@
+[
+ {
+  "id": "m0000",
+  "kind": "achievement",
+  "effect_key": "pos.name",
+  "mined_support": 2461,
+  "families": [
+   "serve_bread_from_counter",
+   "single_move_asset_to_target",
+   "toast_bread_and_set_plate",
+   "cut_fruit_on_board",
+   "wash_fruit_and_serve",
+   "ensure_all_fruits_on_table",
+   "parallel_human_dual_asset_to_plate_or_bowl",
+   "set_plate_and_fork_on_table"
+  ],
+  "exec_check": {
+   "serve_bread_from_counter": {
+    "works_on": [
+     80,
+     97,
+     154,
+     156
+    ],
+    "pass": true
+   },
+   "single_move_asset_to_target": {
+    "works_on": [
+     11,
+     14,
+     20,
+     49
+    ],
+    "pass": true
+   },
+   "toast_bread_and_set_plate": {
+    "works_on": [
+     39,
+     107,
+     119,
+     125
+    ],
+    "pass": true
+   },
+   "cut_fruit_on_board": {
+    "works_on": [
+     13,
+     15,
+     22,
+     26
+    ],
+    "pass": true
+   },
+   "wash_fruit_and_serve": {
+    "works_on": [
+     32,
+     33,
+     38,
+     53
+    ],
+    "pass": true
+   },
+   "ensure_all_fruits_on_table": {
+    "works_on": [
+     28,
+     35,
+     36
+    ],
+    "pass": true
+   },
+   "parallel_human_dual_asset_to_plate_or_bowl": {
+    "works_on": [
+     25,
+     30,
+     59,
+     60
+    ],
+    "pass": true
+   },
+   "set_plate_and_fork_on_table": {
+    "works_on": [
+     69,
+     112,
+     116,
+     136
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0000",
+    "family": "cut_fruit_on_board",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   },
+   {
+    "id": "m0000",
+    "family": "ensure_all_fruits_on_table",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   },
+   {
+    "id": "m0000",
+    "family": "parallel_human_dual_asset_to_plate_or_bowl",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   },
+   {
+    "id": "m0000",
+    "family": "serve_bread_from_counter",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   },
+   {
+    "id": "m0000",
+    "family": "set_plate_and_fork_on_table",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   },
+   {
+    "id": "m0000",
+    "family": "single_move_asset_to_target",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   },
+   {
+    "id": "m0000",
+    "family": "toast_bread_and_set_plate",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   },
+   {
+    "id": "m0000",
+    "family": "wash_fruit_and_serve",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   }
+  ],
+  "admitted_in_families": [
+   "cut_fruit_on_board",
+   "ensure_all_fruits_on_table",
+   "parallel_human_dual_asset_to_plate_or_bowl",
+   "serve_bread_from_counter",
+   "set_plate_and_fork_on_table",
+   "single_move_asset_to_target",
+   "toast_bread_and_set_plate",
+   "wash_fruit_and_serve"
+  ],
+  "probe_support": 46,
+  "certified": true,
+  "reason": "pass"
+ },
+ {
+  "id": "m0001",
+  "kind": "achievement",
+  "effect_key": "pos.name",
+  "mined_support": 551,
+  "families": [
+   "serve_bread_after_checking_cabinet",
+   "ensure_all_fruits_on_table",
+   "set_plate_and_fork_on_table"
+  ],
+  "exec_check": {
+   "serve_bread_after_checking_cabinet": {
+    "works_on": [
+     79,
+     90,
+     127,
+     130
+    ],
+    "pass": true
+   },
+   "ensure_all_fruits_on_table": {
+    "works_on": [
+     29
+    ],
+    "pass": false
+   },
+   "set_plate_and_fork_on_table": {
+    "works_on": [
+     69,
+     112,
+     116,
+     136
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0001",
+    "family": "serve_bread_after_checking_cabinet",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   },
+   {
+    "id": "m0001",
+    "family": "set_plate_and_fork_on_table",
+    "unsolved_before": [
+     69,
+     112,
+     116,
+     136,
+     141,
+     146,
+     153,
+     168
+    ],
+    "newly_solved": [
+     69,
+     112,
+     116,
+     136,
+     141,
+     146,
+     153,
+     168
+    ],
+    "admitted": true,
+    "marginal": "gain"
+   }
+  ],
+  "admitted_in_families": [
+   "serve_bread_after_checking_cabinet",
+   "set_plate_and_fork_on_table"
+  ],
+  "probe_support": 8,
+  "certified": true,
+  "reason": "pass"
+ },
+ {
+  "id": "m0002",
+  "kind": "achievement",
+  "effect_key": "is_activated",
+  "mined_support": 506,
+  "families": [
+   "toast_bread_and_set_plate",
+   "wash_fruit_and_serve"
+  ],
+  "exec_check": {
+   "toast_bread_and_set_plate": {
+    "works_on": [],
+    "pass": false
+   },
+   "wash_fruit_and_serve": {
+    "works_on": [],
+    "pass": false
+   }
+  },
+  "marginal": [],
+  "admitted_in_families": [],
+  "probe_support": null,
+  "certified": false,
+  "reason": "execution check: works on <2 of 4 holdout episodes in every source family (checker refused ['Interact', 'sink']; checker refused ['Interact', 'toaster'])"
+ },
+ {
+  "id": "m0003",
+  "kind": "achievement",
+  "effect_key": "pos.name",
+  "mined_support": 422,
+  "families": [
+   "clear_table_with_two_robots_and_put_in_cabinet"
+  ],
+  "exec_check": {
+   "clear_table_with_two_robots_and_put_in_cabinet": {
+    "works_on": [
+     57,
+     67,
+     68,
+     73
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0003",
+    "family": "clear_table_with_two_robots_and_put_in_cabinet",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   }
+  ],
+  "admitted_in_families": [
+   "clear_table_with_two_robots_and_put_in_cabinet"
+  ],
+  "probe_support": 3,
+  "certified": true,
+  "reason": "pass"
+ },
+ {
+  "id": "m0004",
+  "kind": "achievement",
+  "effect_key": "pos.name",
+  "mined_support": 397,
+  "families": [
+   "sequential_pick_two_and_place",
+   "cut_two_fruits_on_board"
+  ],
+  "exec_check": {
+   "sequential_pick_two_and_place": {
+    "works_on": [
+     52,
+     61,
+     81,
+     102
+    ],
+    "pass": true
+   },
+   "cut_two_fruits_on_board": {
+    "works_on": [
+     50,
+     82,
+     91,
+     129
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0004",
+    "family": "cut_two_fruits_on_board",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   },
+   {
+    "id": "m0004",
+    "family": "sequential_pick_two_and_place",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   }
+  ],
+  "admitted_in_families": [
+   "cut_two_fruits_on_board",
+   "sequential_pick_two_and_place"
+  ],
+  "probe_support": 28,
+  "certified": true,
+  "reason": "pass"
+ },
+ {
+  "id": "m0005",
+  "kind": "achievement",
+  "effect_key": "pos.name",
+  "mined_support": 397,
+  "families": [
+   "sequential_pick_two_and_place",
+   "cut_two_fruits_on_board"
+  ],
+  "exec_check": {
+   "sequential_pick_two_and_place": {
+    "works_on": [
+     52,
+     61,
+     81,
+     102
+    ],
+    "pass": true
+   },
+   "cut_two_fruits_on_board": {
+    "works_on": [
+     50,
+     82,
+     91,
+     129
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0005",
+    "family": "cut_two_fruits_on_board",
+    "unsolved_before": [
+     50,
+     82,
+     91,
+     129,
+     133,
+     189,
+     198,
+     212
+    ],
+    "newly_solved": [],
+    "admitted": false,
+    "marginal": "no_marginal_gain"
+   },
+   {
+    "id": "m0005",
+    "family": "sequential_pick_two_and_place",
+    "unsolved_before": [
+     52,
+     61,
+     81,
+     102,
+     147,
+     165,
+     213,
+     228
+    ],
+    "newly_solved": [
+     52,
+     61,
+     81,
+     102,
+     147,
+     165,
+     213,
+     228
+    ],
+    "admitted": true,
+    "marginal": "gain"
+   }
+  ],
+  "admitted_in_families": [
+   "sequential_pick_two_and_place"
+  ],
+  "probe_support": 28,
+  "certified": true,
+  "reason": "pass"
+ },
+ {
+  "id": "m0006",
+  "kind": "achievement",
+  "effect_key": "is_activated",
+  "mined_support": 384,
+  "families": [
+   "cut_fruit_on_board"
+  ],
+  "exec_check": {
+   "cut_fruit_on_board": {
+    "works_on": [
+     13,
+     15,
+     22,
+     26
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0006",
+    "family": "cut_fruit_on_board",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   }
+  ],
+  "admitted_in_families": [
+   "cut_fruit_on_board"
+  ],
+  "probe_support": 20,
+  "certified": true,
+  "reason": "pass"
+ },
+ {
+  "id": "m0007",
+  "kind": "coordination",
+  "effect_key": "pos.name",
+  "mined_support": 232,
+  "families": [
+   "clear_table_with_two_robots_and_put_in_cabinet"
+  ],
+  "exec_check": {
+   "clear_table_with_two_robots_and_put_in_cabinet": {
+    "works_on": [
+     57,
+     67,
+     68,
+     73
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0007",
+    "family": "clear_table_with_two_robots_and_put_in_cabinet",
+    "unsolved_before": [
+     57,
+     67,
+     68,
+     73,
+     76,
+     77,
+     83,
+     84
+    ],
+    "newly_solved": [],
+    "admitted": false,
+    "marginal": "no_marginal_gain"
+   }
+  ],
+  "admitted_in_families": [],
+  "probe_support": null,
+  "certified": false,
+  "reason": "criterion (i): executable but adds no validation episode over the family library"
+ },
+ {
+  "id": "m0008",
+  "kind": "achievement",
+  "effect_key": "is_activated",
+  "mined_support": 190,
+  "families": [
+   "cut_two_fruits_on_board"
+  ],
+  "exec_check": {
+   "cut_two_fruits_on_board": {
+    "works_on": [
+     50,
+     82,
+     91,
+     129
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0008",
+    "family": "cut_two_fruits_on_board",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   }
+  ],
+  "admitted_in_families": [
+   "cut_two_fruits_on_board"
+  ],
+  "probe_support": 20,
+  "certified": true,
+  "reason": "pass"
+ },
+ {
+  "id": "m0009",
+  "kind": "coordination",
+  "effect_key": "pos.name",
+  "mined_support": 190,
+  "families": [
+   "clear_table_with_two_robots_and_put_in_cabinet"
+  ],
+  "exec_check": {
+   "clear_table_with_two_robots_and_put_in_cabinet": {
+    "works_on": [
+     57,
+     67,
+     68,
+     73
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0009",
+    "family": "clear_table_with_two_robots_and_put_in_cabinet",
+    "unsolved_before": [
+     57,
+     67,
+     68,
+     73,
+     76,
+     77,
+     83,
+     84
+    ],
+    "newly_solved": [],
+    "admitted": false,
+    "marginal": "no_marginal_gain"
+   }
+  ],
+  "admitted_in_families": [],
+  "probe_support": null,
+  "certified": false,
+  "reason": "criterion (i): executable but adds no validation episode over the family library"
+ },
+ {
+  "id": "m0010",
+  "kind": "achievement",
+  "effect_key": "is_activated",
+  "mined_support": 83,
+  "families": [
+   "dog_check_environment"
+  ],
+  "exec_check": {
+   "dog_check_environment": {
+    "works_on": [
+     56,
+     86,
+     264,
+     308
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0010",
+    "family": "dog_check_environment",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   }
+  ],
+  "admitted_in_families": [
+   "dog_check_environment"
+  ],
+  "probe_support": 23,
+  "certified": true,
+  "reason": "pass"
+ },
+ {
+  "id": "m0011",
+  "kind": "coordination",
+  "effect_key": "pos.name",
+  "mined_support": 19,
+  "families": [
+   "dog_push_box_for_two_panda_transport"
+  ],
+  "exec_check": {
+   "dog_push_box_for_two_panda_transport": {
+    "works_on": [
+     43,
+     44,
+     65,
+     243
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0011",
+    "family": "dog_push_box_for_two_panda_transport",
+    "marginal": "exempt (first executable operator of this effect key in the family, as the empty-library first round)",
+    "admitted": true
+   }
+  ],
+  "admitted_in_families": [
+   "dog_push_box_for_two_panda_transport"
+  ],
+  "probe_support": 4,
+  "certified": true,
+  "reason": "pass"
+ },
+ {
+  "id": "m0012",
+  "kind": "coordination",
+  "effect_key": "pos.name",
+  "mined_support": 16,
+  "families": [
+   "dog_push_box_for_two_panda_transport"
+  ],
+  "exec_check": {
+   "dog_push_box_for_two_panda_transport": {
+    "works_on": [
+     43,
+     44,
+     65,
+     243
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0012",
+    "family": "dog_push_box_for_two_panda_transport",
+    "unsolved_before": [],
+    "newly_solved": [],
+    "admitted": false,
+    "marginal": "no_marginal_gain"
+   }
+  ],
+  "admitted_in_families": [],
+  "probe_support": null,
+  "certified": false,
+  "reason": "criterion (i): executable but adds no validation episode over the family library"
+ },
+ {
+  "id": "m0013",
+  "kind": "coordination",
+  "effect_key": "pos.name",
+  "mined_support": 15,
+  "families": [
+   "dog_push_box_for_two_panda_transport"
+  ],
+  "exec_check": {
+   "dog_push_box_for_two_panda_transport": {
+    "works_on": [
+     43,
+     44,
+     65,
+     243
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0013",
+    "family": "dog_push_box_for_two_panda_transport",
+    "unsolved_before": [],
+    "newly_solved": [],
+    "admitted": false,
+    "marginal": "no_marginal_gain"
+   }
+  ],
+  "admitted_in_families": [],
+  "probe_support": null,
+  "certified": false,
+  "reason": "criterion (i): executable but adds no validation episode over the family library"
+ },
+ {
+  "id": "m0014",
+  "kind": "coordination",
+  "effect_key": "pos.name",
+  "mined_support": 14,
+  "families": [
+   "dog_push_box_for_two_panda_transport"
+  ],
+  "exec_check": {
+   "dog_push_box_for_two_panda_transport": {
+    "works_on": [
+     43,
+     44,
+     65,
+     243
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0014",
+    "family": "dog_push_box_for_two_panda_transport",
+    "unsolved_before": [],
+    "newly_solved": [],
+    "admitted": false,
+    "marginal": "no_marginal_gain"
+   }
+  ],
+  "admitted_in_families": [],
+  "probe_support": null,
+  "certified": false,
+  "reason": "criterion (i): executable but adds no validation episode over the family library"
+ },
+ {
+  "id": "m0015",
+  "kind": "coordination",
+  "effect_key": "pos.name",
+  "mined_support": 14,
+  "families": [
+   "dog_push_box_for_two_panda_transport"
+  ],
+  "exec_check": {
+   "dog_push_box_for_two_panda_transport": {
+    "works_on": [
+     43,
+     44,
+     65,
+     243
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0015",
+    "family": "dog_push_box_for_two_panda_transport",
+    "unsolved_before": [],
+    "newly_solved": [],
+    "admitted": false,
+    "marginal": "no_marginal_gain"
+   }
+  ],
+  "admitted_in_families": [],
+  "probe_support": null,
+  "certified": false,
+  "reason": "criterion (i): executable but adds no validation episode over the family library"
+ },
+ {
+  "id": "m0016",
+  "kind": "coordination",
+  "effect_key": "pos.name",
+  "mined_support": 11,
+  "families": [
+   "dog_push_box_for_two_panda_transport"
+  ],
+  "exec_check": {
+   "dog_push_box_for_two_panda_transport": {
+    "works_on": [
+     43,
+     44,
+     65,
+     243
+    ],
+    "pass": true
+   }
+  },
+  "marginal": [
+   {
+    "id": "m0016",
+    "family": "dog_push_box_for_two_panda_transport",
+    "unsolved_before": [],
+    "newly_solved": [],
+    "admitted": false,
+    "marginal": "no_marginal_gain"
+   }
+  ],
+  "admitted_in_families": [],
+  "probe_support": null,
+  "certified": false,
+  "reason": "criterion (i): executable but adds no validation episode over the family library"
+ }
+]

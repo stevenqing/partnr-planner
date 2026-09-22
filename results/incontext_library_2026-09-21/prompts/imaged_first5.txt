@@ -1,0 +1,455 @@
+===== row 0 task_id 1044_8-2 prompt_sha256 f41317eaf0f05b6fb05629c0f775a5050579fcb3122a08cdd191595c42dbc04d =====
+--- system ---
+You are a plan creator. I will provide you with an image of robots in a scene, available robots and their action primitives, and a task description. You need to create a plan to complete the task.
+You must first analyze the image to fully understand the scene depicted. Then, analyze the task description. Finally, create a plan to complete the task.
+Your reasoning must strictly adhere to the visual content of the image and the task description—no assumptions, hypotheses, or guesses are allowed.
+1. Create a plan to complete the task, noting:
+   - Each robot can only perform ONE action per time step.
+   - Multiple robots can work in parallel, but each robot is limited to one action at a time.
+2. You need to first provide your reasoning process within <think> and </think> tags.
+3. Your final answer must be within <answer> and </answer> tags, and **strictly follow the JSON format specified below**.
+
+Output Format Requirements(please comply strictly, do not output any additional content):
+<answer>
+  [
+    {
+      "step": 1,
+      "actions": {'R1': ['Move', 'banana'], 'R2': ['Move', 'apple']}
+    },
+    {
+      "step": 2,
+      "actions": {'R1': ['Reach', 'banana'], 'R2': ['Reach', 'apple']}
+    }
+    # ... subsequent steps ...
+  ]
+</answer>
+Where:
+- step is the time step number (starting from 1, incrementing sequentially).
+- Each robot can only have ONE action per time step.
+- "actions" is a dictionary that specifies the action for each robot during a single time step. Each key (e.g., "R1", "R2") represents a robot. Each value is a list describing the single action that robot will perform in this step, with the following format: action_type, target_object_or_location, (optional: extra_argument)
+Action primitives and descriptions: {'Move': "Command ['Move', 'object']: Robot R moves to the specified object.", 'Open': "Command ['Open', 'object']: Open the object held by the Robot R's end effector.", 'Close': "Command ['Close', 'object']: Close the object held by the Robot R's end effector.", 'Reach': "Command ['Reach', 'object']: Robot R reaches the specified object.", 'Grasp': "Command ['Grasp', 'object']: Robot R's end effector performs a grasping operation on a specified object.", 'Place': "Command ['Place', 'object']: Place the object held by the Robot R's end effector at a specified location (the release point, not the object itself).", 'Push': "Command ['Push', 'object', 'R1']: Robot R pushes the object to robot R1.", 'Interact': "Command ['Interact', 'object']: A general interaction operation, flexible for representing interactions with any asset."}
+Available robot set: {'R1': 'stompy', 'R2': 'fetch'}
+Robot characteristics: {'stompy': 'A bipedal robot designed for dynamic walking and stomping tasks, featuring articulated arms. Color: Light blue body with yellow and orange accents.', 'fetch': 'A wheeled robot with a flexible arm for object manipulation, designed for mobility and dexterity. Color: White with blue and black accents.'}
+Their available operation APIs: {'stompy': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact'], 'fetch': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact']}
+
+--- user ---
+[image omitted, sha256 37007234db3919037d3ecc9b9dc510f3be4b0dce2aa1ca7ec651a199249a79bd]
+These are reusable skills and ordering rules. Use them to write the plan.
+
+Skill 1 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_on_agent = false; target_on_agent = false; ?x.subject_in_container = false; ?x.subject_sealed = false; ?y.target_on_agent = false; ?y.target_sealed = false
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 2 (achievement)
+  Effect: ?x is activated
+  Preconditions: subject_in_container = false; subject_on_agent = false; subject_sealed = false; ?x.is_device = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 3 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_oven = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 4 (achievement)
+  Effect: ?tool is activated
+  Preconditions: ?x.is_cutting_tool = true; ?z1.is_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Reach(?z1) -> Interact(?x)
+
+Skill 5 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_knife = true; ?z1.is_cutting_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Interact(?x)
+
+Skill 6 (coordination)
+  Effect: ?x is at ?y
+  Preconditions: none
+  Role ?r0 demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+  Role ?r1 demo: Move(?y) [after role 0 step 5]
+
+Skill 7 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = true; subject_on_agent = false; subject_sealed = true; target_on_agent = false; target_sealed = false; ?x.in_container = true; ?y.on_agent = false
+  Demo: Move(?z1) -> Reach(?z1) -> Open(?z1) -> Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 8 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = false; subject_on_agent = false; ?x.is_graspable = true; ?x.is_reachable = true; ?y.is_container = true; ?y.is_openable = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Reach(?y) -> Open(?y) -> Place(?y)
+
+Ordering rules:
+- Do placing an object A at a place P before activating an object B when the skill for B visits P.
+- Do placing an object A at a place P before activating an object B when P is the object B and the skill for B visits P.
+- Do placing an object A at a place P before placing an object B at a place Q when A is the place Q.
+
+Current task:
+Place the pear on the wooden cutting board and finish by cutting it with the knife, and move the banana to the kitchen island area.
+
+You can see what the partner robots do at step 1:
+  step 1 -> R2: ['Move', 'knife']
+Plan your own robot's actions so they fit alongside these. Output the whole plan; the partner actions occupy step 1 and do not lengthen it.
+
+===== row 1 task_id 4363_8-1 prompt_sha256 4d6ff1eb157af130ebe9f8bcae5a85ca5539efe2d2ba166884f7d5ee572dda0c =====
+--- system ---
+You are a plan creator. I will provide you with an image of robots in a scene, available robots and their action primitives, and a task description. You need to create a plan to complete the task.
+You must first analyze the image to fully understand the scene depicted. Then, analyze the task description. Finally, create a plan to complete the task.
+Your reasoning must strictly adhere to the visual content of the image and the task description—no assumptions, hypotheses, or guesses are allowed.
+1. Create a plan to complete the task, noting:
+   - Each robot can only perform ONE action per time step.
+   - Multiple robots can work in parallel, but each robot is limited to one action at a time.
+2. You need to first provide your reasoning process within <think> and </think> tags.
+3. Your final answer must be within <answer> and </answer> tags, and **strictly follow the JSON format specified below**.
+
+Output Format Requirements(please comply strictly, do not output any additional content):
+<answer>
+  [
+    {
+      "step": 1,
+      "actions": {'R1': ['Move', 'banana'], 'R2': ['Move', 'apple']}
+    },
+    {
+      "step": 2,
+      "actions": {'R1': ['Reach', 'banana'], 'R2': ['Reach', 'apple']}
+    }
+    # ... subsequent steps ...
+  ]
+</answer>
+Where:
+- step is the time step number (starting from 1, incrementing sequentially).
+- Each robot can only have ONE action per time step.
+- "actions" is a dictionary that specifies the action for each robot during a single time step. Each key (e.g., "R1", "R2") represents a robot. Each value is a list describing the single action that robot will perform in this step, with the following format: action_type, target_object_or_location, (optional: extra_argument)
+Action primitives and descriptions: {'Move': "Command ['Move', 'object']: Robot R moves to the specified object.", 'Open': "Command ['Open', 'object']: Open the object held by the Robot R's end effector.", 'Close': "Command ['Close', 'object']: Close the object held by the Robot R's end effector.", 'Reach': "Command ['Reach', 'object']: Robot R reaches the specified object.", 'Grasp': "Command ['Grasp', 'object']: Robot R's end effector performs a grasping operation on a specified object.", 'Place': "Command ['Place', 'object']: Place the object held by the Robot R's end effector at a specified location (the release point, not the object itself).", 'Push': "Command ['Push', 'object', 'R1']: Robot R pushes the object to robot R1.", 'Interact': "Command ['Interact', 'object']: A general interaction operation, flexible for representing interactions with any asset."}
+Available robot set: {'R1': 'fetch', 'R2': 'unitree_h1'}
+Robot characteristics: {'fetch': 'A wheeled robot with a flexible arm for object manipulation, designed for mobility and dexterity. Color: White with blue and black accents.', 'unitree_h1': 'A humanoid robot with arms and legs designed for human-like movements and tasks. Color: Black.'}
+Their available operation APIs: {'fetch': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact'], 'unitree_h1': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact']}
+
+--- user ---
+[image omitted, sha256 02809135ba3ab51fa5c014b6d50033c92b7c069be5cdb32cbc89e823aca5542b]
+These are reusable skills and ordering rules. Use them to write the plan.
+
+Skill 1 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_on_agent = false; target_on_agent = false; ?x.subject_in_container = false; ?x.subject_sealed = false; ?y.target_on_agent = false; ?y.target_sealed = false
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 2 (achievement)
+  Effect: ?x is activated
+  Preconditions: subject_in_container = false; subject_on_agent = false; subject_sealed = false; ?x.is_device = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 3 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_oven = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 4 (achievement)
+  Effect: ?tool is activated
+  Preconditions: ?x.is_cutting_tool = true; ?z1.is_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Reach(?z1) -> Interact(?x)
+
+Skill 5 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_knife = true; ?z1.is_cutting_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Interact(?x)
+
+Skill 6 (coordination)
+  Effect: ?x is at ?y
+  Preconditions: none
+  Role ?r0 demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+  Role ?r1 demo: Move(?y) [after role 0 step 5]
+
+Skill 7 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = true; subject_on_agent = false; subject_sealed = true; target_on_agent = false; target_sealed = false; ?x.in_container = true; ?y.on_agent = false
+  Demo: Move(?z1) -> Reach(?z1) -> Open(?z1) -> Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 8 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = false; subject_on_agent = false; ?x.is_graspable = true; ?x.is_reachable = true; ?y.is_container = true; ?y.is_openable = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Reach(?y) -> Open(?y) -> Place(?y)
+
+Ordering rules:
+- Do placing an object A at a place P before activating an object B when the skill for B visits P.
+- Do placing an object A at a place P before activating an object B when P is the object B and the skill for B visits P.
+- Do placing an object A at a place P before placing an object B at a place Q when A is the place Q.
+
+Current task:
+Place the pear on the wooden cutting board and finish by cutting it with the knife, and move the bread to the kitchen island area.
+
+You can see what the partner robots do at step 1:
+  step 1 -> R2: ['Move', 'knife']
+Plan your own robot's actions so they fit alongside these. Output the whole plan; the partner actions occupy step 1 and do not lengthen it.
+
+===== row 2 task_id 3035_8-2 prompt_sha256 24c57525b6759d0ab60cdcc1b57c9db3762c233fa9b52597b6c0c42ac03e3b0a =====
+--- system ---
+You are a plan creator. I will provide you with an image of robots in a scene, available robots and their action primitives, and a task description. You need to create a plan to complete the task.
+You must first analyze the image to fully understand the scene depicted. Then, analyze the task description. Finally, create a plan to complete the task.
+Your reasoning must strictly adhere to the visual content of the image and the task description—no assumptions, hypotheses, or guesses are allowed.
+1. Create a plan to complete the task, noting:
+   - Each robot can only perform ONE action per time step.
+   - Multiple robots can work in parallel, but each robot is limited to one action at a time.
+2. You need to first provide your reasoning process within <think> and </think> tags.
+3. Your final answer must be within <answer> and </answer> tags, and **strictly follow the JSON format specified below**.
+
+Output Format Requirements(please comply strictly, do not output any additional content):
+<answer>
+  [
+    {
+      "step": 1,
+      "actions": {'R1': ['Move', 'banana'], 'R2': ['Move', 'apple']}
+    },
+    {
+      "step": 2,
+      "actions": {'R1': ['Reach', 'banana'], 'R2': ['Reach', 'apple']}
+    }
+    # ... subsequent steps ...
+  ]
+</answer>
+Where:
+- step is the time step number (starting from 1, incrementing sequentially).
+- Each robot can only have ONE action per time step.
+- "actions" is a dictionary that specifies the action for each robot during a single time step. Each key (e.g., "R1", "R2") represents a robot. Each value is a list describing the single action that robot will perform in this step, with the following format: action_type, target_object_or_location, (optional: extra_argument)
+Action primitives and descriptions: {'Move': "Command ['Move', 'object']: Robot R moves to the specified object.", 'Open': "Command ['Open', 'object']: Open the object held by the Robot R's end effector.", 'Close': "Command ['Close', 'object']: Close the object held by the Robot R's end effector.", 'Reach': "Command ['Reach', 'object']: Robot R reaches the specified object.", 'Grasp': "Command ['Grasp', 'object']: Robot R's end effector performs a grasping operation on a specified object.", 'Place': "Command ['Place', 'object']: Place the object held by the Robot R's end effector at a specified location (the release point, not the object itself).", 'Push': "Command ['Push', 'object', 'R1']: Robot R pushes the object to robot R1.", 'Interact': "Command ['Interact', 'object']: A general interaction operation, flexible for representing interactions with any asset."}
+Available robot set: {'R1': 'fetch', 'R2': 'stompy'}
+Robot characteristics: {'fetch': 'A wheeled robot with a flexible arm for object manipulation, designed for mobility and dexterity. Color: White with blue and black accents.', 'stompy': 'A bipedal robot designed for dynamic walking and stomping tasks, featuring articulated arms. Color: Light blue body with yellow and orange accents.'}
+Their available operation APIs: {'fetch': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact'], 'stompy': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact']}
+
+--- user ---
+[image omitted, sha256 36be806f80f966ed202ec6372b3086b0f9d4bb196580bf3364577b52716c4e1f]
+These are reusable skills and ordering rules. Use them to write the plan.
+
+Skill 1 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_on_agent = false; target_on_agent = false; ?x.subject_in_container = false; ?x.subject_sealed = false; ?y.target_on_agent = false; ?y.target_sealed = false
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 2 (achievement)
+  Effect: ?x is activated
+  Preconditions: subject_in_container = false; subject_on_agent = false; subject_sealed = false; ?x.is_device = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 3 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_oven = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 4 (achievement)
+  Effect: ?tool is activated
+  Preconditions: ?x.is_cutting_tool = true; ?z1.is_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Reach(?z1) -> Interact(?x)
+
+Skill 5 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_knife = true; ?z1.is_cutting_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Interact(?x)
+
+Skill 6 (coordination)
+  Effect: ?x is at ?y
+  Preconditions: none
+  Role ?r0 demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+  Role ?r1 demo: Move(?y) [after role 0 step 5]
+
+Skill 7 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = true; subject_on_agent = false; subject_sealed = true; target_on_agent = false; target_sealed = false; ?x.in_container = true; ?y.on_agent = false
+  Demo: Move(?z1) -> Reach(?z1) -> Open(?z1) -> Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 8 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = false; subject_on_agent = false; ?x.is_graspable = true; ?x.is_reachable = true; ?y.is_container = true; ?y.is_openable = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Reach(?y) -> Open(?y) -> Place(?y)
+
+Ordering rules:
+- Do placing an object A at a place P before activating an object B when the skill for B visits P.
+- Do placing an object A at a place P before activating an object B when P is the object B and the skill for B visits P.
+- Do placing an object A at a place P before placing an object B at a place Q when A is the place Q.
+
+Current task:
+Position the peach on the wooden cutting board; slice it neatly with the knife, and move the scissors to the kitchen work area.
+
+You can see what the partner robots do at step 1:
+  step 1 -> R2: ['Move', 'peach']
+Plan your own robot's actions so they fit alongside these. Output the whole plan; the partner actions occupy step 1 and do not lengthen it.
+
+===== row 3 task_id 4554_9-1 prompt_sha256 26bf9d587804132ed8cdf5ba6cc34db0a3859e5c42c90050e125dcb6dc2878c5 =====
+--- system ---
+You are a plan creator. I will provide you with an image of robots in a scene, available robots and their action primitives, and a task description. You need to create a plan to complete the task.
+You must first analyze the image to fully understand the scene depicted. Then, analyze the task description. Finally, create a plan to complete the task.
+Your reasoning must strictly adhere to the visual content of the image and the task description—no assumptions, hypotheses, or guesses are allowed.
+1. Create a plan to complete the task, noting:
+   - Each robot can only perform ONE action per time step.
+   - Multiple robots can work in parallel, but each robot is limited to one action at a time.
+2. You need to first provide your reasoning process within <think> and </think> tags.
+3. Your final answer must be within <answer> and </answer> tags, and **strictly follow the JSON format specified below**.
+
+Output Format Requirements(please comply strictly, do not output any additional content):
+<answer>
+  [
+    {
+      "step": 1,
+      "actions": {'R1': ['Move', 'banana'], 'R2': ['Move', 'apple']}
+    },
+    {
+      "step": 2,
+      "actions": {'R1': ['Reach', 'banana'], 'R2': ['Reach', 'apple']}
+    }
+    # ... subsequent steps ...
+  ]
+</answer>
+Where:
+- step is the time step number (starting from 1, incrementing sequentially).
+- Each robot can only have ONE action per time step.
+- "actions" is a dictionary that specifies the action for each robot during a single time step. Each key (e.g., "R1", "R2") represents a robot. Each value is a list describing the single action that robot will perform in this step, with the following format: action_type, target_object_or_location, (optional: extra_argument)
+Action primitives and descriptions: {'Move': "Command ['Move', 'object']: Robot R moves to the specified object.", 'Open': "Command ['Open', 'object']: Open the object held by the Robot R's end effector.", 'Close': "Command ['Close', 'object']: Close the object held by the Robot R's end effector.", 'Reach': "Command ['Reach', 'object']: Robot R reaches the specified object.", 'Grasp': "Command ['Grasp', 'object']: Robot R's end effector performs a grasping operation on a specified object.", 'Place': "Command ['Place', 'object']: Place the object held by the Robot R's end effector at a specified location (the release point, not the object itself).", 'Push': "Command ['Push', 'object', 'R1']: Robot R pushes the object to robot R1.", 'Interact': "Command ['Interact', 'object']: A general interaction operation, flexible for representing interactions with any asset."}
+Available robot set: {'R1': 'fetch', 'R2': 'unitree_h1'}
+Robot characteristics: {'fetch': 'A wheeled robot with a flexible arm for object manipulation, designed for mobility and dexterity. Color: White with blue and black accents.', 'unitree_h1': 'A humanoid robot with arms and legs designed for human-like movements and tasks. Color: Black.'}
+Their available operation APIs: {'fetch': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact'], 'unitree_h1': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact']}
+
+--- user ---
+[image omitted, sha256 75f671c667147d1d43b44b06c83076152c261ed6ea98a77c4091c07309978fdc]
+These are reusable skills and ordering rules. Use them to write the plan.
+
+Skill 1 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_on_agent = false; target_on_agent = false; ?x.subject_in_container = false; ?x.subject_sealed = false; ?y.target_on_agent = false; ?y.target_sealed = false
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 2 (achievement)
+  Effect: ?x is activated
+  Preconditions: subject_in_container = false; subject_on_agent = false; subject_sealed = false; ?x.is_device = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 3 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_oven = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 4 (achievement)
+  Effect: ?tool is activated
+  Preconditions: ?x.is_cutting_tool = true; ?z1.is_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Reach(?z1) -> Interact(?x)
+
+Skill 5 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_knife = true; ?z1.is_cutting_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Interact(?x)
+
+Skill 6 (coordination)
+  Effect: ?x is at ?y
+  Preconditions: none
+  Role ?r0 demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+  Role ?r1 demo: Move(?y) [after role 0 step 5]
+
+Skill 7 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = true; subject_on_agent = false; subject_sealed = true; target_on_agent = false; target_sealed = false; ?x.in_container = true; ?y.on_agent = false
+  Demo: Move(?z1) -> Reach(?z1) -> Open(?z1) -> Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 8 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = false; subject_on_agent = false; ?x.is_graspable = true; ?x.is_reachable = true; ?y.is_container = true; ?y.is_openable = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Reach(?y) -> Open(?y) -> Place(?y)
+
+Ordering rules:
+- Do placing an object A at a place P before activating an object B when the skill for B visits P.
+- Do placing an object A at a place P before activating an object B when P is the object B and the skill for B visits P.
+- Do placing an object A at a place P before placing an object B at a place Q when A is the place Q.
+
+Current task:
+Place both the apple and banana on the wooden cutting board for cutting with the knife, and move the tomato to the kitchen island area.
+
+You can see what the partner robots do at step 1:
+  step 1 -> R2: ['Move', 'apple']
+Plan your own robot's actions so they fit alongside these. Output the whole plan; the partner actions occupy step 1 and do not lengthen it.
+
+===== row 4 task_id 4168_9-1 prompt_sha256 f855c67ab429114be79f7f9bfc8af37f2042c08930bec21031b0f56f34c673d2 =====
+--- system ---
+You are a plan creator. I will provide you with an image of robots in a scene, available robots and their action primitives, and a task description. You need to create a plan to complete the task.
+You must first analyze the image to fully understand the scene depicted. Then, analyze the task description. Finally, create a plan to complete the task.
+Your reasoning must strictly adhere to the visual content of the image and the task description—no assumptions, hypotheses, or guesses are allowed.
+1. Create a plan to complete the task, noting:
+   - Each robot can only perform ONE action per time step.
+   - Multiple robots can work in parallel, but each robot is limited to one action at a time.
+2. You need to first provide your reasoning process within <think> and </think> tags.
+3. Your final answer must be within <answer> and </answer> tags, and **strictly follow the JSON format specified below**.
+
+Output Format Requirements(please comply strictly, do not output any additional content):
+<answer>
+  [
+    {
+      "step": 1,
+      "actions": {'R1': ['Move', 'banana'], 'R2': ['Move', 'apple']}
+    },
+    {
+      "step": 2,
+      "actions": {'R1': ['Reach', 'banana'], 'R2': ['Reach', 'apple']}
+    }
+    # ... subsequent steps ...
+  ]
+</answer>
+Where:
+- step is the time step number (starting from 1, incrementing sequentially).
+- Each robot can only have ONE action per time step.
+- "actions" is a dictionary that specifies the action for each robot during a single time step. Each key (e.g., "R1", "R2") represents a robot. Each value is a list describing the single action that robot will perform in this step, with the following format: action_type, target_object_or_location, (optional: extra_argument)
+Action primitives and descriptions: {'Move': "Command ['Move', 'object']: Robot R moves to the specified object.", 'Open': "Command ['Open', 'object']: Open the object held by the Robot R's end effector.", 'Close': "Command ['Close', 'object']: Close the object held by the Robot R's end effector.", 'Reach': "Command ['Reach', 'object']: Robot R reaches the specified object.", 'Grasp': "Command ['Grasp', 'object']: Robot R's end effector performs a grasping operation on a specified object.", 'Place': "Command ['Place', 'object']: Place the object held by the Robot R's end effector at a specified location (the release point, not the object itself).", 'Push': "Command ['Push', 'object', 'R1']: Robot R pushes the object to robot R1.", 'Interact': "Command ['Interact', 'object']: A general interaction operation, flexible for representing interactions with any asset."}
+Available robot set: {'R1': 'fetch', 'R2': 'unitree_h1'}
+Robot characteristics: {'fetch': 'A wheeled robot with a flexible arm for object manipulation, designed for mobility and dexterity. Color: White with blue and black accents.', 'unitree_h1': 'A humanoid robot with arms and legs designed for human-like movements and tasks. Color: Black.'}
+Their available operation APIs: {'fetch': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact'], 'unitree_h1': ['Move', 'Reach', 'Grasp', 'Place', 'Open', 'Close', 'Interact']}
+
+--- user ---
+[image omitted, sha256 42bb7a53846fe744f8234329066f23fd8183e78e4a550f7c5c294e75493e30f3]
+These are reusable skills and ordering rules. Use them to write the plan.
+
+Skill 1 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_on_agent = false; target_on_agent = false; ?x.subject_in_container = false; ?x.subject_sealed = false; ?y.target_on_agent = false; ?y.target_sealed = false
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 2 (achievement)
+  Effect: ?x is activated
+  Preconditions: subject_in_container = false; subject_on_agent = false; subject_sealed = false; ?x.is_device = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 3 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_oven = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 4 (achievement)
+  Effect: ?tool is activated
+  Preconditions: ?x.is_cutting_tool = true; ?z1.is_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Reach(?z1) -> Interact(?x)
+
+Skill 5 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_knife = true; ?z1.is_cutting_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Interact(?x)
+
+Skill 6 (coordination)
+  Effect: ?x is at ?y
+  Preconditions: none
+  Role ?r0 demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+  Role ?r1 demo: Move(?y) [after role 0 step 5]
+
+Skill 7 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = true; subject_on_agent = false; subject_sealed = true; target_on_agent = false; target_sealed = false; ?x.in_container = true; ?y.on_agent = false
+  Demo: Move(?z1) -> Reach(?z1) -> Open(?z1) -> Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 8 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = false; subject_on_agent = false; ?x.is_graspable = true; ?x.is_reachable = true; ?y.is_container = true; ?y.is_openable = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Reach(?y) -> Open(?y) -> Place(?y)
+
+Ordering rules:
+- Do placing an object A at a place P before activating an object B when the skill for B visits P.
+- Do placing an object A at a place P before activating an object B when P is the object B and the skill for B visits P.
+- Do placing an object A at a place P before placing an object B at a place Q when A is the place Q.
+
+Current task:
+Kindly arrange the pear and bread on the wooden cutting board; the knife will handle the rest, and move the tomato to the kitchen island area.
+
+You can see what the partner robots do at step 1:
+  step 1 -> R2: ['Move', 'pear']
+Plan your own robot's actions so they fit alongside these. Output the whole plan; the partner actions occupy step 1 and do not lengthen it.
+

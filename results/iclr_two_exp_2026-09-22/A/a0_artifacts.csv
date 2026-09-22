@@ -1,0 +1,25 @@
+role,path,exists,sha256,note
+planner entry (consumer),our_method/skill_memory_v2/planner.py,True,c84fee072b4ba528855a5b4b6e70b1c7af36d9809dab51dca940e51864e4fbe1,plan() -> compose() -> chains_for()/schedule()
+"memory class (operator selection, binding of ?z, _usable filter)",our_method/skill_memory_v2/memory.py,True,ba8c65749b2a485c133afae857b1ce88ced80000a6bc5d93eee49f96636b1f9d,
+"runner: prompt, answer parsing, re-ask",scripts/viki_eval_v2_intent_choice.py,True,2e82be06f55606675cafdf3f607262c7c9391271de72b10874a2efcaa13cf5ea,"re-ask: REASK constant and single second turn at lines [64, 319, 332]"
+"ordering rules + vocabulary + layer1 (admitted, ID/CG column)",outputs/v3_memories/memory_all.json,True,d580b15c90b539aee5cb9f761d460f4b8e57b36b84af6ca4b8379f59d8237c87,layer2 canonical sha 5cababcceb0b58d20ac6819b75ea095c759701240c5f3c42659ddb9671cda6b2 (3 kept rules); layer3 canonical sha 0378c3aef2ef724334406317c2c2ff5ab58ef0abfad16abac5a9a1c10eabeded; layer1 8 operators
+"admitted memory, OOD fold",outputs/v3_memories/memory_heldout_clear_table_with_two_robots_and_put_in_cabinet.json,True,82515a80fcca1d82eeb6fb829808989238d1c74d0b6afe51dcf7679d069fe30a,layer1 7 ops; layer2 kept 3
+"admitted memory, OOD fold",outputs/v3_memories/memory_heldout_cut_fruit_on_board.json,True,129b8c46f9eb52c376471140dbf10ae84a89520ac20810cb8885e581e3a12c60,layer1 7 ops; layer2 kept 3
+"admitted memory, OOD fold",outputs/v3_memories/memory_heldout_cut_two_fruits_on_board.json,True,d0338d6773b368ead799f98d92e8746d30298568b659b949494488a4b87bb7e0,layer1 6 ops; layer2 kept 3
+"admitted memory, OOD fold",outputs/v3_memories/memory_heldout_dog_push_box_for_two_panda_transport.json,True,af0b768b72ffa91b0a5a81c76e5c8d3380beb476af9b5d7579fce7cebe0bb94d,layer1 8 ops; layer2 kept 3
+"admitted memory, OOD fold",outputs/v3_memories/memory_heldout_ensure_all_fruits_on_table.json,True,edc5850d7e47d3fe436701633bbd907522494156859346b112b0c7fcf05d2fe4,layer1 8 ops; layer2 kept 3
+"admitted memory, OOD fold",outputs/v3_memories/memory_heldout_parallel_human_dual_asset_to_plate_or_bowl.json,True,14665bd2f779c7f1c7442cadeecaa0354a01bb30a781fcb8fbf7be94ad674ef6,layer1 8 ops; layer2 kept 3
+"admitted memory, OOD fold",outputs/v3_memories/memory_heldout_set_plate_and_fork_on_table.json,True,4fa5935e0c9b62d6b78c288f5561add9448dbeab5c9c09eadc675da25e2ede5e,layer1 8 ops; layer2 kept 2
+"admitted memory, OOD fold",outputs/v3_memories/memory_heldout_toast_bread_and_set_plate.json,True,5f0e67a3eed6238b067e7bc92676f3ae2673c73826bbe257c12ed62593aae1d1,layer1 8 ops; layer2 kept 3
+ordering rule application (layer 2),our_method/skill_memory_v2/dependencies.py,True,7caeff9459fd3c2e1f2f214f99196faf7897f4c27f9d29f010e99de12ac0186f,
+vocabulary grounding (layer 3),our_method/skill_memory_v2/vocabulary.py,True,33d6853ae986870167d9d0726902c0c793b3e177ba618cd8c1a987a4c8cf4eb1,
+"simulator wrapper, state_facts/object_properties",our_method/skill_memory_v2/simulator.py,True,722b68622a434ef557cea794fce2e5e8ae7c45859149da86abf2974a3cbc518f,
+replay-based operator mining (reference-library builder),our_method/skill_memory_v2/induction.py,True,5fac1ee5aebdeb449c51113ffe41ea44b1f6accc11f8f3f5d7db190f1f100254,
+reference-library build entry,our_method/skill_memory_v2/build.py,True,b30967a339cae86ee00bb72910e166c4641b6614b4b7af694ffecbf494c59e67,
+execution check: Workbench.run_operator / plan_with / ordering_ok,scripts/viki_induction_tools.py,True,4b228a3ae5e5a9dd69ed20ca9dfda511ab80563fc08ea0b25c0bf5359fc45e6b,
+admission: works on >=2 holdout + marginal coverage/ordering gain,scripts/viki_agentic_rung_abstraction.py,True,92cf31845394cc5ec8cfa72cd3d9d9fa7e8ebfad72ccc6e3e9dbeb40da707201,
+admission: dedup + measured support >=2 over 60 probe episodes,scripts/viki_assemble_agentic_library.py,True,aecfe99aa1b2e9c81949c249c7ec171c2683a5a99a562130994d3c7d20bd8bb7,
+union of family libraries into a column memory,scripts/viki_union_library.py,True,98d2aba5b612543720c047b0839fefb5076530ac6d078b6d500a252ff11c1dde,
+column build driver,scripts/drivers/viki_v2_evaluate.py,True,1b69a559ef607127ebd0907beb414cb92d97a7efbb4081e3e2fbc11ed52986b1,
+"round-2 validation episodes per family (holdout, coverage pool)",outputs/v3/targets.json,True,4bc8f7e8563c8915a9c067a0aa0ca8d52ba7aabf6e6d6ad7bd1b30f6fee1a9d2,
+19-operator mined reference library (not an admitted library),results/viki_memory_experiments/amendment11/skill_memory_v2.json,True,99dc28d4d3bb8fc31189dbea54a91bb81c005eb198d02b3fe59afe984bda0213,

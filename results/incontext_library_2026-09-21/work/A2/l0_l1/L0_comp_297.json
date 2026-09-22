@@ -1,0 +1,5371 @@
+{
+ "n": 594,
+ "paired_by": "task_id",
+ "pairing": {
+  "rows_per_form": {
+   "text": 297,
+   "imaged": 297
+  },
+  "distinct_task_ids_text": 295,
+  "distinct_task_ids_imaged": 295,
+  "distinct_task_ids_overall": 295,
+  "text_ids_repeated": {
+   "4307_8-1": 2,
+   "1426_9-1": 2
+  },
+  "imaged_ids_repeated": {
+   "4307_8-1": 2,
+   "1426_9-1": 2
+  },
+  "text_only": [],
+  "imaged_only": []
+ },
+ "rows": [
+  {
+   "form": "text",
+   "row": 0,
+   "task_id": "1044_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 10,
+   "layout_id": 5,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 1,
+   "task_id": "4363_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 19,
+   "layout_id": 6,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 2,
+   "task_id": "3035_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 24,
+   "layout_id": 4,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 3,
+   "task_id": "4554_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 26,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 4,
+   "task_id": "4168_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 27,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 5,
+   "task_id": "2018_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 28,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 6,
+   "task_id": "7543_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 39,
+   "layout_id": 4,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 7,
+   "task_id": "1943_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 40,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "text",
+   "row": 8,
+   "task_id": "5937_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 47,
+   "layout_id": 7,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 9,
+   "task_id": "3173_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 48,
+   "layout_id": 9,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 10,
+   "task_id": "4307_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 68,
+   "layout_id": 3,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 11,
+   "task_id": "1292_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 75,
+   "layout_id": 6,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 12,
+   "task_id": "3800_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 78,
+   "layout_id": 1,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 13,
+   "task_id": "1468_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 95,
+   "layout_id": 2,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 14,
+   "task_id": "1782_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 98,
+   "layout_id": 9,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 15,
+   "task_id": "4438_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 102,
+   "layout_id": 5,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 16,
+   "task_id": "6277_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 103,
+   "layout_id": 4,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 17,
+   "task_id": "5845_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 105,
+   "layout_id": 3,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 18,
+   "task_id": "5501_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 109,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 19,
+   "task_id": "1850_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 119,
+   "layout_id": 5,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 20,
+   "task_id": "5900_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 128,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 21,
+   "task_id": "3071_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 137,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "text",
+   "row": 22,
+   "task_id": "7027_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 142,
+   "layout_id": 7,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 23,
+   "task_id": "904_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 149,
+   "layout_id": 2,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 24,
+   "task_id": "4649_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 155,
+   "layout_id": 6,
+   "added_asset": "cardboardbox_1"
+  },
+  {
+   "form": "text",
+   "row": 25,
+   "task_id": "4898_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 156,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 26,
+   "task_id": "6520_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 163,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 27,
+   "task_id": "1671_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 168,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 28,
+   "task_id": "1366_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 171,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 29,
+   "task_id": "5885_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 172,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 30,
+   "task_id": "7674_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 174,
+   "layout_id": 4,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 31,
+   "task_id": "3687_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 176,
+   "layout_id": 8,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 32,
+   "task_id": "3594_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 188,
+   "layout_id": 7,
+   "added_asset": "bottle_0"
+  },
+  {
+   "form": "text",
+   "row": 33,
+   "task_id": "5695_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 190,
+   "layout_id": 6,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 34,
+   "task_id": "4690_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 198,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 35,
+   "task_id": "4420_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 199,
+   "layout_id": 8,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 36,
+   "task_id": "3519_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 204,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 37,
+   "task_id": "6432_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 222,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 38,
+   "task_id": "6453_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 229,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 39,
+   "task_id": "2568_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 233,
+   "layout_id": 1,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 40,
+   "task_id": "5027_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 240,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 41,
+   "task_id": "1933_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 248,
+   "layout_id": 3,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 42,
+   "task_id": "1893_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 275,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 43,
+   "task_id": "6086_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 277,
+   "layout_id": 7,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 44,
+   "task_id": "3198_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 280,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 45,
+   "task_id": "3693_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 283,
+   "layout_id": 3,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 46,
+   "task_id": "1235_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 296,
+   "layout_id": 8,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 47,
+   "task_id": "762_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 323,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 48,
+   "task_id": "3949_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 344,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 49,
+   "task_id": "858_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 346,
+   "layout_id": 2,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 50,
+   "task_id": "4799_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 347,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 51,
+   "task_id": "311_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 348,
+   "layout_id": 8,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 52,
+   "task_id": "3891_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 352,
+   "layout_id": 3,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 53,
+   "task_id": "6536_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 353,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 54,
+   "task_id": "2101_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 358,
+   "layout_id": 8,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 55,
+   "task_id": "797_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 365,
+   "layout_id": 8,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 56,
+   "task_id": "1822_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 367,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 57,
+   "task_id": "1331_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 375,
+   "layout_id": 3,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 58,
+   "task_id": "1581_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 376,
+   "layout_id": 4,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 59,
+   "task_id": "2493_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 393,
+   "layout_id": 5,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 60,
+   "task_id": "1487_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 401,
+   "layout_id": 7,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 61,
+   "task_id": "1064_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 407,
+   "layout_id": 3,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 62,
+   "task_id": "6466_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 421,
+   "layout_id": 6,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 63,
+   "task_id": "449_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 424,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 64,
+   "task_id": "4366_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 426,
+   "layout_id": 8,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 65,
+   "task_id": "6066_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 428,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 66,
+   "task_id": "2654_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 430,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 67,
+   "task_id": "7587_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 436,
+   "layout_id": 9,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 68,
+   "task_id": "3831_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 439,
+   "layout_id": 8,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 69,
+   "task_id": "519_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 451,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 70,
+   "task_id": "4215_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 452,
+   "layout_id": 8,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 71,
+   "task_id": "3292_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 458,
+   "layout_id": 2,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 72,
+   "task_id": "266_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 462,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 73,
+   "task_id": "5144_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 474,
+   "layout_id": 9,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 74,
+   "task_id": "2563_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 476,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 75,
+   "task_id": "4032_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 479,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 76,
+   "task_id": "1695_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 484,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 77,
+   "task_id": "1196_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 497,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 78,
+   "task_id": "3268_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 498,
+   "layout_id": 1,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 79,
+   "task_id": "6154_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 501,
+   "layout_id": 1,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 80,
+   "task_id": "6875_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 507,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 81,
+   "task_id": "5260_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 516,
+   "layout_id": 9,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 82,
+   "task_id": "3356_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 519,
+   "layout_id": 3,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 83,
+   "task_id": "350_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 531,
+   "layout_id": 4,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 84,
+   "task_id": "817_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 541,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 85,
+   "task_id": "7207_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 549,
+   "layout_id": 2,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 86,
+   "task_id": "295_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 552,
+   "layout_id": 1,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 87,
+   "task_id": "4547_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 563,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 88,
+   "task_id": "4120_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 569,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 89,
+   "task_id": "3432_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 571,
+   "layout_id": 2,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 90,
+   "task_id": "4521_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 587,
+   "layout_id": 6,
+   "added_asset": "cardboardbox_1"
+  },
+  {
+   "form": "text",
+   "row": 91,
+   "task_id": "2090_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 600,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 92,
+   "task_id": "4818_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 617,
+   "layout_id": 5,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 93,
+   "task_id": "1546_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 621,
+   "layout_id": 4,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 94,
+   "task_id": "2420_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 623,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 95,
+   "task_id": "1831_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 630,
+   "layout_id": 6,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 96,
+   "task_id": "3280_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 636,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 97,
+   "task_id": "28_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 642,
+   "layout_id": 3,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 98,
+   "task_id": "4512_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 645,
+   "layout_id": 9,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 99,
+   "task_id": "2772_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 654,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 100,
+   "task_id": "1426_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 655,
+   "layout_id": 6,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 101,
+   "task_id": "3330_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 656,
+   "layout_id": 6,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 102,
+   "task_id": "3502_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 663,
+   "layout_id": 4,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 103,
+   "task_id": "5710_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 664,
+   "layout_id": 6,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 104,
+   "task_id": "2978_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 668,
+   "layout_id": 7,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 105,
+   "task_id": "4587_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 671,
+   "layout_id": 7,
+   "added_asset": "bottle_0"
+  },
+  {
+   "form": "text",
+   "row": 106,
+   "task_id": "6128_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 675,
+   "layout_id": 8,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 107,
+   "task_id": "1907_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 676,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 108,
+   "task_id": "2045_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 677,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 109,
+   "task_id": "1521_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 690,
+   "layout_id": 7,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 110,
+   "task_id": "1026_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 697,
+   "layout_id": 7,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 111,
+   "task_id": "1463_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 698,
+   "layout_id": 9,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 112,
+   "task_id": "2633_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 703,
+   "layout_id": 5,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 113,
+   "task_id": "6816_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 716,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 114,
+   "task_id": "1404_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 718,
+   "layout_id": 5,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 115,
+   "task_id": "1273_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 725,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 116,
+   "task_id": "4494_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 736,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 117,
+   "task_id": "3515_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 749,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 118,
+   "task_id": "2999_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 750,
+   "layout_id": 2,
+   "added_asset": "cooling fan_0"
+  },
+  {
+   "form": "text",
+   "row": 119,
+   "task_id": "3723_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 763,
+   "layout_id": 5,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 120,
+   "task_id": "2855_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 772,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 121,
+   "task_id": "4996_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 780,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 122,
+   "task_id": "7424_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 787,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 123,
+   "task_id": "104_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 789,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 124,
+   "task_id": "4093_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 796,
+   "layout_id": 7,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 125,
+   "task_id": "5738_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 797,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 126,
+   "task_id": "4471_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 799,
+   "layout_id": 5,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 127,
+   "task_id": "3069_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 801,
+   "layout_id": 7,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 128,
+   "task_id": "4003_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 804,
+   "layout_id": 9,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 129,
+   "task_id": "416_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 806,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 130,
+   "task_id": "4244_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 813,
+   "layout_id": 6,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 131,
+   "task_id": "464_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 814,
+   "layout_id": 3,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 132,
+   "task_id": "6661_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 826,
+   "layout_id": 8,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 133,
+   "task_id": "669_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 837,
+   "layout_id": 1,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 134,
+   "task_id": "4224_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 840,
+   "layout_id": 4,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 135,
+   "task_id": "4660_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 844,
+   "layout_id": 9,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 136,
+   "task_id": "5399_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 850,
+   "layout_id": 7,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 137,
+   "task_id": "1648_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 863,
+   "layout_id": 5,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 138,
+   "task_id": "6496_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 870,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 139,
+   "task_id": "1620_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 874,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "text",
+   "row": 140,
+   "task_id": "2023_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 876,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "text",
+   "row": 141,
+   "task_id": "6028_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 879,
+   "layout_id": 8,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 142,
+   "task_id": "6750_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 881,
+   "layout_id": 4,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 143,
+   "task_id": "4230_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 883,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 144,
+   "task_id": "3511_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 890,
+   "layout_id": 5,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 145,
+   "task_id": "1684_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 901,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 146,
+   "task_id": "1014_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 918,
+   "layout_id": 2,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 147,
+   "task_id": "7558_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 947,
+   "layout_id": 4,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 148,
+   "task_id": "4968_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 949,
+   "layout_id": 9,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 149,
+   "task_id": "4159_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 952,
+   "layout_id": 2,
+   "added_asset": "cooling fan_0"
+  },
+  {
+   "form": "text",
+   "row": 150,
+   "task_id": "3932_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 957,
+   "layout_id": 2,
+   "added_asset": "spoon_0"
+  },
+  {
+   "form": "text",
+   "row": 151,
+   "task_id": "1462_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 960,
+   "layout_id": 1,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 152,
+   "task_id": "7525_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 964,
+   "layout_id": 4,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 153,
+   "task_id": "5199_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 967,
+   "layout_id": 7,
+   "added_asset": "wine_0"
+  },
+  {
+   "form": "text",
+   "row": 154,
+   "task_id": "2900_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 968,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 155,
+   "task_id": "2786_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 971,
+   "layout_id": 6,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 156,
+   "task_id": "7759_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 973,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "text",
+   "row": 157,
+   "task_id": "3228_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 976,
+   "layout_id": 4,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 158,
+   "task_id": "3232_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 977,
+   "layout_id": 2,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 159,
+   "task_id": "6027_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 979,
+   "layout_id": 7,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 160,
+   "task_id": "3128_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 980,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 161,
+   "task_id": "4041_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 999,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 162,
+   "task_id": "1672_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1027,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 163,
+   "task_id": "2759_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1029,
+   "layout_id": 4,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 164,
+   "task_id": "7183_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1039,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 165,
+   "task_id": "2819_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1042,
+   "layout_id": 8,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 166,
+   "task_id": "6462_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1043,
+   "layout_id": 6,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 167,
+   "task_id": "2462_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1045,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 168,
+   "task_id": "7406_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1051,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 169,
+   "task_id": "1518_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1058,
+   "layout_id": 5,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 170,
+   "task_id": "2974_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1063,
+   "layout_id": 3,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 171,
+   "task_id": "7728_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1075,
+   "layout_id": 8,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 172,
+   "task_id": "4307_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1079,
+   "layout_id": 6,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 173,
+   "task_id": "6970_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1104,
+   "layout_id": 3,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 174,
+   "task_id": "1067_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1105,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 175,
+   "task_id": "3941_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1106,
+   "layout_id": 4,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 176,
+   "task_id": "100_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1114,
+   "layout_id": 7,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 177,
+   "task_id": "3264_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1126,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 178,
+   "task_id": "6924_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1127,
+   "layout_id": 5,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 179,
+   "task_id": "639_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1135,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 180,
+   "task_id": "7051_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1152,
+   "layout_id": 2,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 181,
+   "task_id": "1622_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1155,
+   "layout_id": 2,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 182,
+   "task_id": "2017_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1158,
+   "layout_id": 7,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 183,
+   "task_id": "3722_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1163,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 184,
+   "task_id": "2116_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1185,
+   "layout_id": 5,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 185,
+   "task_id": "2124_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1190,
+   "layout_id": 1,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 186,
+   "task_id": "1678_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1192,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 187,
+   "task_id": "1426_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1193,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 188,
+   "task_id": "7666_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1200,
+   "layout_id": 6,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 189,
+   "task_id": "190_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1201,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 190,
+   "task_id": "243_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1207,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 191,
+   "task_id": "4496_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1210,
+   "layout_id": 4,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 192,
+   "task_id": "642_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1224,
+   "layout_id": 2,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 193,
+   "task_id": "6188_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1227,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 194,
+   "task_id": "6_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1228,
+   "layout_id": 6,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 195,
+   "task_id": "3437_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1232,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 196,
+   "task_id": "7421_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1233,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 197,
+   "task_id": "4850_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1234,
+   "layout_id": 1,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 198,
+   "task_id": "2066_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1247,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 199,
+   "task_id": "2867_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1248,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 200,
+   "task_id": "3589_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1265,
+   "layout_id": 8,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 201,
+   "task_id": "4104_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1274,
+   "layout_id": 1,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 202,
+   "task_id": "2905_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1280,
+   "layout_id": 2,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 203,
+   "task_id": "657_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1291,
+   "layout_id": 4,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 204,
+   "task_id": "3972_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1294,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 205,
+   "task_id": "2432_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1312,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 206,
+   "task_id": "2883_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1321,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 207,
+   "task_id": "2182_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1322,
+   "layout_id": 7,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 208,
+   "task_id": "618_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1325,
+   "layout_id": 7,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 209,
+   "task_id": "5308_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1328,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 210,
+   "task_id": "92_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1331,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 211,
+   "task_id": "6118_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1350,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 212,
+   "task_id": "5150_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1357,
+   "layout_id": 2,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 213,
+   "task_id": "789_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1365,
+   "layout_id": 2,
+   "added_asset": "spoon_0"
+  },
+  {
+   "form": "text",
+   "row": 214,
+   "task_id": "4485_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1366,
+   "layout_id": 1,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 215,
+   "task_id": "4534_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1374,
+   "layout_id": 2,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 216,
+   "task_id": "771_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1383,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 217,
+   "task_id": "3311_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1387,
+   "layout_id": 6,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 218,
+   "task_id": "6761_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1389,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 219,
+   "task_id": "53_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1392,
+   "layout_id": 8,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 220,
+   "task_id": "2724_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1393,
+   "layout_id": 3,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 221,
+   "task_id": "2417_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1397,
+   "layout_id": 4,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 222,
+   "task_id": "4195_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1398,
+   "layout_id": 9,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 223,
+   "task_id": "248_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1403,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 224,
+   "task_id": "6573_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1405,
+   "layout_id": 2,
+   "added_asset": "spoon_0"
+  },
+  {
+   "form": "text",
+   "row": 225,
+   "task_id": "2208_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1406,
+   "layout_id": 2,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 226,
+   "task_id": "2042_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1410,
+   "layout_id": 7,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 227,
+   "task_id": "568_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1411,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 228,
+   "task_id": "6616_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1420,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 229,
+   "task_id": "1550_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1432,
+   "layout_id": 1,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 230,
+   "task_id": "3330_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1442,
+   "layout_id": 3,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 231,
+   "task_id": "1237_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1443,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 232,
+   "task_id": "7045_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1450,
+   "layout_id": 3,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 233,
+   "task_id": "808_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1455,
+   "layout_id": 8,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 234,
+   "task_id": "6022_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1465,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 235,
+   "task_id": "3186_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1470,
+   "layout_id": 3,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 236,
+   "task_id": "5303_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1473,
+   "layout_id": 1,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 237,
+   "task_id": "7709_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1475,
+   "layout_id": 9,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 238,
+   "task_id": "2895_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1477,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 239,
+   "task_id": "3367_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1484,
+   "layout_id": 4,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 240,
+   "task_id": "2111_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1490,
+   "layout_id": 7,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 241,
+   "task_id": "4413_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1496,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 242,
+   "task_id": "5733_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1505,
+   "layout_id": 2,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 243,
+   "task_id": "175_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1507,
+   "layout_id": 2,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 244,
+   "task_id": "7605_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1515,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "text",
+   "row": 245,
+   "task_id": "408_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1520,
+   "layout_id": 7,
+   "added_asset": "bottle_0"
+  },
+  {
+   "form": "text",
+   "row": 246,
+   "task_id": "3355_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1522,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 247,
+   "task_id": "4306_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1523,
+   "layout_id": 9,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 248,
+   "task_id": "68_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1546,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 249,
+   "task_id": "6895_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1559,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 250,
+   "task_id": "7533_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1571,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 251,
+   "task_id": "1309_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1574,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 252,
+   "task_id": "210_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1579,
+   "layout_id": 8,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 253,
+   "task_id": "470_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1583,
+   "layout_id": 8,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 254,
+   "task_id": "4855_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1585,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 255,
+   "task_id": "4226_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1590,
+   "layout_id": 9,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 256,
+   "task_id": "2642_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1591,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 257,
+   "task_id": "2449_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1598,
+   "layout_id": 2,
+   "added_asset": "cooling fan_0"
+  },
+  {
+   "form": "text",
+   "row": 258,
+   "task_id": "7168_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1610,
+   "layout_id": 4,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 259,
+   "task_id": "4316_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1613,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 260,
+   "task_id": "4640_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1617,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 261,
+   "task_id": "2098_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1618,
+   "layout_id": 6,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 262,
+   "task_id": "3738_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1628,
+   "layout_id": 5,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 263,
+   "task_id": "5215_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1629,
+   "layout_id": 7,
+   "added_asset": "wine_0"
+  },
+  {
+   "form": "text",
+   "row": 264,
+   "task_id": "2877_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1630,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 265,
+   "task_id": "1126_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1635,
+   "layout_id": 5,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 266,
+   "task_id": "4555_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1643,
+   "layout_id": 7,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "text",
+   "row": 267,
+   "task_id": "3303_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1644,
+   "layout_id": 8,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 268,
+   "task_id": "406_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1647,
+   "layout_id": 8,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 269,
+   "task_id": "5299_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1650,
+   "layout_id": 6,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 270,
+   "task_id": "6635_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1654,
+   "layout_id": 7,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 271,
+   "task_id": "4586_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1665,
+   "layout_id": 3,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 272,
+   "task_id": "528_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1671,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 273,
+   "task_id": "2772_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1678,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 274,
+   "task_id": "7721_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1680,
+   "layout_id": 8,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 275,
+   "task_id": "4336_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1690,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 276,
+   "task_id": "5234_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1715,
+   "layout_id": 4,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 277,
+   "task_id": "1982_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1716,
+   "layout_id": 8,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 278,
+   "task_id": "6058_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1720,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 279,
+   "task_id": "1806_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1724,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "text",
+   "row": 280,
+   "task_id": "2315_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1728,
+   "layout_id": 2,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 281,
+   "task_id": "6369_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1730,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "text",
+   "row": 282,
+   "task_id": "2395_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1731,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 283,
+   "task_id": "551_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1732,
+   "layout_id": 8,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "text",
+   "row": 284,
+   "task_id": "2863_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1734,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "text",
+   "row": 285,
+   "task_id": "4209_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1741,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 286,
+   "task_id": "1112_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1743,
+   "layout_id": 9,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 287,
+   "task_id": "5081_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1745,
+   "layout_id": 2,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 288,
+   "task_id": "4611_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1750,
+   "layout_id": 1,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 289,
+   "task_id": "678_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1755,
+   "layout_id": 6,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "text",
+   "row": 290,
+   "task_id": "3103_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1759,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "text",
+   "row": 291,
+   "task_id": "1356_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1766,
+   "layout_id": 6,
+   "added_asset": "cardboardbox_1"
+  },
+  {
+   "form": "text",
+   "row": 292,
+   "task_id": "3773_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1769,
+   "layout_id": 5,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "text",
+   "row": 293,
+   "task_id": "1522_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1772,
+   "layout_id": 5,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "text",
+   "row": 294,
+   "task_id": "2735_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1792,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "text",
+   "row": 295,
+   "task_id": "669_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1796,
+   "layout_id": 7,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "text",
+   "row": 296,
+   "task_id": "6784_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1799,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 0,
+   "task_id": "1044_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 10,
+   "layout_id": 5,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 1,
+   "task_id": "4363_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 19,
+   "layout_id": 6,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 2,
+   "task_id": "3035_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 24,
+   "layout_id": 4,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 3,
+   "task_id": "4554_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 26,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 4,
+   "task_id": "4168_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 27,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 5,
+   "task_id": "2018_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 28,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 6,
+   "task_id": "7543_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 39,
+   "layout_id": 4,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 7,
+   "task_id": "1943_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 40,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "imaged",
+   "row": 8,
+   "task_id": "5937_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 47,
+   "layout_id": 7,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 9,
+   "task_id": "3173_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 48,
+   "layout_id": 9,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 10,
+   "task_id": "4307_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 68,
+   "layout_id": 3,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 11,
+   "task_id": "1292_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 75,
+   "layout_id": 6,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 12,
+   "task_id": "3800_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 78,
+   "layout_id": 1,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 13,
+   "task_id": "1468_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 95,
+   "layout_id": 2,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 14,
+   "task_id": "1782_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 98,
+   "layout_id": 9,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 15,
+   "task_id": "4438_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 102,
+   "layout_id": 5,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 16,
+   "task_id": "6277_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 103,
+   "layout_id": 4,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 17,
+   "task_id": "5845_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 105,
+   "layout_id": 3,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 18,
+   "task_id": "5501_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 109,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 19,
+   "task_id": "1850_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 119,
+   "layout_id": 5,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 20,
+   "task_id": "5900_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 128,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 21,
+   "task_id": "3071_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 137,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "imaged",
+   "row": 22,
+   "task_id": "7027_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 142,
+   "layout_id": 7,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 23,
+   "task_id": "904_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 149,
+   "layout_id": 2,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 24,
+   "task_id": "4649_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 155,
+   "layout_id": 6,
+   "added_asset": "cardboardbox_1"
+  },
+  {
+   "form": "imaged",
+   "row": 25,
+   "task_id": "4898_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 156,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 26,
+   "task_id": "6520_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 163,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 27,
+   "task_id": "1671_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 168,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 28,
+   "task_id": "1366_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 171,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 29,
+   "task_id": "5885_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 172,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 30,
+   "task_id": "7674_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 174,
+   "layout_id": 4,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 31,
+   "task_id": "3687_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 176,
+   "layout_id": 8,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 32,
+   "task_id": "3594_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 188,
+   "layout_id": 7,
+   "added_asset": "bottle_0"
+  },
+  {
+   "form": "imaged",
+   "row": 33,
+   "task_id": "5695_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 190,
+   "layout_id": 6,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 34,
+   "task_id": "4690_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 198,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 35,
+   "task_id": "4420_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 199,
+   "layout_id": 8,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 36,
+   "task_id": "3519_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 204,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 37,
+   "task_id": "6432_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 222,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 38,
+   "task_id": "6453_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 229,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 39,
+   "task_id": "2568_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 233,
+   "layout_id": 1,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 40,
+   "task_id": "5027_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 240,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 41,
+   "task_id": "1933_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 248,
+   "layout_id": 3,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 42,
+   "task_id": "1893_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 275,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 43,
+   "task_id": "6086_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 277,
+   "layout_id": 7,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 44,
+   "task_id": "3198_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 280,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 45,
+   "task_id": "3693_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 283,
+   "layout_id": 3,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 46,
+   "task_id": "1235_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 296,
+   "layout_id": 8,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 47,
+   "task_id": "762_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 323,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 48,
+   "task_id": "3949_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 344,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 49,
+   "task_id": "858_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 346,
+   "layout_id": 2,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 50,
+   "task_id": "4799_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 347,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 51,
+   "task_id": "311_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 348,
+   "layout_id": 8,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 52,
+   "task_id": "3891_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 352,
+   "layout_id": 3,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 53,
+   "task_id": "6536_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 353,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 54,
+   "task_id": "2101_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 358,
+   "layout_id": 8,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 55,
+   "task_id": "797_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 365,
+   "layout_id": 8,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 56,
+   "task_id": "1822_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 367,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 57,
+   "task_id": "1331_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 375,
+   "layout_id": 3,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 58,
+   "task_id": "1581_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 376,
+   "layout_id": 4,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 59,
+   "task_id": "2493_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 393,
+   "layout_id": 5,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 60,
+   "task_id": "1487_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 401,
+   "layout_id": 7,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 61,
+   "task_id": "1064_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 407,
+   "layout_id": 3,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 62,
+   "task_id": "6466_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 421,
+   "layout_id": 6,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 63,
+   "task_id": "449_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 424,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 64,
+   "task_id": "4366_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 426,
+   "layout_id": 8,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 65,
+   "task_id": "6066_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 428,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 66,
+   "task_id": "2654_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 430,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 67,
+   "task_id": "7587_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 436,
+   "layout_id": 9,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 68,
+   "task_id": "3831_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 439,
+   "layout_id": 8,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 69,
+   "task_id": "519_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 451,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 70,
+   "task_id": "4215_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 452,
+   "layout_id": 8,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 71,
+   "task_id": "3292_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 458,
+   "layout_id": 2,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 72,
+   "task_id": "266_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 462,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 73,
+   "task_id": "5144_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 474,
+   "layout_id": 9,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 74,
+   "task_id": "2563_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 476,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 75,
+   "task_id": "4032_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 479,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 76,
+   "task_id": "1695_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 484,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 77,
+   "task_id": "1196_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 497,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 78,
+   "task_id": "3268_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 498,
+   "layout_id": 1,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 79,
+   "task_id": "6154_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 501,
+   "layout_id": 1,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 80,
+   "task_id": "6875_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 507,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 81,
+   "task_id": "5260_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 516,
+   "layout_id": 9,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 82,
+   "task_id": "3356_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 519,
+   "layout_id": 3,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 83,
+   "task_id": "350_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 531,
+   "layout_id": 4,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 84,
+   "task_id": "817_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 541,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 85,
+   "task_id": "7207_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 549,
+   "layout_id": 2,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 86,
+   "task_id": "295_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 552,
+   "layout_id": 1,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 87,
+   "task_id": "4547_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 563,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 88,
+   "task_id": "4120_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 569,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 89,
+   "task_id": "3432_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 571,
+   "layout_id": 2,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 90,
+   "task_id": "4521_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 587,
+   "layout_id": 6,
+   "added_asset": "cardboardbox_1"
+  },
+  {
+   "form": "imaged",
+   "row": 91,
+   "task_id": "2090_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 600,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 92,
+   "task_id": "4818_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 617,
+   "layout_id": 5,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 93,
+   "task_id": "1546_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 621,
+   "layout_id": 4,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 94,
+   "task_id": "2420_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 623,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 95,
+   "task_id": "1831_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 630,
+   "layout_id": 6,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 96,
+   "task_id": "3280_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 636,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 97,
+   "task_id": "28_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 642,
+   "layout_id": 3,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 98,
+   "task_id": "4512_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 645,
+   "layout_id": 9,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 99,
+   "task_id": "2772_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 654,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 100,
+   "task_id": "1426_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 655,
+   "layout_id": 6,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 101,
+   "task_id": "3330_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 656,
+   "layout_id": 6,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 102,
+   "task_id": "3502_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 663,
+   "layout_id": 4,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 103,
+   "task_id": "5710_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 664,
+   "layout_id": 6,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 104,
+   "task_id": "2978_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 668,
+   "layout_id": 7,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 105,
+   "task_id": "4587_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 671,
+   "layout_id": 7,
+   "added_asset": "bottle_0"
+  },
+  {
+   "form": "imaged",
+   "row": 106,
+   "task_id": "6128_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 675,
+   "layout_id": 8,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 107,
+   "task_id": "1907_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 676,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 108,
+   "task_id": "2045_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 677,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 109,
+   "task_id": "1521_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 690,
+   "layout_id": 7,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 110,
+   "task_id": "1026_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 697,
+   "layout_id": 7,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 111,
+   "task_id": "1463_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 698,
+   "layout_id": 9,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 112,
+   "task_id": "2633_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 703,
+   "layout_id": 5,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 113,
+   "task_id": "6816_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 716,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 114,
+   "task_id": "1404_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 718,
+   "layout_id": 5,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 115,
+   "task_id": "1273_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 725,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 116,
+   "task_id": "4494_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 736,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 117,
+   "task_id": "3515_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 749,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 118,
+   "task_id": "2999_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 750,
+   "layout_id": 2,
+   "added_asset": "cooling fan_0"
+  },
+  {
+   "form": "imaged",
+   "row": 119,
+   "task_id": "3723_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 763,
+   "layout_id": 5,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 120,
+   "task_id": "2855_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 772,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 121,
+   "task_id": "4996_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 780,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 122,
+   "task_id": "7424_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 787,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 123,
+   "task_id": "104_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 789,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 124,
+   "task_id": "4093_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 796,
+   "layout_id": 7,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 125,
+   "task_id": "5738_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 797,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 126,
+   "task_id": "4471_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 799,
+   "layout_id": 5,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 127,
+   "task_id": "3069_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 801,
+   "layout_id": 7,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 128,
+   "task_id": "4003_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 804,
+   "layout_id": 9,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 129,
+   "task_id": "416_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 806,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 130,
+   "task_id": "4244_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 813,
+   "layout_id": 6,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 131,
+   "task_id": "464_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 814,
+   "layout_id": 3,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 132,
+   "task_id": "6661_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 826,
+   "layout_id": 8,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 133,
+   "task_id": "669_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 837,
+   "layout_id": 1,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 134,
+   "task_id": "4224_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 840,
+   "layout_id": 4,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 135,
+   "task_id": "4660_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 844,
+   "layout_id": 9,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 136,
+   "task_id": "5399_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 850,
+   "layout_id": 7,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 137,
+   "task_id": "1648_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 863,
+   "layout_id": 5,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 138,
+   "task_id": "6496_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 870,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 139,
+   "task_id": "1620_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 874,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "imaged",
+   "row": 140,
+   "task_id": "2023_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 876,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "imaged",
+   "row": 141,
+   "task_id": "6028_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 879,
+   "layout_id": 8,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 142,
+   "task_id": "6750_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 881,
+   "layout_id": 4,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 143,
+   "task_id": "4230_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 883,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 144,
+   "task_id": "3511_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 890,
+   "layout_id": 5,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 145,
+   "task_id": "1684_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 901,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 146,
+   "task_id": "1014_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 918,
+   "layout_id": 2,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 147,
+   "task_id": "7558_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 947,
+   "layout_id": 4,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 148,
+   "task_id": "4968_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 949,
+   "layout_id": 9,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 149,
+   "task_id": "4159_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 952,
+   "layout_id": 2,
+   "added_asset": "cooling fan_0"
+  },
+  {
+   "form": "imaged",
+   "row": 150,
+   "task_id": "3932_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 957,
+   "layout_id": 2,
+   "added_asset": "spoon_0"
+  },
+  {
+   "form": "imaged",
+   "row": 151,
+   "task_id": "1462_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 960,
+   "layout_id": 1,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 152,
+   "task_id": "7525_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 964,
+   "layout_id": 4,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 153,
+   "task_id": "5199_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 967,
+   "layout_id": 7,
+   "added_asset": "wine_0"
+  },
+  {
+   "form": "imaged",
+   "row": 154,
+   "task_id": "2900_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 968,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 155,
+   "task_id": "2786_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 971,
+   "layout_id": 6,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 156,
+   "task_id": "7759_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 973,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "imaged",
+   "row": 157,
+   "task_id": "3228_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 976,
+   "layout_id": 4,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 158,
+   "task_id": "3232_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 977,
+   "layout_id": 2,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 159,
+   "task_id": "6027_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 979,
+   "layout_id": 7,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 160,
+   "task_id": "3128_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 980,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 161,
+   "task_id": "4041_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 999,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 162,
+   "task_id": "1672_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1027,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 163,
+   "task_id": "2759_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1029,
+   "layout_id": 4,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 164,
+   "task_id": "7183_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1039,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 165,
+   "task_id": "2819_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1042,
+   "layout_id": 8,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 166,
+   "task_id": "6462_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1043,
+   "layout_id": 6,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 167,
+   "task_id": "2462_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1045,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 168,
+   "task_id": "7406_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1051,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 169,
+   "task_id": "1518_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1058,
+   "layout_id": 5,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 170,
+   "task_id": "2974_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1063,
+   "layout_id": 3,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 171,
+   "task_id": "7728_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1075,
+   "layout_id": 8,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 172,
+   "task_id": "4307_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1079,
+   "layout_id": 6,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 173,
+   "task_id": "6970_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1104,
+   "layout_id": 3,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 174,
+   "task_id": "1067_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1105,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 175,
+   "task_id": "3941_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1106,
+   "layout_id": 4,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 176,
+   "task_id": "100_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1114,
+   "layout_id": 7,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 177,
+   "task_id": "3264_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1126,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 178,
+   "task_id": "6924_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1127,
+   "layout_id": 5,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 179,
+   "task_id": "639_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1135,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 180,
+   "task_id": "7051_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1152,
+   "layout_id": 2,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 181,
+   "task_id": "1622_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1155,
+   "layout_id": 2,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 182,
+   "task_id": "2017_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1158,
+   "layout_id": 7,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 183,
+   "task_id": "3722_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1163,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 184,
+   "task_id": "2116_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1185,
+   "layout_id": 5,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 185,
+   "task_id": "2124_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1190,
+   "layout_id": 1,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 186,
+   "task_id": "1678_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1192,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 187,
+   "task_id": "1426_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1193,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 188,
+   "task_id": "7666_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1200,
+   "layout_id": 6,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 189,
+   "task_id": "190_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1201,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 190,
+   "task_id": "243_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1207,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 191,
+   "task_id": "4496_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1210,
+   "layout_id": 4,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 192,
+   "task_id": "642_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1224,
+   "layout_id": 2,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 193,
+   "task_id": "6188_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1227,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 194,
+   "task_id": "6_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1228,
+   "layout_id": 6,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 195,
+   "task_id": "3437_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1232,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 196,
+   "task_id": "7421_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1233,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 197,
+   "task_id": "4850_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1234,
+   "layout_id": 1,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 198,
+   "task_id": "2066_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1247,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 199,
+   "task_id": "2867_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1248,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 200,
+   "task_id": "3589_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1265,
+   "layout_id": 8,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 201,
+   "task_id": "4104_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1274,
+   "layout_id": 1,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 202,
+   "task_id": "2905_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1280,
+   "layout_id": 2,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 203,
+   "task_id": "657_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1291,
+   "layout_id": 4,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 204,
+   "task_id": "3972_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1294,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 205,
+   "task_id": "2432_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1312,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 206,
+   "task_id": "2883_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1321,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 207,
+   "task_id": "2182_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1322,
+   "layout_id": 7,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 208,
+   "task_id": "618_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1325,
+   "layout_id": 7,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 209,
+   "task_id": "5308_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1328,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 210,
+   "task_id": "92_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1331,
+   "layout_id": 5,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 211,
+   "task_id": "6118_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1350,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 212,
+   "task_id": "5150_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1357,
+   "layout_id": 2,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 213,
+   "task_id": "789_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1365,
+   "layout_id": 2,
+   "added_asset": "spoon_0"
+  },
+  {
+   "form": "imaged",
+   "row": 214,
+   "task_id": "4485_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1366,
+   "layout_id": 1,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 215,
+   "task_id": "4534_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1374,
+   "layout_id": 2,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 216,
+   "task_id": "771_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1383,
+   "layout_id": 6,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 217,
+   "task_id": "3311_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1387,
+   "layout_id": 6,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 218,
+   "task_id": "6761_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1389,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 219,
+   "task_id": "53_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1392,
+   "layout_id": 8,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 220,
+   "task_id": "2724_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1393,
+   "layout_id": 3,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 221,
+   "task_id": "2417_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1397,
+   "layout_id": 4,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 222,
+   "task_id": "4195_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1398,
+   "layout_id": 9,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 223,
+   "task_id": "248_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1403,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 224,
+   "task_id": "6573_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1405,
+   "layout_id": 2,
+   "added_asset": "spoon_0"
+  },
+  {
+   "form": "imaged",
+   "row": 225,
+   "task_id": "2208_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1406,
+   "layout_id": 2,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 226,
+   "task_id": "2042_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1410,
+   "layout_id": 7,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 227,
+   "task_id": "568_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1411,
+   "layout_id": 3,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 228,
+   "task_id": "6616_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1420,
+   "layout_id": 1,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 229,
+   "task_id": "1550_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1432,
+   "layout_id": 1,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 230,
+   "task_id": "3330_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1442,
+   "layout_id": 3,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 231,
+   "task_id": "1237_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1443,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 232,
+   "task_id": "7045_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1450,
+   "layout_id": 3,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 233,
+   "task_id": "808_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1455,
+   "layout_id": 8,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 234,
+   "task_id": "6022_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1465,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 235,
+   "task_id": "3186_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1470,
+   "layout_id": 3,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 236,
+   "task_id": "5303_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1473,
+   "layout_id": 1,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 237,
+   "task_id": "7709_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1475,
+   "layout_id": 9,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 238,
+   "task_id": "2895_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1477,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 239,
+   "task_id": "3367_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1484,
+   "layout_id": 4,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 240,
+   "task_id": "2111_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1490,
+   "layout_id": 7,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 241,
+   "task_id": "4413_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1496,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 242,
+   "task_id": "5733_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1505,
+   "layout_id": 2,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 243,
+   "task_id": "175_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1507,
+   "layout_id": 2,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 244,
+   "task_id": "7605_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1515,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "imaged",
+   "row": 245,
+   "task_id": "408_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1520,
+   "layout_id": 7,
+   "added_asset": "bottle_0"
+  },
+  {
+   "form": "imaged",
+   "row": 246,
+   "task_id": "3355_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1522,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 247,
+   "task_id": "4306_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1523,
+   "layout_id": 9,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 248,
+   "task_id": "68_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1546,
+   "layout_id": 9,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 249,
+   "task_id": "6895_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1559,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 250,
+   "task_id": "7533_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1571,
+   "layout_id": 9,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 251,
+   "task_id": "1309_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1574,
+   "layout_id": 9,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 252,
+   "task_id": "210_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1579,
+   "layout_id": 8,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 253,
+   "task_id": "470_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1583,
+   "layout_id": 8,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 254,
+   "task_id": "4855_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1585,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 255,
+   "task_id": "4226_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1590,
+   "layout_id": 9,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 256,
+   "task_id": "2642_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1591,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 257,
+   "task_id": "2449_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1598,
+   "layout_id": 2,
+   "added_asset": "cooling fan_0"
+  },
+  {
+   "form": "imaged",
+   "row": 258,
+   "task_id": "7168_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1610,
+   "layout_id": 4,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 259,
+   "task_id": "4316_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1613,
+   "layout_id": 3,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 260,
+   "task_id": "4640_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1617,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 261,
+   "task_id": "2098_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1618,
+   "layout_id": 6,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 262,
+   "task_id": "3738_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1628,
+   "layout_id": 5,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 263,
+   "task_id": "5215_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1629,
+   "layout_id": 7,
+   "added_asset": "wine_0"
+  },
+  {
+   "form": "imaged",
+   "row": 264,
+   "task_id": "2877_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1630,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 265,
+   "task_id": "1126_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1635,
+   "layout_id": 5,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 266,
+   "task_id": "4555_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1643,
+   "layout_id": 7,
+   "added_asset": "pear_1"
+  },
+  {
+   "form": "imaged",
+   "row": 267,
+   "task_id": "3303_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1644,
+   "layout_id": 8,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 268,
+   "task_id": "406_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1647,
+   "layout_id": 8,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 269,
+   "task_id": "5299_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1650,
+   "layout_id": 6,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 270,
+   "task_id": "6635_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1654,
+   "layout_id": 7,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 271,
+   "task_id": "4586_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1665,
+   "layout_id": 3,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 272,
+   "task_id": "528_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1671,
+   "layout_id": 5,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 273,
+   "task_id": "2772_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1678,
+   "layout_id": 4,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 274,
+   "task_id": "7721_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1680,
+   "layout_id": 8,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 275,
+   "task_id": "4336_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1690,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 276,
+   "task_id": "5234_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1715,
+   "layout_id": 4,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 277,
+   "task_id": "1982_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1716,
+   "layout_id": 8,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 278,
+   "task_id": "6058_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1720,
+   "layout_id": 1,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 279,
+   "task_id": "1806_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1724,
+   "layout_id": 6,
+   "added_asset": "pumpkin_1"
+  },
+  {
+   "form": "imaged",
+   "row": 280,
+   "task_id": "2315_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1728,
+   "layout_id": 2,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 281,
+   "task_id": "6369_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1730,
+   "layout_id": 4,
+   "added_asset": "fork_1"
+  },
+  {
+   "form": "imaged",
+   "row": 282,
+   "task_id": "2395_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1731,
+   "layout_id": 1,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 283,
+   "task_id": "551_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1732,
+   "layout_id": 8,
+   "added_asset": "pizza_1"
+  },
+  {
+   "form": "imaged",
+   "row": 284,
+   "task_id": "2863_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1734,
+   "layout_id": 5,
+   "added_asset": "pizza_0"
+  },
+  {
+   "form": "imaged",
+   "row": 285,
+   "task_id": "4209_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1741,
+   "layout_id": 4,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 286,
+   "task_id": "1112_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1743,
+   "layout_id": 9,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 287,
+   "task_id": "5081_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1745,
+   "layout_id": 2,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 288,
+   "task_id": "4611_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1750,
+   "layout_id": 1,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 289,
+   "task_id": "678_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1755,
+   "layout_id": 6,
+   "added_asset": "banana_2"
+  },
+  {
+   "form": "imaged",
+   "row": 290,
+   "task_id": "3103_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1759,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  },
+  {
+   "form": "imaged",
+   "row": 291,
+   "task_id": "1356_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1766,
+   "layout_id": 6,
+   "added_asset": "cardboardbox_1"
+  },
+  {
+   "form": "imaged",
+   "row": 292,
+   "task_id": "3773_8-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1769,
+   "layout_id": 5,
+   "added_asset": "spoon_1"
+  },
+  {
+   "form": "imaged",
+   "row": 293,
+   "task_id": "1522_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1772,
+   "layout_id": 5,
+   "added_asset": "peach_1"
+  },
+  {
+   "form": "imaged",
+   "row": 294,
+   "task_id": "2735_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1792,
+   "layout_id": 8,
+   "added_asset": "bread_2"
+  },
+  {
+   "form": "imaged",
+   "row": 295,
+   "task_id": "669_9-1",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1796,
+   "layout_id": 7,
+   "added_asset": "scissors_1"
+  },
+  {
+   "form": "imaged",
+   "row": 296,
+   "task_id": "6784_8-2",
+   "task_name": "recombine_cut_and_deliver",
+   "source_row": 1799,
+   "layout_id": 1,
+   "added_asset": "tomato_2"
+  }
+ ]
+}

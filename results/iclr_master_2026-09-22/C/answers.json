@@ -1,0 +1,96 @@
+{
+ "status": "C.1 done via route Q; C.2 queue running (smoke stage)",
+ "ending": null,
+ "numbers": {
+  "build_half": {
+   "value": 99,
+   "numerator": 99,
+   "denominator": 197,
+   "source_path": "results/iclr_master_2026-09-22/C/hr_build_ids.txt"
+  },
+  "eval_half": {
+   "value": 98,
+   "numerator": 98,
+   "denominator": 197,
+   "source_path": "results/iclr_master_2026-09-22/C/hr_eval_ids.txt"
+  },
+  "instances_with_recorded_source": {
+   "value": 0.2404,
+   "numerator": 419,
+   "denominator": 1743,
+   "source_path": "B repo data/hierarchical_skill_memory/hierarchical_heterogeneous_rerange"
+  },
+  "orig_skills_ind": {
+   "value": 280,
+   "numerator": 280,
+   "denominator": null,
+   "source_path": "B repo L_ind_skills.json.gz"
+  },
+  "orig_skills_coop": {
+   "value": 175,
+   "numerator": 175,
+   "denominator": null,
+   "source_path": "B repo L_coop_skills.json.gz"
+  },
+  "orig_instances_ind": {
+   "value": 1189,
+   "numerator": 1189,
+   "denominator": null,
+   "source_path": "B repo L_ind_skills.json.gz"
+  },
+  "orig_instances_coop": {
+   "value": 554,
+   "numerator": 554,
+   "denominator": null,
+   "source_path": "B repo L_coop_skills.json.gz"
+  },
+  "q_skills_ind": {
+   "value": 185,
+   "numerator": 185,
+   "denominator": null,
+   "source_path": "results/iclr_master_2026-09-22/C/heldout_bank_q/L_ind_skills.json.gz"
+  },
+  "q_skills_coop": {
+   "value": 111,
+   "numerator": 111,
+   "denominator": null,
+   "source_path": "results/iclr_master_2026-09-22/C/heldout_bank_q/L_coop_skills.json.gz"
+  },
+  "q_instances_ind": {
+   "value": 601,
+   "numerator": 601,
+   "denominator": null,
+   "source_path": "results/iclr_master_2026-09-22/C/heldout_bank_q/L_ind_skills.json.gz"
+  },
+  "q_instances_coop": {
+   "value": 273,
+   "numerator": 273,
+   "denominator": null,
+   "source_path": "results/iclr_master_2026-09-22/C/heldout_bank_q/L_coop_skills.json.gz"
+  },
+  "q_build_episodes": {
+   "value": 98,
+   "numerator": 98,
+   "denominator": 98,
+   "source_path": "results/iclr_master_2026-09-22/C/heldout_bank_q/episodic_memory.json.gz"
+  },
+  "q_llm_calls": {
+   "value": 214,
+   "numerator": 214,
+   "denominator": null,
+   "source_path": "results/iclr_master_2026-09-22/C/calls_log.jsonl"
+  },
+  "idcheck_identical_episodes": {
+   "value": 4,
+   "numerator": 4,
+   "denominator": 5,
+   "source_path": "remote partnr-isambard-C/outputs/iclr_master_C/idcheck2_{ref,patched}"
+  }
+ },
+ "notes": [
+  "route P unavailable (24% of instances record source); route Q with archived builder + Llama-3.3-70B",
+  "P' library kept only as record",
+  "PYTHONHASHSEED = seed",
+  "C.1.2 skipped: no per-agent instance logs on disk"
+ ]
+}

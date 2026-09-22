@@ -1,0 +1,169 @@
+[
+ {
+  "memory": "memory_all.json",
+  "layer1_ops": 9,
+  "layer1_ids": [
+   "m0000",
+   "m0004",
+   "m0005",
+   "m0010",
+   "m0006",
+   "m0008",
+   "m0001",
+   "m0011",
+   "m0003"
+  ],
+  "admitted_layer1_ops": 8,
+  "layer2_identical_before_swap": true,
+  "layer3_identical_before_swap": true,
+  "sha256": "89b198eedaa7a925c02e079321a9fecd079242bbf2552af87f7041e5ea10a986"
+ },
+ {
+  "memory": "memory_heldout_clear_table_with_two_robots_and_put_in_cabinet.json",
+  "layer1_ops": 8,
+  "layer1_ids": [
+   "m0000",
+   "m0004",
+   "m0005",
+   "m0010",
+   "m0006",
+   "m0008",
+   "m0001",
+   "m0011"
+  ],
+  "admitted_layer1_ops": 7,
+  "layer2_identical_before_swap": true,
+  "layer3_identical_before_swap": true,
+  "sha256": "d27dae0f71810fdae5e96db2f80b643b8985649ffcdb26a1587429c1cd5fcb34"
+ },
+ {
+  "memory": "memory_heldout_cut_fruit_on_board.json",
+  "layer1_ops": 8,
+  "layer1_ids": [
+   "m0000",
+   "m0004",
+   "m0005",
+   "m0010",
+   "m0008",
+   "m0001",
+   "m0011",
+   "m0003"
+  ],
+  "admitted_layer1_ops": 7,
+  "layer2_identical_before_swap": true,
+  "layer3_identical_before_swap": true,
+  "sha256": "270f50335c955559579c9488de35d7be2f5339547e4822b583a3349a3674375a"
+ },
+ {
+  "memory": "memory_heldout_cut_two_fruits_on_board.json",
+  "layer1_ops": 8,
+  "layer1_ids": [
+   "m0000",
+   "m0004",
+   "m0005",
+   "m0010",
+   "m0006",
+   "m0001",
+   "m0011",
+   "m0003"
+  ],
+  "admitted_layer1_ops": 6,
+  "layer2_identical_before_swap": true,
+  "layer3_identical_before_swap": true,
+  "sha256": "9d917409d145e3daf837237a93ace5265b982ac8e2f78b8ba164e012a6781a8b"
+ },
+ {
+  "memory": "memory_heldout_dog_push_box_for_two_panda_transport.json",
+  "layer1_ops": 8,
+  "layer1_ids": [
+   "m0000",
+   "m0004",
+   "m0005",
+   "m0010",
+   "m0006",
+   "m0008",
+   "m0001",
+   "m0003"
+  ],
+  "admitted_layer1_ops": 8,
+  "layer2_identical_before_swap": true,
+  "layer3_identical_before_swap": true,
+  "sha256": "cd5d4ee5bb63980a3fcbf2f63795bd24562cd428d6034544e7ed4cdd38280ce2"
+ },
+ {
+  "memory": "memory_heldout_ensure_all_fruits_on_table.json",
+  "layer1_ops": 9,
+  "layer1_ids": [
+   "m0000",
+   "m0010",
+   "m0004",
+   "m0005",
+   "m0006",
+   "m0008",
+   "m0001",
+   "m0003",
+   "m0011"
+  ],
+  "admitted_layer1_ops": 8,
+  "layer2_identical_before_swap": true,
+  "layer3_identical_before_swap": true,
+  "sha256": "5e2741ae23516d030febd5124a22359771428a9a2e243e3e853bcd194082bbbf"
+ },
+ {
+  "memory": "memory_heldout_parallel_human_dual_asset_to_plate_or_bowl.json",
+  "layer1_ops": 9,
+  "layer1_ids": [
+   "m0000",
+   "m0004",
+   "m0005",
+   "m0010",
+   "m0006",
+   "m0008",
+   "m0001",
+   "m0011",
+   "m0003"
+  ],
+  "admitted_layer1_ops": 8,
+  "layer2_identical_before_swap": true,
+  "layer3_identical_before_swap": true,
+  "sha256": "aa344f8948b063763063d077f2f6c67566e45c88db851e52720bde9023fc2ab5"
+ },
+ {
+  "memory": "memory_heldout_set_plate_and_fork_on_table.json",
+  "layer1_ops": 9,
+  "layer1_ids": [
+   "m0000",
+   "m0004",
+   "m0005",
+   "m0010",
+   "m0006",
+   "m0008",
+   "m0001",
+   "m0011",
+   "m0003"
+  ],
+  "admitted_layer1_ops": 8,
+  "layer2_identical_before_swap": true,
+  "layer3_identical_before_swap": true,
+  "sha256": "1fdf8bbbd2ee8e0b0358def0102db7a23bb2ca4aa24821a001f7b73485c647cb"
+ },
+ {
+  "memory": "memory_heldout_toast_bread_and_set_plate.json",
+  "layer1_ops": 9,
+  "layer1_ids": [
+   "m0000",
+   "m0004",
+   "m0005",
+   "m0010",
+   "m0006",
+   "m0008",
+   "m0001",
+   "m0011",
+   "m0003"
+  ],
+  "admitted_layer1_ops": 8,
+  "layer2_identical_before_swap": true,
+  "layer3_identical_before_swap": true,
+  "sha256": "d4990c401f40f9ce74225a924e3fd332c26af29fa7bc70b271bdb79c47f2dced"
+ }
+]

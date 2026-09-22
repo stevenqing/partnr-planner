@@ -1,0 +1,18 @@
+{
+  "task": "Amendment10_recombination_run",
+  "split": "imaged",
+  "arm": "incontext_library",
+  "tag": "",
+  "served_model": "qwen2.5-vl-72b-amendment3-f2",
+  "seed": 20260829,
+  "rows": 297,
+  "split_sha256": "59ba8b04faa7c0f2290769ecd76c033fd6d77dbd54459e975222a80462844f21",
+  "env": {
+    "A8B_SKILL_TOPK": "8",
+    "A9_ACTION_CAP": "",
+    "A9_STEP_ALIGNED": "",
+    "A9_ROLE_AWARE": "0",
+    "A9_PATTERN_SLOTS": "0",
+    "A9_MODE": ""
+  }
+}

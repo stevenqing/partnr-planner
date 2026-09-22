@@ -1,0 +1,91 @@
+episode_id,instruction,run_id,runtime,sim_step_count,task_percent_complete,task_state_success
+1701,Move the vase and the picture frame from the table in the living room to the shelves in the living room. Clean the living room table.,0,26.889806985855103,981.0,1.0,1.0
+1697,"Move the jug, pitcher, and vase from the bedroom to the kitchen, fill the jug with water, and clean the bedroom table.",0,35.9433856010437,1213.0,1.0,1.0
+1704,Move the plant container and the plant saucer from the table in the living room to the shelves in the living room. Water the plant.,0,47.349822998046875,1758.0,0.5,0.0
+1988,NOTE: JSON INCORRECT. OBJECT INITIALIZATION INCORRECT 'cabinet_0' not in kitchen.,0,279.7651026248932,7224.0,0.6666666666666666,0.0
+1981,"Move the kettle, jug, and teapot from the dining room table to the kitchen and fill the kettle with water. Turn on the lamp, and clean the dining room table.",0,81.4735918045044,2358.0,0.6666666666666666,0.0
+1989,NOTE: JSON INCORRECT. OBJECT INITIALIZATION INCORRECT 'cabinet_0' not in kitchen.,0,446.7121250629425,9431.0,0.5882352941176471,0.0
+1999,Move the basket and bottle from the living room table to the kitchen and fill the bottle with water. Clean the living room table.,0,39.142059564590454,1250.0,0.75,0.0
+1997,Move the bowl and spoon from the kitchen counter to the dining room table and clean the kitchen counter.,0,19.44416356086731,623.0,1.0,1.0
+444,Let me clean the shoes in the chest of drawers. They can all be moved to the entryway once clean.,0,83.78080487251282,2502.0,1.0,1.0
+1990,"Move the book, folder, and laptop from the living room tables to the bedroom counter and turn on the lamp. Clean the living room tables.",0,39.857640981674194,1283.0,1.0,1.0
+1993,"Move the jug and pitcher from the counter to the living room. Fill the pitcher with water, then clean the counter.",0,38.60894155502319,1259.0,0.75,0.0
+1907,"Move the jug, kettle, and pitcher from the kitchen to a table and fill the jug with water. Turn off the lamp, and clean the kitchen cabinet.",0,21.13193941116333,1108.0,0.8333333333333334,0.0
+1956,"Move the laptop, mouse pad, and book from the table to the living room and clean the living room table.",0,30.27229070663452,1695.0,1.0,1.0
+1954,"Move the cup, plate, and spoon from the living room table to the kitchen and clean the living room table.",0,17.26085376739502,968.0,1.0,1.0
+1960,"Move the jug, teapot, and kettle to the kitchen and fill all with water. Turn on the lamp, and clean the dining table.",0,50.117780923843384,2662.0,0.625,0.0
+1958,Move the vase and the picture frame from the living room table to the bedroom table. Clean the living room table.,0,16.726015329360962,859.0,1.0,1.0
+1756,"Move the fork, knife, and spoon from the bedroom bench to the kitchen and clean the bedroom bench.",0,27.56550645828247,1658.0,1.0,1.0
+1760,"Move the jug, teapot, and cup from the dining table to the kitchen counter, fill all with water. Turn off the lamp, and clean the dining table.",0,28.36539316177368,1504.0,0.875,0.0
+1761,"Move the kettle, milk frother cup, and spoon from the living room table to the kitchen counter, fill the kettle with water. Turn off the lamp, and clean the living room table.",0,18.93350100517273,1052.0,0.8333333333333334,0.0
+1762,"Move the bowl, plate, and fork from the dining table to the kitchen counter, clean the dining table.",0,14.66395878791809,872.0,1.0,1.0
+1663,"Move the toy food, toy fire truck, and stuffed toy from the bedroom to the garage. Clean the bedroom table, and turn off the lamp.",0,43.06555509567261,931.0,0.0,0.0
+1751,"Move the vase, candle holder, and statue from the table to the living room shelves. Clean the living room table.",0,17.193989992141724,891.0,1.0,1.0
+1744,"Move the vase, candle holder, and book from the office table to the living room table and turn off the lamp. Clean the office table.",0,29.124301195144653,1398.0,1.0,1.0
+1750,"Move the stuffed toy, toy cactus, and toy airplane from the couch to the table. Dust them because they are dirty.",0,14.485373258590698,696.0,1.0,1.0
+1854,"Set the table. Move the jug, teapot, cup, and plate from the dining room table to the kitchen, and wash them. Fill the jug with water. Turn on the lamp in the dining room. Place cups, plates, and the jug on the office table and clean the office table.",0,216.0979630947113,5641.0,0.5,0.0
+1843,"Move the cup, plate, and bowl from the kitchen table to the dining table, and clean the kitchen table.",0,20.692954778671265,1126.0,1.0,1.0
+1849,Move the vase and the candle from the office table to the foyer and turn off the candle.,0,13.722146034240723,864.0,1.0,1.0
+1850,Move the laptop and the mouse pad from the office table to the other room and turn on the laptop.,0,16.26637625694275,938.0,1.0,1.0
+1844,"Move the cup, plate, and bowl from the kitchen table to the dining table, fill the cup with water and clean the kitchen table.",0,17.04055690765381,957.0,0.8,0.0
+1840,"Move the bottle, vase, and plate from the living room table to the kitchen counter and fill the bottle with water. Turn off the lamp, and clean the living room table.",0,35.68141841888428,1477.0,0.8333333333333334,0.0
+1838,"Move the toy airplane, toy fire truck, and toy cactus from the bedroom shelves to the bedroom room table and clean the shelves.",0,21.977988481521606,964.0,1.0,1.0
+1842,"Move the can, bread, and knife from the kitchen counter to the dining table and clean the kitchen counter.",0,25.200022220611572,1096.0,1.0,1.0
+1841,"Move the clock, picture frame, and book from the office table to the bedroom shelves and turn on the lamp. Clean the office table.",0,36.42008447647095,1602.0,1.0,1.0
+1839,"Move the bread, cake pan, and spatula from the kitchen counter to the dining table and clean the kitchen counter.",0,26.835521459579468,1138.0,1.0,1.0
+1835,"Move the can, bottle, and plate from the kitchen counter to the dining table and clean the kitchen counter.",0,26.52192234992981,1132.0,1.0,1.0
+1621,"Move the jug, kettle, teapot, and cup from the dining table to the kitchen and fill all with water. Turn on the lamp, and clean the dining table.",0,73.0257818698883,3355.0,0.6,0.0
+1622,"Move the spatula, ladle, and fork from the kitchen counter to the dining table. Clean the kitchen counter.",0,15.452001094818115,674.0,1.0,1.0
+1947,Move the bath towel and hand towel from the bathroom to the laundry room and wash the bath towel.,0,13.9212327003479,788.0,0.6666666666666666,0.0
+1948,Move the laptop and laptop stand from the bedroom to the living room and turn on the laptop.,0,13.403236389160156,742.0,1.0,1.0
+1945,"Move the plate, bowl, and cup from the dining room table to the living room table and clean the dining room table.",0,12.589194297790527,621.0,1.0,1.0
+1876,"Move the jug, teapot, and cup to the kitchen and fill all with water. Turn on the lamp on the table in the living room , and clean the living room.",0,63.57288646697998,1793.0,1.0,1.0
+1875,"Move the toy vehicle and toy animal from the table in the living room to the shelves in the family room, and clean the family room table.",0,44.39616417884827,1238.0,1.0,1.0
+1716,"Move the vase, candle holder, and statue to the dining table and clean the entryway table.",0,119.7279372215271,1401.0,1.0,1.0
+1718,"Move the book, laptop, and phone stand from the office table to the bedroom table and turn on the laptop.",0,245.12678956985474,2803.0,1.0,1.0
+1719,"Move the cup, plate, and spoon from the table to the kitchen and clean the dining table.",0,108.40435671806335,1134.0,1.0,1.0
+1723,Move the book from the office table to the living room couch and turn off the lamp. Then clean the office table.,0,64.22278356552124,752.0,1.0,1.0
+1962,"Move the toy airplane, toy animal, and stuffed toy from the bedroom to the living room, and clean the bedroom table.",0,37.350733280181885,1855.0,1.0,1.0
+1964,"Move the laptop, mouse pad, and folder from the office to the living room, and clean the office cabinet.",0,29.49575686454773,1517.0,1.0,1.0
+1963,"Move the jug, bread, and basket from the kitchen to the dining table, and clean the kitchen cabinet.",0,29.06683349609375,1375.0,1.0,1.0
+1965,"Move the phone stand, book, and vase from the entryway to the living room, and clean the entryway chest of drawers.",0,17.14736795425415,859.0,1.0,1.0
+1935,"Move the kettle and the jug from the table to the kitchen and fill the kettle with water. Turn on the lamp, and clean the living room table.",0,17.644656658172607,787.0,0.8,0.0
+1934,Move the teapot and the cup from the table in the bedroom to the counter in the kitchen and fill the teapot with water. Clean the bedroom table.,0,26.221052646636963,1252.0,0.75,0.0
+1933,"Move the vase and the candle from the couch in the living room to the shelves in the office. Turn off the lamp, and clean the couch.",0,29.072911262512207,1251.0,1.0,1.0
+1646,"Move the doll, toy animal, and toy airplane from the couch to the table. Dust them because they are dirty.",0,26.52062177658081,1254.0,1.0,1.0
+1971,Move the clock from the living room to the bedroom and turn it on. Move the vase from the dining table to the bedroom.,0,27.54860830307007,1181.0,1.0,1.0
+1978,"Move the bowl, spoon, and fork from the kitchen to the dining table and clean the dining table.",0,28.057048320770264,1264.0,1.0,1.0
+1975,Move the cup and spoon from the kitchen counter to the dining table and fill the cup with water. Clean the kitchen counter.,0,40.213702917099,1626.0,0.75,0.0
+1974,Move the book and clock from the bedroom couch to the living room table and turn on the lamp.,0,25.767455339431763,1084.0,1.0,1.0
+1734,Move the vase and candle from the living room table to the hallway table and clean the living room table.,0,12.614982604980469,551.0,1.0,1.0
+1731,Move the book and folder from the bedroom table to the hallway table and clean the bedroom table.,0,29.69560933113098,1343.0,1.0,1.0
+1733,Move the pitcher and plate from the dining table to the living room table and clean the dining table.,0,17.770752906799316,762.0,1.0,1.0
+450,Help me set up for a party. Move 3 filled water bottles and a filled pitcher from the kitchen table to the fridge for chilled water. Set a vase on the living room table and 4 bowls for snacks on the living room table.,0,39.70446515083313,2211.0,0.23076923076923078,0.0
+451,Place the toy fruits and vase on the large oak table. I will clean the bed.,0,11.225196838378906,823.0,1.0,1.0
+1683,Move the stuffed toy and toy swing from the couch in the bedroom to the table. Clean the couch.,0,51.44657349586487,792.0,1.0,1.0
+1687,"Move the jug, fork, spoon, and knife from the living room table to the kitchen and clean the living room table.",0,99.90857124328613,1473.0,1.0,1.0
+1674,"Move the fork, knife, and spoon from the dining room table to the kitchen counter, and clean the dining room table.",0,24.54439425468445,1125.0,1.0,1.0
+1656,Move plates from the kitchen cabinet to the living room table and clean the living room table.,0,16.679149866104126,989.0,1.0,1.0
+1655,Move bowls from the kitchen cabinet to the living room table and clean the living room table.,0,17.35779118537903,1061.0,1.0,1.0
+1831,"Help me set up for a party. Move the kettle, teapot, and cup from the dining table to the kitchen and fill all with water. Turn on the lamp, and clean the dining table.",0,13.791564226150513,888.0,1.0,1.0
+1982,"Take the plate, bowl, and spoon from the kitchen counter and place them on the dining table. Clean the kitchen counter.",0,34.214611291885376,1057.0,1.0,1.0
+1983,Move the laptop and monitor stand from the office table to the living room table. Turn on the laptop.,0,88.17738389968872,2720.0,1.0,1.0
+1995,"Move the jug and pitcher from the living room table to the kitchen and fill the jug with water. Turn off the lamp, and clean the living room table.",0,44.1439642906189,1442.0,0.8,0.0
+1991,"Move the toy cactus, stuffed toy, and book from the bedroom tables to the living room tables and turn on the lamp. Clean the bedroom tables.",0,57.76420044898987,1768.0,1.0,1.0
+1779,"Move the kettle, teapot, and cup from the table in living room to the kitchen and fill the kettle and teapot with water. Turn on the lamp, and clean the table in living room.",0,26.584415197372437,1430.0,0.7142857142857143,0.0
+1778,"Time to get ready for the party! Let's take the jug, kettle, and cup from the table in the bedroom to the kitchen. Fill the jug and kettle with water. Turn on the lamp, and clean the table in bedroom.",0,29.46245241165161,1582.0,0.7142857142857143,0.0
+1773,"Move the pitcher and plate from the table in living room to the counter in kitchen and fill the pitcher with water. Turn on the lamp, and clean the table in living room.",0,21.131457328796387,1146.0,0.8,0.0
+1777,"Move the kettle, teapot, and cup from the living room table to the kitchen and fill the kettle and teapot with water. Turn on the lamp, and clean the living room table.",0,27.074501991271973,1515.0,0.5714285714285714,0.0
+1807,Move the lamp and clock from the bedroom table to the living room table and turn on the lamp.,0,17.96705651283264,849.0,1.0,1.0
+1808,Move the kettle and jug from the dining table to the kitchen and fill the kettle with water. Turn on the kettle.,0,17.130847454071045,775.0,1.0,1.0
+1806,"Place the book, laptop, and folder on the living roomtable. Turn on the laptop.",0,16.513534784317017,752.0,1.0,1.0
+1809,Move the lamp and clock from the bedroom table to the living room table and turn on the lamp. Clean the bed.,0,18.092697143554688,839.0,1.0,1.0
+1804,Place the bowl and plate on the living room table. Fill the bowl and the glass with water.,0,25.878260612487793,1185.0,0.75,0.0
+1803,Move the kettle and spoon from the kitchen to the living room and place them on the table. Clean the table.,0,18.999395608901978,855.0,1.0,1.0
+1811,Move the bottle and can from the laundry room shelf to the kitchen counter and clean the laundry room shelf.,0,12.11135482788086,580.0,1.0,1.0
+1932,Move the kettle and the jug to the kitchen table and fill the kettle with water. Turn on the lamp and clean the dining table.,0,20.71772527694702,913.0,0.8,0.0
+456,"Please bring a filled water bottle, laptop cover, mousepad and a backpack to the living room.",0,88.05730962753296,2647.0,0.8,0.0
+1984,Take the candle and vase from the bedroom table and place them on the living room table. Turn off the lamp.,0,50.2676842212677,1414.0,1.0,1.0
+1987,NOTE: JSON INCORRECT. OBJECT INITIALIZATION INCORRECT 'cabinet_0' not in kitchen.,0,297.22520780563354,6708.0,0.6923076923076923,0.0
+1859,"Prepare breakfast. Move the kettle, cup, and plate from the dining room table to the kitchen, and wash them. Fill the kettle with water. Turn on the kettle. Place plates and cups on the bedroom table and clean the bedroom table.",0,176.5965394973755,4273.0,0.45454545454545453,0.0
+1857,"Make breakfast. Move the kettle, cup, and plate from the dining room table to the kitchen, and wash them. Fill the kettle with water. Turn on the kettle. Place plates and cups on the game room table and clean the game room table.",0,206.4824182987213,5272.0,0.45454545454545453,0.0

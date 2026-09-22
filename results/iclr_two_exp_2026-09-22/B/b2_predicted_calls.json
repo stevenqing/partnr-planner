@@ -1,0 +1,22 @@
+{
+ "A": {
+  "episodes": 90,
+  "build_inputs": 90,
+  "successful": 59,
+  "failed": 31,
+  "predicted_calls": 208,
+  "missing_from_heuristic_log": [],
+  "missing_traces": []
+ },
+ "B": {
+  "episodes": 107,
+  "build_inputs": 106,
+  "successful": 64,
+  "failed": 42,
+  "predicted_calls": 234,
+  "missing_from_heuristic_log": [
+   "438"
+  ],
+  "missing_traces": []
+ }
+}

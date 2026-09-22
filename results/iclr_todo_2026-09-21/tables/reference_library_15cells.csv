@@ -1,0 +1,16 @@
+model,split,solved,n,rate,status,source
+72B,ID,623,924,0.6742,on disk,results/viki_memory_experiments/amendment11/appendix_reference_72B_id.jsonl; outputs/viki_ablation/v3_lib_id_72B.json
+30B,ID,471,924,0.5097,on disk,outputs/viki_ablation/v3_lib_id_30B.json
+7B,ID,148,924,0.1602,on disk,outputs/viki_ablation/v3_lib_id_7B.json
+72B,OOD single-family (per-fold reference),606,924,0.6558,"computed 2026-09-21, zero LLM calls",results/iclr_todo_2026-09-21/work/ref_fold_72B.json
+30B,OOD single-family (per-fold reference),425,924,0.4600,"computed 2026-09-21, zero LLM calls",results/iclr_todo_2026-09-21/work/ref_fold_30B.json
+7B,OOD single-family (per-fold reference),134,924,0.1450,"computed 2026-09-21, zero LLM calls",results/iclr_todo_2026-09-21/work/ref_fold_7B.json
+72B,OOD sibling-group,,924,,NOT_FOUND,no sibling-group variant of the reference library exists
+30B,OOD sibling-group,,924,,NOT_FOUND,same
+7B,OOD sibling-group,,924,,NOT_FOUND,same
+72B,CG w/o Image,256,297,0.8620,on disk,results/viki_memory_experiments/amendment11/appendix_reference_72B_text.jsonl
+30B,CG w/o Image,,297,,NOT_PAIRED,"results/viki_memory_experiments/amendment11/recomb_30b_text_reference_r{1,2,3}.jsonl hold a different answer set (256/297 raw answers equal ours); 220/220/217 of 297"
+7B,CG w/o Image,,297,,NOT_FOUND,
+72B,CG w/ Image,237,297,0.7980,on disk,results/viki_memory_experiments/amendment11/appendix_reference_72B_imaged.jsonl
+30B,CG w/ Image,,297,,NOT_PAIRED,"results/viki_memory_experiments/amendment11/recomb_30b_imaged_reference_r{1,2,3}.jsonl hold a different answer set (203/297 raw answers equal ours); 194/196/198 of 297"
+7B,CG w/ Image,,297,,NOT_FOUND,

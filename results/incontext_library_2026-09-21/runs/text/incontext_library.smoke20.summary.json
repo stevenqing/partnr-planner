@@ -1,0 +1,10 @@
+{
+  "task": "Amendment10_recombination",
+  "split": "text",
+  "arm": "incontext_library.smoke20",
+  "rows": 20,
+  "successes": 0,
+  "format_successes": 20,
+  "accuracy": 0.0,
+  "results_sha256": "6f3a8eae0e48df40c74ea1d2d24036160ff51d91ad7b5434abcf1e1b90272406"
+}

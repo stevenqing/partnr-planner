@@ -1,0 +1,564 @@
+{
+ "files": [
+  "outputs/rung_family_targets.json",
+  "outputs/rung_family_targets_after.json",
+  "outputs/rung_family_targets_after_fmt.json",
+  "outputs/rung_family_targets_after_iface.json",
+  "outputs/rung_family_targets_after_marg.json",
+  "outputs/rung_family_targets_after_runner.json",
+  "outputs/rung_ordering_targets.json",
+  "outputs/rung_ordering_targets_after.json",
+  "outputs/rung_residual_targets.json",
+  "outputs/rung_targets.json"
+ ],
+ "rungs": {
+  "rung_family_targets.json:clear_table_with_two_robots_and_put_in_cabinet": {
+   "library": "outputs/agentic_library_div.json",
+   "seeds": [
+    31,
+    34,
+    57,
+    67
+   ],
+   "holdout": [
+    348,
+    376,
+    385,
+    396
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets.json:set_plate_and_fork_on_table": {
+   "library": "outputs/agentic_library_div.json",
+   "seeds": [
+    21,
+    27,
+    69,
+    112
+   ],
+   "holdout": [
+    347,
+    351,
+    371,
+    394
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets.json:sequential_pick_two_and_place": {
+   "library": "outputs/agentic_library_div.json",
+   "seeds": [
+    0,
+    40,
+    52,
+    61
+   ],
+   "holdout": [
+    362,
+    379,
+    383,
+    395
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets.json:ensure_all_fruits_on_table": {
+   "library": "outputs/agentic_library_div.json",
+   "seeds": [
+    10,
+    29,
+    51,
+    92
+   ],
+   "holdout": [
+    328,
+    331,
+    359,
+    378
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets.json:serve_bread_after_checking_cabinet": {
+   "library": "outputs/agentic_library_div.json",
+   "seeds": [
+    7,
+    72,
+    79,
+    90
+   ],
+   "holdout": [
+    249,
+    261,
+    334,
+    360
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets.json:dog_push_box_for_two_panda_transport": {
+   "library": "outputs/agentic_library_div.json",
+   "seeds": [
+    2,
+    8,
+    43,
+    44
+   ],
+   "holdout": [
+    263,
+    267,
+    390,
+    399
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after.json:clear_table_with_two_robots_and_put_in_cabinet": {
+   "library": "outputs/agentic_library_fam.json",
+   "seeds": [
+    31,
+    34,
+    57,
+    67
+   ],
+   "holdout": [
+    348,
+    376,
+    385,
+    396
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after.json:set_plate_and_fork_on_table": {
+   "library": "outputs/agentic_library_fam.json",
+   "seeds": [
+    21,
+    27,
+    69,
+    112
+   ],
+   "holdout": [
+    347,
+    351,
+    371,
+    394
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after.json:sequential_pick_two_and_place": {
+   "library": "outputs/agentic_library_fam.json",
+   "seeds": [
+    0,
+    40,
+    52,
+    61
+   ],
+   "holdout": [
+    362,
+    379,
+    383,
+    395
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after.json:ensure_all_fruits_on_table": {
+   "library": "outputs/agentic_library_fam.json",
+   "seeds": [
+    10,
+    29,
+    51,
+    92
+   ],
+   "holdout": [
+    328,
+    331,
+    359,
+    378
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after.json:serve_bread_after_checking_cabinet": {
+   "library": "outputs/agentic_library_fam.json",
+   "seeds": [
+    7,
+    72,
+    79,
+    90
+   ],
+   "holdout": [
+    249,
+    261,
+    334,
+    360
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after.json:dog_push_box_for_two_panda_transport": {
+   "library": "outputs/agentic_library_fam.json",
+   "seeds": [
+    2,
+    8,
+    43,
+    44
+   ],
+   "holdout": [
+    263,
+    267,
+    390,
+    399
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_fmt.json:clear_table_with_two_robots_and_put_in_cabinet": {
+   "library": "outputs/agentic_library_fmt.json",
+   "seeds": [
+    31,
+    34,
+    57,
+    67
+   ],
+   "holdout": [
+    348,
+    376,
+    385,
+    396
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_fmt.json:sequential_pick_two_and_place": {
+   "library": "outputs/agentic_library_fmt.json",
+   "seeds": [
+    0,
+    40,
+    52,
+    61
+   ],
+   "holdout": [
+    362,
+    379,
+    383,
+    395
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_fmt.json:dog_push_box_for_two_panda_transport": {
+   "library": "outputs/agentic_library_fmt.json",
+   "seeds": [
+    2,
+    8,
+    43,
+    44
+   ],
+   "holdout": [
+    263,
+    267,
+    390,
+    399
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_iface.json:clear_table_with_two_robots_and_put_in_cabinet": {
+   "library": "outputs/agentic_library_iface.json",
+   "seeds": [
+    31,
+    34,
+    57,
+    67
+   ],
+   "holdout": [
+    348,
+    376,
+    385,
+    396
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_iface.json:sequential_pick_two_and_place": {
+   "library": "outputs/agentic_library_iface.json",
+   "seeds": [
+    0,
+    40,
+    52,
+    61
+   ],
+   "holdout": [
+    362,
+    379,
+    383,
+    395
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_iface.json:dog_push_box_for_two_panda_transport": {
+   "library": "outputs/agentic_library_iface.json",
+   "seeds": [
+    2,
+    8,
+    43,
+    44
+   ],
+   "holdout": [
+    263,
+    267,
+    390,
+    399
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_marg.json:clear_table_with_two_robots_and_put_in_cabinet": {
+   "library": "outputs/agentic_library_marg.json",
+   "seeds": [
+    31,
+    34,
+    57,
+    67
+   ],
+   "holdout": [
+    348,
+    376,
+    385,
+    396
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_marg.json:set_plate_and_fork_on_table": {
+   "library": "outputs/agentic_library_marg.json",
+   "seeds": [
+    21,
+    27,
+    69,
+    112
+   ],
+   "holdout": [
+    347,
+    351,
+    371,
+    394
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_marg.json:sequential_pick_two_and_place": {
+   "library": "outputs/agentic_library_marg.json",
+   "seeds": [
+    0,
+    40,
+    52,
+    61
+   ],
+   "holdout": [
+    362,
+    379,
+    383,
+    395
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_marg.json:ensure_all_fruits_on_table": {
+   "library": "outputs/agentic_library_marg.json",
+   "seeds": [
+    10,
+    29,
+    51,
+    92
+   ],
+   "holdout": [
+    328,
+    331,
+    359,
+    378
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_marg.json:serve_bread_after_checking_cabinet": {
+   "library": "outputs/agentic_library_marg.json",
+   "seeds": [
+    7,
+    72,
+    79,
+    90
+   ],
+   "holdout": [
+    249,
+    261,
+    334,
+    360
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_marg.json:dog_push_box_for_two_panda_transport": {
+   "library": "outputs/agentic_library_marg.json",
+   "seeds": [
+    2,
+    8,
+    43,
+    44
+   ],
+   "holdout": [
+    263,
+    267,
+    390,
+    399
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_runner.json:sequential_pick_two_and_place": {
+   "library": "outputs/agentic_library_runner.json",
+   "seeds": [
+    0,
+    40,
+    52,
+    61
+   ],
+   "holdout": [
+    362,
+    379,
+    383,
+    395
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_family_targets_after_runner.json:dog_push_box_for_two_panda_transport": {
+   "library": "outputs/agentic_library_runner.json",
+   "seeds": [
+    2,
+    8,
+    43,
+    44
+   ],
+   "holdout": [
+    263,
+    267,
+    390,
+    399
+   ],
+   "target_key": "pos.name"
+  },
+  "rung_ordering_targets.json:cut_fruit_on_board": {
+   "library": "outputs/agentic_library_runner.json",
+   "seeds": [
+    6,
+    12,
+    13,
+    15
+   ],
+   "holdout": [
+    273,
+    278,
+    294,
+    298
+   ],
+   "target_key": "is_activated"
+  },
+  "rung_ordering_targets.json:cut_two_fruits_on_board": {
+   "library": "outputs/agentic_library_runner.json",
+   "seeds": [
+    24,
+    48,
+    50,
+    82
+   ],
+   "holdout": [
+    266,
+    268,
+    290,
+    293
+   ],
+   "target_key": "is_activated"
+  },
+  "rung_ordering_targets_after.json:cut_fruit_on_board": {
+   "library": "outputs/agentic_library_ord.json",
+   "seeds": [
+    6,
+    12,
+    13,
+    15
+   ],
+   "holdout": [
+    273,
+    278,
+    294,
+    298
+   ],
+   "target_key": "is_activated"
+  },
+  "rung_ordering_targets_after.json:cut_two_fruits_on_board": {
+   "library": "outputs/agentic_library_ord.json",
+   "seeds": [
+    24,
+    48,
+    50,
+    82
+   ],
+   "holdout": [
+    266,
+    268,
+    290,
+    293
+   ],
+   "target_key": "is_activated"
+  },
+  "rung_residual_targets.json:is_activated": {
+   "library": "outputs/agentic_library_all.json",
+   "seeds": [
+    4,
+    9,
+    17,
+    18,
+    32
+   ],
+   "holdout": [
+    47,
+    56,
+    86,
+    264
+   ],
+   "target_key": null
+  },
+  "rung_residual_targets.json:pos.name": {
+   "library": "outputs/agentic_library_all.json",
+   "seeds": [
+    0,
+    4,
+    9,
+    17,
+    18
+   ],
+   "holdout": [
+    281,
+    285,
+    287,
+    292
+   ],
+   "target_key": null
+  },
+  "rung_targets.json:is_activated": {
+   "library": null,
+   "seeds": [
+    4,
+    6,
+    9,
+    12,
+    13
+   ],
+   "holdout": [
+    109,
+    111,
+    118,
+    119
+   ],
+   "target_key": null
+  },
+  "rung_targets.json:pos.name": {
+   "library": null,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "holdout": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "target_key": null
+  }
+ }
+}

@@ -8,6 +8,7 @@
 # wrote `table_7 | clean | -` and the type check discarded it. State predicates are now typed before the
 # placement rules; the placement rule itself is untouched (`partnr_typed_state_selftest.py` checks both).
 #
+# POOL=conf_H (09-21) is the held-out confirmation, run only once gate_H has read the repair on both models.
 # gate_H is the tuning pool and the right place to confirm a repair. conf_H is NOT rerun here: it has
 # already been reported once on this arm, and it stays untouched until this cell says the repair works.
 #
@@ -22,7 +23,7 @@ cd /mnt/pfs/devs/pn5wp/shishuqing/partnr-planner || exit 1
 PFS=/mnt/pfs/devs/pn5wp/shishuqing
 PY=/root/venvs/partnr/bin/python
 VLLM=/root/venvs/vllm/bin/python
-Q=outputs/cand_iface_0917/state_fix
+Q=${Q:-outputs/cand_iface_0917/state_fix}
 OLD=outputs/cand_iface_0917/state_iface/cells      # the 06:11 cells, same pool, pre-repair code
 mkdir -p "$Q" "$PFS/tmp" "$PFS/vllm_cache"
 export HF_HOME=$PFS/hf HF_HUB_OFFLINE=1 VLLM_CACHE_ROOT=$PFS/vllm_cache TMPDIR=$PFS/tmp VLLM_ENGINE_READY_TIMEOUT_S=3600
@@ -45,10 +46,11 @@ NO_THINK=${NO_THINK:-0}
 LIB=results/partnr_operators_llm5.json
 PRIOR=results/partnr_inside_prior_train_R_only.json
 FROZEN="typed_stages=True typed_beside=True typed_same_object=True"
-POOL=gate_H
+POOL=${POOL:-gate_H}
 GPU=${GPU:-1}
 PORT=${PORT:-8063}
-ORACLE=outputs/gate/h30b
+OB=outputs/gate/h30b/base; OC=outputs/gate/h30b/cand0
+[ "$POOL" = conf_H ] && { OB=outputs/confirm/h30b/base22; OC=outputs/confirm/h30b/lib24; }
 
 both () { echo "evaluation.agents.agent_0.planner.plan_config.$1=$2 evaluation.agents.agent_1.planner.plan_config.$1=$2"; }
 both_plus () { echo "+evaluation.agents.agent_0.planner.plan_config.$1=$2 +evaluation.agents.agent_1.planner.plan_config.$1=$2"; }
@@ -120,7 +122,7 @@ n_off=$(ls "$OFF/results/$POOL.json.gz/stats" 2>/dev/null | wc -l)
 n_on=$(ls "$ON/results/$POOL.json.gz/stats" 2>/dev/null | wc -l)
 if [ "$n_off" -eq 60 ] && [ "$n_on" -eq 60 ]; then
   oracle=""
-  [ -d "$ORACLE/base" ] && oracle="--cell oracle_base=$ORACLE/base --cell oracle_cand=$ORACLE/cand0"
+  [ -d "$OB" ] && [ -d "$OC" ] && oracle="--cell oracle_base=$OB --cell oracle_cand=$OC"
   report keys_fix_$MTAG "$PY" scripts/partnr_key_admission.py --pool "$POOL" \
       --cell state_off="$OFF" --cell state_on="$ON" --cell prerepair_on="$OLD/${POOL}_state_on_$MTAG" $oracle \
       --compare state_on:state_off state_on:prerepair_on --json "$Q/keys_fix_$MTAG.json"
@@ -135,10 +137,9 @@ else
   say "SKIP reports: cells are $n_off and $n_on of 60"
 fi
 {
-  echo "# is_clean after the furniture-subject repair (gate_H, $MTAG, tuning pool only)"
+  echo "# is_clean after the furniture-subject repair ($POOL, $MTAG)"
   echo; echo "commit $(git rev-parse --short HEAD); finished $(date '+%m-%d %H:%M'); library $LIB"
-  echo "Pre-repair reading on this pool: is_clean 0.000 -> 0.000, is_powered_on 0.000 -> 0.727."
-  echo "Oracle ceiling on gate_H (cand0): is_clean 0.122 (its own gate pool reading was 0.980 on the admitted body)."
+  [ "$POOL" = gate_H ] && echo "Pre-repair reading on this pool (7B): is_clean 0.000 -> 0.000, is_powered_on 0.000 -> 0.727."
   echo; echo '```'
   for st in off on; do printf '%-26s %s\n' "state_$st" "$(cat "$Q/cells/${POOL}_state_${st}_fix_$MTAG/CELL.json" 2>/dev/null | head -c 200)"; done
   echo '```'; echo; echo "## Alarms"; echo '```'

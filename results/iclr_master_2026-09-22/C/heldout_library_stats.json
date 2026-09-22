@@ -1,0 +1,26 @@
+{
+ "cooperation.inst_after": 184,
+ "cooperation.inst_before": 554,
+ "cooperation.skills_after": 101,
+ "cooperation.skills_before": 175,
+ "individual.inst_after": 457,
+ "individual.inst_before": 1189,
+ "individual.skills_after": 160,
+ "individual.skills_before": 280,
+ "retained_first_instance_side.cooperation.build": 90,
+ "retained_first_instance_side.cooperation.eval": 10,
+ "retained_first_instance_side.cooperation.mixed": 1,
+ "retained_first_instance_side.individual.build": 130,
+ "retained_first_instance_side.individual.eval": 21,
+ "retained_first_instance_side.individual.mixed": 9,
+ "instance_side": {
+  "cooperation.build": 184,
+  "cooperation.eval": 187,
+  "cooperation.mixed": 14,
+  "cooperation.undetermined": 169,
+  "individual.build": 457,
+  "individual.eval": 446,
+  "individual.mixed": 281,
+  "individual.undetermined": 5
+ }
+}

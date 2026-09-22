@@ -62,6 +62,337 @@ def rate(d):
     return sum(v[0] for v in d.values()) / max(len(d), 1)
 
 
+# ---------------------------------------------------------------- PARTNR after 09-09 (§5e-§5g)
+# Every number below is read from the compare / key-admission JSON the runs wrote. A missing or
+# incomplete artefact is printed as missing; nothing is filled in by hand.
+
+def _j(rel):
+    path = rel if isinstance(rel, Path) else ROOT / rel
+    if not path.is_file():
+        return None
+    try:
+        return json.loads(path.read_text())
+    except ValueError:
+        return None
+
+
+def _stats_scores(cell, pool):
+    """Per-episode percent_complete, read the way `partnr_gate_compare.cell_scores` reads it."""
+    cell = Path(cell)
+    if not cell.is_absolute():
+        cell = ROOT / cell
+    out = {}
+    for path in glob.glob(str(cell / "results" / ("%s.json.gz" % pool) / "stats" / "*.json")):
+        blob = json.loads(Path(path).read_text())
+        if "stats" in blob:
+            out[Path(path).name[:-5]] = json.loads(blob["stats"])["task_percent_complete"]
+    return out
+
+
+def _pc_updown(d):
+    """Up/down counts for a gate compare JSON. `episodes_moved` is capped at 40 entries by
+    `partnr_gate_compare.py`, so when more than 40 moved the counts are re-read from the cells."""
+    moved = d.get("episodes_moved") or {}
+    if len(moved) == d.get("n_episodes_moved", 0):
+        return sum(1 for v in moved.values() if v > 0), sum(1 for v in moved.values() if v < 0)
+    a, b = _stats_scores(d["a"], d["pool"]), _stats_scores(d["b"], d["pool"])
+    deltas = [b[k] - a[k] for k in a if k in b]
+    return sum(1 for x in deltas if x > 1e-9), sum(1 for x in deltas if x < -1e-9)
+
+
+def _pc_row(label, d):
+    up, down = _pc_updown(d)
+    return ("| %s | %d | %.4f | %.4f | **%+.4f** | [%+.3f, %+.3f] | %d / %d |"
+            % (label, d["n_both_scored"], d["mean_a"], d["mean_b"], d["mean_delta"],
+               d["paired_bootstrap_95"][0], d["paired_bootstrap_95"][1], up, down))
+
+
+def _rate(cell, key):
+    k = (cell or {}).get("keys", {}).get(key)
+    return "—" if not k else "%d/%d = %.3f" % (k["satisfied"], k["props"], k["rate"])
+
+
+def _kcmp(c):
+    """A key-admission comparison `x:y` stores x as `a`; print it as y -> x."""
+    return ("%.3f → %.3f | **%+.3f** | [%+.3f, %+.3f] | %d / %d"
+            % (c["b"], c["a"], c["delta"], c["ci95"][0], c["ci95"][1], c["up"], c["down"]))
+
+
+def partnr_since_0909(w):
+    missing = []
+    PC_HEAD = ("| | n | a | b | Δ (b − a) | 95% CI | 升 / 降 |", "|---|---|---|---|---|---|---|")
+
+    # ---- 5e: LLM-generated memory on the privileged arm
+    w("## 5e. PARTNR：LLM 生成的 memory（特权臂，30B 归纳 → 按谓词执行门 → 不相交确认池）")
+    w("")
+    w("特权臂 = 组合器拿真命题当要求（不调模型），所以同库同配置逐格确定、band = 0。"
+      "归纳器是 Qwen3-VL-30B，只看**基本任务**轨迹（纯 H / 纯 R），每个键单独过门。")
+    w("")
+    adj = _j("outputs/gate/h30b/ADJUDICATION.json")
+    ka = _j("outputs/gate/h30b/key_admission.json")
+    if adj is None or ka is None:
+        missing.append("`outputs/gate/h30b/{ADJUDICATION,key_admission}.json`")
+    else:
+        w("### 5e.1 H 族门 `gate_H`（60 格；按谓词读数来自 `key_admission.json`，满足/命题数）")
+        w("")
+        w("| 候选 | 键 | 算子体 | Δ pc | 95% CI | 抬/压 | `is_clean` | `is_powered_on` | 判定 |")
+        w("|---|---|---|---|---|---|---|---|---|")
+        base = ka["cells"].get("base")
+        w("| base | — | — | — | — | — | %s | %s | — |"
+          % (_rate(base, "is_clean"), _rate(base, "is_powered_on")))
+        for r in adj["detail"]:
+            op = r["operator"]
+            body = " / ".join(" ".join(x for x in step if x) for step in op["body"])
+            cell = ka["cells"].get("cand%d" % r["candidate"])
+            w("| cand%d | `%s` | `%s` | %+.4f | [%+.3f, %+.3f] | %d/%d | %s | %s | %s |"
+              % (r["candidate"], op["effect"]["key"], body, r["delta"], r["ci"][0], r["ci"][1],
+                 len(r["raises"]), len(r["lowers"]), _rate(cell, "is_clean"),
+                 _rate(cell, "is_powered_on"), "**收**" if r["accepted"] else "拒"))
+        w("")
+        w("收 %d 条（库 22 → %d）。**`Navigate ?x` 前缀决定一切**：同一个 `Clean ?x` 不带前缀 "
+          "`is_clean` 只有 %s，带前缀 %s；`PowerOn` %s → %s。`is_filled`（cand7）被拒。"
+          % (adj["n_accepted"], 22 + adj["n_accepted"],
+             _rate(ka["cells"].get("cand0"), "is_clean"), _rate(ka["cells"].get("cand2"), "is_clean"),
+             _rate(ka["cells"].get("cand4"), "is_powered_on"),
+             _rate(ka["cells"].get("cand5"), "is_powered_on")))
+        w("")
+
+    cmp_h = _j("outputs/confirm/h30b/compare.json")
+    kc = _j("outputs/confirm/h30b/key_admission.json")
+    if cmp_h is None or kc is None or not cmp_h.get("complete"):
+        missing.append("`outputs/confirm/h30b/compare.json`（或 `complete` 不为真）")
+    else:
+        w("### 5e.2 H 族确认池 `conf_H`（60 格，预登记，只开这一次）：base22 → lib24")
+        w("")
+        w(PC_HEAD[0]); w(PC_HEAD[1])
+        w(_pc_row("pc（a = base22，b = lib24）", cmp_h))
+        w("")
+        w("| 键 | episode 数 | base22 → lib24（按 episode 均值） | Δ | 95% CI | 升 / 降 | 命题满足（base22 → lib24） |")
+        w("|---|---|---|---|---|---|---|")
+        for key, c in kc["comparisons"]["lib24:base22"].items():
+            w("| `%s` | %d | %s | %s → %s |"
+              % (key, c["episodes"], _kcmp(c),
+                 _rate(kc["cells"]["base22"], key), _rate(kc["cells"]["lib24"], key)))
+        w("")
+        if len(cmp_h.get("episodes_moved") or {}) < cmp_h["n_episodes_moved"]:
+            w("注：`compare.json` 的 `episodes_moved` 只存前 40 条（共移动 %d 格），"
+              "上表的升/降是从两格的 `stats/` 逐格重读的，**不是那 40 条里数出来的**。"
+              % cmp_h["n_episodes_moved"])
+            w("")
+
+    w("### 5e.3 R 族 `is_on_top`：一条 LLM 算子 vs 20 条规则算子（先清空整个键做地板）")
+    w("")
+    rows_r = (("gate_ontop：floor → rule20", "outputs/gate/ontop30b/compare_rule20_vs_floor.json"),
+              ("gate_ontop：floor → llm1", "outputs/gate/ontop30b/compare_llm1_vs_floor.json"),
+              ("gate_ontop：rule20 → llm1", "outputs/gate/ontop30b/compare_llm1_vs_rule20.json"),
+              ("conf_ontop：rule20 → llm1（确认池）", "outputs/confirm/ontop30b/compare.json"))
+    got_r = [(lab, _j(p), p) for lab, p in rows_r]
+    if any(d is not None and d.get("complete") for _, d, _ in got_r):
+        w(PC_HEAD[0]); w(PC_HEAD[1])
+        for lab, d, p in got_r:
+            if d is None or not d.get("complete"):
+                missing.append("`%s`" % p)
+                continue
+            w(_pc_row(lab, d))
+        w("")
+        ko, kco = _j("outputs/gate/ontop30b/key_admission.json"), _j("outputs/confirm/ontop30b/key_admission.json")
+        if ko and kco:
+            w("`is_on_top` 命题满足：gate_ontop floor %s、rule20 %s、llm1 %s；conf_ontop rule20 %s、llm1 %s。"
+              % (_rate(ko["cells"]["floor"], "is_on_top"), _rate(ko["cells"]["rule20"], "is_on_top"),
+                 _rate(ko["cells"]["llm1"], "is_on_top"), _rate(kco["cells"]["rule20"], "is_on_top"),
+                 _rate(kco["cells"]["llm1"], "is_on_top")))
+            w("")
+        w("**两个池子都是 rule20 → llm1 逐 episode 零移动**：20 条规则归纳的 `is_on_top` 算子是同一条通用 body "
+          "（`Navigate ?x / Pick ?x / Navigate ?y / Place ?x, on, ?y`）的冗余特化，LLM 一条完全等价。")
+        w("")
+    else:
+        missing.append("`outputs/gate/ontop30b/compare_*.json` / `outputs/confirm/ontop30b/compare.json`")
+
+    w("### 5e.4 阴性：`is_next_to` 在特权门下不可验收")
+    w("")
+    nx = [("gate_nxt", _j("outputs/gate/nxt30b/cand0/compare.json"), _j("outputs/gate/nxt30b/key_admission.json")),
+          ("gate_nxt2（开局两物分开）", _j("outputs/gate/nxt2_30b/cand0/compare.json"),
+           _j("outputs/gate/nxt2_30b/key_admission.json"))]
+    if all(d is not None and d.get("complete") for _, d, _ in nx):
+        w(PC_HEAD[0]); w(PC_HEAD[1])
+        for lab, d, _ in nx:
+            w(_pc_row("%s：base → cand0" % lab, d))
+        w("")
+        k2 = nx[1][2]
+        if k2:
+            c = k2["comparisons"]["cand0:base"]["is_next_to"]
+            w("`gate_nxt2` 按谓词：`is_next_to` %s；命题满足 base %s → cand0 %s。"
+              % (_kcmp(c).replace(" | ", "，"), _rate(k2["cells"]["base"], "is_next_to"),
+                 _rate(k2["cells"]["cand0"], "is_next_to")))
+            w("")
+        w("归纳出来的 body 是对的（`Navigate ?x / Pick ?x / Navigate ?z1 / Place ?x, on, ?z1, next_to, ?y`），"
+          "两个池子的区间都跨 0。**根因不是池子**：base 库里没有这个算子，组合器自己的放置路径已经满足大部分 "
+          "`is_next_to` 命题（上面 base 那一格），门没有余量可测——这是特权臂的结构性盲区，"
+          "不再切第三版池子。`is_filled` 见 5e.1 cand7（被拒）；`is_inside` / `is_on_floor` 各只有 2 条纯轨迹，没起格。")
+        w("")
+    else:
+        missing.append("`outputs/gate/{nxt30b,nxt2_30b}/cand0/compare.json`")
+
+    # ---- 5f: the typed model arm
+    w("## 5f. PARTNR 模型臂：冻结 typed 臂上换库（val_mini 369 格，crash 计 0）")
+    w("")
+    lib = _j("results/partnr_operators_llm5.json")
+    if lib:
+        prov = [o.get("provenance") for o in lib["operators"]]
+        w("三个库：`iir1`（22 条，归一后 7 条）、`h30b`（24 条 = iir1 + 两条 H 算子）、`llm5`（%d 条）。"
+          "**`llm5` 不是纯 LLM 库**：%d 条是 30B 归纳的（%s），其余 %d 条（`is_inside` / `is_in_room`）"
+          "是 iir1 的规则算子——LLM 归纳没有材料。拆两个效应：`h30b − iir1` 只是菜单上多两个 H 谓词，"
+          "`llm5 − h30b` 只是丢掉冗余的 `is_on_top` 规则变体。"
+          % (len(prov), prov.count("llm_30b"),
+             "、".join("`%s`" % o["effect"]["key"] for o in lib["operators"] if o.get("provenance") == "llm_30b"),
+             len(prov) - prov.count("llm_30b")))
+        w("")
+    else:
+        missing.append("`results/partnr_operators_llm5.json`")
+    w("| 模型 | 比较 | 指标 | n | a | b | Δ (a − b) | 95% CI | 升 / 降 / 不动 |")
+    w("|---|---|---|---|---|---|---|---|---|")
+    keys3 = {}
+    for m in ("30b", "7b"):
+        rep = _j("outputs/cand_iface_0914/val_mini_reports/val_mini_3arm_%s.json" % m)
+        keys3[m] = _j("outputs/cand_iface_0916b/h30b_val/keys_3arm_%s.json" % m)
+        if rep is None:
+            missing.append("`val_mini_reports/val_mini_3arm_%s.json`" % m)
+            continue
+        for c in rep["comparisons"]:
+            if not c.get("complete"):
+                missing.append("%s %s−%s（`complete` 不为真）" % (m.upper(), c["a"], c["b"]))
+                continue
+            for metric, lab in (("task_percent_complete", "pc"), ("task_state_success", "ss")):
+                r = c["readings"]["crash_as_zero"][metric]
+                w("| %s | %s − %s | %s | %d | %.3f | %.3f | **%+.4f** | [%+.3f, %+.3f] | %d / %d / %d |"
+                  % (m.upper(), c["a"], c["b"], lab, r["n"], r["a"], r["b"], r["delta"],
+                     r["ci95"][0], r["ci95"][1], r["better"], r["worse"], r["same"]))
+    w("")
+    if all(keys3.values()):
+        w("两个 H 谓词在这四格上的命题满足（`keys_3arm_*.json`）：")
+        w("")
+        w("| 模型 | 臂 | `is_clean` | `is_powered_on` |")
+        w("|---|---|---|---|")
+        for m in ("30b", "7b"):
+            for arm in ("iir1", "h30b", "llm5"):
+                cell = keys3[m]["cells"].get(arm)
+                w("| %s | %s | %s | %s |" % (m.upper(), arm, _rate(cell, "is_clean"), _rate(cell, "is_powered_on")))
+        w("")
+    else:
+        missing.append("`outputs/cand_iface_0916b/h30b_val/keys_3arm_{30b,7b}.json`")
+    w("**两个效应都是零，不是互相抵消**：装进库的两个 H 算子在特权臂上是 pc +0.2563（§5e.2），"
+      "在模型自己写要求的臂上一条命题都没多满足。原因见 §5g——typed 要求接口里根本没有 H 谓词这个词。"
+      "特权臂上 `llm1 − rule20 = 0` 的等价性在模型臂上同样成立（`llm5 − h30b`）。")
+    w("")
+
+    # ---- 5g: the H-predicate interface repair
+    w("## 5g. PARTNR：给 typed 接口加上 H 谓词（`typed_state`，默认关闭）")
+    w("")
+    w("`partnr_typed_goals.RELATIONS` 只写了三个放置关系、行语法 `object | relation | place` 必须三列，"
+      "表外的词被 `parse_typed` 丢掉——**模型不是不选 H 谓词，是没这个词**。`typed_state` 打开后 "
+      "`object | clean | -` 可写；执行侧一行没改。库一律 `llm5`，冻结 typed 开关不动，只动 `typed_state`。")
+    w("")
+    w("### 5g.1 接口修好后（`cand_iface_0917/state_iface`，四池格 × 两臂，全 60/60）：off → on")
+    w("")
+    w("| 池 | 模型 | pc off → on | Δ pc | 95% CI | `is_clean` 命题 off → on | `is_powered_on` 命题 off → on"
+      " | `is_powered_on` 按 episode：off → on / Δ / CI / 升降 | 特权臂天花板 `is_clean` / `is_powered_on` |")
+    w("|---|---|---|---|---|---|---|---|---|")
+    for pool in ("gate_H", "conf_H"):
+        for m in ("7b", "30b"):
+            base = "outputs/cand_iface_0917/state_iface/"
+            k = _j(base + "keys_%s_%s.json" % (pool, m))
+            pc = _j(base + "pc_%s_is_clean_%s.json" % (pool, m))
+            if k is None or pc is None or not pc.get("complete"):
+                missing.append("`state_iface` %s / %s" % (pool, m))
+                continue
+            cells = k["cells"]
+            orc = cells.get("oracle_lib24") or cells.get("oracle_cand")
+            if pool == "gate_H" and ka:  # the gate pool's ceiling is the admitted candidates, not cand0
+                ceil = "%s / %s" % (_rate(ka["cells"].get("cand2"), "is_clean"),
+                                    _rate(ka["cells"].get("cand5"), "is_powered_on"))
+            else:
+                ceil = "%s / %s" % (_rate(orc, "is_clean"), _rate(orc, "is_powered_on"))
+            c = k["comparisons"]["state_on:state_off"]["is_powered_on"]
+            w("| %s | %s | %.4f → %.4f | %+.4f | [%+.3f, %+.3f] | %s → %s | %s → %s | %s | %s |"
+              % (pool, m.upper(), pc["mean_a"], pc["mean_b"], pc["mean_delta"],
+                 pc["paired_bootstrap_95"][0], pc["paired_bootstrap_95"][1],
+                 _rate(cells["state_off"], "is_clean"), _rate(cells["state_on"], "is_clean"),
+                 _rate(cells["state_off"], "is_powered_on"), _rate(cells["state_on"], "is_powered_on"),
+                 _kcmp(c).replace(" | ", "，"), ceil))
+    w("")
+    w("**两个键劈成两半**：`is_powered_on` 起来了，`is_clean` 几乎不动——又是判据：这两个池里**每条 `is_clean` "
+      "命题的主语都是家具**（「clean the dining table」），而 `project()` 开头把家具主语一律丢掉（为放置写的规则）。"
+      "`table_7 | clean | -` 解析正确后被扔掉。修成状态谓词先于放置规则定型。")
+    w("")
+
+    w("### 5g.2 家具主语修复后（`state_fix*`；同一代码版本重跑两臂，另与修复前的开关臂比）")
+    w("")
+    want = [("gate_H", "7b"), ("gate_H", "30b"), ("conf_H", "7b"), ("conf_H", "30b")]
+    found = {}
+    for kf in sorted(glob.glob(str(ROOT / "outputs/cand_iface_0917/state_fix*/keys_fix_*.json"))):
+        if "_failed_" in kf:
+            continue
+        k = _j(Path(kf))
+        if not k:
+            continue
+        d = Path(kf).parent
+        mtag = Path(kf).stem[len("keys_fix_"):]
+        pc = _j(d / ("pc_is_clean_%s.json" % mtag))
+        off = _j(d / ("offarm_unchanged_%s.json" % mtag))
+        n = k.get("episodes")
+        full = all(k["cells"].get(c, {}).get("episodes_read") == n for c in ("state_off", "state_on"))
+        if pc is None or not pc.get("complete") or not full:
+            missing.append("`%s`（格不满 %s/%s 或 compare 不 complete）" % (d.relative_to(ROOT), n, n))
+            continue
+        found[(k["pool"], mtag)] = (d, k, pc, off)
+    if found:
+        w("| 池 | 模型 | 键 | 修复后 off → on（按 episode） | Δ | 95% CI | 升 / 降 | 修复前 on → 修复后 on | Δ |")
+        w("|---|---|---|---|---|---|---|---|---|")
+        for pool, m in want:
+            if (pool, m) not in found:
+                continue
+            d, k, pc, off = found[(pool, m)]
+            for key in ("is_clean", "is_powered_on", "is_in_room", "is_on_top"):
+                c = k["comparisons"]["state_on:state_off"].get(key)
+                p = k["comparisons"].get("state_on:prerepair_on", {}).get(key)
+                if not c:
+                    continue
+                w("| %s | %s | `%s` | %s | %s | %s |"
+                  % (pool, m.upper(), key, _kcmp(c),
+                     "—" if not p else "%.3f → %.3f" % (p["b"], p["a"]),
+                     "—" if not p else "%+.3f（%d 升 %d 降）" % (p["delta"], p["up"], p["down"])))
+        w("")
+        w(PC_HEAD[0]); w(PC_HEAD[1])
+        for pool, m in want:
+            if (pool, m) not in found:
+                continue
+            d, k, pc, off = found[(pool, m)]
+            w(_pc_row("%s / %s：pc，修复后 off → on" % (pool, m.upper()), pc))
+            if off and off.get("complete"):
+                w(_pc_row("%s / %s：开关关闭臂隔天重跑（修复前 off → 修复后 off）" % (pool, m.upper()), off))
+        w("")
+        w("「修复前 on → 修复后 on」一列里**只有 `is_clean` 的均值成块移动**，其它键 |Δ| ≤ 0.01、"
+          "与下面的重复噪声同量级——修复只改了该动的键。"
+          "开关关闭时代码路径逐位相同，所以关闭臂隔天重跑的那一行就是**模型臂的重复噪声**（vLLM 层面的不确定性）："
+          "以后模型臂引噪声带引这一行，别引特权臂的 `band = 0`。")
+        w("")
+    got_str = [p for p in want if p in found]
+    lack = [p for p in want if p not in found]
+    w("已有：%s。" % ("、".join("%s/%s" % (p, m.upper()) for p, m in got_str) or "无"))
+    if lack:
+        w("")
+        w("**缺格**：%s——`state_fix*` 下没有完整（60/60 且 `complete`）的 `keys_fix_*.json` + "
+          "`pc_is_clean_*.json`。`conf_H` 是预登记确认池，要等 gate_H 两个模型都读出修复有效后才开。"
+          % "、".join("%s/%s" % (p, m.upper()) for p, m in lack))
+    w("")
+    if missing:
+        w("**本节读不到的产物**：%s。" % "；".join(missing))
+        w("")
+    w("---")
+    w("")
+    return missing + ["§5g.2 缺格 %s/%s" % (p, m.upper()) for p, m in lack]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--comparison", type=Path,
@@ -470,20 +801,26 @@ def main():
           % (len(_replay_l1), sum(_replay_l1)))
         w("")
 
-    # ---- 3c: our library against the 19-operator handwritten reference, same answers, same planner.
+    # ---- 3c: our library against the 19-operator reference, same answers, same planner.
     # This is the arm §8 item 4 used to say the v3 build did not have.
-    w("### 3c. 19 算子手写参考库：同一批答案换库重放")
+    # The reference is NOT hand-written and DOES vary by fold: it is mined by simulator replay of train
+    # even-indexed episodes and ships skill_memory_v2.fold_<family>.json. The OOD row must use those
+    # (v3_libfold_fold_*, 2026-09-21); v3_lib_fold_* scored OOD against the full library, which saw the
+    # held-out family (0.6742 / 0.5097 / 0.1602 instead of 0.6558 / 0.4600 / 0.1450).
+    w("### 3c. 19 算子参考库：同一批答案换库重放")
     w("")
     w("同一个重放脚本，只把库换成 `results/viki_memory_experiments/amendment11/skill_memory_v2.json`"
-      "（19 个人写算子）。**参考库不随留出折变化**，所以它在两列上是同一个数，而我们的库会掉——"
-      "这一格量的就是那个差。")
+      "（19 个算子，由仿真器重放 train 偶数行挖出，**不是手写**，也没有 LLM 提议）。它带 8 个逐折版本 "
+      "`skill_memory_v2.fold_<family>.json`，**单族留出行用的是逐折版本**，和我们的库一样不见留出族"
+      "（09-18 版这一行用了完整参考库，见过留出族，已更正）。")
     w("")
     w("| 模型 | split | 我们的库（%s） | 19 算子参考库 | 配对 |" % ("v3 8 算子" if TAG == "v3" else TAG))
     w("|---|---|---|---|---|")
     _lib_missing, _lib_verdict = [], {}
     for model in ("72B", "30B", "7B"):
         for split, split_label in (("id", "ID"), ("fold", "OOD·单族")):
-            path = ROOT / ("outputs/viki_ablation/%s_lib_%s_%s.json" % (TAG, split, model))
+            path = ROOT / ("outputs/viki_ablation/%s_%s_%s_%s.json"
+                           % (TAG, "lib" if split == "id" else "libfold", split, model))
             rep_json = json.loads(path.read_text()) if path.is_file() else None
             if not rep_json or not rep_json.get("reproduces_published") or "ALARM" in rep_json:
                 _lib_missing.append("%s/%s" % (model, split))
@@ -512,7 +849,7 @@ def main():
                     if (m, split) in _lib_verdict and _lib_verdict[(m, split)][0] < _lib_verdict[(m, split)][1]]
             return ("我们高：%s；参考库高：%s" % ("、".join(win) or "无", "、".join(lose) or "无"))
         w("**逐格结论（%d 格，配对全部 p<0.01）**：ID 上 %s。单族留出上 %s——留出折换了库就掉，"
-          "而参考库不随折变化，所以那一列的差不是「参考库更好」，是**我们的库在留出族上覆盖不住**。"
+          "参考库也按折去掉了留出族，所以这一列是同口径的比较：**参考库在留出族上仍然覆盖得更好**。"
           % (len(_lib_verdict), _verdict("id"), _verdict("fold")))
         w("")
 
@@ -892,6 +1229,9 @@ def main():
                  _cond_led.get("no_execution_admission", {}).get("deduplicated_skill_count")))
             w("")
 
+    # ---- PARTNR after 09-09: every table read from the compare JSON on disk
+    _partnr_missing = partnr_since_0909(w)
+
     w("## 6. 不能说的话")
     w("")
     w("1. ~~不能说我们在留出族 OOD 上更强~~ —— **这条已被 v3 推翻**。三模型 × 两口径共六格对 G-Memory：**赢 "
@@ -907,15 +1247,17 @@ def main():
       " 在组合泛化两格都是巨大效应（72B 文本 0.8620 → 0.3266、带图 0.7980 → 0.2761）。之前那个「零效应」是**"
       "消融了半份记忆造成的假象**。仍然成立的只有一条：`no-grounding` 在**文本** split 上是 297/297 逐行一致的真零效应——那一格没有图可 "
       "ground。**v3 库下活端点消融格只有 72B 与 7B**；30B 只有 §3b 的零 GPU 重放（ID 与单族留出，没有组合泛化两格）。")
-    w("4. ~~v3 的 8 算子库没有对 19 算子手写参考库的格~~ —— **已补，见 §3c**：零 GPU 重放，同一批答案只换库，"
+    w("4. ~~v3 的 8 算子库没有对 19 算子手写参考库的格~~ —— **已补，见 §3c**：零 GPU 重放，同一批答案只换库（单族留出用逐折参考库），"
       "六格全部要求 `full` 复现主表，逐格结论写在那一节里（**7B 上参考库在 ID 也赢我们**）。"
       "仍然成立的限定是**组合泛化那两格分不开两个库，而那是在 v2 的 4 算子库上测的**（72B 297 行逐行一致；"
       "ID 上 4 算子库**显著输给**参考库，0.6126 vs 0.6742，115/172 p=0.00092），所以主表的 0.8620 "
       "/ 0.7980 在那两格上仍然不能当作「我们这个库好」的证据。")
-    w("5. **PARTNR 的模型臂（7B/8B × base/accepted）没有数**：两次重跑（09-07 `model_iir1`、09-08 "
-      "`model_rerun`）的四份 compare **全是 `complete: false`**——死因是 4h 硬超时与端点中途死亡，"
-      "不是模型也不是方法。按仓库自己的规矩，半格不取结论。现有的只有 privileged 臂，而 **privileged 臂在带 `is_in_room`"
-      " 的格上不是上界**（19 格对照：privileged 0.1316 < 7B 0.2982），所以门上的 +0.60 不能外推到模型臂。")
+    w("5. ~~PARTNR 的模型臂没有数~~ —— **现在有了（§5f / §5g），而它说的是：特权臂上的增益不能外推到模型臂。**"
+      "09-07/09-08 那两次 `model_iir1` / `model_rerun` 的四份 compare 仍是 `complete: false`，不取结论；"
+      "取而代之的是冻结 typed 臂 val_mini 的完整格。**不能说**「装进库的算子让模型臂变好」：H 族两条算子在特权臂 "
+      "`conf_H` 上 pc +0.2563，在模型臂上换库打平（§5f），直到接口给了 H 谓词这个词才动（§5g）。"
+      "**也不能说** `llm5` 是纯 LLM 库（5 条里只有 3 条是 LLM 归纳的）。"
+      "privileged 臂在带 `is_in_room` 的格上**不是上界**（19 格对照：privileged 0.1316 < 7B 0.2982）这条照旧成立。")
     w("")
     w("## 7. 表上缺什么")
     w("")
@@ -983,10 +1325,15 @@ def main():
 
     w("### 7.5 表外没有覆盖的东西")
     w("")
-    w("- **PARTNR 的模型臂（7B/8B × base/accepted）零个有效格**：两次重跑四份 compare 全是 `complete: "
-      "false`（4h 硬超时 / 端点中途死亡），已停、待重跑（`scripts/drivers/partnr_model_rerun.sh`"
-      " 已写好，**还缺 `+resume=True`**）。现在 PARTNR 只有 privileged 臂，而它在带 `is_in_room`"
-      " 的格上**不是上界**。")
+    w("- **PARTNR 已不止到 09-09 的 `is_in_room`**：LLM 生成 memory 的特权臂验收（§5e）、冻结 typed 模型臂换库"
+      "（§5f）、H 谓词接口修复（§5g）都已进表。PARTNR 还缺的是：")
+    if _partnr_missing:
+        for _m in _partnr_missing:
+            w("  - %s" % _m)
+    w("  - 09-07/09-08 旧的 base/accepted 模型臂四份 compare 仍 `complete: false`，已被 §5f 的完整格取代，不再补。")
+    w("  - **方法边界，不是没跑**：`is_next_to` 在特权门下不可验收（§5e.4）；`is_filled` 被拒；"
+      "`is_inside` / `is_on_floor` / `is_powered_off` 纯轨迹只有个位数，没起格。")
+    w("  - §5g.2 的 `is_clean` 修复只在 gate_H（调参池）上读过；`conf_H` 确认格要等 gate_H 两个模型都读出修复有效再开。")
     w("- ~~消融只有 72B / 只跑在半份记忆上~~ —— **半份那一半已补**（见 §3，全份与半份两套）。v3 库下活端点格有 72B 与 7B；"
       "**30B 只有 §3b 的零 GPU 重放**，覆盖 ID 与单族留出，组合泛化两格仍没有 30B 消融。")
     w("- **组合泛化那两个 split 没有留出族口径，而且不可能有**：它们的 297 行全部属于同一个"

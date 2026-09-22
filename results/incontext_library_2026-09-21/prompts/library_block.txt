@@ -1,0 +1,47 @@
+These are reusable skills and ordering rules. Use them to write the plan.
+
+Skill 1 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_on_agent = false; target_on_agent = false; ?x.subject_in_container = false; ?x.subject_sealed = false; ?y.target_on_agent = false; ?y.target_sealed = false
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 2 (achievement)
+  Effect: ?x is activated
+  Preconditions: subject_in_container = false; subject_on_agent = false; subject_sealed = false; ?x.is_device = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 3 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_oven = true
+  Demo: Move(?x) -> Interact(?x)
+
+Skill 4 (achievement)
+  Effect: ?tool is activated
+  Preconditions: ?x.is_cutting_tool = true; ?z1.is_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Reach(?z1) -> Interact(?x)
+
+Skill 5 (achievement)
+  Effect: ?x is activated
+  Preconditions: ?x.is_knife = true; ?z1.is_cutting_surface = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?z1) -> Interact(?x)
+
+Skill 6 (coordination)
+  Effect: ?x is at ?y
+  Preconditions: none
+  Role ?r0 demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+  Role ?r1 demo: Move(?y) [after role 0 step 5]
+
+Skill 7 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = true; subject_on_agent = false; subject_sealed = true; target_on_agent = false; target_sealed = false; ?x.in_container = true; ?y.on_agent = false
+  Demo: Move(?z1) -> Reach(?z1) -> Open(?z1) -> Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Place(?y)
+
+Skill 8 (achievement)
+  Effect: ?x is at ?y
+  Preconditions: subject_in_container = false; subject_on_agent = false; ?x.is_graspable = true; ?x.is_reachable = true; ?y.is_container = true; ?y.is_openable = true
+  Demo: Move(?x) -> Reach(?x) -> Grasp(?x) -> Move(?y) -> Reach(?y) -> Open(?y) -> Place(?y)
+
+Ordering rules:
+- Do placing an object A at a place P before activating an object B when the skill for B visits P.
+- Do placing an object A at a place P before activating an object B when P is the object B and the skill for B visits P.
+- Do placing an object A at a place P before placing an object B at a place Q when A is the place Q.

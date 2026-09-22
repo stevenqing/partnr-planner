@@ -1,0 +1,221 @@
+{
+ "hf": {
+  "episodes": 4,
+  "turns": 250,
+  "err_turns": 21,
+  "err_rate": 0.084,
+  "success": [
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "pc_mean": 0.625,
+  "runtime_mean": 1076.6
+ },
+ "vllm": {
+  "episodes": 4,
+  "turns": 192,
+  "err_turns": 0,
+  "err_rate": 0.0,
+  "success": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "pc_mean": 0.6389,
+  "runtime_mean": 248.7
+ },
+ "episodes_compared": [
+  "439",
+  "443",
+  "445",
+  "447"
+ ],
+ "per_episode": {
+  "439": {
+   "hf": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.75,
+    "sim_steps": 2080.0,
+    "runtime": 719.4569644927979,
+    "info": null
+   },
+   "vllm": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.75,
+    "sim_steps": 2681.0,
+    "runtime": 135.14687490463257,
+    "info": null
+   },
+   "agent0": {
+    "hf": {
+     "turns": 33,
+     "err_turns": 0,
+     "mean_chars": 100.2
+    },
+    "vllm": {
+     "turns": 26,
+     "err_turns": 0,
+     "mean_chars": 109.9
+    },
+    "first_divergence_turn": 4,
+    "same_prefix_actions": 4
+   },
+   "agent1": {
+    "hf": {
+     "turns": 30,
+     "err_turns": 3,
+     "mean_chars": 121.2
+    },
+    "vllm": {
+     "turns": 24,
+     "err_turns": 0,
+     "mean_chars": 119.0
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   }
+  },
+  "443": {
+   "hf": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.75,
+    "sim_steps": 1053.0,
+    "runtime": 967.4713563919067,
+    "info": null
+   },
+   "vllm": {
+    "stats_ok": false,
+    "success": null,
+    "pc": null,
+    "sim_steps": null,
+    "runtime": null,
+    "info": "\"This model's maximum context length is 30768 tokens. However, your request has 31498 input tokens. Please reduce the length of the input messages.\",\"type\":\"BadRequestError\",\"param\":null,\"code\":400}}\n"
+   },
+   "agent0": {
+    "hf": {
+     "turns": 15,
+     "err_turns": 0,
+     "mean_chars": 124.1
+    },
+    "vllm": {
+     "turns": 0,
+     "err_turns": 0,
+     "mean_chars": null
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   },
+   "agent1": {
+    "hf": {
+     "turns": 27,
+     "err_turns": 10,
+     "mean_chars": 1473.7
+    },
+    "vllm": {
+     "turns": 0,
+     "err_turns": 0,
+     "mean_chars": null
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   }
+  },
+  "445": {
+   "hf": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.6666666666666666,
+    "sim_steps": 4041.0,
+    "runtime": 794.6635510921478,
+    "info": null
+   },
+   "vllm": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.6666666666666666,
+    "sim_steps": 9771.0,
+    "runtime": 467.15417408943176,
+    "info": null
+   },
+   "agent0": {
+    "hf": {
+     "turns": 21,
+     "err_turns": 0,
+     "mean_chars": 116.4
+    },
+    "vllm": {
+     "turns": 40,
+     "err_turns": 0,
+     "mean_chars": 111.2
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   },
+   "agent1": {
+    "hf": {
+     "turns": 48,
+     "err_turns": 3,
+     "mean_chars": 107.5
+    },
+    "vllm": {
+     "turns": 40,
+     "err_turns": 0,
+     "mean_chars": 117.5
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   }
+  },
+  "447": {
+   "hf": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.3333333333333333,
+    "sim_steps": 20000.0,
+    "runtime": 1824.6749069690704,
+    "info": null
+   },
+   "vllm": {
+    "stats_ok": true,
+    "success": 0.0,
+    "pc": 0.5,
+    "sim_steps": 3992.0,
+    "runtime": 143.7213728427887,
+    "info": null
+   },
+   "agent0": {
+    "hf": {
+     "turns": 30,
+     "err_turns": 0,
+     "mean_chars": 136.1
+    },
+    "vllm": {
+     "turns": 15,
+     "err_turns": 0,
+     "mean_chars": 146.5
+    },
+    "first_divergence_turn": 1,
+    "same_prefix_actions": 1
+   },
+   "agent1": {
+    "hf": {
+     "turns": 46,
+     "err_turns": 5,
+     "mean_chars": 106.0
+    },
+    "vllm": {
+     "turns": 47,
+     "err_turns": 0,
+     "mean_chars": 117.4
+    },
+    "first_divergence_turn": 0,
+    "same_prefix_actions": 0
+   }
+  }
+ }
+}

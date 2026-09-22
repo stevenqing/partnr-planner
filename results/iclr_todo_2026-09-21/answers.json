@@ -1,0 +1,349 @@
+{
+ "G0": {
+  "status": "DONE",
+  "ending": "partial: banks found, all evaluation outputs NOT_FOUND",
+  "numbers": [
+   {
+    "value": 450,
+    "numerator": 450,
+    "denominator": null,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/hierarchical_skill_memory/hierarchical_rerange_only/memory_summary.json"
+   },
+   {
+    "value": 20,
+    "numerator": 20,
+    "denominator": null,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/hierarchical_skill_memory/hierarchical_spatial_only/memory_summary.json"
+   },
+   {
+    "value": 455,
+    "numerator": 455,
+    "denominator": null,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/hierarchical_skill_memory/hierarchical_heterogeneous_rerange/memory_summary.json"
+   },
+   {
+    "value": 12,
+    "numerator": 12,
+    "denominator": null,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/hierarchical_skill_memory/hierarchical_heterogeneous_temporal/memory_summary.json"
+   },
+   {
+    "value": 32,
+    "numerator": 32,
+    "denominator": null,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/hierarchical_skill_memory/hierarchical_heterogeneous_rerange_spatial_temporal/memory_summary.json"
+   }
+  ],
+  "notes": "Banks match the manuscript counts exactly (build log all_scripts/slurm_files/logs/rebuild_memory_168228.log). Table 1, Table 2, H_R, G-Memory, top-k per-episode outputs were written to the Isambard cluster (/lus/lfs1aip1/home/a5l/shuqing.a5l/partnr-planner/outputs/habitat_llm/) and never restored. Only partial Llama-3.1-8B logs exist locally; none reproduces a manuscript value."
+ },
+ "retrieval-impl": {
+  "status": "DONE",
+  "ending": "user approved 09-21: two sentences rewritten to code facts (bank fixed per run config, raw cosine, no extra term); appendix example (1) and routing-ablation figure deleted; two more conflicts flagged as new TODOs (retrieval-impl-gt, retrieval-impl-fallback)",
+  "numbers": [
+   {
+    "value": 0.965,
+    "numerator": null,
+    "denominator": null,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/logs/ (max retrieval score over 5,174 logged retrieval blocks)"
+   }
+  ],
+  "notes": "B code (hierarchical_retrieval.py sha 5b864172, rag.py e7c0c0a3): no task-type routing at retrieval time (the bank is fixed per run by plan_config.rag_dataset_dir, run_hires_viz.sh:37-38); no object-type boost anywhere in B or in the ICLR freeze diff; theta=0.3 compares raw cosine (match_abstract_skills); embedding all-mpnet-base-v2 (rag.py:145,466-483). No logged score exceeds 0.965, so example (1)'s 1.117 cannot come from these runs."
+ },
+ "library-provenance": {
+  "status": "DONE",
+  "ending": "B (no execution gate)",
+  "numbers": [
+   {
+    "value": 0.695,
+    "numerator": 155,
+    "denominator": 223,
+    "source_path": "R ind, instances==1"
+   },
+   {
+    "value": 0.696,
+    "numerator": 158,
+    "denominator": 227,
+    "source_path": "R coop"
+   },
+   {
+    "value": 0.611,
+    "numerator": 171,
+    "denominator": 280,
+    "source_path": "HR ind"
+   },
+   {
+    "value": 0.783,
+    "numerator": 137,
+    "denominator": 175,
+    "source_path": "HR coop"
+   },
+   {
+    "value": 1.0,
+    "numerator": 7,
+    "denominator": 7,
+    "source_path": "HT ind"
+   },
+   {
+    "value": 1.0,
+    "numerator": 5,
+    "denominator": 5,
+    "source_path": "HT coop"
+   },
+   {
+    "value": 0.95,
+    "numerator": 19,
+    "denominator": 20,
+    "source_path": "HRST ind"
+   },
+   {
+    "value": 1.0,
+    "numerator": 12,
+    "denominator": 12,
+    "source_path": "HRST coop"
+   },
+   {
+    "value": 0.714,
+    "numerator": 10,
+    "denominator": 14,
+    "source_path": "S ind"
+   },
+   {
+    "value": 0.667,
+    "numerator": 4,
+    "denominator": 6,
+    "source_path": "S coop"
+   }
+  ],
+  "notes": "Built 2026-01-05 by our_method/rebuild_all_memories.sh -> build_hierarchical_skill_memory.py --include-failed --use-llm --patch-failed, proposer Llama-3.3-70B-Instruct (vLLM TP4, T=0.1). Every LLM-returned skill is admitted with success=True (:939,:963,:1123-1143); no simulator import, no validation episodes, no recurrence test. The is_in_room library (repo A results/partnr_operators_iir1.json, 22 JSON operators, Sep 2026) is a different library. LEAK: bank source episodes cover 196/197 H_R eval episodes (HR bank), 4/5 H_R_S_T (HRST bank), 578/588 rerange_only (R bank); no code excludes the current episode."
+ },
+ "effect-match": {
+  "status": "DONE",
+  "ending": "item1 answered (function has no LLM call, timing source NOT_FOUND); item2 example (3) deleted; item3 no five-arm results, TODOs at 213 and 836 kept",
+  "numbers": [],
+  "notes": "The 0.43 ms would be HierarchicalRetriever.filter_executable (pure Python substring checks). No perf_counter instrumentation or latency data exists in B or A. Example (3): no activation record in 136 logs with retrieval prints. Examples (1) and (2) are also not found (see retrieval-impl)."
+ },
+ "viki-instantiation": {
+  "status": "DONE",
+  "ending": "patched",
+  "numbers": [
+   {
+    "value": 295,
+    "numerator": null,
+    "denominator": 297,
+    "source_path": "audit/comp_leakage_2026-09-05/L0 (distinct task_ids in the 297 CG rows)"
+   }
+  ],
+  "notes": "S1 IMPRECISE (CG w/o Image has no image, scripts/viki_eval_v2_intent_choice.py:178). S2 IMPRECISE (no partner_cond skill, but one coordination operator of 8). S3 IMPRECISE (model states do/X/Y/robots requirements, INSTRUCTION :71-101, not skill names). S4 IMPRECISE (planner picks the operator by effect, searches alternatives, assigns relay roles, applies layer2 ordering). S5 TRUE. S6 TRUE under the audit's decisive detector (0 train rows); the actor-blind version flags 1,033 train rows, so 'activation plus delivery is unseen' stays excluded."
+ },
+ "gmemory-run": {
+  "status": "BLOCKED",
+  "ending": "NOT_FOUND",
+  "numbers": [],
+  "notes": "No G-Memory code, config or log for PARTNR in B, A, or the remote. Cannot state which code, trajectories or backbone, nor which of the three reasons applies to Claude/GPT-4o."
+ },
+ "table1-ci": {
+  "status": "BLOCKED",
+  "ending": "NOT_FOUND",
+  "numbers": [],
+  "notes": "No per-episode Table 1 or Table 2 outputs. Llama-8B R_S partial logs (logs/ours_rs_mem_*, memento_rs_mem_*) give 0.538-0.746 on 48-76 episodes and MEMENTO 0.763 on 76; none equals a table value."
+ },
+ "hr-main": {
+  "status": "BLOCKED",
+  "ending": "NOT_FOUND; B3 stays blocked: every method's H_R memory contains the H_R episodes",
+  "numbers": [
+   {
+    "value": null,
+    "numerator": null,
+    "denominator": 50,
+    "source_path": "largest ours H_R run"
+   },
+   {
+    "value": null,
+    "numerator": null,
+    "denominator": 55,
+    "source_path": "largest MEMENTO H_R run"
+   }
+  ],
+  "notes": "No H_R run for RAG, zero-shot, ToM, G-Memory. The HR bank contains 196 of the 197 H_R episodes, so an H_R table with that bank measures retrieval of the test episodes themselves."
+ },
+ "memento-hrt": {
+  "status": "DONE",
+  "ending": "B2 rerun 2026-09-21: 1/11 = 9.1% success, completion 0.393 (memory H_R+H_T, Llama-3.1-8B, 788 planner calls); table cell and text patched, TODO removed",
+  "numbers": [
+   {
+    "value": 0.0909,
+    "numerator": 1,
+    "denominator": 11,
+    "source_path": "results/iclr_todo_2026-09-21/b2/episode_result_log.csv"
+   },
+   {
+    "value": 0.3928,
+    "numerator": null,
+    "denominator": 11,
+    "source_path": "results/iclr_todo_2026-09-21/b2/episode_result_log.csv",
+    "label": "mean task_percent_complete"
+   }
+  ],
+  "notes": "12 MEMENTO H_R_T runs found (n 10-68); none gives 14.5 and 14.5 is not k/n for any observed n. Closest 9/61 = 14.8 with H_T memory only. The current H_R_T set has 11 episodes, where 14.5 is not reachable. Rerun ranks MEMENTO below RAG (11.1) and ToM (9.2) on H_R_T. Caveat: the other H_R_T cells (27.7, 19.8, 9.2) are not k/11 either, so the row still mixes episode counts."
+ },
+ "cells": {
+  "status": "DONE",
+  "ending": "user approved 09-21: 72 + 36 + 36 = 144, plus 18 sibling-group cells; figure still marks 30B CG as not run -> TODO[cells-fig]",
+  "numbers": [
+   {
+    "value": 36,
+    "numerator": 36,
+    "denominator": 36,
+    "source_path": "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/paper_viki_iclr2027/cells.json (rq3 available)"
+   },
+   {
+    "value": 144,
+    "numerator": 144,
+    "denominator": 144,
+    "source_path": "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/paper_viki_iclr2027/cells.json"
+   },
+   {
+    "value": 0.0236,
+    "numerator": null,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/paper_viki_results.md (rq3 30B rows)",
+    "label": "30B CG w/ Image no_grounding"
+   },
+   {
+    "value": 0.5522,
+    "numerator": null,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/paper_viki_results.md (rq3 30B rows)",
+    "label": "30B CG w/ Image no_order"
+   },
+   {
+    "value": 0.7239,
+    "numerator": null,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/paper_viki_results.md (rq3 30B rows)",
+    "label": "30B CG w/o Image no_grounding"
+   },
+   {
+    "value": 0.6431,
+    "numerator": null,
+    "denominator": 297,
+    "source_path": "results/paper_viki_iclr2027/paper_viki_results.md (rq3 30B rows)",
+    "label": "30B CG w/o Image no_order"
+   }
+  ],
+  "notes": "72 = figure2 = 3 models x 4 splits x {ours, ToM, zero-shot, RAG, G-Memory, MEMENTO}. 90 = results/agent_library_v3/baseline_comparison.json = 3 x 5 splits x {ours, G-Memory, MEMENTO, skill memory v1, RAG, zero-shot}: it adds the sibling split AND swaps ToM for skill memory v1, so 90-72 is not only the 18 sibling cells. Manuscript says 32 RQ3 cells and four 30B compositional cells not run; disk has 36/36, the four were run 2026-09-14."
+ },
+ "handwritten-7b": {
+  "status": "DONE",
+  "ending": "user approved 09-21: \"hand-written\" removed (library is mined by simulator replay of train even-indexed episodes, our_method/skill_memory_v2/induction.py); OOD uses per-fold versions 0.656/0.460/0.145; reference also wins 30B OOD, now stated",
+  "numbers": [
+   {
+    "value": 0.6558,
+    "numerator": 606,
+    "denominator": 924,
+    "source_path": "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_todo_2026-09-21/work/ref_fold_72B.json"
+   },
+   {
+    "value": 0.46,
+    "numerator": 425,
+    "denominator": 924,
+    "source_path": "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_todo_2026-09-21/work/ref_fold_30B.json"
+   },
+   {
+    "value": 0.145,
+    "numerator": 134,
+    "denominator": 924,
+    "source_path": "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/results/iclr_todo_2026-09-21/work/ref_fold_7B.json"
+   },
+   {
+    "value": 0.1602,
+    "numerator": 148,
+    "denominator": 924,
+    "source_path": "/mnt/pfs/devs/pn5wp/shishuqing/partnr-planner/outputs/viki_ablation/v3_lib_id_7B.json"
+   }
+  ],
+  "notes": "The 19-operator library is not hand-written: skill_memory_v2.json built_from 'VIKI-L2 train.parquet, even-indexed episodes', with 8 per-fold variants excluding the held-out family. The manuscript OOD values (72B 67.4, 7B 0.160) use the full library, which saw the held-out family. With the per-fold variants: 65.6 / 46.0 / 14.5 (72B/30B/7B), still above ours 54.2 / 35.4 / 11.7 (105/0, 98/0, 26/0 discordant; p<3e-8). 15-cell table in tables/reference_library_15cells.csv."
+ },
+ "topk-40": {
+  "status": "BLOCKED",
+  "ending": "NOT_FOUND",
+  "numbers": [],
+  "notes": "No k=10/20 run exists (scripts use top_k 3 and 5 only). H_R_S_T has 5 episodes; no run reaches 2/5 under R-only or full-union memory. Only the rendered figure ~/Downloads/topk_ablation_2x2_v3.pdf exists."
+ },
+ "scorer-parity": {
+  "status": "DONE",
+  "ending": "no flip",
+  "numbers": [],
+  "notes": "All 72 cells rescored under JSON-tolerant and official strict. No ours-vs-baseline direction or significance changes (max p 7.2e-6). Stricter scoring only lowers baselines (72B G-Memory ID 51.0 -> 9.8). Ours is identical under both by code. tables/scorer_parity.{csv,tex,json}, scorer_parity_mcnemar.csv."
+ },
+ "partnr-leak": {
+  "status": "DONE",
+  "ending": "user chose disclosure 09-21; overlap narrower than first reported: Table 1/2 targets are disjoint from their source memories for ours, RAG, MEMENTO; only H_R evaluated from the H_R memory overlaps",
+  "numbers": [
+   {
+    "label": "ours R bank vs R_S (Table 1, Table 2 row 1)",
+    "value": 0,
+    "numerator": 0,
+    "denominator": 76,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/hierarchical_skill_memory/hierarchical_rerange_only/episodic_memory.json.gz"
+   },
+   {
+    "label": "ours R,S banks vs R_S",
+    "value": 0,
+    "numerator": 0,
+    "denominator": 76,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/hierarchical_skill_memory/"
+   },
+   {
+    "label": "ours HR,HT banks vs H_R_T",
+    "value": 0,
+    "numerator": 0,
+    "denominator": 11,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/task_classification_datasets/heterogeneous+rerange+temporal_unique.json.gz"
+   },
+   {
+    "label": "ours R,S,HR,HT banks vs H_R_S_T",
+    "value": 0,
+    "numerator": 0,
+    "denominator": 5,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/all_scripts/bash_files/run_ours_hrst_mem_hrst.sh"
+   },
+   {
+    "label": "ours HR bank vs H_R",
+    "value": 196,
+    "numerator": 196,
+    "denominator": 197,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/hierarchical_skill_memory/hierarchical_heterogeneous_rerange/episodic_memory.json.gz"
+   },
+   {
+    "label": "RAG heterogeneous_rerange_heuristic vs H_R (instruction text)",
+    "value": 196,
+    "numerator": 196,
+    "denominator": 197,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/rag_datasets/heterogeneous_rerange_heuristic/"
+   },
+   {
+    "label": "RAG memories used for R_S / H_R_T / H_R_S_T vs their targets",
+    "value": 0,
+    "numerator": 0,
+    "denominator": null,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/rag_datasets/"
+   },
+   {
+    "label": "MEMENTO heterogeneous_rerange source set vs H_R (instruction hits 123/197)",
+    "value": 197,
+    "numerator": 197,
+    "denominator": 197,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/data/memory_memento_dataset/heterogeneous_rerange/user_profile_memory.json.gz"
+   },
+   {
+    "label": "MEMENTO all memories vs H_R_T",
+    "value": 0,
+    "numerator": 0,
+    "denominator": 11,
+    "source_path": "/Users/shishuqing/restore_isambard/partnr-planner/methods/MEMENTO/build_memory.py"
+   }
+  ],
+  "notes": "Matched by episode id and by instruction text. MEMENTO retrieval (memento_retriever.py:160-230, rag.py:1428-1498) has no episode filter; memory is offline and read-only at eval. G-Memory not checkable (no code). Which memory the one-agent / N=3 H_R appendix runs used is not on disk -> TODO[hr-leak]."
+ }
+}

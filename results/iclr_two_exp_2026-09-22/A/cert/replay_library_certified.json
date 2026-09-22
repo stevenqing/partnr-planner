@@ -1,0 +1,894 @@
+{
+ "format": "replay_library/1",
+ "summary": {
+  "mined": 17,
+  "certified": 9,
+  "certified_ids": [
+   "m0000",
+   "m0001",
+   "m0003",
+   "m0004",
+   "m0005",
+   "m0006",
+   "m0008",
+   "m0010",
+   "m0011"
+  ],
+  "family_admitted_before_support": {
+   "clear_table_with_two_robots_and_put_in_cabinet": [
+    "m0003"
+   ],
+   "cut_fruit_on_board": [
+    "m0000",
+    "m0006"
+   ],
+   "cut_two_fruits_on_board": [
+    "m0004",
+    "m0008"
+   ],
+   "dog_check_environment": [
+    "m0010"
+   ],
+   "dog_push_box_for_two_panda_transport": [
+    "m0011"
+   ],
+   "ensure_all_fruits_on_table": [
+    "m0000"
+   ],
+   "parallel_human_dual_asset_to_plate_or_bowl": [
+    "m0000"
+   ],
+   "sequential_pick_two_and_place": [
+    "m0004",
+    "m0005"
+   ],
+   "serve_bread_after_checking_cabinet": [
+    "m0001"
+   ],
+   "serve_bread_from_counter": [
+    "m0000"
+   ],
+   "set_plate_and_fork_on_table": [
+    "m0000",
+    "m0001"
+   ],
+   "single_move_asset_to_target": [
+    "m0000"
+   ],
+   "toast_bread_and_set_plate": [
+    "m0000"
+   ],
+   "wash_fruit_and_serve": [
+    "m0000"
+   ]
+  },
+  "families_without_targets": [],
+  "certify_script_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29",
+  "mined_library_sha256": "adbe56392712ada9549d78cc6d5c39288e0dd7180cdffef455fbc60c6095d021",
+  "llm_calls": 0
+ },
+ "operators": [
+  {
+   "kind": "achievement",
+   "effect": {
+    "key": "pos.name",
+    "subject": "?x",
+    "value": "?y"
+   },
+   "body": [
+    [
+     "Move",
+     "?x"
+    ],
+    [
+     "Reach",
+     "?x"
+    ],
+    [
+     "Grasp",
+     "?x"
+    ],
+    [
+     "Move",
+     "?y"
+    ],
+    [
+     "Place",
+     "?y"
+    ]
+   ],
+   "preconditions": {
+    "subject_sealed": false,
+    "subject_on_agent": false,
+    "target_sealed": false,
+    "target_on_agent": false
+   },
+   "types": {
+    "?x": {
+     "isolated": false
+    },
+    "?y": {
+     "isolated": false,
+     "pushable": false
+    }
+   },
+   "support": 46,
+   "families": [
+    "serve_bread_from_counter",
+    "single_move_asset_to_target",
+    "toast_bread_and_set_plate",
+    "cut_fruit_on_board",
+    "wash_fruit_and_serve",
+    "ensure_all_fruits_on_table",
+    "parallel_human_dual_asset_to_plate_or_bowl",
+    "set_plate_and_fork_on_table"
+   ],
+   "runner_types": [
+    "stompy",
+    "fetch",
+    "unitree_h1"
+   ],
+   "requires": [
+    "grasp",
+    "move",
+    "place",
+    "reach"
+   ],
+   "carries": true,
+   "cost": 5,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0000",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  },
+  {
+   "kind": "achievement",
+   "effect": {
+    "key": "pos.name",
+    "subject": "?x",
+    "value": "?y"
+   },
+   "body": [
+    [
+     "Move",
+     "?z1"
+    ],
+    [
+     "Reach",
+     "?z1"
+    ],
+    [
+     "Grasp",
+     "?z1"
+    ],
+    [
+     "Move",
+     "?x"
+    ],
+    [
+     "Reach",
+     "?x"
+    ],
+    [
+     "Grasp",
+     "?x"
+    ],
+    [
+     "Move",
+     "?y"
+    ],
+    [
+     "Place",
+     "?y"
+    ]
+   ],
+   "preconditions": {
+    "subject_sealed": false,
+    "subject_in_container": false,
+    "subject_on_agent": false,
+    "target_sealed": false,
+    "target_on_agent": false
+   },
+   "types": {
+    "?x": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    },
+    "?y": {
+     "isolated": false,
+     "pushable": false
+    },
+    "?z1": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    }
+   },
+   "support": 28,
+   "families": [
+    "sequential_pick_two_and_place",
+    "cut_two_fruits_on_board"
+   ],
+   "runner_types": [
+    "stompy",
+    "unitree_h1"
+   ],
+   "requires": [
+    "grasp",
+    "move",
+    "place",
+    "reach"
+   ],
+   "carries": true,
+   "cost": 8,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0005",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  },
+  {
+   "kind": "achievement",
+   "effect": {
+    "key": "pos.name",
+    "subject": "?x",
+    "value": "?y"
+   },
+   "body": [
+    [
+     "Move",
+     "?x"
+    ],
+    [
+     "Reach",
+     "?x"
+    ],
+    [
+     "Grasp",
+     "?x"
+    ],
+    [
+     "Move",
+     "?z1"
+    ],
+    [
+     "Reach",
+     "?z1"
+    ],
+    [
+     "Grasp",
+     "?z1"
+    ],
+    [
+     "Move",
+     "?y"
+    ],
+    [
+     "Place",
+     "?y"
+    ]
+   ],
+   "preconditions": {
+    "subject_sealed": false,
+    "subject_in_container": false,
+    "subject_on_agent": false,
+    "target_sealed": false,
+    "target_on_agent": false
+   },
+   "types": {
+    "?x": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    },
+    "?y": {
+     "isolated": false,
+     "pushable": false
+    },
+    "?z1": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    }
+   },
+   "support": 28,
+   "families": [
+    "sequential_pick_two_and_place",
+    "cut_two_fruits_on_board"
+   ],
+   "runner_types": [
+    "stompy",
+    "unitree_h1"
+   ],
+   "requires": [
+    "grasp",
+    "move",
+    "place",
+    "reach"
+   ],
+   "carries": true,
+   "cost": 8,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0004",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  },
+  {
+   "kind": "achievement",
+   "effect": {
+    "key": "is_activated",
+    "subject": "?x",
+    "value": true
+   },
+   "body": [
+    [
+     "Move",
+     "?x"
+    ],
+    [
+     "Interact",
+     "?x"
+    ]
+   ],
+   "preconditions": {
+    "subject_sealed": false,
+    "subject_in_container": false,
+    "subject_on_agent": false,
+    "target_sealed": false,
+    "target_on_agent": false
+   },
+   "types": {
+    "?x": {
+     "isolated": false,
+     "pushable": false
+    }
+   },
+   "support": 23,
+   "families": [
+    "dog_check_environment"
+   ],
+   "runner_types": [
+    "unitree_go2",
+    "anymal_c"
+   ],
+   "requires": [
+    "interact",
+    "move"
+   ],
+   "carries": false,
+   "cost": 2,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0010",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  },
+  {
+   "kind": "achievement",
+   "effect": {
+    "key": "is_activated",
+    "subject": "?x",
+    "value": true
+   },
+   "body": [
+    [
+     "Move",
+     "?x"
+    ],
+    [
+     "Reach",
+     "?x"
+    ],
+    [
+     "Grasp",
+     "?x"
+    ],
+    [
+     "Move",
+     "?z1"
+    ],
+    [
+     "Interact",
+     "?x"
+    ]
+   ],
+   "preconditions": {
+    "subject_sealed": false,
+    "subject_in_container": false,
+    "subject_on_agent": false,
+    "target_sealed": false,
+    "target_on_agent": false
+   },
+   "types": {
+    "?x": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    },
+    "?z1": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    }
+   },
+   "support": 20,
+   "families": [
+    "cut_two_fruits_on_board"
+   ],
+   "runner_types": [
+    "fetch"
+   ],
+   "requires": [
+    "grasp",
+    "interact",
+    "move",
+    "reach"
+   ],
+   "carries": true,
+   "cost": 5,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0008",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  },
+  {
+   "kind": "achievement",
+   "effect": {
+    "key": "is_activated",
+    "subject": "?x",
+    "value": true
+   },
+   "body": [
+    [
+     "Move",
+     "?x"
+    ],
+    [
+     "Reach",
+     "?x"
+    ],
+    [
+     "Grasp",
+     "?x"
+    ],
+    [
+     "Move",
+     "?z1"
+    ],
+    [
+     "Reach",
+     "?z1"
+    ],
+    [
+     "Interact",
+     "?x"
+    ]
+   ],
+   "preconditions": {
+    "subject_sealed": false,
+    "subject_in_container": false,
+    "subject_on_agent": false,
+    "target_sealed": false,
+    "target_on_agent": false
+   },
+   "types": {
+    "?x": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    },
+    "?z1": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    }
+   },
+   "support": 20,
+   "families": [
+    "cut_fruit_on_board"
+   ],
+   "runner_types": [
+    "fetch",
+    "unitree_h1",
+    "stompy"
+   ],
+   "requires": [
+    "grasp",
+    "interact",
+    "move",
+    "reach"
+   ],
+   "carries": true,
+   "cost": 6,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0006",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  },
+  {
+   "kind": "achievement",
+   "effect": {
+    "key": "pos.name",
+    "subject": "?x",
+    "value": "?y"
+   },
+   "body": [
+    [
+     "Move",
+     "?z1"
+    ],
+    [
+     "Reach",
+     "?z1"
+    ],
+    [
+     "Open",
+     "?z1"
+    ],
+    [
+     "Move",
+     "?x"
+    ],
+    [
+     "Reach",
+     "?x"
+    ],
+    [
+     "Grasp",
+     "?x"
+    ],
+    [
+     "Move",
+     "?y"
+    ],
+    [
+     "Place",
+     "?y"
+    ]
+   ],
+   "preconditions": {
+    "subject_sealed": true,
+    "subject_in_container": true,
+    "subject_on_agent": false,
+    "target_sealed": false,
+    "target_on_agent": false
+   },
+   "types": {
+    "?x": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    },
+    "?y": {
+     "isolated": false,
+     "pushable": false
+    },
+    "?z1": {
+     "is_container": true,
+     "isolated": true,
+     "pushable": false
+    }
+   },
+   "support": 8,
+   "families": [
+    "serve_bread_after_checking_cabinet",
+    "ensure_all_fruits_on_table",
+    "set_plate_and_fork_on_table"
+   ],
+   "runner_types": [
+    "stompy",
+    "unitree_h1"
+   ],
+   "requires": [
+    "grasp",
+    "move",
+    "open",
+    "place",
+    "reach"
+   ],
+   "carries": true,
+   "cost": 8,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0001",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  },
+  {
+   "kind": "coordination",
+   "coordinated": true,
+   "effect": {
+    "key": "pos.name",
+    "subject": "?x",
+    "value": "?y"
+   },
+   "roles": [
+    {
+     "variable": "?r0",
+     "actions": [
+      {
+       "action": [
+        "Move",
+        "?z1"
+       ],
+       "offset": 0,
+       "after": []
+      },
+      {
+       "action": [
+        "Push",
+        "?z1",
+        "?r1"
+       ],
+       "offset": 1,
+       "after": [
+        [
+         1,
+         1
+        ]
+       ]
+      },
+      {
+       "action": [
+        "Push",
+        "?z1",
+        "?r2"
+       ],
+       "offset": 3,
+       "after": [
+        [
+         1,
+         3
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "variable": "?r1",
+     "actions": [
+      {
+       "action": [
+        "Reach",
+        "?x"
+       ],
+       "offset": 0,
+       "after": []
+      },
+      {
+       "action": [
+        "Grasp",
+        "?x"
+       ],
+       "offset": 1,
+       "after": [
+        [
+         0,
+         1
+        ]
+       ]
+      },
+      {
+       "action": [
+        "Place",
+        "?z1"
+       ],
+       "offset": 2,
+       "after": [
+        [
+         0,
+         2
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "variable": "?r2",
+     "actions": [
+      {
+       "action": [
+        "Reach",
+        "?x"
+       ],
+       "offset": 4,
+       "after": [
+        [
+         0,
+         3
+        ],
+        [
+         1,
+         3
+        ]
+       ]
+      },
+      {
+       "action": [
+        "Grasp",
+        "?x"
+       ],
+       "offset": 5,
+       "after": [
+        [
+         0,
+         3
+        ],
+        [
+         1,
+         3
+        ]
+       ]
+      },
+      {
+       "action": [
+        "Place",
+        "?y"
+       ],
+       "offset": 6,
+       "after": [
+        [
+         0,
+         3
+        ],
+        [
+         1,
+         3
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "preconditions": {
+    "subject_sealed": false,
+    "subject_in_container": false,
+    "subject_on_agent": true,
+    "target_sealed": false,
+    "target_on_agent": true
+   },
+   "types": {
+    "?x": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    },
+    "?y": {
+     "is_container": true,
+     "isolated": false,
+     "pushable": false
+    },
+    "?z1": {
+     "is_container": true,
+     "isolated": false,
+     "pushable": true
+    }
+   },
+   "role_types": {
+    "?r0": [
+     "unitree_go2",
+     "anymal_c"
+    ],
+    "?r1": [
+     "panda"
+    ],
+    "?r2": [
+     "panda"
+    ]
+   },
+   "support": 4,
+   "families": [
+    "dog_push_box_for_two_panda_transport"
+   ],
+   "runner_types": [],
+   "cost": 7,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0011",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  },
+  {
+   "kind": "achievement",
+   "effect": {
+    "key": "pos.name",
+    "subject": "?x",
+    "value": "?y"
+   },
+   "body": [
+    [
+     "Move",
+     "?x"
+    ],
+    [
+     "Reach",
+     "?x"
+    ],
+    [
+     "Grasp",
+     "?x"
+    ],
+    [
+     "Move",
+     "?y"
+    ],
+    [
+     "Reach",
+     "?y"
+    ],
+    [
+     "Open",
+     "?y"
+    ],
+    [
+     "Place",
+     "?y"
+    ]
+   ],
+   "preconditions": {
+    "subject_sealed": false,
+    "subject_in_container": false,
+    "subject_on_agent": false,
+    "target_sealed": true,
+    "target_on_agent": false
+   },
+   "types": {
+    "?x": {
+     "is_container": false,
+     "isolated": false,
+     "pushable": false
+    },
+    "?y": {
+     "is_container": true,
+     "isolated": true,
+     "pushable": false
+    }
+   },
+   "support": 3,
+   "families": [
+    "clear_table_with_two_robots_and_put_in_cabinet"
+   ],
+   "runner_types": [
+    "unitree_h1",
+    "stompy"
+   ],
+   "requires": [
+    "grasp",
+    "move",
+    "open",
+    "place",
+    "reach"
+   ],
+   "carries": true,
+   "cost": 7,
+   "provenance": {
+    "proposed_by": "replay_mining",
+    "script": "scripts/iclr_two_exp/A/mine_replay.py",
+    "script_sha256": "f68e4700c4dd810e729155549838088807eb01090a65c357a079755239fc8a58",
+    "mined_id": "m0003",
+    "certify_sha256": "0bd90e0e3bf337a4a5d794ebb8b98a74e3104132ed907c27b9ac3e060b904c29"
+   }
+  }
+ ]
+}

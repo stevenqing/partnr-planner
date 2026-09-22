@@ -1,0 +1,47 @@
+{
+  "generated": "2026-09-21",
+  "llm_calls": 0,
+  "sources": {
+    "fig2_summary": "results/paper_viki_iclr2027/figure2_tom_summary.csv",
+    "fig2_md": "results/paper_viki_iclr2027/paper_viki_results.md (L25-26 ToM/G-Memory 72B)",
+    "comparison": "results/agent_library_v3/baseline_comparison.json (generated 2026-09-10, 96 cells, no ToM arm)",
+    "scorer_parity": "results/iclr_todo_2026-09-21/tables/scorer_parity.csv",
+    "sep8_doc": "RESULTS-2026-09-08.md L19-23 (72B table)",
+    "sep2_doc": "none found locally containing these G-Memory numbers (HANDOVER-2026-09-02.md has none); raw CG G-Memory files are dated 2026-08-31"
+  },
+  "A3": [
+    {"item":"72B G-Memory ID","claimed":51.0,"num":471,"den":924,"value":50.97,"fig2":"471/924","comparison":"471/924","sep8":"0.5097","verdict":"MATCH","raw":"results/viki_memory_experiments/amendment8b/gmemory.jsonl"},
+    {"item":"72B G-Memory OOD single-family","claimed":20.8,"num":192,"den":924,"value":20.78,"fig2":"192/924","comparison":"192/924 (split heldout)","sep8":"0.2078","verdict":"MATCH","raw":"results/viki_memory_experiments/amendment8b/folds/*/gmemory.jsonl"},
+    {"item":"72B G-Memory CG w/ Image","claimed":4.7,"num":14,"den":297,"value":4.71,"fig2":"14/297","comparison":"14/297 (imaged)","sep8":"0.0471","verdict":"MATCH","raw":"results/viki_memory_experiments/amendment10/imaged/gmemory.jsonl","note":"raw file's own task_score field (official scorer) = 0/297; official strict in scorer_parity = 0.0000"},
+    {"item":"72B G-Memory CG w/o Image","claimed":3.4,"num":10,"den":297,"value":3.37,"fig2":"10/297","comparison":"10/297 (text)","sep8":"0.0337","verdict":"MATCH","raw":"results/viki_memory_experiments/amendment10/text/gmemory.jsonl","note":"raw task_score = 0/297; official strict 0.0000"},
+    {"item":"Ours 30B CG w/ Image","claimed":65.0,"num":193,"den":297,"value":64.98,"fig2":"193/297","comparison":"193/297","verdict":"MATCH","raw":"results/viki_memory_experiments/amendment11/v3_oursall_30B_imaged.jsonl","library":"outputs/v3_memories/memory_all.json"},
+    {"item":"Ours 30B CG w/o Image","claimed":72.4,"num":215,"den":297,"value":72.39,"fig2":"215/297","comparison":"215/297","verdict":"MATCH"},
+    {"item":"Ours 7B CG w/ Image","claimed":15.2,"num":45,"den":297,"value":15.15,"fig2":"45/297","comparison":"45/297","verdict":"MATCH"},
+    {"item":"Ours 7B CG w/o Image","claimed":25.6,"num":76,"den":297,"value":25.59,"fig2":"76/297","comparison":"76/297","verdict":"MATCH","raw":"results/viki_memory_experiments/amendment11/v3_oursall_7B_text.jsonl"},
+    {"item":"72B ToM ID","claimed":2.5,"num":23,"den":924,"value":2.49,"fig2":"23/924","comparison":"not present","verdict":"MATCH","raw":"results/paper_viki_iclr2027/raw/figure2_tom/qwen2.5-vl-72b-instruct/id/rows.jsonl"},
+    {"item":"72B ToM OOD","claimed":2.7,"num":25,"den":924,"value":2.71,"fig2":"25/924","comparison":"not present","verdict":"MATCH"}
+  ],
+  "A3_recount": "all 10 recounted from rows/figure2/*/*.jsonl field success; equal to success_count in figure2_tom_summary.csv",
+  "A4_candidates": [
+    {"path":"results/viki_memory_experiments/amendment11/inprompt_v2_full.jsonl","script":"scripts/viki_eval_v2_in_prompt.py (L94 SkillMemoryV2.load(...).render())","library":"results/viki_memory_experiments/amendment11/skill_memory_v2.json (19 operators, built_from train.parquet even-indexed = 19-op reference library, NOT outputs/v3_memories/memory_all.json)","model":"qwen2.5-vl-72b-amendment3-f2 (L47)","temperature":0,"max_tokens":2000,"split":"ID only (test.parquet + amendment8b/interactive_manifest.jsonl)","rows":924,"solved":80,"scorer":"JSON-tolerant (L53-81)","primitive_plan":true,"date":"2026-09-01"},
+    {"path":"results/viki_memory_experiments/amendment11/inprompt_v2_smoke.jsonl","script":"same","library":"same 19-op","rows":120,"solved":7,"split":"ID first 120","primitive_plan":true},
+    {"path":"results/viki_memory_experiments/amendment10/{imaged,text}/skill_memory.fullactions_k8.jsonl","script":"scripts/viki_amendment10_run.py arm skill_memory","library":"v1 skill_memory_bank (amendment8b), retrieved top-8, not admitted library","model":"72B","temperature":0,"rows":297,"solved":"imaged 9, text 13","primitive_plan":true},
+    {"path":"scripts/viki_eval_v2_operator_choice.py outputs","library":"19-op memory menu() without bodies","primitive_plan":false,"note":"model outputs operator choices, memory expands; ID only"},
+    {"path":"scripts/viki_rq2_no_exec_admission.py L589","note":"render() only for render_chars stats, no model call"},
+    {"path":"results/incontext_library_2026-09-21/prompts/library_block.txt","note":"rendered v3 block, no run"}
+  ],
+  "A4_verdict": {"cg_text":"not reusable (no run with v3 memory_all.json in prompt on text split)","cg_imaged":"not reusable (same)","id":"only 19-op reference library, ID, 80/924 — different library, not a CG substitute"},
+  "B_layer_gmemory_72B_CG": {
+    "script":"scripts/viki_amendment10_run.py",
+    "driver":"scripts/drivers/a10_recombination.sh L39-54: $PY scripts/viki_amendment10_run.py --split {imaged|text} --arm gmemory --base-url http://192.168.32.40:8050/v1 --workers 8; env A8B_SKILL_TOPK=8 A9_ROLE_AWARE=0 A9_PATTERN_SLOTS=0 A9_MODE=''",
+    "run_json":"results/viki_memory_experiments/amendment10/{imaged,text}/gmemory.jsonl.run.json (served_model qwen2.5-vl-72b-amendment3-f2, seed 20260829, rows 297)",
+    "model":"scripts/viki_amendment5.py L61-65 + L152 (VIKI_BACKBONE default qwen2_5_vl_72b -> qwen2.5-vl-72b-amendment3-f2); viki_amendment8b.py L66-67 Qwen/Qwen2.5-VL-72B-Instruct rev 89c86200",
+    "planner_call":"viki_amendment10_run.py L178-184 temperature=PLAN_TEMPERATURE, max_tokens=PLAN_MAX_TOKENS, seed=SEED; no extra_body",
+    "temperature":"0 (viki_amendment8b.py L69)","max_tokens":"2000 (viki_amendment8b.py L68)","seed":"20260829 (viki_amendment8b.py L57)",
+    "think":"no API think switch (Qwen2.5-VL); benchmark system prompt asks for <think>..</think><answer>; VIKI_NO_THINK unset so drop_think_rule (viki_amendment8b.py L357-376) is a no-op",
+    "prompt":"benchmark prompt from recombination.{imaged,text}.parquet; partner prefix viki_amendment8b.py L71-75/L119; memory inserted by habitat_llm/evaluation/viki_memory_skill.py L420-434 ('<memory>\\n\\nCurrent task:\\n...')",
+    "image":"imaged: viki_amendment8b.py L378-394 -> habitat_llm/evaluation/viki_bench.py L50-76 (PNG base64 data URL image_url part); text: viki_amendment10_run.py L68-82 text-only, gate rejects <image>",
+    "gmemory_retrieval":"scripts/viki_amendment8_memory.py L83-143: MiniLM retrieves 2 successful trajectories, LLM relevance-scores each (temperature 0.1, max_tokens 512, viki_amendment7.py L145-146, seed a7.SEED+2*index+pos), keeps 1 + INSIGHTS_TOPK=3 insights (viki_amendment7.py L106-108); author prompts from third_party/GMemory (viki_amendment7.py L93, locally shown deleted in git status)",
+    "caveat":"runs dated 2026-08-31; runner first committed 89044d1 2026-09-02, so code at run time was uncommitted; cells.json command=null for these cells"
+  }
+}

@@ -1,0 +1,3844 @@
+{
+ "seed": 20260829,
+ "cells": [
+  {
+   "model": "72B",
+   "split": "id",
+   "condition": "ours",
+   "n": 924,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.7803030303030303,
+   "success_json_tolerant": 0.7803030303030303,
+   "success_official_strict": 0.7803030303030303,
+   "count_reported": 721,
+   "count_json_tolerant": 721,
+   "count_official_strict": 721,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen2.5-vl-72b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_ours_72B_id.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "condition": "tom",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.024891774891774892,
+   "success_json_tolerant": 0.024891774891774892,
+   "success_official_strict": 0.024891774891774892,
+   "count_reported": 23,
+   "count_json_tolerant": 23,
+   "count_official_strict": 23,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen2.5-vl-72b-instruct/id.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen2.5-vl-72b-instruct/id/rows.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "condition": "zero_shot",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.02813852813852814,
+   "success_json_tolerant": 0.02813852813852814,
+   "success_official_strict": 0.02813852813852814,
+   "count_reported": 26,
+   "count_json_tolerant": 26,
+   "count_official_strict": 26,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen2.5-vl-72b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/zero_shot.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "condition": "trajectory_rag",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0670995670995671,
+   "success_json_tolerant": 0.0670995670995671,
+   "success_official_strict": 0.020562770562770564,
+   "count_reported": 62,
+   "count_json_tolerant": 62,
+   "count_official_strict": 19,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen2.5-vl-72b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/trajectory_rag.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "condition": "g_memory",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.5097402597402597,
+   "success_json_tolerant": 0.5097402597402597,
+   "success_official_strict": 0.09848484848484848,
+   "count_reported": 471,
+   "count_json_tolerant": 471,
+   "count_official_strict": 91,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen2.5-vl-72b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/gmemory.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "condition": "memento_style",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.19913419913419914,
+   "success_json_tolerant": 0.19913419913419914,
+   "success_official_strict": 0.19913419913419914,
+   "count_reported": 184,
+   "count_json_tolerant": 184,
+   "count_official_strict": 184,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen2.5-vl-72b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_id.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "condition": "ours",
+   "n": 924,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.5422077922077922,
+   "success_json_tolerant": 0.5422077922077922,
+   "success_official_strict": 0.5422077922077922,
+   "count_reported": 501,
+   "count_json_tolerant": 501,
+   "count_official_strict": 501,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen2.5-vl-72b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_fold_72B_clear_table_with_two_robots_and_put_in_cabinet.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_72B_cut_fruit_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_72B_cut_two_fruits_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_72B_dog_push_box_for_two_panda_transport.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_72B_ensure_all_fruits_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_72B_parallel_human_dual_asset_to_plate_or_bowl.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_72B_set_plate_and_fork_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_72B_toast_bread_and_set_plate.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "condition": "tom",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.027056277056277056,
+   "success_json_tolerant": 0.027056277056277056,
+   "success_official_strict": 0.027056277056277056,
+   "count_reported": 25,
+   "count_json_tolerant": 25,
+   "count_official_strict": 25,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen2.5-vl-72b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen2.5-vl-72b-instruct/ood_single_family/rows.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "condition": "zero_shot",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.03463203463203463,
+   "success_json_tolerant": 0.03463203463203463,
+   "success_official_strict": 0.03463203463203463,
+   "count_reported": 32,
+   "count_json_tolerant": 32,
+   "count_official_strict": 32,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen2.5-vl-72b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/folds/clear_table_with_two_robots_and_put_in_cabinet/zero_shot.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_fruit_on_board/zero_shot.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_two_fruits_on_board/zero_shot.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/dog_push_box_for_two_panda_transport/zero_shot.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/ensure_all_fruits_on_table/zero_shot.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/parallel_human_dual_asset_to_plate_or_bowl/zero_shot.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/set_plate_and_fork_on_table/zero_shot.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/toast_bread_and_set_plate/zero_shot.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "condition": "trajectory_rag",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.032467532467532464,
+   "success_json_tolerant": 0.032467532467532464,
+   "success_official_strict": 0.020562770562770564,
+   "count_reported": 30,
+   "count_json_tolerant": 30,
+   "count_official_strict": 19,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen2.5-vl-72b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/folds/clear_table_with_two_robots_and_put_in_cabinet/trajectory_rag.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_fruit_on_board/trajectory_rag.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_two_fruits_on_board/trajectory_rag.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/dog_push_box_for_two_panda_transport/trajectory_rag.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/ensure_all_fruits_on_table/trajectory_rag.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/parallel_human_dual_asset_to_plate_or_bowl/trajectory_rag.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/set_plate_and_fork_on_table/trajectory_rag.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/toast_bread_and_set_plate/trajectory_rag.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "condition": "g_memory",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.2077922077922078,
+   "success_json_tolerant": 0.2077922077922078,
+   "success_official_strict": 0.09848484848484848,
+   "count_reported": 192,
+   "count_json_tolerant": 192,
+   "count_official_strict": 91,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen2.5-vl-72b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/folds/clear_table_with_two_robots_and_put_in_cabinet/gmemory.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_fruit_on_board/gmemory.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_two_fruits_on_board/gmemory.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/dog_push_box_for_two_panda_transport/gmemory.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/ensure_all_fruits_on_table/gmemory.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/parallel_human_dual_asset_to_plate_or_bowl/gmemory.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/set_plate_and_fork_on_table/gmemory.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/toast_bread_and_set_plate/gmemory.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "condition": "memento_style",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.06277056277056277,
+   "success_json_tolerant": 0.06277056277056277,
+   "success_official_strict": 0.06277056277056277,
+   "count_reported": 58,
+   "count_json_tolerant": 58,
+   "count_official_strict": 58,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen2.5-vl-72b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_fold_clear_table_with_two_robots_and_put_in_cabinet.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_cut_fruit_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_cut_two_fruits_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_dog_push_box_for_two_panda_transport.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_ensure_all_fruits_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_parallel_human_dual_asset_to_plate_or_bowl.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_set_plate_and_fork_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_toast_bread_and_set_plate.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "condition": "ours",
+   "n": 297,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.8619528619528619,
+   "success_json_tolerant": 0.8619528619528619,
+   "success_official_strict": 0.8619528619528619,
+   "count_reported": 256,
+   "count_json_tolerant": 256,
+   "count_official_strict": 256,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen2.5-vl-72b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_oursall_72B_text.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "condition": "tom",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.003367003367003367,
+   "success_json_tolerant": 0.003367003367003367,
+   "success_official_strict": 0.003367003367003367,
+   "count_reported": 1,
+   "count_json_tolerant": 1,
+   "count_official_strict": 1,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen2.5-vl-72b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen2.5-vl-72b-instruct/pure_text/rows.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "condition": "zero_shot",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.003367003367003367,
+   "success_json_tolerant": 0.003367003367003367,
+   "success_official_strict": 0.003367003367003367,
+   "count_reported": 1,
+   "count_json_tolerant": 1,
+   "count_official_strict": 1,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen2.5-vl-72b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/text/zero_shot.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "condition": "trajectory_rag",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen2.5-vl-72b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/text/trajectory_rag.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "condition": "g_memory",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.03367003367003367,
+   "success_json_tolerant": 0.03367003367003367,
+   "success_official_strict": 0.0,
+   "count_reported": 10,
+   "count_json_tolerant": 10,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen2.5-vl-72b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/text/gmemory.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "condition": "memento_style",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.10101010101010101,
+   "success_json_tolerant": 0.10101010101010101,
+   "success_official_strict": 0.10101010101010101,
+   "count_reported": 30,
+   "count_json_tolerant": 30,
+   "count_official_strict": 30,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen2.5-vl-72b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_recomb_text.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "condition": "ours",
+   "n": 297,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.797979797979798,
+   "success_json_tolerant": 0.797979797979798,
+   "success_official_strict": 0.797979797979798,
+   "count_reported": 237,
+   "count_json_tolerant": 237,
+   "count_official_strict": 237,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen2.5-vl-72b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_oursall_72B_imaged.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "condition": "tom",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen2.5-vl-72b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen2.5-vl-72b-instruct/cg_image/rows.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "condition": "zero_shot",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen2.5-vl-72b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/imaged/zero_shot.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "condition": "trajectory_rag",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.006734006734006734,
+   "success_json_tolerant": 0.006734006734006734,
+   "success_official_strict": 0.0,
+   "count_reported": 2,
+   "count_json_tolerant": 2,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen2.5-vl-72b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/imaged/trajectory_rag.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "condition": "g_memory",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.04713804713804714,
+   "success_json_tolerant": 0.04713804713804714,
+   "success_official_strict": 0.0,
+   "count_reported": 14,
+   "count_json_tolerant": 14,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen2.5-vl-72b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/imaged/gmemory.jsonl"
+   ]
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "condition": "memento_style",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.016835016835016835,
+   "success_json_tolerant": 0.016835016835016835,
+   "success_official_strict": 0.016835016835016835,
+   "count_reported": 5,
+   "count_json_tolerant": 5,
+   "count_official_strict": 5,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen2.5-vl-72b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_recomb_imaged.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "condition": "ours",
+   "n": 924,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.5735930735930735,
+   "success_json_tolerant": 0.5735930735930735,
+   "success_official_strict": 0.5735930735930735,
+   "count_reported": 530,
+   "count_json_tolerant": 530,
+   "count_official_strict": 530,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen3-vl-30b-a3b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_ours_30B_id.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "condition": "tom",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0021645021645021645,
+   "success_json_tolerant": 0.0021645021645021645,
+   "success_official_strict": 0.0021645021645021645,
+   "count_reported": 2,
+   "count_json_tolerant": 2,
+   "count_official_strict": 2,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen3-vl-30b-a3b-instruct/id.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen3-vl-30b-a3b-instruct/id/rows.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "condition": "zero_shot",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.004329004329004329,
+   "success_json_tolerant": 0.004329004329004329,
+   "success_official_strict": 0.004329004329004329,
+   "count_reported": 4,
+   "count_json_tolerant": 4,
+   "count_official_strict": 4,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen3-vl-30b-a3b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/zero_shot.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "condition": "trajectory_rag",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.08225108225108226,
+   "success_json_tolerant": 0.08225108225108226,
+   "success_official_strict": 0.08225108225108226,
+   "count_reported": 76,
+   "count_json_tolerant": 76,
+   "count_official_strict": 76,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen3-vl-30b-a3b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/trajectory_rag.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "condition": "g_memory",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.1525974025974026,
+   "success_json_tolerant": 0.1525974025974026,
+   "success_official_strict": 0.11688311688311688,
+   "count_reported": 141,
+   "count_json_tolerant": 141,
+   "count_official_strict": 108,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen3-vl-30b-a3b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/gmemory.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "condition": "memento_style",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.2077922077922078,
+   "success_json_tolerant": 0.2077922077922078,
+   "success_official_strict": 0.2077922077922078,
+   "count_reported": 192,
+   "count_json_tolerant": 192,
+   "count_official_strict": 192,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen3-vl-30b-a3b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_id_m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "condition": "ours",
+   "n": 924,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.3538961038961039,
+   "success_json_tolerant": 0.3538961038961039,
+   "success_official_strict": 0.3538961038961039,
+   "count_reported": 327,
+   "count_json_tolerant": 327,
+   "count_official_strict": 327,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen3-vl-30b-a3b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_fold_30B_clear_table_with_two_robots_and_put_in_cabinet.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_30B_cut_fruit_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_30B_cut_two_fruits_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_30B_dog_push_box_for_two_panda_transport.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_30B_ensure_all_fruits_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_30B_parallel_human_dual_asset_to_plate_or_bowl.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_30B_set_plate_and_fork_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_30B_toast_bread_and_set_plate.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "condition": "tom",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.003246753246753247,
+   "success_json_tolerant": 0.003246753246753247,
+   "success_official_strict": 0.003246753246753247,
+   "count_reported": 3,
+   "count_json_tolerant": 3,
+   "count_official_strict": 3,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen3-vl-30b-a3b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen3-vl-30b-a3b-instruct/ood_single_family/rows.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "condition": "zero_shot",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.007575757575757576,
+   "success_json_tolerant": 0.007575757575757576,
+   "success_official_strict": 0.007575757575757576,
+   "count_reported": 7,
+   "count_json_tolerant": 7,
+   "count_official_strict": 7,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen3-vl-30b-a3b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/folds/clear_table_with_two_robots_and_put_in_cabinet/zero_shot.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_fruit_on_board/zero_shot.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_two_fruits_on_board/zero_shot.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/dog_push_box_for_two_panda_transport/zero_shot.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/ensure_all_fruits_on_table/zero_shot.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/parallel_human_dual_asset_to_plate_or_bowl/zero_shot.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/set_plate_and_fork_on_table/zero_shot.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/toast_bread_and_set_plate/zero_shot.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "condition": "trajectory_rag",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.05411255411255411,
+   "success_json_tolerant": 0.05411255411255411,
+   "success_official_strict": 0.05411255411255411,
+   "count_reported": 50,
+   "count_json_tolerant": 50,
+   "count_official_strict": 50,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen3-vl-30b-a3b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/folds/clear_table_with_two_robots_and_put_in_cabinet/trajectory_rag.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_fruit_on_board/trajectory_rag.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_two_fruits_on_board/trajectory_rag.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/dog_push_box_for_two_panda_transport/trajectory_rag.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/ensure_all_fruits_on_table/trajectory_rag.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/parallel_human_dual_asset_to_plate_or_bowl/trajectory_rag.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/set_plate_and_fork_on_table/trajectory_rag.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/toast_bread_and_set_plate/trajectory_rag.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "condition": "g_memory",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.14935064935064934,
+   "success_json_tolerant": 0.14935064935064934,
+   "success_official_strict": 0.14935064935064934,
+   "count_reported": 138,
+   "count_json_tolerant": 138,
+   "count_official_strict": 138,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen3-vl-30b-a3b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/folds/clear_table_with_two_robots_and_put_in_cabinet/gmemory.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_fruit_on_board/gmemory.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_two_fruits_on_board/gmemory.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/dog_push_box_for_two_panda_transport/gmemory.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/ensure_all_fruits_on_table/gmemory.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/parallel_human_dual_asset_to_plate_or_bowl/gmemory.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/set_plate_and_fork_on_table/gmemory.m30.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/toast_bread_and_set_plate/gmemory.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "condition": "memento_style",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.11255411255411256,
+   "success_json_tolerant": 0.11255411255411256,
+   "success_official_strict": 0.11255411255411256,
+   "count_reported": 104,
+   "count_json_tolerant": 104,
+   "count_official_strict": 104,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen3-vl-30b-a3b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_fold_m30_clear_table_with_two_robots_and_put_in_cabinet.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m30_cut_fruit_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m30_cut_two_fruits_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m30_dog_push_box_for_two_panda_transport.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m30_ensure_all_fruits_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m30_parallel_human_dual_asset_to_plate_or_bowl.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m30_set_plate_and_fork_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m30_toast_bread_and_set_plate.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "condition": "ours",
+   "n": 297,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.7239057239057239,
+   "success_json_tolerant": 0.7239057239057239,
+   "success_official_strict": 0.7239057239057239,
+   "count_reported": 215,
+   "count_json_tolerant": 215,
+   "count_official_strict": 215,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen3-vl-30b-a3b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_oursall_30B_text.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "condition": "tom",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen3-vl-30b-a3b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen3-vl-30b-a3b-instruct/pure_text/rows.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "condition": "zero_shot",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen3-vl-30b-a3b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/text/zero_shot.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "condition": "trajectory_rag",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen3-vl-30b-a3b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/text/trajectory_rag.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "condition": "g_memory",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.010101010101010102,
+   "success_json_tolerant": 0.010101010101010102,
+   "success_official_strict": 0.010101010101010102,
+   "count_reported": 3,
+   "count_json_tolerant": 3,
+   "count_official_strict": 3,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen3-vl-30b-a3b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/text/gmemory.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "condition": "memento_style",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.11447811447811448,
+   "success_json_tolerant": 0.11447811447811448,
+   "success_official_strict": 0.11447811447811448,
+   "count_reported": 34,
+   "count_json_tolerant": 34,
+   "count_official_strict": 34,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen3-vl-30b-a3b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_recomb_text_m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "condition": "ours",
+   "n": 297,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.6498316498316499,
+   "success_json_tolerant": 0.6498316498316499,
+   "success_official_strict": 0.6498316498316499,
+   "count_reported": 193,
+   "count_json_tolerant": 193,
+   "count_official_strict": 193,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen3-vl-30b-a3b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_oursall_30B_imaged.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "condition": "tom",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen3-vl-30b-a3b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen3-vl-30b-a3b-instruct/cg_image/rows.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "condition": "zero_shot",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen3-vl-30b-a3b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/imaged/zero_shot.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "condition": "trajectory_rag",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.006734006734006734,
+   "success_json_tolerant": 0.006734006734006734,
+   "success_official_strict": 0.006734006734006734,
+   "count_reported": 2,
+   "count_json_tolerant": 2,
+   "count_official_strict": 2,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen3-vl-30b-a3b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/imaged/trajectory_rag.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "condition": "g_memory",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.003367003367003367,
+   "success_json_tolerant": 0.003367003367003367,
+   "success_official_strict": 0.003367003367003367,
+   "count_reported": 1,
+   "count_json_tolerant": 1,
+   "count_official_strict": 1,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen3-vl-30b-a3b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/imaged/gmemory.m30.jsonl"
+   ]
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "condition": "memento_style",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.06397306397306397,
+   "success_json_tolerant": 0.06397306397306397,
+   "success_official_strict": 0.06397306397306397,
+   "count_reported": 19,
+   "count_json_tolerant": 19,
+   "count_official_strict": 19,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen3-vl-30b-a3b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_recomb_imaged_m30.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "condition": "ours",
+   "n": 924,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.13852813852813853,
+   "success_json_tolerant": 0.13852813852813853,
+   "success_official_strict": 0.13852813852813853,
+   "count_reported": 128,
+   "count_json_tolerant": 128,
+   "count_official_strict": 128,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen2.5-vl-7b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_ours_7B_id.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "condition": "tom",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen2.5-vl-7b-instruct/id.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen2.5-vl-7b-instruct/id/rows.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "condition": "zero_shot",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen2.5-vl-7b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/zero_shot.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "condition": "trajectory_rag",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0010822510822510823,
+   "success_json_tolerant": 0.0010822510822510823,
+   "success_official_strict": 0.0010822510822510823,
+   "count_reported": 1,
+   "count_json_tolerant": 1,
+   "count_official_strict": 1,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen2.5-vl-7b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/trajectory_rag.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "condition": "g_memory",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.07683982683982683,
+   "success_json_tolerant": 0.07683982683982683,
+   "success_official_strict": 0.07467532467532467,
+   "count_reported": 71,
+   "count_json_tolerant": 71,
+   "count_official_strict": 69,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen2.5-vl-7b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/gmemory.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "condition": "memento_style",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.04004329004329004,
+   "success_json_tolerant": 0.04004329004329004,
+   "success_official_strict": 0.04004329004329004,
+   "count_reported": 37,
+   "count_json_tolerant": 37,
+   "count_official_strict": 37,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen2.5-vl-7b-instruct/id.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_id_m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "condition": "ours",
+   "n": 924,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.11688311688311688,
+   "success_json_tolerant": 0.11688311688311688,
+   "success_official_strict": 0.11688311688311688,
+   "count_reported": 108,
+   "count_json_tolerant": 108,
+   "count_official_strict": 108,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen2.5-vl-7b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_fold_7B_clear_table_with_two_robots_and_put_in_cabinet.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_7B_cut_fruit_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_7B_cut_two_fruits_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_7B_dog_push_box_for_two_panda_transport.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_7B_ensure_all_fruits_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_7B_parallel_human_dual_asset_to_plate_or_bowl.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_7B_set_plate_and_fork_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/v3_fold_7B_toast_bread_and_set_plate.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "condition": "tom",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen2.5-vl-7b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen2.5-vl-7b-instruct/ood_single_family/rows.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "condition": "zero_shot",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen2.5-vl-7b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/folds/clear_table_with_two_robots_and_put_in_cabinet/zero_shot.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_fruit_on_board/zero_shot.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_two_fruits_on_board/zero_shot.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/dog_push_box_for_two_panda_transport/zero_shot.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/ensure_all_fruits_on_table/zero_shot.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/parallel_human_dual_asset_to_plate_or_bowl/zero_shot.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/set_plate_and_fork_on_table/zero_shot.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/toast_bread_and_set_plate/zero_shot.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "condition": "trajectory_rag",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen2.5-vl-7b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/folds/clear_table_with_two_robots_and_put_in_cabinet/trajectory_rag.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_fruit_on_board/trajectory_rag.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_two_fruits_on_board/trajectory_rag.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/dog_push_box_for_two_panda_transport/trajectory_rag.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/ensure_all_fruits_on_table/trajectory_rag.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/parallel_human_dual_asset_to_plate_or_bowl/trajectory_rag.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/set_plate_and_fork_on_table/trajectory_rag.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/toast_bread_and_set_plate/trajectory_rag.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "condition": "g_memory",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.045454545454545456,
+   "success_json_tolerant": 0.045454545454545456,
+   "success_official_strict": 0.045454545454545456,
+   "count_reported": 42,
+   "count_json_tolerant": 42,
+   "count_official_strict": 42,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 924,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen2.5-vl-7b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment8b/folds/clear_table_with_two_robots_and_put_in_cabinet/gmemory.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_fruit_on_board/gmemory.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/cut_two_fruits_on_board/gmemory.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/dog_push_box_for_two_panda_transport/gmemory.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/ensure_all_fruits_on_table/gmemory.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/parallel_human_dual_asset_to_plate_or_bowl/gmemory.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/set_plate_and_fork_on_table/gmemory.m7.jsonl",
+    "results/viki_memory_experiments/amendment8b/folds/toast_bread_and_set_plate/gmemory.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "condition": "memento_style",
+   "n": 924,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.01406926406926407,
+   "success_json_tolerant": 0.01406926406926407,
+   "success_official_strict": 0.01406926406926407,
+   "count_reported": 13,
+   "count_json_tolerant": 13,
+   "count_official_strict": 13,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen2.5-vl-7b-instruct/ood_single_family.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_fold_m7_clear_table_with_two_robots_and_put_in_cabinet.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m7_cut_fruit_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m7_cut_two_fruits_on_board.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m7_dog_push_box_for_two_panda_transport.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m7_ensure_all_fruits_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m7_parallel_human_dual_asset_to_plate_or_bowl.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m7_set_plate_and_fork_on_table.jsonl",
+    "results/viki_memory_experiments/amendment11/memento_fold_m7_toast_bread_and_set_plate.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "condition": "ours",
+   "n": 297,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.2558922558922559,
+   "success_json_tolerant": 0.2558922558922559,
+   "success_official_strict": 0.2558922558922559,
+   "count_reported": 76,
+   "count_json_tolerant": 76,
+   "count_official_strict": 76,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen2.5-vl-7b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_oursall_7B_text.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "condition": "tom",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen2.5-vl-7b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen2.5-vl-7b-instruct/pure_text/rows.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "condition": "zero_shot",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen2.5-vl-7b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/text/zero_shot.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "condition": "trajectory_rag",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen2.5-vl-7b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/text/trajectory_rag.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "condition": "g_memory",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen2.5-vl-7b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/text/gmemory.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "condition": "memento_style",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen2.5-vl-7b-instruct/pure_text.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_recomb_text_m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "condition": "ours",
+   "n": 297,
+   "scorer_kind_reported": [
+    "simulator_solved"
+   ],
+   "success_reported": 0.15151515151515152,
+   "success_json_tolerant": 0.15151515151515152,
+   "success_official_strict": 0.15151515151515152,
+   "count_reported": 45,
+   "count_json_tolerant": 45,
+   "count_official_strict": 45,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": null,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": 0,
+   "official_method": "identity: SOLVED == official acc_reward on planner plan",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/ours/qwen2.5-vl-7b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/v3_oursall_7B_imaged.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "condition": "tom",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/tom/qwen2.5-vl-7b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/paper_viki_iclr2027/raw/figure2_tom/qwen2.5-vl-7b-instruct/cg_image/rows.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "condition": "zero_shot",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/zero_shot/qwen2.5-vl-7b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/imaged/zero_shot.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "condition": "trajectory_rag",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/trajectory_rag/qwen2.5-vl-7b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/imaged/trajectory_rag.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "condition": "g_memory",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 297,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "archived task_score (verified by recompute)",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/g_memory/qwen2.5-vl-7b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment10/imaged/gmemory.m7.jsonl"
+   ]
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "condition": "memento_style",
+   "n": 297,
+   "scorer_kind_reported": [
+    "json_tolerant"
+   ],
+   "success_reported": 0.0,
+   "success_json_tolerant": 0.0,
+   "success_official_strict": 0.0,
+   "count_reported": 0,
+   "count_json_tolerant": 0,
+   "count_official_strict": 0,
+   "reproduces_summary_csv": true,
+   "tolerant_recompute_mismatch_vs_reported": 0,
+   "archived_task_score_rows": 0,
+   "archived_task_score_mismatch": 0,
+   "raw_text_mismatch_vs_source": 0,
+   "ours_raw_text_official_hits": null,
+   "official_method": "recomputed: viki_bench.score_response(official viki_2) on raw_output",
+   "row_file": "results/paper_viki_iclr2027/rows/figure2/memento_style/qwen2.5-vl-7b-instruct/cg_image.jsonl",
+   "source_files": [
+    "results/viki_memory_experiments/amendment11/memento_recomb_imaged_m7.jsonl"
+   ]
+  }
+ ],
+ "mcnemar": [
+  {
+   "model": "72B",
+   "split": "id",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 698,
+    "baseline_only": 0,
+    "p_exact": 1.520873253036128e-210,
+    "diff_count": 698,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 698,
+    "baseline_only": 0,
+    "p_exact": 1.520873253036128e-210,
+    "diff_count": 698,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 698,
+    "baseline_only": 0,
+    "p_exact": 1.520873253036128e-210,
+    "diff_count": 698,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 695,
+    "baseline_only": 0,
+    "p_exact": 1.2166986024289023e-209,
+    "diff_count": 695,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 695,
+    "baseline_only": 0,
+    "p_exact": 1.2166986024289023e-209,
+    "diff_count": 695,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 695,
+    "baseline_only": 0,
+    "p_exact": 1.2166986024289023e-209,
+    "diff_count": 695,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 684,
+    "baseline_only": 25,
+    "p_exact": 5.9769089309886035e-168,
+    "diff_count": 659,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 684,
+    "baseline_only": 25,
+    "p_exact": 5.9769089309886035e-168,
+    "diff_count": 659,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 703,
+    "baseline_only": 1,
+    "p_exact": 1.6753369427976096e-209,
+    "diff_count": 702,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 352,
+    "baseline_only": 102,
+    "p_exact": 2.9870020256192483e-33,
+    "diff_count": 250,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 352,
+    "baseline_only": 102,
+    "p_exact": 2.9870020256192483e-33,
+    "diff_count": 250,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 630,
+    "baseline_only": 0,
+    "p_exact": 4.4888255467692094e-190,
+    "diff_count": 630,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "id",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 568,
+    "baseline_only": 31,
+    "p_exact": 7.088282219724687e-129,
+    "diff_count": 537,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 568,
+    "baseline_only": 31,
+    "p_exact": 7.088282219724687e-129,
+    "diff_count": 537,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 568,
+    "baseline_only": 31,
+    "p_exact": 7.088282219724687e-129,
+    "diff_count": 537,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 478,
+    "baseline_only": 2,
+    "p_exact": 7.395919186913035e-140,
+    "diff_count": 476,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 478,
+    "baseline_only": 2,
+    "p_exact": 7.395919186913035e-140,
+    "diff_count": 476,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 478,
+    "baseline_only": 2,
+    "p_exact": 7.395919186913035e-140,
+    "diff_count": 476,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 469,
+    "baseline_only": 0,
+    "p_exact": 1.312085177259197e-141,
+    "diff_count": 469,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 469,
+    "baseline_only": 0,
+    "p_exact": 1.312085177259197e-141,
+    "diff_count": 469,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 469,
+    "baseline_only": 0,
+    "p_exact": 1.312085177259197e-141,
+    "diff_count": 469,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 482,
+    "baseline_only": 11,
+    "p_exact": 7.491822795269312e-127,
+    "diff_count": 471,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 482,
+    "baseline_only": 11,
+    "p_exact": 7.491822795269312e-127,
+    "diff_count": 471,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 484,
+    "baseline_only": 2,
+    "p_exact": 1.1846525882507926e-141,
+    "diff_count": 482,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 358,
+    "baseline_only": 49,
+    "p_exact": 4.201612326242443e-59,
+    "diff_count": 309,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 358,
+    "baseline_only": 49,
+    "p_exact": 4.201612326242443e-59,
+    "diff_count": 309,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 410,
+    "baseline_only": 0,
+    "p_exact": 7.563656083690075e-124,
+    "diff_count": 410,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 455,
+    "baseline_only": 12,
+    "p_exact": 1.0499162273262677e-117,
+    "diff_count": 443,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 455,
+    "baseline_only": 12,
+    "p_exact": 1.0499162273262677e-117,
+    "diff_count": 443,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 455,
+    "baseline_only": 12,
+    "p_exact": 1.0499162273262677e-117,
+    "diff_count": 443,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 255,
+    "baseline_only": 0,
+    "p_exact": 3.454467422037778e-77,
+    "diff_count": 255,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 255,
+    "baseline_only": 0,
+    "p_exact": 3.454467422037778e-77,
+    "diff_count": 255,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 255,
+    "baseline_only": 0,
+    "p_exact": 3.454467422037778e-77,
+    "diff_count": 255,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 255,
+    "baseline_only": 0,
+    "p_exact": 3.454467422037778e-77,
+    "diff_count": 255,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 255,
+    "baseline_only": 0,
+    "p_exact": 3.454467422037778e-77,
+    "diff_count": 255,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 255,
+    "baseline_only": 0,
+    "p_exact": 3.454467422037778e-77,
+    "diff_count": 255,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 256,
+    "baseline_only": 0,
+    "p_exact": 1.727233711018889e-77,
+    "diff_count": 256,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 256,
+    "baseline_only": 0,
+    "p_exact": 1.727233711018889e-77,
+    "diff_count": 256,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 256,
+    "baseline_only": 0,
+    "p_exact": 1.727233711018889e-77,
+    "diff_count": 256,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 246,
+    "baseline_only": 0,
+    "p_exact": 1.7686873200833423e-74,
+    "diff_count": 246,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 246,
+    "baseline_only": 0,
+    "p_exact": 1.7686873200833423e-74,
+    "diff_count": 246,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 256,
+    "baseline_only": 0,
+    "p_exact": 1.727233711018889e-77,
+    "diff_count": 256,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "pure_text",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 232,
+    "baseline_only": 6,
+    "p_exact": 1.100815092024933e-60,
+    "diff_count": 226,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 232,
+    "baseline_only": 6,
+    "p_exact": 1.100815092024933e-60,
+    "diff_count": 226,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 232,
+    "baseline_only": 6,
+    "p_exact": 1.100815092024933e-60,
+    "diff_count": 226,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 237,
+    "baseline_only": 0,
+    "p_exact": 9.055679078826712e-72,
+    "diff_count": 237,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 237,
+    "baseline_only": 0,
+    "p_exact": 9.055679078826712e-72,
+    "diff_count": 237,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 237,
+    "baseline_only": 0,
+    "p_exact": 9.055679078826712e-72,
+    "diff_count": 237,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 237,
+    "baseline_only": 0,
+    "p_exact": 9.055679078826712e-72,
+    "diff_count": 237,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 237,
+    "baseline_only": 0,
+    "p_exact": 9.055679078826712e-72,
+    "diff_count": 237,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 237,
+    "baseline_only": 0,
+    "p_exact": 9.055679078826712e-72,
+    "diff_count": 237,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 235,
+    "baseline_only": 0,
+    "p_exact": 3.622271631530685e-71,
+    "diff_count": 235,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 235,
+    "baseline_only": 0,
+    "p_exact": 3.622271631530685e-71,
+    "diff_count": 235,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 237,
+    "baseline_only": 0,
+    "p_exact": 9.055679078826712e-72,
+    "diff_count": 237,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 225,
+    "baseline_only": 2,
+    "p_exact": 2.3997636493409945e-64,
+    "diff_count": 223,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 225,
+    "baseline_only": 2,
+    "p_exact": 2.3997636493409945e-64,
+    "diff_count": 223,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 237,
+    "baseline_only": 0,
+    "p_exact": 9.055679078826712e-72,
+    "diff_count": 237,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 233,
+    "baseline_only": 1,
+    "p_exact": 1.702467666819422e-68,
+    "diff_count": 232,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 233,
+    "baseline_only": 1,
+    "p_exact": 1.702467666819422e-68,
+    "diff_count": 232,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 233,
+    "baseline_only": 1,
+    "p_exact": 1.702467666819422e-68,
+    "diff_count": 232,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 528,
+    "baseline_only": 0,
+    "p_exact": 2.2761049594727193e-159,
+    "diff_count": 528,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 528,
+    "baseline_only": 0,
+    "p_exact": 2.2761049594727193e-159,
+    "diff_count": 528,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 528,
+    "baseline_only": 0,
+    "p_exact": 2.2761049594727193e-159,
+    "diff_count": 528,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 526,
+    "baseline_only": 0,
+    "p_exact": 9.104419837890877e-159,
+    "diff_count": 526,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 526,
+    "baseline_only": 0,
+    "p_exact": 9.104419837890877e-159,
+    "diff_count": 526,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 526,
+    "baseline_only": 0,
+    "p_exact": 9.104419837890877e-159,
+    "diff_count": 526,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 470,
+    "baseline_only": 16,
+    "p_exact": 3.737628629632746e-117,
+    "diff_count": 454,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 470,
+    "baseline_only": 16,
+    "p_exact": 3.737628629632746e-117,
+    "diff_count": 454,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 470,
+    "baseline_only": 16,
+    "p_exact": 3.737628629632746e-117,
+    "diff_count": 454,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 428,
+    "baseline_only": 39,
+    "p_exact": 7.017849071531057e-84,
+    "diff_count": 389,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 428,
+    "baseline_only": 39,
+    "p_exact": 7.017849071531057e-84,
+    "diff_count": 389,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 436,
+    "baseline_only": 14,
+    "p_exact": 9.278748790939224e-110,
+    "diff_count": 422,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 390,
+    "baseline_only": 52,
+    "p_exact": 4.038141882523362e-65,
+    "diff_count": 338,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 390,
+    "baseline_only": 52,
+    "p_exact": 4.038141882523362e-65,
+    "diff_count": 338,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 390,
+    "baseline_only": 52,
+    "p_exact": 4.038141882523362e-65,
+    "diff_count": 338,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 324,
+    "baseline_only": 0,
+    "p_exact": 5.852095443365248e-98,
+    "diff_count": 324,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 324,
+    "baseline_only": 0,
+    "p_exact": 5.852095443365248e-98,
+    "diff_count": 324,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 324,
+    "baseline_only": 0,
+    "p_exact": 5.852095443365248e-98,
+    "diff_count": 324,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 321,
+    "baseline_only": 1,
+    "p_exact": 7.5609073128279e-95,
+    "diff_count": 320,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 321,
+    "baseline_only": 1,
+    "p_exact": 7.5609073128279e-95,
+    "diff_count": 320,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 321,
+    "baseline_only": 1,
+    "p_exact": 7.5609073128279e-95,
+    "diff_count": 320,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 281,
+    "baseline_only": 4,
+    "p_exact": 8.783154005699385e-78,
+    "diff_count": 277,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 281,
+    "baseline_only": 4,
+    "p_exact": 8.783154005699385e-78,
+    "diff_count": 277,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 281,
+    "baseline_only": 4,
+    "p_exact": 8.783154005699385e-78,
+    "diff_count": 277,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 221,
+    "baseline_only": 32,
+    "p_exact": 6.282845985229687e-36,
+    "diff_count": 189,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 221,
+    "baseline_only": 32,
+    "p_exact": 6.282845985229687e-36,
+    "diff_count": 189,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 221,
+    "baseline_only": 32,
+    "p_exact": 6.282845985229687e-36,
+    "diff_count": 189,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 258,
+    "baseline_only": 35,
+    "p_exact": 3.709806012784424e-43,
+    "diff_count": 223,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 258,
+    "baseline_only": 35,
+    "p_exact": 3.709806012784424e-43,
+    "diff_count": 223,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 258,
+    "baseline_only": 35,
+    "p_exact": 3.709806012784424e-43,
+    "diff_count": 223,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 215,
+    "baseline_only": 0,
+    "p_exact": 3.7982270983039195e-65,
+    "diff_count": 215,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 215,
+    "baseline_only": 0,
+    "p_exact": 3.7982270983039195e-65,
+    "diff_count": 215,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 215,
+    "baseline_only": 0,
+    "p_exact": 3.7982270983039195e-65,
+    "diff_count": 215,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 215,
+    "baseline_only": 0,
+    "p_exact": 3.7982270983039195e-65,
+    "diff_count": 215,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 215,
+    "baseline_only": 0,
+    "p_exact": 3.7982270983039195e-65,
+    "diff_count": 215,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 215,
+    "baseline_only": 0,
+    "p_exact": 3.7982270983039195e-65,
+    "diff_count": 215,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 215,
+    "baseline_only": 0,
+    "p_exact": 3.7982270983039195e-65,
+    "diff_count": 215,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 215,
+    "baseline_only": 0,
+    "p_exact": 3.7982270983039195e-65,
+    "diff_count": 215,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 215,
+    "baseline_only": 0,
+    "p_exact": 3.7982270983039195e-65,
+    "diff_count": 215,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 212,
+    "baseline_only": 0,
+    "p_exact": 3.0385816786431356e-64,
+    "diff_count": 212,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 212,
+    "baseline_only": 0,
+    "p_exact": 3.0385816786431356e-64,
+    "diff_count": 212,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 212,
+    "baseline_only": 0,
+    "p_exact": 3.0385816786431356e-64,
+    "diff_count": 212,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "pure_text",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 182,
+    "baseline_only": 1,
+    "p_exact": 3.0016400552793213e-53,
+    "diff_count": 181,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 182,
+    "baseline_only": 1,
+    "p_exact": 3.0016400552793213e-53,
+    "diff_count": 181,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 182,
+    "baseline_only": 1,
+    "p_exact": 3.0016400552793213e-53,
+    "diff_count": 181,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 193,
+    "baseline_only": 0,
+    "p_exact": 1.5930919111324523e-58,
+    "diff_count": 193,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 193,
+    "baseline_only": 0,
+    "p_exact": 1.5930919111324523e-58,
+    "diff_count": 193,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 193,
+    "baseline_only": 0,
+    "p_exact": 1.5930919111324523e-58,
+    "diff_count": 193,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 193,
+    "baseline_only": 0,
+    "p_exact": 1.5930919111324523e-58,
+    "diff_count": 193,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 193,
+    "baseline_only": 0,
+    "p_exact": 1.5930919111324523e-58,
+    "diff_count": 193,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 193,
+    "baseline_only": 0,
+    "p_exact": 1.5930919111324523e-58,
+    "diff_count": 193,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 191,
+    "baseline_only": 0,
+    "p_exact": 6.372367644529809e-58,
+    "diff_count": 191,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 191,
+    "baseline_only": 0,
+    "p_exact": 6.372367644529809e-58,
+    "diff_count": 191,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 191,
+    "baseline_only": 0,
+    "p_exact": 6.372367644529809e-58,
+    "diff_count": 191,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 193,
+    "baseline_only": 1,
+    "p_exact": 1.553264613354141e-56,
+    "diff_count": 192,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 193,
+    "baseline_only": 1,
+    "p_exact": 1.553264613354141e-56,
+    "diff_count": 192,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 193,
+    "baseline_only": 1,
+    "p_exact": 1.553264613354141e-56,
+    "diff_count": 192,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 179,
+    "baseline_only": 5,
+    "p_exact": 1.3956733652494036e-46,
+    "diff_count": 174,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 179,
+    "baseline_only": 5,
+    "p_exact": 1.3956733652494036e-46,
+    "diff_count": 174,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 179,
+    "baseline_only": 5,
+    "p_exact": 1.3956733652494036e-46,
+    "diff_count": 174,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 128,
+    "baseline_only": 0,
+    "p_exact": 5.877471754111438e-39,
+    "diff_count": 128,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 128,
+    "baseline_only": 0,
+    "p_exact": 5.877471754111438e-39,
+    "diff_count": 128,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 128,
+    "baseline_only": 0,
+    "p_exact": 5.877471754111438e-39,
+    "diff_count": 128,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 128,
+    "baseline_only": 0,
+    "p_exact": 5.877471754111438e-39,
+    "diff_count": 128,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 128,
+    "baseline_only": 0,
+    "p_exact": 5.877471754111438e-39,
+    "diff_count": 128,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 128,
+    "baseline_only": 0,
+    "p_exact": 5.877471754111438e-39,
+    "diff_count": 128,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 128,
+    "baseline_only": 1,
+    "p_exact": 3.820356640172434e-37,
+    "diff_count": 127,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 128,
+    "baseline_only": 1,
+    "p_exact": 3.820356640172434e-37,
+    "diff_count": 127,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 128,
+    "baseline_only": 1,
+    "p_exact": 3.820356640172434e-37,
+    "diff_count": 127,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 108,
+    "baseline_only": 51,
+    "p_exact": 7.231600975860771e-06,
+    "diff_count": 57,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 108,
+    "baseline_only": 51,
+    "p_exact": 7.231600975860771e-06,
+    "diff_count": 57,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 109,
+    "baseline_only": 50,
+    "p_exact": 3.3064765101721803e-06,
+    "diff_count": 59,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 123,
+    "baseline_only": 32,
+    "p_exact": 8.80423336572588e-14,
+    "diff_count": 91,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 123,
+    "baseline_only": 32,
+    "p_exact": 8.80423336572588e-14,
+    "diff_count": 91,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 123,
+    "baseline_only": 32,
+    "p_exact": 8.80423336572588e-14,
+    "diff_count": 91,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 108,
+    "baseline_only": 0,
+    "p_exact": 6.162975822039155e-33,
+    "diff_count": 108,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 108,
+    "baseline_only": 0,
+    "p_exact": 6.162975822039155e-33,
+    "diff_count": 108,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 108,
+    "baseline_only": 0,
+    "p_exact": 6.162975822039155e-33,
+    "diff_count": 108,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 108,
+    "baseline_only": 0,
+    "p_exact": 6.162975822039155e-33,
+    "diff_count": 108,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 108,
+    "baseline_only": 0,
+    "p_exact": 6.162975822039155e-33,
+    "diff_count": 108,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 108,
+    "baseline_only": 0,
+    "p_exact": 6.162975822039155e-33,
+    "diff_count": 108,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 108,
+    "baseline_only": 0,
+    "p_exact": 6.162975822039155e-33,
+    "diff_count": 108,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 108,
+    "baseline_only": 0,
+    "p_exact": 6.162975822039155e-33,
+    "diff_count": 108,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 108,
+    "baseline_only": 0,
+    "p_exact": 6.162975822039155e-33,
+    "diff_count": 108,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 94,
+    "baseline_only": 28,
+    "p_exact": 1.576805868495512e-09,
+    "diff_count": 66,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 94,
+    "baseline_only": 28,
+    "p_exact": 1.576805868495512e-09,
+    "diff_count": 66,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 94,
+    "baseline_only": 28,
+    "p_exact": 1.576805868495512e-09,
+    "diff_count": 66,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 105,
+    "baseline_only": 10,
+    "p_exact": 3.958305129534735e-21,
+    "diff_count": 95,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 105,
+    "baseline_only": 10,
+    "p_exact": 3.958305129534735e-21,
+    "diff_count": 95,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 105,
+    "baseline_only": 10,
+    "p_exact": 3.958305129534735e-21,
+    "diff_count": 95,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "pure_text",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 76,
+    "baseline_only": 0,
+    "p_exact": 2.6469779601696886e-23,
+    "diff_count": 76,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "baseline": "tom",
+   "reported_mixed": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "baseline": "zero_shot",
+   "reported_mixed": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "baseline": "trajectory_rag",
+   "reported_mixed": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "baseline": "g_memory",
+   "reported_mixed": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "baseline": "memento_style",
+   "reported_mixed": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "json_tolerant": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "official_strict": {
+    "ours_only": 45,
+    "baseline_only": 0,
+    "p_exact": 5.684341886080802e-14,
+    "diff_count": 45,
+    "winner": "ours",
+    "significant_05": true
+   },
+   "flip": false,
+   "significance_changes": false
+  }
+ ]
+}

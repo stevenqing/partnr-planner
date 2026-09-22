@@ -4,7 +4,13 @@ Memory-as-Skill / skill memory v2 的实验仓库。VIKI-L2 和 PARTNR 两条线
 
 ## 开工先读
 
-**`HANDOVER-2026-09-17.md`** ← 当前交接（**两条线**。PARTNR：5 算子纯 LLM 库在冻结 typed 模型臂上对 iir1
+**`HANDOVER-2026-09-22.md`** ← 当前交接（ICLR 稿件线：09-21b 的四件事已执行；**B2 MEMENTO H_R_T 重跑 1/11**；**in-context-library 臂：库放进 prompt 不高于 G-Memory（CG 9 vs 10、0 vs 14），预写结局 E1/E2/E3 都对不上，patch 措辞等用户确认**；PARTNR 出数代码开局只检索一次、没有每步预测；温度 0 并发下 VIKI 单次运行差几行是噪声；本会话脚本一行没提交；给改稿 agent 的单文件是 `results/incontext_library_2026-09-21/INCONTEXT_LIBRARY_ALL_2026-09-22.md`）
+
+**`HANDOVER-2026-09-21b.md`** ← 上一份（ICLR 稿件线 A 层，已被 09-22 接续）（**ICLR 稿件 TODO spec**：A 层交完、**09-21 晚四件事已拍板并落 patch**、B2 已跑（MEMENTO H_R_T 1/11 = 9.1%，稿件已改）；**旧 PARTNR 记忆只在 H_R→H_R 上重叠（196/197），Table 1/2 干净**，且无执行门；**「手写 19 算子参考库」其实是归纳的，OOD 公平值 65.6 不是 67.4**；Table 1/2 原始输出只在 Isambard）
+
+**`HANDOVER-2026-09-21.md`** ← 当前交接之一（PARTNR 增量：09-17 之后的提交与决定、**`is_clean` 修复的 30B 确认格 09-21 17:05 在 GPU 7 起飞**、其后 conf_H 双模型确认与 RESULTS 补 PARTNR 节；另一个会话在做 ICLR `main.tex` TODO，别动 `scripts/iclr_todo/`）
+
+`HANDOVER-2026-09-17.md`（上一份，PARTNR 结论本体：**两条线**。PARTNR：5 算子纯 LLM 库在冻结 typed 模型臂上对 iir1
 **完全打平**（30B +0.002、7B −0.001，四格 369/369），第三臂 h30b 把两个效应拆开、**两个都是零**；
 根因是 **typed 要求接口没有 H 谓词这个词**（`RELATIONS` 只有三个放置关系），已加 `typed_state` 开关（默认关闭）；
 接口修好后 `is_powered_on` 0→0.727/0.778，`is_clean` 仍 0——又是判据（`project()` 把家具主语一律丢弃，

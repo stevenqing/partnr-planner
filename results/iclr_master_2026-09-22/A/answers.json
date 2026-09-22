@@ -1,0 +1,1336 @@
+{
+ "status": "complete (A1, A2 numbers incl. sibling group, A4); A2 carries two HALTED discrepancies (expected values, hand-written premise)",
+ "ending": {
+  "A1": "baselines answer once; our success changes by at most 1.5 points without the second turn (30B ID only)",
+  "A2": "HALTED on discrepancies; measured at 72B: learned above on ID, below on OOD and sibling-group OOD, same rows on both CG splits",
+  "A4": "library-coverage curve exists (comp(cut) / comp(cut+delivery) / comp(all)); no curve by test-task composition depth exists"
+ },
+ "numbers": {
+  "A1.72B.id.reask_rows": {
+   "value": 0.0498,
+   "numerator": 46,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_72B_id.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.72B.id.full": {
+   "value": 0.7803,
+   "numerator": 721,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_72B_id.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.72B.id.first_turn_only": {
+   "value": 0.7803,
+   "numerator": 721,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_id_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.72B.id.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_id_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.72B.id.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_id_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.72B.heldout.reask_rows": {
+   "value": 0.2879,
+   "numerator": 266,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_72B_heldout.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.72B.heldout.full": {
+   "value": 0.5422,
+   "numerator": 501,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_72B_heldout.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.72B.heldout.first_turn_only": {
+   "value": 0.5422,
+   "numerator": 501,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.72B.heldout.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.72B.heldout.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.72B.heldout_sibgrp.reask_rows": {
+   "value": 0.2879,
+   "numerator": 266,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_72B_heldout_sibgrp.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.72B.heldout_sibgrp.full": {
+   "value": 0.3193,
+   "numerator": 295,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_72B_heldout_sibgrp.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.72B.heldout_sibgrp.first_turn_only": {
+   "value": 0.3193,
+   "numerator": 295,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_sibgrp_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.72B.heldout_sibgrp.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_sibgrp_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.72B.heldout_sibgrp.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_sibgrp_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.72B.imaged.reask_rows": {
+   "value": 0.0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_72B_imaged.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.72B.imaged.full": {
+   "value": 0.798,
+   "numerator": 237,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_72B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.72B.imaged.first_turn_only": {
+   "value": 0.798,
+   "numerator": 237,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_imaged_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.72B.imaged.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_imaged_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.72B.imaged.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_imaged_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.72B.text.reask_rows": {
+   "value": 0.0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_72B_text.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.72B.text.full": {
+   "value": 0.862,
+   "numerator": 256,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_72B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.72B.text.first_turn_only": {
+   "value": 0.862,
+   "numerator": 256,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_text_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.72B.text.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_text_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.72B.text.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_text_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.30B.id.reask_rows": {
+   "value": 0.0768,
+   "numerator": 71,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_30B_id.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.30B.id.full": {
+   "value": 0.5736,
+   "numerator": 530,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_30B_id.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.30B.id.first_turn_only": {
+   "value": 0.5584,
+   "numerator": 516,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_id_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.30B.id.gained_by_reask": {
+   "value": 14,
+   "numerator": 14,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_id_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.30B.id.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_id_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.30B.heldout.reask_rows": {
+   "value": 0.29,
+   "numerator": 268,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_30B_heldout.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.30B.heldout.full": {
+   "value": 0.3539,
+   "numerator": 327,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_30B_heldout.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.30B.heldout.first_turn_only": {
+   "value": 0.3539,
+   "numerator": 327,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.30B.heldout.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.30B.heldout.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.30B.heldout_sibgrp.reask_rows": {
+   "value": 0.289,
+   "numerator": 267,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_30B_heldout_sibgrp.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.30B.heldout_sibgrp.full": {
+   "value": 0.1591,
+   "numerator": 147,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_30B_heldout_sibgrp.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.30B.heldout_sibgrp.first_turn_only": {
+   "value": 0.1591,
+   "numerator": 147,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_sibgrp_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.30B.heldout_sibgrp.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_sibgrp_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.30B.heldout_sibgrp.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_sibgrp_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.30B.imaged.reask_rows": {
+   "value": 0.0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_30B_imaged.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.30B.imaged.full": {
+   "value": 0.6498,
+   "numerator": 193,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_30B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.30B.imaged.first_turn_only": {
+   "value": 0.6498,
+   "numerator": 193,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_imaged_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.30B.imaged.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_imaged_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.30B.imaged.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_imaged_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.30B.text.reask_rows": {
+   "value": 0.0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_30B_text.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.30B.text.full": {
+   "value": 0.7239,
+   "numerator": 215,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_30B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.30B.text.first_turn_only": {
+   "value": 0.7239,
+   "numerator": 215,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_text_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.30B.text.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_text_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.30B.text.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_text_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.7B.id.reask_rows": {
+   "value": 0.1461,
+   "numerator": 135,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_7B_id.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.7B.id.full": {
+   "value": 0.1385,
+   "numerator": 128,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_7B_id.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.7B.id.first_turn_only": {
+   "value": 0.1385,
+   "numerator": 128,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_id_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.7B.id.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_id_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.7B.id.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_id_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.7B.heldout.reask_rows": {
+   "value": 0.2641,
+   "numerator": 244,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_7B_heldout.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.7B.heldout.full": {
+   "value": 0.1169,
+   "numerator": 108,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_7B_heldout.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.7B.heldout.first_turn_only": {
+   "value": 0.1169,
+   "numerator": 108,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.7B.heldout.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.7B.heldout.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.7B.heldout_sibgrp.reask_rows": {
+   "value": 0.2641,
+   "numerator": 244,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_7B_heldout_sibgrp.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.7B.heldout_sibgrp.full": {
+   "value": 0.0368,
+   "numerator": 34,
+   "denominator": 924,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_7B_heldout_sibgrp.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.7B.heldout_sibgrp.first_turn_only": {
+   "value": 0.0368,
+   "numerator": 34,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_sibgrp_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.7B.heldout_sibgrp.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_sibgrp_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.7B.heldout_sibgrp.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_sibgrp_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.7B.imaged.reask_rows": {
+   "value": 0.0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_7B_imaged.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.7B.imaged.full": {
+   "value": 0.1515,
+   "numerator": 45,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_7B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.7B.imaged.first_turn_only": {
+   "value": 0.1515,
+   "numerator": 45,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_imaged_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.7B.imaged.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_imaged_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.7B.imaged.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_imaged_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A1.7B.text.reask_rows": {
+   "value": 0.0034,
+   "numerator": 1,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_7B_text.jsonl",
+   "computation": "rows with reask=true"
+  },
+  "A1.7B.text.full": {
+   "value": 0.2559,
+   "numerator": 76,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_7B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A1.7B.text.first_turn_only": {
+   "value": 0.2559,
+   "numerator": 76,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_text_ours_first.json",
+   "computation": "replay of `raw` only against the same library, SOLVED"
+  },
+  "A1.7B.text.gained_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_text_ours_first.json",
+   "computation": "full solved and first-turn not"
+  },
+  "A1.7B.text.lost_by_reask": {
+   "value": 0,
+   "numerator": 0,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_text_ours_first.json",
+   "computation": "first-turn solved and full not"
+  },
+  "A2.72B.id.reference_first_turn": {
+   "value": 0.6742,
+   "numerator": 623,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_id_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.72B.id.ours_first_turn": {
+   "value": 0.7803,
+   "numerator": 721,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_id_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.72B.id.mcnemar_ours_first_vs_ref": {
+   "ours_only": 115,
+   "ref_only": 17,
+   "p_exact": 4.617342497646328e-19
+  },
+  "A2.72B.id.mcnemar_ours_full_vs_ref": {
+   "ours_only": 115,
+   "ref_only": 17,
+   "p_exact": 4.617342497646328e-19
+  },
+  "A2.72B.heldout.reference_first_turn": {
+   "value": 0.6558,
+   "numerator": 606,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.72B.heldout.ours_first_turn": {
+   "value": 0.5422,
+   "numerator": 501,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.72B.heldout.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 105,
+   "p_exact": 4.930380657631324e-32
+  },
+  "A2.72B.heldout.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 105,
+   "p_exact": 4.930380657631324e-32
+  },
+  "A2.72B.heldout_sibgrp.reference_first_turn": {
+   "value": 0.4329,
+   "numerator": 400,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_sibgrp_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.72B.heldout_sibgrp.ours_first_turn": {
+   "value": 0.3193,
+   "numerator": 295,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_heldout_sibgrp_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.72B.heldout_sibgrp.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 105,
+   "p_exact": 4.930380657631324e-32
+  },
+  "A2.72B.heldout_sibgrp.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 105,
+   "p_exact": 4.930380657631324e-32
+  },
+  "A2.72B.imaged.reference_first_turn": {
+   "value": 0.798,
+   "numerator": 237,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_imaged_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.72B.imaged.ours_first_turn": {
+   "value": 0.798,
+   "numerator": 237,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_imaged_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.72B.imaged.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 0,
+   "p_exact": 1.0
+  },
+  "A2.72B.imaged.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 0,
+   "p_exact": 1.0
+  },
+  "A2.72B.text.reference_first_turn": {
+   "value": 0.862,
+   "numerator": 256,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_text_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.72B.text.ours_first_turn": {
+   "value": 0.862,
+   "numerator": 256,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_72B_text_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.72B.text.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 0,
+   "p_exact": 1.0
+  },
+  "A2.72B.text.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 0,
+   "p_exact": 1.0
+  },
+  "A2.30B.id.reference_first_turn": {
+   "value": 0.5097,
+   "numerator": 471,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_id_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.30B.id.ours_first_turn": {
+   "value": 0.5584,
+   "numerator": 516,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_id_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.30B.id.mcnemar_ours_first_vs_ref": {
+   "ours_only": 92,
+   "ref_only": 47,
+   "p_exact": 0.00016852183862911795
+  },
+  "A2.30B.id.mcnemar_ours_full_vs_ref": {
+   "ours_only": 106,
+   "ref_only": 47,
+   "p_exact": 2.078609740242918e-06
+  },
+  "A2.30B.heldout.reference_first_turn": {
+   "value": 0.46,
+   "numerator": 425,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.30B.heldout.ours_first_turn": {
+   "value": 0.3539,
+   "numerator": 327,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.30B.heldout.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 98,
+   "p_exact": 6.310887241768095e-30
+  },
+  "A2.30B.heldout.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 98,
+   "p_exact": 6.310887241768095e-30
+  },
+  "A2.30B.heldout_sibgrp.reference_first_turn": {
+   "value": 0.2641,
+   "numerator": 244,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_sibgrp_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.30B.heldout_sibgrp.ours_first_turn": {
+   "value": 0.1591,
+   "numerator": 147,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_heldout_sibgrp_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.30B.heldout_sibgrp.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 97,
+   "p_exact": 1.262177448353619e-29
+  },
+  "A2.30B.heldout_sibgrp.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 97,
+   "p_exact": 1.262177448353619e-29
+  },
+  "A2.30B.imaged.reference_first_turn": {
+   "value": 0.6599,
+   "numerator": 196,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_imaged_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.30B.imaged.ours_first_turn": {
+   "value": 0.6498,
+   "numerator": 193,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_imaged_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.30B.imaged.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 3,
+   "p_exact": 0.25
+  },
+  "A2.30B.imaged.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 3,
+   "p_exact": 0.25
+  },
+  "A2.30B.text.reference_first_turn": {
+   "value": 0.734,
+   "numerator": 218,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_text_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.30B.text.ours_first_turn": {
+   "value": 0.7239,
+   "numerator": 215,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_30B_text_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.30B.text.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 3,
+   "p_exact": 0.25
+  },
+  "A2.30B.text.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 3,
+   "p_exact": 0.25
+  },
+  "A2.7B.id.reference_first_turn": {
+   "value": 0.1602,
+   "numerator": 148,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_id_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.7B.id.ours_first_turn": {
+   "value": 0.1385,
+   "numerator": 128,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_id_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.7B.id.mcnemar_ours_first_vs_ref": {
+   "ours_only": 10,
+   "ref_only": 30,
+   "p_exact": 0.0022214337732293643
+  },
+  "A2.7B.id.mcnemar_ours_full_vs_ref": {
+   "ours_only": 10,
+   "ref_only": 30,
+   "p_exact": 0.0022214337732293643
+  },
+  "A2.7B.heldout.reference_first_turn": {
+   "value": 0.145,
+   "numerator": 134,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.7B.heldout.ours_first_turn": {
+   "value": 0.1169,
+   "numerator": 108,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.7B.heldout.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 26,
+   "p_exact": 2.9802322387695312e-08
+  },
+  "A2.7B.heldout.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 26,
+   "p_exact": 2.9802322387695312e-08
+  },
+  "A2.7B.heldout_sibgrp.reference_first_turn": {
+   "value": 0.0476,
+   "numerator": 44,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_sibgrp_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.7B.heldout_sibgrp.ours_first_turn": {
+   "value": 0.0368,
+   "numerator": 34,
+   "denominator": 924,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_heldout_sibgrp_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.7B.heldout_sibgrp.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 10,
+   "p_exact": 0.001953125
+  },
+  "A2.7B.heldout_sibgrp.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 10,
+   "p_exact": 0.001953125
+  },
+  "A2.7B.imaged.reference_first_turn": {
+   "value": 0.1582,
+   "numerator": 47,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_imaged_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.7B.imaged.ours_first_turn": {
+   "value": 0.1515,
+   "numerator": 45,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_imaged_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.7B.imaged.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 2,
+   "p_exact": 0.5
+  },
+  "A2.7B.imaged.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 2,
+   "p_exact": 0.5
+  },
+  "A2.7B.text.reference_first_turn": {
+   "value": 0.2626,
+   "numerator": 78,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_text_ref_first.json",
+   "computation": "19-op reference library, first answer only, SOLVED"
+  },
+  "A2.7B.text.ours_first_turn": {
+   "value": 0.2559,
+   "numerator": 76,
+   "denominator": 297,
+   "source_path": "results/iclr_master_2026-09-22/A/replay/replay_7B_text_ours_first.json",
+   "computation": "v3 library, first answer only, SOLVED"
+  },
+  "A2.7B.text.mcnemar_ours_first_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 2,
+   "p_exact": 0.5
+  },
+  "A2.7B.text.mcnemar_ours_full_vs_ref": {
+   "ours_only": 0,
+   "ref_only": 2,
+   "p_exact": 0.5
+  },
+  "A2.disk_reference_cells": {
+   "appendix_reference_72B_id": {
+    "value": 0.6742,
+    "numerator": 623,
+    "denominator": 924,
+    "source_path": "results/viki_memory_experiments/amendment11/appendix_reference_72B_id.jsonl",
+    "computation": "reason == SOLVED (live re-ask included)"
+   },
+   "appendix_reference_72B_id.first_turn": {
+    "value": 0.6742,
+    "numerator": 623,
+    "denominator": 924,
+    "source_path": "results/viki_memory_experiments/amendment11/appendix_reference_72B_id.jsonl",
+    "computation": "SOLVED and reask false"
+   },
+   "appendix_reference_72B_imaged": {
+    "value": 0.798,
+    "numerator": 237,
+    "denominator": 297,
+    "source_path": "results/viki_memory_experiments/amendment11/appendix_reference_72B_imaged.jsonl",
+    "computation": "reason == SOLVED (live re-ask included)"
+   },
+   "appendix_reference_72B_imaged.first_turn": {
+    "value": 0.798,
+    "numerator": 237,
+    "denominator": 297,
+    "source_path": "results/viki_memory_experiments/amendment11/appendix_reference_72B_imaged.jsonl",
+    "computation": "SOLVED and reask false"
+   },
+   "appendix_reference_72B_text": {
+    "value": 0.862,
+    "numerator": 256,
+    "denominator": 297,
+    "source_path": "results/viki_memory_experiments/amendment11/appendix_reference_72B_text.jsonl",
+    "computation": "reason == SOLVED (live re-ask included)"
+   },
+   "appendix_reference_72B_text.first_turn": {
+    "value": 0.862,
+    "numerator": 256,
+    "denominator": 297,
+    "source_path": "results/viki_memory_experiments/amendment11/appendix_reference_72B_text.jsonl",
+    "computation": "SOLVED and reask false"
+   },
+   "v3_lib_id_72B.lib_skill_memory_v2": {
+    "value": 0.6742,
+    "numerator": 623,
+    "denominator": 924,
+    "source_path": "outputs/viki_ablation/v3_lib_id_72B.json",
+    "computation": "archived replay (re-ask included)"
+   },
+   "v3_libfold_fold_72B.lib_skill_memory_v2_perfold": {
+    "value": 0.6558,
+    "numerator": 606,
+    "denominator": 924,
+    "source_path": "outputs/viki_ablation/v3_libfold_fold_72B.json",
+    "computation": "archived replay (re-ask included)"
+   },
+   "v3_lib_id_30B.lib_skill_memory_v2": {
+    "value": 0.5097,
+    "numerator": 471,
+    "denominator": 924,
+    "source_path": "outputs/viki_ablation/v3_lib_id_30B.json",
+    "computation": "archived replay (re-ask included)"
+   },
+   "v3_libfold_fold_30B.lib_skill_memory_v2_perfold": {
+    "value": 0.46,
+    "numerator": 425,
+    "denominator": 924,
+    "source_path": "outputs/viki_ablation/v3_libfold_fold_30B.json",
+    "computation": "archived replay (re-ask included)"
+   },
+   "v3_lib_id_7B.lib_skill_memory_v2": {
+    "value": 0.1602,
+    "numerator": 148,
+    "denominator": 924,
+    "source_path": "outputs/viki_ablation/v3_lib_id_7B.json",
+    "computation": "archived replay (re-ask included)"
+   },
+   "v3_libfold_fold_7B.lib_skill_memory_v2_perfold": {
+    "value": 0.145,
+    "numerator": 134,
+    "denominator": 924,
+    "source_path": "outputs/viki_ablation/v3_libfold_fold_7B.json",
+    "computation": "archived replay (re-ask included)"
+   }
+  },
+  "A4.72B.text.comp(cut)": {
+   "value": 0.7811,
+   "numerator": 232,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ourscut_72B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.72B.text.comp(cut).library": {
+   "path": "outputs/v3_memories/memory_comp_cut.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board"
+   ]
+  },
+  "A4.72B.text.comp(cut+delivery)": {
+   "value": 0.7811,
+   "numerator": 232,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_72B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.72B.text.comp(cut+delivery).library": {
+   "path": "outputs/v3_memories/memory_comp_cut_delivery.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "single_move_asset_to_target"
+   ]
+  },
+  "A4.72B.text.comp(all)": {
+   "value": 0.862,
+   "numerator": 256,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_72B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.72B.text.comp(all).library": {
+   "path": "outputs/v3_memories/memory_all.json",
+   "operators": 8,
+   "families": [
+    "clear_table_with_two_robots_and_put_in_cabinet",
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "dog_check_environment",
+    "dog_push_box_for_two_panda_transport",
+    "ensure_all_fruits_on_table",
+    "parallel_human_dual_asset_to_plate_or_bowl",
+    "sequential_pick_two_and_place",
+    "serve_bread_after_checking_cabinet",
+    "serve_bread_from_counter",
+    "set_plate_and_fork_on_table",
+    "single_move_asset_to_target",
+    "toast_bread_and_set_plate",
+    "wash_fruit_and_serve"
+   ]
+  },
+  "A4.72B.imaged.comp(cut)": {
+   "value": 0.7946,
+   "numerator": 236,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ourscut_72B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.72B.imaged.comp(cut).library": {
+   "path": "outputs/v3_memories/memory_comp_cut.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board"
+   ]
+  },
+  "A4.72B.imaged.comp(cut+delivery)": {
+   "value": 0.798,
+   "numerator": 237,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_72B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.72B.imaged.comp(cut+delivery).library": {
+   "path": "outputs/v3_memories/memory_comp_cut_delivery.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "single_move_asset_to_target"
+   ]
+  },
+  "A4.72B.imaged.comp(all)": {
+   "value": 0.798,
+   "numerator": 237,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_72B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.72B.imaged.comp(all).library": {
+   "path": "outputs/v3_memories/memory_all.json",
+   "operators": 8,
+   "families": [
+    "clear_table_with_two_robots_and_put_in_cabinet",
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "dog_check_environment",
+    "dog_push_box_for_two_panda_transport",
+    "ensure_all_fruits_on_table",
+    "parallel_human_dual_asset_to_plate_or_bowl",
+    "sequential_pick_two_and_place",
+    "serve_bread_after_checking_cabinet",
+    "serve_bread_from_counter",
+    "set_plate_and_fork_on_table",
+    "single_move_asset_to_target",
+    "toast_bread_and_set_plate",
+    "wash_fruit_and_serve"
+   ]
+  },
+  "A4.30B.text.comp(cut)": {
+   "value": 0.6296,
+   "numerator": 187,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ourscut_30B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.30B.text.comp(cut).library": {
+   "path": "outputs/v3_memories/memory_comp_cut.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board"
+   ]
+  },
+  "A4.30B.text.comp(cut+delivery)": {
+   "value": 0.6296,
+   "numerator": 187,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_30B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.30B.text.comp(cut+delivery).library": {
+   "path": "outputs/v3_memories/memory_comp_cut_delivery.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "single_move_asset_to_target"
+   ]
+  },
+  "A4.30B.text.comp(all)": {
+   "value": 0.7239,
+   "numerator": 215,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_30B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.30B.text.comp(all).library": {
+   "path": "outputs/v3_memories/memory_all.json",
+   "operators": 8,
+   "families": [
+    "clear_table_with_two_robots_and_put_in_cabinet",
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "dog_check_environment",
+    "dog_push_box_for_two_panda_transport",
+    "ensure_all_fruits_on_table",
+    "parallel_human_dual_asset_to_plate_or_bowl",
+    "sequential_pick_two_and_place",
+    "serve_bread_after_checking_cabinet",
+    "serve_bread_from_counter",
+    "set_plate_and_fork_on_table",
+    "single_move_asset_to_target",
+    "toast_bread_and_set_plate",
+    "wash_fruit_and_serve"
+   ]
+  },
+  "A4.30B.imaged.comp(cut)": {
+   "value": 0.5354,
+   "numerator": 159,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ourscut_30B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.30B.imaged.comp(cut).library": {
+   "path": "outputs/v3_memories/memory_comp_cut.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board"
+   ]
+  },
+  "A4.30B.imaged.comp(cut+delivery)": {
+   "value": 0.5354,
+   "numerator": 159,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_30B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.30B.imaged.comp(cut+delivery).library": {
+   "path": "outputs/v3_memories/memory_comp_cut_delivery.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "single_move_asset_to_target"
+   ]
+  },
+  "A4.30B.imaged.comp(all)": {
+   "value": 0.6498,
+   "numerator": 193,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_30B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.30B.imaged.comp(all).library": {
+   "path": "outputs/v3_memories/memory_all.json",
+   "operators": 8,
+   "families": [
+    "clear_table_with_two_robots_and_put_in_cabinet",
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "dog_check_environment",
+    "dog_push_box_for_two_panda_transport",
+    "ensure_all_fruits_on_table",
+    "parallel_human_dual_asset_to_plate_or_bowl",
+    "sequential_pick_two_and_place",
+    "serve_bread_after_checking_cabinet",
+    "serve_bread_from_counter",
+    "set_plate_and_fork_on_table",
+    "single_move_asset_to_target",
+    "toast_bread_and_set_plate",
+    "wash_fruit_and_serve"
+   ]
+  },
+  "A4.7B.text.comp(cut)": {
+   "value": 0.266,
+   "numerator": 79,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ourscut_7B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.7B.text.comp(cut).library": {
+   "path": "outputs/v3_memories/memory_comp_cut.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board"
+   ]
+  },
+  "A4.7B.text.comp(cut+delivery)": {
+   "value": 0.2626,
+   "numerator": 78,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_7B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.7B.text.comp(cut+delivery).library": {
+   "path": "outputs/v3_memories/memory_comp_cut_delivery.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "single_move_asset_to_target"
+   ]
+  },
+  "A4.7B.text.comp(all)": {
+   "value": 0.2559,
+   "numerator": 76,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_7B_text.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.7B.text.comp(all).library": {
+   "path": "outputs/v3_memories/memory_all.json",
+   "operators": 8,
+   "families": [
+    "clear_table_with_two_robots_and_put_in_cabinet",
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "dog_check_environment",
+    "dog_push_box_for_two_panda_transport",
+    "ensure_all_fruits_on_table",
+    "parallel_human_dual_asset_to_plate_or_bowl",
+    "sequential_pick_two_and_place",
+    "serve_bread_after_checking_cabinet",
+    "serve_bread_from_counter",
+    "set_plate_and_fork_on_table",
+    "single_move_asset_to_target",
+    "toast_bread_and_set_plate",
+    "wash_fruit_and_serve"
+   ]
+  },
+  "A4.7B.imaged.comp(cut)": {
+   "value": 0.1515,
+   "numerator": 45,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ourscut_7B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.7B.imaged.comp(cut).library": {
+   "path": "outputs/v3_memories/memory_comp_cut.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board"
+   ]
+  },
+  "A4.7B.imaged.comp(cut+delivery)": {
+   "value": 0.1515,
+   "numerator": 45,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_ours_7B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.7B.imaged.comp(cut+delivery).library": {
+   "path": "outputs/v3_memories/memory_comp_cut_delivery.json",
+   "operators": 4,
+   "families": [
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "single_move_asset_to_target"
+   ]
+  },
+  "A4.7B.imaged.comp(all)": {
+   "value": 0.1515,
+   "numerator": 45,
+   "denominator": 297,
+   "source_path": "results/viki_memory_experiments/amendment11/v3_oursall_7B_imaged.jsonl",
+   "computation": "reason == SOLVED"
+  },
+  "A4.7B.imaged.comp(all).library": {
+   "path": "outputs/v3_memories/memory_all.json",
+   "operators": 8,
+   "families": [
+    "clear_table_with_two_robots_and_put_in_cabinet",
+    "cut_fruit_on_board",
+    "cut_two_fruits_on_board",
+    "dog_check_environment",
+    "dog_push_box_for_two_panda_transport",
+    "ensure_all_fruits_on_table",
+    "parallel_human_dual_asset_to_plate_or_bowl",
+    "sequential_pick_two_and_place",
+    "serve_bread_after_checking_cabinet",
+    "serve_bread_from_counter",
+    "set_plate_and_fork_on_table",
+    "single_move_asset_to_target",
+    "toast_bread_and_set_plate",
+    "wash_fruit_and_serve"
+   ]
+  }
+ },
+ "notes": [
+  "replay checks: ours_full reproduces all 15 published cells row for row; ours_first equals archive-derived first-turn outcome in all 15 cells",
+  "A2 reference library is mined by simulator replay of even-indexed train episodes, not hand-written (amendment11/skill_memory_v2.json built_from)",
+  "A2 spec expected 72B values 86.4/60.3/70.4/73.7 not found on disk; same-protocol disk values 67.4/65.6/79.8/86.2",
+  "A2 sibling group: reference libraries rebuilt with zero LLM calls by scripts/iclr_master/A/a2_build_ref_sibgrp.py (same layer functions, seed, per_family=250; exclusion unit = sibling group). Check: the same wrapper with a single family reproduces amendment11/skill_memory_v2.fold_cut_fruit_on_board.json layer1/layer2/layer3 exactly. Libraries: ref_sibgrp/skill_memory_v2.foldgrp_cut.json (17 ops), ref_sibgrp/skill_memory_v2.foldgrp_parallel.json (19 ops); unaffected folds reuse the single-family fold libraries, as for ours",
+  "pass10 main.tex not on disk; patches are find/replace lists in main_patch.md and main_patch_reference_library.md; main_patch.diff pending"
+ ]
+}

@@ -1,0 +1,19 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+[full] 606/924 = 0.6558  {'SOLVED': 606, 'OVER_BUDGET': 223, 'GOAL_UNMET': 49, 'NO_PLAN': 42}
+# Post-answer ablation, 72B / fold (n=924, zero GPU)
+
+full replay 0.6558 vs published 0.5422 -- DOES NOT reproduce
+
+| arm | solved | rate | vs full | lost | gained | top reasons |
+|---|---|---|---|---|---|---|
+| full | 606/924 | 0.6558 |  |  |  | SOLVED 606, OVER_BUDGET 223, GOAL_UNMET 49 |
+
+wrote results/iclr_todo_2026-09-21/work/ref_fold_72B.json

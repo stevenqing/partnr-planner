@@ -1,0 +1,2579 @@
+{
+  "format": "skill-memory-v2",
+  "built_from": "VIKI-L2 train.parquet, even-indexed episodes",
+  "excluded_family": [
+    "parallel_human_dual_asset_to_plate_or_bowl",
+    "sequential_pick_two_and_place"
+  ],
+  "seed": 20260829,
+  "per_family": 250,
+  "layer1": {
+    "operators": [
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "body": [
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Reach",
+            "?x"
+          ],
+          [
+            "Grasp",
+            "?x"
+          ],
+          [
+            "Move",
+            "?y"
+          ],
+          [
+            "Place",
+            "?y"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": false,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "grasp",
+          "move",
+          "place",
+          "reach"
+        ],
+        "carries": true,
+        "cost": 5,
+        "support": 1734,
+        "families": [
+          "serve_bread_from_counter",
+          "single_move_asset_to_target",
+          "toast_bread_and_set_plate",
+          "cut_fruit_on_board",
+          "wash_fruit_and_serve",
+          "ensure_all_fruits_on_table",
+          "set_plate_and_fork_on_table"
+        ],
+        "runner_types": [
+          "stompy",
+          "fetch",
+          "unitree_h1"
+        ]
+      },
+      {
+        "kind": "repair",
+        "effect": {
+          "key": "unsealed",
+          "subject": "?x",
+          "value": true
+        },
+        "body": [
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Reach",
+            "?x"
+          ],
+          [
+            "Open",
+            "?x"
+          ]
+        ],
+        "preconditions": {
+          "target_sealed": true
+        },
+        "types": {
+          "?x": {
+            "is_container": true,
+            "isolated": true,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "move",
+          "open",
+          "reach"
+        ],
+        "carries": false,
+        "cost": 3,
+        "support": 686,
+        "families": [
+          "serve_bread_after_checking_cabinet",
+          "ensure_all_fruits_on_table",
+          "set_plate_and_fork_on_table",
+          "clear_table_with_two_robots_and_put_in_cabinet"
+        ],
+        "runner_types": [
+          "stompy",
+          "unitree_h1"
+        ]
+      },
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "is_activated",
+          "subject": "?x",
+          "value": true
+        },
+        "body": [
+          [
+            "Interact",
+            "?x"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": false,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "interact"
+        ],
+        "carries": false,
+        "cost": 1,
+        "support": 441,
+        "families": [
+          "toast_bread_and_set_plate",
+          "wash_fruit_and_serve"
+        ],
+        "runner_types": [
+          "stompy",
+          "fetch",
+          "unitree_h1"
+        ]
+      },
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "body": [
+          [
+            "Move",
+            "?z1"
+          ],
+          [
+            "Reach",
+            "?z1"
+          ],
+          [
+            "Open",
+            "?z1"
+          ],
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Reach",
+            "?x"
+          ],
+          [
+            "Grasp",
+            "?x"
+          ],
+          [
+            "Move",
+            "?y"
+          ],
+          [
+            "Place",
+            "?y"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": true,
+          "subject_in_container": true,
+          "subject_on_agent": false,
+          "target_sealed": false,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": true,
+            "isolated": true,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "grasp",
+          "move",
+          "open",
+          "place",
+          "reach"
+        ],
+        "carries": true,
+        "cost": 8,
+        "support": 436,
+        "families": [
+          "serve_bread_after_checking_cabinet",
+          "ensure_all_fruits_on_table",
+          "set_plate_and_fork_on_table"
+        ],
+        "runner_types": [
+          "stompy",
+          "unitree_h1"
+        ]
+      },
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "is_activated",
+          "subject": "?x",
+          "value": true
+        },
+        "body": [
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Reach",
+            "?x"
+          ],
+          [
+            "Grasp",
+            "?x"
+          ],
+          [
+            "Move",
+            "?z1"
+          ],
+          [
+            "Reach",
+            "?z1"
+          ],
+          [
+            "Interact",
+            "?x"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": false,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "grasp",
+          "interact",
+          "move",
+          "reach"
+        ],
+        "carries": true,
+        "cost": 6,
+        "support": 250,
+        "families": [
+          "cut_fruit_on_board"
+        ],
+        "runner_types": [
+          "fetch",
+          "unitree_h1",
+          "stompy"
+        ]
+      },
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "body": [
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Reach",
+            "?x"
+          ],
+          [
+            "Grasp",
+            "?x"
+          ],
+          [
+            "Move",
+            "?y"
+          ],
+          [
+            "Place",
+            "?y"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": true,
+          "subject_on_agent": false,
+          "target_sealed": false,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "grasp",
+          "move",
+          "place",
+          "reach"
+        ],
+        "carries": true,
+        "cost": 5,
+        "support": 250,
+        "families": [
+          "wash_fruit_and_serve"
+        ],
+        "runner_types": [
+          "fetch",
+          "stompy",
+          "unitree_h1"
+        ]
+      },
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "body": [
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Reach",
+            "?x"
+          ],
+          [
+            "Grasp",
+            "?x"
+          ],
+          [
+            "Move",
+            "?y"
+          ],
+          [
+            "Reach",
+            "?y"
+          ],
+          [
+            "Open",
+            "?y"
+          ],
+          [
+            "Place",
+            "?y"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": true,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": true,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "grasp",
+          "move",
+          "open",
+          "place",
+          "reach"
+        ],
+        "carries": true,
+        "cost": 7,
+        "support": 250,
+        "families": [
+          "clear_table_with_two_robots_and_put_in_cabinet"
+        ],
+        "runner_types": [
+          "unitree_h1",
+          "stompy"
+        ]
+      },
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "body": [
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Reach",
+            "?x"
+          ],
+          [
+            "Grasp",
+            "?x"
+          ],
+          [
+            "Move",
+            "?z1"
+          ],
+          [
+            "Reach",
+            "?z1"
+          ],
+          [
+            "Grasp",
+            "?z1"
+          ],
+          [
+            "Move",
+            "?y"
+          ],
+          [
+            "Place",
+            "?y"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": false,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "grasp",
+          "move",
+          "place",
+          "reach"
+        ],
+        "carries": true,
+        "cost": 8,
+        "support": 190,
+        "families": [
+          "cut_two_fruits_on_board"
+        ],
+        "runner_types": [
+          "unitree_h1",
+          "stompy"
+        ]
+      },
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "body": [
+          [
+            "Move",
+            "?z1"
+          ],
+          [
+            "Reach",
+            "?z1"
+          ],
+          [
+            "Grasp",
+            "?z1"
+          ],
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Reach",
+            "?x"
+          ],
+          [
+            "Grasp",
+            "?x"
+          ],
+          [
+            "Move",
+            "?y"
+          ],
+          [
+            "Place",
+            "?y"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": false,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "grasp",
+          "move",
+          "place",
+          "reach"
+        ],
+        "carries": true,
+        "cost": 8,
+        "support": 190,
+        "families": [
+          "cut_two_fruits_on_board"
+        ],
+        "runner_types": [
+          "unitree_h1",
+          "stompy"
+        ]
+      },
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "is_activated",
+          "subject": "?x",
+          "value": true
+        },
+        "body": [
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Reach",
+            "?x"
+          ],
+          [
+            "Grasp",
+            "?x"
+          ],
+          [
+            "Move",
+            "?z1"
+          ],
+          [
+            "Interact",
+            "?x"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": false,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "grasp",
+          "interact",
+          "move",
+          "reach"
+        ],
+        "carries": true,
+        "cost": 5,
+        "support": 190,
+        "families": [
+          "cut_two_fruits_on_board"
+        ],
+        "runner_types": [
+          "fetch"
+        ]
+      },
+      {
+        "kind": "coordination",
+        "coordinated": true,
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "roles": [
+          {
+            "variable": "?r0",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?x"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    1,
+                    2
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Move",
+                  "?y"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    1,
+                    6
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r1",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?z1"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Reach",
+                  "?z1"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?z1"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    0,
+                    2
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Move",
+                  "?y"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    0,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Reach",
+                  "?y"
+                ],
+                "offset": 4,
+                "after": [
+                  [
+                    0,
+                    4
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Open",
+                  "?y"
+                ],
+                "offset": 5,
+                "after": [
+                  [
+                    0,
+                    4
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    0,
+                    4
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": true,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": true,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "cost": 7,
+        "support": 130,
+        "families": [
+          "clear_table_with_two_robots_and_put_in_cabinet"
+        ],
+        "runner_types": [],
+        "role_types": {
+          "?r0": [
+            "fetch"
+          ],
+          "?r1": [
+            "unitree_h1",
+            "stompy"
+          ]
+        }
+      },
+      {
+        "kind": "coordination",
+        "coordinated": true,
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "roles": [
+          {
+            "variable": "?r0",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?z1"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Reach",
+                  "?z1"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?z1"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    1,
+                    2
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Move",
+                  "?y"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Reach",
+                  "?y"
+                ],
+                "offset": 4,
+                "after": [
+                  [
+                    1,
+                    4
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Open",
+                  "?y"
+                ],
+                "offset": 5,
+                "after": [
+                  [
+                    1,
+                    4
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    1,
+                    4
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r1",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?x"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    0,
+                    2
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Move",
+                  "?y"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    0,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    0,
+                    6
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": true,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": true,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "cost": 7,
+        "support": 120,
+        "families": [
+          "clear_table_with_two_robots_and_put_in_cabinet"
+        ],
+        "runner_types": [],
+        "role_types": {
+          "?r0": [
+            "stompy",
+            "unitree_h1"
+          ],
+          "?r1": [
+            "fetch"
+          ]
+        }
+      },
+      {
+        "kind": "achievement",
+        "effect": {
+          "key": "is_activated",
+          "subject": "?x",
+          "value": true
+        },
+        "body": [
+          [
+            "Move",
+            "?x"
+          ],
+          [
+            "Interact",
+            "?x"
+          ]
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": false,
+          "target_sealed": false,
+          "target_on_agent": false
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          }
+        },
+        "requires": [
+          "interact",
+          "move"
+        ],
+        "carries": false,
+        "cost": 2,
+        "support": 83,
+        "families": [
+          "dog_check_environment"
+        ],
+        "runner_types": [
+          "unitree_go2",
+          "anymal_c"
+        ]
+      },
+      {
+        "kind": "coordination",
+        "coordinated": true,
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "roles": [
+          {
+            "variable": "?r0",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?z1"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r1"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r2"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r1",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?z1"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    0,
+                    2
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r2",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 4,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 5,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": true,
+          "target_sealed": false,
+          "target_on_agent": true
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": true
+          }
+        },
+        "cost": 7,
+        "support": 19,
+        "families": [
+          "dog_push_box_for_two_panda_transport"
+        ],
+        "runner_types": [],
+        "role_types": {
+          "?r0": [
+            "unitree_go2",
+            "anymal_c"
+          ],
+          "?r1": [
+            "panda"
+          ],
+          "?r2": [
+            "panda"
+          ]
+        }
+      },
+      {
+        "kind": "coordination",
+        "coordinated": true,
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "roles": [
+          {
+            "variable": "?r0",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 4,
+                "after": [
+                  [
+                    1,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 5,
+                "after": [
+                  [
+                    1,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    1,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r1",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    2,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?z1"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    2,
+                    2
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r2",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?z1"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r1"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r0"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": true,
+          "target_sealed": false,
+          "target_on_agent": true
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": true
+          }
+        },
+        "cost": 7,
+        "support": 16,
+        "families": [
+          "dog_push_box_for_two_panda_transport"
+        ],
+        "runner_types": [],
+        "role_types": {
+          "?r0": [
+            "panda"
+          ],
+          "?r1": [
+            "panda"
+          ],
+          "?r2": [
+            "unitree_go2",
+            "anymal_c"
+          ]
+        }
+      },
+      {
+        "kind": "coordination",
+        "coordinated": true,
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "roles": [
+          {
+            "variable": "?r0",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?z1"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r2"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    2,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r1"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r1",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 4,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 5,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r2",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?z1"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    0,
+                    2
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": true,
+          "target_sealed": false,
+          "target_on_agent": true
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": true
+          }
+        },
+        "cost": 7,
+        "support": 15,
+        "families": [
+          "dog_push_box_for_two_panda_transport"
+        ],
+        "runner_types": [],
+        "role_types": {
+          "?r0": [
+            "unitree_go2",
+            "anymal_c"
+          ],
+          "?r1": [
+            "panda"
+          ],
+          "?r2": [
+            "panda"
+          ]
+        }
+      },
+      {
+        "kind": "coordination",
+        "coordinated": true,
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "roles": [
+          {
+            "variable": "?r0",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 4,
+                "after": [
+                  [
+                    1,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 5,
+                "after": [
+                  [
+                    1,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    1,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r1",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?z1"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r2"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    2,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r0"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r2",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?z1"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    1,
+                    2
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": true,
+          "target_sealed": false,
+          "target_on_agent": true
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": true
+          }
+        },
+        "cost": 7,
+        "support": 14,
+        "families": [
+          "dog_push_box_for_two_panda_transport"
+        ],
+        "runner_types": [],
+        "role_types": {
+          "?r0": [
+            "panda"
+          ],
+          "?r1": [
+            "anymal_c",
+            "unitree_go2"
+          ],
+          "?r2": [
+            "panda"
+          ]
+        }
+      },
+      {
+        "kind": "coordination",
+        "coordinated": true,
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "roles": [
+          {
+            "variable": "?r0",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    1,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?z1"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    1,
+                    2
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r1",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?z1"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r0"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r2"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    0,
+                    3
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r2",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 4,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 5,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": true,
+          "target_sealed": false,
+          "target_on_agent": true
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": true
+          }
+        },
+        "cost": 7,
+        "support": 14,
+        "families": [
+          "dog_push_box_for_two_panda_transport"
+        ],
+        "runner_types": [],
+        "role_types": {
+          "?r0": [
+            "panda"
+          ],
+          "?r1": [
+            "unitree_go2",
+            "anymal_c"
+          ],
+          "?r2": [
+            "panda"
+          ]
+        }
+      },
+      {
+        "kind": "coordination",
+        "coordinated": true,
+        "effect": {
+          "key": "pos.name",
+          "subject": "?x",
+          "value": "?y"
+        },
+        "roles": [
+          {
+            "variable": "?r0",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    2,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?z1"
+                ],
+                "offset": 2,
+                "after": [
+                  [
+                    2,
+                    2
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r1",
+            "actions": [
+              {
+                "action": [
+                  "Reach",
+                  "?x"
+                ],
+                "offset": 4,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Grasp",
+                  "?x"
+                ],
+                "offset": 5,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Place",
+                  "?y"
+                ],
+                "offset": 6,
+                "after": [
+                  [
+                    0,
+                    3
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "variable": "?r2",
+            "actions": [
+              {
+                "action": [
+                  "Move",
+                  "?z1"
+                ],
+                "offset": 0,
+                "after": []
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r0"
+                ],
+                "offset": 1,
+                "after": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "action": [
+                  "Push",
+                  "?z1",
+                  "?r1"
+                ],
+                "offset": 3,
+                "after": [
+                  [
+                    0,
+                    3
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "preconditions": {
+          "subject_sealed": false,
+          "subject_in_container": false,
+          "subject_on_agent": true,
+          "target_sealed": false,
+          "target_on_agent": true
+        },
+        "types": {
+          "?x": {
+            "is_container": false,
+            "isolated": false,
+            "pushable": false
+          },
+          "?y": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": false
+          },
+          "?z1": {
+            "is_container": true,
+            "isolated": false,
+            "pushable": true
+          }
+        },
+        "cost": 7,
+        "support": 11,
+        "families": [
+          "dog_push_box_for_two_panda_transport"
+        ],
+        "runner_types": [],
+        "role_types": {
+          "?r0": [
+            "panda"
+          ],
+          "?r1": [
+            "panda"
+          ],
+          "?r2": [
+            "anymal_c",
+            "unitree_go2"
+          ]
+        }
+      }
+    ],
+    "episodes_replayed": 2301,
+    "replay_outcomes": {
+      "OK": 2301
+    },
+    "families_seen": {
+      "serve_bread_from_counter": 146,
+      "dog_push_box_for_two_panda_transport": 89,
+      "single_move_asset_to_target": 250,
+      "toast_bread_and_set_plate": 191,
+      "cut_fruit_on_board": 250,
+      "serve_bread_after_checking_cabinet": 146,
+      "wash_fruit_and_serve": 250,
+      "ensure_all_fruits_on_table": 250,
+      "set_plate_and_fork_on_table": 206,
+      "cut_two_fruits_on_board": 190,
+      "clear_table_with_two_robots_and_put_in_cabinet": 250,
+      "dog_check_environment": 83
+    }
+  },
+  "layer2": {
+    "rules": [
+      {
+        "pattern": {
+          "a_key": "pos",
+          "a_subject_is_b_target": false,
+          "a_target_is_b_subject": false,
+          "a_target_is_b_target": false,
+          "b_key": "act",
+          "b_visits_a_target": true
+        },
+        "ordered": 630,
+        "seen": 630,
+        "precision": 1.0,
+        "families": [
+          "cut_fruit_on_board",
+          "cut_two_fruits_on_board"
+        ],
+        "kept": true
+      },
+      {
+        "pattern": {
+          "a_key": "pos",
+          "a_subject_is_b_target": false,
+          "a_target_is_b_subject": true,
+          "a_target_is_b_target": false,
+          "b_key": "act",
+          "b_visits_a_target": true
+        },
+        "ordered": 441,
+        "seen": 441,
+        "precision": 1.0,
+        "families": [
+          "toast_bread_and_set_plate",
+          "wash_fruit_and_serve"
+        ],
+        "kept": true
+      },
+      {
+        "pattern": {
+          "a_key": "pos",
+          "a_subject_is_b_target": true,
+          "a_target_is_b_subject": false,
+          "a_target_is_b_target": false,
+          "b_key": "pos",
+          "b_visits_a_target": false
+        },
+        "ordered": 206,
+        "seen": 206,
+        "precision": 1.0,
+        "families": [
+          "set_plate_and_fork_on_table"
+        ],
+        "kept": true
+      },
+      {
+        "pattern": {
+          "a_key": "pos",
+          "a_subject_is_b_target": false,
+          "a_target_is_b_subject": false,
+          "a_target_is_b_target": false,
+          "b_key": "act",
+          "b_visits_a_target": false
+        },
+        "ordered": 0,
+        "seen": 441,
+        "precision": 0.0,
+        "families": [],
+        "kept": false
+      },
+      {
+        "pattern": {
+          "a_key": "pos",
+          "a_subject_is_b_target": false,
+          "a_target_is_b_subject": false,
+          "a_target_is_b_target": false,
+          "b_key": "pos",
+          "b_visits_a_target": false
+        },
+        "ordered": 0,
+        "seen": 882,
+        "precision": 0.0,
+        "families": [],
+        "kept": false
+      },
+      {
+        "pattern": {
+          "a_key": "act",
+          "a_subject_is_b_target": false,
+          "a_target_is_b_subject": false,
+          "a_target_is_b_target": false,
+          "b_key": "pos",
+          "b_visits_a_target": false
+        },
+        "ordered": 0,
+        "seen": 1071,
+        "precision": 0.0,
+        "families": [],
+        "kept": false
+      },
+      {
+        "pattern": {
+          "a_key": "act",
+          "a_subject_is_b_target": true,
+          "a_target_is_b_subject": false,
+          "a_target_is_b_target": false,
+          "b_key": "pos",
+          "b_visits_a_target": false
+        },
+        "ordered": 0,
+        "seen": 441,
+        "precision": 0.0,
+        "families": [],
+        "kept": false
+      },
+      {
+        "pattern": {
+          "a_key": "pos",
+          "a_subject_is_b_target": false,
+          "a_target_is_b_subject": false,
+          "a_target_is_b_target": true,
+          "b_key": "pos",
+          "b_visits_a_target": true
+        },
+        "ordered": 0,
+        "seen": 1214,
+        "precision": 0.0,
+        "families": [],
+        "kept": false
+      },
+      {
+        "pattern": {
+          "a_key": "pos",
+          "a_subject_is_b_target": false,
+          "a_target_is_b_subject": false,
+          "a_target_is_b_target": true,
+          "b_key": "pos",
+          "b_visits_a_target": false
+        },
+        "ordered": 0,
+        "seen": 166,
+        "precision": 0.0,
+        "families": [],
+        "kept": false
+      },
+      {
+        "pattern": {
+          "a_key": "pos",
+          "a_subject_is_b_target": false,
+          "a_target_is_b_subject": true,
+          "a_target_is_b_target": false,
+          "b_key": "pos",
+          "b_visits_a_target": true
+        },
+        "ordered": 0,
+        "seen": 206,
+        "precision": 0.0,
+        "families": [],
+        "kept": false
+      }
+    ],
+    "kept_patterns": [
+      "{\"a_key\": \"pos\", \"a_subject_is_b_target\": false, \"a_target_is_b_subject\": false, \"a_target_is_b_target\": false, \"b_key\": \"act\", \"b_visits_a_target\": true}",
+      "{\"a_key\": \"pos\", \"a_subject_is_b_target\": false, \"a_target_is_b_subject\": true, \"a_target_is_b_target\": false, \"b_key\": \"act\", \"b_visits_a_target\": true}",
+      "{\"a_key\": \"pos\", \"a_subject_is_b_target\": true, \"a_target_is_b_subject\": false, \"a_target_is_b_target\": false, \"b_key\": \"pos\", \"b_visits_a_target\": false}"
+    ],
+    "min_support": 30,
+    "min_precision": 0.9,
+    "orderings_recalled": 1277,
+    "orderings_total": 1277,
+    "recall": 1.0,
+    "false_orderings": 0
+  },
+  "layer3": {
+    "episodes": 3201,
+    "assets": [
+      "cabinet",
+      "apple",
+      "knife",
+      "banana",
+      "tomato",
+      "wooden cutting board",
+      "peach",
+      "bread",
+      "pear",
+      "sink",
+      "plate",
+      "bowl",
+      "toaster",
+      "fork",
+      "spoon",
+      "pumpkin",
+      "scissors",
+      "cardboardbox",
+      "oven",
+      "cup",
+      "drawer",
+      "fridge",
+      "kettle",
+      "pizza",
+      "bottle",
+      "wine",
+      "meat",
+      "cooling fan"
+    ],
+    "places": [
+      "kitchen work area",
+      "kitchen island area",
+      "cabinet",
+      "table",
+      "room_cabinet",
+      "plate",
+      "apple",
+      "bowl",
+      "knife",
+      "banana",
+      "tomato",
+      "wooden cutting board",
+      "peach",
+      "sink",
+      "bread",
+      "pear",
+      "room",
+      "room_toaster",
+      "toaster",
+      "fork",
+      "spoon",
+      "pumpkin",
+      "scissors",
+      "cardboardbox",
+      "groundA",
+      "mask1",
+      "rack",
+      "R3",
+      "R2",
+      "R1",
+      "oven",
+      "cup",
+      "drawer",
+      "fridge",
+      "kettle",
+      "pizza",
+      "bottle",
+      "wine",
+      "meat",
+      "cooling fan"
+    ],
+    "goal_targets": {
+      "table": 1198,
+      "cabinet": 844,
+      "plate": 416,
+      "bowl": 397,
+      "kitchen work area": 385,
+      "kitchen island area": 361,
+      "sink": 89,
+      "rack": 81
+    },
+    "self_check_every_goal_target_known": true
+  },
+  "self_check": {
+    "episodes": 200,
+    "solved": 200,
+    "rate": 1.0,
+    "outcomes": {
+      "SOLVED": 200
+    }
+  }
+}

@@ -1,0 +1,560 @@
+{
+ "cells": [
+  {
+   "model": "72B",
+   "split": "id",
+   "path": "results/viki_memory_experiments/amendment11/v3_ours_72B_id.jsonl",
+   "rows": 924,
+   "expected": 924,
+   "sha256": "c5d8c9c69d609b2c100d3e350fd85c9652afe9befd52433c79f1ef6e51bf4ebe",
+   "solved": 721,
+   "reask_rows": 46,
+   "rows_with_raw": 924,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen2.5-vl-72b-instruct/id.jsonl",
+   "fig3_sha256": "d68a779f5ab54838d96024d81b74fc093095887f614448c1f316e664f11002e3",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": "results/viki_memory_experiments/amendment11/v3_ours_72B_id.jsonl",
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl",
+   "fig3_n": 924,
+   "fig3_solved": 721,
+   "fig3_first_turn_identical": 924,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl",
+   "first_turn_source_sha256": "8edea9300c7ade76e65aeafa68dacc7e9df1e1510dd0483fb64e689c3200e7bc",
+   "source_rows": 924,
+   "raw_equals_source": 924,
+   "status": "ok"
+  },
+  {
+   "model": "72B",
+   "split": "ood_single_family",
+   "path": "results/viki_memory_experiments/amendment11/v3_ours_72B_heldout.jsonl",
+   "rows": 924,
+   "expected": 924,
+   "sha256": "beba32a80ba161f395d042b2848da90f42da8eafb575b7e445adb6abb8160382",
+   "solved": 501,
+   "reask_rows": 266,
+   "rows_with_raw": 924,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen2.5-vl-72b-instruct/ood_single_family.jsonl",
+   "fig3_sha256": "8fee13e4d703c4a106c4e42c945c90405e59c0b25586c46dbbdad040157c9052",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": null,
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl",
+   "fig3_n": 924,
+   "fig3_solved": 501,
+   "fig3_first_turn_identical": 924,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/intent_crew_clean.jsonl",
+   "first_turn_source_sha256": "8edea9300c7ade76e65aeafa68dacc7e9df1e1510dd0483fb64e689c3200e7bc",
+   "source_rows": 924,
+   "raw_equals_source": 924,
+   "status": "ok"
+  },
+  {
+   "model": "72B",
+   "split": "cg_image",
+   "path": "results/viki_memory_experiments/amendment11/v3_oursall_72B_imaged.jsonl",
+   "rows": 297,
+   "expected": 297,
+   "sha256": "e1a35dc990a08d83c310e58a089543da3884abe622462ec092100f6846f48274",
+   "solved": 237,
+   "reask_rows": 0,
+   "rows_with_raw": 297,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen2.5-vl-72b-instruct/cg_image.jsonl",
+   "fig3_sha256": "f6d57aaacadceaa659f48fa7907e66dbb675efb63c4b5ec488d46d8f38166425",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": "results/viki_memory_experiments/amendment11/v3_oursall_72B_imaged.jsonl",
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/recomb_imaged_agentic.jsonl",
+   "fig3_n": 297,
+   "fig3_solved": 237,
+   "fig3_first_turn_identical": 297,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/recomb_imaged_agentic.jsonl",
+   "first_turn_source_sha256": "2f3aea5df5556aa7b82efb4abcd6dcab203de4dc6f80991c6a1e6404cf23919d",
+   "source_rows": 297,
+   "raw_equals_source": 297,
+   "status": "ok"
+  },
+  {
+   "model": "72B",
+   "split": "cg_text",
+   "path": "results/viki_memory_experiments/amendment11/v3_oursall_72B_text.jsonl",
+   "rows": 297,
+   "expected": 297,
+   "sha256": "e6e62c1b60315dd60819c6d455844d13563a487ec5d9c624db8a5c1d4e1ad5f3",
+   "solved": 256,
+   "reask_rows": 0,
+   "rows_with_raw": 297,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen2.5-vl-72b-instruct/pure_text.jsonl",
+   "fig3_sha256": "ae663dfa3eb4c2d07e56af153af0b91e8ac910d544dd7f16ed9574cceba6618b",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": "results/viki_memory_experiments/amendment11/v3_oursall_72B_text.jsonl",
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/recomb_text_agentic.jsonl",
+   "fig3_n": 297,
+   "fig3_solved": 256,
+   "fig3_first_turn_identical": 297,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/recomb_text_agentic.jsonl",
+   "first_turn_source_sha256": "85fe56f9b24a4ba4a6d3bcb088b5690f3b2f83cb58939b0fe0505ca6b950b37f",
+   "source_rows": 297,
+   "raw_equals_source": 297,
+   "status": "ok"
+  },
+  {
+   "model": "30B",
+   "split": "id",
+   "path": "results/viki_memory_experiments/amendment11/v3_ours_30B_id.jsonl",
+   "rows": 924,
+   "expected": 924,
+   "sha256": "bbcb57b884063b8f4decc1fea50d2787dc66fe3432bfbbb4c306a47641c1de1a",
+   "solved": 530,
+   "reask_rows": 71,
+   "rows_with_raw": 924,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen3-vl-30b-a3b-instruct/id.jsonl",
+   "fig3_sha256": "f6e26ed6f819723c8a2a08b30a244fbaf7ff31d0e65055d2d3c7f69124e16967",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": "results/viki_memory_experiments/amendment11/v3_ours_30B_id.jsonl",
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/m30_id.jsonl",
+   "fig3_n": 924,
+   "fig3_solved": 530,
+   "fig3_first_turn_identical": 924,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/m30_id.jsonl",
+   "first_turn_source_sha256": "bbc858418e9f05e958346333e372f591cdfcad472e570393bcf415e29be177f6",
+   "source_rows": 924,
+   "raw_equals_source": 924,
+   "status": "ok"
+  },
+  {
+   "model": "30B",
+   "split": "ood_single_family",
+   "path": "results/viki_memory_experiments/amendment11/v3_ours_30B_heldout.jsonl",
+   "rows": 924,
+   "expected": 924,
+   "sha256": "e1e5f3a5e9b097cb5f488dd8e0b087d94cf1bdd952e5a771bec927c4e182a234",
+   "solved": 327,
+   "reask_rows": 268,
+   "rows_with_raw": 924,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen3-vl-30b-a3b-instruct/ood_single_family.jsonl",
+   "fig3_sha256": "b95104b2878c65f903255e7833b661db944c58f70a09eb054aded8655be8ed49",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": null,
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/m30_id.jsonl",
+   "fig3_n": 924,
+   "fig3_solved": 327,
+   "fig3_first_turn_identical": 924,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/m30_id.jsonl",
+   "first_turn_source_sha256": "bbc858418e9f05e958346333e372f591cdfcad472e570393bcf415e29be177f6",
+   "source_rows": 924,
+   "raw_equals_source": 924,
+   "status": "ok"
+  },
+  {
+   "model": "30B",
+   "split": "cg_image",
+   "path": "results/viki_memory_experiments/amendment11/v3_oursall_30B_imaged.jsonl",
+   "rows": 297,
+   "expected": 297,
+   "sha256": "79cc7e2c34eb76b810dc07615598a3a4c8c783cdbf2a0ea4064056cda732e453",
+   "solved": 193,
+   "reask_rows": 0,
+   "rows_with_raw": 297,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen3-vl-30b-a3b-instruct/cg_image.jsonl",
+   "fig3_sha256": "b1df477a137d893ca1eac079abd72297e467f2e729c786fcb099869196053af7",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": "results/viki_memory_experiments/amendment11/v3_oursall_30B_imaged.jsonl",
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/m30_recomb_imaged.jsonl",
+   "fig3_n": 297,
+   "fig3_solved": 193,
+   "fig3_first_turn_identical": 297,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/m30_recomb_imaged.jsonl",
+   "first_turn_source_sha256": "ef4ef0bf5e69746e9f48bbdc0a648ff8b89c3ec81f04df3cdce1c1ddefd5bd28",
+   "source_rows": 297,
+   "raw_equals_source": 297,
+   "status": "ok"
+  },
+  {
+   "model": "30B",
+   "split": "cg_text",
+   "path": "results/viki_memory_experiments/amendment11/v3_oursall_30B_text.jsonl",
+   "rows": 297,
+   "expected": 297,
+   "sha256": "39a165ee649b062f083ad9601cdbc3b4ca83e6e0ce3504c8b1ae4210698c7ff4",
+   "solved": 215,
+   "reask_rows": 0,
+   "rows_with_raw": 297,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen3-vl-30b-a3b-instruct/pure_text.jsonl",
+   "fig3_sha256": "4ef844321a58136697dc0358d2adb77084c70ae1e4e2a0332413425409dbfb9c",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": "results/viki_memory_experiments/amendment11/v3_oursall_30B_text.jsonl",
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/m30_recomb_text.jsonl",
+   "fig3_n": 297,
+   "fig3_solved": 215,
+   "fig3_first_turn_identical": 297,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/m30_recomb_text.jsonl",
+   "first_turn_source_sha256": "2561a3d1e5a1282f5e87531cb86151f204af761fe3edc389b98659dd14790944",
+   "source_rows": 297,
+   "raw_equals_source": 297,
+   "status": "ok"
+  },
+  {
+   "model": "7B",
+   "split": "id",
+   "path": "results/viki_memory_experiments/amendment11/v3_ours_7B_id.jsonl",
+   "rows": 924,
+   "expected": 924,
+   "sha256": "7e73d404abaa8acf89c11931429355da5093f5466729b26cbf0dde84bd794618",
+   "solved": 128,
+   "reask_rows": 135,
+   "rows_with_raw": 924,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen2.5-vl-7b-instruct/id.jsonl",
+   "fig3_sha256": "80f4b5d7671e63e304896dbdfb8aeaa4ae72b2d8acf0fcef5bc0b99a7b73e924",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": "results/viki_memory_experiments/amendment11/v3_ours_7B_id.jsonl",
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/m7_id.jsonl",
+   "fig3_n": 924,
+   "fig3_solved": 128,
+   "fig3_first_turn_identical": 924,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/m7_id.jsonl",
+   "first_turn_source_sha256": "309202b09fdde240bf8f87b126266086f80793d113029d5cc8956d313243d4bc",
+   "source_rows": 924,
+   "raw_equals_source": 924,
+   "status": "ok"
+  },
+  {
+   "model": "7B",
+   "split": "ood_single_family",
+   "path": "results/viki_memory_experiments/amendment11/v3_ours_7B_heldout.jsonl",
+   "rows": 924,
+   "expected": 924,
+   "sha256": "f353736e895dd690df007862307a5099b68c0585b1e54e22dbea4adbd8bc42ff",
+   "solved": 108,
+   "reask_rows": 244,
+   "rows_with_raw": 924,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen2.5-vl-7b-instruct/ood_single_family.jsonl",
+   "fig3_sha256": "41b5e1fb080a2f60f8f99b771ddd77ba322adc9f37fcb8f7d08a092c5f21e2f7",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": null,
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/m7_id.jsonl",
+   "fig3_n": 924,
+   "fig3_solved": 108,
+   "fig3_first_turn_identical": 924,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/m7_id.jsonl",
+   "first_turn_source_sha256": "309202b09fdde240bf8f87b126266086f80793d113029d5cc8956d313243d4bc",
+   "source_rows": 924,
+   "raw_equals_source": 924,
+   "status": "ok"
+  },
+  {
+   "model": "7B",
+   "split": "cg_image",
+   "path": "results/viki_memory_experiments/amendment11/v3_oursall_7B_imaged.jsonl",
+   "rows": 297,
+   "expected": 297,
+   "sha256": "761db035371ccecc75e0d8731a2f3ac527c4d226b0ed83546bd4bbf6537044eb",
+   "solved": 45,
+   "reask_rows": 0,
+   "rows_with_raw": 297,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen2.5-vl-7b-instruct/cg_image.jsonl",
+   "fig3_sha256": "e3e5338cbb572837085613c8905f133822e6d9f0482e44b233577aa437122193",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": "results/viki_memory_experiments/amendment11/v3_oursall_7B_imaged.jsonl",
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/m7_recomb_imaged.jsonl",
+   "fig3_n": 297,
+   "fig3_solved": 45,
+   "fig3_first_turn_identical": 297,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/m7_recomb_imaged.jsonl",
+   "first_turn_source_sha256": "b6499b52a272c031f640192a053d753c1ad4b05ff1e7380499362339fb308758",
+   "source_rows": 297,
+   "raw_equals_source": 297,
+   "status": "ok"
+  },
+  {
+   "model": "7B",
+   "split": "cg_text",
+   "path": "results/viki_memory_experiments/amendment11/v3_oursall_7B_text.jsonl",
+   "rows": 297,
+   "expected": 297,
+   "sha256": "4f2828ee54f2fb06c278f0964f1ed9bd0fce1e04592eb37de70efee0b0d0d28f",
+   "solved": 76,
+   "reask_rows": 1,
+   "rows_with_raw": 297,
+   "fig3_rows": "results/paper_viki_iclr2027/rows/rq2/full/qwen2.5-vl-7b-instruct/pure_text.jsonl",
+   "fig3_sha256": "10878cb2ccd276d89844d58fcde25fd850257c4826fc83a8ef01426e1d118a58",
+   "fig3_sha_matches_SHA256SUMS": true,
+   "registry_source": "results/viki_memory_experiments/amendment11/v3_oursall_7B_text.jsonl",
+   "registry_replay_source": "results/viki_memory_experiments/amendment11/m7_recomb_text.jsonl",
+   "fig3_n": 297,
+   "fig3_solved": 76,
+   "fig3_first_turn_identical": 297,
+   "fig3_first_turn_differ": 0,
+   "fig3_missing": 0,
+   "first_turn_source": "results/viki_memory_experiments/amendment11/m7_recomb_text.jsonl",
+   "first_turn_source_sha256": "3d4553cdb69f9d69276c10daf53a4ac358e3448a347a201fd27e4b94f4ddb2df",
+   "source_rows": 297,
+   "raw_equals_source": 297,
+   "status": "ok"
+  }
+ ],
+ "artefacts": [
+  {
+   "role": "planner entry (consumer)",
+   "path": "our_method/skill_memory_v2/planner.py",
+   "exists": true,
+   "sha256": "c84fee072b4ba528855a5b4b6e70b1c7af36d9809dab51dca940e51864e4fbe1",
+   "note": "plan() -> compose() -> chains_for()/schedule()"
+  },
+  {
+   "role": "memory class (operator selection, binding of ?z, _usable filter)",
+   "path": "our_method/skill_memory_v2/memory.py",
+   "exists": true,
+   "sha256": "ba8c65749b2a485c133afae857b1ce88ced80000a6bc5d93eee49f96636b1f9d",
+   "note": ""
+  },
+  {
+   "role": "runner: prompt, answer parsing, re-ask",
+   "path": "scripts/viki_eval_v2_intent_choice.py",
+   "exists": true,
+   "sha256": "2e82be06f55606675cafdf3f607262c7c9391271de72b10874a2efcaa13cf5ea",
+   "note": "re-ask: REASK constant and single second turn at lines [64, 319, 332]"
+  },
+  {
+   "role": "ordering rules + vocabulary + layer1 (admitted, ID/CG column)",
+   "path": "outputs/v3_memories/memory_all.json",
+   "exists": true,
+   "sha256": "d580b15c90b539aee5cb9f761d460f4b8e57b36b84af6ca4b8379f59d8237c87",
+   "note": "layer2 canonical sha 5cababcceb0b58d20ac6819b75ea095c759701240c5f3c42659ddb9671cda6b2 (3 kept rules); layer3 canonical sha 0378c3aef2ef724334406317c2c2ff5ab58ef0abfad16abac5a9a1c10eabeded; layer1 8 operators"
+  },
+  {
+   "role": "admitted memory, OOD fold",
+   "path": "outputs/v3_memories/memory_heldout_clear_table_with_two_robots_and_put_in_cabinet.json",
+   "exists": true,
+   "sha256": "82515a80fcca1d82eeb6fb829808989238d1c74d0b6afe51dcf7679d069fe30a",
+   "note": "layer1 7 ops; layer2 kept 3"
+  },
+  {
+   "role": "admitted memory, OOD fold",
+   "path": "outputs/v3_memories/memory_heldout_cut_fruit_on_board.json",
+   "exists": true,
+   "sha256": "129b8c46f9eb52c376471140dbf10ae84a89520ac20810cb8885e581e3a12c60",
+   "note": "layer1 7 ops; layer2 kept 3"
+  },
+  {
+   "role": "admitted memory, OOD fold",
+   "path": "outputs/v3_memories/memory_heldout_cut_two_fruits_on_board.json",
+   "exists": true,
+   "sha256": "d0338d6773b368ead799f98d92e8746d30298568b659b949494488a4b87bb7e0",
+   "note": "layer1 6 ops; layer2 kept 3"
+  },
+  {
+   "role": "admitted memory, OOD fold",
+   "path": "outputs/v3_memories/memory_heldout_dog_push_box_for_two_panda_transport.json",
+   "exists": true,
+   "sha256": "af0b768b72ffa91b0a5a81c76e5c8d3380beb476af9b5d7579fce7cebe0bb94d",
+   "note": "layer1 8 ops; layer2 kept 3"
+  },
+  {
+   "role": "admitted memory, OOD fold",
+   "path": "outputs/v3_memories/memory_heldout_ensure_all_fruits_on_table.json",
+   "exists": true,
+   "sha256": "edc5850d7e47d3fe436701633bbd907522494156859346b112b0c7fcf05d2fe4",
+   "note": "layer1 8 ops; layer2 kept 3"
+  },
+  {
+   "role": "admitted memory, OOD fold",
+   "path": "outputs/v3_memories/memory_heldout_parallel_human_dual_asset_to_plate_or_bowl.json",
+   "exists": true,
+   "sha256": "14665bd2f779c7f1c7442cadeecaa0354a01bb30a781fcb8fbf7be94ad674ef6",
+   "note": "layer1 8 ops; layer2 kept 3"
+  },
+  {
+   "role": "admitted memory, OOD fold",
+   "path": "outputs/v3_memories/memory_heldout_set_plate_and_fork_on_table.json",
+   "exists": true,
+   "sha256": "4fa5935e0c9b62d6b78c288f5561add9448dbeab5c9c09eadc675da25e2ede5e",
+   "note": "layer1 8 ops; layer2 kept 2"
+  },
+  {
+   "role": "admitted memory, OOD fold",
+   "path": "outputs/v3_memories/memory_heldout_toast_bread_and_set_plate.json",
+   "exists": true,
+   "sha256": "5f0e67a3eed6238b067e7bc92676f3ae2673c73826bbe257c12ed62593aae1d1",
+   "note": "layer1 8 ops; layer2 kept 3"
+  },
+  {
+   "role": "ordering rule application (layer 2)",
+   "path": "our_method/skill_memory_v2/dependencies.py",
+   "exists": true,
+   "sha256": "7caeff9459fd3c2e1f2f214f99196faf7897f4c27f9d29f010e99de12ac0186f",
+   "note": ""
+  },
+  {
+   "role": "vocabulary grounding (layer 3)",
+   "path": "our_method/skill_memory_v2/vocabulary.py",
+   "exists": true,
+   "sha256": "33d6853ae986870167d9d0726902c0c793b3e177ba618cd8c1a987a4c8cf4eb1",
+   "note": ""
+  },
+  {
+   "role": "simulator wrapper, state_facts/object_properties",
+   "path": "our_method/skill_memory_v2/simulator.py",
+   "exists": true,
+   "sha256": "722b68622a434ef557cea794fce2e5e8ae7c45859149da86abf2974a3cbc518f",
+   "note": ""
+  },
+  {
+   "role": "replay-based operator mining (reference-library builder)",
+   "path": "our_method/skill_memory_v2/induction.py",
+   "exists": true,
+   "sha256": "5fac1ee5aebdeb449c51113ffe41ea44b1f6accc11f8f3f5d7db190f1f100254",
+   "note": ""
+  },
+  {
+   "role": "reference-library build entry",
+   "path": "our_method/skill_memory_v2/build.py",
+   "exists": true,
+   "sha256": "b30967a339cae86ee00bb72910e166c4641b6614b4b7af694ffecbf494c59e67",
+   "note": ""
+  },
+  {
+   "role": "execution check: Workbench.run_operator / plan_with / ordering_ok",
+   "path": "scripts/viki_induction_tools.py",
+   "exists": true,
+   "sha256": "4b228a3ae5e5a9dd69ed20ca9dfda511ab80563fc08ea0b25c0bf5359fc45e6b",
+   "note": ""
+  },
+  {
+   "role": "admission: works on >=2 holdout + marginal coverage/ordering gain",
+   "path": "scripts/viki_agentic_rung_abstraction.py",
+   "exists": true,
+   "sha256": "92cf31845394cc5ec8cfa72cd3d9d9fa7e8ebfad72ccc6e3e9dbeb40da707201",
+   "note": ""
+  },
+  {
+   "role": "admission: dedup + measured support >=2 over 60 probe episodes",
+   "path": "scripts/viki_assemble_agentic_library.py",
+   "exists": true,
+   "sha256": "aecfe99aa1b2e9c81949c249c7ec171c2683a5a99a562130994d3c7d20bd8bb7",
+   "note": ""
+  },
+  {
+   "role": "union of family libraries into a column memory",
+   "path": "scripts/viki_union_library.py",
+   "exists": true,
+   "sha256": "98d2aba5b612543720c047b0839fefb5076530ac6d078b6d500a252ff11c1dde",
+   "note": ""
+  },
+  {
+   "role": "column build driver",
+   "path": "scripts/drivers/viki_v2_evaluate.py",
+   "exists": true,
+   "sha256": "1b69a559ef607127ebd0907beb414cb92d97a7efbb4081e3e2fbc11ed52986b1",
+   "note": ""
+  },
+  {
+   "role": "round-2 validation episodes per family (holdout, coverage pool)",
+   "path": "outputs/v3/targets.json",
+   "exists": true,
+   "sha256": "4bc8f7e8563c8915a9c067a0aa0ca8d52ba7aabf6e6d6ad7bd1b30f6fee1a9d2",
+   "note": ""
+  },
+  {
+   "role": "19-operator mined reference library (not an admitted library)",
+   "path": "results/viki_memory_experiments/amendment11/skill_memory_v2.json",
+   "exists": true,
+   "sha256": "99dc28d4d3bb8fc31189dbea54a91bb81c005eb198d02b3fe59afe984bda0213",
+   "note": ""
+  }
+ ],
+ "train_rows": 7196,
+ "induction_half": 3598,
+ "families": {
+  "sequential_pick_two_and_place": 207,
+  "serve_bread_from_counter": 146,
+  "dog_push_box_for_two_panda_transport": 89,
+  "single_move_asset_to_target": 430,
+  "toast_bread_and_set_plate": 191,
+  "cut_fruit_on_board": 384,
+  "serve_bread_after_checking_cabinet": 146,
+  "wash_fruit_and_serve": 315,
+  "ensure_all_fruits_on_table": 599,
+  "parallel_human_dual_asset_to_plate_or_bowl": 190,
+  "set_plate_and_fork_on_table": 206,
+  "cut_two_fruits_on_board": 190,
+  "clear_table_with_two_robots_and_put_in_cabinet": 422,
+  "dog_check_environment": 83
+ },
+ "family_effect_keys": {
+  "sequential_pick_two_and_place": [
+   "pos.name"
+  ],
+  "serve_bread_from_counter": [
+   "pos.name"
+  ],
+  "dog_push_box_for_two_panda_transport": [
+   "pos.name"
+  ],
+  "single_move_asset_to_target": [
+   "pos.name"
+  ],
+  "toast_bread_and_set_plate": [
+   "is_activated",
+   "pos.name"
+  ],
+  "cut_fruit_on_board": [
+   "is_activated",
+   "pos.name"
+  ],
+  "serve_bread_after_checking_cabinet": [
+   "pos.name"
+  ],
+  "wash_fruit_and_serve": [
+   "is_activated",
+   "pos.name"
+  ],
+  "ensure_all_fruits_on_table": [
+   "pos.name"
+  ],
+  "parallel_human_dual_asset_to_plate_or_bowl": [
+   "pos.name"
+  ],
+  "set_plate_and_fork_on_table": [
+   "pos.name"
+  ],
+  "cut_two_fruits_on_board": [
+   "is_activated",
+   "pos.name"
+  ],
+  "clear_table_with_two_robots_and_put_in_cabinet": [
+   "pos.name"
+  ],
+  "dog_check_environment": [
+   "is_activated"
+  ]
+ },
+ "gate": {
+  "four_split_files_x3": true,
+  "planner_exists": true,
+  "schema_exists": true,
+  "fig3_first_turn_identical": true,
+  "problems": [],
+  "PASS": true
+ }
+}

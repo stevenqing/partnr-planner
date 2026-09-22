@@ -1,0 +1,9006 @@
+{
+ "n": 1800,
+ "source": "/mnt/pfs/devs/pn5wp/shishuqing/VIKI-R/data/VIKI-R/viki/VIKI-L2/test.parquet",
+ "rows": [
+  {
+   "train_index": 0,
+   "task_id": "3464_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1,
+   "task_id": "1980_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 2,
+   "task_id": "3284_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 3,
+   "task_id": "1481_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 4,
+   "task_id": "1370_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 5,
+   "task_id": "3120_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 6,
+   "task_id": "5176_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 7,
+   "task_id": "2084_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 8,
+   "task_id": "6855_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 9,
+   "task_id": "885_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 10,
+   "task_id": "1044_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 11,
+   "task_id": "1888_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 12,
+   "task_id": "2777_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 13,
+   "task_id": "7632_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 14,
+   "task_id": "4566_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 15,
+   "task_id": "758_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 16,
+   "task_id": "1900_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 17,
+   "task_id": "2798_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 18,
+   "task_id": "176_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 19,
+   "task_id": "4363_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 20,
+   "task_id": "3059_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 21,
+   "task_id": "7748_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 22,
+   "task_id": "3377_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 23,
+   "task_id": "6473_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 24,
+   "task_id": "3035_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 25,
+   "task_id": "303_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 26,
+   "task_id": "4554_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 27,
+   "task_id": "4168_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 28,
+   "task_id": "2018_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 29,
+   "task_id": "2885_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 30,
+   "task_id": "3456_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 31,
+   "task_id": "3390_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 32,
+   "task_id": "2525_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 33,
+   "task_id": "1828_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 34,
+   "task_id": "1239_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 35,
+   "task_id": "4939_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 36,
+   "task_id": "5425_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 37,
+   "task_id": "1502_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 38,
+   "task_id": "1734_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 39,
+   "task_id": "7543_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 40,
+   "task_id": "1943_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 41,
+   "task_id": "2990_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 42,
+   "task_id": "1206_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 43,
+   "task_id": "4326_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 44,
+   "task_id": "701_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 45,
+   "task_id": "4877_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 46,
+   "task_id": "260_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 47,
+   "task_id": "5937_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 48,
+   "task_id": "3173_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 49,
+   "task_id": "1530_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 50,
+   "task_id": "2958_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 51,
+   "task_id": "2088_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 52,
+   "task_id": "5955_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 53,
+   "task_id": "3856_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 54,
+   "task_id": "75_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 55,
+   "task_id": "506_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 56,
+   "task_id": "1030_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 57,
+   "task_id": "7573_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 58,
+   "task_id": "2927_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 59,
+   "task_id": "4117_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 60,
+   "task_id": "1454_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 61,
+   "task_id": "2698_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 62,
+   "task_id": "3870_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 63,
+   "task_id": "2452_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 64,
+   "task_id": "837_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 65,
+   "task_id": "5300_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 66,
+   "task_id": "7232_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 67,
+   "task_id": "4263_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 68,
+   "task_id": "4307_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 69,
+   "task_id": "955_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 70,
+   "task_id": "2579_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 71,
+   "task_id": "3208_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 72,
+   "task_id": "1248_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 73,
+   "task_id": "2479_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 74,
+   "task_id": "1675_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 75,
+   "task_id": "1292_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 76,
+   "task_id": "2347_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 77,
+   "task_id": "1031_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 78,
+   "task_id": "3800_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 79,
+   "task_id": "2946_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 80,
+   "task_id": "1875_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 81,
+   "task_id": "3405_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 82,
+   "task_id": "1084_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 83,
+   "task_id": "572_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 84,
+   "task_id": "1956_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 85,
+   "task_id": "1915_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 86,
+   "task_id": "2316_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 87,
+   "task_id": "1043_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 88,
+   "task_id": "1238_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 89,
+   "task_id": "82_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 90,
+   "task_id": "564_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 91,
+   "task_id": "2271_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 92,
+   "task_id": "3661_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 93,
+   "task_id": "3090_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 94,
+   "task_id": "70_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 95,
+   "task_id": "1468_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 96,
+   "task_id": "3104_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 97,
+   "task_id": "4607_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 98,
+   "task_id": "1782_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 99,
+   "task_id": "1074_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 100,
+   "task_id": "5404_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 101,
+   "task_id": "3030_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 102,
+   "task_id": "4438_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 103,
+   "task_id": "6277_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 104,
+   "task_id": "7361_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 105,
+   "task_id": "5845_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 106,
+   "task_id": "436_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 107,
+   "task_id": "2534_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 108,
+   "task_id": "1455_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 109,
+   "task_id": "5501_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 110,
+   "task_id": "7699_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 111,
+   "task_id": "1636_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 112,
+   "task_id": "3780_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 113,
+   "task_id": "1433_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 114,
+   "task_id": "1382_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 115,
+   "task_id": "130_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 116,
+   "task_id": "982_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 117,
+   "task_id": "4493_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 118,
+   "task_id": "4388_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 119,
+   "task_id": "1850_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 120,
+   "task_id": "1925_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 121,
+   "task_id": "196_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 122,
+   "task_id": "391_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 123,
+   "task_id": "4772_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 124,
+   "task_id": "3050_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 125,
+   "task_id": "4514_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 126,
+   "task_id": "3131_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 127,
+   "task_id": "2484_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 128,
+   "task_id": "5900_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 129,
+   "task_id": "1942_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 130,
+   "task_id": "2652_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 131,
+   "task_id": "5324_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 132,
+   "task_id": "5061_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 133,
+   "task_id": "4107_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 134,
+   "task_id": "1010_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 135,
+   "task_id": "5381_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 136,
+   "task_id": "4201_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 137,
+   "task_id": "3071_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 138,
+   "task_id": "1875_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 139,
+   "task_id": "4243_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 140,
+   "task_id": "160_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 141,
+   "task_id": "2744_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 142,
+   "task_id": "7027_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 143,
+   "task_id": "2263_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 144,
+   "task_id": "4544_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 145,
+   "task_id": "326_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 146,
+   "task_id": "4298_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 147,
+   "task_id": "4554_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 148,
+   "task_id": "1675_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 149,
+   "task_id": "904_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 150,
+   "task_id": "1782_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 151,
+   "task_id": "2857_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 152,
+   "task_id": "3707_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 153,
+   "task_id": "1781_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 154,
+   "task_id": "4834_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 155,
+   "task_id": "4649_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 156,
+   "task_id": "4898_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 157,
+   "task_id": "1504_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 158,
+   "task_id": "5013_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 159,
+   "task_id": "343_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 160,
+   "task_id": "7247_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 161,
+   "task_id": "4030_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 162,
+   "task_id": "1309_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 163,
+   "task_id": "6520_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 164,
+   "task_id": "1614_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 165,
+   "task_id": "2503_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 166,
+   "task_id": "2581_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 167,
+   "task_id": "4254_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 168,
+   "task_id": "1671_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 169,
+   "task_id": "4565_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 170,
+   "task_id": "2866_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 171,
+   "task_id": "1366_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 172,
+   "task_id": "5885_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 173,
+   "task_id": "5905_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 174,
+   "task_id": "7674_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 175,
+   "task_id": "2256_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 176,
+   "task_id": "3687_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 177,
+   "task_id": "1845_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 178,
+   "task_id": "4061_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 179,
+   "task_id": "2771_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 180,
+   "task_id": "1972_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 181,
+   "task_id": "6615_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 182,
+   "task_id": "7322_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 183,
+   "task_id": "6535_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 184,
+   "task_id": "2209_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 185,
+   "task_id": "3856_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 186,
+   "task_id": "4200_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 187,
+   "task_id": "408_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 188,
+   "task_id": "3594_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 189,
+   "task_id": "1421_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 190,
+   "task_id": "5695_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 191,
+   "task_id": "6455_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 192,
+   "task_id": "6557_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 193,
+   "task_id": "3839_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 194,
+   "task_id": "1494_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 195,
+   "task_id": "2997_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 196,
+   "task_id": "7621_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 197,
+   "task_id": "415_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 198,
+   "task_id": "4690_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 199,
+   "task_id": "4420_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 200,
+   "task_id": "6803_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 201,
+   "task_id": "2664_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 202,
+   "task_id": "6207_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 203,
+   "task_id": "565_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 204,
+   "task_id": "3519_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 205,
+   "task_id": "2069_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 206,
+   "task_id": "7634_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 207,
+   "task_id": "2491_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 208,
+   "task_id": "1112_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 209,
+   "task_id": "1469_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 210,
+   "task_id": "5112_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 211,
+   "task_id": "7143_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 212,
+   "task_id": "4600_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 213,
+   "task_id": "5558_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 214,
+   "task_id": "3787_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 215,
+   "task_id": "6398_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 216,
+   "task_id": "770_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 217,
+   "task_id": "1371_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 218,
+   "task_id": "2728_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 219,
+   "task_id": "2437_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 220,
+   "task_id": "1057_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 221,
+   "task_id": "89_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 222,
+   "task_id": "6432_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 223,
+   "task_id": "2186_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 224,
+   "task_id": "902_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 225,
+   "task_id": "2077_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 226,
+   "task_id": "700_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 227,
+   "task_id": "1076_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 228,
+   "task_id": "2108_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 229,
+   "task_id": "6453_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 230,
+   "task_id": "4093_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 231,
+   "task_id": "2317_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 232,
+   "task_id": "816_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 233,
+   "task_id": "2568_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 234,
+   "task_id": "969_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 235,
+   "task_id": "4664_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 236,
+   "task_id": "155_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 237,
+   "task_id": "3591_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 238,
+   "task_id": "580_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 239,
+   "task_id": "544_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 240,
+   "task_id": "5027_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 241,
+   "task_id": "3609_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 242,
+   "task_id": "1316_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 243,
+   "task_id": "787_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 244,
+   "task_id": "35_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 245,
+   "task_id": "2163_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 246,
+   "task_id": "2022_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 247,
+   "task_id": "2849_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 248,
+   "task_id": "1933_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 249,
+   "task_id": "2083_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 250,
+   "task_id": "4355_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 251,
+   "task_id": "7741_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 252,
+   "task_id": "4714_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 253,
+   "task_id": "3382_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 254,
+   "task_id": "4650_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 255,
+   "task_id": "4325_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 256,
+   "task_id": "2311_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 257,
+   "task_id": "3428_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 258,
+   "task_id": "1913_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 259,
+   "task_id": "1145_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 260,
+   "task_id": "5332_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 261,
+   "task_id": "1728_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 262,
+   "task_id": "1298_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 263,
+   "task_id": "3055_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 264,
+   "task_id": "613_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 265,
+   "task_id": "3576_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 266,
+   "task_id": "1727_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 267,
+   "task_id": "1536_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 268,
+   "task_id": "2968_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 269,
+   "task_id": "2156_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 270,
+   "task_id": "1595_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 271,
+   "task_id": "4337_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 272,
+   "task_id": "6196_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 273,
+   "task_id": "327_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 274,
+   "task_id": "1912_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 275,
+   "task_id": "1893_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 276,
+   "task_id": "119_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 277,
+   "task_id": "6086_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 278,
+   "task_id": "53_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 279,
+   "task_id": "7112_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 280,
+   "task_id": "3198_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 281,
+   "task_id": "2210_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 282,
+   "task_id": "200_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 283,
+   "task_id": "3693_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 284,
+   "task_id": "2340_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 285,
+   "task_id": "2640_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 286,
+   "task_id": "4132_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 287,
+   "task_id": "3741_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 288,
+   "task_id": "4648_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 289,
+   "task_id": "115_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 290,
+   "task_id": "3525_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 291,
+   "task_id": "1143_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 292,
+   "task_id": "3755_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 293,
+   "task_id": "7570_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 294,
+   "task_id": "4613_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 295,
+   "task_id": "1337_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 296,
+   "task_id": "1235_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 297,
+   "task_id": "3672_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 298,
+   "task_id": "6773_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 299,
+   "task_id": "1192_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 300,
+   "task_id": "1425_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 301,
+   "task_id": "888_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 302,
+   "task_id": "7472_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 303,
+   "task_id": "1713_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 304,
+   "task_id": "2627_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 305,
+   "task_id": "2813_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 306,
+   "task_id": "2777_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 307,
+   "task_id": "2187_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 308,
+   "task_id": "1676_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 309,
+   "task_id": "7545_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 310,
+   "task_id": "512_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 311,
+   "task_id": "6643_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 312,
+   "task_id": "2913_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 313,
+   "task_id": "2510_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 314,
+   "task_id": "396_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 315,
+   "task_id": "3719_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 316,
+   "task_id": "6191_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 317,
+   "task_id": "3648_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 318,
+   "task_id": "315_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 319,
+   "task_id": "6011_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 320,
+   "task_id": "4180_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 321,
+   "task_id": "1103_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 322,
+   "task_id": "640_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 323,
+   "task_id": "762_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 324,
+   "task_id": "6731_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 325,
+   "task_id": "1162_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 326,
+   "task_id": "886_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 327,
+   "task_id": "1567_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 328,
+   "task_id": "5333_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 329,
+   "task_id": "37_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 330,
+   "task_id": "3200_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 331,
+   "task_id": "3550_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 332,
+   "task_id": "1807_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 333,
+   "task_id": "4533_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 334,
+   "task_id": "3980_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 335,
+   "task_id": "721_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 336,
+   "task_id": "7050_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 337,
+   "task_id": "875_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 338,
+   "task_id": "360_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 339,
+   "task_id": "7189_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 340,
+   "task_id": "4497_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 341,
+   "task_id": "1954_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 342,
+   "task_id": "3320_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 343,
+   "task_id": "1786_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 344,
+   "task_id": "3949_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 345,
+   "task_id": "2872_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 346,
+   "task_id": "858_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 347,
+   "task_id": "4799_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 348,
+   "task_id": "311_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 349,
+   "task_id": "4218_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 350,
+   "task_id": "1225_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 351,
+   "task_id": "149_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 352,
+   "task_id": "3891_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 353,
+   "task_id": "6536_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 354,
+   "task_id": "2936_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 355,
+   "task_id": "1240_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 356,
+   "task_id": "5974_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 357,
+   "task_id": "7522_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 358,
+   "task_id": "2101_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 359,
+   "task_id": "1478_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 360,
+   "task_id": "4369_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 361,
+   "task_id": "1163_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 362,
+   "task_id": "2238_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 363,
+   "task_id": "2547_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 364,
+   "task_id": "6366_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 365,
+   "task_id": "797_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 366,
+   "task_id": "1448_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 367,
+   "task_id": "1822_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 368,
+   "task_id": "2350_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 369,
+   "task_id": "5686_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 370,
+   "task_id": "891_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 371,
+   "task_id": "4003_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 372,
+   "task_id": "236_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 373,
+   "task_id": "77_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 374,
+   "task_id": "3736_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 375,
+   "task_id": "1331_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 376,
+   "task_id": "1581_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 377,
+   "task_id": "2634_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 378,
+   "task_id": "2461_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 379,
+   "task_id": "6142_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 380,
+   "task_id": "2755_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 381,
+   "task_id": "2211_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 382,
+   "task_id": "4034_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 383,
+   "task_id": "496_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 384,
+   "task_id": "1909_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 385,
+   "task_id": "3732_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 386,
+   "task_id": "1200_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 387,
+   "task_id": "515_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 388,
+   "task_id": "5706_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 389,
+   "task_id": "796_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 390,
+   "task_id": "5410_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 391,
+   "task_id": "7686_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 392,
+   "task_id": "5762_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 393,
+   "task_id": "2493_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 394,
+   "task_id": "2097_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 395,
+   "task_id": "793_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 396,
+   "task_id": "1874_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 397,
+   "task_id": "4499_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 398,
+   "task_id": "1471_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 399,
+   "task_id": "1596_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 400,
+   "task_id": "505_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 401,
+   "task_id": "1487_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 402,
+   "task_id": "663_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 403,
+   "task_id": "3280_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 404,
+   "task_id": "2644_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 405,
+   "task_id": "1663_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 406,
+   "task_id": "35_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 407,
+   "task_id": "1064_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 408,
+   "task_id": "127_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 409,
+   "task_id": "5099_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 410,
+   "task_id": "4639_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 411,
+   "task_id": "1941_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 412,
+   "task_id": "70_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 413,
+   "task_id": "1973_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 414,
+   "task_id": "4502_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 415,
+   "task_id": "1102_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 416,
+   "task_id": "1138_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 417,
+   "task_id": "606_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 418,
+   "task_id": "1717_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 419,
+   "task_id": "1070_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 420,
+   "task_id": "2947_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 421,
+   "task_id": "6466_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 422,
+   "task_id": "1512_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 423,
+   "task_id": "2404_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 424,
+   "task_id": "449_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 425,
+   "task_id": "6082_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 426,
+   "task_id": "4366_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 427,
+   "task_id": "3785_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 428,
+   "task_id": "6066_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 429,
+   "task_id": "5995_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 430,
+   "task_id": "2654_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 431,
+   "task_id": "5040_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 432,
+   "task_id": "5197_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 433,
+   "task_id": "431_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 434,
+   "task_id": "5313_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 435,
+   "task_id": "311_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 436,
+   "task_id": "7587_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 437,
+   "task_id": "5587_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 438,
+   "task_id": "339_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 439,
+   "task_id": "3831_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 440,
+   "task_id": "2165_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 441,
+   "task_id": "2247_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 442,
+   "task_id": "2935_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 443,
+   "task_id": "4490_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 444,
+   "task_id": "2091_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 445,
+   "task_id": "4084_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 446,
+   "task_id": "263_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 447,
+   "task_id": "1939_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 448,
+   "task_id": "2542_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 449,
+   "task_id": "1975_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 450,
+   "task_id": "470_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 451,
+   "task_id": "519_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 452,
+   "task_id": "4215_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 453,
+   "task_id": "2283_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 454,
+   "task_id": "951_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 455,
+   "task_id": "305_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 456,
+   "task_id": "2221_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 457,
+   "task_id": "1541_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 458,
+   "task_id": "3292_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 459,
+   "task_id": "973_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 460,
+   "task_id": "6371_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 461,
+   "task_id": "2060_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 462,
+   "task_id": "266_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 463,
+   "task_id": "5463_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 464,
+   "task_id": "2041_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 465,
+   "task_id": "584_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 466,
+   "task_id": "3320_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 467,
+   "task_id": "5833_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 468,
+   "task_id": "3015_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 469,
+   "task_id": "6237_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 470,
+   "task_id": "718_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 471,
+   "task_id": "5386_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 472,
+   "task_id": "4014_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 473,
+   "task_id": "184_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 474,
+   "task_id": "5144_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 475,
+   "task_id": "2827_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 476,
+   "task_id": "2563_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 477,
+   "task_id": "3061_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 478,
+   "task_id": "3336_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 479,
+   "task_id": "4032_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 480,
+   "task_id": "1913_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 481,
+   "task_id": "2021_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 482,
+   "task_id": "910_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 483,
+   "task_id": "3890_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 484,
+   "task_id": "1695_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 485,
+   "task_id": "1312_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 486,
+   "task_id": "2679_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 487,
+   "task_id": "1424_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 488,
+   "task_id": "1350_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 489,
+   "task_id": "3230_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 490,
+   "task_id": "2576_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 491,
+   "task_id": "1949_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 492,
+   "task_id": "314_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 493,
+   "task_id": "3550_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 494,
+   "task_id": "4715_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 495,
+   "task_id": "3960_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 496,
+   "task_id": "3539_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 497,
+   "task_id": "1196_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 498,
+   "task_id": "3268_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 499,
+   "task_id": "1278_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 500,
+   "task_id": "7392_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 501,
+   "task_id": "6154_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 502,
+   "task_id": "2286_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 503,
+   "task_id": "3068_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 504,
+   "task_id": "3443_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 505,
+   "task_id": "1107_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 506,
+   "task_id": "1721_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 507,
+   "task_id": "6875_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 508,
+   "task_id": "4668_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 509,
+   "task_id": "1704_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 510,
+   "task_id": "4124_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 511,
+   "task_id": "549_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 512,
+   "task_id": "6775_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 513,
+   "task_id": "822_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 514,
+   "task_id": "3791_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 515,
+   "task_id": "747_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 516,
+   "task_id": "5260_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 517,
+   "task_id": "3515_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 518,
+   "task_id": "298_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 519,
+   "task_id": "3356_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 520,
+   "task_id": "3070_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 521,
+   "task_id": "3628_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 522,
+   "task_id": "6279_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 523,
+   "task_id": "3605_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 524,
+   "task_id": "6321_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 525,
+   "task_id": "4458_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 526,
+   "task_id": "2060_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 527,
+   "task_id": "1757_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 528,
+   "task_id": "7025_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 529,
+   "task_id": "6081_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 530,
+   "task_id": "3721_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 531,
+   "task_id": "350_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 532,
+   "task_id": "4583_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 533,
+   "task_id": "6976_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 534,
+   "task_id": "5233_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 535,
+   "task_id": "510_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 536,
+   "task_id": "2188_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 537,
+   "task_id": "1165_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 538,
+   "task_id": "3919_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 539,
+   "task_id": "3731_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 540,
+   "task_id": "1462_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 541,
+   "task_id": "817_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 542,
+   "task_id": "1488_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 543,
+   "task_id": "220_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 544,
+   "task_id": "357_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 545,
+   "task_id": "7575_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 546,
+   "task_id": "290_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 547,
+   "task_id": "2253_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 548,
+   "task_id": "3551_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 549,
+   "task_id": "7207_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 550,
+   "task_id": "1590_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 551,
+   "task_id": "2135_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 552,
+   "task_id": "295_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 553,
+   "task_id": "2145_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 554,
+   "task_id": "522_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 555,
+   "task_id": "3105_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 556,
+   "task_id": "1282_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 557,
+   "task_id": "2120_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 558,
+   "task_id": "1971_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 559,
+   "task_id": "3905_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 560,
+   "task_id": "6641_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 561,
+   "task_id": "419_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 562,
+   "task_id": "562_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 563,
+   "task_id": "4547_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 564,
+   "task_id": "2243_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 565,
+   "task_id": "2000_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 566,
+   "task_id": "5959_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 567,
+   "task_id": "2440_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 568,
+   "task_id": "5874_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 569,
+   "task_id": "4120_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 570,
+   "task_id": "3359_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 571,
+   "task_id": "3432_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 572,
+   "task_id": "4472_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 573,
+   "task_id": "1185_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 574,
+   "task_id": "3926_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 575,
+   "task_id": "7180_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 576,
+   "task_id": "2024_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 577,
+   "task_id": "4508_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 578,
+   "task_id": "4666_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 579,
+   "task_id": "2226_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 580,
+   "task_id": "3652_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 581,
+   "task_id": "2733_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 582,
+   "task_id": "2054_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 583,
+   "task_id": "7754_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 584,
+   "task_id": "7767_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 585,
+   "task_id": "185_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 586,
+   "task_id": "3715_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 587,
+   "task_id": "4521_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 588,
+   "task_id": "5116_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 589,
+   "task_id": "2450_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 590,
+   "task_id": "1900_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 591,
+   "task_id": "792_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 592,
+   "task_id": "3159_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 593,
+   "task_id": "516_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 594,
+   "task_id": "1168_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 595,
+   "task_id": "3912_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 596,
+   "task_id": "7144_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 597,
+   "task_id": "1750_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 598,
+   "task_id": "5894_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 599,
+   "task_id": "1811_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 600,
+   "task_id": "2090_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 601,
+   "task_id": "3725_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 602,
+   "task_id": "3863_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 603,
+   "task_id": "2408_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 604,
+   "task_id": "275_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 605,
+   "task_id": "1774_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 606,
+   "task_id": "7083_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 607,
+   "task_id": "1318_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 608,
+   "task_id": "1719_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 609,
+   "task_id": "1427_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 610,
+   "task_id": "1523_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 611,
+   "task_id": "1018_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 612,
+   "task_id": "4324_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 613,
+   "task_id": "4152_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 614,
+   "task_id": "6800_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 615,
+   "task_id": "1904_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 616,
+   "task_id": "300_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 617,
+   "task_id": "4818_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 618,
+   "task_id": "3881_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 619,
+   "task_id": "4019_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 620,
+   "task_id": "3564_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 621,
+   "task_id": "1546_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 622,
+   "task_id": "6087_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 623,
+   "task_id": "2420_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 624,
+   "task_id": "160_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 625,
+   "task_id": "3016_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 626,
+   "task_id": "1301_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 627,
+   "task_id": "3247_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 628,
+   "task_id": "1169_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 629,
+   "task_id": "2599_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 630,
+   "task_id": "1831_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 631,
+   "task_id": "3951_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 632,
+   "task_id": "2651_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 633,
+   "task_id": "1942_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 634,
+   "task_id": "1956_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 635,
+   "task_id": "3442_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 636,
+   "task_id": "3280_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 637,
+   "task_id": "4_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 638,
+   "task_id": "3310_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 639,
+   "task_id": "5780_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 640,
+   "task_id": "4548_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 641,
+   "task_id": "3149_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 642,
+   "task_id": "28_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 643,
+   "task_id": "1386_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 644,
+   "task_id": "7540_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 645,
+   "task_id": "4512_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 646,
+   "task_id": "1774_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 647,
+   "task_id": "1011_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 648,
+   "task_id": "1179_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 649,
+   "task_id": "3058_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 650,
+   "task_id": "3716_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 651,
+   "task_id": "4521_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 652,
+   "task_id": "2229_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 653,
+   "task_id": "4522_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 654,
+   "task_id": "2772_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 655,
+   "task_id": "1426_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 656,
+   "task_id": "3330_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 657,
+   "task_id": "3029_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 658,
+   "task_id": "1144_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 659,
+   "task_id": "1233_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 660,
+   "task_id": "5389_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 661,
+   "task_id": "7762_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 662,
+   "task_id": "6892_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 663,
+   "task_id": "3502_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 664,
+   "task_id": "5710_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 665,
+   "task_id": "202_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 666,
+   "task_id": "2049_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 667,
+   "task_id": "4063_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 668,
+   "task_id": "2978_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 669,
+   "task_id": "852_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 670,
+   "task_id": "360_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 671,
+   "task_id": "4587_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 672,
+   "task_id": "12_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 673,
+   "task_id": "1042_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 674,
+   "task_id": "1248_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 675,
+   "task_id": "6128_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 676,
+   "task_id": "1907_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 677,
+   "task_id": "2045_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 678,
+   "task_id": "1156_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 679,
+   "task_id": "3547_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 680,
+   "task_id": "832_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 681,
+   "task_id": "2656_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 682,
+   "task_id": "6987_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 683,
+   "task_id": "7198_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 684,
+   "task_id": "2943_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 685,
+   "task_id": "4018_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 686,
+   "task_id": "1641_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 687,
+   "task_id": "7293_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 688,
+   "task_id": "3171_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 689,
+   "task_id": "4480_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 690,
+   "task_id": "1521_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 691,
+   "task_id": "7492_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 692,
+   "task_id": "3776_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 693,
+   "task_id": "5437_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 694,
+   "task_id": "512_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 695,
+   "task_id": "364_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 696,
+   "task_id": "668_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 697,
+   "task_id": "1026_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 698,
+   "task_id": "1463_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 699,
+   "task_id": "363_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 700,
+   "task_id": "133_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 701,
+   "task_id": "5168_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 702,
+   "task_id": "5526_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 703,
+   "task_id": "2633_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 704,
+   "task_id": "3386_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 705,
+   "task_id": "6202_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 706,
+   "task_id": "7126_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 707,
+   "task_id": "2666_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 708,
+   "task_id": "4609_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 709,
+   "task_id": "7048_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 710,
+   "task_id": "376_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 711,
+   "task_id": "3825_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 712,
+   "task_id": "1009_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 713,
+   "task_id": "3101_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 714,
+   "task_id": "2919_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 715,
+   "task_id": "7706_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 716,
+   "task_id": "6816_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 717,
+   "task_id": "1793_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 718,
+   "task_id": "1404_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 719,
+   "task_id": "563_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 720,
+   "task_id": "1914_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 721,
+   "task_id": "513_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 722,
+   "task_id": "751_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 723,
+   "task_id": "7209_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 724,
+   "task_id": "1669_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 725,
+   "task_id": "1273_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 726,
+   "task_id": "5312_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 727,
+   "task_id": "75_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 728,
+   "task_id": "987_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 729,
+   "task_id": "4037_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 730,
+   "task_id": "3210_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 731,
+   "task_id": "224_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 732,
+   "task_id": "49_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 733,
+   "task_id": "4365_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 734,
+   "task_id": "3953_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 735,
+   "task_id": "6645_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 736,
+   "task_id": "4494_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 737,
+   "task_id": "1866_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 738,
+   "task_id": "3096_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 739,
+   "task_id": "1406_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 740,
+   "task_id": "3289_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 741,
+   "task_id": "6934_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 742,
+   "task_id": "3134_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 743,
+   "task_id": "4734_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 744,
+   "task_id": "707_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 745,
+   "task_id": "2475_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 746,
+   "task_id": "7455_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 747,
+   "task_id": "6153_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 748,
+   "task_id": "6012_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 749,
+   "task_id": "3515_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 750,
+   "task_id": "2999_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 751,
+   "task_id": "2411_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 752,
+   "task_id": "372_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 753,
+   "task_id": "7346_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 754,
+   "task_id": "4439_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 755,
+   "task_id": "4592_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 756,
+   "task_id": "7120_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 757,
+   "task_id": "3344_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 758,
+   "task_id": "2584_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 759,
+   "task_id": "51_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 760,
+   "task_id": "643_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 761,
+   "task_id": "5605_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 762,
+   "task_id": "629_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 763,
+   "task_id": "3723_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 764,
+   "task_id": "17_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 765,
+   "task_id": "2708_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 766,
+   "task_id": "4933_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 767,
+   "task_id": "5580_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 768,
+   "task_id": "1104_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 769,
+   "task_id": "1805_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 770,
+   "task_id": "2459_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 771,
+   "task_id": "4193_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 772,
+   "task_id": "2855_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 773,
+   "task_id": "2122_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 774,
+   "task_id": "3073_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 775,
+   "task_id": "3523_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 776,
+   "task_id": "4008_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 777,
+   "task_id": "1244_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 778,
+   "task_id": "3937_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 779,
+   "task_id": "2507_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 780,
+   "task_id": "4996_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 781,
+   "task_id": "1927_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 782,
+   "task_id": "6728_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 783,
+   "task_id": "7675_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 784,
+   "task_id": "2620_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 785,
+   "task_id": "105_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 786,
+   "task_id": "3892_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 787,
+   "task_id": "7424_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 788,
+   "task_id": "5101_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 789,
+   "task_id": "104_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 790,
+   "task_id": "65_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 791,
+   "task_id": "1911_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 792,
+   "task_id": "1923_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 793,
+   "task_id": "3125_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 794,
+   "task_id": "72_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 795,
+   "task_id": "2268_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 796,
+   "task_id": "4093_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 797,
+   "task_id": "5738_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 798,
+   "task_id": "3614_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 799,
+   "task_id": "4471_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 800,
+   "task_id": "168_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 801,
+   "task_id": "3069_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 802,
+   "task_id": "7146_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 803,
+   "task_id": "974_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 804,
+   "task_id": "4003_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 805,
+   "task_id": "3396_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 806,
+   "task_id": "416_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 807,
+   "task_id": "2617_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 808,
+   "task_id": "1119_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 809,
+   "task_id": "5014_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 810,
+   "task_id": "1802_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 811,
+   "task_id": "877_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 812,
+   "task_id": "4884_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 813,
+   "task_id": "4244_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 814,
+   "task_id": "464_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 815,
+   "task_id": "2442_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 816,
+   "task_id": "3943_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 817,
+   "task_id": "5557_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 818,
+   "task_id": "4443_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 819,
+   "task_id": "207_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 820,
+   "task_id": "455_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 821,
+   "task_id": "2204_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 822,
+   "task_id": "1737_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 823,
+   "task_id": "4989_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 824,
+   "task_id": "5837_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 825,
+   "task_id": "1743_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 826,
+   "task_id": "6661_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 827,
+   "task_id": "3249_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 828,
+   "task_id": "3657_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 829,
+   "task_id": "3121_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 830,
+   "task_id": "2651_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 831,
+   "task_id": "3239_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 832,
+   "task_id": "6168_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 833,
+   "task_id": "5921_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 834,
+   "task_id": "1333_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 835,
+   "task_id": "7414_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 836,
+   "task_id": "3601_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 837,
+   "task_id": "669_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 838,
+   "task_id": "2105_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 839,
+   "task_id": "3099_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 840,
+   "task_id": "4224_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 841,
+   "task_id": "2737_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 842,
+   "task_id": "2132_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 843,
+   "task_id": "184_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 844,
+   "task_id": "4660_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 845,
+   "task_id": "2074_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 846,
+   "task_id": "4471_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 847,
+   "task_id": "294_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 848,
+   "task_id": "504_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 849,
+   "task_id": "3595_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 850,
+   "task_id": "5399_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 851,
+   "task_id": "3643_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 852,
+   "task_id": "1804_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 853,
+   "task_id": "7090_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 854,
+   "task_id": "4771_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 855,
+   "task_id": "4319_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 856,
+   "task_id": "509_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 857,
+   "task_id": "2938_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 858,
+   "task_id": "5643_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 859,
+   "task_id": "5228_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 860,
+   "task_id": "495_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 861,
+   "task_id": "273_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 862,
+   "task_id": "1192_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 863,
+   "task_id": "1648_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 864,
+   "task_id": "6122_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 865,
+   "task_id": "3184_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 866,
+   "task_id": "832_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 867,
+   "task_id": "4849_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 868,
+   "task_id": "4523_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 869,
+   "task_id": "1592_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 870,
+   "task_id": "6496_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 871,
+   "task_id": "1367_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 872,
+   "task_id": "7719_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 873,
+   "task_id": "4516_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 874,
+   "task_id": "1620_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 875,
+   "task_id": "4083_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 876,
+   "task_id": "2023_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 877,
+   "task_id": "3283_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 878,
+   "task_id": "5728_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 879,
+   "task_id": "6028_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 880,
+   "task_id": "3846_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 881,
+   "task_id": "6750_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 882,
+   "task_id": "1969_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 883,
+   "task_id": "4230_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 884,
+   "task_id": "3728_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 885,
+   "task_id": "6947_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 886,
+   "task_id": "6126_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 887,
+   "task_id": "6755_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 888,
+   "task_id": "2892_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 889,
+   "task_id": "1398_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 890,
+   "task_id": "3511_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 891,
+   "task_id": "6881_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 892,
+   "task_id": "3140_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 893,
+   "task_id": "7408_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 894,
+   "task_id": "6062_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 895,
+   "task_id": "2761_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 896,
+   "task_id": "5129_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 897,
+   "task_id": "5411_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 898,
+   "task_id": "1720_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 899,
+   "task_id": "65_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 900,
+   "task_id": "977_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 901,
+   "task_id": "1684_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 902,
+   "task_id": "352_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 903,
+   "task_id": "5972_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 904,
+   "task_id": "2026_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 905,
+   "task_id": "1280_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 906,
+   "task_id": "223_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 907,
+   "task_id": "1417_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 908,
+   "task_id": "5239_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 909,
+   "task_id": "3757_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 910,
+   "task_id": "3893_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 911,
+   "task_id": "998_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 912,
+   "task_id": "1223_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 913,
+   "task_id": "318_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 914,
+   "task_id": "1011_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 915,
+   "task_id": "3170_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 916,
+   "task_id": "934_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 917,
+   "task_id": "6847_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 918,
+   "task_id": "1014_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 919,
+   "task_id": "1202_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 920,
+   "task_id": "349_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 921,
+   "task_id": "4025_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 922,
+   "task_id": "5754_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 923,
+   "task_id": "2254_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 924,
+   "task_id": "1463_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 925,
+   "task_id": "4964_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 926,
+   "task_id": "2620_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 927,
+   "task_id": "4576_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 928,
+   "task_id": "6257_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 929,
+   "task_id": "3379_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 930,
+   "task_id": "1956_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 931,
+   "task_id": "4551_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 932,
+   "task_id": "3367_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 933,
+   "task_id": "6655_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 934,
+   "task_id": "2465_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 935,
+   "task_id": "2261_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 936,
+   "task_id": "826_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 937,
+   "task_id": "5927_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 938,
+   "task_id": "1019_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 939,
+   "task_id": "1094_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 940,
+   "task_id": "4515_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 941,
+   "task_id": "5222_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 942,
+   "task_id": "2632_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 943,
+   "task_id": "1580_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 944,
+   "task_id": "1990_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 945,
+   "task_id": "3634_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 946,
+   "task_id": "1210_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 947,
+   "task_id": "7558_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 948,
+   "task_id": "2313_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 949,
+   "task_id": "4968_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 950,
+   "task_id": "2464_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 951,
+   "task_id": "1333_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 952,
+   "task_id": "4159_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 953,
+   "task_id": "655_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 954,
+   "task_id": "384_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 955,
+   "task_id": "687_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 956,
+   "task_id": "430_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 957,
+   "task_id": "3932_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 958,
+   "task_id": "1658_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 959,
+   "task_id": "522_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 960,
+   "task_id": "1462_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 961,
+   "task_id": "1582_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 962,
+   "task_id": "4358_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 963,
+   "task_id": "820_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 964,
+   "task_id": "7525_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 965,
+   "task_id": "2803_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 966,
+   "task_id": "5121_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 967,
+   "task_id": "5199_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 968,
+   "task_id": "2900_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 969,
+   "task_id": "503_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 970,
+   "task_id": "158_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 971,
+   "task_id": "2786_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 972,
+   "task_id": "6172_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 973,
+   "task_id": "7759_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 974,
+   "task_id": "5094_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 975,
+   "task_id": "4539_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 976,
+   "task_id": "3228_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 977,
+   "task_id": "3232_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 978,
+   "task_id": "1583_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 979,
+   "task_id": "6027_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 980,
+   "task_id": "3128_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 981,
+   "task_id": "5401_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 982,
+   "task_id": "4299_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 983,
+   "task_id": "1368_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 984,
+   "task_id": "5575_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 985,
+   "task_id": "3306_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 986,
+   "task_id": "1262_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 987,
+   "task_id": "4026_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 988,
+   "task_id": "1485_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 989,
+   "task_id": "2687_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 990,
+   "task_id": "7439_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 991,
+   "task_id": "3245_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 992,
+   "task_id": "52_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 993,
+   "task_id": "1699_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 994,
+   "task_id": "341_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 995,
+   "task_id": "3548_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 996,
+   "task_id": "1222_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 997,
+   "task_id": "3834_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 998,
+   "task_id": "2049_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 999,
+   "task_id": "4041_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1000,
+   "task_id": "2751_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1001,
+   "task_id": "3810_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1002,
+   "task_id": "4625_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1003,
+   "task_id": "7022_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1004,
+   "task_id": "4765_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1005,
+   "task_id": "3196_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1006,
+   "task_id": "1587_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1007,
+   "task_id": "3026_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1008,
+   "task_id": "1124_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1009,
+   "task_id": "7732_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1010,
+   "task_id": "7277_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1011,
+   "task_id": "2100_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1012,
+   "task_id": "1699_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1013,
+   "task_id": "3021_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1014,
+   "task_id": "2740_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1015,
+   "task_id": "552_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1016,
+   "task_id": "6609_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1017,
+   "task_id": "4698_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1018,
+   "task_id": "1170_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1019,
+   "task_id": "3184_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1020,
+   "task_id": "4207_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1021,
+   "task_id": "1762_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1022,
+   "task_id": "6381_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1023,
+   "task_id": "3039_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1024,
+   "task_id": "1267_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1025,
+   "task_id": "3142_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1026,
+   "task_id": "2082_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1027,
+   "task_id": "1672_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1028,
+   "task_id": "5598_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1029,
+   "task_id": "2759_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1030,
+   "task_id": "6757_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1031,
+   "task_id": "753_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1032,
+   "task_id": "3865_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1033,
+   "task_id": "7221_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1034,
+   "task_id": "4536_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1035,
+   "task_id": "2899_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1036,
+   "task_id": "658_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1037,
+   "task_id": "2475_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1038,
+   "task_id": "2890_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1039,
+   "task_id": "7183_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1040,
+   "task_id": "3065_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1041,
+   "task_id": "2817_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1042,
+   "task_id": "2819_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1043,
+   "task_id": "6462_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1044,
+   "task_id": "3648_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1045,
+   "task_id": "2462_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1046,
+   "task_id": "1549_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1047,
+   "task_id": "3776_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1048,
+   "task_id": "5641_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1049,
+   "task_id": "1080_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1050,
+   "task_id": "5590_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1051,
+   "task_id": "7406_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1052,
+   "task_id": "1827_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1053,
+   "task_id": "4900_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1054,
+   "task_id": "2757_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1055,
+   "task_id": "5860_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1056,
+   "task_id": "2054_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1057,
+   "task_id": "507_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1058,
+   "task_id": "1518_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1059,
+   "task_id": "2624_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1060,
+   "task_id": "209_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1061,
+   "task_id": "2457_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1062,
+   "task_id": "529_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1063,
+   "task_id": "2974_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1064,
+   "task_id": "1701_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1065,
+   "task_id": "924_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1066,
+   "task_id": "6007_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1067,
+   "task_id": "1503_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1068,
+   "task_id": "58_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1069,
+   "task_id": "1596_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1070,
+   "task_id": "2387_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1071,
+   "task_id": "3_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1072,
+   "task_id": "2401_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1073,
+   "task_id": "19_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1074,
+   "task_id": "991_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1075,
+   "task_id": "7728_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1076,
+   "task_id": "6652_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1077,
+   "task_id": "5817_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1078,
+   "task_id": "4022_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1079,
+   "task_id": "4307_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1080,
+   "task_id": "614_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1081,
+   "task_id": "7111_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1082,
+   "task_id": "3650_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1083,
+   "task_id": "1775_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1084,
+   "task_id": "3749_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1085,
+   "task_id": "6264_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1086,
+   "task_id": "840_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1087,
+   "task_id": "4365_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1088,
+   "task_id": "3317_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1089,
+   "task_id": "2077_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1090,
+   "task_id": "5554_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1091,
+   "task_id": "4_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1092,
+   "task_id": "3187_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1093,
+   "task_id": "3188_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1094,
+   "task_id": "850_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1095,
+   "task_id": "3480_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1096,
+   "task_id": "3960_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1097,
+   "task_id": "4570_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1098,
+   "task_id": "4127_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1099,
+   "task_id": "7199_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1100,
+   "task_id": "5760_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1101,
+   "task_id": "1856_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1102,
+   "task_id": "744_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1103,
+   "task_id": "2605_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1104,
+   "task_id": "6970_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1105,
+   "task_id": "1067_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1106,
+   "task_id": "3941_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1107,
+   "task_id": "1081_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1108,
+   "task_id": "2114_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1109,
+   "task_id": "3546_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1110,
+   "task_id": "4274_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1111,
+   "task_id": "2094_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1112,
+   "task_id": "4116_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1113,
+   "task_id": "6141_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1114,
+   "task_id": "100_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1115,
+   "task_id": "673_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1116,
+   "task_id": "1480_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1117,
+   "task_id": "2_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1118,
+   "task_id": "674_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1119,
+   "task_id": "1606_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1120,
+   "task_id": "1970_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1121,
+   "task_id": "4333_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1122,
+   "task_id": "3934_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1123,
+   "task_id": "2254_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1124,
+   "task_id": "2887_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1125,
+   "task_id": "6216_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1126,
+   "task_id": "3264_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1127,
+   "task_id": "6924_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1128,
+   "task_id": "2372_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1129,
+   "task_id": "306_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1130,
+   "task_id": "569_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1131,
+   "task_id": "31_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1132,
+   "task_id": "808_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1133,
+   "task_id": "4072_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1134,
+   "task_id": "3976_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1135,
+   "task_id": "639_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1136,
+   "task_id": "3342_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1137,
+   "task_id": "3993_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1138,
+   "task_id": "1987_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1139,
+   "task_id": "2509_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1140,
+   "task_id": "834_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1141,
+   "task_id": "3218_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1142,
+   "task_id": "1227_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1143,
+   "task_id": "5567_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1144,
+   "task_id": "6899_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1145,
+   "task_id": "5287_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1146,
+   "task_id": "2801_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1147,
+   "task_id": "895_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1148,
+   "task_id": "6720_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1149,
+   "task_id": "5484_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1150,
+   "task_id": "1978_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1151,
+   "task_id": "2920_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1152,
+   "task_id": "7051_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1153,
+   "task_id": "2335_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1154,
+   "task_id": "6454_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1155,
+   "task_id": "1622_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1156,
+   "task_id": "1824_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1157,
+   "task_id": "3767_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1158,
+   "task_id": "2017_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1159,
+   "task_id": "1665_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1160,
+   "task_id": "3031_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1161,
+   "task_id": "3378_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1162,
+   "task_id": "1474_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1163,
+   "task_id": "3722_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1164,
+   "task_id": "3623_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1165,
+   "task_id": "6550_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1166,
+   "task_id": "3583_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1167,
+   "task_id": "6293_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1168,
+   "task_id": "3959_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1169,
+   "task_id": "616_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1170,
+   "task_id": "2764_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1171,
+   "task_id": "857_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1172,
+   "task_id": "5364_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1173,
+   "task_id": "4257_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1174,
+   "task_id": "3858_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1175,
+   "task_id": "1215_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1176,
+   "task_id": "3306_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1177,
+   "task_id": "1976_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1178,
+   "task_id": "2363_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1179,
+   "task_id": "3844_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1180,
+   "task_id": "2045_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1181,
+   "task_id": "7527_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1182,
+   "task_id": "3672_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1183,
+   "task_id": "858_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1184,
+   "task_id": "2993_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1185,
+   "task_id": "2116_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1186,
+   "task_id": "625_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1187,
+   "task_id": "1658_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1188,
+   "task_id": "1505_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1189,
+   "task_id": "149_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1190,
+   "task_id": "2124_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1191,
+   "task_id": "3972_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1192,
+   "task_id": "1678_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1193,
+   "task_id": "1426_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1194,
+   "task_id": "4854_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1195,
+   "task_id": "2636_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1196,
+   "task_id": "903_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1197,
+   "task_id": "2055_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1198,
+   "task_id": "2726_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1199,
+   "task_id": "1365_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1200,
+   "task_id": "7666_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1201,
+   "task_id": "190_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1202,
+   "task_id": "7294_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1203,
+   "task_id": "1916_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1204,
+   "task_id": "823_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1205,
+   "task_id": "2783_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1206,
+   "task_id": "1350_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1207,
+   "task_id": "243_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1208,
+   "task_id": "791_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1209,
+   "task_id": "7720_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1210,
+   "task_id": "4496_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1211,
+   "task_id": "3724_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1212,
+   "task_id": "5315_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1213,
+   "task_id": "383_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1214,
+   "task_id": "5846_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1215,
+   "task_id": "82_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1216,
+   "task_id": "3271_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1217,
+   "task_id": "3704_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1218,
+   "task_id": "5895_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1219,
+   "task_id": "1420_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1220,
+   "task_id": "3942_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1221,
+   "task_id": "2070_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1222,
+   "task_id": "1642_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1223,
+   "task_id": "73_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1224,
+   "task_id": "642_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1225,
+   "task_id": "4083_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1226,
+   "task_id": "122_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1227,
+   "task_id": "6188_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1228,
+   "task_id": "6_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1229,
+   "task_id": "201_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1230,
+   "task_id": "4481_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1231,
+   "task_id": "2888_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1232,
+   "task_id": "3437_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1233,
+   "task_id": "7421_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1234,
+   "task_id": "4850_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1235,
+   "task_id": "7028_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1236,
+   "task_id": "3030_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1237,
+   "task_id": "1414_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1238,
+   "task_id": "2474_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1239,
+   "task_id": "1583_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1240,
+   "task_id": "6854_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1241,
+   "task_id": "681_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1242,
+   "task_id": "264_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1243,
+   "task_id": "3361_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1244,
+   "task_id": "1578_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1245,
+   "task_id": "3889_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1246,
+   "task_id": "1906_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1247,
+   "task_id": "2066_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1248,
+   "task_id": "2867_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1249,
+   "task_id": "2860_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1250,
+   "task_id": "4179_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1251,
+   "task_id": "7506_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1252,
+   "task_id": "117_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1253,
+   "task_id": "3156_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1254,
+   "task_id": "79_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1255,
+   "task_id": "3497_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1256,
+   "task_id": "5231_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1257,
+   "task_id": "6799_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1258,
+   "task_id": "1776_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1259,
+   "task_id": "1647_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1260,
+   "task_id": "2527_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1261,
+   "task_id": "6405_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1262,
+   "task_id": "1068_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1263,
+   "task_id": "6593_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1264,
+   "task_id": "2377_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1265,
+   "task_id": "3589_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1266,
+   "task_id": "2656_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1267,
+   "task_id": "3411_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1268,
+   "task_id": "1153_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1269,
+   "task_id": "4538_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1270,
+   "task_id": "733_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1271,
+   "task_id": "199_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1272,
+   "task_id": "1945_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1273,
+   "task_id": "677_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1274,
+   "task_id": "4104_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1275,
+   "task_id": "1666_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1276,
+   "task_id": "4129_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1277,
+   "task_id": "6359_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1278,
+   "task_id": "1726_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1279,
+   "task_id": "3255_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1280,
+   "task_id": "2905_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1281,
+   "task_id": "5796_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1282,
+   "task_id": "2334_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1283,
+   "task_id": "586_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1284,
+   "task_id": "1533_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1285,
+   "task_id": "2113_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1286,
+   "task_id": "5127_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1287,
+   "task_id": "6314_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1288,
+   "task_id": "4068_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1289,
+   "task_id": "4338_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1290,
+   "task_id": "4464_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1291,
+   "task_id": "657_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1292,
+   "task_id": "977_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1293,
+   "task_id": "4141_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1294,
+   "task_id": "3972_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1295,
+   "task_id": "6713_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1296,
+   "task_id": "3615_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1297,
+   "task_id": "3486_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1298,
+   "task_id": "5327_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1299,
+   "task_id": "1965_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1300,
+   "task_id": "6049_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1301,
+   "task_id": "763_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1302,
+   "task_id": "3626_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1303,
+   "task_id": "7292_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1304,
+   "task_id": "1983_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1305,
+   "task_id": "148_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1306,
+   "task_id": "1736_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1307,
+   "task_id": "1230_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1308,
+   "task_id": "3214_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1309,
+   "task_id": "4501_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1310,
+   "task_id": "2444_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1311,
+   "task_id": "6856_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1312,
+   "task_id": "2432_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1313,
+   "task_id": "4266_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1314,
+   "task_id": "5910_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1315,
+   "task_id": "6150_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1316,
+   "task_id": "4378_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1317,
+   "task_id": "6288_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1318,
+   "task_id": "1073_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1319,
+   "task_id": "6737_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1320,
+   "task_id": "3091_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1321,
+   "task_id": "2883_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1322,
+   "task_id": "2182_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1323,
+   "task_id": "937_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1324,
+   "task_id": "648_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1325,
+   "task_id": "618_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1326,
+   "task_id": "2451_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1327,
+   "task_id": "7490_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1328,
+   "task_id": "5308_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1329,
+   "task_id": "4292_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1330,
+   "task_id": "1876_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1331,
+   "task_id": "92_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1332,
+   "task_id": "1686_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1333,
+   "task_id": "1410_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1334,
+   "task_id": "7418_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1335,
+   "task_id": "2758_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1336,
+   "task_id": "1428_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1337,
+   "task_id": "4612_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1338,
+   "task_id": "2680_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1339,
+   "task_id": "6748_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1340,
+   "task_id": "41_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1341,
+   "task_id": "4525_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1342,
+   "task_id": "570_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1343,
+   "task_id": "4998_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1344,
+   "task_id": "4170_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1345,
+   "task_id": "5122_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1346,
+   "task_id": "5893_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1347,
+   "task_id": "40_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1348,
+   "task_id": "69_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1349,
+   "task_id": "7561_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1350,
+   "task_id": "6118_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1351,
+   "task_id": "429_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1352,
+   "task_id": "4275_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1353,
+   "task_id": "7725_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1354,
+   "task_id": "205_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1355,
+   "task_id": "3044_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1356,
+   "task_id": "4539_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1357,
+   "task_id": "5150_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1358,
+   "task_id": "1553_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1359,
+   "task_id": "2912_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1360,
+   "task_id": "3945_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1361,
+   "task_id": "2551_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1362,
+   "task_id": "7646_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1363,
+   "task_id": "1316_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1364,
+   "task_id": "6929_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1365,
+   "task_id": "789_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1366,
+   "task_id": "4485_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1367,
+   "task_id": "4417_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1368,
+   "task_id": "5681_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1369,
+   "task_id": "4419_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1370,
+   "task_id": "3244_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1371,
+   "task_id": "990_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1372,
+   "task_id": "5071_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1373,
+   "task_id": "4657_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1374,
+   "task_id": "4534_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1375,
+   "task_id": "783_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1376,
+   "task_id": "1255_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1377,
+   "task_id": "7301_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1378,
+   "task_id": "6124_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1379,
+   "task_id": "3614_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1380,
+   "task_id": "828_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1381,
+   "task_id": "253_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1382,
+   "task_id": "4258_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1383,
+   "task_id": "771_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1384,
+   "task_id": "6975_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1385,
+   "task_id": "6295_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1386,
+   "task_id": "1607_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1387,
+   "task_id": "3311_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1388,
+   "task_id": "345_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1389,
+   "task_id": "6761_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1390,
+   "task_id": "2771_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1391,
+   "task_id": "7712_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1392,
+   "task_id": "53_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1393,
+   "task_id": "2724_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1394,
+   "task_id": "2517_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1395,
+   "task_id": "2510_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1396,
+   "task_id": "676_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1397,
+   "task_id": "2417_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1398,
+   "task_id": "4195_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1399,
+   "task_id": "4597_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1400,
+   "task_id": "2121_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1401,
+   "task_id": "5607_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1402,
+   "task_id": "4154_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1403,
+   "task_id": "248_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1404,
+   "task_id": "3025_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1405,
+   "task_id": "6573_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1406,
+   "task_id": "2208_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1407,
+   "task_id": "1171_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1408,
+   "task_id": "4290_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1409,
+   "task_id": "1364_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1410,
+   "task_id": "2042_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1411,
+   "task_id": "568_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1412,
+   "task_id": "3180_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1413,
+   "task_id": "1472_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1414,
+   "task_id": "4779_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1415,
+   "task_id": "3617_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1416,
+   "task_id": "239_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1417,
+   "task_id": "4344_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1418,
+   "task_id": "6747_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1419,
+   "task_id": "2932_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1420,
+   "task_id": "6616_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1421,
+   "task_id": "2353_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1422,
+   "task_id": "3072_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1423,
+   "task_id": "1221_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1424,
+   "task_id": "2894_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1425,
+   "task_id": "3813_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1426,
+   "task_id": "1609_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1427,
+   "task_id": "3717_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1428,
+   "task_id": "5468_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1429,
+   "task_id": "4712_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1430,
+   "task_id": "3746_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1431,
+   "task_id": "755_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1432,
+   "task_id": "1550_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1433,
+   "task_id": "1837_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1434,
+   "task_id": "1330_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1435,
+   "task_id": "722_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1436,
+   "task_id": "2970_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1437,
+   "task_id": "2437_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1438,
+   "task_id": "222_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1439,
+   "task_id": "3314_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1440,
+   "task_id": "964_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1441,
+   "task_id": "467_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1442,
+   "task_id": "3330_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1443,
+   "task_id": "1237_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1444,
+   "task_id": "5619_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1445,
+   "task_id": "1001_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1446,
+   "task_id": "3853_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1447,
+   "task_id": "460_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1448,
+   "task_id": "4023_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1449,
+   "task_id": "1554_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1450,
+   "task_id": "7045_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1451,
+   "task_id": "280_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1452,
+   "task_id": "2289_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1453,
+   "task_id": "1311_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1454,
+   "task_id": "6704_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1455,
+   "task_id": "808_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1456,
+   "task_id": "4534_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1457,
+   "task_id": "486_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1458,
+   "task_id": "3988_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1459,
+   "task_id": "1795_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1460,
+   "task_id": "4669_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1461,
+   "task_id": "7005_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1462,
+   "task_id": "4599_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1463,
+   "task_id": "7749_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1464,
+   "task_id": "7428_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1465,
+   "task_id": "6022_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1466,
+   "task_id": "1361_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1467,
+   "task_id": "1138_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1468,
+   "task_id": "1783_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1469,
+   "task_id": "748_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1470,
+   "task_id": "3186_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1471,
+   "task_id": "1946_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1472,
+   "task_id": "3096_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1473,
+   "task_id": "5303_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1474,
+   "task_id": "1526_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1475,
+   "task_id": "7709_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1476,
+   "task_id": "1612_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1477,
+   "task_id": "2895_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1478,
+   "task_id": "1673_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1479,
+   "task_id": "4650_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1480,
+   "task_id": "801_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1481,
+   "task_id": "3429_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1482,
+   "task_id": "468_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1483,
+   "task_id": "1023_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1484,
+   "task_id": "3367_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1485,
+   "task_id": "3712_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1486,
+   "task_id": "6399_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1487,
+   "task_id": "494_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1488,
+   "task_id": "3174_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1489,
+   "task_id": "502_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1490,
+   "task_id": "2111_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1491,
+   "task_id": "2327_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1492,
+   "task_id": "920_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1493,
+   "task_id": "6972_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1494,
+   "task_id": "598_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1495,
+   "task_id": "4067_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1496,
+   "task_id": "4413_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1497,
+   "task_id": "3941_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1498,
+   "task_id": "989_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1499,
+   "task_id": "2469_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1500,
+   "task_id": "4929_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1501,
+   "task_id": "4424_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1502,
+   "task_id": "436_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1503,
+   "task_id": "6024_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1504,
+   "task_id": "2880_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1505,
+   "task_id": "5733_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1506,
+   "task_id": "343_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1507,
+   "task_id": "175_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1508,
+   "task_id": "7038_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1509,
+   "task_id": "3389_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1510,
+   "task_id": "1565_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1511,
+   "task_id": "4651_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1512,
+   "task_id": "427_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1513,
+   "task_id": "4905_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1514,
+   "task_id": "3798_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1515,
+   "task_id": "7605_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1516,
+   "task_id": "2181_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1517,
+   "task_id": "7614_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1518,
+   "task_id": "942_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1519,
+   "task_id": "2836_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1520,
+   "task_id": "408_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1521,
+   "task_id": "3432_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1522,
+   "task_id": "3355_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1523,
+   "task_id": "4306_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1524,
+   "task_id": "3875_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1525,
+   "task_id": "5072_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1526,
+   "task_id": "112_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1527,
+   "task_id": "3075_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1528,
+   "task_id": "49_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1529,
+   "task_id": "5781_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1530,
+   "task_id": "3984_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1531,
+   "task_id": "5709_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1532,
+   "task_id": "3498_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1533,
+   "task_id": "7557_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1534,
+   "task_id": "2997_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1535,
+   "task_id": "7546_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1536,
+   "task_id": "2346_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1537,
+   "task_id": "1627_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1538,
+   "task_id": "1209_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1539,
+   "task_id": "6336_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1540,
+   "task_id": "733_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1541,
+   "task_id": "1356_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1542,
+   "task_id": "1921_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1543,
+   "task_id": "892_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1544,
+   "task_id": "216_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1545,
+   "task_id": "7000_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1546,
+   "task_id": "68_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1547,
+   "task_id": "3097_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1548,
+   "task_id": "6178_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1549,
+   "task_id": "5223_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1550,
+   "task_id": "4640_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1551,
+   "task_id": "51_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1552,
+   "task_id": "1010_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1553,
+   "task_id": "2775_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1554,
+   "task_id": "4101_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1555,
+   "task_id": "2081_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1556,
+   "task_id": "3899_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1557,
+   "task_id": "3057_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1558,
+   "task_id": "1138_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1559,
+   "task_id": "6895_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1560,
+   "task_id": "2383_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1561,
+   "task_id": "907_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1562,
+   "task_id": "146_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1563,
+   "task_id": "2646_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1564,
+   "task_id": "2129_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1565,
+   "task_id": "5272_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1566,
+   "task_id": "1629_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1567,
+   "task_id": "6163_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1568,
+   "task_id": "2613_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1569,
+   "task_id": "2597_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1570,
+   "task_id": "1238_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1571,
+   "task_id": "7533_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1572,
+   "task_id": "5078_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1573,
+   "task_id": "711_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1574,
+   "task_id": "1309_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1575,
+   "task_id": "1650_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1576,
+   "task_id": "1799_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1577,
+   "task_id": "1580_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1578,
+   "task_id": "7458_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1579,
+   "task_id": "210_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1580,
+   "task_id": "297_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1581,
+   "task_id": "1744_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1582,
+   "task_id": "104_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1583,
+   "task_id": "470_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1584,
+   "task_id": "879_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1585,
+   "task_id": "4855_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1586,
+   "task_id": "4545_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1587,
+   "task_id": "508_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1588,
+   "task_id": "53_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1589,
+   "task_id": "47_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1590,
+   "task_id": "4226_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1591,
+   "task_id": "2642_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1592,
+   "task_id": "433_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1593,
+   "task_id": "3842_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1594,
+   "task_id": "4164_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1595,
+   "task_id": "60_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1596,
+   "task_id": "6851_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1597,
+   "task_id": "646_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1598,
+   "task_id": "2449_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1599,
+   "task_id": "7663_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1600,
+   "task_id": "3384_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1601,
+   "task_id": "7690_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1602,
+   "task_id": "7020_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1603,
+   "task_id": "5878_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1604,
+   "task_id": "4688_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1605,
+   "task_id": "2215_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1606,
+   "task_id": "1379_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1607,
+   "task_id": "1483_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1608,
+   "task_id": "499_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1609,
+   "task_id": "3961_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1610,
+   "task_id": "7168_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1611,
+   "task_id": "3632_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1612,
+   "task_id": "3150_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1613,
+   "task_id": "4316_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1614,
+   "task_id": "227_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1615,
+   "task_id": "569_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1616,
+   "task_id": "4037_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1617,
+   "task_id": "4640_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1618,
+   "task_id": "2098_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1619,
+   "task_id": "383_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1620,
+   "task_id": "952_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1621,
+   "task_id": "6945_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1622,
+   "task_id": "258_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1623,
+   "task_id": "4053_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1624,
+   "task_id": "957_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1625,
+   "task_id": "2_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1626,
+   "task_id": "803_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1627,
+   "task_id": "2159_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1628,
+   "task_id": "3738_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1629,
+   "task_id": "5215_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1630,
+   "task_id": "2877_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1631,
+   "task_id": "293_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1632,
+   "task_id": "1668_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1633,
+   "task_id": "7656_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1634,
+   "task_id": "3086_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1635,
+   "task_id": "1126_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1636,
+   "task_id": "1941_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1637,
+   "task_id": "4120_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1638,
+   "task_id": "1879_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1639,
+   "task_id": "2697_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1640,
+   "task_id": "4391_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1641,
+   "task_id": "930_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1642,
+   "task_id": "198_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1643,
+   "task_id": "4555_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1644,
+   "task_id": "3303_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1645,
+   "task_id": "1297_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1646,
+   "task_id": "7449_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1647,
+   "task_id": "406_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1648,
+   "task_id": "7339_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1649,
+   "task_id": "6312_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1650,
+   "task_id": "5299_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1651,
+   "task_id": "3077_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1652,
+   "task_id": "3151_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1653,
+   "task_id": "310_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1654,
+   "task_id": "6635_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1655,
+   "task_id": "2945_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1656,
+   "task_id": "6866_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1657,
+   "task_id": "1219_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1658,
+   "task_id": "4548_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1659,
+   "task_id": "2492_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1660,
+   "task_id": "1329_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1661,
+   "task_id": "4197_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1662,
+   "task_id": "4216_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1663,
+   "task_id": "2298_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1664,
+   "task_id": "1204_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1665,
+   "task_id": "4586_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1666,
+   "task_id": "3317_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1667,
+   "task_id": "731_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1668,
+   "task_id": "6510_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1669,
+   "task_id": "3355_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1670,
+   "task_id": "5793_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1671,
+   "task_id": "528_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1672,
+   "task_id": "3161_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1673,
+   "task_id": "5614_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1674,
+   "task_id": "2541_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1675,
+   "task_id": "2190_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1676,
+   "task_id": "1188_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1677,
+   "task_id": "3393_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1678,
+   "task_id": "2772_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1679,
+   "task_id": "2131_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1680,
+   "task_id": "7721_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1681,
+   "task_id": "1830_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1682,
+   "task_id": "3014_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1683,
+   "task_id": "774_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1684,
+   "task_id": "4331_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1685,
+   "task_id": "3925_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1686,
+   "task_id": "696_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1687,
+   "task_id": "896_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1688,
+   "task_id": "4584_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1689,
+   "task_id": "5391_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1690,
+   "task_id": "4336_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1691,
+   "task_id": "4340_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1692,
+   "task_id": "4166_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1693,
+   "task_id": "5653_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1694,
+   "task_id": "2417_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1695,
+   "task_id": "2039_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1696,
+   "task_id": "3313_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1697,
+   "task_id": "1245_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1698,
+   "task_id": "1340_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1699,
+   "task_id": "7042_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1700,
+   "task_id": "6618_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1701,
+   "task_id": "6911_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1702,
+   "task_id": "3840_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1703,
+   "task_id": "4022_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1704,
+   "task_id": "1283_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1705,
+   "task_id": "4843_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1706,
+   "task_id": "16_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1707,
+   "task_id": "2710_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1708,
+   "task_id": "1806_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1709,
+   "task_id": "7770_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1710,
+   "task_id": "1597_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1711,
+   "task_id": "5589_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1712,
+   "task_id": "4663_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1713,
+   "task_id": "7629_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1714,
+   "task_id": "3132_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1715,
+   "task_id": "5234_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1716,
+   "task_id": "1982_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1717,
+   "task_id": "1660_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1718,
+   "task_id": "654_12-1",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1719,
+   "task_id": "6658_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1720,
+   "task_id": "6058_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1721,
+   "task_id": "7041_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1722,
+   "task_id": "5432_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1723,
+   "task_id": "1987_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1724,
+   "task_id": "1806_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1725,
+   "task_id": "252_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1726,
+   "task_id": "2671_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1727,
+   "task_id": "4906_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1728,
+   "task_id": "2315_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1729,
+   "task_id": "2041_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1730,
+   "task_id": "6369_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1731,
+   "task_id": "2395_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1732,
+   "task_id": "551_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1733,
+   "task_id": "4793_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1734,
+   "task_id": "2863_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1735,
+   "task_id": "4705_12-3",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1736,
+   "task_id": "2143_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1737,
+   "task_id": "7431_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1738,
+   "task_id": "3907_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1739,
+   "task_id": "3266_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1740,
+   "task_id": "3135_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1741,
+   "task_id": "4209_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1742,
+   "task_id": "3723_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1743,
+   "task_id": "1112_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1744,
+   "task_id": "5979_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1745,
+   "task_id": "5081_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1746,
+   "task_id": "4346_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1747,
+   "task_id": "759_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1748,
+   "task_id": "847_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1749,
+   "task_id": "345_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1750,
+   "task_id": "4611_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1751,
+   "task_id": "2481_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1752,
+   "task_id": "4559_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1753,
+   "task_id": "3063_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1754,
+   "task_id": "525_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1755,
+   "task_id": "678_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1756,
+   "task_id": "5042_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1757,
+   "task_id": "7746_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1758,
+   "task_id": "1995_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1759,
+   "task_id": "3103_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1760,
+   "task_id": "805_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1761,
+   "task_id": "1124_10-1",
+   "task_name": "serve_bread_after_checking_cabinet"
+  },
+  {
+   "train_index": 1762,
+   "task_id": "2629_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1763,
+   "task_id": "4318_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1764,
+   "task_id": "3752_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1765,
+   "task_id": "3978_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1766,
+   "task_id": "1356_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1767,
+   "task_id": "2873_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1768,
+   "task_id": "253_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1769,
+   "task_id": "3773_8-1",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1770,
+   "task_id": "2518_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1771,
+   "task_id": "1994_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1772,
+   "task_id": "1522_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1773,
+   "task_id": "3231_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1774,
+   "task_id": "3555_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1775,
+   "task_id": "2755_6-1",
+   "task_name": "sequential_pick_two_and_place"
+  },
+  {
+   "train_index": 1776,
+   "task_id": "3414_13-1",
+   "task_name": "dog_check_environment"
+  },
+  {
+   "train_index": 1777,
+   "task_id": "927_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1778,
+   "task_id": "551_2-1",
+   "task_name": "parallel_human_dual_asset_to_plate_or_bowl"
+  },
+  {
+   "train_index": 1779,
+   "task_id": "5602_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1780,
+   "task_id": "3848_13-2",
+   "task_name": "dog_push_box_for_two_panda_transport"
+  },
+  {
+   "train_index": 1781,
+   "task_id": "3494_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1782,
+   "task_id": "1972_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1783,
+   "task_id": "103_12-2",
+   "task_name": "ensure_all_fruits_on_table"
+  },
+  {
+   "train_index": 1784,
+   "task_id": "500_4-1",
+   "task_name": "toast_bread_and_set_plate"
+  },
+  {
+   "train_index": 1785,
+   "task_id": "4517_5-2",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1786,
+   "task_id": "6776_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1787,
+   "task_id": "2079_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1788,
+   "task_id": "1745_1-1",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1789,
+   "task_id": "860_10-2",
+   "task_name": "serve_bread_from_counter"
+  },
+  {
+   "train_index": 1790,
+   "task_id": "968_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1791,
+   "task_id": "6445_7-1",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1792,
+   "task_id": "2735_8-2",
+   "task_name": "cut_fruit_on_board"
+  },
+  {
+   "train_index": 1793,
+   "task_id": "5675_7-2",
+   "task_name": "wash_fruit_and_serve"
+  },
+  {
+   "train_index": 1794,
+   "task_id": "3681_1-2",
+   "task_name": "single_move_asset_to_target"
+  },
+  {
+   "train_index": 1795,
+   "task_id": "7340_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1796,
+   "task_id": "669_9-1",
+   "task_name": "cut_two_fruits_on_board"
+  },
+  {
+   "train_index": 1797,
+   "task_id": "333_3-1",
+   "task_name": "set_plate_and_fork_on_table"
+  },
+  {
+   "train_index": 1798,
+   "task_id": "2871_5-1",
+   "task_name": "clear_table_with_two_robots_and_put_in_cabinet"
+  },
+  {
+   "train_index": 1799,
+   "task_id": "6784_8-2",
+   "task_name": "cut_fruit_on_board"
+  }
+ ]
+}
